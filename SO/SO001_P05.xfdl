@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P05" width="700" height="400" titletext="New Form" onload="SO001_P05_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="700">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" width="698" height="398">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="1" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="검색" left="231" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_ClientNm" taborder="1" left="322" top="8" width="150" height="21" onkeyup="Div_client_div_search_edt_ClientNm_onkeyup"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="7" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Button id="Button00" taborder="3" text="적용" left="569" top="7" width="45" height="23" onclick="Div_client_div_search_Button00_onclick" cssclass="btn_WF_main1" visible="false"/>
+                    <Static id="Static00_02_03" taborder="4" text="검색필드" left="0" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_orderType" taborder="5" left="102" top="8" width="120" height="21" text="선택" value="" index="-1" codecolumn="COL_NM" datacolumn="COL_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_list_2"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  대상자,주문자 팝업
+*  @MenuPath    SO > SO0001_P05
+*  @FileName 	SO0001_P05.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var clientCd = this.getOwnerFrame().clientCd
+var gbn = this.getOwnerFrame().gbn
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P05_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	//this.ds_cond.setColumn(0,"BP_CD",clientCd)								// 거래처코드
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	//trace(this.ds_grd2.saveXML());
+	//trace("11");
+	
+	var id = "SO001_P08";
+	var url = "svcUrl::SO001_P08";
+	var inDs = "";
+	var outDs = "ds_result=ds_result ds_list_2=ds_list_2";
+	var args = "BP_CD="+clientCd+" DIV="+gbn+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
+ {
+ 	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.Div_client.form.div_search.form.cmb_orderType.set_index(0);
+	//trace(this.ds_list_2.saveXML());
+	this.fn_setGrd();
+	
+	//trace(this.ds_list_2.saveXML());
+ }
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.04.07
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var search = this.Div_client.form.div_search.form.edt_ClientNm.text;
+	this.ds_finalResult.filter("")
+	var filterstr = "";
+	var col = this.Div_client.form.div_search.form.cmb_orderType.value;
+	
+	filterstr = col+".indexOf('"+search+"')!='-1'";
+	
+	this.ds_finalResult.set_filterstr(filterstr);
+};
+
+this.fn_setGrd = function ()
+{	
+	var objGrid = new Grid();
+	objGrid.init("grd_list", 10, 60, 678, 330,null,null);
+
+	// Add Object to Parent Form
+	this.addChild("Grid02", objGrid);
+
+	objGrid.createFormat();
+
+	// Show Object 
+	objGrid.show();
+	
+	// Create dataset 
+	var objDs = new Dataset();
+	objDs.set_name("ds_finalResult");
+	
+	// Add Object to Parent Form
+	this.addChild("ds_finalResult",objDs);	 
+	
+	for(var i=0; i<this.ds_list_2.rowcount; i++)
+	{
+		objDs.addColumn(this.ds_list_2.getColumn(i,"COL_NM"), "string");
+	}
+
+	//trace(this.ds_list_2.rowcount);
+	// Dataset Data Input
+	for (var i = 0; i < this.ds_result.rowcount; i++) 
+	{
+		objDs.addRow();
+		
+		for (var j=0; j<this.ds_list_2.rowcount; j++)
+		{
+			objDs.setColumn(i, this.ds_list_2.getColumn(j,"COL_NM"), this.ds_result.getColumn(i,this.ds_list_2.getColumn(j,"COL_ID")));
+			
+		}
+	}
+	
+	objGrid.set_binddataset(objDs);
+
+	objGrid.appendContentsRow("head");
+	objGrid.appendContentsRow("body");
+	
+	objGrid.appendContentsCol();
+	objGrid.appendContentsCol();
+	
+	for( var j=0; j<objDs.getColCount()-3; j++){	//appendContentsRow로 인해 column 하나가 생성되므로 colCount-1 만큼 loop
+	
+		objGrid.appendContentsCol();
+	}
+	
+	for(var i=0; i< this.ds_list_2.rowcount; i++)
+	{
+		objGrid.setFormatColProperty(i, "size", 100);
+	}	
+
+	for(var i=0; i<objDs.getColCount(); i++)
+	{
+		var colinfo = objDs.getColumnInfo(i);
+		objGrid.setCellProperty("head", i, "text", colinfo.name);
+		objGrid.setCellProperty("body", i, "text", "bind:" + colinfo.name);
+	}
+	
+	objGrid.addEventHandler( "oncelldblclick", this.Grid00_oncelldblclick, this); 
+};
+
+this.Div_client_div_search_edt_ClientNm_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		var search = this.Div_client.form.div_search.form.edt_ClientNm.text;
+		this.ds_finalResult.filter("")
+		var filterstr = "";
+		var col = this.Div_client.form.div_search.form.cmb_orderType.value;
+		
+		filterstr = col+".indexOf('"+search+"')!='-1'";
+		
+		this.ds_finalResult.set_filterstr(filterstr);
+		
+// 		if (this.ds_finalResult.rowcount > 0)
+// 		{
+// 			if(!this.gfn_isNull(search))
+// 			{
+// 				for (var i = 0; i < this.ds_list_2.rowcount; i++)
+// 				{
+// 					var colNm = this._gfnGridGetBindColumnNameByIndex(this.Grid02, i);
+// 					//trace(colNm);
+// 					if(this.gfn_isNull(filterstr))
+// 						filterstr = colNm+".indexOf('"+search+"')!='-1'";
+// 					else
+// 						filterstr += " || "+colNm+".indexOf('"+search+"')!='-1'";				
+// 				}
+// 			}
+// 			this.ds_finalResult.set_filterstr(filterstr);
+// 		}
+ 		trace(filterstr);
+	}
+};
+
+this.Div_client_div_search_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sRtn = "";
+	for (i=0; i<this.ds_finalResult.colcount; i++)
+	{
+		if (!this.gfn_isNull(sRtn))
+		{
+			sRtn += "||"
+		}
+		sRtn += this.Grid02.getCellText(this.ds_finalResult.rowposition,i)
+	}
+	this.close(sRtn);
+	
+//	this.close(this.efn_jsonRtn(this.ds_finalResult));
+	
+// 	
+// 	for (var i = 0; i < this.ds_list_2.rowcount; i++)
+// 	{
+// 		var colNm = this._gfnGridGetBindColumnNameByIndex(this.Grid02, i);
+// 		trace(colNm);
+// 		trace(this.ds_finalResult.getColumn(2,"colNm"));
+// 	}
+};
+
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var sRtn = "";
+	for (i=0; i<this.ds_finalResult.colcount; i++)
+	{
+		if (!this.gfn_isNull(sRtn))
+		{
+			sRtn += "||"
+		}
+		sRtn += this.Grid02.getCellText(e.row,i)
+	}
+	
+	this.close(sRtn);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_result"/>
+      <Dataset id="ds_list_2"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_ClientNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

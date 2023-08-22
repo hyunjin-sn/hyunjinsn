@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM004_P02" width="581" height="521" titletext="New Form" onload="FM004_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="521" mobileorientation="landscape" width="581">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="595" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="빈소명" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="102" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="10" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static03_00" taborder="3" text="평수" left="230" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00" taborder="4" left="332" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="70" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="Grid01_00" taborder="3" left="10" top="80" width="558" autofittype="col" binddataset="ds_list" oncellclick="Div_client_grd_list_oncelldblclick" bottom="85" autoenter="select">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="137"/>
+                      <Column size="67"/>
+                      <Column size="67"/>
+                      <Column size="67"/>
+                      <Column size="67"/>
+                      <Column size="81"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="빈소명"/>
+                      <Cell col="2" text="평수"/>
+                      <Cell col="3" text="수용인원"/>
+                      <Cell col="4" text="좌식/입식"/>
+                      <Cell col="5" text="세척시설"/>
+                      <Cell col="6" text="금액"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:PLACE_NM" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM"/>
+                      <Cell col="2" text="bind:ACREAGE" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM"/>
+                      <Cell col="3" text="bind:CAPACITY" textAlign="center" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM"/>
+                      <Cell col="4" text="bind:TABLE_DIV" textAlign="center" combodataset="ds_tableDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
+                      <Cell col="5" text="bind:CLEAN_YN" textAlign="center" combodataset="ds_ceremony" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
+                      <Cell col="6" text="bind:FN_AMT" textAlign="right" maskeditformat="##,##0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  빈소사용료 팝업
+*  @MenuPath    FM > FM004_P02
+*  @FileName 	FM004_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.12.04
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var fnNo = this.getOwnerFrame().fnNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM004_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetDatasetData2(this.ds_tableDiv,this.objApp.gds_code2,'ES010');			// 입식/좌식
+	this.efn_SetDatasetData2(this.ds_ceremony,this.objApp.gds_code2,'ES002');			// 영결식장
+};
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.ds_cond.getColumn(0,"PLACE_NM");
+ 	var Arg_2 = this.ds_cond.getColumn(0,"ACREAGE");
+	
+	var id = "FM004_P02_S02";
+	var url = "svcUrl::FM004_P02_S02";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "FN_NO="+fnNo+" PLACE_NM="+Arg_1+" ACREAGE="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_btn_search();
+	}
+};
+
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="FN_NO" type="STRING" size="18"/>
+          <Column id="FN_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="PLACE_NM" type="STRING" size="200"/>
+          <Column id="ACREAGE" type="STRING" size="100"/>
+          <Column id="CAPACITY" type="STRING" size="100"/>
+          <Column id="TABLE_DIV" type="STRING" size="20"/>
+          <Column id="CLEAN_YN" type="STRING" size="20"/>
+          <Column id="BASIS" type="STRING" size="20"/>
+          <Column id="FN_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="DEL_YN" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="PLACE_NM" type="STRING" size="256"/>
+          <Column id="ACREAGE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="PLACE_NM"></Col>
+            <Col id="ACREAGE"></Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_ceremony"/>
+      <Dataset id="ds_tableDiv"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="PRE_RCPT_NO"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="PRE_RCPT_NO"/>
+    </Bind>
+  </Form>
+</FDL>

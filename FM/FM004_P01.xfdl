@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P01" width="1391" height="600" titletext="New Form" onload="FM003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1391">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="595" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="60" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="접수번호" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="102" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="10" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="3" text="접수자" left="228" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_insrtUser" taborder="4" left="333" top="8" width="120" height="21" text="선택" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" onitemchanged="Div_client_div_search_edt_enter_onkeyup" autoselect="true"/>
+                    <Static id="Static00_01" taborder="5" text="접수일시" left="458" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="6" left="563" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Calendar id="cal_endDate" taborder="7" left="688" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static01" taborder="8" text="~" left="676" top="4" width="10" height="29"/>
+                    <Static id="Static00_00_00" taborder="9" text="고객명" left="1" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00_00" taborder="10" left="101" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_sono00_00_00" taborder="11" left="333" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_00_00_00" taborder="12" text="대상자명" left="228" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static00_00_00_00_00" taborder="13" text="고객 연락처" left="458" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00_00_00_00" taborder="14" left="563" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_00_00_00_00_00" taborder="15" text="완료여부" left="708" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Radio id="Radio00" taborder="16" left="816" top="32" width="202" height="22" innerdataset="ds_cfmYn" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="70" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="80" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="110"/>
+                      <Column size="50"/>
+                      <Column size="65"/>
+                      <Column size="65"/>
+                      <Column size="80"/>
+                      <Column size="110"/>
+                      <Column size="71"/>
+                      <Column size="343"/>
+                      <Column size="65"/>
+                      <Column size="446"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="접수번호"/>
+                      <Cell col="1" text="순번"/>
+                      <Cell col="2" text="견적여부"/>
+                      <Cell col="3" text="견적여부"/>
+                      <Cell col="4" text="고객명"/>
+                      <Cell col="5" text="고객 연락처"/>
+                      <Cell col="6" text="대상자"/>
+                      <Cell col="7" text="장례식장"/>
+                      <Cell col="8" text="접수자"/>
+                      <Cell col="9" text="상담내용"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:PRE_RCPT_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:SEQ" textAlign="center"/>
+                      <Cell col="2" text="bind:ESTN_NO" calendardateformat="yyyy-MM-dd" textAlign="center"/>
+                      <Cell col="3" text="bind:ESTN_YN" calendardateformat="yyyy-MM-dd" textAlign="center"/>
+                      <Cell col="4" text="bind:CUST_NM" calendardateformat="yyyy-MM-dd" textAlign="center" tooltiptext="bind:CUST_NM"/>
+                      <Cell col="5" text="bind:CUST_TEL" calendardateformat="yyyy-MM-dd" textAlign="center"/>
+                      <Cell col="6" text="bind:OWN_NM" textAlign="center" tooltiptext="bind:OWN_NM"/>
+                      <Cell col="7" text="bind:FUNERAL_HALL" tooltiptext="bind:FUNERAL_HALL"/>
+                      <Cell col="8" text="bind:RCPT_USER" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" displaytype="combotext"/>
+                      <Cell col="9" text="bind:CONSULT_MEMO" tooltiptext="bind:CONSULT_MEMO" verticalAlign="top"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    VM > VM001_P02
+*  @FileName 	VM001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.08.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+var mode = this.getOwnerFrame().mode
+var preNo = this.getOwnerFrame().preNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	
+	//2개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = "20180101";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetComboData(obj,this.objApp.gds_user,"ds_userIn",this.Div_client.form.div_search.form.cmb_insrtUser,"",true,true);
+	
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	this.Div_client.form.div_search.form.cmb_insrtUser.set_index(0);
+	
+	this.efn_SetDatasetData2(this.ds_conType,this.objApp.gds_code2,'SO001');		// contype
+	this.efn_SetDatasetData2(this.ds_conChnl,this.objApp.gds_code2,'SO002');		// conchnl
+};
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.ds_cond.getColumn(0,"PRE_RCPT_NO");
+ 	var Arg_2 = this.ds_cond.getColumn(0,"RCPT_USER");
+	var Arg_3 = this.ds_cond.getColumn(0,"CUST_NM");
+	var Arg_4 = this.ds_cond.getColumn(0,"OWN_NM");
+	var Arg_5 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_6 = this.ds_cond.getColumn(0,"END_DATE");
+	var Arg_7 = this.ds_cond.getColumn(0,"HP");
+	var Arg_8 = this.ds_cond.getColumn(0,"CFM_YN");
+
+	
+	var id = "FM004_P01_S";
+	var url = "svcUrl::FM004_P01_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "PRE_RCPT_NO="+Arg_1+" RCPT_USER="+Arg_2+" CUST_NM="+Arg_3+" OWN_NM="+Arg_4+" START_DATE="+Arg_5+" END_DATE="+Arg_6+" HP="+Arg_7+" CFM_YN="+Arg_8+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var val = "";
+	val = this.ds_list.getColumn(this.ds_list.rowposition,"PRE_RCPT_NO")
+	val += ","+this.ds_list.getColumn(this.ds_list.rowposition,"SEQ")
+	val += ","+this.ds_list.getColumn(this.ds_list.rowposition,"ESTN_NO")
+
+	this.close(val);
+	
+// 	if (mode == "update")
+// 	{
+// 		var sPopupId  = "preUpdate_popup";
+// 		var sUrl      = "FM::FM001_P03.xfdl";
+// 		var oArg      = {preNo : preNo, preNo_out : preNo_out};
+// 		var sCallBack = "fn_popupCallback_preUpdate";
+// 		var oOption   = {title : "임종일시 입력"};
+// 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+// 	} else
+// 	{
+//		this.close(this.efn_jsonRtn(this.ds_list));
+//	}
+};
+
+// 사전상담 팝업 callback
+this.fn_popupCallback_preUpdate = function(sPopId, sRtn)
+{
+	var objRtn = JSON.parse(sRtn);
+	if (objRtn.SAVE_YN == "Y")
+	{
+		this.close(this.efn_jsonRtn(this.ds_list));
+	}
+}
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_btn_search();
+	}
+};
+
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="PRE_RCPT_NO" type="STRING" size="18"/>
+          <Column id="SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="RCPT_USER" type="STRING" size="20"/>
+          <Column id="RCPT_DT" type="DATETIME" size="23"/>
+          <Column id="CUST_NM" type="STRING" size="20"/>
+          <Column id="CUST_TEL" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="FUNERAL_HALL" type="STRING" size="200"/>
+          <Column id="DLVY_CD" type="STRING" size="20"/>
+          <Column id="DLVY_CHANGE_DT" type="DATETIME" size="23"/>
+          <Column id="REGION_SIDO" type="STRING" size="200"/>
+          <Column id="OWN_GENDER" type="STRING" size="20"/>
+          <Column id="OWN_REL" type="STRING" size="20"/>
+          <Column id="OWN_AGE" type="STRING" size="20"/>
+          <Column id="CUR_REGION" type="STRING" size="2000"/>
+          <Column id="CUR_RESIDENCE" type="STRING" size="20"/>
+          <Column id="CUR_ADDR" type="STRING" size="200"/>
+          <Column id="BASIC_LIVING" type="STRING" size="20"/>
+          <Column id="CUR_CONDITION" type="STRING" size="20"/>
+          <Column id="PA_PRE_NO" type="STRING" size="18"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="20"/>
+          <Column id="CONSULT_CHNL" type="STRING" size="20"/>
+          <Column id="CONSULT_DT" type="DATETIME" size="23"/>
+          <Column id="CONSULT_MEMO" type="STRING" size="1073741823"/>
+          <Column id="ESTN_NO" type="STRING" size="256"/>
+          <Column id="ESTN_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="PRE_RCPT_NO" type="STRING" size="256"/>
+          <Column id="RCPT_USER" type="STRING" size="256"/>
+          <Column id="CUST_NM" type="STRING" size="256"/>
+          <Column id="OWN_NM" type="STRING" size="256"/>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="HP" type="STRING" size="256"/>
+          <Column id="CFM_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="PRE_RCPT_NO"/>
+            <Col id="RCPT_USER"/>
+            <Col id="CUST_NM"/>
+            <Col id="OWN_NM"/>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="HP"/>
+            <Col id="CFM_YN"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_conType"/>
+      <Dataset id="ds_conChnl"/>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_cfmYn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">완료</Col>
+            <Col id="CODE_NAME">완료</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">미완료</Col>
+            <Col id="CODE_NAME">미완료</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="PRE_RCPT_NO"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.cmb_insrtUser" propid="value" datasetid="ds_cond" columnid="RCPT_USER"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item4" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono00_00" propid="value" datasetid="ds_cond" columnid="CUST_NM"/>
+      <BindItem id="item6" compid="Div_client.form.div_search.form.edt_sono00_00_00" propid="value" datasetid="ds_cond" columnid="OWN_NM"/>
+      <BindItem id="item5" compid="Div_client.form.div_search.form.edt_sono00_00_00_00" propid="value" datasetid="ds_cond" columnid="HP"/>
+      <BindItem id="item7" compid="Div_client.form.div_search.form.Radio00" propid="value" datasetid="ds_cond" columnid="CFM_YN"/>
+    </Bind>
+  </Form>
+</FDL>

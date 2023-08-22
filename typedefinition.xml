@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TypeDefinition version="2.3">
+  <Modules>
+    <Module url="CompBase.json"/>
+    <Module url="ComComp.json"/>
+    <Module url="Grid.json"/>
+    <Module url="ListView.json"/>
+    <Module url="DeviceAPI.json"/>
+    <Module url="Lib.json"/>
+    <Module url="crypto.json"/>
+  </Modules>
+  <Components>
+    <Component type="JavaScript" id="Button" classname="nexacro.Button"/>
+    <Component type="JavaScript" id="Combo" classname="nexacro.Combo"/>
+    <Component type="JavaScript" id="Edit" classname="nexacro.Edit"/>
+    <Component type="JavaScript" id="MaskEdit" classname="nexacro.MaskEdit"/>
+    <Component type="JavaScript" id="TextArea" classname="nexacro.TextArea"/>
+    <Component type="JavaScript" id="Static" classname="nexacro.Static"/>
+    <Component type="JavaScript" id="Div" classname="nexacro.Div"/>
+    <Component type="JavaScript" id="PopupDiv" classname="nexacro.PopupDiv"/>
+    <Component type="JavaScript" id="Radio" classname="nexacro.Radio"/>
+    <Component type="JavaScript" id="CheckBox" classname="nexacro.CheckBox"/>
+    <Component type="JavaScript" id="ListBox" classname="nexacro.ListBox"/>
+    <Component type="JavaScript" id="Grid" classname="nexacro.Grid"/>
+    <Component type="JavaScript" id="Spin" classname="nexacro.Spin"/>
+    <Component type="JavaScript" id="Menu" classname="nexacro.Menu"/>
+    <Component type="JavaScript" id="PopupMenu" classname="nexacro.PopupMenu"/>
+    <Component type="JavaScript" id="Tab" classname="nexacro.Tab"/>
+    <Component type="JavaScript" id="GroupBox" classname="nexacro.GroupBox"/>
+    <Component type="JavaScript" id="Calendar" classname="nexacro.Calendar"/>
+    <Component type="JavaScript" id="ImageViewer" classname="nexacro.ImageViewer"/>
+    <Component type="JavaScript" id="ProgressBar" classname="nexacro.ProgressBar"/>
+    <Component type="JavaScript" id="Plugin" classname="nexacro.Plugin"/>
+    <Component type="JavaScript" id="Dataset" classname="nexacro.NormalDataset"/>
+    <Component type="JavaScript" id="ListView" classname="nexacro.ListView"/>
+    <Component type="JavaScript" id="WebBrowser" classname="nexacro.WebBrowser"/>
+    <Component type="JavaScript" id="FileDialog" classname="nexacro.FileDialog"/>
+    <Component type="JavaScript" id="FileUpload" classname="nexacro.FileUpload"/>
+    <Component type="JavaScript" id="FileDownload" classname="nexacro.FileDownload"/>
+    <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
+    <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
+    <Component type="JavaScript" id="VirtualFile" classname="nexacro.VirtualFile"/>
+  </Components>
+  <Services>
+    <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
+    <Service prefixid="initvalue" type="resource" url="./_resource_/_initvalue_/" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="imagerc" type="resource" url="./_resource_/_images_/" cachelevel="session" include_subdir="true"/>
+    <Service prefixid="font" type="resource" url="./_resource_/_font_/" version="0" communicationversion="0" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="Base" type="form" cachelevel="session" url="./Base/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="FrameBase" type="form" cachelevel="session" url="./FrameBase/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Guide" type="form" cachelevel="session" url="./Guide/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Lib" type="form" cachelevel="session" url="./nexacro17lib/component/Lib/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Comm" type="form" cachelevel="session" url="./Comm/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="MM" type="form" url="./MM/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="SO" type="form" cachelevel="session" url="./SO/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="svcUrl" type="JSP" cachelevel="none" url="http://localhost:8080/web/FrontControllerServlet.do?service=xupservice&amp;format=xml&amp;version=xplatform&amp;domain=xup&amp;model=/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="dsLayout" type="bs" cachelevel="none" url="182.162.91.66:\8081\" service_list="/serviceInfo?target=modelList" dataset_layout="/serviceInfo?target=modelLayout" version="0" communicationversion="0" dataset_url="dsLayout.xds" include_subdir="false"/>
+    <Service prefixid="svc_prod" type="JSP" cachelevel="none" url="182.162.91.66:\8081\" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="svc_file" type="JSP" cachelevel="session" url="182.162.91.66:\8081\" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="crypto" type="form" cachelevel="session" url="./nexacro17lib/component/CryptoJS/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="svc_api" type="none" cachelevel="session" url="./API/ExtCommonAPI/Output/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="JSP" type="file" cachelevel="none" url="http://182.162.91.66:8081\web\nui\jsp\" include_subdir="true" version="0" communicationversion="0"/>
+    <Service prefixid="VM" type="form" url="./VM/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="FM" type="form" url="./FM/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="RD" type="form" url="./RD/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="ES" type="form" url="./ES/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="CM" type="form" url="./CM/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="SA" type="form" url="./SA/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="TM" type="form" url="./TM/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="PR" type="form" url="./PR/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="DJ" type="form" url="./DJ/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+  </Services>
+  <Protocols/>
+  <Update>
+    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+      <Version name="common">
+        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="0" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
+      </Version>
+    </Os>
+  </Update>
+  <Deploy>
+    <Os name="Windows"/>
+  </Deploy>
+</TypeDefinition>

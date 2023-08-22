@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Comm_Address" width="450" height="60" titletext="New Form" onload="testPop_onload">
+    <Layouts>
+      <Layout height="60" mobileorientation="landscape" width="450">
+        <WebBrowser id="WebBrowser00" taborder="0" left="5" top="1" width="433" height="55" onusernotify="WebBrowser00_onusernotify"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.post = "";
+this.addr1 = "";
+this.addr2 = "";
+this.parentForm = "";
+this.pRow = "";
+
+this.testPop_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.pRow = this.parent.pvarg;
+	//this.WebBrowser00.set_url("http://211.106.159.87:8080/PMS/API/daumAddress.html");
+	//this.WebBrowser00.set_url("http://172.10.13.54:8080/nex/post.jsp");
+	this.parentForm = this.opener;
+};
+
+this.WebBrowser00_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{
+	var addData = e.userdata.split(",");
+
+	if(addData.length > 1){
+		this.post = addData[0];
+		this.addr1 = addData[1];
+		this.addr2 = addData[2];
+				
+		this.parentForm.Dataset00.setColumn(this.pRow,"Column0",this.addr1);
+		this.parentForm.Dataset00.setColumn(this.pRow,"Column1",this.post);
+	}
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+]]></Script>
+  </Form>
+</FDL>

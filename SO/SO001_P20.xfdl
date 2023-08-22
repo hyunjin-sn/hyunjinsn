@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P20" width="1400" height="600" titletext="New Form" onload="SO001_P20_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1400">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list03_00" taborder="1" scrolltype="both" minwidth="" left="10" right="560" top="80" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncellclick="Div_client_grd_list03_00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="99"/>
+                      <Column size="165"/>
+                      <Column size="70"/>
+                      <Column size="144"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="품목코드"/>
+                      <Cell col="1" text="품명"/>
+                      <Cell col="2" text="창고코드"/>
+                      <Cell col="3" text="창고"/>
+                      <Cell col="4" text="14"/>
+                      <Cell col="5" text="15"/>
+                      <Cell col="6" text="16"/>
+                      <Cell col="7" text="17"/>
+                      <Cell col="8" text="18"/>
+                      <Cell col="9" text="19"/>
+                      <Cell col="10" text="20"/>
+                      <Cell col="11" text="Total"/>
+                      <Cell col="12" text="안전"/>
+                      <Cell col="13" text="부족"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="1" text="bind:ITEM_NM" textAlign="center"/>
+                      <Cell col="2" text="bind:SL_CD" textAlign="center"/>
+                      <Cell col="3" text="bind:SL_NM"/>
+                      <Cell col="4" text="bind:Y14" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="5" text="bind:Y15" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="6" text="bind:Y16" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="7" text="bind:Y17" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="8" text="bind:Y18" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="9" text="bind:Y19" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="10" text="bind:Y20" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="11" text="bind:SUM_QTY" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="12" text="bind:SS_QTY" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="13" text="bind:MINUS_QTY" displaytype="mask" maskeditformat="##,###"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static03" taborder="2" text="품목코드" left="0" top="16" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_itemCd" taborder="3" left="102" top="16" width="150" height="21" onkeyup="Div_client_edt_itemCd_onkeyup"/>
+              <Static id="Static03_00" taborder="4" text="품목명" left="280" top="16" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_itemNm" taborder="5" left="382" top="16" width="458" height="21" readonly="true"/>
+              <Static id="Static03_00_00" taborder="6" text="출고일자" left="870" top="16" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Calendar id="C_date" taborder="7" left="969" top="16" width="121" height="21"/>
+              <Static id="Static03_01" taborder="8" text="창고코드" left="0" top="46" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_poBpCd" taborder="9" left="102" top="46" width="150" height="21" onkeyup="Div_client_edt_itemCd_onkeyup"/>
+              <Static id="Static03_00_01" taborder="10" text="창고명" left="280" top="46" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_poBpNm" taborder="11" left="382" top="46" width="458" height="21" readonly="true"/>
+              <Calendar id="C_date00" taborder="12" left="1119" top="16" width="121" height="21"/>
+              <Static id="Static01" taborder="13" text="~" left="1101" top="11" width="10" height="29"/>
+              <Grid id="grd_list03_00_00" taborder="14" scrolltype="both" minwidth="" left="860" right="15" top="80" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list2">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="95"/>
+                      <Column size="144"/>
+                      <Column size="144"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="재고현황"/>
+                      <Cell col="1" colspan="4" text="출고현황"/>
+                      <Cell row="1" text="바코드번호"/>
+                      <Cell row="1" col="1" text="바코드번호"/>
+                      <Cell row="1" col="2" text="출고일자"/>
+                      <Cell row="1" col="3" text="주문번호"/>
+                      <Cell row="1" col="4" text="배송지"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:A_LOT_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:B_LOT_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:ACTUAL_GI_DT" textAlign="center" displaytype="date" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="3" text="bind:SO_NO"/>
+                      <Cell col="4" text="bind:DLVY_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  item 재고 팝업
+*  @MenuPath    SO > SO0001_P20
+*  @FileName 	SO0001_P20.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.06.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var itemCd = this.getOwnerFrame().itemCd
+var itemNm = this.getOwnerFrame().itemNm
+var poBpCd = this.getOwnerFrame().poBpCd
+var poBpNm = this.getOwnerFrame().poBpNm
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P20_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div_client.form.edt_itemCd.set_value(itemCd);
+	this.Div_client.form.edt_itemNm.set_value(itemNm);
+	this.Div_client.form.edt_poBpCd.set_value(poBpCd);
+	this.Div_client.form.edt_poBpNm.set_value(poBpNm);
+	
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	this.Div_client.form.C_date.set_value(fDate);
+	this.Div_client.form.C_date00.set_value(sDate);
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	var args1 = this.Div_client.form.edt_itemCd.value;
+	var args2 = this.Div_client.form.edt_poBpCd.value;
+	
+	// 재고조회
+	var id = "SO001_P20_S01";
+	var url = "svcUrl::SO001_P20_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "p_item_cd="+args1+" p_sl_cd="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	this.fn_detailSearch();
+}
+
+this.fn_detailSearch = function ()
+{
+	var args1 = this.ds_list.getColumn(this.ds_list.rowposition,"ITEM_CD");
+	var args2 = this.ds_list.getColumn(this.ds_list.rowposition,"SL_CD");
+	var args3 = this.Div_client.form.C_date.value;
+	var args4 = this.Div_client.form.C_date00.value;
+	
+	// 재고조회
+	var id = "SO001_P20_S02";
+	var url = "svcUrl::SO001_P20_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list";
+	var args = "p_item_cd="+args1+" p_sl_cd="+args2+" START_DATE="+args3+" END_DATE="+args4+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div_client_grd_list03_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.fn_detailSearch();
+};
+
+this.Div_client_edt_itemCd_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}	
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="SL_CD" type="STRING" size="20"/>
+          <Column id="MINOR_CD" type="STRING" size="10"/>
+          <Column id="Y14" type="INT" size="11"/>
+          <Column id="Y15" type="INT" size="11"/>
+          <Column id="Y16" type="INT" size="11"/>
+          <Column id="Y17" type="INT" size="11"/>
+          <Column id="Y18" type="INT" size="11"/>
+          <Column id="Y19" type="INT" size="11"/>
+          <Column id="Y20" type="INT" size="11"/>
+          <Column id="SS_QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SL_NM" type="STRING" size="40"/>
+          <Column id="MINUS_QTY" type="BIGDECIMAL" size="21"/>
+          <Column id="SUM_QTY" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list2">
+        <ColumnInfo>
+          <Column id="A_LOT_NO" type="STRING" size="20"/>
+          <Column id="B_LOT_NO" type="STRING" size="20"/>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="DLVY_NM" type="STRING" size="100"/>
+          <Column id="ACTUAL_GI_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.edt_itemCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.edt_itemNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item2" compid="Div_client.form.edt_poBpCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item3" compid="Div_client.form.edt_poBpNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

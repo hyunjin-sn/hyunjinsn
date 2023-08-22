@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="TM015" width="1668" height="840" titletext="New Form" onload="TM015_onload">
+    <Layouts>
+      <Layout height="840" mobileorientation="landscape" width="1668">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Div id="Div00_00" taborder="2" text="Div00" left="10" top="60" height="772" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="Div00" taborder="4" text="Div00" left="0" top="0" width="550" bottom="0">
+                <Layouts>
+                  <Layout>
+                    <Grid id="grd_list00" taborder="0" scrolltype="both" minwidth="" top="38" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" onselectchanged="Tab00_Tabpage1_grd_list00_onselectchanged" cellsizingtype="col" extendsizetype="none" summarytype="top" onkeydown="Div00_00_grd_list00_onkeydown" oncellclick="Div00_00_grd_list00_oncellclick" binddataset="" left="0" right="10" bottom="1">
+                      <Formats>
+                        <Format id="default">
+                          <Columns>
+                            <Column size="42"/>
+                            <Column size="66"/>
+                            <Column size="70"/>
+                            <Column size="70"/>
+                            <Column size="151"/>
+                          </Columns>
+                          <Rows>
+                            <Row size="24" band="head"/>
+                            <Row size="24" band="head"/>
+                            <Row size="24"/>
+                          </Rows>
+                          <Band id="head">
+                            <Cell rowspan="2" text="순번"/>
+                            <Cell col="1" rowspan="2" text="정산년월"/>
+                            <Cell col="2" rowspan="2" text="의전본부"/>
+                            <Cell col="3" rowspan="2" text="의전팀장"/>
+                            <Cell col="4" rowspan="2" text="매입처"/>
+                          </Band>
+                          <Band id="body">
+                            <Cell textAlign="center" text="expr:currow+1"/>
+                            <Cell col="1" text="bind:ITEM_GRP" textAlign="center" combodataset="ds_itemGrp" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top" displaytype="combotext"/>
+                            <Cell col="2" text="bind:ITEM_DIV" textAlign="center" combodataset="ds_itemDiv" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top" displaytype="combotext"/>
+                            <Cell col="3" text="bind:ITEM_CD" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top"/>
+                            <Cell col="4" text="bind:ITEM_CD" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top"/>
+                          </Band>
+                        </Format>
+                      </Formats>
+                    </Grid>
+                    <Button id="btn_addfile" taborder="1" left="387" top="5" text="행추가" cssclass="btn_WF_main1" width="70" height="21" visible="true" onclick="Div00_Tab00_Tabpage1_btn_addfile_onclick"/>
+                    <Button id="btn_delfile" taborder="2" left="469" top="5" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" visible="true" onclick="Div00_Tab00_Tabpage1_btn_delfile_onclick"/>
+                    <Static id="Static05_00_00" taborder="3" text="정산리스트" top="2" width="116" height="24" cssclass="sta_WF_title" left="10"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="Div00_00" taborder="1" text="Div00" left="566" top="1" height="770" right="10">
+                <Layouts>
+                  <Layout>
+                    <Static id="sta_21_00" taborder="51" left="724" top="1" height="29" cssclass="sta_WF_detailLine" width="358"/>
+                    <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="43" left="94" top="57" height="29" cssclass="sta_WF_detailLine" width="988"/>
+                    <Static id="Static05_00_00" taborder="0" text="행사내역" left="7" top="218" width="97" height="24" cssclass="sta_WF_title"/>
+                    <Grid id="grd_list00_00" taborder="1" scrolltype="both" minwidth="" left="0" top="248" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="223" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" binddataset="ds_list_3" right="0">
+                      <Formats>
+                        <Format id="default">
+                          <Columns>
+                            <Column size="54"/>
+                            <Column size="115"/>
+                            <Column size="280"/>
+                            <Column size="58"/>
+                            <Column size="261"/>
+                            <Column size="68"/>
+                            <Column size="58"/>
+                            <Column size="117"/>
+                            <Column size="114"/>
+                          </Columns>
+                          <Rows>
+                            <Row size="24" band="head"/>
+                            <Row size="24"/>
+                          </Rows>
+                          <Band id="head">
+                            <Cell text="순번"/>
+                            <Cell col="1" text="주문번호"/>
+                            <Cell col="2" text="고객사명"/>
+                            <Cell col="3" text="고객명"/>
+                            <Cell col="4" text="상품명"/>
+                            <Cell col="5" text="의전본부"/>
+                            <Cell col="6" text="의전팀장"/>
+                            <Cell col="7" text="행사장소"/>
+                            <Cell col="8" text="경조사유"/>
+                          </Band>
+                          <Band id="body">
+                            <Cell text="expr:currow+1" textAlign="center"/>
+                            <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                            <Cell col="2" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                            <Cell col="3" text="bind:OWN_NM" textAlign="center" tooltiptext="bind:OWN_NM"/>
+                            <Cell col="4" text="bind:ITEM_NM" tooltiptext="bind:ITEM_NM"/>
+                            <Cell col="5" text="bind:PO_BP_NM" textAlign="center" tooltiptext="bind:PO_BP_NM"/>
+                            <Cell col="6" text="bind:EMP_NM" textAlign="center" tooltiptext="bind:EMP_NM"/>
+                            <Cell col="7" text="bind:DLVY_NM" tooltiptext="bind:DLVY_NM"/>
+                            <Cell col="8" text="bind:HS_NM" tooltiptext="bind:HS_NM"/>
+                          </Band>
+                        </Format>
+                      </Formats>
+                    </Grid>
+                    <Static id="Static05_00_00_00" taborder="2" text="추가판매내역" left="2" top="487" width="97" height="24" cssclass="sta_WF_title"/>
+                    <Grid id="grd_list00_00_00" taborder="3" scrolltype="both" minwidth="" left="0" top="522" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="248" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" binddataset="ds_list_4" right="0" summarytype="top">
+                      <Formats>
+                        <Format id="default">
+                          <Columns>
+                            <Column size="47"/>
+                            <Column size="102"/>
+                            <Column size="100"/>
+                            <Column size="204"/>
+                            <Column size="63"/>
+                            <Column size="72"/>
+                            <Column size="235"/>
+                            <Column size="70"/>
+                            <Column size="70"/>
+                            <Column size="41"/>
+                            <Column size="70"/>
+                          </Columns>
+                          <Rows>
+                            <Row size="40" band="head"/>
+                            <Row size="24"/>
+                            <Row size="24" band="summ"/>
+                          </Rows>
+                          <Band id="head">
+                            <Cell text="순번"/>
+                            <Cell col="1" text="주문번호"/>
+                            <Cell col="2" text="구분"/>
+                            <Cell col="3" text="고객사명"/>
+                            <Cell col="4" text="고객명"/>
+                            <Cell col="5" text="품목코드"/>
+                            <Cell col="6" text="품목명"/>
+                            <Cell col="7" text="배부&#13;&#10;판매금액"/>
+                            <Cell col="8" text="배부&#13;&#10;매입금액"/>
+                            <Cell col="9" text="이익율"/>
+                            <Cell col="10" text="이익금"/>
+                          </Band>
+                          <Band id="body">
+                            <Cell text="expr:currow+1" textAlign="center"/>
+                            <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                            <Cell col="2" text="bind:CODE_NAME" tooltiptext="bind:CODE_NAME"/>
+                            <Cell col="3" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                            <Cell col="4" text="bind:own_nm" textAlign="center"/>
+                            <Cell col="5" text="bind:ITEM_CD" textAlign="center"/>
+                            <Cell col="6" text="bind:ITEM_NM" tooltiptext="bind:ITEM_NM"/>
+                            <Cell col="7" text="bind:AMT2"/>
+                            <Cell col="8" text="bind:PURCHASE_AMT2"/>
+                            <Cell col="9" text="bind:PO_RATE"/>
+                            <Cell col="10" text="bind:PO_PROFIT"/>
+                          </Band>
+                          <Band id="summary">
+                            <Cell colspan="10" text="합   계   " textAlign="right"/>
+                            <Cell col="10" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;PO_PROFIT&quot;)"/>
+                          </Band>
+                        </Format>
+                      </Formats>
+                    </Grid>
+                    <Static id="Static05_00" taborder="4" text="정산정보입력" left="6" top="2" width="97" height="24" cssclass="sta_WF_title"/>
+                    <Edit id="edt_usr1" taborder="5" left="0" top="183" width="103" height="21" readonly="true"/>
+                    <Static id="Static31" taborder="6" text="PKG" left="0" top="127" width="205" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02" taborder="7" text="건수" left="0" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02_00" taborder="8" text="초과수당" left="102" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_03" taborder="9" text="1일근무 + 배송료 + 탁송료" left="204" top="127" width="205" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02_00_00" taborder="10" text="초과수당" left="306" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02_01" taborder="11" text="건수" left="204" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02_00_00_00" taborder="12" text="초과수당" left="510" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_03_00" taborder="13" text="입관비" left="408" top="127" width="205" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_02_01_00" taborder="14" text="건수" left="408" top="155" width="103" cssclass="sta_WF_detailLabel" height="29" padding="2px" textAlign="center"/>
+                    <Static id="Static31_03_00_00" taborder="15" text="추가판매" left="612" top="127" width="103" cssclass="sta_WF_detailLabel" height="57" padding="2px" textAlign="center"/>
+                    <Static id="Static31_03_00_00_00" taborder="16" text="기타수당" left="714" top="127" width="103" cssclass="sta_WF_detailLabel" height="57" padding="2px" textAlign="center"/>
+                    <Static id="Static31_03_00_00_00_00" taborder="17" text="합계" left="816" top="127" width="109" cssclass="sta_WF_detailLabel" height="57" padding="2px" textAlign="center"/>
+                    <Edit id="edt_usr1_00" taborder="18" left="102" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00" taborder="19" left="204" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_01" taborder="20" left="306" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_01_00" taborder="21" left="408" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_01_00_00" taborder="22" left="510" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_01_01" taborder="23" left="612" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_02" taborder="24" left="714" top="183" width="103" height="21" readonly="true"/>
+                    <Edit id="edt_usr1_00_00_01_00_00_00" taborder="25" left="816" top="183" width="109" height="21" readonly="true"/>
+                    <Static id="Static23" taborder="26" text="정산년월" left="0" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                    <Static id="sta_21" taborder="27" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="983"/>
+                    <Static id="Static23_00" taborder="28" text="의전본부" left="216" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                    <Combo id="cmb_soStatus00" taborder="29" left="321" top="33" width="107" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_poBp" enable="true"/>
+                    <Combo id="cmb_soStatus00_00" taborder="30" left="537" top="33" width="107" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_poBp" enable="true"/>
+                    <Static id="Static23_00_00" taborder="31" text="의전팀장" left="432" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                    <Button id="btn_delfile00" taborder="32" left="1007" top="5" text="가져오기" cssclass="btn_WF_main1" width="66" height="21" visible="true" onclick="Div00_Tab00_Tabpage1_btn_delfile_onclick"/>
+                    <Static id="Static23_00_00_00" taborder="33" text="매입처" left="648" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                    <Combo id="cmb_soStatus00_00_00" taborder="34" left="753" top="33" width="324" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_poBp" enable="true"/>
+                    <Calendar id="txt_BaseMonth" taborder="35" top="33" height="21" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" width="109" left="103"/>
+                    <Static id="Static05_00_01" taborder="36" text="정산정보요약" left="6" top="96" width="97" height="24" cssclass="sta_WF_title"/>
+                    <Static id="Static31_01_01" taborder="37" text="차량랩핑비" left="0" top="57" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                    <MaskEdit id="MaskEdit00" taborder="38" left="105" top="61" width="107" height="21" format="##,###"/>
+                    <Static id="Static31_01_01_00" taborder="39" text="유류비" left="216" top="57" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                    <MaskEdit id="MaskEdit00_01" taborder="40" left="321" top="61" width="107" height="21" format="##,###"/>
+                    <Static id="Static31_01_01_00_00" taborder="41" text="개인유치수당" left="432" top="57" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                    <MaskEdit id="MaskEdit00_01_00" taborder="42" left="537" top="61" width="107" height="21" format="##,###"/>
+                    <Static id="Static31_01_01_00_00_00" taborder="44" text="전월조정분" left="648" top="57" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                    <MaskEdit id="MaskEdit00_01_00_00" taborder="45" left="753" top="61" width="107" height="21" format="##,###"/>
+                    <Static id="Static31_01_01_00_00_00_00" taborder="46" text="기타" left="865" top="57" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                    <MaskEdit id="MaskEdit00_01_00_00_00" taborder="47" left="970" top="61" width="107" height="21" format="##,###"/>
+                    <Calendar id="cal_startDate" taborder="48" left="753" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Calendar id="cal_endDate" taborder="49" left="878" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="50" text="~" left="866" top="1" width="10" height="29"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="div_search" taborder="3" left="10" top="10" height="40" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01_00" taborder="0" text="정산년월" left="-2" top="7" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Calendar id="txt_BaseMonth" taborder="1" top="8" height="21" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" width="125" left="98"/>
+              <Static id="Static00_02" taborder="2" text="의전본부" left="267" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_soStatus" taborder="3" left="373" top="9" width="120" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_poBp" enable="true"/>
+              <Static id="Static00_00_00_00_00_00" taborder="4" text="의전팀장" left="540" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_soldToNm00_00_00_00" taborder="5" left="642" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00_00_00_00_00_00" taborder="6" text="매입처" left="770" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_soStatus00" taborder="7" left="872" top="9" width="120" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_company" enable="true"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static23_00_00_00" taborder="4" text="기간" left="1224" top="62" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="YM" type="STRING" size="256"/>
+          <Column id="PO_BP_CD" type="STRING" size="256"/>
+          <Column id="M_NOSS" type="STRING" size="256"/>
+          <Column id="PURCHASE_COMPANY" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="YM"/>
+            <Col id="PO_BP_CD"/>
+            <Col id="M_NOSS"/>
+            <Col id="PURCHASE_COMPANY"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_poBp"/>
+      <Dataset id="ds_company"/>
+      <Dataset id="ds_list_1"/>
+      <Dataset id="ds_list_2"/>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="PO_BP_NM" type="STRING" size="200"/>
+          <Column id="EMP_NM" type="STRING" size="30"/>
+          <Column id="DLVY_NM" type="STRING" size="100"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="M_BOSS" type="STRING" size="20"/>
+          <Column id="CNT" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_4">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="PO_BP_NM" type="STRING" size="500"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="CODE_NAME" type="STRING" size="500"/>
+          <Column id="own_nm" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="AMT2" type="BIGDECIMAL" size="18"/>
+          <Column id="PURCHASE_AMT2" type="BIGDECIMAL" size="40"/>
+          <Column id="PO_RATE" type="BIGDECIMAL" size="17"/>
+          <Column id="PO_PROFIT" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.TextArea00_00_00" propid="value" datasetid="ds_list_1" columnid="MSG_MEMO"/>
+      <BindItem id="item2" compid="div_search.form.txt_BaseMonth" propid="value" datasetid="ds_cond" columnid="YM"/>
+      <BindItem id="item0" compid="div_search.form.cmb_soStatus" propid="value" datasetid="ds_cond" columnid="PO_BP_CD"/>
+      <BindItem id="item3" compid="div_search.form.cmb_soStatus00" propid="value" datasetid="ds_cond" columnid="PURCHASE_COMPANY"/>
+      <BindItem id="item4" compid="div_search.form.edt_soldToNm00_00_00_00" propid="value" datasetid="ds_cond" columnid="M_NOSS"/>
+      <BindItem id="item5" compid="Div00_00_00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item6" compid="Div00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item7" compid="Div00_00_00.form.edt_mRoomNo" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item8" compid="Div00_00_00.form.edt_mRoomNo00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item9" compid="Div00_00_00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item10" compid="Div00_00.form.Div00_00.form.edt_usr1" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item11" compid="Div00_00.form.Div00_00.form.edt_usr1_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item12" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item14" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_01" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item15" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_01_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item16" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item19" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_01_01" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item20" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_02" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item21" compid="Div00_00.form.Div00_00.form.edt_usr1_00_00_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item22" compid="Div00_00.form.Div00_00.form.txt_BaseMonth" propid="value" datasetid="ds_cond" columnid="YM"/>
+      <BindItem id="item13" compid="Div00_00.form.Div00_00.form.MaskEdit00" propid="value" datasetid="ds_list_5" columnid="G_PAY_AMT"/>
+      <BindItem id="item17" compid="Div00.form.MaskEdit00_01" propid="value" datasetid="ds_list_5" columnid="F_PAY_AMT"/>
+      <BindItem id="item18" compid="Div00.form.MaskEdit00_01_00" propid="value" datasetid="ds_list_5" columnid="D_PAY_AMT"/>
+      <BindItem id="item23" compid="Div00.form.MaskEdit00_00" propid="value" datasetid="ds_list_5" columnid="DLVY_AMT"/>
+      <BindItem id="item24" compid="Div00.form.MaskEdit00_00_00" propid="value" datasetid="ds_list_5" columnid="STO_AMT"/>
+      <BindItem id="item25" compid="Div00.form.MaskEdit00_00_00_00" propid="value" datasetid="ds_list_5" columnid="ACTIVE_AMT"/>
+      <BindItem id="item26" compid="Div00_00.form.Div00_00.form.MaskEdit00_01" propid="value" datasetid="ds_list_5" columnid="F_PAY_AMT"/>
+      <BindItem id="item27" compid="Div00_00.form.Div00_00.form.MaskEdit00_01_00" propid="value" datasetid="ds_list_5" columnid="D_PAY_AMT"/>
+      <BindItem id="item28" compid="Div00_00.form.Div00_00.form.MaskEdit00_01_00_00" propid="value" datasetid="ds_list_5" columnid="D_PAY_AMT"/>
+      <BindItem id="item29" compid="Div00_00.form.Div00_00.form.MaskEdit00_01_00_00_00" propid="value" datasetid="ds_list_5" columnid="D_PAY_AMT"/>
+      <BindItem id="item30" compid="Div00_00.form.Div00_00.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item31" compid="Div00_00.form.Div00_00.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    의전관리 > 직영 인센티브 등록
+*  @FileName 	TM0015.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.03.03
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.TM015_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	var sDate = this.gfn_getDate().substr(0,6);
+	
+	this.div_search.form.txt_BaseMonth.set_value(sDate);
+	
+	var id = "TM014_S01_P01";
+	var url = "svcUrl::TM014_S01_P01";
+	var inDs = "";
+	var outDs = "ds_poBp=ds_poBp";
+	var args = "USR_ID="+"220023"+"";
+	var callBackid = "fn_aftersearchComm";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+
+	if (deptCd.substr(0,1) != "C")
+	{
+		this.ds_poBp.insertRow(0);
+		this.ds_poBp.setColumn(0,"BP_CD","-999");
+		this.ds_poBp.setColumn(0,"BP_NM","전체");
+		this.div_search.form.cmb_soStatus.set_index(0);
+		this.div_search.form.cmb_soStatus.set_enable(true);
+	} else
+	{
+		this.ds_cond.setColumn(this.ds_cond.rowposition,"PO_BP_CD",deptCd);
+	}
+	
+	var id = "TM004_S01_P01";
+	var url = "svcUrl::TM004_S01_P01";
+	var inDs = "";
+	var outDs = "ds_company=ds_company";
+	var args = "USR_ID="+"220023"+"";
+	var callBackid = "fn_aftersearchComm2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_aftersearchComm2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.fn_search = function (contNo, hsType, itemCd)
+{
+	var Arg_1 = "";
+	var Arg_2 = "";
+		
+	if (this.gfn_isNull(contNo) || this.gfn_isNull(hsType) || this.gfn_isNull(itemCd))
+	{
+		Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+		Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+		Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD");
+	} else
+	{
+		Arg_1 = contNo;
+		Arg_2 = hsType;
+		Arg_3 = itemCd;
+	}	
+	
+	if (this.gfn_isNull(Arg_1))
+	{
+		this.alert("계약번호를 선택하세요.");
+		return;
+	}
+	
+	if (this.gfn_isNull(Arg_3))
+	{
+		this.alert("품목코드를 선택하세요.");
+		return;
+	}
+	
+	var id = "CM004_S01";
+	var url = "svcUrl::CM004_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "CONT_NO="+Arg_1+" HS_TYPE="+Arg_2+" ITEM_CD="+Arg_3+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.Div00_Tab00_Tabpage1_btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id = "TM015_S01";
+	var url = "svcUrl::TM015_S01";
+	var inDs = "";
+	var outDs = "ds_list_3=ds_list_3 ds_list_4=ds_list_4";
+	var args = "START_DATE="+"20220301"+" END_DATE="+"20220331"+" PO_BP_CD="+"C1091"+" EMP_CD="+"F1016"+" PURCHASE_COMPANY="+"C2035"+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+]]></Script>
+  </Form>
+</FDL>

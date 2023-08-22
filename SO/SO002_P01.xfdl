@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO002_P01" width="1361" height="400" titletext="New Form" onload="SO002_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1361">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="1" left="0" top="39" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Button id="btn_add_memo" taborder="2" text="추가" top="15" width="45" height="24" visible="true" onclick="fn_addBtnClick_2" cssclass="btn_WF_main1" right="120"/>
+              <Button id="btn_del_memo" taborder="3" text="삭제" top="15" width="45" height="24" visible="true" onclick="fn_delBtnClick_2" cssclass="btn_WF_main1" right="65"/>
+              <Button id="btn_del_memo00" taborder="4" text="저장" top="15" width="45" height="24" visible="true" cssclass="btn_WF_main1" right="11" onclick="Div_client_btn_del_memo00_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grd_list01" taborder="1" scrolltype="both" minwidth="" top="49" bottom="10" left="11" autoenter="select" selecttype="cell" summarytype="default" binddataset="ds_list" right="10" oncelldblclick="grd_list01_oncelldblclick" autosizingtype="row" extendsizetype="row" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="130"/>
+                <Column size="84"/>
+                <Column size="159"/>
+                <Column size="930"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="77"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="작성일자"/>
+                <Cell col="1" text="작성자"/>
+                <Cell col="2" text="메모구분"/>
+                <Cell col="3" text="내용"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:INSRT_DT" calendardateformat="yyyy-MM-dd HH:mm:ss" calendardisplaynulltype="none" textAlign="center"/>
+                <Cell col="1" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" combotype="filterlike" text="bind:INSRT_USER_ID" displaytype="combotext"/>
+                <Cell col="2" combodataset="ds_tab_div10" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike" displaytype="combocontrol" edittype="combo" text="bind:MEMO_DIV"/>
+                <Cell col="3" text="bind:MEMO" textAlign="left" maskeditformat="###.##" displaytype="textareacontrol" edittype="textarea"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P11
+*  @FileName 	SO0001_P11.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.06
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+var mode = this.getOwnerFrame().mode
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO002_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	this.efn_SetDatasetData(this.ds_tab_div10,this.objApp.gds_code,'ZZ104');		// 메모 구분
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	if (mode == "V")
+	{
+		this.Div_client.form.btn_add_memo.set_visible(false);
+		this.Div_client.form.btn_del_memo.set_visible(false);
+		this.Div_client.form.btn_del_memo00.set_visible(false);
+	}
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = soNo;
+	
+	// 상차지점 조회
+	var id = "SO002_P01";
+	var url = "svcUrl::SO002_P01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "SO_NO="+args1+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.06
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.Div_client_div_search_edt_bpCd_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+this.fn_addBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var dte = this.gfn_getDate();
+	
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"INSRT_USER_ID",regUser);
+	this.ds_list.setColumn(this.ds_list.rowposition, "INSRT_DT", dte)
+};
+
+this.fn_delBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	if (regUser == "210001" || regUser == "220023" || regUser == "219017")
+	{
+		this.ds_list.deleteRow(this.ds_list.rowposition);
+	} else
+	{
+		this.alert("삭제 권한이 없습니다. 센터장님께 문의 바랍니다.")
+	}
+};
+
+this.Div_client_btn_del_memo00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var args1 = soNo;	
+	
+	var id = "SO002_P01_M01";
+	var url = "svcUrl::SO002_P01_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" UPDT_USER_ID="+regUser+" SO_NO="+args1+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);		
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.")
+	this.fn_search();
+}
+
+this.grd_list01_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (!this.gfn_isNull(soNo))
+	{
+		this.close(this.efn_jsonRtn(this.ds_list));
+	}	
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MEMO_ID" type="INT" size="10"/>
+          <Column id="SO_NO" type="STRING" size="100"/>
+          <Column id="MEMO_DIV" type="STRING" size="100"/>
+          <Column id="MEMO" type="STRING" size="500"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="100"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDATE_USER_ID" type="STRING" size="100"/>
+          <Column id="UPDATE_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_tab_div10"/>
+    </Objects>
+  </Form>
+</FDL>

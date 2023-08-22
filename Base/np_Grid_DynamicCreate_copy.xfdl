@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="grid_DynamicCreate" left="0" top="0" width="1024" height="768" titletext="Dynamic Create">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Create" position="absolute" onclick="Button00_onclick" left="21" top="36" width="135" height="36"/>
+        <Static id="Static02" text="Creating dynamic grid using script" position="absolute" left="15" top="12" width="628" height="18" cssclass="sta_WF_subtitP" onclick="Static02_onclick"/>
+        <Button id="Button01" taborder="2" text="Button01" left="890" top="70" width="120" height="50" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_test1" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function (obj:Button, e:ClickEventInfo)
+{
+	var objGrid = new Grid();
+	objGrid.init("GridNm", 37, 100, 650, 352,null,null);
+	
+	// Add Object to Parent Form
+	this.addChild("Grid02", objGrid);
+
+	objGrid.createFormat();
+
+	// Show Object 
+	objGrid.show();
+
+	// Create dataset 
+	var objDs = new Dataset();
+	objDs.set_name("ds_test");
+	
+	// Add Object to Parent Form
+	this.addChild("ds_test",objDs);	 
+
+	objDs.addColumn("no", "string");
+	objDs.addColumn("name", "string");
+	objDs.addColumn("age", "int");
+	objDs.addColumn("no2", "string");
+	objDs.addColumn("name2", "string");
+	objDs.addColumn("age2", "int");
+	
+	// Dataset Data Input
+	for (var i = 0; i < 5; i++) 
+	{
+		var nRow = objDs.addRow();
+
+		objDs.setColumn(nRow, "no", i);
+		objDs.setColumn(nRow, "name", 'employ_' + i);
+		objDs.setColumn(nRow, "age", (10 + i));
+		objDs.setColumn(nRow, "no2", i);
+		objDs.setColumn(nRow, "name2", 'employ_' + i);
+		objDs.setColumn(nRow, "age2", (10 + i));
+	}
+	
+    objGrid.set_binddataset(objDs);
+
+	objGrid.appendContentsRow("head");
+	objGrid.appendContentsRow("body");
+	objGrid.appendContentsRow("summ");
+
+	// Col Generation
+	// Append one column by default from  appendContentsRow()
+	
+	for( var j=0; j<objDs.getColCount()-1; j++){	//appendContentsRow로 인해 column 하나가 생성되므로 colCount-1 만큼 loop
+	
+		objGrid.appendContentsCol();
+	}
+	
+	// Col Size Setting
+	for( var p=0; p<objDs.getColCount(); p++){
+	
+		objGrid.setFormatColProperty(p, "size", 100);
+	}
+	
+	// band setting by cell properties
+	for (var r = 0; r < objDs.getColCount(); r++) 
+	{
+		var colinfo = objDs.getColumnInfo(r);
+		objGrid.setCellProperty("head", r, "text", colinfo.name);
+		objGrid.setCellProperty("body", r, "text", "bind:" + colinfo.name);
+		if (r == 2) 
+		{
+			objGrid.setCellProperty("summ", r, "text", "expr:dataset.getSum('" + colinfo.name + "')");
+		}
+		else if(r == 1)
+		{
+			objGrid.setCellProperty("summ", r, "text", "total");
+		}
+	}
+	//trace(objDs.saveXML());
+}
+
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	trace(this.ds_test.saveXML());
+};
+]]></Script>
+  </Form>
+</FDL>

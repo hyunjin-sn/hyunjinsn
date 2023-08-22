@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P01" width="491" height="411" titletext="New Form" onload="FM003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="411" mobileorientation="landscape" width="491">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="408" right="2">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Button id="btn_search" taborder="0" text="조회" top="7" width="45" height="24" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1" left="413"/>
+                    <Static id="Static00_01" taborder="1" text="접수일시" left="7" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="2" left="112" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Calendar id="cal_endDate" taborder="3" left="237" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static01" taborder="4" text="~" left="225" top="4" width="10" height="29"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" left="10" right="11" top="60" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="44"/>
+                      <Column size="238"/>
+                      <Column size="59"/>
+                      <Column size="125"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="45"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="접수내용"/>
+                      <Cell col="2" text="등록자"/>
+                      <Cell col="3" text="등록일시"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:REMARK"/>
+                      <Cell col="2" text="bind:INSRT_USER_ID" textAlign="center"/>
+                      <Cell col="3" text="bind:INSRT_DT" calendardisplaynulltype="none" textAlign="center" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  이장개장 상담조회 팝업
+*  @MenuPath    DJ > DJ001_P01
+*  @FileName 	VM001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.11.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	
+	//2개월 이전
+	var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	//var fDate = "20220201";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.Div_client.form.div_search.form.cal_startDate.value
+	var Arg_2 = this.Div_client.form.div_search.form.cal_endDate.value
+
+	
+	var id = "SO001_P30_S";
+	var url = "svcUrl::SO001_P30_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="2000"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item4" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+    </Bind>
+  </Form>
+</FDL>

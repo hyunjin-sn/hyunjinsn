@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SA001" width="1500" height="600" titletext="New Form" onload="SA001_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="90" right="10" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="multiarea" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col" oncellclick="Div_client_grd_list_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="55"/>
+                      <Column size="63"/>
+                      <Column size="64"/>
+                      <Column size="95"/>
+                      <Column size="68"/>
+                      <Column size="214"/>
+                      <Column size="70"/>
+                      <Column size="100"/>
+                      <Column size="100"/>
+                      <Column size="57"/>
+                      <Column size="123"/>
+                      <Column size="80"/>
+                      <Column size="221"/>
+                      <Column size="80"/>
+                      <Column size="131"/>
+                      <Column size="63"/>
+                      <Column size="59"/>
+                      <Column size="93"/>
+                      <Column size="248"/>
+                      <Column size="65"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="68"/>
+                      <Column size="56"/>
+                      <Column size="80"/>
+                      <Column size="100"/>
+                      <Column size="92"/>
+                      <Column size="80"/>
+                      <Column size="236"/>
+                      <Column size="57"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="55"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="96"/>
+                      <Column size="96"/>
+                      <Column size="80"/>
+                      <Column size="104"/>
+                      <Column size="80"/>
+                      <Column size="65"/>
+                      <Column size="146"/>
+                      <Column size="180"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell colspan="7" text="기본정보"/>
+                      <Cell col="7" colspan="18" text="출하현황"/>
+                      <Cell col="25" colspan="10" text="매출현황"/>
+                      <Cell col="35" colspan="6" text="FSMS 매출"/>
+                      <Cell col="41" colspan="2" text="SORS 개인결제현황"/>
+                      <Cell col="43" colspan="3" text="매출확인"/>
+                      <Cell col="46" colspan="6" text="점검현황"/>
+                      <Cell row="1" text="순번"/>
+                      <Cell row="1" col="1" text="대상년월"/>
+                      <Cell row="1" col="2" text="수주형태"/>
+                      <Cell row="1" col="3" text="주문번호"/>
+                      <Cell row="1" col="4" text="고객사코드"/>
+                      <Cell row="1" col="5" text="고객사명"/>
+                      <Cell row="1" col="6" text="대상자"/>
+                      <Cell row="1" col="7" text="주문일"/>
+                      <Cell row="1" col="8" text="출고일"/>
+                      <Cell row="1" col="9" text="경조코드"/>
+                      <Cell row="1" col="10" text="경조사유"/>
+                      <Cell row="1" col="11" text="배송지코드"/>
+                      <Cell row="1" col="12" text="배송지명"/>
+                      <Cell row="1" col="13" text="창고코드"/>
+                      <Cell row="1" col="14" text="창고명"/>
+                      <Cell row="1" col="15" text="법인/개인"/>
+                      <Cell row="1" col="16" text="유무상"/>
+                      <Cell row="1" col="17" text="품목코드"/>
+                      <Cell row="1" col="18" text="품목명"/>
+                      <Cell row="1" col="19" text="출하수량"/>
+                      <Cell row="1" col="20" text="출하단가"/>
+                      <Cell row="1" col="21" text="출하금액" textAlign="center"/>
+                      <Cell row="1" col="22" text="부가세타입"/>
+                      <Cell row="1" col="23" text="부가세율"/>
+                      <Cell row="1" col="24" text="부가세금액"/>
+                      <Cell row="1" col="25" text="매출일자"/>
+                      <Cell row="1" col="26" text="매출번호"/>
+                      <Cell row="1" col="27" text="매출업체코드"/>
+                      <Cell row="1" col="28" text="매출업체명"/>
+                      <Cell row="1" col="29" text="매출수량"/>
+                      <Cell row="1" col="30" text="매출단가"/>
+                      <Cell row="1" col="31" text="매출금액"/>
+                      <Cell row="1" col="32" text="부가세타입"/>
+                      <Cell row="1" col="33" text="부가세율"/>
+                      <Cell row="1" col="34" text="부가세금액"/>
+                      <Cell row="1" col="35" text="매출유형"/>
+                      <Cell row="1" col="36" text="법인매출"/>
+                      <Cell row="1" col="37" text="실비청구여부"/>
+                      <Cell row="1" col="38" text="개인결제대상"/>
+                      <Cell row="1" col="39" text="고객결제"/>
+                      <Cell row="1" col="40" text="의전정산매출"/>
+                      <Cell row="1" col="41" text="결제완료금액"/>
+                      <Cell row="1" col="42" text="확인필요금액"/>
+                      <Cell row="1" col="43" text="매출대상금액(A)"/>
+                      <Cell row="1" col="44" text="매출대상금액(B)"/>
+                      <Cell row="1" col="45" text="차이(A)-(B)"/>
+                      <Cell row="1" col="46" text="청구대상"/>
+                      <Cell row="1" col="47" text="청구금액"/>
+                      <Cell row="1" col="48" text="분류코드"/>
+                      <Cell row="1" col="49" text="분류명"/>
+                      <Cell row="1" col="50" text="비고"/>
+                      <Cell row="1" col="51" text="점검자"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:YYYYMM" textAlign="center"/>
+                      <Cell col="2" text="bind:SO_TYPE_NM" textAlign="center"/>
+                      <Cell col="3" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="4" text="bind:SHIP_TO_PARTY" textAlign="center"/>
+                      <Cell col="5" text="bind:BP_NM"/>
+                      <Cell col="6" text="bind:OWN_NM" textAlign="center"/>
+                      <Cell col="7" text="bind:SO_DT" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="8" text="bind:ACTUAL_GI_DT" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="9" text="bind:HS_CD" textAlign="center"/>
+                      <Cell col="10" text="bind:HS_NM"/>
+                      <Cell col="11" text="bind:DLVY_CD" textAlign="center"/>
+                      <Cell col="12" text="bind:DLVY_NM"/>
+                      <Cell col="13" text="bind:SL_CD" textAlign="center"/>
+                      <Cell col="14" text="bind:SL_NM"/>
+                      <Cell col="15" text="bind:DEAL_TYPE" textAlign="center"/>
+                      <Cell col="16" text="bind:PAY_DIV" textAlign="center"/>
+                      <Cell col="17" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="18" text="bind:ITEM_NM"/>
+                      <Cell col="19" text="bind:GI_QTY" textAlign="center"/>
+                      <Cell col="20" text="bind:PRICE" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="21" text="bind:GI_AMT_LOC" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="22" text="bind:VAT_TYPE" textAlign="center"/>
+                      <Cell col="23" text="bind:VAT_RATE" textAlign="center"/>
+                      <Cell col="24" text="bind:VAT_AMT" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="25" text="bind:BILL_DT" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="26" text="bind:BILL_NO" textAlign="center"/>
+                      <Cell col="27" text="bind:BILL_TO_PARTY" textAlign="center"/>
+                      <Cell col="28" text="bind:BP_NM1"/>
+                      <Cell col="29" text="bind:BILL_QTY" textAlign="center"/>
+                      <Cell col="30" text="bind:BILL_PRICE" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="31" text="bind:BILL_AMT_LOC" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="32" text="bind:BILL_VAT_TYPE" textAlign="center"/>
+                      <Cell col="33" text="bind:BILL_VAT_RATE" textAlign="center"/>
+                      <Cell col="34" text="bind:BILL_VAT_AMT" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="35" text="bind:AD_CD"/>
+                      <Cell col="36" text="bind:COM_AMT" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="37" text="bind:REAL_CHK" textAlign="center"/>
+                      <Cell col="38" text="bind:PSN_AMT_1" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="39" text="bind:PSN_AMT_2" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="40" text="bind:TOTAL_AMT2" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="41" text="bind:BILL_AMT_1" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="42" text="bind:BILL_AMT_2" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="43" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="bind:TARGET_AMT"/>
+                      <Cell col="44" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="bind:REAL_AMT"/>
+                      <Cell col="45" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="bind:DIFF_AMT"/>
+                      <Cell col="46" text="bind:PAY_YN" displaytype="combocontrol" edittype="combo" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_yn" background="yellow"/>
+                      <Cell col="47" text="bind:AMT" displaytype="mask" edittype="mask" textAlign="right" maskeditformat="##,##0" background="yellow"/>
+                      <Cell col="48" text="bind:DIV" background="yellow" combodataset="ds_div_code" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="center"/>
+                      <Cell col="49" text="bind:DIV" background="yellow" combodataset="ds_div_code" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="50" text="bind:REMARK" displaytype="text" edittype="text" background="yellow" textAlign="left"/>
+                      <Cell col="51" text="bind:UPDT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00" taborder="2" text="매출 진행현황" left="12" top="54" width="97" height="24" cssclass="sta_WF_title"/>
+              <Div id="div_search" taborder="3" left="0" top="10" height="34" right="19" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="txt_BaseMonth" taborder="1" top="6" height="20" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" width="125" left="93"/>
+                    <Static id="Static03_00" taborder="2" text="고객사" left="250" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="3" left="352" top="6" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static03_00_00" taborder="4" text="대상자" left="520" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00" taborder="5" left="622" top="6" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static03_00_00_00" taborder="6" text="품목" left="800" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00_00" taborder="7" left="902" top="6" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Radio id="Radio00" taborder="8" left="1198" top="4" width="280" height="25" innerdataset="ds_div2" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" onitemchanged="Div_client_div_search_Radio00_onitemchanged"/>
+                    <Static id="Static03_00_00_00_00" taborder="9" text="매출구분" left="1080" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  손익관리분석 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.05
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SA001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this._gfnGridcellFix(this.Div_client.form.grd_list, 6);
+	
+	//var sDate = this.gfn_getDate().substr(0,6)-1;
+	var sDate = "202205"
+	this.Div_client.form.div_search.form.Radio00.set_index(0);
+	
+	this.efn_SetDatasetData2(this.ds_yn,this.objApp.gds_code2,'SA001');		// VOC내용
+	this.efn_SetDatasetData2(this.ds_div_code,this.objApp.gds_code2,'SA002');		// VOC내용
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	this.Div_client.form.div_search.form.txt_BaseMonth.set_value(sDate);
+	
+	//this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{		
+	var args1 = this.Div_client.form.div_search.form.txt_BaseMonth.value;
+	var args2 = this.Div_client.form.div_search.form.Radio00.value;
+	
+	// 조회
+	var id = "SA004_S01";
+	var url = "svcUrl::SA004_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "YYYYMM="+args1+" DIV="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.fn_save = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	// 등록
+	var id = "SA004_M01";
+	var url = "svcUrl::SA004_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_afterSve";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+};
+
+ this.fn_afterSve = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	this.alert("저장 되었습니다.");
+	
+	this.ds_list.setColumn(this.ds_list.rowposition,"UPDT_USER_ID",regUser);
+	this.ds_list.setColumn(this.ds_list.rowposition,"MG_NO2",this.ds_list.getColumn(this.ds_list.rowposition,"MG_NO"));
+	this.ds_list.setColumn(this.ds_list.rowposition,"REG_YN","Y");
+	//this.fn_search();
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+};
+
+this.Div_client_div_search_Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="YYYYMM" type="STRING" size="10"/>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="SO_TYPE" type="STRING" size="20"/>
+          <Column id="SO_TYPE_NM" type="STRING" size="20"/>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="SO_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="SO_DT" type="DATETIME" size="23"/>
+          <Column id="DN_NO" type="STRING" size="20"/>
+          <Column id="DN_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="ACTUAL_GI_DT" type="DATETIME" size="23"/>
+          <Column id="SHIP_TO_PARTY" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="HS_CD" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="20"/>
+          <Column id="DLVY_CD" type="STRING" size="20"/>
+          <Column id="DLVY_NM" type="STRING" size="200"/>
+          <Column id="SL_CD" type="STRING" size="20"/>
+          <Column id="SL_NM" type="STRING" size="100"/>
+          <Column id="DEAL_TYPE" type="STRING" size="20"/>
+          <Column id="PAY_DIV" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="GI_QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="GI_AMT_LOC" type="BIGDECIMAL" size="17"/>
+          <Column id="VAT_TYPE" type="STRING" size="20"/>
+          <Column id="VAT_RATE" type="BIGDECIMAL" size="17"/>
+          <Column id="VAT_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_DT" type="DATETIME" size="23"/>
+          <Column id="BILL_NO" type="STRING" size="20"/>
+          <Column id="BILL_TO_PARTY" type="STRING" size="20"/>
+          <Column id="BP_NM1" type="STRING" size="200"/>
+          <Column id="BILL_QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_AMT_LOC" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_VAT_TYPE" type="STRING" size="20"/>
+          <Column id="BILL_VAT_RATE" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_VAT_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="AD_CD" type="STRING" size="20"/>
+          <Column id="COM_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="REAL_CHK" type="STRING" size="20"/>
+          <Column id="PSN_AMT_1" type="BIGDECIMAL" size="17"/>
+          <Column id="PSN_AMT_2" type="BIGDECIMAL" size="17"/>
+          <Column id="TOTAL_AMT2" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_AMT_1" type="BIGDECIMAL" size="17"/>
+          <Column id="BILL_AMT_2" type="BIGDECIMAL" size="17"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="MG_NO2" type="STRING" size="20"/>
+          <Column id="PAY_YN" type="STRING" size="20"/>
+          <Column id="AMT" type="BIGDECIMAL" size="20"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="500"/>
+          <Column id="INSRT_USER_ID2" type="STRING" size="13"/>
+          <Column id="INSRT_DT2" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="REG_YN" type="STRING" size="1"/>
+          <Column id="TARGET_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="REAL_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="DIFF_AMT" type="BIGDECIMAL" size="17"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_yn"/>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_div_code"/>
+      <Dataset id="ds_div2">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">정상</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">차이</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.txt_BaseMonth" propid="value" datasetid="ds_costM" columnid="YM"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.edt_sono00_00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+    </Bind>
+  </Form>
+</FDL>

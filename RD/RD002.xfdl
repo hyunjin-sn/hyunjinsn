@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="RD001" width="1400" height="797" titletext="New Form" onload="RD001_onload">
+    <Layouts>
+      <Layout height="797" mobileorientation="landscape" width="1400">
+        <Static id="sta_01_00_00_00" taborder="37" left="640" top="111" height="29" cssclass="sta_WF_detailLine" width="750"/>
+        <Static id="sta_24_02" taborder="36" left="637" top="167" height="29" cssclass="sta_WF_detailLine" width="753"/>
+        <Static id="sta_01_00_00" taborder="20" left="640" top="83" height="29" cssclass="sta_WF_detailLine" width="750"/>
+        <Static id="sta_24_00" taborder="11" left="637" top="223" height="408" cssclass="sta_WF_detailLine" width="753"/>
+        <Static id="sta_24" taborder="9" left="637" top="139" height="29" cssclass="sta_WF_detailLine" width="753"/>
+        <Static id="Static05" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="81"/>
+        <Static id="Static08" taborder="1" cssclass="sta_WF_guideRed" visible="false" text="w&#13;&#10;10" width="10" height="710" right="0" top="0"/>
+        <Static id="Static09" taborder="2" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="10" text="w&#13;&#10;10"/>
+        <Static id="Static10" taborder="3" cssclass="sta_WF_guideRed" visible="false" text="h10" right="91" bottom="0" width="1189" height="10"/>
+        <Static id="Static14" taborder="4" top="17" height="20" color="#fd0112" textAlign="right" width="22" left="1078"/>
+        <Grid id="Grid02" taborder="5" left="0" top="0" width="0" selecttype="cell" autofittype="col" bottom="720" autoenter="select" oncellclick="Grid02_oncellclick" binddataset="">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="71"/>
+                <Column size="97"/>
+                <Column size="67"/>
+                <Column size="156"/>
+                <Column size="179"/>
+                <Column size="54"/>
+                <Column size="155"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="29" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="구분"/>
+                <Cell col="1" text="프로젝트 번호"/>
+                <Cell col="2" text="조사방법"/>
+                <Cell col="3" text="조사설명"/>
+                <Cell col="4" text="프로젝트명"/>
+                <Cell col="5" text="시간(분)"/>
+                <Cell col="6" text="비고"/>
+                <Cell col="7" text="프로젝트&#13;&#10;기준"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:GBN1" displaytype="combotext" edittype="none" combodataset="ds_abcgbn1" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                <Cell col="1" text="bind:PROJECT_NO" textAlign="center"/>
+                <Cell col="2" text="bind:SURVEY_CODE" textAlign="center" combodataset="ds_survey" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
+                <Cell col="3" text="bind:DESCRIPTION" textAlign="center" combodataset="ds_survey" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                <Cell col="4" text="bind:PROJECT_TITLE" tooltiptext="bind:PROJECT_TITLE"/>
+                <Cell col="5" text="bind:MIN_TIME" edittype="mask" maskeditformat="##,###" displaytype="maskeditcontrol"/>
+                <Cell col="6" edittype="text" displaytype="editcontrol"/>
+                <Cell col="7" text="적용" edittype="button" displaytype="buttoncontrol"/>
+              </Band>
+              <Band id="summary">
+                <Cell colspan="5" text="합 계" textAlign="center"/>
+                <Cell col="5" colspan="3">
+                  <Cell displaytype="mask" text="expr:dataset.getSum(&quot;MIN_TIME&quot;)" maskeditformat="##,###"/>
+                  <Cell col="1" colspan="2" text=" 분"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="6" left="10" top="82" width="520" oncelldblclick="Grid01_oncelldblclick" autofittype="col" height="705" binddataset="ds_list_1" oncellclick="Grid01_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="90"/>
+                <Column size="96"/>
+                <Column size="293"/>
+              </Columns>
+              <Rows>
+                <Row size="36" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="회의실"/>
+                <Cell col="2" text="일자"/>
+                <Cell col="3" text="제목"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow + 1" textAlign="center"/>
+                <Cell col="1" text="bind:MT_ROOM" textAlign="left" displaytype="combotext" combodataset="ds_room2" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                <Cell col="2" text="bind:MT_DT" textAlign="center" calendardisplaynulltype="none"/>
+                <Cell col="3" text="bind:MT_TITLE" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static11_00" taborder="7" text="목록" left="10" top="48" width="97" height="30" cssclass="sta_WF_title"/>
+        <Static id="Static19" taborder="8" text="작성자" left="546" top="139" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <Static id="Static19_00" taborder="10" text="내용" left="546" top="223" width="100" cssclass="sta_WF_detailLabel" height="408"/>
+        <TextArea id="TextArea00" taborder="12" top="227" height="399" left="651" width="734"/>
+        <Static id="Static11_00_00_01" taborder="13" text="회의내용" left="544" top="48" width="97" height="30" cssclass="sta_WF_title"/>
+        <Div id="div_search" taborder="14" left="10" top="10" height="31" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01" taborder="0" text="기간" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Calendar id="cal_startDate" taborder="1" left="98" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static01" taborder="2" text="~" left="211" top="1" width="10" height="29"/>
+              <Calendar id="cal_endDate" taborder="3" left="223" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static12" taborder="15" text="회의 첨부파일" left="546" top="641" width="150" height="24" cssclass="sta_WF_title"/>
+        <Div id="div_mCombo8" taborder="21" text="Div00" left="650" top="171" width="737" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="USR_ID" combodatacolumn="USR_NM" comboinnerdataset="ds_user" callbackfunc="fn_mComboCallback"/>
+        <Grid id="Grid00_00" taborder="16" left="550" top="673" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" autofittype="col" height="114" width="840">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="492"/>
+                <Column size="130"/>
+                <Column size="70"/>
+                <Column size="70"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="파일명"/>
+                <Cell col="2" text="등록일"/>
+                <Cell col="3" text="파일찾기"/>
+                <Cell col="4" text="다운"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" textAlign="center"/>
+                <Cell col="1" text="bind:FILENAME" textAlign="left" tooltiptext="bind:FILENAME"/>
+                <Cell col="2" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                <Cell col="3" displaytype="buttoncontrol" text="파일찾기"/>
+                <Cell col="4" text="다운로드" displaytype="buttoncontrol"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_addfile" taborder="17" left="1234" top="643" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="btn_addfile_onclick"/>
+        <Button id="btn_delfile" taborder="18" left="1316" top="643" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="btn_delfile_onclick"/>
+        <Static id="Static04_00_00_02_00" taborder="19" text="참석자" left="546" top="167" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Static id="Static19_01" taborder="22" text="회의번호" left="546" top="83" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <Edit id="edt_title00" taborder="23" left="651" top="87" width="132" height="21" enable="true" readonly="true" displaynulltext="자동 저장됩니다."/>
+        <Static id="sta_24_01" taborder="24" left="637" top="195" height="29" cssclass="sta_WF_detailLine" width="753"/>
+        <Static id="Static19_02" taborder="25" text="제목" left="546" top="195" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <Edit id="edt_title01" taborder="26" left="651" top="199" width="734" height="21" enable="true" readonly="false"/>
+        <Calendar id="cal_startDate" taborder="27" left="893" top="143" width="132" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+        <Static id="Static04_00_00_02_00_00" taborder="28" text="참석자" left="788" top="83" width="1" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Static id="Static04_00_00_02_00_01" taborder="29" text="회의실" left="546" top="111" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Combo id="cmb_meth" taborder="30" left="650" top="115" width="133" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick"/>
+        <Static id="Static19_03" taborder="31" text="회의일자" left="788" top="139" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <Combo id="cmb_meth00" taborder="32" left="650" top="143" width="133" height="21" text="선택" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true" innerdataset="ds_user"/>
+        <Static id="Static01" taborder="33" text="~" left="1133" top="139" width="10" height="29"/>
+        <Calendar id="txt_Month" taborder="34" left="1034" top="143" width="88" height="21" editformat="HH:mm" type="spin" showmonthspin="false" onkeyup="div_search_txt_Month_onkeyup" dateformat="HH:mm" autoselect="true"/>
+        <Calendar id="txt_Month00" taborder="35" left="1154" top="143" width="88" height="21" editformat="HH:mm" type="spin" showmonthspin="false" onkeyup="div_search_txt_Month_onkeyup" dateformat="HH:mm" autoselect="true"/>
+        <Static id="Static04_00_00_02_00_02" taborder="38" text="프로젝트" left="788" top="111" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Div id="div_mCombo8_00" taborder="39" text="Div00" left="892" top="115" width="494" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_pjt" callbackfunc="fn_mComboCallback1"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="MT_NO" type="STRING" size="18"/>
+          <Column id="MT_DT" type="DATETIME" size="23"/>
+          <Column id="MT_S_TIME" type="STRING" size="256"/>
+          <Column id="MT_E_TIME" type="STRING" size="256"/>
+          <Column id="MT_ROOM" type="STRING" size="20"/>
+          <Column id="MT_SIGNEE" type="STRING" size="20"/>
+          <Column id="MT_TITLE" type="STRING" size="20"/>
+          <Column id="MT_WRITER" type="STRING" size="20"/>
+          <Column id="MT_RESULT" type="STRING" size="1000"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="EXT1_CD" type="STRING" size="20"/>
+          <Column id="EXT2_CD" type="STRING" size="20"/>
+          <Column id="EXT3_CD" type="STRING" size="20"/>
+          <Column id="EXT1_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT1_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="PJT_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_file">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="RND_NO" type="STRING" size="18"/>
+          <Column id="SEQ" type="INT" size="11"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="REAL_FILENAME" type="STRING" size="200"/>
+          <Column id="FILENAME" type="STRING" size="200"/>
+          <Column id="FILE_SIZE" type="STRING" size="200"/>
+          <Column id="FILE_PATH" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <FileDialog id="FileDialog00" onclose="FileDialog00_onclose"/>
+      <FileUpTransfer id="FileUpTransfer00" onsuccess="FileUpTransfer00_onsuccess" onerror="FileUpTransfer00_onerror"/>
+      <FileDownTransfer id="FileDownTransfer00" onsuccess="FileDownTransfer00_onsuccess" onerror="FileDownTransfer00_onerror"/>
+      <Dataset id="ds_room2"/>
+      <Dataset id="ds_pjt"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  수발주현황 조회
+*  @MenuPath    RD > RD001
+*  @FileName 	RD001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.10.05
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.RD001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_setCal();
+	
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-31);
+	
+	this.div_search.form.cal_startDate.set_value(fDate);
+	this.div_search.form.cal_endDate.set_value(sDate);
+};
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{	
+	this.objApp.gds_user.filter("DEPT_CD == 'H1410' || DEPT_CD == 'H1420' || DEPT_CD == 'H1430' || DEPT_CD == 'H1000' || DEPT_CD == 'H1400'");
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	this.objApp.gds_user.filter("");
+	
+	this.div_mCombo8.form.fn_setDataset(this.ds_user);
+	
+	
+	this.efn_SetDatasetData2(this.ds_room2,this.objApp.gds_code2,'RD003');		// VOC내용
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_room",this.cmb_meth,"MAJOR_CODE=='RD003'",false,false);	// 회의실
+	
+	this.efn_SetDatasetData2(this.ds_pjt,this.objApp.gds_code2,'RD001');		// VOC내용
+	this.div_mCombo8_00.form.fn_setDataset(this.ds_pjt);
+};
+
+// 조회
+this.fn_search = function ()
+{
+	var Arg_1 = this.div_search.form.cal_startDate.value;
+	var Arg_2 = this.div_search.form.cal_endDate.value;
+	
+	var id = "RD002_S01";
+	var url = "svcUrl::RD002_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var sign = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_SIGNEE");
+	var pjtId = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PJT_ID");
+
+	this.div_mCombo8.form.set_value(sign);
+	this.div_mCombo8_00.form.set_value(pjtId);
+	
+	var mtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_NO"); 
+	
+	var id = "RD002_S02";
+	var url = "svcUrl::RD002_S02";
+	var inDs = "";
+	var outDs = "ds_file=ds_file";
+	var args = "MT_NO="+mtNo+"";
+	var callBackid = "fn_afterFileSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+}
+
+this.fn_afterFileSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+// 신규입력
+this.fn_add = function ()
+{
+	var sDate = this.gfn_getDate();
+	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	// 데이터  초기화
+	this.ds_file.clearData();
+	this.div_mCombo8.form.set_value("");
+	
+	this.ds_list_1.addRow();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MT_WRITE",reguser);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MT_DT",sDate);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"INSRT_USER_ID",reguser);
+	this.div_mCombo8.form.set_value(reguser);
+};
+
+// 저장
+this.fn_save = function ()
+{	
+	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "RD002_M01";
+	var url = "svcUrl::RD002_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+reguser+"";
+	var callBackid = "fn_filesave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 저장 콜백
+this.fn_filesave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var mtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_NO");
+	
+	// 첨부파일 저장
+	var id = "RD002_M02";
+	var url = "svcUrl::RD002_M02";
+	var inDs = "ds_file=ds_file:U";
+	var outDs = "";
+	var args = "MT_NO="+mtNo+" INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.fn_search();
+	this.alert("저장 되었습니다.");
+}
+
+// 멀티 콤보
+this.fn_mComboCallback = function ()
+{
+	var val = this.div_mCombo8.form.get_value();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MT_SIGNEE",val);
+};
+
+// 멀티 콤보
+this.fn_mComboCallback1 = function ()
+{
+	var val = this.div_mCombo8_00.form.get_value();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PJT_ID",val);
+};
+
+
+this.btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_NO")))
+	{
+		this.alert("회의록 저장 후 파일첨부 하세요.");
+		return;
+	}
+	this.ds_file.addRow();
+};
+
+// 첨부파일 삭제
+this.btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_file.deleteRow(this.ds_file.rowposition);
+};
+
+// 첨부파일 그리드 클릭 이벤트
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 3)
+	{
+		this.FileUpTransfer00.clearFileList();
+		this.FileDialog00.open("FileUPload Dialog", 3);
+	}
+	
+	if (e.col == 4)
+	{
+		var file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH").replace(/\\/gi,"/");
+		var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+		var r_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+		
+		var file_url = "http://182.162.91.66:8081/web/"+file_path+r_file_name+file_name.substring(file_name.lastIndexOf("."));
+	
+		this.FileDownTransfer00.set_downloadfilename( file_name ); 
+		this.FileDownTransfer00.download(file_url);
+	}
+};
+
+this.FileDialog00_onclose = function(obj:nexacro.FileDialog,e:nexacro.FileDialogEventInfo)
+{
+	//trace( "FileDialog00_onclose//////"+obj.name+"_"+e.eventid );
+	//trace(e.virtualfiles.length);
+	for (var i = 0, len = e.virtualfiles.length, vFile; i < len; i++)
+	{
+		vFile = e.virtualfiles[i];
+		
+		this.FileUpTransfer00.addFile("file0"+i,vFile);
+		
+		vFile.addEventHandler("onsuccess", this.FileDialog_VirtualFile_onsuccess, this);
+		vFile.addEventHandler("onerror", this.FileDialog_VirtualFile_onerror, this);
+		vFile.open(null, 1);
+		
+		//this._vFiles.push(vFile);
+	}
+
+};
+
+this.FileDialog_VirtualFile_onerror = function(obj, e)
+{
+	//trace( obj.name+"_"+e.eventid );
+	//trace( "e.statuscode:"+e.statuscode );
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.")
+}
+this.FileDialog_VirtualFile_onsuccess = function(obj, e)
+{
+	//trace("FileDialog_VirtualFile_onsuccess init");
+	var size_table = ["KB", "MB", "GB", "TB", "PB"];
+	
+	function cutFileSize(filesize, rate, count)
+	{
+		var ret = (filesize / (Math.pow(rate, count + 1))).toFixed(2);
+		if (ret < rate)
+		{
+			if (size_table[count])
+			{
+				return ret + " " + size_table[count];
+			}
+			else
+			{
+				return filesize + " Byte";
+			}
+		}
+		else
+		{
+			return cutFileSize(filesize, rate, ++count);
+		}
+	};
+
+
+	if (e.reason == 1)
+	{
+		obj.getFileSize();
+	}
+	else if (e.reason == 9)
+	{
+		
+		var d = new Date();
+		
+		var yy = (new Date()).getYear();
+		var tmpStr = (new Date()).getTime();
+		tmpStr = ("0000000" + tmpStr.toString()).substr(-8);
+		var display_name = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_NO")+ "_"+tmpStr
+	
+		this.ds_file.setColumn(this.ds_file.rowposition, "REAL_FILENAME", display_name);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILENAME", obj.filename);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_SIZE", cutFileSize(e.filesize, Math.pow(2, 10), 0));
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_PATH", "nui\\uploadFiles\\"+yy+"\\RND_NOTE\\"+this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_NO")+"\\");
+		
+		this.fileSave();
+	}
+};
+
+
+this.FileUpTransfer00_onerror = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferErrorEventInfo)
+{
+	//trace("11 " +obj.name+"_"+e.eventid );
+	//trace(e.ErrorMsg);
+	//trace(e.errorobj);
+	//this.alert("업로드에 실패했습니다.\r\n다시시도 부탁드립니다.");
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.");
+};
+
+this.FileUpTransfer00_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferEventinfo)
+{
+	//trace("2 " + obj.name+"_"+e.eventid );
+	
+	this.fn_UploadSave();
+};
+
+this.fn_UploadSave = function(){
+	this.fn_save();
+}
+
+this.fileSave = function(){
+	var real_filename = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+	var real_file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH");
+
+	this.FileUpTransfer00.setPostData(
+		"filename",
+		real_filename
+	);
+
+	this.FileUpTransfer00.setPostData(
+		"filepath",
+		real_file_path
+	);
+	//trace("123123");
+
+	this.FileUpTransfer00.upload("JSP::fileUpload_postdatatest.jsp?PATH22="+real_file_path);
+}
+
+this.FileDownTransfer00_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferEventInfo)
+{
+	this.alert("정상적으로 다운로드 되었습니다.");
+};
+
+this.Grid01_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var sign = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MT_SIGNEE");
+	var pjtId = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PJT_ID");
+
+	this.div_mCombo8.form.set_value(sign);
+	this.div_mCombo8_00.form.set_value(pjtId);
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item1" compid="TextArea00" propid="value" datasetid="ds_list_1" columnid="MT_RESULT"/>
+      <BindItem id="item4" compid="Div00.form.MaskEdit01_00" propid="value" datasetid="ds_list" columnid="CONFIRM_DT"/>
+      <BindItem id="item2" compid="div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item3" compid="div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item0" compid="cal_startDate" propid="value" datasetid="ds_list_1" columnid="MT_DT"/>
+      <BindItem id="item5" compid="edt_title01" propid="value" datasetid="ds_list_1" columnid="MT_TITLE"/>
+      <BindItem id="item6" compid="edt_title00" propid="value" datasetid="ds_list_1" columnid="MT_NO"/>
+      <BindItem id="item7" compid="cmb_meth" propid="value" datasetid="ds_list_1" columnid="MT_ROOM"/>
+      <BindItem id="item8" compid="cmb_meth00" propid="value" datasetid="ds_list_1" columnid="INSRT_USER_ID"/>
+      <BindItem id="item9" compid="txt_Month" propid="value" datasetid="ds_list_1" columnid="MT_S_TIME"/>
+      <BindItem id="item10" compid="txt_Month00" propid="value" datasetid="ds_list_1" columnid="MT_E_TIME"/>
+    </Bind>
+  </Form>
+</FDL>

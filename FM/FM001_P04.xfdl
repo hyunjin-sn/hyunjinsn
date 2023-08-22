@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P02" width="841" height="400" titletext="New Form" onload="FM003_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="841">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" width="830" height="398">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <TextArea id="TextArea00" taborder="1" left="400" top="10" right="0" bottom="10"/>
+              <Grid id="Grid00" taborder="2" left="0" top="10" width="390" height="378" binddataset="ds_list" cellsizingtype="both" selecttype="cell" onkeydown="Div_client_Grid00_onkeydown" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="99"/>
+                      <Column size="115"/>
+                      <Column size="123"/>
+                      <Column size="64"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="접수번호"/>
+                      <Cell col="1" text="연락처"/>
+                      <Cell col="2" text="일시"/>
+                      <Cell col="3" text="발송자"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:MG_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:HP" textAlign="center"/>
+                      <Cell col="2" text="bind:INSRT_DT" textAlign="center" displaytype="mask" maskedittype="string" maskeditformat="####-##-## ##:##:##"/>
+                      <Cell col="3" text="bind:INSRT_USER" textAlign="center" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  문자발송내역 조회 팝업
+*  @MenuPath    FM > FM001_P04
+*  @FileName 	FM001_P04.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.10.30
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);
+	
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{
+	var id = "FM001_P04_S";
+	var url = "svcUrl::FM001_P04_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "PRE_RCPT_NO="+mgNo+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+this.Div_client_Grid00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="SEQ" type="INT" size="10"/>
+          <Column id="PRGR_ID" type="STRING" size="20"/>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="SN" type="INT" size="10"/>
+          <Column id="HP" type="STRING" size="20"/>
+          <Column id="SND_MSG" type="STRING" size="2000"/>
+          <Column id="INSRT_USER" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item0" compid="Div_client.form.TextArea00" propid="value" datasetid="ds_list" columnid="SND_MSG"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P07" width="1031" height="400" titletext="New Form" onload="SO001_P07_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1031">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="1" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="품목코드" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_itemCd" taborder="1" left="102" top="8" width="150" height="21" onkeyup="Div_client_div_search_edt_itemNm_onkeyup"/>
+                    <Button id="btn_search" taborder="3" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="4" text="품목명" left="252" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_itemNm" taborder="2" left="357" top="8" width="202" height="21" onkeyup="Div_client_div_search_edt_itemNm_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" left="10" right="10" top="60" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="126"/>
+                      <Column size="98"/>
+                      <Column size="361"/>
+                      <Column size="117"/>
+                      <Column size="53"/>
+                      <Column size="53"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="구분"/>
+                      <Cell col="2" text="품목코드"/>
+                      <Cell col="3" text="품목명"/>
+                      <Cell col="4" text="발주지점"/>
+                      <Cell col="5" text="재고"/>
+                      <Cell col="6" text="단위"/>
+                      <Cell col="7" text="금액"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:CHOICE_YN" textAlign="center"/>
+                      <Cell col="2" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="3" text="bind:ITEM_NM"/>
+                      <Cell col="4" text="bind:REGION_NM" textAlign="center"/>
+                      <Cell col="5" text="bind:INV_QTY" textAlign="center"/>
+                      <Cell col="6" text="bind:BASIC_UNIT" textAlign="center"/>
+                      <Cell col="7" text="bind:TOTAL_PRICE" displaytype="mask" maskeditformat="##,##0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0010_P02
+*  @FileName 	SO0010_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.04.22
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var contNo = this.getOwnerFrame().contNo
+var bpCd = this.getOwnerFrame().bpCd
+var subCode1 = this.getOwnerFrame().subCode1
+var subCode2 = this.getOwnerFrame().subCode2
+var subCode3 = this.getOwnerFrame().subCode3
+var hsCd = this.getOwnerFrame().hsCd
+var dlvyCd = this.getOwnerFrame().dlvyCd
+var mandatoryYn = this.getOwnerFrame().mandatoryYn
+var dealType = this.getOwnerFrame().dealType
+var caseNo = this.getOwnerFrame().caseNo
+var itemCd = this.getOwnerFrame().itemCd
+var poBpCd = this.getOwnerFrame().poBpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P07_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {		
+	var args1 = contNo;
+	var args2 = bpCd;
+	var args3 = subCode1;
+	var args4 = subCode2;
+	var args5 = subCode3;
+	var args6 = hsCd;
+	var args7 = dlvyCd;
+	var args8 = mandatoryYn;
+	var args9 = dealType;
+	var args10 = caseNo;
+	var args11= itemCd;
+	var args12= poBpCd;
+
+	// 상품 조회
+	var id = "SO010_P11";
+	var url = "svcUrl::SO010_P11";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "CONT_NO="+args1+" BP_CD="+args2+" SUB_CODE1="+args3+" SUB_CODE2="+args4+" SUB_CODE3="+args5+" HS_CODE="+args6+" DLVY_CD="+args7+" MANDATORY_YN="+args8+" DEAL_TYPE="+args9+" CASE_NO="+args10+" ITEM_CD="+args11+" PO_BP_CD="+args12+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function(strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return;
+	}
+}
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.04.07
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_div_search_edt_itemNm_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.ds_list.set_filterstr("");
+		var val = this.Div_client.form.div_search.form.edt_itemNm.value;
+		var val2 = this.Div_client.form.div_search.form.edt_itemCd.value;
+		
+		var filterstr = "";
+		
+		// 배송지
+		if(!this.gfn_isNull(val))
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "ITEM_NM.indexOf('"+val+"')!='-1'";
+			else
+				filterstr += " && ITEM_NM.indexOf('"+val+"')!='-1'";				
+		}
+		
+		// 배송지
+		if(!this.gfn_isNull(val2))
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "ITEM_CD.indexOf('"+val2+"')!='-1'";
+			else
+				filterstr += " && ITEM_CD.indexOf('"+val2+"')!='-1'";				
+		}
+		
+		this.ds_list.set_filterstr(filterstr);
+	}
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SPEC" type="STRING" size="100"/>
+          <Column id="BASIC_UNIT" type="STRING" size="3"/>
+          <Column id="MINOR_NM" type="STRING" size="200"/>
+          <Column id="_MINOR_NM" type="STRING" size="200"/>
+          <Column id="ITEM_GROUP_CD" type="STRING" size="10"/>
+          <Column id="ITEM_GROUP_NM" type="STRING" size="40"/>
+          <Column id="ITEM_IMAGE_FLG" type="STRING" size="1"/>
+          <Column id="FORMAL_NM" type="STRING" size="60"/>
+          <Column id="VALID_FROM_DT" type="DATETIME" size="23"/>
+          <Column id="VALID_TO_DT" type="DATETIME" size="23"/>
+          <Column id="PRICE_SO" type="BIGDECIMAL" size="20"/>
+          <Column id="PRICE_SO2" type="BIGDECIMAL" size="20"/>
+          <Column id="VAT_TYPE" type="STRING" size="256"/>
+          <Column id="VAT_RATE" type="STRING" size="256"/>
+          <Column id="ITEM_ACCT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_itemCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_itemNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+    </Bind>
+  </Form>
+</FDL>

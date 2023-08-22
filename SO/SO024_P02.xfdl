@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO024_P02" width="1071" height="232" titletext="New Form" onload="SO024_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="232" mobileorientation="landscape" width="1071">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="10" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" left="10" oncellclick="grd_list_oncellclick" top="9" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="181" autofittype="col" right="0">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="157"/>
+                      <Column size="80"/>
+                      <Column size="210"/>
+                      <Column size="76"/>
+                      <Column size="125"/>
+                      <Column size="125"/>
+                      <Column size="210"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="지점코드"/>
+                      <Cell col="1" text="지점명"/>
+                      <Cell col="2" text="품목코드"/>
+                      <Cell col="3" text="품목명"/>
+                      <Cell col="4" text="안전재고"/>
+                      <Cell col="5" text="시작일"/>
+                      <Cell col="6" text="종료일"/>
+                      <Cell col="7" text="사유"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM" textAlign="center" tooltiptext="bind:BP_NM"/>
+                      <Cell col="2" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="3" text="bind:ITEM_NM" textAlign="center" tooltiptext="bind:ITEM_NM"/>
+                      <Cell col="4" edittype="mask" comboautoselect="true" combotype="filterlike" displaytype="maskeditcontrol" text="bind:SS_QTY"/>
+                      <Cell col="5" edittype="date" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="calendarcontrol" maskeditformat="##,##0" calendardisplaynulltype="none" text="bind:VALID_FR_DT"/>
+                      <Cell col="6" edittype="date" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="calendarcontrol" maskeditformat="##,##0" calendardisplaynulltype="none" text="bind:VALID_TO_DT"/>
+                      <Cell col="7" text="bind:REASON" textAlign="left" displaytype="editcontrol" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_finish00_00" taborder="2" top="197" height="21" text="저장" cssclass="btn_WF_main1" onclick="Div_client_btn_finish_onclick" right="0" width="100"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  안전재고 예외설정 및 이력 등록
+*  @MenuPath    SO > SO024_P02
+*  @FileName 	SO024_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2023.06.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var bpCd = this.getOwnerFrame().bpCd
+var bpNm = this.getOwnerFrame().bpNm
+var itemCd = this.getOwnerFrame().itemCd
+var itemNm = this.getOwnerFrame().itemNm
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO024_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_add();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+
+};
+
+this.fn_add = function ()
+{	
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"BP_CD",bpCd);
+	this.ds_list.setColumn(this.ds_list.rowposition,"BP_NM",bpNm);
+	this.ds_list.setColumn(this.ds_list.rowposition,"ITEM_CD",itemCd);
+	this.ds_list.setColumn(this.ds_list.rowposition,"ITEM_NM",itemNm);
+	this.ds_list.setColumn(this.ds_list.rowposition,"END_DATE","29991231");
+};
+
+// 저장
+this.Div_client_btn_finish_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list.getColumn(this.ds_list.rowposition,"REASON")))
+	{
+		this.alert("사유를 입력 후 진행하시기 바랍니다.")
+		return;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO024_P02_M01";
+	var url = "svcUrl::SO024_P02_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_close";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 저장 콜백
+this.fn_close = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("정상적으로 처리 되었습니다.");
+}
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="200"/>
+          <Column id="SS_QTY" type="BIGDECIMAL" size="18"/>
+          <Column id="VALID_FR_DT" type="STRING" size="23"/>
+          <Column id="VALID_TO_DT" type="STRING" size="23"/>
+          <Column id="REASON" type="STRING" size="1000"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

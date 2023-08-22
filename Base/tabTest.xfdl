@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="tabTest" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Tab id="Tab00" taborder="0" tabindex="0" left="85" top="60" width="685" height="332">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="Tabpage1" url="Base::tabsub1.xfdl"/>
+            <Tabpage id="Tabpage2" text="Tabpage2" url="Base::tabsub2.xfdl"/>
+            <Tabpage id="Tabpage3" text="Tabpage3" url="Base::tabsub3.xfdl"/>
+            <Tabpage id="Tabpage4" text="Tabpage4" url="Base::tabsub4.xfdl"/>
+          </Tabpages>
+        </Tab>
+        <Button id="Button00" taborder="1" text="순서변경" left="820" top="122" width="198" height="49" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Tab00.moveTabpage(3,1)
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

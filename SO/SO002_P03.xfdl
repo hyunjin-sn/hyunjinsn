@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO002_P03" width="900" height="400" titletext="New Form" onload="SO002_P03_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="900">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grd_list01" taborder="1" scrolltype="both" minwidth="" top="9" bottom="10" left="11" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" binddataset="ds_list" right="10" onkeydown="grd_list01_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="115"/>
+                <Column size="93"/>
+                <Column size="124"/>
+                <Column size="212"/>
+                <Column size="349"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="주문번호"/>
+                <Cell col="2" text="사용자"/>
+                <Cell col="3" text="사용자명"/>
+                <Cell col="4" text="작업시간"/>
+                <Cell col="5" text="작업내용"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" calendardateformat="yyyy-MM-dd HH:mm:ss" calendardisplaynulltype="none" textAlign="center"/>
+                <Cell col="1" text="bind:SO_NO" calendardateformat="yyyy-MM-dd HH:mm:ss" calendardisplaynulltype="none" textAlign="center"/>
+                <Cell col="2" text="bind:INSRT_USER_ID" calendardateformat="yyyy-MM-dd HH:mm:ss" calendardisplaynulltype="none" textAlign="center"/>
+                <Cell col="3" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" combotype="filterlike" text="bind:INSRT_USER_ID" displaytype="combotext"/>
+                <Cell col="4" combotype="filterlike" text="bind:INSRT_DT" calendardateformat="yyyy-MM-dd HH:mm:ss"/>
+                <Cell col="5" text="bind:REMARK1" textAlign="left" maskeditformat="###.##"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P11
+*  @FileName 	SO0001_P11.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.06
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO002_P03_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = soNo;
+	
+	// 주문이력 조회
+	var id = "SO002_P03";
+	var url = "svcUrl::SO002_P03";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "SO_NO="+args1+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.grd_list01_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MEMO_ID" type="INT" size="10"/>
+          <Column id="SO_NO" type="STRING" size="100"/>
+          <Column id="MEMO_DIV" type="STRING" size="100"/>
+          <Column id="MEMO" type="STRING" size="500"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="100"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDATE_USER_ID" type="STRING" size="100"/>
+          <Column id="UPDATE_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_tab_div10"/>
+    </Objects>
+  </Form>
+</FDL>

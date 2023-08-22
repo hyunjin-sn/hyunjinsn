@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM001_P05" width="1200" height="431" titletext="New Form" onload="VM001_P05_onload">
+    <Layouts>
+      <Layout height="431" mobileorientation="landscape" width="1200">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="10" bottom="10" right="10">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="43" binddataset="ds_list" autoenter="select" selecttype="cell" right="1" bottom="71" autofittype="none" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col" griduserproperty="export" oncelldblclick="Div00_Grid00_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="37"/>
+                      <Column size="80"/>
+                      <Column size="140"/>
+                      <Column size="140"/>
+                      <Column size="80"/>
+                      <Column size="257"/>
+                      <Column size="64"/>
+                      <Column size="106"/>
+                      <Column size="80"/>
+                      <Column size="95"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="180"/>
+                      <Column size="147"/>
+                      <Column size="140"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" displaytype="checkboxcontrol" edittype="combo"/>
+                      <Cell col="2" text="주문번호"/>
+                      <Cell col="3" text="1차발송"/>
+                      <Cell col="4" text="2차발송"/>
+                      <Cell col="5" text="접수일자"/>
+                      <Cell col="6" text="고객사명"/>
+                      <Cell col="7" text="대상자"/>
+                      <Cell col="8" text="전화번호"/>
+                      <Cell col="9" text="경조사유"/>
+                      <Cell col="10" text="출동본부"/>
+                      <Cell col="11" text="행사팀장"/>
+                      <Cell col="12" text="상담결과"/>
+                      <Cell col="13" text="지원내역"/>
+                      <Cell col="14" text="설문CASE"/>
+                      <Cell col="15" text="설문여부"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:CHK" displaytype="expr:SURVEY_YN==null || SURVEY_YN==&quot;설문 미완료&quot; ? 'checkboxcontrol' : 'nomal'" edittype="expr:SURVEY_YN==null || SURVEY_YN==&quot;설문 미완료&quot; ? 'checkbox' : 'none'"/>
+                      <Cell col="2" text="bind:SO_NO" tooltiptext="bind:SO_NO"/>
+                      <Cell col="3" text="bind:MMS_1" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd HH:mm" maskedittype="string" maskeditformat="####-##-## ##:##:##" displaytype="expr:MMS_1 == null ? 'nomal' : 'mask'" textAlign="center"/>
+                      <Cell col="4" text="bind:MMS_2" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" displaytype="expr:MMS_2 == null ? 'nomal' : 'mask'" calendardateformat="yyyy-MM-dd HH:mm" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell col="5" text="bind:SO_DT" calendardisplaynulltype="none" tooltiptext="bind:SO_DT"/>
+                      <Cell col="6" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                      <Cell col="7" text="bind:OWN_NM" tooltiptext="bind:OWN_NM"/>
+                      <Cell col="8" text="bind:OWN_TEL_NO1" tooltiptext="bind:OWN_TEL_NO1"/>
+                      <Cell col="9" text="bind:HS_NM" tooltiptext="bind:HS_NM"/>
+                      <Cell col="10" text="bind:HEADQUARTER" tooltiptext="bind:HEADQUARTER"/>
+                      <Cell col="11" text="bind:TEAM_BOSS" tooltiptext="bind:TEAM_BOSS"/>
+                      <Cell col="12" text="bind:MINOR_NM" tooltiptext="bind:MINOR_NM"/>
+                      <Cell col="13" text="bind:SO_ITEM_GROUP" tooltiptext="bind:SO_ITEM_GROUP"/>
+                      <Cell col="14" text="bind:REMARK1" displaytype="combocontrol" edittype="combo" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="15" text="bind:SURVEY_YN" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd HH:mm" maskeditformat="####-##-## ##:##:##" maskedittype="string" displaytype="expr:SURVEY_YN == null ? 'nomal' : 'mask'" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Div id="div_search" taborder="1" left="0" top="0" height="34" right="3" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00_00" taborder="0" text="구분" left="410" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static00_01" taborder="1" text="접수일시" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="2" left="98" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Calendar id="cal_endDate" taborder="3" left="223" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="4" text="~" left="211" top="4" width="10" height="29"/>
+                    <Radio id="Radio00" taborder="5" left="506" top="4" width="193" height="22" innerdataset="ds_div" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" onitemchanged="Div00_00_00_Radio00_onitemchanged"/>
+                    <Static id="Static00_00_00" taborder="6" text="설문여부" left="700" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Radio id="Radio00_00" taborder="7" left="806" top="4" width="203" height="22" innerdataset="ds_surveyYn" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" onitemchanged="Div00_00_00_Radio00_onitemchanged"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Button id="btn_mms" taborder="2" height="32" text="발송" cssclass="btn_WF_main1" onclick="Div00_btn_mms_onclick" width="90" left="0" bottom="21"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P06
+*  @FileName 	SO0001_P06.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.27
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var vocNo = this.getOwnerFrame().vocNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM001_P05_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.Div00.form.div_search.form.Radio00.set_index(0);
+	this.Div00.form.div_search.form.Radio00_00.set_index(0);
+	
+	this.efn_SetDatasetData2(this.ds_case,this.objApp.gds_code2,'WP001');
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-7);
+	
+	this.Div00.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div00.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+ this.fn_search = function ()
+ {	
+	var args1 = this.Div00.form.div_search.form.cal_startDate.value;
+	var args2 = this.Div00.form.div_search.form.cal_endDate.value;
+	var args3 = this.Div00.form.div_search.form.Radio00.value;
+	var args4 = this.Div00.form.div_search.form.Radio00_00.value;
+	//trace(args3);
+	
+	// MMS 발송 대상자 조회
+	var id = "VM004_S01";
+	var url = "svcUrl::VM004_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" P_SEL_GU="+args3+" SURVEY_YN="+args4+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div00_btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.Div00.form.div_search.form.Radio00_00.index == 1)
+	{
+		this.alert("설문 완료는 발송 할 수 없습니다. 검색조건 설문여부를 변경하세요.");
+		return;
+	}
+	
+	if (this.confirm("정말 발송하시겠습니까?"))
+	{
+		this.ds_list.set_updatecontrol(false);
+		
+		for(var i=0; i<this.ds_list.rowcount;i++)
+		{
+			if (this.ds_list.getColumn(i,"CHK") == 1)
+			{
+				this.ds_list.setRowType(i,Dataset.ROWTYPE_INSERT);
+			} else
+			{
+				this.ds_list.setRowType(i,Dataset.ROWTYPE_NORMAL);
+			}
+		}
+		
+		this.ds_list.set_updatecontrol(true);
+		
+		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+		
+		// 문자발송
+		var id = "VM004_M01";
+		var url = "svcUrl::VM004_M01";
+		var inDs = "ds_list=ds_list:U";
+		var outDs = "";
+		var args = "INSRT_USER_ID="+regUser+"";
+		var callBackid = "fn_aftersave";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+	}	
+};
+
+// mms 발송
+this.fn_aftersave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.ds_list.set_updatecontrol(false);
+		
+	for(var i=0; i<this.ds_list.rowcount;i++)
+	{
+		if (this.ds_list.getColumn(i,"CHK") == 1)
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_INSERT);
+		} else
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_NORMAL);
+		}
+	}
+	
+	this.ds_list.set_updatecontrol(true);
+	
+	var message = "님 삼가 조의를 표합니다.\n고인께서 평안히 영면할 수 있도록 정성을 다하여 모셨습니다. 깊은 감사의 말씀을 올립니다.\n\n다음은 장례지원서비스를 이용하신 임직원들을 대상으로 한 설문조사입니다. 진솔한 평가 부탁 드립니다. -장례지원단-\n\n만족도 페이지 바로가기\n"
+	
+	// 문자발송
+	var id = "VM004_M02";
+	var url = "svcUrl::VM004_M02";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "MESSAGE='"+message+"'";
+	var callBackid = "fn_aftermms";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// mms 발송 callback
+this.fn_aftermms = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_search();
+	this.alert("정상적으로 발송 되었습니다.")
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+this.Div00_Grid00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	
+};
+
+this.Div00_00_00_Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+
+
+this.Div00_Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="1"/>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="SO_DT" type="DATETIME" size="23"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="OWN_TEL_NO1" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="MINOR_NM" type="STRING" size="200"/>
+          <Column id="SO_ITEM_GROUP" type="STRING" size="200"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="HEADQUARTER" type="STRING" size="200"/>
+          <Column id="TEAM_BOSS" type="STRING" size="30"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">미전송</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">전송</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_case"/>
+      <Dataset id="ds_surveyYn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="CODE_NAME">설문 미완료</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">설문완료</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item1" compid="Div00.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item2" compid="Div00.form.div_search.form.Radio00" propid="value" datasetid="ds_list_2" columnid="ACT_TYPE"/>
+      <BindItem id="item3" compid="Div00.form.div_search.form.Radio00_00" propid="value" datasetid="ds_list_2" columnid="ACT_TYPE"/>
+    </Bind>
+  </Form>
+</FDL>

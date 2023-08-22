@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM002" width="1300" height="600" titletext="New Form" onload="VM002_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="-5" right="1" bottom="15">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="31" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00_01" taborder="0" text="접수일시" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static00_01_onclick"/>
+                    <Calendar id="cal_startDate" taborder="1" left="88" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Calendar id="cal_endDate" taborder="2" left="213" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="3" text="~" left="201" top="4" width="10" height="29"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="89" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list00_00" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="2" left="9" top="46" right="11" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="62"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="100"/>
+                      <Column size="199"/>
+                      <Column size="77"/>
+                      <Column size="80"/>
+                      <Column size="337"/>
+                      <Column size="267"/>
+                      <Column size="288"/>
+                      <Column size="310"/>
+                      <Column size="360"/>
+                      <Column size="297"/>
+                      <Column size="162"/>
+                      <Column size="255"/>
+                      <Column size="344"/>
+                      <Column size="288"/>
+                      <Column size="253"/>
+                      <Column size="328"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="본부"/>
+                      <Cell col="2" text="팀장"/>
+                      <Cell col="3" text="주문번호"/>
+                      <Cell col="4" text="고객사명"/>
+                      <Cell col="5" text="대상자"/>
+                      <Cell col="6" text="케이스"/>
+                      <Cell col="7" text="장례지도사가 2시간 이내 또는 약속한 시간에 도착했습니까?" textAlign="left"/>
+                      <Cell col="8" text="장례지도사의 복장이나 태도는 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="9" text="장례지도사의 전문성이나 친절도는 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="10" text="장례관리사(도우미)의 복장이나 태도는 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="11" text="장례관리사(도우미)의 음식관리 및 접객서비스에 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="12" text="장례서비스기간 중 수고비를 요구받은 적이 있습니까?" textAlign="left"/>
+                      <Cell col="13" text="근조화환은 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="14" text="조사용품(접객용 일회용품)은 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="15" text="기타서비스 중 불만족한 항목이 있으셨습니까? (복수선택가능)" textAlign="left"/>
+                      <Cell col="16" text="장례기간동안의 전체적인 서비스는 만족하셨습니까?" textAlign="left"/>
+                      <Cell col="17" text="다른 사람에게 현진시닝을 추천하시겠습니까?" textAlign="left"/>
+                      <Cell col="18" text="건의사항이나 칭찬의 말씀 등 자유로운 의견 부탁드립니다." textAlign="left"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:HEADQUARTER" textAlign="center"/>
+                      <Cell col="2" text="bind:BOSS" textAlign="center"/>
+                      <Cell col="3" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="4" text="expr:BP_NM" textAlign="left"/>
+                      <Cell col="5" text="bind:OWN_NM" textAlign="center"/>
+                      <Cell col="6" text="bind:CASE_NM" textAlign="center"/>
+                      <Cell col="7" text="bind:QA1"/>
+                      <Cell col="8" text="bind:QA2"/>
+                      <Cell col="9" text="bind:QA3"/>
+                      <Cell col="10" text="bind:QA4"/>
+                      <Cell col="11" text="bind:QA5"/>
+                      <Cell col="12" text="bind:QA6"/>
+                      <Cell col="13" text="bind:QA7"/>
+                      <Cell col="14" text="bind:QA8"/>
+                      <Cell col="15" text="bind:QA9"/>
+                      <Cell col="16" text="bind:QA10"/>
+                      <Cell col="17" text="bind:QA11"/>
+                      <Cell col="18" text="bind:QA12" verticalAlign="top"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  고객만족도 조사 조회
+*  @MenuPath    SO > SO002
+*  @FileName 	VM005.xfdl 
+*  @Creator 	신기원
+*  @CreateDate 	2020.09.09
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM002_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	//this.fn_setCombo(obj);
+	
+	this.fn_search();
+	
+	//this._gfnGridcellFix(this.Div_client.form.grd_list, 0, 1);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = sDate.substr(0,6) + "01";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+// 	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_rcptMethIn",this.Div_client.form.div_search.form.cmb_rcptMethNm,"MAJOR_CD=='XN031'",true,true);	// 주문접수경로
+// 	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_status_s",this.Div_client.form.div_search.form.cmb_soStatus,"MAJOR_CD=='XS001'",true,true);	// 발주상태
+	this.efn_SetDatasetData2(this.ds_voc_type1,this.objApp.gds_code2,'VA005');		// VOC유형
+	this.efn_SetDatasetData2(this.ds_voc_type2,this.objApp.gds_code2,'VA006');		// VOC유형2
+	this.efn_SetDatasetData2(this.ds_voc_type3,this.objApp.gds_code2,'VA007');		// VOC내용
+	this.efn_SetDatasetData2(this.ds_voc_dept3,this.objApp.gds_code2,'VA008');		// VOC대상1
+	this.efn_SetDatasetData2(this.ds_do_div,this.objApp.gds_code2,'VA009');			// VOC 처리
+	
+	var id = "VM001_S05";
+	var url = "svcUrl::VM001_S05";
+	var inDs = "";
+	var outDs = "ds_voc_dept4=ds_list";
+	var args = "FLAG=''";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+};
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.ds_cond.getColumn(0,"SO_NO");
+	var Arg_2 = this.ds_cond.getColumn(0,"CASE_CD");
+	var Arg_3 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_4 = this.ds_cond.getColumn(0,"END_DATE");
+	var Arg_5 = this.ds_cond.getColumn(0,"BP_CD");
+
+	var id = "VM005_S01";
+	var url = "svcUrl::VM005_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "SO_NO="+Arg_1+" CASE_CD="+Arg_2+" START_DATE="+Arg_3+" END_DATE="+Arg_4+" BP_CD="+Arg_5+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		신기원
+* @작성일자	   	2020.09.09
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+// edit enter event
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_filter();
+		//this.fn_search();
+	}
+};
+
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var Arg_1 = this.ds_list.getColumn(this.ds_list.rowposition,"SATIS_MG_NO");
+	var Arg_2 = this.ds_list.getColumn(this.ds_list.rowposition,"QUESTION_CD");
+
+	var id = "VM005_S02";
+	var url = "svcUrl::VM005_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list2";
+	var args = "SATIS_MG_NO="+Arg_1+" QUESTION_CD="+Arg_2+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+
+}
+
+this.fn_filter = function ()
+{
+	
+};
+
+this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	    var Arg_1 = this.ds_list.getColumn(this.ds_list.rowposition,"SATIS_MG_NO");
+		var Arg_2 = this.ds_list.getColumn(this.ds_list.rowposition,"QUESTION_CD");
+
+		var id = "VM005_S02";
+		var url = "svcUrl::VM005_S02";
+		var inDs = "";
+		var outDs = "ds_list2=ds_list2";
+		var args = "SATIS_MG_NO="+Arg_1+" QUESTION_CD="+Arg_2+"";
+		var callBackid = "";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+
+this.fn_excel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list00_00, "*?*?*?*?*?*?*?","");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="WEEK" type="STRING" size="27"/>
+          <Column id="HEADQUARTER" type="STRING" size="200"/>
+          <Column id="BOSS" type="STRING" size="30"/>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="CASE_NM" type="STRING" size="500"/>
+          <Column id="QA1" type="STRING" size="500"/>
+          <Column id="QA2" type="STRING" size="500"/>
+          <Column id="QA3" type="STRING" size="500"/>
+          <Column id="QA4" type="STRING" size="500"/>
+          <Column id="QA5" type="STRING" size="500"/>
+          <Column id="QA6" type="STRING" size="500"/>
+          <Column id="QA7" type="STRING" size="500"/>
+          <Column id="QA8" type="STRING" size="500"/>
+          <Column id="QA9" type="STRING" size="4000"/>
+          <Column id="QA10" type="STRING" size="500"/>
+          <Column id="QA11" type="STRING" size="500"/>
+          <Column id="QA12" type="STRING" size="2000"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="256"/>
+          <Column id="CASE_CD" type="STRING" size="256"/>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="SO_NO"/>
+            <Col id="CASE_CD"/>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BP_CD"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item4" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+    </Bind>
+  </Form>
+</FDL>

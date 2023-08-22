@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="USER_PICKER" width="500" height="490" titletext="New Form" onload="Form_onload" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" onclose="USER_PICKER_onclose">
+    <Layouts>
+      <Layout height="490" mobileorientation="landscape" width="500">
+        <Static id="Static05" taborder="0" text="조회목록" left="10" top="9" width="97" height="30" cssclass="sta_WF_title"/>
+        <Static id="Static00" taborder="1" text="선택목록" left="274" top="9" width="97" height="30" cssclass="sta_WF_title"/>
+        <Div id="Div00" taborder="2" text="Div00" left="7" top="40" width="213" height="406">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="ds_leftlist" treeuseexpandkey="true" oncelldblclick="Div00_Grid00_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="194"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:NAME" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:LEVEL" treestartlevel="0" controlautosizingtype="none"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="3" text="Div00" left="281" top="40" width="213" height="406">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="ds_selectlist" oncellclick="Div01_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="144"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="삭제"/>
+                      <Cell col="1"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell displaytype="buttoncontrol" text="삭제"/>
+                      <Cell col="1" text="bind:NAME"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btn_cancel" taborder="4" text="취소" top="456" width="45" height="24" visible="true" cssclass="btn_WF_main1" left="448" onclick="btn_cancel_onclick"/>
+        <Button id="btn_apply" taborder="5" text="적용" top="456" width="45" height="24" visible="true" cssclass="btn_WF_main1" left="398" onclick="btn_apply_onclick"/>
+        <Button id="Button00" taborder="6" left="239" top="170" width="21" height="21" background="url('theme://images/MF_next_O.png') no-repeat" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="7" left="239" top="290" width="21" height="21" background="url('theme://images/MF_prev_O.png') no-repeat" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_leftlist">
+        <ColumnInfo>
+          <Column id="GBN" type="STRING" size="256"/>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="LEVEL" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_selectlist">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    관리자 > 메뉴등록
+*  @FileName 	MM00001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.04.10
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+include "Lib::sz_fsp_nx.xjs";
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+var f_mode;
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	this.fsp_init();
+	if(this.gfn_isNull(this.getOwnerFrame().Mode)){
+		this.f_mode = "U";
+	}else{
+		this.f_mode = this.getOwnerFrame().Mode;
+	}
+	this.fn_Search();
+};
+
+
+this.fn_Search = function(){
+	this.fsp_clear();
+	this.fsp_addSearch("gds_set:PMS_TREE_USERDEPT", false);
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_leftlist=ds_list"	// outDs
+		,""	// args 
+		,"fn_afterSearch"
+		,true
+	);	
+}
+
+this.fn_afterSearch = function(){
+}
+
+this.Div00_Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var s_code = this.ds_leftlist.getColumn(this.ds_leftlist.rowposition,"CODE");
+	var s_name = this.ds_leftlist.getColumn(this.ds_leftlist.rowposition,"NAME");
+	var s_gbn = this.ds_leftlist.getColumn(this.ds_leftlist.rowposition,"GBN");
+	
+	var f_index = this.ds_selectlist.findRow("CODE",s_code);
+	if(f_index > -1){
+		return;
+	}
+	if(s_gbn != this.f_mode)
+	{
+		return;
+	}
+	
+	this.ds_selectlist.addRow();
+	this.ds_selectlist.setColumn(this.ds_selectlist.rowposition,"CODE",s_code);
+	this.ds_selectlist.setColumn(this.ds_selectlist.rowposition,"NAME",s_name);
+	
+	
+	
+	
+};
+
+this.btn_apply_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+ 	var json = this.efn_jsonRtn(this.ds_selectlist);
+	this.opener.config.objDataset.copyData(this.ds_selectlist,true);
+	this.close();
+};
+
+this.btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+
+this.USER_PICKER_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	this.close();
+};
+
+this.Div01_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.col == 0){
+		this.ds_selectlist.deleteRow(e.row);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

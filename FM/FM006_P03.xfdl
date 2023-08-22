@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P01" width="651" height="821" titletext="New Form" onload="FM003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="821" mobileorientation="landscape" width="651">
+        <ImageViewer id="Img" taborder="0" left="10" top="10" height="800" stretch="fit" imagealign="center top" right="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    VM > VM001_P02
+*  @FileName 	VM001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.08.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var fileNm = this.getOwnerFrame().fileNm
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.Img.set_image("theme::HJW/images2/FM006/"+fileNm);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

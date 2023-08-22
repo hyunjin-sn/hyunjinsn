@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ES003" width="1680" height="710" titletext="New Form" onload="ES003_onload" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal">
+    <Layouts>
+      <Layout height="710" mobileorientation="landscape" width="1680">
+        <Div id="Div06_00" taborder="6" top="296" width="1660" minwidth="" left="10" bottom="0" text="" maxwidth="1660">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid01_00" taborder="0" left="0" top="54" width="476" autofittype="col" binddataset="ds_list_2" oncellclick="Grid01_00_oncellclick" bottom="10" autoenter="select">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="36"/>
+                      <Column size="75"/>
+                      <Column size="75"/>
+                      <Column size="59"/>
+                      <Column size="36"/>
+                      <Column size="68"/>
+                      <Column size="135"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="구분"/>
+                      <Cell col="2" text="분류"/>
+                      <Cell col="3" text="추천순위"/>
+                      <Cell col="4" text="층"/>
+                      <Cell col="5" text="금액"/>
+                      <Cell col="6" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV2" textAlign="center" combodataset="ds_div1" combocodecol="CODE" combodatacol="CODE_NAME" edittype="combo" displaytype="combocontrol"/>
+                      <Cell col="2" text="bind:TYPE" textAlign="center" combodataset="ds_type" combocodecol="CODE" combodatacol="CODE_NAME" edittype="combo" displaytype="combocontrol"/>
+                      <Cell col="3" text="bind:PRIORITY" textAlign="center" combodataset="ds_priority" combocodecol="CODE" combodatacol="CODE_NAME" edittype="combo" displaytype="combocontrol"/>
+                      <Cell col="4" text="bind:FLOOR" textAlign="center" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" edittype="text"/>
+                      <Cell col="5" text="bind:BRL_AMT" textAlign="right" edittype="mask" maskeditformat="##,##0"/>
+                      <Cell col="6" text="bind:REMARK" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static11_00_00" taborder="1" text="봉안시설" left="2" top="-6" width="97" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_addfile" taborder="2" left="328" top="26" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile_onclick"/>
+              <Button id="btn_addfile00" taborder="3" left="405" top="26" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile00_onclick"/>
+              <Static id="Static11_00_00_00" taborder="4" text="자연장" left="487" top="-6" width="97" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid01_00_00" taborder="5" left="485" top="54" width="385" autofittype="col" binddataset="ds_list_3" oncellclick="Grid01_00_oncellclick" bottom="10" autoenter="select">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="36"/>
+                      <Column size="67"/>
+                      <Column size="59"/>
+                      <Column size="81"/>
+                      <Column size="135"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="구분"/>
+                      <Cell col="2" text="추천순위"/>
+                      <Cell col="3" text="금액"/>
+                      <Cell col="4" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV2" textAlign="center" combodataset="ds_div2" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="2" text="bind:PRIORITY" textAlign="center" combodataset="ds_priority" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="3" text="bind:BRL_AMT" textAlign="right" edittype="mask" maskeditformat="##,##0"/>
+                      <Cell col="4" text="bind:REMARK" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile01" taborder="6" left="722" top="26" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile01_00_onclick"/>
+              <Button id="btn_addfile00_00" taborder="7" left="799" top="26" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile00_00_00_onclick"/>
+              <Static id="Static11_00_00_00_00" taborder="8" text="납골묘" left="877" top="-6" width="97" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_addfile01_00" taborder="9" left="1116" top="26" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addnab_onclick"/>
+              <Button id="btn_addfile00_00_00" taborder="10" left="1193" top="26" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addnabdel_onclick"/>
+              <Grid id="Grid01_00_00_00" taborder="11" left="878" top="54" width="385" autofittype="col" binddataset="ds_list_4" oncellclick="Grid01_00_oncellclick" bottom="10" autoenter="select">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="36"/>
+                      <Column size="67"/>
+                      <Column size="59"/>
+                      <Column size="81"/>
+                      <Column size="135"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="구분"/>
+                      <Cell col="2" text="추천순위"/>
+                      <Cell col="3" text="금액"/>
+                      <Cell col="4" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV2" textAlign="center" combodataset="ds_div3" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="2" text="bind:PRIORITY" textAlign="center" combodataset="ds_priority" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="3" text="bind:BRL_AMT" textAlign="right" edittype="mask" maskeditformat="##,##0"/>
+                      <Cell col="4" text="bind:REMARK" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static11_00_00_00_00_00" taborder="12" text="매장" left="1271" top="-6" width="97" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid01_00_00_00_00" taborder="13" left="1272" top="54" width="385" autofittype="col" binddataset="ds_list_5" oncellclick="Grid01_00_oncellclick" bottom="10" autoenter="select">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="36"/>
+                      <Column size="67"/>
+                      <Column size="59"/>
+                      <Column size="81"/>
+                      <Column size="135"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="구분"/>
+                      <Cell col="2" text="추천순위"/>
+                      <Cell col="3" text="금액"/>
+                      <Cell col="4" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV2" textAlign="center" combodataset="ds_div4" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="2" text="bind:PRIORITY" textAlign="center" combodataset="ds_priority" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo"/>
+                      <Cell col="3" text="bind:BRL_AMT" textAlign="right" edittype="mask" maskeditformat="##,##0"/>
+                      <Cell col="4" text="bind:REMARK" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile01_00_00" taborder="14" left="1510" top="26" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile01_00_00_onclick"/>
+              <Button id="btn_addfile00_00_00_00" taborder="15" left="1587" top="26" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div06_00_btn_addfile00_00_00_00_onclick"/>
+              <Div id="div_mCombo1" taborder="16" text="Div00" left="57" top="25" width="263" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_div1" callbackfunc="fn_mComboCallback1"/>
+              <Div id="div_mCombo2" taborder="17" text="Div00" left="540" top="25" width="173" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_div2" callbackfunc="fn_mComboCallback2"/>
+              <Div id="div_mCombo3" taborder="18" text="Div00" left="931" top="25" width="174" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_div3" callbackfunc="fn_mComboCallback3"/>
+              <Div id="div_mCombo4" taborder="19" text="Div00" left="1323" top="25" width="174" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_div4" callbackfunc="fn_mComboCallback4"/>
+              <Static id="Static00" taborder="20" text="검색 : " left="9" top="22" width="43" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00" taborder="21" text="검색 : " left="492" top="22" width="43" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00_00" taborder="22" text="검색 : " left="883" top="22" width="43" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00_00_00" taborder="23" text="검색 : " left="1275" top="22" width="43" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="1"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="10" text="w&#13;&#10;10"/>
+        <Static id="Static01" taborder="2" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="191" text="w&#13;&#10;10" right="0"/>
+        <Div id="Div06" taborder="3" top="10" width="1151" minwidth="" left="519" height="260" maxwidth="1151">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_01_00_01" taborder="30" left="99" top="226" height="29" cssclass="sta_WF_detailLine" width="328"/>
+              <Static id="sta_21_00_00_01_00_00" taborder="25" left="525" top="142" height="113" cssclass="sta_WF_detailLine" width="326"/>
+              <Static id="sta_21_00_00_00_00" taborder="15" left="99" top="86" height="29" cssclass="sta_WF_detailLine" width="328"/>
+              <Static id="Static12" taborder="0" text="장지시설 정보 - 2" left="0" top="-2" width="140" height="30" cssclass="sta_WF_title" onclick="Div06_Static12_onclick"/>
+              <Static id="sta_21_00_00_01" taborder="1" left="99" top="142" height="57" cssclass="sta_WF_detailLine" width="328"/>
+              <Static id="sta_21_00_00_00_00_00_00" taborder="2" left="525" top="86" height="29" cssclass="sta_WF_detailLine" width="326"/>
+              <Static id="sta_21_00_00_00_00_00_01" taborder="3" left="525" top="58" height="29" cssclass="sta_WF_detailLine" width="326"/>
+              <Static id="sta_21_00_01" taborder="4" left="99" top="58" height="29" cssclass="sta_WF_detailLine" width="328"/>
+              <Static id="sta_21_01" taborder="5" left="99" top="30" height="29" cssclass="sta_WF_detailLine" width="752"/>
+              <Radio id="Radio00_00" taborder="6" left="109" top="61" width="211" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_manage"/>
+              <Radio id="Radio00_00_00_00_00_00" taborder="7" left="535" top="89" width="202" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_cafeteria"/>
+              <Static id="Static23_01" taborder="8" text="시설구분" left="0" top="30" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_01" taborder="9" text="교통" left="0" top="142" width="100" cssclass="sta_WF_detailLabel" height="57"/>
+              <Static id="Static23_00_00_01_00" taborder="10" text="운영형태" left="0" top="58" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_00_01_00_00" taborder="11" text="종교시설" left="426" top="58" width="104" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_00_00_00_00_00" taborder="12" text="식당" left="426" top="86" width="104" cssclass="sta_WF_detailLabel" height="29"/>
+              <Radio id="Radio00_00_00" taborder="13" left="109" top="89" width="317" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_size"/>
+              <Static id="Static23_00_00_01" taborder="14" text="시설규모" left="0" top="86" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_21_00_00_00_00_00_00_00" taborder="16" left="525" top="114" height="29" cssclass="sta_WF_detailLine" width="326"/>
+              <Radio id="Radio00_00_00_00_00_00_00" taborder="17" left="535" top="117" width="202" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_crem"/>
+              <Static id="Static23_00_00_00_00_00_00_00" taborder="18" text="화장장" left="426" top="114" width="104" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_21_00_00_00_00_00" taborder="19" left="99" top="114" height="29" cssclass="sta_WF_detailLine" width="328"/>
+              <Radio id="Radio00_00_00_01" taborder="20" left="109" top="117" width="317" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_condition"/>
+              <Static id="Static23_00_00_01_01" taborder="21" text="시설형태" left="0" top="114" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_21_00_00_01_00" taborder="22" left="99" top="198" height="29" cssclass="sta_WF_detailLine" width="328"/>
+              <Static id="Static23_00_01_00" taborder="23" text="추천여부" left="0" top="198" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_01_00_00" taborder="24" text="특이사항" left="426" top="142" width="104" cssclass="sta_WF_detailLabel" height="113"/>
+              <TextArea id="TextArea00" taborder="26" left="534" top="146" width="313" height="105"/>
+              <TextArea id="TextArea00_00" taborder="27" left="104" top="146" width="318" height="49"/>
+              <Div id="div_mCombo8" taborder="28" text="Div00" left="534" top="62" width="314" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_not_allowed" callbackfunc="fn_mComboCallback"/>
+              <Static id="Static23_00_01_00_01" taborder="29" text="RT" left="0" top="226" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Radio id="Radio00_00_00_01_00" taborder="31" left="109" top="202" width="211" height="25" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_partner"/>
+              <CheckBox id="chk1" taborder="32" text="봉안당" left="111" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk2" taborder="33" text="봉안담" left="193" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk4" taborder="34" text="자연장" left="357" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk3" taborder="35" text="봉안탑" left="275" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk5" taborder="36" text="수목장" left="439" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk6" taborder="37" text="잔디장" left="521" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk7" taborder="38" text="바다장" left="603" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk8" taborder="39" text="화초장" left="685" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <CheckBox id="chk9" taborder="40" text="묘지" left="767" top="35" width="59" height="20" onchanged="Div06_chk1_onchanged"/>
+              <Edit id="chkval" taborder="41" left="861" top="34" width="287" height="21" enable="true" visible="false"/>
+              <Static id="Static00" taborder="42" text="%" left="171" top="234" width="62" height="14"/>
+              <MaskEdit id="MaskEdit00" taborder="43" left="104" top="230" width="57" height="21"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static02" taborder="4" top="10" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="11" text="w&#13;&#10;10" right="724"/>
+        <Div id="Div00" taborder="5" text="Div00" left="10" top="11" width="510" height="259">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_00_00_00_00" taborder="22" left="99" top="226" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="sta_21_00" taborder="0" left="99" top="57" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="sta_21_00_00" taborder="1" left="99" top="85" height="86" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="sta_21_00_00_00" taborder="2" left="99" top="170" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="sta_21_00_00_00_00_00" taborder="3" left="99" top="198" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="sta_21" taborder="4" left="99" top="29" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="Static23" taborder="5" text="장지시설 코드" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Button id="btn_vocno" taborder="7" top="33" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_vocno_onclick" width="21" right="15"/>
+              <Edit id="edt_soNo" taborder="6" left="104" top="33" height="21" readonly="true" enable="true" displaynulltext="자동 저장 됩니다." right="btn_vocno:0"/>
+              <Static id="Static23_00" taborder="8" text="장지시설 명" left="0" top="57" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static23_00_00" taborder="9" text="주소" left="0" top="85" width="100" cssclass="sta_WF_detailLabel" height="86"/>
+              <Static id="Static23_00_00_00" taborder="10" text="전화번호" left="0" top="170" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_00_00_00_00" taborder="11" text="팩스번호" left="0" top="198" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static05" taborder="12" text="장지시설 정보 - 1" left="0" top="-3" width="177" height="30" cssclass="sta_WF_title"/>
+              <WebBrowser id="WebBrowser00" taborder="13" left="252" top="94" height="49" onusernotify="Div06_WebBrowser00_onusernotify" right="146"/>
+              <Edit id="edt_soNo00_00" taborder="14" left="104" top="202" width="391" height="21" enable="true"/>
+              <Edit id="edt_soNo00_00_00" taborder="15" left="104" top="174" width="391" height="21" enable="true"/>
+              <Edit id="edt_soNo00_00_00_00" taborder="16" left="104" top="144" width="391" height="21" enable="true" displaynulltext="상세주소"/>
+              <Edit id="edt_soNo00_00_00_00_00" taborder="17" left="104" top="117" width="391" height="21" enable="true" readonly="true"/>
+              <Edit id="edt_soNo00_00_00_00_00_00" taborder="18" left="104" top="90" width="141" height="21" enable="true" readonly="true"/>
+              <Edit id="edt_soNo00_00_00_00_00_01" taborder="19" left="104" top="61" width="391" height="21" enable="true"/>
+              <Static id="Static23_00_00_00_00_00_00" taborder="20" text="홈페이지" left="0" top="226" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo00_00_01" taborder="21" left="104" top="230" width="391" height="21" enable="true"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="BRL_NO" type="STRING" size="18"/>
+          <Column id="BRL_NM" type="STRING" size="40"/>
+          <Column id="POST" type="STRING" size="20"/>
+          <Column id="ADDR1" type="STRING" size="20"/>
+          <Column id="ADDR2" type="STRING" size="60"/>
+          <Column id="TEL" type="STRING" size="20"/>
+          <Column id="HPAGE" type="STRING" size="40"/>
+          <Column id="BRL_DIV" type="STRING" size="20"/>
+          <Column id="MANAGE" type="STRING" size="20"/>
+          <Column id="F_SIZE" type="STRING" size="20"/>
+          <Column id="F_CONDITION" type="STRING" size="20"/>
+          <Column id="TRAFFIC" type="STRING" size="400"/>
+          <Column id="PARTNER" type="STRING" size="20"/>
+          <Column id="RT" type="STRING" size="20"/>
+          <Column id="RELIGION" type="STRING" size="20"/>
+          <Column id="CAFETERIA" type="STRING" size="20"/>
+          <Column id="CREM" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="400"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="FAX" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="BRL_NO" type="STRING" size="18"/>
+          <Column id="BRL_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="DIV2" type="STRING" size="256"/>
+          <Column id="TYPE" type="STRING" size="20"/>
+          <Column id="PRIORITY" type="STRING" size="20"/>
+          <Column id="FLOOR" type="STRING" size="40"/>
+          <Column id="BRL_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="REMARK" type="STRING" size="400"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_list_3" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="BRL_NO" type="STRING" size="18"/>
+          <Column id="BRL_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="DIV2" type="STRING" size="256"/>
+          <Column id="TYPE" type="STRING" size="20"/>
+          <Column id="PRIORITY" type="STRING" size="20"/>
+          <Column id="FLOOR" type="STRING" size="40"/>
+          <Column id="BRL_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="REMARK" type="STRING" size="400"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_out"/>
+      <Dataset id="ds_list_4">
+        <ColumnInfo>
+          <Column id="BRL_NO" type="STRING" size="18"/>
+          <Column id="BRL_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="DIV2" type="STRING" size="256"/>
+          <Column id="TYPE" type="STRING" size="20"/>
+          <Column id="PRIORITY" type="STRING" size="20"/>
+          <Column id="FLOOR" type="STRING" size="40"/>
+          <Column id="BRL_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="REMARK" type="STRING" size="400"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_5">
+        <ColumnInfo>
+          <Column id="BRL_NO" type="STRING" size="18"/>
+          <Column id="BRL_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="DIV2" type="STRING" size="256"/>
+          <Column id="TYPE" type="STRING" size="20"/>
+          <Column id="PRIORITY" type="STRING" size="20"/>
+          <Column id="FLOOR" type="STRING" size="40"/>
+          <Column id="BRL_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="REMARK" type="STRING" size="400"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_manage"/>
+      <Dataset id="ds_size"/>
+      <Dataset id="ds_condition"/>
+      <Dataset id="ds_partner"/>
+      <Dataset id="ds_cafeteria"/>
+      <Dataset id="ds_crem"/>
+      <Dataset id="ds_religion"/>
+      <Dataset id="ds_div"/>
+      <Dataset id="ds_type"/>
+      <Dataset id="ds_priority"/>
+      <Dataset id="ds_div1"/>
+      <Dataset id="ds_div2"/>
+      <Dataset id="ds_div3"/>
+      <Dataset id="ds_div4"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item12" compid="Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="BRL_NO"/>
+      <BindItem id="item14" compid="edt_soNo00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item15" compid="edt_soNo00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item16" compid="edt_soNo00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item18" compid="edt_soNo00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item19" compid="edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item23" compid="Div00.form.edt_soNo00_00_00_00_00_01" propid="value" datasetid="ds_list_1" columnid="BRL_NM"/>
+      <BindItem id="item24" compid="Div00.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR1"/>
+      <BindItem id="item25" compid="Div00.form.edt_soNo00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR2"/>
+      <BindItem id="item26" compid="Div00.form.edt_soNo00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="POST"/>
+      <BindItem id="item27" compid="Div00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="TEL"/>
+      <BindItem id="item28" compid="Div00.form.edt_soNo00_00" propid="value" datasetid="ds_list_1" columnid="FAX"/>
+      <BindItem id="item3" compid="Div00.form.Radio00_00" propid="value" datasetid="ds_list_1" columnid="CAFETERIA"/>
+      <BindItem id="item4" compid="Div00.form.Radio00_00_00" propid="value" datasetid="ds_list_1" columnid="CANTEEN"/>
+      <BindItem id="item5" compid="Div00.form.Radio00_00_00_00" propid="value" datasetid="ds_list_1" columnid="WAIT_ROOM"/>
+      <BindItem id="item6" compid="Div00.form.Radio00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CONV_FAC"/>
+      <BindItem id="item7" compid="Div00.form.Radio00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="MANAGE"/>
+      <BindItem id="item33" compid="Div06.form.TextArea00" propid="value" datasetid="ds_list_1" columnid="REMARK"/>
+      <BindItem id="item13" compid="Div06.form.TextArea00_00" propid="value" datasetid="ds_list_1" columnid="TRAFFIC"/>
+      <BindItem id="item0" compid="Div06.form.chkval" propid="value" datasetid="ds_list_1" columnid="BRL_DIV"/>
+      <BindItem id="item1" compid="Div06.form.Radio00_00" propid="value" datasetid="ds_list_1" columnid="MANAGE"/>
+      <BindItem id="item2" compid="Div06.form.Radio00_00_00" propid="value" datasetid="ds_list_1" columnid="F_SIZE"/>
+      <BindItem id="item8" compid="Div06.form.Radio00_00_00_01" propid="value" datasetid="ds_list_1" columnid="F_CONDITION"/>
+      <BindItem id="item9" compid="Div06.form.Radio00_00_00_01_00" propid="value" datasetid="ds_list_1" columnid="PARTNER"/>
+      <BindItem id="item11" compid="Div06.form.Radio00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CAFETERIA"/>
+      <BindItem id="item17" compid="Div06.form.Radio00_00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CREM"/>
+      <BindItem id="item20" compid="Div06.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="RT"/>
+      <BindItem id="item10" compid="Div00.form.edt_soNo00_00_01" propid="value" datasetid="ds_list_1" columnid="HPAGE"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    ESIS > 장례식장등록
+*  @FileName 	ES0001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.11.09
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.ES003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div00.form.WebBrowser00.set_url("http://182.162.91.66:8081/web/nui/API/daumAddress5.html");
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_add();
+};
+
+this.Div06_WebBrowser00_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{
+	var addData = e.userdata.split(",");
+
+	if(addData.length > 1){
+		this.post = addData[0];
+		this.addr1 = addData[1];
+		this.addr2 = addData[2];
+				//trace(addData+"::"+this.addr1);
+	}
+// 	trace(this.addr1);
+// 	trace(this.post);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADDR1",this.addr1);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"POST",this.post);
+	
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData2(this.ds_manage,this.objApp.gds_code2,'ES016');				// 운영형태
+	this.efn_SetDatasetData2(this.ds_size,this.objApp.gds_code2,'ES006');				// 시설규모
+	this.efn_SetDatasetData2(this.ds_condition,this.objApp.gds_code2,'ES003');			// 시설상태
+	this.efn_SetDatasetData2(this.ds_partner,this.objApp.gds_code2,'ES017');			// 제휴
+	this.efn_SetDatasetData2(this.ds_cafeteria,this.objApp.gds_code2,'ES002');			// 식당
+	this.efn_SetDatasetData2(this.ds_crem,this.objApp.gds_code2,'ES002');				// 화장장
+	this.efn_SetDatasetData2(this.ds_religion,this.objApp.gds_code2,'SO005');			// 종교
+	this.efn_SetDatasetData2(this.ds_div,this.objApp.gds_code2,'ES018');				// 구분
+	this.efn_SetDatasetData2(this.ds_type,this.objApp.gds_code2,'ES019');				// 분류
+	this.efn_SetDatasetData2(this.ds_priority,this.objApp.gds_code2,'ES020');			// 추천순위
+
+	// 봉안시설
+	this.ds_div.filter("MINOR_REMARK5=='A'");
+	this.ds_div1.copyData(this.ds_div, true);
+	this.ds_div.filter("");
+	
+	// 자연장
+	this.ds_div.filter("MINOR_REMARK5=='B'");
+	this.ds_div2.copyData(this.ds_div, true);
+	this.ds_div.filter("");
+	
+	// 납골묘
+	this.ds_div.filter("MINOR_REMARK5=='C'");
+	this.ds_div3.copyData(this.ds_div, true);
+	this.ds_div.filter("");
+	
+	// 매장
+	this.ds_div.filter("MINOR_REMARK5=='D'");
+	this.ds_div4.copyData(this.ds_div, true);
+	this.ds_div.filter("");
+	
+	this.Div06.form.div_mCombo8.form.fn_setDataset(this.ds_religion);
+	this.Div06_00.form.div_mCombo1.form.fn_setDataset(this.ds_div1);
+	this.Div06_00.form.div_mCombo2.form.fn_setDataset(this.ds_div2);
+	this.Div06_00.form.div_mCombo3.form.fn_setDataset(this.ds_div3);
+	this.Div06_00.form.div_mCombo4.form.fn_setDataset(this.ds_div4);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+  /**
+* @description 		공통신규버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.11.11
+* @수정자	   
+* @수정일자
+*/
+// 조회
+this.fn_search = function (brlNo)
+{
+	var Arg_1 = brlNo;
+	trace(Arg_1)
+	if (this.gfn_isNull(Arg_1))
+	{
+		Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BRL_NO");
+	}
+	
+	var id = "ES003_S01";
+	var url = "svcUrl::ES003_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2 ds_list_3=ds_list_3 ds_list_4=ds_list_4 ds_list_5=ds_list_5";
+	var args = "BRL_NO="+Arg_1+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+
+    var religion = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"RELIGION");
+	
+	if (!this.gfn_isNull(religion))
+	{
+		this.Div06.form.div_mCombo8.form.set_value(religion);
+	}
+	
+	// 시설구분
+	this.fn_CheckboxSetting();
+}
+
+// 신규입력
+this.fn_add = function ()
+{
+	this.ds_list_1.addRow();
+	
+	this.ds_list_2.clearData();
+	this.ds_list_3.clearData();
+	this.ds_list_4.clearData();
+	this.ds_list_5.clearData();
+	
+	this.fn_CheckboxSetting();
+};
+
+this.fn_save = function ()
+{
+	if(this.fn_valChk() == false)
+	{
+		return;
+	}
+	
+	this.ds_list_2.filter("");
+	this.ds_list_3.filter("");
+	this.ds_list_4.filter("");
+	this.ds_list_5.filter("");
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "ES003_M01";
+	var url = "svcUrl::ES003_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_detailSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 디테일 저장
+this.fn_detailSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var brlNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BRL_NO");
+
+	if (this.gfn_isNull(brlNo))
+	{
+		brlNo = this.ds_list_out.getColumn(this.ds_list_out.rowposition,"BRL_NO")
+	}	
+
+	var id = "ES003_M02";
+	var url = "svcUrl::ES003_M02";
+	var inDs = "ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+" BRL_NO="+brlNo+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 저장 callback
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	
+	var brlNo = this.ds_list_out.getColumn(0,"BRL_NO");
+	
+	this.fn_search(brlNo);
+}
+
+this.fn_delete = function ()
+{
+	this.ds_list_1.deleteRow(this.ds_list_1.rowposition);
+	this.ds_list_2.deleteAll();
+	this.ds_list_3.deleteAll();
+	this.ds_list_4.deleteAll();
+	this.ds_list_5.deleteAll();
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "ES003_M01";
+	var url = "svcUrl::ES003_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_detailSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 봉안시설 추가
+this.Div06_00_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.addRow();
+};
+
+// 봉안시설 삭제
+this.Div06_00_btn_addfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+// 자연장 추가
+this.Div06_00_btn_addfile01_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+};
+
+// 자연장 삭제
+this.Div06_00_btn_addfile00_00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.deleteRow(this.ds_list_3.rowposition);
+};
+
+// 납골묘 추가
+this.Div06_00_btn_addnab_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_4.addRow();
+};
+
+// 납골묘 삭제
+this.Div06_00_btn_addnabdel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_4.deleteRow(this.ds_list_4.rowposition);
+};
+
+// 매장 추가
+this.Div06_00_btn_addfile01_00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_5.addRow();
+};
+
+// 매장 삭제
+this.Div06_00_btn_addfile00_00_00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_5.deleteRow(this.ds_list_5.rowposition);
+};
+
+// 팝업 조회
+this.Div00_btn_vocno_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "brlInfo_popup";
+    var sUrl      = "ES::ES003_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_brlInfo";
+    var oOption   = {title : "장지시설 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 사전상담 팝업 callback
+this.fn_popupCallback_brlInfo = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+
+	var brlNo = objRtn.BRL_NO;
+	
+	
+	this.fn_search(brlNo);
+}
+
+// 품목 선택 이벤트
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+// 	if (e.columnid == "ITEM_CD")
+// 	{
+// 		var code = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"ITEM_CD");
+// 		var nRow = this.ds_item.findRow("CODE",code);
+// 
+// 		var cost = this.ds_item.getColumn(nRow,"MINOR_REMARK5");
+// 		
+// 		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"FN_AMT",cost);
+// 	}	
+};
+
+this.fn_valChk = function ()
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BRL_NM")))
+	{
+		this.alert("장지명을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ADDR1")))
+// 	{
+// 		this.alert("주소를 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ADDR2")))
+// 	{
+// 		this.alert("장례식장명을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+};
+
+// 멀티 콤보
+this.fn_mComboCallback = function ()
+{
+	var val = this.Div06.form.div_mCombo8.form.get_value();
+	//trace(val);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"RELIGION",val);
+};
+
+// 멀티 콤보
+this.fn_mComboCallback1 = function ()
+{
+	if (this.ds_list_2.rowcount == 0)
+	{
+		return;
+	}
+	var val = this.Div06_00.form.div_mCombo1.form.get_value();
+	//trace(val);
+	
+	if (this.gfn_isNull(val))
+	{
+		this.ds_list_2.filter("");
+	} else
+	{
+		var objRtn = val.split(",");
+		var filterstr = "";
+		
+		for(var i=0;i<objRtn.length;i++)
+		{		
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DIV2.indexOf('"+objRtn[i]+"')!='-1'";
+			else
+				filterstr += " || DIV2.indexOf('"+objRtn[i]+"')!='-1'";		
+		}
+		//trace(filterstr);
+		this.ds_list_2.set_filterstr(filterstr);
+	}
+};
+
+// 멀티 콤보
+this.fn_mComboCallback2 = function ()
+{
+	if (this.ds_list_3.rowcount == 0)
+	{
+		return;
+	}
+	var val = this.Div06_00.form.div_mCombo2.form.get_value();
+	//trace(val);
+	if (this.gfn_isNull(val))
+	{
+		this.ds_list_3.filter("");
+	} else
+	{
+		var objRtn = val.split(",");
+		var filterstr = "";
+		
+		for(var i=0;i<objRtn.length;i++)
+		{		
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DIV2.indexOf('"+objRtn[i]+"')!='-1'";
+			else
+				filterstr += " || DIV2.indexOf('"+objRtn[i]+"')!='-1'";		
+		}
+		//trace(filterstr);
+		this.ds_list_3.set_filterstr(filterstr);
+	}
+};
+
+// 멀티 콤보
+this.fn_mComboCallback3 = function ()
+{
+	if (this.ds_list_4.rowcount == 0)
+	{
+		return;
+	}
+	var val = this.Div06_00.form.div_mCombo3.form.get_value();
+	//trace(val);
+	if (this.gfn_isNull(val))
+	{
+		this.ds_list_4.filter("");
+	} else
+	{
+		var objRtn = val.split(",");
+		var filterstr = "";
+		
+		for(var i=0;i<objRtn.length;i++)
+		{		
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DIV2.indexOf('"+objRtn[i]+"')!='-1'";
+			else
+				filterstr += " || DIV2.indexOf('"+objRtn[i]+"')!='-1'";		
+		}
+		//trace(filterstr);
+		this.ds_list_4.set_filterstr(filterstr);
+	}
+};
+
+// 멀티 콤보
+this.fn_mComboCallback4 = function ()
+{
+	if (this.ds_list_5.rowcount == 0)
+	{
+		return;
+	}
+	var val = this.Div06_00.form.div_mCombo4.form.get_value();
+	//trace(val);
+	if (this.gfn_isNull(val))
+	{
+		this.ds_list_5.filter("");
+	} else
+	{
+		var objRtn = val.split(",");
+		var filterstr = "";
+		
+		for(var i=0;i<objRtn.length;i++)
+		{		
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DIV2.indexOf('"+objRtn[i]+"')!='-1'";
+			else
+				filterstr += " || DIV2.indexOf('"+objRtn[i]+"')!='-1'";		
+		}
+		//trace(filterstr);
+		this.ds_list_5.set_filterstr(filterstr);
+	}
+};
+
+this.fn_CheckboxSetting = function(){
+	// 시설구분
+	var chkval = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BRL_DIV");
+			
+	if(!this.gfn_isNull(chkval)){
+		var objRtn = chkval.split(",");
+		
+		this.Div06.form.chk1.set_value(objRtn[0]=="ES0064"?true:false);
+		this.Div06.form.chk2.set_value(objRtn[1]=="ES0065"?true:false);
+		this.Div06.form.chk3.set_value(objRtn[2]=="ES0066"? true:false);
+		this.Div06.form.chk4.set_value(objRtn[3]=="ES0067"?true:false);
+		this.Div06.form.chk5.set_value(objRtn[4]=="ES0068"?true:false);
+		this.Div06.form.chk6.set_value(objRtn[5]=="ES0069"?true:false);
+		this.Div06.form.chk7.set_value(objRtn[6]=="ES0070"?true:false);
+		this.Div06.form.chk8.set_value(objRtn[7]=="ES0071"?true:false);
+		this.Div06.form.chk9.set_value(objRtn[8]=="ES0072"?true:false);
+	}else{
+		this.Div06.form.chk1.set_value(false);
+		this.Div06.form.chk2.set_value(false);
+		this.Div06.form.chk3.set_value(false);
+		this.Div06.form.chk4.set_value(false);
+		this.Div06.form.chk5.set_value(false);
+		this.Div06.form.chk6.set_value(false);
+		this.Div06.form.chk7.set_value(false);
+		this.Div06.form.chk8.set_value(false);
+		this.Div06.form.chk9.set_value(false);
+	}
+}
+
+this.Div06_chk1_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	var txt1 = this.Div06.form.chk1.value?"ES0064":"0";
+	var txt2 = this.Div06.form.chk2.value?"ES0065":"0";
+	var txt3 = this.Div06.form.chk3.value?"ES0066":"0";
+	var txt4 = this.Div06.form.chk4.value?"ES0067":"0";
+	var txt5 = this.Div06.form.chk5.value?"ES0068":"0";
+	var txt6 = this.Div06.form.chk6.value?"ES0069":"0";
+	var txt7 = this.Div06.form.chk7.value?"ES0070":"0";
+	var txt8 = this.Div06.form.chk8.value?"ES0071":"0";
+	var txt9 = this.Div06.form.chk9.value?"ES0072":"0";
+	
+	this.Div06.form.chkval.set_value(txt1+","+txt2+","+txt3+","+txt4+","+txt5+","+txt6+","+txt7+","+txt8+","+txt9);
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM001" width="1555" height="856" titletext="New Form" onload="FM001_onload" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal">
+    <Layouts>
+      <Layout height="856" mobileorientation="landscape" width="1555">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="1"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="10" text="w&#13;&#10;10"/>
+        <Static id="Static01" taborder="2" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="191" text="w&#13;&#10;10" right="0"/>
+        <Tab id="Tab00" taborder="3" tabindex="0" left="20" top="10" onchanged="Tab00_onchanged" right="0" bottom="0">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="상담접수등록">
+              <Layouts>
+                <Layout>
+                  <Div id="Div06_00" taborder="1" top="107" width="573" maxwidth="613" minwidth="" left="20" height="129">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00" taborder="3" left="99" top="31" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00" taborder="4" left="99" top="59" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="Static12" taborder="2" text="고객 정보" left="0" top="-2" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="성명" left="0" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00_00" taborder="1" left="104" top="35" width="167" height="21" background="#fafdc8"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="5" text="연락처" left="0" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static28" taborder="6" text="고인과의 관계" left="276" top="93" width="100" cssclass="sta_WF_detailLabel_ess" height="29" visible="false"/>
+                        <Combo id="cmb_age01" taborder="7" left="380" top="97" width="165" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" innerdataset="ds_rel" background="#fafdc8" oneditclick="Div00_cmb_hsCd_oneditclick" tabstop="false" visible="false"/>
+                        <Static id="Static28_00" taborder="8" text="인지경로" left="276" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Combo id="cmb_age01_00" taborder="9" left="380" top="35" width="165" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" oneditclick="Div00_cmb_hsCd_oneditclick"/>
+                        <Edit id="edt_ownTel00" taborder="10" left="104" top="63" width="167" height="21" readonly="false" inputtype="number" background="#fafdc8"/>
+                        <Static id="Static28_00_00" taborder="11" text="상담유형" left="276" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Combo id="cmb_age01_00_00" taborder="12" left="380" top="63" width="165" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" oneditclick="Div00_cmb_hsCd_oneditclick" background="#fafdc8"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div00" taborder="0" text="Div00" left="20" top="11" width="560" height="91">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00" taborder="0" left="99" top="57" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21" taborder="1" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="Static23" taborder="2" text="접수번호" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo" taborder="3" left="104" top="33" width="146" height="21" enable="true" displaynulltext="자동 저장 됩니다." readonly="true"/>
+                        <Button id="btn_preno" taborder="4" left="250" top="33" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick"/>
+                        <Static id="Static23_00" taborder="5" text="접수일시" left="0" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00" taborder="6" text="접수자" left="275" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static05" taborder="7" text="접수정보" left="0" top="-3" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Combo id="cmb_user" taborder="8" left="379" top="61" width="167" height="21" text="" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <MaskEdit id="MaskEdit01" taborder="9" left="104" top="61" width="166" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" displaynulltext="자동저장 됩니다" readonly="false"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="10" text="진행상황" left="275" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Combo id="cmb_status" taborder="11" left="379" top="33" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" readonly="false" enable="true"/>
+                        <Button id="btn_mms00" taborder="12" left="430" top="1" width="119" height="21" text="고객센터 접수조회" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_Div00_btn_mms00_onclick"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div06_01" taborder="2" top="213" width="552" maxwidth="613" minwidth="" left="19" height="499">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_01" taborder="36" left="99" top="254" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_00_01_00_00" taborder="32" left="99" top="282" height="214" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_00_00" taborder="28" left="99" top="198" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_00_01" taborder="20" left="99" top="170" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_00_00" taborder="17" left="99" top="142" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_00" taborder="15" left="99" top="58" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01" taborder="10" left="99" top="30" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00" taborder="6" left="99" top="86" height="57" cssclass="sta_WF_detailLine" right="1"/>
+                        <Static id="Static12" taborder="0" text="접수정보" left="0" top="-4" width="141" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00" taborder="2" text="최종안치장소" left="0" top="170" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_01_01" taborder="1" left="104" top="174" width="441" height="20"/>
+                        <Static id="Static23_00_00_00" taborder="3" text="주소" left="0" top="86" width="100" cssclass="sta_WF_detailLabel_ess" height="57"/>
+                        <Edit id="edt_soNo00_00_00_00_00_00" taborder="4" left="104" top="91" width="148" height="21" enable="true" readonly="false" displaynulltext="지역"/>
+                        <Edit id="edt_soNo00_00_00_00" taborder="5" left="104" top="117" width="442" height="21" displaynulltext="상세주소"/>
+                        <Static id="Static23_00_00_00_00_00_00_00" taborder="7" text="육탈여부" left="0" top="30" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_01_00_00_00_01_01" taborder="8" text="기수 (봉분 수)" left="276" top="30" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_01_02" taborder="9" left="381" top="34" width="164" height="21"/>
+                        <Radio id="Radio00" taborder="11" left="107" top="35" width="159" height="21" innerdataset="ds_div1" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical"/>
+                        <Static id="Static23_00_00_00_00_00_00_00_00" taborder="12" text="석물여부" left="0" top="58" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Radio id="Radio00_00" taborder="13" left="107" top="63" width="159" height="21" innerdataset="ds_div2" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical"/>
+                        <Edit id="edt_soNo00_00_01_01_02_00" taborder="14" left="276" top="62" width="269" height="21"/>
+                        <Static id="Static23_00_00_00_00_00_00_00_00_00" taborder="16" text="개장희망일" left="0" top="142" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_01_02_00_00" taborder="18" left="276" top="146" width="269" height="21"/>
+                        <Calendar id="Calendar00" taborder="19" left="104" top="146" width="168" height="21" autoselect="true"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_01_00_01_00" taborder="21" left="99" top="226" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="Static23_00_00" taborder="22" text="확정일" left="0" top="226" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_01" taborder="23" text="견적금액" left="276" top="226" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Calendar id="Calendar00_00" taborder="24" left="104" top="230" width="168" height="21" autoselect="true"/>
+                        <Static id="Static23_00_00_01_00" taborder="25" text="화장장" left="0" top="198" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00" taborder="26" left="-116" top="202" width="148" height="21" visible="false"/>
+                        <Button id="btn_sono00_00" taborder="27" left="32" top="202" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div06_btn_sono00_00_onclick" visible="false"/>
+                        <Static id="Static23_00_00_01_01" taborder="29" text="화장금액" left="276" top="198" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_02" taborder="30" text="비고" left="0" top="282" width="100" cssclass="sta_WF_detailLabel" height="214"/>
+                        <TextArea id="TextArea00" taborder="31" left="104" top="287" width="440" height="204"/>
+                        <Button id="btn_sono00_00_00" taborder="33" left="252" top="91" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Tab00_Tabpage1_Div06_01_btn_sono00_00_00_onclick"/>
+                        <Static id="Static23_00_00_00_00_00_00_00_01" taborder="34" text="장지여부" left="0" top="254" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Radio id="Radio00_01" taborder="35" left="107" top="259" width="159" height="21" innerdataset="ds_div2" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical"/>
+                        <Radio id="Radio00_01_00" taborder="37" left="383" top="259" width="159" height="21" innerdataset="ds_div2" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical"/>
+                        <Static id="Static23_00_00_00_00_00_00_00_01_00" taborder="38" text="유골함여부" left="276" top="254" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_01_02_01" taborder="39" left="381" top="202" width="164" height="21"/>
+                        <Edit id="edt_soNo00_00_01_01_02_01_00" taborder="40" left="381" top="230" width="164" height="21"/>
+                        <Combo id="cmb_age01_00_00" taborder="41" left="104" top="202" width="168" height="21" text="선택" value="" index="-1" codecolumn="CREM_NO" datacolumn="CREM_NM" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" oneditclick="Div00_cmb_hsCd_oneditclick" innerdataset="ds_crem"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Static id="Static05_00_00" taborder="3" text="문자발송" left="592" top="9" width="102" height="30" cssclass="sta_WF_title"/>
+                  <Button id="btn_mmsSearch" taborder="4" left="625" top="41" width="90" height="21" text="1차 문구생성" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_mmsSearch_onclick"/>
+                  <Button id="btn_mms" taborder="5" left="772" top="12" width="77" height="21" text="MMS 전송" cssclass="btn_WF_main1" onclick="btn_mms_onclick"/>
+                  <Button id="btn_mmsSearch00" taborder="6" left="854" top="12" width="51" height="21" text="조회" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_mmsSearch00_onclick"/>
+                  <TextArea id="TextArea00_00" taborder="7" left="589" top="68" onchanged="Div00_TextArea00_onchanged" width="317" height="640"/>
+                  <Static id="Static05" taborder="8" text="개장 사진" left="925" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+                  <Grid id="Grid00_00" taborder="9" left="923" top="40" binddataset="ds_file" autoenter="select" selecttype="cell" griduserproperty="!sort" autofittype="col" height="199" width="602" onselectchanged="Div00_Tab00_Tabpage6_Grid00_00_onselectchanged" oncellclick="Div00_Tab00_Tabpage6_Grid00_00_oncellclick">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="41"/>
+                          <Column size="92"/>
+                          <Column size="174"/>
+                          <Column size="130"/>
+                          <Column size="60"/>
+                          <Column size="50"/>
+                          <Column size="59"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="순번"/>
+                          <Cell col="1" text="구분"/>
+                          <Cell col="2" text="파일명"/>
+                          <Cell col="3" text="등록일"/>
+                          <Cell col="4" text="파일찾기"/>
+                          <Cell col="5" text="다운"/>
+                          <Cell col="6" text="크게보기"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="expr:currow+1" textAlign="center"/>
+                          <Cell col="1" text="bind:DIV" textAlign="left" tooltiptext="bind:DIV" combodataset="ds_file_div" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike" edittype="combo" displaytype="combotext" background="#fafdc8"/>
+                          <Cell col="2" text="bind:FILENAME" textAlign="left" tooltiptext="bind:FILENAME"/>
+                          <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                          <Cell col="4" text="expr:INSRT_DT==null ? '찾기' : ''" displaytype="expr:INSRT_DT==null ? 'buttoncontrol' : 'nomal'" edittype="expr:INSRT_DT==null ? 'button' : 'none'"/>
+                          <Cell col="5" text="다운" displaytype="buttoncontrol"/>
+                          <Cell col="6" text="크게보기" displaytype="buttoncontrol"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="btn_addfile" taborder="10" left="1454" top="11" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" visible="true" onclick="Tab00_Tabpage1_btn_addfile_onclick"/>
+                  <ImageViewer id="ImageViewer00" taborder="11" left="923" top="252" width="602" height="456" stretch="fit"/>
+                  <Button id="btn_addfile00" taborder="12" left="1374" top="11" text="행추가" cssclass="btn_WF_main1" width="70" height="21" visible="true" onclick="Div00_Tab00_Tabpage6_btn_addfile_onclick"/>
+                  <Button id="btn_mmsSearch01" taborder="13" left="720" top="41" width="90" height="21" text="2차 문구생성" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_mmsSearch01_onclick"/>
+                  <Button id="btn_mmsSearch01_00" taborder="14" left="815" top="41" width="90" height="21" text="3차 문구생성" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_mmsSearch01_00_onclick"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="STATUS" type="STRING" size="20"/>
+          <Column id="RCPT_DT" type="DATETIME" size="23"/>
+          <Column id="RCPT_USER" type="STRING" size="20"/>
+          <Column id="CUST_NM" type="STRING" size="20"/>
+          <Column id="CUST_TEL" type="STRING" size="20"/>
+          <Column id="CUST_REL" type="STRING" size="20"/>
+          <Column id="ADDR1" type="STRING" size="50"/>
+          <Column id="ADDR2" type="STRING" size="50"/>
+          <Column id="YUCTAL_YN" type="STRING" size="20"/>
+          <Column id="QTY" type="STRING" size="20"/>
+          <Column id="SEOKMUL_YN" type="STRING" size="20"/>
+          <Column id="SEOKMUL_DESC" type="STRING" size="100"/>
+          <Column id="HOPE_DT" type="STRING" size="23"/>
+          <Column id="HOPE_DESC" type="STRING" size="100"/>
+          <Column id="CREM_CD" type="STRING" size="20"/>
+          <Column id="CREM_TIME" type="STRING" size="40"/>
+          <Column id="PLACE_REST" type="STRING" size="100"/>
+          <Column id="CFM_DT" type="STRING" size="23"/>
+          <Column id="AMT" type="STRING" size="40"/>
+          <Column id="REMARK" type="STRING" size="2000"/>
+          <Column id="DEL_YN" type="STRING" size="5"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="CHNL" type="STRING" size="256"/>
+          <Column id="CREM_NM" type="STRING" size="256"/>
+          <Column id="BRL_YN" type="STRING" size="256"/>
+          <Column id="BOX_BONES_YN" type="STRING" size="256"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CONSULT_MEMO" type="STRING" size="256"/>
+          <Column id="CONSULT_USER" type="STRING" size="256"/>
+          <Column id="CONSULT_DT" type="STRING" size="256"/>
+          <Column id="CONSULT_TIME" type="STRING" size="256"/>
+          <Column id="CONSULT_MIN" type="STRING" size="256"/>
+          <Column id="PRE_RCPT_NO" type="STRING" size="256"/>
+          <Column id="SEQ" type="STRING" size="256"/>
+          <Column id="CONSULT_COST" type="STRING" size="256"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="256"/>
+          <Column id="CONSULT_CHNL" type="STRING" size="256"/>
+          <Column id="CUST_NM" type="STRING" size="256"/>
+          <Column id="CUST_TEL" type="STRING" size="256"/>
+          <Column id="INSRT_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_div1"/>
+      <Dataset id="ds_rel">
+        <ColumnInfo>
+          <Column id="HS_CODE" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="2000"/>
+          <Column id="HS_GU" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div2"/>
+      <Dataset id="ds_list_out"/>
+      <Dataset id="ds_mms"/>
+      <FileDialog id="FileDialog00" onclose="FileDialog00_onclose"/>
+      <FileUpTransfer id="FileUpTransfer00" onsuccess="FileUpTransfer00_onsuccess" onerror="FileUpTransfer00_onerror"/>
+      <FileDownTransfer id="FileDownTransfer00" onsuccess="FileDownTransfer00_onsuccess" onerror="FileDownTransfer00_onerror"/>
+      <Dataset id="ds_file">
+        <ColumnInfo>
+          <Column id="FILE_MG_NO" type="STRING" size="20"/>
+          <Column id="DJ_MG_NO" type="STRING" size="20"/>
+          <Column id="SEQ" type="INT" size="11"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="REAL_FILENAME" type="STRING" size="200"/>
+          <Column id="FILENAME" type="STRING" size="200"/>
+          <Column id="FILE_SIZE" type="STRING" size="200"/>
+          <Column id="FILE_PATH" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_file_div"/>
+      <Dataset id="ds_crem">
+        <ColumnInfo>
+          <Column id="CREM_NO" type="STRING" size="18"/>
+          <Column id="CREM_NM" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item14" compid="edt_soNo00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item15" compid="edt_soNo00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item16" compid="edt_soNo00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item18" compid="edt_soNo00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item19" compid="edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item23" compid="Tab00.Tabpage1.form.Div00.form.MaskEdit01_00" propid="value" datasetid="ds_list" columnid="CONFIRM_DT"/>
+      <BindItem id="item2" compid="Div06.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item5" compid="Tab00.Tabpage1.form.Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="MG_NO"/>
+      <BindItem id="item6" compid="Tab00.Tabpage1.form.Div00.form.MaskEdit01" propid="value" datasetid="ds_list_1" columnid="RCPT_DT"/>
+      <BindItem id="item7" compid="Tab00.Tabpage1.form.Div00.form.cmb_user" propid="value" datasetid="ds_list_1" columnid="RCPT_USER"/>
+      <BindItem id="item29" compid="Tab00.Tabpage1.form.Div00.form.cmb_status" propid="value" datasetid="ds_list_1" columnid="STATUS"/>
+      <BindItem id="item1" compid="Div00.form.edt_soNo00_00_00_00_00_01" propid="value" datasetid="ds_list_1" columnid="FACL_NM"/>
+      <BindItem id="item3" compid="Div00.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR1"/>
+      <BindItem id="item4" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR2"/>
+      <BindItem id="item8" compid="Div00.form.edt_soNo00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="POST"/>
+      <BindItem id="item0" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_00" propid="value" datasetid="ds_list_1" columnid="CREM_NM"/>
+      <BindItem id="item9" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item11" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age01" propid="value" datasetid="ds_list_1" columnid="CUST_REL"/>
+      <BindItem id="item12" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age01_00" propid="value" datasetid="ds_list_1" columnid="CHNL"/>
+      <BindItem id="item13" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR1"/>
+      <BindItem id="item17" compid="Tab00.Tabpage1.form.Div06_01.form.Radio00" propid="value" datasetid="ds_list_1" columnid="YUCTAL_YN"/>
+      <BindItem id="item20" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02" propid="value" datasetid="ds_list_1" columnid="QTY"/>
+      <BindItem id="item21" compid="Tab00.Tabpage1.form.Div06_01.form.Radio00_00" propid="value" datasetid="ds_list_1" columnid="SEOKMUL_YN"/>
+      <BindItem id="item22" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_00" propid="value" datasetid="ds_list_1" columnid="SEOKMUL_DESC"/>
+      <BindItem id="item24" compid="Tab00.Tabpage1.form.Div06_01.form.Calendar00" propid="value" datasetid="ds_list_1" columnid="HOPE_DT"/>
+      <BindItem id="item25" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_00_00" propid="value" datasetid="ds_list_1" columnid="HOPE_DESC"/>
+      <BindItem id="item27" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_01" propid="value" datasetid="ds_list_1" columnid="PLACE_REST"/>
+      <BindItem id="item28" compid="Tab00.Tabpage1.form.Div06_01.form.Calendar00_00" propid="value" datasetid="ds_list_1" columnid="CFM_DT"/>
+      <BindItem id="item31" compid="Tab00.Tabpage1.form.Div06_01.form.TextArea00" propid="value" datasetid="ds_list_1" columnid="REMARK"/>
+      <BindItem id="item32" compid="Tab00.Tabpage1.form.Div06_00.form.edt_ownTel00" propid="value" datasetid="ds_list_1" columnid="CUST_TEL"/>
+      <BindItem id="item33" compid="Div00.form.edt_ownTel00_00" propid="value" datasetid="ds_list" columnid="REQ_TEL_NO1"/>
+      <BindItem id="item10" compid="Tab00.Tabpage1.form.Div06_01.form.Radio00_01" propid="value" datasetid="ds_list_1" columnid="BRL_YN"/>
+      <BindItem id="item34" compid="Tab00.Tabpage1.form.Div06_01.form.Radio00_01_00" propid="value" datasetid="ds_list_1" columnid="BOX_BONES_YN"/>
+      <BindItem id="item35" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_01" propid="value" datasetid="ds_list_1" columnid="CREM_TIME"/>
+      <BindItem id="item30" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_01_00" propid="value" datasetid="ds_list_1" columnid="AMT"/>
+      <BindItem id="item26" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age01_00_00" propid="value" datasetid="ds_list_1" columnid="CONSULT_TYPE"/>
+      <BindItem id="item36" compid="Tab00.Tabpage1.form.Div06_01.form.cmb_age01_00_00" propid="value" datasetid="ds_list_1" columnid="CREM_CD"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    SORS > 사전상담 등록
+*  @FileName 	SO005.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.09.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_setCombo(obj);	
+	
+	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
+	{
+		this.fn_search(this.objApp.gds_so_no.getColumn(0,"SO_NO"))
+	}
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	this.ds_list_2.clearData();
+	this.ds_list_1.addRow();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"RCPT_USER",regUser);
+	
+	this.efn_SetComboData(obj,this.objApp.gds_user,"ds_userIn",this.Tab00.Tabpage1.form.Div00.form.cmb_user,"",false,false);
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_div3",this.Tab00.Tabpage1.form.Div06_00.form.cmb_age01_00,"MAJOR_CODE=='DJ001'",false,false);
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_div4",this.Tab00.Tabpage1.form.Div00.form.cmb_status,"MAJOR_CODE=='DJ006'",false,false);
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_div5",this.Tab00.Tabpage1.form.Div06_00.form.cmb_age01_00_00,"MAJOR_CODE=='DJ007'",false,false);
+	
+	this.efn_SetDatasetData2(this.ds_div1,this.objApp.gds_code2,'DJ002');			// 육탈여부
+	this.efn_SetDatasetData2(this.ds_div2,this.objApp.gds_code2,'DJ003');			// 석물여부
+	this.efn_SetDatasetData2(this.ds_file_div,this.objApp.gds_code2,'DJ005');			// 파일구분
+	
+	var id = "FM001_S02";
+	var url = "svcUrl::FM001_S02";
+	var inDs = "";
+	var outDs = "ds_rel=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	
+	var id = "DJ001_S02";
+	var url = "svcUrl::DJ001_S02";
+	var inDs = "";
+	var outDs = "ds_mms=ds_mms ds_crem=ds_crem";
+	var args = "";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 조회 callback
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+  /**
+* @description 		공통신규버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.12
+* @수정자	   
+* @수정일자
+*/
+// 조회
+this.fn_search = function (mgNo)
+{
+	if (this.gfn_isNull(mgNo))
+	{
+		if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO")))
+		{
+			if (!this.confirm("저장된 사전상담 번호가 없습니다. 조회하시겠습니까?"))
+			{
+				return;
+			}
+		} else
+		{
+			mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+		}		
+	}
+	
+	var id = "DJ001_S01";
+	var url = "svcUrl::DJ001_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_file=ds_file";
+	var args = "MG_NO="+mgNo;
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 조회 callback
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
+	{
+		this.objApp.gds_so_no.setColumn(0,"SO_NO","");
+	}
+}
+
+this.fn_save = function ()
+{
+	if(this.fn_valChk() == false)
+	{
+		return;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "DJ001_M01";
+	var url = "svcUrl::DJ001_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_filesave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_filesave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var djMgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+	
+	if (this.gfn_isNull(djMgNo))
+	{
+		djMgNo = this.ds_list_out.getColumn(0,"MG_NO");
+	}
+	
+	// 첨부파일 저장
+	var id = "DJ001_M02";
+	var url = "svcUrl::DJ001_M02";
+	var inDs = "ds_file=ds_file:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" DJ_MG_NO="+djMgNo+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 저장 callback
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var djMgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+	
+	if (this.gfn_isNull(djMgNo))
+	{
+		djMgNo = this.ds_list_out.getColumn(0,"MG_NO");
+	}
+	
+	this.fn_search(djMgNo);
+	this.Tab00.Tabpage1.form.ImageViewer00.set_image("");
+	this.alert("저장 되었습니다.");
+}
+
+// 상담조회
+this.Div00_btn_preno_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Tab00.Tabpage1.form.TextArea00_00.set_value("");
+
+	var sPopupId  = "djInfo_popup";
+    var sUrl      = "DJ::DJ001_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_djInfo";
+    var oOption   = {title : "사전상담 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 상담조회 팝업 callback
+this.fn_popupCallback_djInfo = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+
+	var preNo = objRtn.MG_NO;
+	
+	
+	this.fn_search(preNo);
+}
+
+// 화장장 조회
+this.Div06_btn_sono00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "djInfo_popup";
+    var sUrl      = "FM::FM004_P03.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_djInfo2";
+    var oOption   = {title : "화장장 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 화장장 조회 팝업 callback
+this.fn_popupCallback_djInfo2 = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CREM_CD",objRtn.CREM_NO);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CREM_NM",objRtn.CREM_NM);
+}
+
+this.fn_valChk = function ()
+{
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM")))
+	{
+		this.alert("성명을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_TEL")))
+	{
+		this.alert("연락처를 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONSULT_TYPE")))
+	{
+		this.alert("상담유형을 입력하시기 바랍니다.");
+		return false;
+	}
+};
+
+// 문자 문구 생성
+this.Tab00_Tabpage1_btn_mmsSearch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var message2 = this.ds_mms.getColumn(this.ds_mms.rowposition,"REMARK1")
+	
+	var message = "[단장] 비용 설계서 안내\n\n"
+		message += "※주의: 서비스희망일에 화장장 예약 종료된 경우,\n화장 날짜 or 개장 날짜가 변경될 수 있음.\n\n"
+		message += "■ 고객명 : "+this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM"),"")+" 님\n"
+		message += "■ 견적 금액 : "+this.gfn_nvl(this.Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_01_00.text,"")+"\n"
+		message += "\n"+message2+"\n\n"
+		message += "1. "+this.gfn_nvl(this.Tab00.Tabpage1.form.Div06_01.form.cmb_age01_00_00.text,"")+" "+this.gfn_nvl(this.Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_01_02_01.text,"")+"\n\n"
+		message += "※ 화장비용은 고객님께서 직접 결제 하시면 됩니다."+"\n"
+		message += "- 고인이 국가유공자일 경우 면제\n"
+		message += "- 예약 현황에 따라 화장장은 변동될 수 있습니다."
+
+	this.Tab00.Tabpage1.form.TextArea00_00.set_value(message)
+};
+
+this.Tab00_Tabpage1_btn_mmsSearch01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var message2 = this.ds_mms.getColumn(this.ds_mms.rowposition,"REMARK3")
+
+	this.Tab00.Tabpage1.form.TextArea00_00.set_value(message2)
+};
+
+this.Tab00_Tabpage1_btn_mmsSearch01_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var message3 = this.ds_mms.getColumn(this.ds_mms.rowposition,"REMARK2")
+	
+	this.Tab00.Tabpage1.form.TextArea00_00.set_value(message3)
+};
+
+this.Tab00_Tabpage1_Div06_01_btn_sono00_00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var hsGu = "Z";
+
+	var sPopupId  = "dlvy_popup";
+	var sUrl      = "SO::SO001_P03.xfdl";
+	var oArg      = {code : "", hsGu : hsGu};
+	var sCallBack = "fn_popupCallback_dlvy";
+	var oOption   = {title : "배송지 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 배송지 팝업 callback
+this.fn_popupCallback_dlvy = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADDR1",objRtn.REGION_CD);
+}
+
+// mms 전송
+this.btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO")))
+	{
+		this.alert("접수번호를 선택해 주세요");
+		return;
+	}
+	
+	var mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+	var hp = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_TEL");
+	var nm = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM");
+	var message = this.Tab00.Tabpage1.form.TextArea00_00.text;
+	var prgmId = "DJ001";
+	var sndNum = "16004175";
+	
+	var sPopupId  = "mms_popup";
+    var sUrl      = "FM::FM001_P02.xfdl";
+	var oArg      = {mgNo : mgNo, hp : hp, nm : nm, message : message, prgmId : prgmId, sndNum : sndNum};
+	var sCallBack = "fn_popupCallback_mms";
+    var oOption   = {title : "MMS 전송"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// mms전송 callback
+this.fn_popupCallback_mms = function(sPopId, sRtn)
+{
+//     var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+// 	var mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+// 	var hp2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_TEL");
+// 	var nm = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM");
+// 	var message3 = this.ds_mms.getColumn(this.ds_mms.rowposition,"REMARK2")
+// 	var prgmId = "DJ001";
+// 	var sndNum = "16004175";
+// 	
+// 	// 문자발송
+// 	var id = "FM003_M01";
+// 	var url = "svcUrl::FM003_M01";
+// 	var inDs = "";
+// 	var outDs = "";
+// 	var args = "INSRT_USER_ID="+regUser+" MG_NO="+mgNo+" HP="+hp2+" MESSAGE='"+message3+"' PRGM_ID="+prgmId+" SND_NUM="+sndNum+"";
+// 	var callBackid = "fn_aftermms";
+// 		
+// 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.Tab00_Tabpage1_btn_mmsSearch00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+	
+	var sPopupId  = "mmsSearch_popup";
+    var sUrl      = "FM::FM001_P04.xfdl";
+	var oArg      = {mgNo : mgNo};
+	var sCallBack = "";
+    var oOption   = {title : "MMS 발송내역 조회"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+this.Div00_Tab00_Tabpage6_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO")))
+	{
+		this.alert("상담내용을 먼저 저장 후 첨부파일을 등록하시기 바랍니다.")
+		return;
+	}
+			
+	this.ds_file.addRow();
+};
+
+this.Tab00_Tabpage1_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_file.deleteRow(this.ds_file.rowposition);
+};
+
+// 첨부파일 그리드 클릭 이벤트
+this.Div00_Tab00_Tabpage6_Grid00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 4)
+	{
+		if (this.gfn_isNull(this.ds_file.getColumn(this.ds_file.rowposition,"INSRT_DT")))
+		{
+			if (this.gfn_isNull(this.ds_file.getColumn(this.ds_file.rowposition,"DIV")))
+			{
+				this.alert("구분을 먼저 저장 후 첨부파일을 등록하시기 바랍니다.")
+				return;
+			}
+			
+			this.FileUpTransfer00.clearFileList();
+			this.FileDialog00.open("FileUPload Dialog", 3);
+		}
+	}
+	
+	if (e.col == 5)
+	{
+		var file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH").replace(/\\/gi,"/");
+		var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+		var r_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+		//trace(file_path+">>"+file_name+">>"+r_file_name)
+		var file_url = "http://182.162.91.66:8081/web/"+file_path+r_file_name+file_name.substring(file_name.lastIndexOf("."));
+	
+		this.FileDownTransfer00.set_downloadfilename( file_name ); 
+		this.FileDownTransfer00.download(file_url);
+	}
+	
+ 	var file_path = this.gfn_nvl(this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH"),"");
+ 	var real_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+ 	var file_name = this.gfn_nvl(this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME"),"");
+ 	var status = this.ds_file.getColumn(this.ds_file.rowposition,"STATUS");
+ 	var file_url = "";
+ 	
+ 	file_path = file_path.replace(/\\/gi,"/");
+ 	
+ 	file_url = "http://182.162.91.66:8081/web/"+file_path+real_file_name+file_name.substring(file_name.lastIndexOf("."));
+ 	//file_url = "http://182.162.91.66:8081/web/"+file_path;
+// 
+ 	this.Tab00.Tabpage1.form.ImageViewer00.set_image(file_url);
+	
+	if (e.col == 6)
+	{
+		var file_path = this.gfn_nvl(this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH"),"");
+		var real_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+		var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+		var status = "HJW";
+		
+		var sPopupId  = "client_popup";
+		var sUrl      = "TM::TM004_P01.xfdl";
+		var oArg      = {file_path : file_path, real_file_name : real_file_name, file_name : file_name, status : status};
+		var sCallBack = "fn_popupCallback_client";
+		var oOption   = {title : "이미지"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}
+};
+
+this.FileDialog00_onclose = function(obj:nexacro.FileDialog,e:nexacro.FileDialogEventInfo)
+{
+	//trace( "FileDialog00_onclose//////"+obj.name+"_"+e.eventid );
+	//trace(e.virtualfiles.length);
+	for (var i = 0, len = e.virtualfiles.length, vFile; i < len; i++)
+	{
+		vFile = e.virtualfiles[i];
+		
+		this.FileUpTransfer00.addFile("file0"+i,vFile);
+		
+		vFile.addEventHandler("onsuccess", this.FileDialog_VirtualFile_onsuccess, this);
+		vFile.addEventHandler("onerror", this.FileDialog_VirtualFile_onerror, this);
+		vFile.open(null, 1);
+		
+		//this._vFiles.push(vFile);
+	}
+
+};
+
+
+this.FileDialog_VirtualFile_onerror = function(obj, e)
+{
+	//trace( obj.name+"_"+e.eventid );
+	//trace( "e.statuscode:"+e.statuscode );
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.")
+}
+this.FileDialog_VirtualFile_onsuccess = function(obj, e)
+{
+	//trace("FileDialog_VirtualFile_onsuccess init");
+	var size_table = ["KB", "MB", "GB", "TB", "PB"];
+	
+	function cutFileSize(filesize, rate, count)
+	{
+		var ret = (filesize / (Math.pow(rate, count + 1))).toFixed(2);
+		if (ret < rate)
+		{
+			if (size_table[count])
+			{
+				return ret + " " + size_table[count];
+			}
+			else
+			{
+				return filesize + " Byte";
+			}
+		}
+		else
+		{
+			return cutFileSize(filesize, rate, ++count);
+		}
+	};
+
+
+	if (e.reason == 1)
+	{
+		obj.getFileSize();
+	}
+	else if (e.reason == 9)
+	{
+		var djMgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MG_NO");
+		var d = new Date();
+		
+		var yy = (new Date()).getYear();
+		var tmpStr = (new Date()).getTime();
+		tmpStr = ("0000000" + tmpStr.toString()).substr(-8);
+		var display_name = djMgNo + "_"+tmpStr
+	
+		this.ds_file.setColumn(this.ds_file.rowposition, "REAL_FILENAME", display_name);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILENAME", obj.filename);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_SIZE", cutFileSize(e.filesize, Math.pow(2, 10), 0));
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_PATH", "nui\\uploadFiles\\"+yy+"\\DJ\\"+djMgNo+"\\");
+		
+		this.fileSave();
+	}
+};
+
+
+this.FileUpTransfer00_onerror = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferErrorEventInfo)
+{
+	//trace("11 " +obj.name+"_"+e.eventid );
+	//trace(e.ErrorMsg);
+	//trace(e.errorobj);
+	//this.alert("업로드에 실패했습니다.\r\n다시시도 부탁드립니다.");
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.");
+};
+
+this.FileUpTransfer00_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferEventinfo)
+{
+	//trace("2 " + obj.name+"_"+e.eventid );
+	
+	this.fn_UploadSave();
+};
+
+this.fn_UploadSave = function(){
+	this.fn_save();
+}
+
+this.fileSave = function(){
+	var real_filename = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+	var real_file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH");
+
+	this.FileUpTransfer00.setPostData(
+		"filename",
+		real_filename
+	);
+
+	this.FileUpTransfer00.setPostData(
+		"filepath",
+		real_file_path
+	);
+	//trace("123123");
+
+	this.FileUpTransfer00.upload("JSP::fileUpload_postdatatest.jsp?PATH22="+real_file_path);
+}
+
+this.FileDownTransfer00_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferEventInfo)
+{
+	this.alert("정상적으로 다운로드 되었습니다.");
+};
+
+this.Tab00_Tabpage1_Div00_btn_mms00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "mms6_popup";
+	var sUrl      = "DJ::DJ001_P02.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_djInfo2";
+	var oOption   = {title : "고객센터 접수조회"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 상담조회 팝업 callback
+this.fn_popupCallback_djInfo2 = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"REMARK",objRtn.REMARK)
+}]]></Script>
+  </Form>
+</FDL>

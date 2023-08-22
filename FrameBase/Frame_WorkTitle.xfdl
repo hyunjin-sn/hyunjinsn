@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_WorkTitle" left="0" top="0" width="814" height="33" scrolltype="none" titletext="Frame_WorkTitle" onload="Frame_WorkTitle_onload" border="0px solid gray,0px none,0px none">
+    <Layouts>
+      <Layout>
+        <Button id="btn_base" taborder="8" text="Button00" top="5" width="5" height="24" right="0" visible="false" onclick="fn_commBtnClick"/>
+        <Static id="st_title" taborder="0" left="0" top="2" width="482" height="28" text="메뉴타이틀" cssclass="sta_WF_location"/>
+        <Button id="btn_myMenu" taborder="1" left="499" top="5" width="21" height="21" cssclass="btn_WF_boomark" onclick="btn_myMenu_onclick" visible="false"/>
+        <Button id="btn_print" taborder="7" text="출력" top="5" width="45" height="24" right="btn_base:1" visible="false" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+        <Button id="btn_excel" taborder="6" text="엑셀" top="5" width="45" height="24" right="btn_print:3" visible="false" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+        <Button id="btn_save" taborder="4" text="저장" top="5" width="45" height="24" right="btn_excel:3" visible="false" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+        <Button id="btn_delete" taborder="5" text="삭제" top="5" width="45" height="24" right="btn_save:3" visible="true" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+        <Button id="btn_add" taborder="3" text="입력" top="5" width="45" height="24" right="btn_delete:3" visible="true" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+        <Button id="btn_search" taborder="2" text="조회" top="5" width="45" height="24" right="btn_add:3" visible="true" onclick="fn_commBtnClick" cssclass="btn_WF_main1"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.objApp = this.gfn_getApplication();
+this.fv_menuId = "";
+this.fv_myMenu = false;
+this.Frame_WorkTitle_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fv_menuId = this.getOwnerFrame().arguments["menuId"];
+    
+    this.fn_setBookmark();
+	
+	this.fn_setAuthBtn();
+	//trace("11");
+	//trace(this.fv_menuId);
+	//this.alert(this.fv_menuId);
+	//this.btn_myMenu.set_visible(true);
+};
+
+this.fn_setBookmark = function()
+{
+    var nRow = this.objApp.gds_myMenu.findRow("MENU_ID", this.fv_menuId);
+    this.btn_myMenu.set_cssclass("btn_WF_boomark");
+    if(nRow > -1){
+        this.btn_myMenu.set_cssclass("btn_WF_boomark_S");
+        this.fv_myMenu = true;
+    }    
+}
+
+this.btn_myMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+
+	this.objApp.gds_myMenu.set_enableevent(false);
+	this.objApp.av_LeftFrame.form.div_left.form.grd_menu.set_enableredraw(false);
+	if(this.fv_myMenu) {
+		//즐겨찾기해제
+		var nRow = this.objApp.gds_myMenu.findRow("MENU_ID", this.fv_menuId);
+		this.objApp.gds_myMenu.deleteRow(nRow);
+        this.btn_myMenu.set_cssclass("btn_WF_boomark");
+        this.fv_myMenu = false;
+	}
+    else{
+		//즐겨찾기추가
+		var nRow = this.objApp.gds_menu.findRow("MENU_ID", this.fv_menuId);
+        var nNewRow =  this.objApp.gds_myMenu.addRow();
+		this.objApp.gds_myMenu.copyRow(nNewRow, this.objApp.gds_menu, nRow);
+        //trace(this.objApp.gds_myMenu.saveXML());
+        this.btn_myMenu.set_cssclass("btn_WF_boomark_S");
+        this.fv_myMenu = true;
+	}
+    
+	this.objApp.gds_myMenu.set_enableevent(true);
+	this.objApp.av_LeftFrame.form.div_left.form.grd_menu.set_enableredraw(true);
+	nexacro.setPrivateProfile("gds_myMenu", this.objApp.gds_myMenu.saveXML());
+
+};
+
+
+this.fn_setAuthBtn = function()
+{
+    var strAuth = this.objApp.gds_menu.lookup("MENU_ID", this.fv_menuId, "MENU_AUTH");
+    if(this.gfn_isNull(strAuth)){
+        strAuth = "100000";
+    }
+	//trace(strAuth);
+    //strAuth = "100000";
+    //공통버튼 설정 1:사용, 0:미사용
+    //각각버튼을 arrange로 설정 size 0으로 처리
+    var arrObj = ["btn_search","btn_add","btn_delete","btn_save","btn_excel","btn_print"];
+    for(var i=0; i<arrObj.length; i++){
+        var objBtn = this.components[arrObj[i]];
+        if(strAuth.substr(i, 1) == "0"){
+            objBtn.set_width("0");
+            objBtn.set_right(objBtn.right.replace(":3", ":0")); //사이 간격으로 인하여 한쪽은 0으로 변경
+        }
+        else{
+		//trace(objBtn);
+            objBtn.set_visible(true);
+        }
+    }
+    this.resetScroll();
+// 	this.btn_add.set_width("30")
+// 	this.btn_add.set_visible(true);
+}
+
+// 공통버튼 클릭이벤트
+this.fn_commBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sName = String(obj.name).substr(4);   //btn_save
+
+    switch(sName) {
+        case "search":
+            this.parent.parent.div_work.form.fn_search();
+            break;
+        case "add":
+             this.parent.parent.div_work.form.fn_add();
+            break;
+        case "delete":
+             this.parent.parent.div_work.form.fn_delete();
+            break;
+        case "save":
+             this.parent.parent.div_work.form.fn_save();
+            break;
+        case "excel":
+             this.parent.parent.div_work.form.fn_excel();
+            break;
+        case "print":
+             this.parent.parent.div_work.form.fn_print();
+            break;
+        default:
+    }	
+};
+]]></Script>
+  </Form>
+</FDL>

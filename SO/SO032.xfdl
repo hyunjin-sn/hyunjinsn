@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO032_1" width="1300" height="600" titletext="New Form" onload="SO032_1_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Button id="btn_excel" taborder="0" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
+                    <Static id="Static03" taborder="1" text="우편번호" left="24" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_zip" taborder="2" left="126" top="4" width="82" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01_00" taborder="3" text="배송지" left="254" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="edt_dlvy" taborder="4" text="Combo00" left="358" top="4" width="290" height="21" innerdataset="ds_dlvy_in" codecolumn="DLVY_CD" datacolumn="DLVY_NM" onitemchanged="Div_client_div_search_Combo00_onitemchanged" type="filterlike"/>
+                    <Static id="Static03_00" taborder="5" text="주소" left="718" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
+                    <Edit id="edt_addr" taborder="6" left="820" top="4" width="212" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper" visible="false"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="10" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" oncelldblclick="Div_client_grd_list_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="38"/>
+                      <Column size="68"/>
+                      <Column size="200"/>
+                      <Column size="200"/>
+                      <Column size="400"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="40" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="우편번호&#13;&#10;(앞4자리)"/>
+                      <Cell col="2" text="시/도"/>
+                      <Cell col="3" text="시/군/구"/>
+                      <Cell col="4" text="배송지"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:ZIP_CODE" textAlign="center" edittype="text"/>
+                      <Cell col="2" text="bind:PROVINCE" tooltiptext="bind:PROVINCE" edittype="text"/>
+                      <Cell col="3" text="bind:CITY" tooltiptext="bind:CITY" edittype="text"/>
+                      <Cell col="4" text="bind:DLVY_CD" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" tooltiptext="bind:DLVY_CD" background="yellow" displaytype="combocontrol" combotype="filterlike" combocodecol="DLVY_CD" combodatacol="DLVY_NM" combodataset="ds_dlvy"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_add2_hs" taborder="4" top="52" text="삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div_client_btn_add2_hs_onclick" right="11"/>
+              <Button id="btn_add2_hs00" taborder="5" top="52" text="추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="91"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  우편번호별 배송지 등록
+*  @MenuPath    SO > SO032
+*  @FileName 	SO032.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2023.08.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO032_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+		
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fn_setCombo = function (obj)
+{
+	// 조회
+	var id = "SO032_S02";
+	var url = "svcUrl::SO032_S02";
+	var inDs = "";
+	var outDs = "ds_dlvy=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.ds_dlvy_in.copyData(this.ds_dlvy, true);
+	
+	//검색조건
+	this.ds_dlvy_in.insertRow(0);
+	this.ds_dlvy_in.setColumn(0,"DLVY_CD","-999");
+	this.ds_dlvy_in.setColumn(0,"DLVY_NM","전체");
+	
+	this.Div_client.form.div_search.form.edt_dlvy.set_index(0);
+}
+
+this.fn_search = function ()
+{	
+	// 조회
+	var id = "SO032_S01";
+	var url = "svcUrl::SO032_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_save = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO032_M01";
+	var url = "svcUrl::SO032_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	this.fn_search();
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}	
+};
+
+this.Div_client_div_search_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.fn_filter = function ()
+{
+	var zip = this.Div_client.form.div_search.form.edt_zip.text;					
+	var addr = this.Div_client.form.div_search.form.edt_addr.text;						
+	var dlvy = this.Div_client.form.div_search.form.edt_dlvy.value;						
+		
+	var filterstr = "";
+	
+	if(!this.gfn_isNull(zip))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "ZIP_CODE.indexOf('"+zip+"')!='-1'";
+			else
+			filterstr += " && ZIP_CODE.indexOf('"+zip+"')!='-1'";			
+	}
+	
+	if(!this.gfn_isNull(addr))
+	{
+		
+		if(this.gfn_isNull(filterstr))
+			filterstr = "ADDRESS.indexOf('"+addr+"')!='-1'";
+			else
+			filterstr += " && ADDRESS.indexOf('"+addr+"')!='-1'";				
+	}
+		
+	if(!this.gfn_isNull(dlvy) && dlvy != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "DLVY_CD=='"+dlvy+"'";
+		else filterstr += " && DLVY_CD=='"+dlvy+"'";				
+	}	
+	
+	this.ds_list.set_filterstr(filterstr);
+};
+
+this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+};
+
+this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.addRow();
+};
+
+this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.deleteRow(this.ds_list.rowposition);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ZIP_CODE" type="STRING" size="50"/>
+          <Column id="DLVY_CD" type="STRING" size="50"/>
+          <Column id="PROVINCE" type="STRING" size="100"/>
+          <Column id="CITY" type="STRING" size="100"/>
+          <Column id="DONG" type="STRING" size="100"/>
+          <Column id="ADDRESS" type="STRING" size="100"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_dlvy"/>
+      <Dataset id="ds_dlvy_in"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_zip" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_addr" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+    </Bind>
+  </Form>
+</FDL>

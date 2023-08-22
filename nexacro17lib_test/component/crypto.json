@@ -1,0 +1,12 @@
+﻿{
+	"name": "CryptoJS",
+	"version": "1.0.0.0",
+	"description": "",
+	"license": "",
+	"scripts": [ 
+		"CryptoJS/core-min.js", 
+		"CryptoJS/aes.js", 
+		"CryptoJS/pad-zeropadding.js"
+	]
+} 
+ 

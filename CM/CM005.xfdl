@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO007" width="1340" height="850" titletext="New Form" onload="SO007_onload">
+    <Layouts>
+      <Layout height="850" mobileorientation="landscape" width="1340">
+        <Grid id="Grid00_00" taborder="0" left="10" onkeydown="Div02_Tab00_Tabpage1_grd_list01_onkeydown" oncellclick="Div00_Grid00_oncellclick" selecttype="cell" cellsizingtype="col" width="520" binddataset="ds_list_1" autofittype="col" height="169" top="64">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="12"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="영업팀"/>
+                <Cell col="1" text="등록 건수"/>
+                <Cell col="2" text="확인 건수"/>
+                <Cell col="3" text="미확인 건수"/>
+                <Cell col="4" colspan="2" text="등록율"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:DEPT_NM"/>
+                <Cell col="1" text="bind:SAVE_YN" textAlign="right"/>
+                <Cell col="2" text="bind:SAVE_Y" textAlign="right"/>
+                <Cell col="3" text="bind:SAVE_N" textAlign="right"/>
+                <Cell col="4" colspan="2" text="bind:RATE" textAlign="right"/>
+              </Band>
+              <Band id="summary">
+                <Cell text="합계   " textAlign="right"/>
+                <Cell col="1" text="expr:dataset.getSum(&quot;SAVE_YN&quot;)" textAlign="right"/>
+                <Cell col="2" text="expr:dataset.getSum(&quot;SAVE_Y&quot;)" textAlign="right"/>
+                <Cell col="3" text="expr:dataset.getSum(&quot;SAVE_N&quot;)" textAlign="right"/>
+                <Cell col="4" colspan="2">
+                  <Cell textAlign="right" text="expr:dataset.getSum(&quot;SAVE_Y&quot;) / dataset.getSum(&quot;SAVE_YN&quot;)  * 100" displaytype="mask" maskeditformat="##,##0"/>
+                  <Cell col="1" textAlign="right" text="%" maskeditformat="##,##0"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static24_01_00" taborder="1" text="등록현황" left="10" top="22" width="277" height="30" cssclass="sta_WF_title3"/>
+        <Static id="Static24_01" taborder="2" text="패키지 상품 리스트" left="10" width="277" height="30" cssclass="sta_WF_title3" top="247"/>
+        <Grid id="Grid00" taborder="3" left="10" onkeydown="Div02_Tab00_Tabpage1_grd_list01_onkeydown" oncellclick="Div00_Grid00_oncellclick" selecttype="cell" cellsizingtype="col" binddataset="ds_list_2" autofittype="col" height="540" top="300" griduserproperty="export" right="10">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="287"/>
+                <Column size="80"/>
+                <Column size="479"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="영업팀"/>
+                <Cell col="2" text="계약번호"/>
+                <Cell col="3" text="경조타입"/>
+                <Cell col="4" text="품목코드"/>
+                <Cell col="5" text="품목명"/>
+                <Cell col="6" text="고객사코드"/>
+                <Cell col="7" text="고객사명"/>
+                <Cell col="8" text="사용유무"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" textAlign="center"/>
+                <Cell col="1" text="bind:DEPT_NM" textAlign="center"/>
+                <Cell col="2" text="bind:CONT_NO" textAlign="center"/>
+                <Cell col="3" text="bind:HS_TYPE" textAlign="center"/>
+                <Cell col="4" text="bind:ITEM_CD" textAlign="center"/>
+                <Cell col="5" text="bind:ITEM_NM"/>
+                <Cell col="6" text="bind:BP_CD" textAlign="center"/>
+                <Cell col="7" text="bind:BP_NM"/>
+                <Cell col="8" text="bind:FINISH_CHK" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Combo id="Combo00" taborder="4" top="216" height="20" displaynulltext="담당부서" innerdataset="ds_dept" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Combo00_onitemchanged" right="135" width="96" visible="false"/>
+        <Combo id="Combo00_00_00" taborder="5" top="256" height="20" displaynulltext="사용유무" innerdataset="ds_chk" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Combo00_onitemchanged" right="13" width="96"/>
+        <Edit id="edt_search" taborder="6" top="255" height="21" readonly="false" onkeyup="Div01_edt_search_onkeyup" autoselect="true" displaynulltext="고객사명 검색" right="130" width="324"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_startDate2" propid="value" datasetid="ds_cond" columnid="START_DATE2"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  대시보드
+*  @MenuPath    CM > CM005
+*  @FileName 	CM005.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.09
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO007_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	// 조회
+	var id = "CM005_S01";
+	var url = "svcUrl::CM005_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+// 복사기능
+this.Div02_Tab00_Tabpage1_grd_list01_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+// 검색
+this.fn_CHK_search = function ()
+{
+	this.ds_list_2.set_filterstr("");
+	var cmb1 = this.Combo00.value;
+	var cmb2 = this.edt_search.text;
+	var cmb3 = this.Combo00_00_00.value;
+	//var cmb4 = this.Combo00_00_00_00.value;
+	
+	var filterstr = "";
+	
+	// 담당부서
+	if(!this.gfn_isNull(cmb1) && cmb1 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "DEPT_NM.indexOf('"+cmb1+"')!='-1'";
+		else
+			filterstr += " && DEPT_NM.indexOf('"+cmb1+"')!='-1'";				
+	}
+	
+	// 고객사명
+	if(!this.gfn_isNull(cmb2))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "BP_NM.indexOf('"+cmb2+"')!='-1'";
+		else
+			filterstr += " && BP_NM.indexOf('"+cmb2+"')!='-1'";				
+	}
+	
+	// 최종점검
+	if(!this.gfn_isNull(cmb3) && cmb3 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "FINISH_CHK.indexOf('"+cmb3+"')!='-1'";
+		else
+			filterstr += " && FINISH_CHK.indexOf('"+cmb3+"')!='-1'";				
+	}
+	
+	// 최종점검
+// 	if(!this.gfn_isNull(cmb4) && cmb4 != "-999")
+// 	{
+// 		if(this.gfn_isNull(filterstr))
+// 			filterstr = "CASE_CHK.indexOf('"+cmb4+"')!='-1'";
+// 		else
+// 			filterstr += " && CASE_CHK.indexOf('"+cmb4+"')!='-1'";				
+// 	}
+
+	this.ds_list_2.set_filterstr(filterstr);
+};
+
+this.Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_CHK_search();
+};
+
+this.Div01_edt_search_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode== 13)
+	{
+		this.fn_CHK_search();
+	}	
+};
+
+this.Div00_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 2)
+	{
+		var contNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"CONT_NO");
+
+		var arrArg = [];
+		this.gfn_openForm2(this.objApp.gds_menu, "CM002", arrArg, contNo);	
+	}
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="DEPT_NM" type="STRING" size="20"/>
+          <Column id="SAVE_Y" type="INT" size="11"/>
+          <Column id="SAVE_N" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="DEPT_NM" type="STRING" size="20"/>
+          <Column id="CASE_CHK" type="STRING" size="20"/>
+          <Column id="FINISH_CHK" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">영업1팀</Col>
+            <Col id="CODE_NAME">영업1팀</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">영업2팀</Col>
+            <Col id="CODE_NAME">영업2팀</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">영업3팀</Col>
+            <Col id="CODE_NAME">영업3팀</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">BD&amp;C팀</Col>
+            <Col id="CODE_NAME">BD&amp;C팀</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">미구분</Col>
+            <Col id="CODE_NAME">미구분</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_chk">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">Y</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

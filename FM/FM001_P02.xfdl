@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P02" width="700" height="400" titletext="New Form" onload="FM003_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="700">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" width="698" height="398">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_00" taborder="6" left="109" top="17" height="29" cssclass="sta_WF_detailLine" width="451"/>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <TextArea id="TextArea00" taborder="1" left="10" top="60" right="10" bottom="10"/>
+              <Static id="Static23_00_00" taborder="2" text="성명" left="10" top="17" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo00_00_01_00_00" taborder="3" left="114" top="21" width="148" height="21"/>
+              <Static id="Static23_00_00_01_00_00" taborder="4" text="연락처" left="265" top="17" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo00_00" taborder="5" left="368" top="21" width="188" height="21"/>
+              <Button id="btn_mms" taborder="7" left="607" top="20" width="71" height="21" text="발송" cssclass="btn_WF_main1" onclick="btn_mms_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO001_P01
+*  @FileName 	SO001_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+var hp = this.getOwnerFrame().hp
+var nm = this.getOwnerFrame().nm
+var message = this.getOwnerFrame().message
+var prgmId = this.getOwnerFrame().prgmId
+var sndNum = this.getOwnerFrame().sndNum
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div_client.form.edt_soNo00_00_01_00_00.set_value(nm);
+	this.Div_client.form.edt_soNo00_00.set_value(hp);
+	this.Div_client.form.TextArea00.set_value(message);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.confirm("정말 발송하시겠습니까?"))
+	{
+		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+		//hp = "010-8733-0709";
+		var hp2 = this.Div_client.form.edt_soNo00_00.text;
+		message = this.Div_client.form.TextArea00.text;
+		
+		// 문자발송
+		var id = "FM003_M01";
+		var url = "svcUrl::FM003_M01";
+		var inDs = "";
+		var outDs = "";
+		var args = "INSRT_USER_ID="+regUser+" MG_NO="+mgNo+" HP="+hp2+" MESSAGE='"+message+"' PRGM_ID="+prgmId+" SND_NUM="+sndNum+"";
+		var callBackid = "fn_aftermms";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
+};
+
+// mms 발송 callback
+this.fn_aftermms = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("정상적으로 발송 되었습니다.")
+}
+]]></Script>
+    <Objects/>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item2" compid="Div_client.form.edt_soNo00_00" propid="value" datasetid="ds_list_1" columnid="CUST_TEL"/>
+    </Bind>
+  </Form>
+</FDL>

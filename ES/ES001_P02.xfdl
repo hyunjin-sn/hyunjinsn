@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ES001_P02" width="1000" height="400" titletext="New Form" onload="ES001_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1000">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="59" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="87"/>
+                      <Column size="100"/>
+                      <Column size="178"/>
+                      <Column size="403"/>
+                      <Column size="101"/>
+                      <Column size="210"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="배송지유형명"/>
+                      <Cell col="1" text="배송지코드"/>
+                      <Cell col="2" text="상호"/>
+                      <Cell col="3" text="주소"/>
+                      <Cell col="4" text="전화번호"/>
+                      <Cell col="5" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:DLVY_TYPE_NM" textAlign="center"/>
+                      <Cell col="1" text="bind:DLVY_CD" textAlign="center"/>
+                      <Cell col="2" text="bind:DLVY_NM" textAlign="left" tooltiptext="bind:DLVY_NM"/>
+                      <Cell col="3" text="bind:DLVY_ADDR" textAlign="left" tooltiptext="bind:DLVY_ADDR"/>
+                      <Cell col="4" text="bind:TEL_NO1" textAlign="center" tooltiptext="bind:TEL_NO1"/>
+                      <Cell col="5" text="bind:REMARK" textAlign="left" tooltiptext="bind:REMARK"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Div id="div_search" taborder="2" left="10" top="10" height="39" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="구분" left="520" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
+                    <Button id="btn_search" taborder="1" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="2" text="검색항목" left="2" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_ClientPartNm" taborder="3" left="227" top="8" width="202" height="21" onkeyup="Div_client_div_search_edt_ClientPartNm_onkeyup"/>
+                    <Combo id="cmb_PM00" taborder="4" left="623" top="8" width="148" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div06_cmb_PM_onitemchanged" innerdataset="ds_search_1" visible="false"/>
+                    <Combo id="cmb_PM00_00" taborder="5" left="103" top="8" width="114" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div06_cmb_PM_onitemchanged" innerdataset="ds_search_2"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static03" taborder="3" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="0"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO0001_P02
+*  @FileName 	SO0001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.ES001_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//trace(code);
+	//데이터셋 세팅
+	//this.efn_SetGrdUserData(this.ds_client_dept,this.objApp.gds_client_dept);								// 고객사
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var Arg_1 = "A"
+	
+ 	var Arg_2 = this.ds_cond.getColumn(0,"CON_TYPE");
+	var Arg_3 = this.ds_cond.getColumn(0,"CON_VALUE");
+	
+	var url = "svcUrl::ES001_P02_S";
+	this.gfn_transaction( "ES001_P02_S",url,"","ds_list=ds_list","DLVY_TYPE="+Arg_1+" CON_TYPE="+Arg_2+" CON_VALUE='"+Arg_3+"' SO_NO=''","callbackFunction");
+
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.04.07
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+this.Div_client_div_search_edt_ClientPartNm_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+// 더블클릭
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="DLVY_CD" type="STRING" size="20"/>
+          <Column id="DLVY_TYPE" type="STRING" size="20"/>
+          <Column id="DLVY_TYPE_NM" type="STRING" size="200"/>
+          <Column id="DLVY_NM" type="STRING" size="200"/>
+          <Column id="DLVY_ADDR" type="STRING" size="200"/>
+          <Column id="TEL_NO1" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="200"/>
+          <Column id="DLVY_CHANGE_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_search_1">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">A</Col>
+            <Col id="CODE_NAME">장례식장</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B</Col>
+            <Col id="CODE_NAME">예식장</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Z</Col>
+            <Col id="CODE_NAME">개인배송</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_search_2">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">상호</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">지역</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="CODE_NAME">주소</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="CODE_NAME">배송지코드</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="DLVY_TYPE" type="STRING" size="256"/>
+          <Column id="CON_TYPE" type="STRING" size="256"/>
+          <Column id="CON_VALUE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DLVY_TYPE"/>
+            <Col id="CON_TYPE"/>
+            <Col id="CON_VALUE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cmb_PM00" propid="value" datasetid="ds_cond" columnid="DLVY_TYPE"/>
+      <BindItem id="item1" compid="Div00.form.cmb_PM00_00" propid="value" datasetid="ds_list_1" columnid="CUSTOMER_CD"/>
+      <BindItem id="item2" compid="Div00.form.cmb_PM00_00_00" propid="value" datasetid="ds_list_1" columnid="SUJU_DIV_CD"/>
+      <BindItem id="item3" compid="Div00.form.cmb_PM00_00_00_00" propid="value" datasetid="ds_list_1" columnid="SOSOC_CD1"/>
+      <BindItem id="item4" compid="Div00.form.cmb_PM00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="SOSOC_CD2"/>
+      <BindItem id="item5" compid="Div00.form.cmb_PM00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="SOSOC_CD3"/>
+      <BindItem id="item6" compid="Div00.form.cmb_PM00_00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="REASON_CD"/>
+      <BindItem id="item7" compid="Div00.form.cmb_PM00_00_01" propid="value" datasetid="ds_list_1" columnid="CUSTOMER_CD"/>
+      <BindItem id="item8" compid="Div_client.form.div_search.form.cmb_PM00_00" propid="value" datasetid="ds_cond" columnid="CON_TYPE"/>
+      <BindItem id="item9" compid="Div_client.form.div_search.form.edt_ClientPartNm" propid="value" datasetid="ds_cond" columnid="CON_VALUE"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Form_Bottom" width="1022" height="20" titletext="Form_Bottom" background="#0c589e">
+    <Layouts>
+      <Layout width="1022" height="20" screenid="Desktop_screen">
+        <Static id="staLodingTime" taborder="0" top="-1" width="425" height="19" usedecorate="true" color="yellow" right="7" textAlign="right" text="해당 화면의 loading 시간은 0.05 Sec 입니다." visible="true" font="normal bold 12px/normal &quot;맑은 고딕&quot;,&quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

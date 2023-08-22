@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P11" width="900" height="700" titletext="New Form" onload="SO001_P11_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="700" mobileorientation="landscape" width="900">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" scrolltype="both" minwidth="" left="250" right="10" top="40" bottom="330" autoenter="select" autofittype="col" binddataset="ds_list_2" oncelldblclick="Div_client_grd_list_oncelldblclick" autosizingtype="row" extendsizetype="row" onkeydown="Div_client_grd_list_onkeydown" selecttype="multiarea">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="177"/>
+                      <Column size="459"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="54"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="이름"/>
+                      <Cell col="1" text="내용"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:NAME" textAlign="center" edittype="textarea" displaytype="textareacontrol"/>
+                      <Cell col="1" text="bind:CONTENTS" edittype="textarea" displaytype="textareacontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_add" taborder="2" text="추가" top="10" width="45" height="24" right="108" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_add_onclick"/>
+              <Button id="btn_del" taborder="3" text="삭제" top="10" width="45" height="24" right="60" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_del_onclick"/>
+              <Button id="btn_save" taborder="4" text="저장" top="10" width="45" height="24" right="12" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_save_onclick"/>
+              <Static id="Static05_00" taborder="5" text="발신번호" left="10" top="10" width="97" height="24" cssclass="sta_WF_title"/>
+              <Combo id="cmb_rcptMeth" taborder="6" left="10" top="37" width="230" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" innerdataset="ds_hp"/>
+              <Static id="Static08" taborder="7" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-522" text="w&#13;&#10;10"/>
+              <Static id="Static08_00" taborder="8" left="240" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-522" text="w&#13;&#10;10"/>
+              <Static id="Static05_00_00" taborder="9" text="발송내용" left="10" top="60" width="97" height="24" cssclass="sta_WF_title"/>
+              <TextArea id="TA_addr" taborder="10" left="10" top="85" width="230" height="209"/>
+              <Static id="Static05_00_00_00" taborder="11" text="수신대상" left="10" top="298" width="97" height="24" cssclass="sta_WF_title"/>
+              <Grid id="grd_list00" taborder="12" scrolltype="both" minwidth="" left="10" right="660" top="328" bottom="152" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" onkeydown="Div_client_grd_list00_onkeydown">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="149"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="이름"/>
+                      <Cell col="1" text="전화번호"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:SEND_NM" textAlign="center" displaytype="editcontrol" edittype="text"/>
+                      <Cell col="1" text="bind:PHONE_NUM" displaytype="editcontrol" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00_00_00_00" taborder="13" text="발송정보" left="10" top="558" width="97" height="24" cssclass="sta_WF_title"/>
+              <Radio id="Radio00" taborder="14" left="24" top="594" width="206" height="50" innerdataset="ds_div" codecolumn="CODE" datacolumn="CODE_NAME" canitemchange="Div_client_Radio00_canitemchange"/>
+              <Calendar id="Calendar" taborder="15" left="11" top="658" width="229" height="20" dateformat="yyyy-MM-dd HH:mm:ss" editformat="yyyy-MM-dd HH:mm:ss" enable="false"/>
+              <Button id="btn_add1" taborder="16" text="+" top="301" width="23" height="20" right="696" visible="true" onclick="Div_client_btn_add1_onclick"/>
+              <Button id="btn_del1" taborder="17" text="-" top="301" width="23" height="20" right="666" visible="true" onclick="Div_client_btn_del1_onclick"/>
+              <Static id="Static05_00_01" taborder="18" text="즐겨찾기" left="252" top="10" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static05_00_01_00" taborder="19" text="예약대기" left="252" top="380" width="97" height="24" cssclass="sta_WF_title"/>
+              <Grid id="grd_list01" taborder="20" scrolltype="both" minwidth="" left="250" right="10" top="410" bottom="42" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_3" oncelldblclick="Div_client_grd_list_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="91"/>
+                      <Column size="98"/>
+                      <Column size="100"/>
+                      <Column size="203"/>
+                      <Column size="134"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="발신번호"/>
+                      <Cell col="1" text="수신자명"/>
+                      <Cell col="2" text="수신자 번호"/>
+                      <Cell col="3" text="메세지"/>
+                      <Cell col="4" text="발송예정시간"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:SMS_SND_NUM" textAlign="center" displaytype="mask" maskedittype="string" maskeditformat="####-####"/>
+                      <Cell col="1" text="bind:SEND_NM" textAlign="center"/>
+                      <Cell col="2" text="bind:PHONE_NUM" textAlign="center" displaytype="mask" maskedittype="string" maskeditformat="###-####-####"/>
+                      <Cell col="3" text="bind:SND_MSG" tooltiptext="bind:SND_MSG" textAlign="center"/>
+                      <Cell col="4" text="bind:REQ_DT" displaytype="mask" calendardateformat="yyyy-MM-dd HH:mm:ss" maskedittype="string" maskeditformat="####-##-## ##:##:##"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_save2" taborder="21" text="저장" top="378" width="45" height="24" right="60" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_save2_onclick"/>
+              <Button id="btn_del2" taborder="22" text="삭제" top="378" width="45" height="24" right="12" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_del2_onclick"/>
+              <Button id="btn_send" taborder="23" text="발송" top="666" width="45" height="24" right="60" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_send_onclick"/>
+              <Button id="btn_cancel" taborder="24" text="취소" top="666" width="45" height="24" right="12" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_cancel_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  SMS 팝업
+*  @MenuPath    SO > SO0001_P12
+*  @FileName 	SO0001_P12.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var hp = this.getOwnerFrame().hp
+var user = this.getOwnerFrame().user
+var soNo = this.getOwnerFrame().soNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P11_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터 세팅
+	this.fn_setUser();
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_setUser = function ()
+ {
+ 	this.ds_list.addRow();
+	this.ds_list.setColumn(0,"PHONE_NUM",hp);
+	this.ds_list.setColumn(0,"SEND_NM",user);
+	
+	this.ds_main.addRow();
+	this.Div_client.form.cmb_rcptMeth.set_index(0);
+	this.Div_client.form.Radio00.set_index(0);
+ };
+ 
+ this.fn_search = function ()
+ {		
+	var id = "SO001_P12";
+	var url = "svcUrl::SO001_P12";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2 ds_list_3=ds_list_3";
+	var args = "";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.11
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.Div_client_Radio00_canitemchange = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	if (e.postindex == 1)
+	{
+		this.Div_client.form.Calendar.set_enable(true);
+	} else
+	{
+		this.Div_client.form.Calendar.set_enable(false);
+	}
+};
+
+//수신대상 추가
+this.Div_client_btn_add1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.addRow();
+};
+
+//수신대상 삭제
+this.Div_client_btn_del1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.deleteRow(this.ds_list.rowposition);
+};
+
+//즐겨찾기 추가
+this.Div_client_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.addRow();
+};
+
+//즐겨찾기 삭제
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+//예약대기 삭제 저장
+this.Div_client_btn_save2_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO001_P12_M03";
+	var url = "svcUrl::SO001_P12_M03";
+	var inDs = "ds_list_3=ds_list_3:U";
+	var outDs = "";
+	var args = "USR_ID="+regUser+"";
+	var callBackid = "fn_aftersave2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersave2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.alert("삭제 되었습니다.");
+}
+
+//예약대기 삭제
+this.Div_client_btn_del2_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.deleteRow(this.ds_list_3.rowposition);
+};
+
+//발송
+this.Div_client_btn_send_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	if (this.gfn_isNull(this.ds_main.getColumn(this.ds_main.rowposition,"REQ_DT")))
+	{
+		var dte = this.gfn_getDate("time");
+		this.ds_main.setColumn(this.ds_main.rowposition,"REQ_DT",dte)
+	}
+	var reqDt = this.ds_main.getColumn(this.ds_main.rowposition,"REQ_DT");
+	var args1 = this.ds_main.getColumn(this.ds_main.rowposition,"SMS_SND_NUM");
+	//var args2 = this.ds_main.getColumn(this.ds_main.rowposition,"SND_MSG");
+	var args3 = reqDt.substring(0,14);
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	//trace(args3);
+	var id = "SO001_P12_M01";
+	var url = "svcUrl::SO001_P12_M01";
+	var inDs = "ds_list=ds_list:U ds_main=ds_main:U";
+	var outDs = "ds_list_3=ds_list_3";
+	var args = "SMS_SND_NUM="+args1+" REQ_DTM="+args3+" INSRT_USR_ID="+regUser+" SO_NO="+soNo+"";
+	var callBackid = "fn_afterSend";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+//취소
+this.Div_client_btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+
+this.fn_afterSend = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("발송 되었습니다.");
+	this.ds_list.clearData();
+	this.ds_main.clearData();
+	this.ds_list.addRow();
+	this.ds_main.addRow();
+}
+
+// 그리드 copy & paste
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	//this.gfn_grdCopy_Paste(obj, e);
+};
+
+// 즐겨찾기 저장
+this.Div_client_btn_save_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO001_P12_M02";
+	var url = "svcUrl::SO001_P12_M02";
+	var inDs = "ds_list_2=ds_list_2:U";
+	var outDs = "";
+	var args = "USR_ID="+regUser+"";
+	var callBackid = "fn_aftersave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.alert("저장 되었습니다.");
+}
+
+this.Div_client_grd_list00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="PHONE_NUM" type="STRING" size="10"/>
+          <Column id="SEND_NM" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0001</Col>
+            <Col id="CODE_NAME">즉시 발송</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0002</Col>
+            <Col id="CODE_NAME">예약 발송</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_hp">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_NAME">1600-0113</Col>
+            <Col id="CODE">1600-0113</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">1600-8444</Col>
+            <Col id="CODE">1600-8444</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">010-7344-8444</Col>
+            <Col id="CODE">010-7344-8444</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="SEQ" type="INT" size="10"/>
+          <Column id="NAME" type="STRING" size="100"/>
+          <Column id="CONTENTS" type="STRING" size="32767"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="100"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="100"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="SN" type="INT" size="10"/>
+          <Column id="SMS_SND_NUM" type="STRING" size="100"/>
+          <Column id="SEND_NM" type="STRING" size="32767"/>
+          <Column id="PHONE_NUM" type="STRING" size="100"/>
+          <Column id="SND_MSG" type="DATETIME" size="23"/>
+          <Column id="REQ_DT" type="STRING" size="100"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_main">
+        <ColumnInfo>
+          <Column id="SMS_SND_NUM" type="STRING" size="256"/>
+          <Column id="SND_MSG" type="STRING" size="256"/>
+          <Column id="REQ_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.cmb_rcptMeth" propid="value" datasetid="ds_main" columnid="SMS_SND_NUM"/>
+      <BindItem id="item1" compid="Div_client.form.TA_addr" propid="value" datasetid="ds_main" columnid="SND_MSG"/>
+      <BindItem id="item2" compid="Div_client.form.Calendar" propid="value" datasetid="ds_main" columnid="REQ_DT"/>
+    </Bind>
+  </Form>
+</FDL>

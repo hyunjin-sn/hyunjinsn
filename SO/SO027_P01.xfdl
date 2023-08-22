@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO003_P01" width="931" height="441" titletext="New Form" onload="SO003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="441" mobileorientation="landscape" width="931">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="440" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" scrolltype="both" minwidth="" left="10" right="10" top="10" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" onkeyup="Div_client_grd_list_onkeydown" summarytype="top">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="45"/>
+                      <Column size="100"/>
+                      <Column size="80"/>
+                      <Column size="254"/>
+                      <Column size="50"/>
+                      <Column size="150"/>
+                      <Column size="50"/>
+                      <Column size="150"/>
+                      <Column size="51"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="주문번호"/>
+                      <Cell col="2" text="품목코드"/>
+                      <Cell col="3" text="품목명"/>
+                      <Cell col="4" colspan="2" text="발생지점"/>
+                      <Cell col="6" colspan="2" text="&lt;--- 공급지점"/>
+                      <Cell col="8" text="수량"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="3" text="bind:ITEM_NM"/>
+                      <Cell col="4" text="bind:TS_BP_CD" textAlign="center"/>
+                      <Cell col="5" text="bind:TS_BP_NM" tooltiptext="bind:TS_BP_NM"/>
+                      <Cell col="6" text="bind:PO_BP_CD" textAlign="center"/>
+                      <Cell col="7" text="bind:PO_BP_NM" tooltiptext="bind:PO_BP_NM"/>
+                      <Cell col="8" text="bind:GI_QTY" textAlign="center"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="8"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;GI_QTY&quot;)" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0003_P01
+*  @FileName 	SO0003_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.06.12
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var itemCd = this.getOwnerFrame().itemCd
+var slCd = this.getOwnerFrame().slCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {		
+	// 상차지점 조회
+	var id = "SO027_P01_S";
+	var url = "svcUrl::SO027_P01_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "ITEM_CD="+itemCd+" BP_CD="+slCd+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.06
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="TS_BP_CD" type="STRING" size="20"/>
+          <Column id="TS_BP_NM" type="STRING" size="200"/>
+          <Column id="PO_BP_CD" type="STRING" size="20"/>
+          <Column id="PO_BP_NM" type="STRING" size="200"/>
+          <Column id="GI_QTY" type="BIGDECIMAL" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

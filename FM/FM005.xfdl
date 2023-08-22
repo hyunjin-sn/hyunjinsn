@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM005" width="1280" height="600" titletext="New Form" onload="FM005_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1280">
+        <Div id="Div_client" taborder="0" text="Div00" left="1" top="0" right="0" bottom="10" onclick="Div_client_onclick">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="1" left="10" top="10" height="40" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00_01" taborder="0" text="희망상담일시" left="8" top="8" width="115" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="1" left="133" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static01" taborder="2" text="~" left="246" top="4" width="10" height="29"/>
+                    <Calendar id="cal_endDate" taborder="3" left="258" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static00_01_00" taborder="4" text="상담여부" left="748" top="8" width="115" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Radio id="Radio00" taborder="5" left="851" top="7" width="207" height="24" innerdataset="ds_YN" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" onitemchanged="Div_client_div_search_Radio00_onitemchanged"/>
+                    <Static id="Static00_01_01" taborder="6" text="등록일시" left="378" top="8" width="115" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate00" taborder="7" left="503" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static01_00" taborder="8" text="~" left="616" top="4" width="10" height="29"/>
+                    <Calendar id="cal_endDate00" taborder="9" left="628" top="8" width="110" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static00_01_00_00" taborder="10" text="고객사명" left="1048" top="8" width="115" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="Edit00" taborder="11" left="1144" top="9" width="185" height="20"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="2" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="3" left="0" top="50" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" binddataset="ds_list" minwidth="" bottom="0" left="10" top="60" right="10" onheadclick="Div_menu_grd_list_onheadclick" onkeydown="Div_client_grd_list_onkeydown" oncellclick="Div_client_grd_list_oncellclick" background="" cellsizingtype="both" cellsizebandtype="allband" autofittype="col" selecttype="cell" griduserproperty="export">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="54"/>
+                      <Column size="100"/>
+                      <Column size="100"/>
+                      <Column size="207"/>
+                      <Column size="61"/>
+                      <Column size="109"/>
+                      <Column size="127"/>
+                      <Column size="115"/>
+                      <Column size="127"/>
+                      <Column size="39"/>
+                      <Column size="53"/>
+                      <Column size="107"/>
+                      <Column size="59"/>
+                      <Column size="61"/>
+                      <Column size="120"/>
+                      <Column size="61"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="관리번호"/>
+                      <Cell col="2" text="주문번호"/>
+                      <Cell col="3" text="고객사명" textAlign="center"/>
+                      <Cell col="4" text="고객명"/>
+                      <Cell col="5" text="핸드폰번호"/>
+                      <Cell col="6" text="이메일"/>
+                      <Cell col="7" text="희망일시"/>
+                      <Cell col="8" text="희망 시간"/>
+                      <Cell col="9" text="성별"/>
+                      <Cell col="10" text="연령"/>
+                      <Cell col="11" text="직업"/>
+                      <Cell col="12" text="총 점수"/>
+                      <Cell col="13" text="상담여부"/>
+                      <Cell col="14" text="상담완료/미완료처리"/>
+                      <Cell col="15" text="상담일지"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell textAlign="center" text="expr:currow+1"/>
+                      <Cell col="1" text="bind:MG_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="3" text="bind:BP_NM" textAlign="left" tooltiptext="bind:BP_NM"/>
+                      <Cell col="4" text="bind:CUST_NM" textAlign="center"/>
+                      <Cell col="5" text="bind:HP" textAlign="center"/>
+                      <Cell col="6" text="bind:EMAIL"/>
+                      <Cell col="7" text="bind:HOPE_DT" displaytype="date" textAlign="center" calendardisplaynulltype="none"/>
+                      <Cell col="8" text="bind:HOPE_TIME" textAlign="center"/>
+                      <Cell col="9" text="bind:GENDER" textAlign="center"/>
+                      <Cell col="10" text="bind:AGE" textAlign="center"/>
+                      <Cell col="11" text="bind:WORK_DIV"/>
+                      <Cell col="12" text="bind:TOTAL_POINT" textAlign="center" displaytype="buttoncontrol" edittype="button"/>
+                      <Cell col="13" text="bind:CONSULT_YN" textAlign="center"/>
+                      <Cell col="14" text="expr:FINISH" textAlign="center" displaytype="expr:CONSULT_YN!=&quot;미신청&quot; ? 'buttoncontrol' : 'nomal'" edittype="expr:CONSULT_YN!=&quot;미신청&quot; ? 'button' : 'none'"/>
+                      <Cell col="15" text="bind:CONTENT_YN" textAlign="center" displaytype="buttoncontrol" edittype="button"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item4" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item5" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate00" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+    </Bind>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="CUST_NM" type="STRING" size="50"/>
+          <Column id="HP" type="STRING" size="50"/>
+          <Column id="EMAIL" type="STRING" size="50"/>
+          <Column id="HOPE_DT" type="DATETIME" size="23"/>
+          <Column id="HOPE_TIME" type="STRING" size="20"/>
+          <Column id="PRIVACY_CHK" type="STRING" size="20"/>
+          <Column id="PRIVACY_DT" type="STRING" size="10"/>
+          <Column id="GENDER" type="STRING" size="20"/>
+          <Column id="AGE" type="STRING" size="20"/>
+          <Column id="WORK_DIV" type="STRING" size="20"/>
+          <Column id="CONSULT_YN" type="STRING" size="20"/>
+          <Column id="TOTAL_POINT" type="STRING" size="20"/>
+          <Column id="CONTENT_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_YN">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">완료</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">미완료</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  사별슬픔 데이터 조회
+*  @MenuPath    FM > FM0005
+*  @FileName 	FM0005.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.01.05
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM005_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.Div_client.form.div_search.form.Radio00.set_value("N");
+		
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/ 
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_addMonth(this.gfn_getDate(),2).substr(0,6) + "01";
+	//3개월 이전
+	var fDate = this.gfn_getDate();
+	//var fDate = this.gfn_addDate(sDate,-2);
+	
+	//현재일자
+	var sDate2 = this.gfn_getDate();
+	//3개월 이전
+	var fDate2 = this.gfn_addMonth(this.gfn_getDate(),-1).substr(0,6) + "01";
+	//var fDate = this.gfn_addDate(sDate,-2);
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate2);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+	this.Div_client.form.div_search.form.cal_startDate00.set_value(fDate2);
+	this.Div_client.form.div_search.form.cal_endDate00.set_value(sDate2);
+};
+
+ this.fn_search = function ()
+{
+	var startDate = this.Div_client.form.div_search.form.cal_startDate.value;
+	var endDate = this.Div_client.form.div_search.form.cal_endDate.value;
+	var startDate2 = this.Div_client.form.div_search.form.cal_startDate00.value;
+	var endDate2 = this.Div_client.form.div_search.form.cal_endDate00.value;
+	var YN = this.Div_client.form.div_search.form.Radio00.value;
+	var bpNm = this.gfn_nvl(this.Div_client.form.div_search.form.Edit00.value,"");
+	
+	var id = "FM005_S01";
+	var url = "svcUrl::FM005_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+startDate+" END_DATE="+endDate+" CONSULT_YN="+YN+" START_DATE2="+startDate2+" END_DATE2="+endDate2+" BP_NM="+bpNm+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 15)
+	{
+		var mgNo = this.ds_list.getColumn(this.ds_list.rowposition,"MG_NO");
+	
+		var sPopupId  = "consult_popup";
+		var sUrl      = "FM::FM005_P02.xfdl";
+		var oArg      = {mgNo : mgNo};
+		var sCallBack = "fn_popupCallback_content";
+		var oOption   = {title : "유가족 상담 일지"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+	} else if (e.col == 14)
+	{	
+		if (this.gfn_isNull(this.ds_list.getColumn(this.ds_list.rowposition,"FINISH")))
+		{
+			this.alert("상담 대상이 아닙니다.");
+			return;
+		}
+		
+		if (this.confirm("처리 하시겠습니까?"))
+		{
+			var mgNo = this.ds_list.getColumn(this.ds_list.rowposition,"MG_NO");
+
+			var id = "FM005_M01";
+			var url = "svcUrl::FM005_M01";
+			var inDs = "";
+			var outDs = "";
+			var args = "MG_NO="+mgNo+"";
+			var callBackid = "fn_afterSave";
+				
+			this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+		}
+	} else if (e.col == 12)
+	{
+		var mgNo = this.ds_list.getColumn(this.ds_list.rowposition,"MG_NO");
+	
+		var sPopupId  = "QnA_popup";
+		var sUrl      = "FM::FM005_P01.xfdl";
+		var oArg      = {mgNo : mgNo};
+		var sCallBack = "";
+		var oOption   = {title : "Q & A 정보"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+	}
+};
+
+// 상담일지 팝업 callback
+this.fn_popupCallback_content = function(sPopId, sRtn)
+{
+	this.fn_search();
+}
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.alert("처리 되었습니다.");
+	
+	this.fn_search();
+}
+
+this.Div_client_div_search_Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+// 셀 복사기능
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+  </Form>
+</FDL>

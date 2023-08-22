@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM001_P05" width="1200" height="232" titletext="New Form" onload="VM001_P05_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="232" mobileorientation="landscape" width="1200">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" left="10" oncellclick="grd_list_oncellclick" top="9" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="181" width="1179" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="109"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="114"/>
+                      <Column size="156"/>
+                      <Column size="100"/>
+                      <Column size="100"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="VOC번호"/>
+                      <Cell col="1" text="VOC 유형1"/>
+                      <Cell col="2" text="VOC 유형2"/>
+                      <Cell col="3" text="VOC 내용"/>
+                      <Cell col="4" text="VOC 대응팀"/>
+                      <Cell col="5" text="처리자"/>
+                      <Cell col="6" text="VOC 대상1"/>
+                      <Cell col="7" text="VOC 대상2"/>
+                      <Cell col="8" text="VOC 원인"/>
+                      <Cell col="9" text="VOC 결과"/>
+                      <Cell col="10" text="손실금액"/>
+                      <Cell col="11" text="구상금액"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:VOC_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV_TYPE1" displaytype="combocontrol" edittype="combo" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_type1" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="2" text="bind:DIV_TYPE2" displaytype="combocontrol" edittype="combo" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_type2" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="3" text="bind:DIV_TYPE3" displaytype="combocontrol" edittype="combo" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_type3" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="4" text="bind:ACT_DEPT_CD1" displaytype="combocontrol" edittype="combo" combodataset="ds_voc_dept1" combocodecol="DEPT_CD" combodatacol="DEPT_NM" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="5" text="bind:ACT_DEPT_CD2" displaytype="combocontrol" edittype="combo" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="6" text="bind:DIV_DEPT_CD1" displaytype="combocontrol" edittype="combo" combodataset="ds_voc_dept3" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="7" text="bind:DIV_DEPT_CD2" displaytype="combocontrol" edittype="combo" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="8" text="bind:DIV_TYPE4" displaytype="combocontrol" edittype="combo" combodataset="ds_voc_type4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike"/>
+                      <Cell col="9" text="bind:DIV_TYPE5" edittype="text" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="editcontrol"/>
+                      <Cell col="10" text="bind:LOSS_AMT" edittype="mask" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="maskeditcontrol" maskeditformat="##,##0"/>
+                      <Cell col="11" text="bind:CLAIM_AMT" edittype="mask" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="maskeditcontrol" maskeditformat="##,##0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_cancel" taborder="2" left="1089" top="197" width="99" height="21" text="완료 취소" cssclass="btn_WF_main1" onclick="Div_client_btn_cancel_onclick"/>
+              <Button id="btn_confirm" taborder="3" left="979" top="197" width="99" height="21" text="완료" cssclass="btn_WF_main1" onclick="Div_client_btn_confirm_onclick"/>
+              <Button id="btn_finish00_00" taborder="4" left="869" top="197" width="99" height="21" text="저장" cssclass="btn_WF_main1" onclick="Div_client_btn_finish_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    VM > VM001_P02
+*  @FileName 	VM001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.08.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var vocNo = this.getOwnerFrame().vocNo
+var vocSeq = this.getOwnerFrame().vocSeq
+var dt = this.getOwnerFrame().dt
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM001_P05_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+// 	if (dt != "미완료")
+// 	{
+// 		this.Div_client.form.btn_finish.set_visible(false);
+// 	}
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetDatasetData2(this.ds_voc_type1,this.objApp.gds_code2,'VA005');		// VOC유형
+	this.efn_SetDatasetData2(this.ds_voc_type2,this.objApp.gds_code2,'VA006');		// VOC유형2
+	this.efn_SetDatasetData2(this.ds_voc_type3,this.objApp.gds_code2,'VA007');		// VOC내용
+	this.efn_SetDatasetData2(this.ds_voc_dept3,this.objApp.gds_code2,'VA008');		// VOC대상1
+	this.efn_SetDatasetData2(this.ds_voc_type4,this.objApp.gds_code2,'VA010');		// VOC대상1
+	this.efn_SetDatasetData2(this.ds_do_div,this.objApp.gds_code2,'VA009');			// VOC 처리
+	this.efn_SetGrdUserData(this.ds_voc_dept1,this.objApp.gds_dept);
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user2);
+	
+	var id = "VM001_S04";
+	var url = "svcUrl::VM001_S04";
+	var inDs = "";
+	var outDs = "ds_voc_dept4=ds_list";
+	var args = "FLAG=''";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_search = function ()
+{	
+	var id = "VM002_P01_S03";
+	var url = "svcUrl::VM002_P01_S03";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// VOC 대상2 조회
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+// 
+// 	var id = "VM001_S05";
+// 	var url = "svcUrl::VM001_S05";
+// 	var inDs = "";
+// 	var outDs = "ds_voc_dept4=ds_list";
+// 	var args = "FLAG=''";
+// 	var callBackid = "";
+// 		
+// 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 저장
+this.Div_client_btn_finish_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var mode = "SAVE";
+	
+	var id = "VM002_P01_M03";
+	var url = "svcUrl::VM002_P01_M03";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "MODE="+mode;
+	var callBackid = "fn_close";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 완료
+this.Div_client_btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var mode = "CONFIRM";
+	var vocNo = this.ds_list.getColumn(this.ds_list.rowposition,"VOC_NO");
+	var vocSeq = this.ds_list.getColumn(this.ds_list.rowposition,"VOC_SEQ");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "VM002_P01_M03";
+	var url = "svcUrl::VM002_P01_M03";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "MODE="+mode+" VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+" UPDT_USER_ID="+regUser+"";
+	var callBackid = "fn_close";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 취소
+this.Div_client_btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var mode = "CANCEL";
+	var vocNo = this.ds_list.getColumn(this.ds_list.rowposition,"VOC_NO");
+	var vocSeq = this.ds_list.getColumn(this.ds_list.rowposition,"VOC_SEQ");
+	
+	var id = "VM002_P01_M03";
+	var url = "svcUrl::VM002_P01_M03";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "MODE="+mode+" VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+"";
+	var callBackid = "fn_close";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+
+// VOC 대상2 조회
+this.fn_close = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("정상적으로 처리 되었습니다.");
+}
+
+this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 2)
+	{
+		var paCd = this.ds_list.getColumn(this.ds_list.rowposition,"DIV_TYPE1");
+
+		//trace(this.ds_voc_type2.saveXML());
+ 		this.ds_voc_type2.filter("MINOR_REMARK1=='"+paCd+"'");
+	}
+	
+	if (e.col == 3)
+	{
+		var paCd = this.ds_list.getColumn(this.ds_list.rowposition,"DIV_TYPE2");
+
+		//trace(this.ds_voc_type2.saveXML());
+ 		this.ds_voc_type3.filter("MINOR_REMARK1=='"+paCd+"'");
+	}
+	
+	if (e.col == 5)
+	{
+		var paCd = this.ds_list.getColumn(this.ds_list.rowposition,"ACT_DEPT_CD1");
+
+		//trace(this.ds_voc_type2.saveXML());
+ 		this.ds_user.filter("DEPT_CD=='"+paCd+"'");
+	}
+	
+	if (e.col == 7)
+	{
+		var code = this.ds_list.getColumn(this.ds_list.rowposition,"DIV_DEPT_CD1");
+		var nRow = this.ds_voc_dept3.findRow("CODE",code);
+
+		var flag = this.ds_voc_dept3.getColumn(nRow,"MINOR_REMARK1")
+// 		trace(flag);
+ 		this.ds_voc_dept4.filter("DIV=='"+flag+"'");
+	}
+	
+	if (e.col == 8)
+	{
+		var paCd = this.ds_list.getColumn(this.ds_list.rowposition,"DIV_TYPE2");
+
+		//trace(this.ds_voc_type4.saveXML());
+		trace(paCd);
+ 		this.ds_voc_type4.filter("MINOR_REMARK1=='"+paCd+"'");
+	}
+};
+
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "DIV_TYPE1")
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"DIV_TYPE4","");
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="VOC_NO" type="STRING" size="18"/>
+          <Column id="VOC_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV_TYPE1" type="STRING" size="10"/>
+          <Column id="DIV_TYPE2" type="STRING" size="10"/>
+          <Column id="DIV_TYPE3" type="STRING" size="10"/>
+          <Column id="DIV_TYPE4" type="STRING" size="10"/>
+          <Column id="DIV_TYPE5" type="STRING" size="10"/>
+          <Column id="ACT_DEPT_CD1" type="STRING" size="10"/>
+          <Column id="ACT_DEPT_CD2" type="STRING" size="10"/>
+          <Column id="DIV_DEPT_CD1" type="STRING" size="10"/>
+          <Column id="DIV_DEPT_CD2" type="STRING" size="10"/>
+          <Column id="DUE_DT" type="DATETIME" size="23"/>
+          <Column id="ACT_TYPE" type="STRING" size="10"/>
+          <Column id="NOTE_DIR" type="STRING" size="32767"/>
+          <Column id="NOTE_DIR_FILE" type="STRING" size="50"/>
+          <Column id="NOTE_RSCH" type="STRING" size="32767"/>
+          <Column id="NOTE_RSCH_FILE" type="STRING" size="50"/>
+          <Column id="NOTE_ACT" type="STRING" size="32767"/>
+          <Column id="NOTE_ACT_FILE" type="STRING" size="50"/>
+          <Column id="NOTE_FB" type="STRING" size="32767"/>
+          <Column id="NOTE_FB_FILE" type="STRING" size="50"/>
+          <Column id="LOSS_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="CLAIM_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="FINISH_DT" type="DATETIME" size="23"/>
+          <Column id="DEL_FLAG" type="STRING" size="4"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="EXT1_CD" type="STRING" size="20"/>
+          <Column id="EXT2_CD" type="STRING" size="20"/>
+          <Column id="EXT3_CD" type="STRING" size="20"/>
+          <Column id="EXT1_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT1_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="NOTE_RSCH_CHK" type="STRING" size="256"/>
+          <Column id="NOTE_ACT_CHK" type="STRING" size="256"/>
+          <Column id="NOTE_FB_CHK" type="STRING" size="256"/>
+          <Column id="FINISH_CHK" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_voc_type1"/>
+      <Dataset id="ds_voc_type2"/>
+      <Dataset id="ds_voc_type3"/>
+      <Dataset id="ds_voc_dept1"/>
+      <Dataset id="ds_voc_dept3"/>
+      <Dataset id="ds_voc_dept4"/>
+      <Dataset id="ds_do_div"/>
+      <Dataset id="ds_voc_type4"/>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,1469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM001" width="1300" height="800" titletext="New Form" onload="FM001_onload" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal">
+    <Layouts>
+      <Layout height="800" mobileorientation="landscape" width="1300">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="1"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="10" text="w&#13;&#10;10"/>
+        <Static id="Static01" taborder="2" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="191" text="w&#13;&#10;10" right="0"/>
+        <Tab id="Tab00" taborder="3" tabindex="0" left="10" top="10" onchanged="Tab00_onchanged" right="10" bottom="0">
+          <Tabpages>
+            <Tabpage id="Tabpage1" text="사전상담등록">
+              <Layouts>
+                <Layout>
+                  <Static id="sta_21_00_00_00_00" taborder="23" left="864" top="64" height="29" cssclass="sta_WF_detailLine" width="416"/>
+                  <Div id="Div06_00" taborder="2" top="130" width="573" maxwidth="613" minwidth="" left="20" height="149">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_01" taborder="18" left="96" top="115" height="29" cssclass="sta_WF_detailLine" width="180" visible="false"/>
+                        <Static id="sta_21_00_00_00_00_00" taborder="12" left="99" top="87" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00" taborder="4" left="99" top="31" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00" taborder="6" left="99" top="59" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="Static12" taborder="3" text="고객정보" left="0" top="-2" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="성명" left="0" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00" taborder="1" left="104" top="63" width="167" height="21" background="#fafdc8"/>
+                        <Static id="Static23_00_00_00" taborder="2" text="성별" left="275" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00_00" taborder="5" text="추정연령(질문X)" left="275" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_01_00_00" taborder="7" text="연락처" left="0" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00_00" taborder="8" left="104" top="35" width="167" height="21" background="#fafdc8"/>
+                        <Combo id="cmb_age" taborder="9" left="379" top="63" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset=""/>
+                        <Static id="Static23_00_00_00_00_00" taborder="10" text="인지경로" left="0" top="87" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Combo id="cmb_age00" taborder="11" left="104" top="91" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset=""/>
+                        <Static id="Static23_00_00_01_00_00_00" taborder="13" text="이메일" left="275" top="117" width="100" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
+                        <Edit id="edt_soNo00_00_00" taborder="14" left="379" top="121" width="167" height="21" visible="false"/>
+                        <Combo id="cmb_age01" taborder="15" left="379" top="35" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick"/>
+                        <Static id="Static23_00_00_01_00_00_01" taborder="16" text="관계" left="275" top="87" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Combo id="cmb_age01_00" taborder="17" left="379" top="91" width="167" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="ds_rel" background="#fafdc8"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Static id="sta_21_00_00_00" taborder="20" left="864" top="36" height="29" cssclass="sta_WF_detailLine" width="416"/>
+                  <Div id="Div06" taborder="0" top="291" width="550" maxwidth="613" minwidth="" left="20" height="182">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_00_01" taborder="11" left="99" top="87" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00_00_00" taborder="10" left="99" top="143" height="29" cssclass="sta_WF_detailLine" width="451" visible="false"/>
+                        <Static id="sta_21_00_00_00" taborder="3" left="99" top="31" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00" taborder="5" left="99" top="59" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00_00" taborder="8" left="99" top="115" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="Static12" taborder="2" text="예정인정보" left="0" top="-2" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="성명(질문X)" left="0" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00" taborder="1" text="성별" left="1" top="143" width="100" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
+                        <Static id="Static23_00_00_00_00" taborder="4" text="나이" left="275" top="143" width="100" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="6" text="현재지역(주소)" left="0" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_00_00_00" taborder="7" left="104" top="91" width="440" height="21"/>
+                        <Edit id="edt_soNo00_00_01_00_00" taborder="9" left="104" top="35" width="166" height="21" background="#fafdc8"/>
+                        <Edit id="edt_soNo00_00_01" taborder="12" left="104" top="63" width="167" height="21"/>
+                        <Static id="Static23_00_00_00_00_01" taborder="13" text="현재거주시설" left="275" top="59" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_01_00_00_00" taborder="14" text="주민등록지" left="0" top="59" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_00_00_00_00" taborder="15" text="정부지원" left="0" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00_00_01_00" taborder="16" text="현재상황" left="275" top="115" width="100" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
+                        <Combo id="cmb_curCondition" taborder="17" left="379" top="119" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" visible="false"/>
+                        <Combo id="cmb_age" taborder="18" left="379" top="147" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" visible="false"/>
+                        <Combo id="cmb_age00" taborder="19" left="379" top="63" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset=""/>
+                        <Combo id="cmb_age00_00" taborder="20" left="104" top="119" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" background="#fafdc8"/>
+                        <Button id="btn_preno" taborder="21" left="525" top="35" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Tab00_Tabpage1_Div06_btn_preno_onclick"/>
+                        <Static id="Static23_00_00_01_00_00_00_00" taborder="22" text="연결 상담번호" left="275" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00" taborder="23" left="379" top="35" width="146" height="21" readonly="true"/>
+                        <Combo id="cmb_age01_00" taborder="24" left="105" top="147" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" visible="false"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div00" taborder="1" text="Div00" left="20" top="11" width="560" height="131">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_01" taborder="12" left="90" top="85" height="29" cssclass="sta_WF_detailLine" width="461"/>
+                        <Static id="sta_21_00" taborder="0" left="99" top="57" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21" taborder="1" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="Static23" taborder="2" text="접수번호" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo" taborder="3" left="104" top="33" width="146" height="21" readonly="true" enable="true" displaynulltext="자동 저장 됩니다."/>
+                        <Button id="btn_preno" taborder="4" left="250" top="33" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick"/>
+                        <Static id="Static23_00" taborder="5" text="접수일시" left="0" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00" taborder="6" text="접수자" left="275" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static05" taborder="7" text="접수정보" left="0" top="-3" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Combo id="cmb_user" taborder="8" left="379" top="61" width="167" height="21" text="" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <MaskEdit id="MaskEdit01" taborder="9" left="104" top="61" width="166" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" displaynulltext="자동저장 됩니다" readonly="true"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="10" text="진행상황" left="275" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Combo id="cmb_status" taborder="11" left="379" top="33" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset=""/>
+                        <Static id="Static23_00_00_00_00_00_00_00" taborder="13" text="요청사항" left="0" top="85" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Div id="div_mCombo8" taborder="14" text="Div00" left="104" top="89" width="441" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_req" callbackfunc="fn_mComboCallback2" background="#fafdc8"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div06_01" taborder="3" top="476" width="552" maxwidth="613" minwidth="" left="19" height="176">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_00_00_00_01" taborder="13" left="99" top="113" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00" taborder="2" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_00" taborder="9" left="99" top="85" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="sta_21_00_00_00_00_00_00_00_00" taborder="10" left="99" top="57" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Static id="Static12" taborder="1" text="희망/예약 장례방식" left="0" top="-4" width="141" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="상품명" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_00_00_00_00" taborder="3" text="종교" left="0" top="113" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_01_00" taborder="4" text="장례식장" left="0" top="57" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="5" text="주소" left="0" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_00_00_00" taborder="6" left="104" top="89" width="442" height="21"/>
+                        <Edit id="edt_soNo00_00_01_00" taborder="7" left="104" top="61" width="420" height="21" background="#fafdc8"/>
+                        <Button id="btn_sono00_00" taborder="8" left="524" top="61" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div06_btn_sono00_00_onclick"/>
+                        <Combo id="cmb_religion" taborder="11" left="104" top="117" width="168" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset=""/>
+                        <Static id="Static23_00_00_00_00_01_00_00" taborder="12" text="장지준비" left="277" top="113" width="1" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Div id="div_mCombo8" taborder="14" text="Div00" left="104" top="33" width="441" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_item" callbackfunc="fn_mComboCallback"/>
+                        <Static id="sta_21_00_00_00_00_00_00_01_00" taborder="18" left="99" top="141" height="29" cssclass="sta_WF_detailLine" width="452"/>
+                        <Button id="btn_confirm" taborder="15" left="475" top="145" width="71" height="21" text="상담완료" cssclass="btn_WF_main1" onclick="btn_confirm_onclick"/>
+                        <Static id="Static23_00" taborder="16" text="완료일시" left="0" top="141" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <MaskEdit id="MaskEdit01" taborder="17" left="104" top="145" width="166" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" displaynulltext="자동저장 됩니다" readonly="true"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Static id="Static05_00_00" taborder="4" text="문자발송" left="592" top="327" width="78" height="30" cssclass="sta_WF_title"/>
+                  <TextArea id="TextArea00_00" taborder="5" left="589" top="359" bottom="6" onchanged="Div00_TextArea00_onchanged" width="230"/>
+                  <Static id="Static05_00_00_00" taborder="6" text="전달사항" left="1084" top="327" width="127" height="30" cssclass="sta_WF_title"/>
+                  <TextArea id="TextArea00_00_00" taborder="7" left="1080" top="359" bottom="6" onchanged="Div00_TextArea00_onchanged" width="200"/>
+                  <Static id="Static05" taborder="8" text="주요상담내용" left="590" top="5" width="100" height="30" cssclass="sta_WF_title"/>
+                  <Grid id="Grid00" taborder="9" left="590" top="36" binddataset="ds_list_2" autoenter="select" selecttype="cell" griduserproperty="!sort" autofittype="col" onselectchanged="Div00_Grid00_oncellclick" width="176" height="287">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="48"/>
+                          <Column size="129"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="body">
+                          <Cell rowspan="2" text="expr:currow+1" textAlign="center"/>
+                          <Cell col="1" text="bind:CONSULT_USER" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left" displaytype="combotext"/>
+                          <Cell row="1" col="1" text="bind:INSRT_DT" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <TextArea id="TextArea00_01" taborder="10" left="765" top="92" onchanged="Div00_TextArea00_onchanged" width="515" height="231"/>
+                  <Button id="btn_add" taborder="11" left="1184" top="8" height="21" text="추가" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_add_onclick" width="45"/>
+                  <Button id="btn_del" taborder="12" left="1234" top="8" height="21" text="삭제" cssclass="btn_WF_main1" onclick="Div00_btn_del_onclick" width="45"/>
+                  <Static id="Static05_00" taborder="13" text="장례비용설계서" left="837" top="327" width="127" height="30" cssclass="sta_WF_title"/>
+                  <TextArea id="TextArea00" taborder="14" left="836" top="359" bottom="6" onchanged="Div00_TextArea00_onchanged" width="230"/>
+                  <Button id="btn_mms" taborder="15" left="760" top="330" width="58" height="21" text="MMS" cssclass="btn_WF_main1" onclick="btn_mms_onclick"/>
+                  <Static id="Static23_00_00_00" taborder="16" text="상담유형" left="765" top="36" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                  <Combo id="cmb_consultType" taborder="17" left="869" top="40" width="151" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" background="#fafdc8"/>
+                  <Static id="Static23_00_00_00_00" taborder="18" text="상담채널" left="1023" top="36" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                  <Combo id="cmb_consultChnl" taborder="19" left="1127" top="40" width="149" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" background="#fafdc8"/>
+                  <Button id="btn_mmsSearch" taborder="21" left="698" top="330" width="58" height="21" text="조회" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_mmsSearch_onclick"/>
+                  <Static id="Static23_00" taborder="22" text="상담일시" left="765" top="64" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                  <Calendar id="cal_dlvyDt" taborder="24" left="869" top="68" width="100" height="21" onchanged="Div00_cal_dlvyDt_onchanged" background="#fafdc8"/>
+                  <Combo id="cmb_time" taborder="25" left="972" top="68" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time" background="#fafdc8"/>
+                  <Static id="Static00_00_01" taborder="26" text="시" left="1027" top="65" width="20" height="29"/>
+                  <Combo id="cmb_min" taborder="27" left="1044" top="68" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute" background="#fafdc8"/>
+                  <Static id="Static00_00_01_00" taborder="28" text="분" left="1101" top="65" width="20" height="29"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage2" text="연결상담내역조회">
+              <Layouts>
+                <Layout>
+                  <Grid id="Grid00" taborder="0" left="0" top="8" binddataset="ds_list_3" cellsizingtype="both" extendsizetype="row" autosizingtype="row" right="10" height="729">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="90"/>
+                          <Column size="90"/>
+                          <Column size="80"/>
+                          <Column size="89"/>
+                          <Column size="400"/>
+                          <Column size="400"/>
+                          <Column size="80"/>
+                          <Column size="105"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="접수번호"/>
+                          <Cell col="1" text="연결접수번호"/>
+                          <Cell col="2" text="접수일"/>
+                          <Cell col="3" text="고객명"/>
+                          <Cell col="4" text="상담내용"/>
+                          <Cell col="5" text="견적내용"/>
+                          <Cell col="6" text="접수자"/>
+                          <Cell col="7" text="연락처"/>
+                          <Cell col="8" text="대상자"/>
+                          <Cell col="9" text="관계"/>
+                          <Cell col="10" text="접수유형"/>
+                          <Cell col="11" text="첩수채널"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell text="bind:PRE_RCPT_NO" verticalAlign="top"/>
+                          <Cell col="1" text="bind:PA_PRE_NO" verticalAlign="top"/>
+                          <Cell col="2" text="bind:RCPT_DT" calendardateformat="yyyy-MM-dd" textAlign="center" verticalAlign="top"/>
+                          <Cell col="3" text="bind:CUST_NM" textAlign="center" verticalAlign="top"/>
+                          <Cell col="4" text="bind:CONSULT_MEMO" verticalAlign="top"/>
+                          <Cell col="5" text="bind:CONSULT_COST" verticalAlign="top"/>
+                          <Cell col="6" text="bind:RCPT_USER" textAlign="center" displaytype="combotext" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" verticalAlign="top"/>
+                          <Cell col="7" text="bind:CUST_TEL" textAlign="center" verticalAlign="top"/>
+                          <Cell col="8" text="bind:OWN_NM" verticalAlign="top"/>
+                          <Cell col="9" text="bind:OWN_REL" combodataset="ds_rel" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" textAlign="left" verticalAlign="top"/>
+                          <Cell col="10" text="bind:CONSULT_TYPE" displaytype="combotext" combodataset="ds_contype" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" verticalAlign="top"/>
+                          <Cell col="11" text="bind:CONSULT_CHNL" combodataset="ds_conchnl" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" textAlign="left" verticalAlign="top"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+            <Tabpage id="Tabpage3" text="  견적산출  ">
+              <Layouts>
+                <Layout>
+                  <Div id="Div00" taborder="0" text="Div00" left="20" top="11" width="562" height="33">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21" taborder="0" left="99" top="0" height="29" cssclass="sta_WF_detailLine" width="333"/>
+                        <Static id="Static23" taborder="1" text="사전상담번호" left="0" top="0" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo" taborder="2" left="104" top="4" width="146" height="21" readonly="true" enable="true"/>
+                        <Button id="btn_preno" taborder="3" left="250" top="4" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick"/>
+                        <Static id="Static23_00" taborder="4" text="상담내용 순번" left="275" top="0" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00" taborder="5" left="379" top="4" width="48" height="21" readonly="true" enable="true"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div06_00" taborder="1" top="45" width="573" maxwidth="613" minwidth="" left="17" height="129">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_00_00" taborder="12" left="99" top="87" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00" taborder="4" left="99" top="31" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00" taborder="6" left="99" top="59" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="Static12" taborder="3" text="고객정보" left="2" top="-2" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="성명(카톡ID)" left="0" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00" taborder="1" left="104" top="63" width="167" height="21" readonly="true"/>
+                        <Static id="Static23_00_00_00" taborder="2" text="성별" left="275" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00_00" taborder="5" text="나이" left="275" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_01_00_00" taborder="7" text="연락처" left="0" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00_00" taborder="8" left="104" top="35" width="167" height="21" readonly="true"/>
+                        <Combo id="cmb_age" taborder="9" left="379" top="63" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" readonly="true"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="10" text="인지경로" left="0" top="87" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Combo id="cmb_age00" taborder="11" left="104" top="91" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" readonly="true"/>
+                        <Static id="Static23_00_00_01_00_00_00" taborder="13" text="이메일" left="275" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_00" taborder="14" left="379" top="91" width="167" height="21" readonly="true"/>
+                        <Combo id="cmb_age01" taborder="15" left="379" top="35" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Div id="Div06" taborder="2" top="45" width="550" maxwidth="613" minwidth="" left="610" height="182">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_21_00_00_00_00_00_00" taborder="11" left="99" top="143" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00" taborder="3" left="99" top="31" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00" taborder="5" left="99" top="59" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="sta_21_00_00_00_00_00" taborder="8" left="99" top="115" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Static id="Static12" taborder="2" text="대상자정보" left="4" top="-2" width="97" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static23_00_00" taborder="0" text="성명" left="0" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00" taborder="1" text="성별" left="275" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_00_00" taborder="4" text="나이" left="275" top="59" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_00_00_00" taborder="6" text="현재지역(주소)" left="0" top="115" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Edit id="edt_soNo00_00_00_00_00" taborder="7" left="104" top="119" width="440" height="21" readonly="true"/>
+                        <Static id="Static23_00_00_01_00_00" taborder="9" text="관계" left="0" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Edit id="edt_soNo00_00_01_00_00" taborder="10" left="104" top="35" width="166" height="21" readonly="true"/>
+                        <Static id="sta_21_00_00_00_00_01" taborder="12" left="99" top="87" height="29" cssclass="sta_WF_detailLine" width="451"/>
+                        <Edit id="edt_soNo00_00_01" taborder="13" left="104" top="91" width="167" height="21" readonly="true"/>
+                        <Static id="Static23_00_00_00_00_01" taborder="14" text="현재거주시설" left="275" top="87" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_01_00_00_00" taborder="15" text="주민등록지" left="0" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                        <Static id="Static23_00_00_00_00_00_00" taborder="16" text="정부지원" left="0" top="143" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Static id="Static23_00_00_00_00_01_00" taborder="17" text="현재상황" left="275" top="143" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+                        <Combo id="cmb_curCondition" taborder="18" left="379" top="147" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <Combo id="cmb_age" taborder="19" left="379" top="63" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <Combo id="cmb_age00" taborder="20" left="379" top="91" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <Combo id="cmb_age00_00" taborder="21" left="104" top="147" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                        <Combo id="cmb_age01" taborder="22" left="104" top="63" width="167" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="ds_rel" readonly="true"/>
+                        <Combo id="cmb_age01_00" taborder="23" left="379" top="35" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" readonly="true"/>
+                      </Layout>
+                    </Layouts>
+                  </Div>
+                  <Tab id="Tab00" taborder="3" tabindex="0" left="17" top="256" width="1253" height="500">
+                    <Tabpages>
+                      <Tabpage id="Tabpage1" text="안심견적 1">
+                        <Layouts>
+                          <Layout>
+                            <Div id="Div00" taborder="0" text="Div00" left="0" top="4" width="313" height="464">
+                              <Layouts>
+                                <Layout>
+                                  <Static id="sta_21_00_00_00" taborder="24" left="99" top="374" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="sta_21_00_00" taborder="20" left="99" top="281" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="sta_21_00_00_00_00_00_00" taborder="14" left="99" top="192" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="sta_21_00_00_00_00_00" taborder="12" left="99" top="164" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="sta_21_00" taborder="8" left="99" top="136" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="sta_21" taborder="4" left="99" top="46" height="29" cssclass="sta_WF_detailLine" right="5"/>
+                                  <Static id="Static00_00" taborder="1" text="1. 상품선택" left="-1" top="12" width="80" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static23" taborder="0" text="상품" left="0" top="46" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Button id="btn_preno" taborder="3" top="50" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick" width="21" right="10"/>
+                                  <Edit id="edt_soNo" taborder="2" left="104" top="50" height="21" readonly="true" enable="true" right="btn_preno:0"/>
+                                  <Static id="Static00_00_00" taborder="5" text="3. 장례식장 선택" left="-1" top="102" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static23_00" taborder="6" text="장례식장" left="0" top="136" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Button id="btn_preno00" taborder="9" top="140" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick" width="21" right="10"/>
+                                  <Edit id="edt_soNo00" taborder="7" left="104" top="140" height="21" readonly="true" enable="true" right="btn_preno00:0"/>
+                                  <Static id="Static23_00_00_00_00_00" taborder="10" text="빈소 사용료" left="0" top="164" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Combo id="cmb_age00" taborder="11" top="168" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" right="10" left="104"/>
+                                  <Static id="Static23_00_00_00_00_00_00" taborder="13" text="빈소 사용료" left="0" top="192" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Div id="div_mCombo8" taborder="15" text="Div00" left="104" top="196" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_item" callbackfunc="fn_mComboCallback" right="10"/>
+                                  <Static id="Static00_00_00_00" taborder="16" text="4. 화장장 선택" left="-1" top="247" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static23_00_00" taborder="17" text="화장장" left="0" top="281" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Button id="btn_preno00_00" taborder="19" top="285" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick" width="21" right="10"/>
+                                  <Edit id="edt_soNo00_00" taborder="18" left="104" top="285" height="21" readonly="true" enable="true" right="btn_preno00_00:0"/>
+                                  <Static id="Static00_00_00_00_00" taborder="21" text="5. 장지 선택" left="-1" top="340" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static23_00_00_00" taborder="22" text="장지" left="0" top="374" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                                  <Button id="btn_preno00_00_00" taborder="25" top="378" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_preno_onclick" right="10" width="21"/>
+                                  <Edit id="edt_soNo00_00_00" taborder="23" height="21" readonly="true" enable="true" right="31" top="378" left="104"/>
+                                </Layout>
+                              </Layouts>
+                            </Div>
+                            <Div id="Div01" taborder="1" text="Div01" left="333" top="15" height="298" width="450">
+                              <Layouts>
+                                <Layout>
+                                  <Static id="Static00_00" taborder="0" text="2. 추가 / 공제상품 선택" left="-1" top="-6" width="135" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static12" taborder="1" text="상품 선택 내역" left="0" top="23" width="97" height="21" cssclass="sta_WF_title"/>
+                                  <Grid id="Grid01_00_00_00" taborder="2" left="0" top="50" autofittype="col" oncellclick="Grid01_00_oncellclick" bottom="0" autoenter="select" right="2">
+                                    <Formats>
+                                      <Format id="default">
+                                        <Columns>
+                                          <Column size="37"/>
+                                          <Column size="85"/>
+                                          <Column size="176"/>
+                                          <Column size="44"/>
+                                          <Column size="81"/>
+                                        </Columns>
+                                        <Rows>
+                                          <Row size="36" band="head"/>
+                                          <Row size="24"/>
+                                        </Rows>
+                                        <Band id="head">
+                                          <Cell text="순번"/>
+                                          <Cell col="1" text="품목코드"/>
+                                          <Cell col="2" text="품명"/>
+                                          <Cell col="3" text="수량"/>
+                                          <Cell col="4" text="금액"/>
+                                        </Band>
+                                        <Band id="body">
+                                          <Cell text="expr:currow + 1" textAlign="center"/>
+                                          <Cell col="1" text="bind:ITEM_CD" textAlign="center" combodataset="ds_item" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                          <Cell col="2" text="bind:ITEM_CD" textAlign="center" displaytype="combocontrol" edittype="combo" combodataset="ds_item" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                          <Cell col="3" text="bind:FN_AMT" textAlign="right" displaytype="maskeditcontrol" edittype="mask" maskeditformat="##,##0"/>
+                                          <Cell col="4" text="bind:FN_AMT" textAlign="right" displaytype="maskeditcontrol" edittype="mask" maskeditformat="##,##0"/>
+                                        </Band>
+                                      </Format>
+                                    </Formats>
+                                  </Grid>
+                                  <Button id="btn_add" taborder="3" left="352" top="21" height="21" text="추가" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_add_onclick" width="45"/>
+                                  <Button id="btn_del" taborder="4" left="402" top="21" height="21" text="삭제" cssclass="btn_WF_main1" onclick="Div00_btn_del_onclick" width="45"/>
+                                </Layout>
+                              </Layouts>
+                            </Div>
+                            <Div id="Div01_00" taborder="2" text="Div01" left="800" top="15" width="450" height="298">
+                              <Layouts>
+                                <Layout>
+                                  <Static id="Static12" taborder="0" text="장지 선택 내역" left="0" top="23" width="97" height="21" cssclass="sta_WF_title"/>
+                                  <Grid id="Grid01_00_00_00" taborder="1" left="1" top="50" autofittype="col" oncellclick="Grid01_00_oncellclick" bottom="0" autoenter="select" right="0">
+                                    <Formats>
+                                      <Format id="default">
+                                        <Columns>
+                                          <Column size="37"/>
+                                          <Column size="109"/>
+                                          <Column size="196"/>
+                                          <Column size="81"/>
+                                        </Columns>
+                                        <Rows>
+                                          <Row size="36" band="head"/>
+                                          <Row size="24"/>
+                                        </Rows>
+                                        <Band id="head">
+                                          <Cell text="순번"/>
+                                          <Cell col="1" text="장지시설"/>
+                                          <Cell col="2" text="품명"/>
+                                          <Cell col="3" text="금액"/>
+                                        </Band>
+                                        <Band id="body">
+                                          <Cell text="expr:currow + 1" textAlign="center"/>
+                                          <Cell col="1" text="bind:ITEM_CD" textAlign="center" displaytype="combocontrol" edittype="combo" combodataset="ds_item" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                          <Cell col="2" text="bind:ITEM_CD" textAlign="center" displaytype="combocontrol" edittype="combo" combodataset="ds_item" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                          <Cell col="3" text="bind:FN_AMT" textAlign="right" displaytype="maskeditcontrol" edittype="mask" maskeditformat="##,##0"/>
+                                        </Band>
+                                      </Format>
+                                    </Formats>
+                                  </Grid>
+                                </Layout>
+                              </Layouts>
+                            </Div>
+                            <Div id="Div02" taborder="3" text="Div02" left="334" top="320" width="916" height="146">
+                              <Layouts>
+                                <Layout>
+                                  <Static id="Static12" taborder="0" text="종합 내역" left="7" top="1" width="97" height="30" cssclass="sta_WF_title"/>
+                                  <Static id="Static00_00_00" taborder="1" text="■ 서비스명 : " left="9" top="32" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00" taborder="2" text="■ 서비스금액 : " left="9" top="57" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_00" taborder="3" text="- 공제내역 : " left="24" top="82" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_00_00" taborder="4" text="- 추가내역 : " left="24" top="107" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_01" taborder="5" text="■ 장례식장명 : " left="269" top="32" width="104" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_01" taborder="6" text="■ 장례식장 시설 사용료 : " left="269" top="57" width="154" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_00_01" taborder="7" text="(빈소 : " left="284" top="82" width="41" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_00_01_00" taborder="8" text="평 기준)" left="364" top="82" width="49" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_01_00" taborder="9" text="■ 화장장명 : " left="599" top="32" width="80" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_01_00" taborder="10" text="■ 봉안당명 : " left="599" top="57" width="80" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                                  <Static id="Static00_00_00_00_01_00_00" taborder="11" text="■ 총 예상 금액 : " left="599" top="82" width="100" height="25" textAlign="left" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" background="#fafdc8"/>
+                                </Layout>
+                              </Layouts>
+                            </Div>
+                          </Layout>
+                        </Layouts>
+                      </Tabpage>
+                      <Tabpage id="Tabpage2" text="안심견적 2"/>
+                      <Tabpage id="Tabpage3" text="안심견적 3">
+                        <Layouts>
+                          <Layout/>
+                        </Layouts>
+                      </Tabpage>
+                    </Tabpages>
+                  </Tab>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="PRE_RCPT_NO" type="STRING" size="18"/>
+          <Column id="RCPT_DT" type="DATETIME" size="23"/>
+          <Column id="RCPT_USER" type="STRING" size="10"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="20"/>
+          <Column id="CONSULT_CHNL" type="STRING" size="20"/>
+          <Column id="D_DATE" type="STRING" size="20"/>
+          <Column id="CUST_NM" type="STRING" size="20"/>
+          <Column id="CUST_TEL" type="STRING" size="20"/>
+          <Column id="CUST_GENDER" type="STRING" size="20"/>
+          <Column id="CUST_AGE" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="OWN_REL" type="STRING" size="20"/>
+          <Column id="OWN_GENDER" type="STRING" size="20"/>
+          <Column id="OWN_AGE" type="STRING" size="20"/>
+          <Column id="CUR_REGION" type="STRING" size="20"/>
+          <Column id="CUR_RESIDENCE" type="STRING" size="20"/>
+          <Column id="CUR_ADDR" type="STRING" size="20"/>
+          <Column id="BASIC_LIVING" type="STRING" size="20"/>
+          <Column id="CUR_CONDITION" type="STRING" size="20"/>
+          <Column id="SERVICE_ITEM" type="STRING" size="20"/>
+          <Column id="REGION_SIDO" type="STRING" size="20"/>
+          <Column id="REGION_GU" type="STRING" size="20"/>
+          <Column id="FUNERAL_HALL" type="STRING" size="20"/>
+          <Column id="RELIGION" type="STRING" size="20"/>
+          <Column id="FUNERAL_AREA" type="STRING" size="20"/>
+          <Column id="MSG_MEMO" type="STRING" size="2000"/>
+          <Column id="PRICE_MEMO" type="STRING" size="4000"/>
+          <Column id="AFTER_MEMO" type="STRING" size="2000"/>
+          <Column id="FD_USER" type="STRING" size="20"/>
+          <Column id="FD_TEAM" type="STRING" size="20"/>
+          <Column id="FD_TEL" type="STRING" size="20"/>
+          <Column id="FD_SERVICE_ITEM" type="STRING" size="20"/>
+          <Column id="FD_CHARGE_TYPE" type="STRING" size="20"/>
+          <Column id="FD_CHARGE_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="FD_CHARGE_RMK" type="STRING" size="20"/>
+          <Column id="DT_ARRIVAL" type="STRING" size="20"/>
+          <Column id="DT_IBSIL" type="STRING" size="20"/>
+          <Column id="DT_FROM" type="STRING" size="20"/>
+          <Column id="DT_TO" type="STRING" size="20"/>
+          <Column id="DT_IBGWAN" type="STRING" size="20"/>
+          <Column id="DT_BALIN" type="STRING" size="20"/>
+          <Column id="IBGWAN_RELIG" type="STRING" size="20"/>
+          <Column id="D_NM" type="STRING" size="20"/>
+          <Column id="D_GENDER" type="STRING" size="20"/>
+          <Column id="D_AGE" type="STRING" size="20"/>
+          <Column id="D_JUMIN_NO" type="STRING" size="20"/>
+          <Column id="FD_D_DATE" type="STRING" size="20"/>
+          <Column id="D_ADDR" type="STRING" size="20"/>
+          <Column id="D_BONGWAN" type="STRING" size="20"/>
+          <Column id="D_RELIGION" type="STRING" size="20"/>
+          <Column id="D_CHILD" type="STRING" size="20"/>
+          <Column id="SJ_NM" type="STRING" size="20"/>
+          <Column id="SJ_REL" type="STRING" size="20"/>
+          <Column id="SJ_TEL" type="STRING" size="20"/>
+          <Column id="SJ_JUMIN_NO" type="STRING" size="20"/>
+          <Column id="SJ_ADDR" type="STRING" size="20"/>
+          <Column id="MB_NM" type="STRING" size="20"/>
+          <Column id="MB_REL" type="STRING" size="20"/>
+          <Column id="MB_TEL" type="STRING" size="20"/>
+          <Column id="MB_JUMIN_NO" type="STRING" size="20"/>
+          <Column id="MB_ADDR" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="EXT1_CD" type="STRING" size="20"/>
+          <Column id="EXT2_CD" type="STRING" size="20"/>
+          <Column id="EXT3_CD" type="STRING" size="20"/>
+          <Column id="EXT1_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT1_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="EXT2_AMT" type="BIGDECIMAL" size="15"/>
+          <Column id="D_TIME" type="STRING" size="255"/>
+          <Column id="D_MIN" type="STRING" size="255"/>
+          <Column id="DT_BINSO_TYPE" type="STRING" size="255"/>
+          <Column id="FD_FUNERAL_HALL" type="STRING" size="255"/>
+          <Column id="FD_FH_ROOM" type="STRING" size="255"/>
+          <Column id="CREM" type="STRING" size="255"/>
+          <Column id="CREM_DT" type="STRING" size="255"/>
+          <Column id="CREM_CNT" type="STRING" size="255"/>
+          <Column id="WDLD" type="STRING" size="255"/>
+          <Column id="DLVY_CHANGE_DT" type="STRING" size="256"/>
+          <Column id="DLVY_CD" type="STRING" size="256"/>
+          <Column id="RESERVATION" type="STRING" size="256"/>
+          <Column id="FUNERAL_READY" type="STRING" size="256"/>
+          <Column id="FUNERAL_CONTENT" type="STRING" size="256"/>
+          <Column id="CFM_DT" type="STRING" size="256"/>
+          <Column id="CHANGE_ITEM" type="STRING" size="256"/>
+          <Column id="ADD_ITEM" type="STRING" size="256"/>
+          <Column id="PA_PRE_NO" type="STRING" size="256"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+          <Column id="KNOW_PATH" type="STRING" size="256"/>
+          <Column id="E_MAIL" type="STRING" size="256"/>
+          <Column id="PO_BP_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CONSULT_MEMO" type="STRING" size="256"/>
+          <Column id="CONSULT_USER" type="STRING" size="256"/>
+          <Column id="CONSULT_DT" type="STRING" size="256"/>
+          <Column id="CONSULT_TIME" type="STRING" size="256"/>
+          <Column id="CONSULT_MIN" type="STRING" size="256"/>
+          <Column id="PRE_RCPT_NO" type="STRING" size="256"/>
+          <Column id="SEQ" type="STRING" size="256"/>
+          <Column id="CONSULT_COST" type="STRING" size="256"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="256"/>
+          <Column id="CONSULT_CHNL" type="STRING" size="256"/>
+          <Column id="CUST_NM" type="STRING" size="256"/>
+          <Column id="CUST_TEL" type="STRING" size="256"/>
+          <Column id="INSRT_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_time">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">00</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="NAME">01</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="NAME">02</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="NAME">03</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="NAME">04</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="NAME">05</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="NAME">06</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">7</Col>
+            <Col id="NAME">07</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">8</Col>
+            <Col id="NAME">08</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">9</Col>
+            <Col id="NAME">09</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="NAME">10</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">11</Col>
+            <Col id="NAME">11</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">12</Col>
+            <Col id="NAME">12</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">13</Col>
+            <Col id="NAME">13</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">14</Col>
+            <Col id="NAME">14</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">15</Col>
+            <Col id="NAME">15</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">16</Col>
+            <Col id="NAME">16</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">17</Col>
+            <Col id="NAME">17</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">18</Col>
+            <Col id="NAME">18</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">19</Col>
+            <Col id="NAME">19</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">20</Col>
+            <Col id="NAME">20</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">21</Col>
+            <Col id="NAME">21</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">22</Col>
+            <Col id="NAME">22</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">23</Col>
+            <Col id="NAME">23</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_minute">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">00</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="NAME">10</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">20</Col>
+            <Col id="NAME">20</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">30</Col>
+            <Col id="NAME">30</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">40</Col>
+            <Col id="NAME">40</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">50</Col>
+            <Col id="NAME">50</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_out"/>
+      <Dataset id="ds_gender"/>
+      <Dataset id="ds_rel"/>
+      <Dataset id="ds_item"/>
+      <Dataset id="ds_ready_item"/>
+      <Dataset id="ds_add_item"/>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="PRE_RCPT_NO" type="STRING" size="18"/>
+          <Column id="PA_PRE_NO" type="STRING" size="18"/>
+          <Column id="RCPT_DT" type="DATETIME" size="23"/>
+          <Column id="RCPT_USER" type="STRING" size="20"/>
+          <Column id="STATUS" type="STRING" size="20"/>
+          <Column id="CUST_NM" type="STRING" size="20"/>
+          <Column id="CUST_TEL" type="STRING" size="20"/>
+          <Column id="CUST_GENDER" type="STRING" size="20"/>
+          <Column id="CUST_AGE" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="OWN_REL" type="STRING" size="20"/>
+          <Column id="OWN_GENDER" type="STRING" size="20"/>
+          <Column id="OWN_AGE" type="STRING" size="20"/>
+          <Column id="CUR_REGION" type="STRING" size="2000"/>
+          <Column id="CUR_RESIDENCE" type="STRING" size="20"/>
+          <Column id="CUR_ADDR" type="STRING" size="200"/>
+          <Column id="BASIC_LIVING" type="STRING" size="20"/>
+          <Column id="CUR_CONDITION" type="STRING" size="20"/>
+          <Column id="SERVICE_ITEM" type="STRING" size="20"/>
+          <Column id="REGION_SIDO" type="STRING" size="200"/>
+          <Column id="DLVY_CD" type="STRING" size="20"/>
+          <Column id="FUNERAL_HALL" type="STRING" size="200"/>
+          <Column id="RELIGION" type="STRING" size="20"/>
+          <Column id="FUNERAL_AREA" type="STRING" size="20"/>
+          <Column id="ADD_ITEM" type="STRING" size="20"/>
+          <Column id="CHANGE_ITEM" type="STRING" size="200"/>
+          <Column id="CFM_DT" type="DATETIME" size="23"/>
+          <Column id="CONSULT_TYPE" type="STRING" size="20"/>
+          <Column id="CONSULT_CHNL" type="STRING" size="20"/>
+          <Column id="CONSULT_MEMO" type="STRING" size="4000"/>
+          <Column id="CONSULT_COST" type="STRING" size="4000"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_contype"/>
+      <Dataset id="ds_conchnl"/>
+      <Dataset id="ds_req"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item14" compid="edt_soNo00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item15" compid="edt_soNo00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item16" compid="edt_soNo00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item18" compid="edt_soNo00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item19" compid="edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item23" compid="Tab00.Tabpage1.form.Div00.form.MaskEdit01_00" propid="value" datasetid="ds_list" columnid="CONFIRM_DT"/>
+      <BindItem id="item2" compid="Div06.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item5" compid="Tab00.Tabpage1.form.Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="PRE_RCPT_NO"/>
+      <BindItem id="item6" compid="Tab00.Tabpage1.form.Div00.form.MaskEdit01" propid="value" datasetid="ds_list_1" columnid="RCPT_DT"/>
+      <BindItem id="item7" compid="Tab00.Tabpage1.form.Div00.form.cmb_user" propid="value" datasetid="ds_list_1" columnid="RCPT_USER"/>
+      <BindItem id="item13" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item17" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00" propid="value" datasetid="ds_list_1" columnid="CUST_TEL"/>
+      <BindItem id="item31" compid="Tab00.Tabpage1.form.Div06.form.cmb_curCondition" propid="value" datasetid="ds_list_1" columnid="CUR_CONDITION"/>
+      <BindItem id="item33" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_01_00" propid="value" datasetid="ds_list_1" columnid="FUNERAL_HALL"/>
+      <BindItem id="item34" compid="Tab00.Tabpage1.form.Div06_01.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="REGION_SIDO"/>
+      <BindItem id="item35" compid="Tab00.Tabpage1.form.Div06_01.form.cmb_religion" propid="value" datasetid="ds_list_1" columnid="RELIGION"/>
+      <BindItem id="item0" compid="Tab00.Tabpage1.form.TextArea00_01" propid="value" datasetid="ds_list_2" columnid="CONSULT_MEMO"/>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.TextArea00" propid="value" datasetid="ds_list_2" columnid="CONSULT_COST"/>
+      <BindItem id="item4" compid="Tab00.Tabpage1.form.TextArea00_00_00" propid="value" datasetid="ds_list_1" columnid="MSG_MEMO"/>
+      <BindItem id="item10" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age" propid="value" datasetid="ds_list_1" columnid="CUST_AGE"/>
+      <BindItem id="item11" compid="Tab00.Tabpage1.form.Div06.form.cmb_age" propid="value" datasetid="ds_list_1" columnid="OWN_AGE"/>
+      <BindItem id="item12" compid="Tab00.Tabpage1.form.Div06.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="CUR_RESIDENCE"/>
+      <BindItem id="item21" compid="Tab00.Tabpage1.form.Div06.form.cmb_age00_00" propid="value" datasetid="ds_list_1" columnid="BASIC_LIVING"/>
+      <BindItem id="item25" compid="Tab00.Tabpage1.form.Div06.form.edt_soNo00_00_01" propid="value" datasetid="ds_list_1" columnid="CUR_REGION"/>
+      <BindItem id="item27" compid="Tab00.Tabpage1.form.Div06.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CUR_ADDR"/>
+      <BindItem id="item8" compid="Tab00.Tabpage1.form.cmb_consultType" propid="value" datasetid="ds_list_2" columnid="CONSULT_TYPE"/>
+      <BindItem id="item9" compid="Tab00.Tabpage1.form.cmb_consultChnl" propid="value" datasetid="ds_list_2" columnid="CONSULT_CHNL"/>
+      <BindItem id="item29" compid="Tab00.Tabpage1.form.Div00.form.cmb_status" propid="value" datasetid="ds_list_1" columnid="STATUS"/>
+      <BindItem id="item32" compid="Tab00.Tabpage1.form.Div06.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item26" compid="Tab00.Tabpage1.form.Div06.form.edt_soNo00_00_01_00" propid="value" datasetid="ds_list_1" columnid="PA_PRE_NO"/>
+      <BindItem id="item28" compid="Tab00.Tabpage1.form.Div06_01.form.MaskEdit01" propid="value" datasetid="ds_list_1" columnid="CFM_DT"/>
+      <BindItem id="item37" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="KNOW_PATH"/>
+      <BindItem id="item39" compid="Tab00.Tabpage1.form.Div06_00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="E_MAIL"/>
+      <BindItem id="item3" compid="Tab00.Tabpage1.form.cal_dlvyDt" propid="value" datasetid="ds_list_2" columnid="CONSULT_DT"/>
+      <BindItem id="item40" compid="Tab00.Tabpage1.form.cmb_time" propid="value" datasetid="ds_list_2" columnid="CONSULT_TIME"/>
+      <BindItem id="item41" compid="Tab00.Tabpage1.form.cmb_min" propid="value" datasetid="ds_list_2" columnid="CONSULT_MIN"/>
+      <BindItem id="item36" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age01" propid="value" datasetid="ds_list_1" columnid="CUST_GENDER"/>
+      <BindItem id="item24" compid="Tab00.Tabpage3.form.Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="PRE_RCPT_NO"/>
+      <BindItem id="item20" compid="Tab00.Tabpage3.form.Div06_00.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item42" compid="Tab00.Tabpage3.form.Div06_00.form.edt_soNo00_00" propid="value" datasetid="ds_list_1" columnid="CUST_TEL"/>
+      <BindItem id="item43" compid="Tab00.Tabpage3.form.Div06_00.form.cmb_age" propid="value" datasetid="ds_list_1" columnid="CUST_AGE"/>
+      <BindItem id="item44" compid="Tab00.Tabpage3.form.Div06_00.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="KNOW_PATH"/>
+      <BindItem id="item45" compid="Tab00.Tabpage3.form.Div06_00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="E_MAIL"/>
+      <BindItem id="item46" compid="Tab00.Tabpage3.form.Div06_00.form.cmb_age01" propid="value" datasetid="ds_list_1" columnid="CUST_GENDER"/>
+      <BindItem id="item47" compid="Tab00.Tabpage3.form.Div06.form.cmb_curCondition" propid="value" datasetid="ds_list_1" columnid="CUR_CONDITION"/>
+      <BindItem id="item48" compid="Tab00.Tabpage3.form.Div06.form.cmb_age" propid="value" datasetid="ds_list_1" columnid="OWN_AGE"/>
+      <BindItem id="item49" compid="Tab00.Tabpage3.form.Div06.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="CUR_RESIDENCE"/>
+      <BindItem id="item50" compid="Tab00.Tabpage3.form.Div06.form.cmb_age00_00" propid="value" datasetid="ds_list_1" columnid="BASIC_LIVING"/>
+      <BindItem id="item51" compid="Tab00.Tabpage3.form.Div06.form.cmb_age01" propid="value" datasetid="ds_list_1" columnid="OWN_REL"/>
+      <BindItem id="item52" compid="Tab00.Tabpage3.form.Div06.form.edt_soNo00_00_01" propid="value" datasetid="ds_list_1" columnid="CUR_REGION"/>
+      <BindItem id="item53" compid="Tab00.Tabpage3.form.Div06.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CUR_ADDR"/>
+      <BindItem id="item56" compid="Tab00.Tabpage3.form.Div06.form.cmb_age01_00" propid="value" datasetid="ds_list_1" columnid="OWN_GENDER"/>
+      <BindItem id="item54" compid="Tab00.Tabpage3.form.Div06.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item55" compid="Tab00.Tabpage3.form.Div00.form.edt_soNo00" propid="value" datasetid="ds_list_2" columnid="SEQ"/>
+      <BindItem id="item22" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age01_00" propid="value" datasetid="ds_list_1" columnid="OWN_REL"/>
+      <BindItem id="item30" compid="Tab00.Tabpage1.form.Div06.form.cmb_age01_00" propid="value" datasetid="ds_list_1" columnid="OWN_GENDER"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    SORS > 사전상담 등록
+*  @FileName 	SO005.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.09.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//this.Tab00.removeTabpage();
+	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
+	{	
+		this.fn_search(this.objApp.gds_so_no.getColumn(0,"SO_NO"));
+	} else 
+	{
+		this.fn_add();
+		this.fn_add2();
+	}
+	
+	this.fn_setCombo(obj);
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetComboData(obj,this.objApp.gds_user,"ds_userIn",this.Tab00.Tabpage1.form.Div00.form.cmb_user,"",false,false);										// 접수자
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_consultType",this.Tab00.Tabpage1.form.cmb_consultType,"MAJOR_CODE=='SO001'",false,false);					// 상담유형
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_status",this.Tab00.Tabpage1.form.Div00.form.cmb_status,"MAJOR_CODE=='PC016'",false,false);					// 진행상황
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_consultChnl",this.Tab00.Tabpage1.form.cmb_consultChnl,"MAJOR_CODE=='SO002'",false,false);					// 상담채널
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_age",this.Tab00.Tabpage1.form.Div06_00.form.cmb_age,"MAJOR_CODE=='PC009'",false,false);						// 나이
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_age2",this.Tab00.Tabpage1.form.Div06.form.cmb_age,"MAJOR_CODE=='PC009'",false,false);						// 나이
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_gender5",this.Tab00.Tabpage1.form.Div06_00.form.cmb_age01,"MAJOR_CODE=='SO008'",false,false);				// 성별
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_gender6",this.Tab00.Tabpage1.form.Div06.form.cmb_age01_00,"MAJOR_CODE=='SO008'",false,false);				// 성별
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_cur",this.Tab00.Tabpage1.form.Div06.form.cmb_age00,"MAJOR_CODE=='PC010'",false,false);						// 거주시설
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_basic",this.Tab00.Tabpage1.form.Div06.form.cmb_age00_00,"MAJOR_CODE=='PC011'",false,false);					// 정부지원
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_curCondition",this.Tab00.Tabpage1.form.Div06.form.cmb_curCondition,"MAJOR_CODE=='SO003'",false,false);		// 현재상황
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_religion",this.Tab00.Tabpage1.form.Div06_01.form.cmb_religion,"MAJOR_CODE=='SO005'",false,false);			// 종교
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_know",this.Tab00.Tabpage1.form.Div06_00.form.cmb_age00,"MAJOR_CODE=='PC015'",false,false);					// 인지경로
+	//this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_poBpCd",this.Tab00.Tabpage1.form.Div00.form.cmb_status00_00,"MAJOR_CODE=='PC018'",false,false);				// 인지경로
+	
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_know2",this.Tab00.Tabpage3.form.Div06_00.form.cmb_age00,"MAJOR_CODE=='PC015'",false,false);					// 견적 인지경로
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_gender7",this.Tab00.Tabpage3.form.Div06_00.form.cmb_age01,"MAJOR_CODE=='SO008'",false,false);				// 견적 성별
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_age4",this.Tab00.Tabpage3.form.Div06.form.cmb_age,"MAJOR_CODE=='PC009'",false,false);						// 견적 나이
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_gender8",this.Tab00.Tabpage3.form.Div06_00.form.cmb_age01,"MAJOR_CODE=='SO008'",false,false);				// 견적 성별
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_age3",this.Tab00.Tabpage3.form.Div06.form.cmb_age,"MAJOR_CODE=='PC009'",false,false);						// 견적 나이
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_cur2",this.Tab00.Tabpage3.form.Div06.form.cmb_age00,"MAJOR_CODE=='PC010'",false,false);						// 견적 거주시설
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_basic2",this.Tab00.Tabpage3.form.Div06.form.cmb_age00_00,"MAJOR_CODE=='PC011'",false,false);					// 견적 정부지원
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_curCondition2",this.Tab00.Tabpage3.form.Div06.form.cmb_curCondition,"MAJOR_CODE=='SO003'",false,false);		// 견적 현재상황
+	
+
+ 	this.efn_SetDatasetData2(this.ds_gender,this.objApp.gds_code2,'SO008');			// 성별
+	this.efn_SetDatasetData2(this.ds_item,this.objApp.gds_code2,'SO004');			// 상품명
+	this.efn_SetDatasetData2(this.ds_ready_item,this.objApp.gds_code2,'SO006');		// 공제사항
+	this.efn_SetDatasetData2(this.ds_add_item,this.objApp.gds_code2,'PC017');		// 추가사항
+	this.efn_SetDatasetData2(this.ds_contype,this.objApp.gds_code2,'SO001');		// 접수유형
+	this.efn_SetDatasetData2(this.ds_conchnl,this.objApp.gds_code2,'SO002');		// 접수채널
+	this.efn_SetDatasetData2(this.ds_req,this.objApp.gds_code2,'PC021');			// 요청사항
+	
+	this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo8.form.fn_setDataset(this.ds_item);
+	this.Tab00.Tabpage1.form.Div00.form.div_mCombo8.form.fn_setDataset(this.ds_req);
+// 	this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo1.form.fn_setDataset(this.ds_ready_item);
+// 	this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo2.form.fn_setDataset(this.ds_add_item);
+
+	
+ 	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	this.Tab00.Tabpage1.form.cmb_consultChnl.set_index(0);
+	
+	var id = "FM001_S02";
+	var url = "svcUrl::FM001_S02";
+	var inDs = "";
+	var outDs = "ds_rel=ds_list";
+	var args = "";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+  /**
+* @description 		공통신규버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.12
+* @수정자	   
+* @수정일자
+*/
+// 조회
+this.fn_search = function (preNo)
+{
+	if (this.gfn_isNull(preNo))
+	{
+		if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO")))
+		{
+			if (!this.confirm("저장된 사전상담 번호가 없습니다. 조회하시겠습니까?"))
+			{
+				return;
+			}
+		} else
+		{
+			preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+		}		
+	}
+	
+	var id = "FM001_S01";
+	var url = "svcUrl::FM001_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "PRE_RCPT_NO="+preNo;
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 조회 callback
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var item = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SERVICE_ITEM");
+	
+	if (!this.gfn_isNull(item))
+	{
+		this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo8.form.set_value(item);
+	}
+	
+	var req = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PO_BP_CD");
+	
+	if (!this.gfn_isNull(req))
+	{
+		this.Tab00.Tabpage1.form.Div00.form.div_mCombo8.form.set_text(req);
+	}
+// 	
+// 	var item3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ADD_ITEM");
+// 	
+// 	if (!this.gfn_isNull(item3))
+// 	{
+// 		this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo2.form.set_value(item3);
+// 	}
+	
+	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
+	{
+		this.objApp.gds_so_no.setColumn(0,"SO_NO","");
+	}
+}
+
+this.fn_save = function ()
+{
+	if(this.fn_valChk() == false)
+	{
+		return;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "FM001_M01";
+	var url = "svcUrl::FM001_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 저장 callback
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var preNo = this.ds_list_out.getColumn(0,"PRE_RCPT_NO");
+	if (this.gfn_isNull(preNo))
+	{
+		preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	}	
+	
+	var id = "FM001_M02";
+	var url = "svcUrl::FM001_M02";
+	var inDs = "ds_list_2=ds_list_2:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+" PRE_RCPT_NO="+preNo+"";
+	var callBackid = "fn_afterSave2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	
+}
+
+this.fn_delete = function ()
+{
+	if(this.confirm("삭제 하시겠습니까?"))
+	{
+		this.ds_list_1.deleteRow(this.ds_list_1.rowposition);
+		this.ds_list_2.deleteAll();
+		
+		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+		var id = "FM001_M01";
+		var url = "svcUrl::FM001_M01";
+		var inDs = "ds_list_1=ds_list_1:U";
+		var outDs = "ds_list_out=ds_list_out";
+		var args = "INSRT_USER_ID="+regUser;
+		var callBackid = "fn_afterSave4";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
+};
+
+// 저장 callback
+this.fn_afterSave4 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var preNo = this.ds_list_out.getColumn(0,"PRE_RCPT_NO");
+	if (this.gfn_isNull(preNo))
+	{
+		preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	}	
+	
+	var id = "FM001_M02";
+	var url = "svcUrl::FM001_M02";
+	var inDs = "ds_list_2=ds_list_2:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+" PRE_RCPT_NO="+preNo+"";
+	var callBackid = "fn_afterSave5";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	
+}
+
+this.fn_afterSave5 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("삭제 되었습니다.");
+	
+	this.fn_add();
+	this.fn_add2();
+}
+
+this.fn_afterSave2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var preNo = this.ds_list_out.getColumn(0,"PRE_RCPT_NO");
+	if (this.gfn_isNull(preNo))
+	{
+		preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	}	
+	
+	this.fn_search(preNo);
+	this.alert("저장 되었습니다.");
+}
+
+ /**
+* @description 		공통신규버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.12
+* @수정자	   
+* @수정일자
+*/
+this.fn_add = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	this.ds_list_2.clearData();
+	this.ds_list_1.addRow();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"RCPT_USER",regUser);
+	
+	var msgMemo ="";
+	
+	msgMemo = "■ 영정사진신청: \n\n";
+	msgMemo += "■ 상품명: \n\n";
+	msgMemo += "■ 희망 장례식장: \n";
+	msgMemo += "   1) \n\n";
+	msgMemo += "   2) \n\n";
+	msgMemo += "   3) \n\n";
+	msgMemo += "■ 사전 장지 계약 유무: \n\n";
+	msgMemo += "■ 장지명: \n\n";
+	msgMemo += "■ 장법: \n\n";
+	msgMemo += "■ 공제: \n\n";
+	msgMemo += "■ 추가: \n\n";
+	msgMemo += "■ 대체: \n\n";
+	msgMemo += "■ 종교: \n\n";
+	msgMemo += "■ 하늘너머 상담내용: \n\n";
+	msgMemo += "■ 주요상담(요약): \n\n";
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MSG_MEMO",msgMemo);
+}
+
+this.fn_add2 = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	this.ds_list_2.addRow();
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CONSULT_USER",regUser);
+}
+
+this.Tab00_Tabpage1_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_add2();
+	
+	var txt = this.ds_list_2.getColumn(0,"CONSULT_MEMO");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CONSULT_MEMO",txt+"\n\n");
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CFM_DT",null);
+};
+
+// 상담내용 삭제
+this.Div00_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+// 장례식장 팝업
+this.Div06_btn_sono00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "dlvy_popup";
+    var sUrl      = "ES::ES001_P02.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_dlvy";
+    var oOption   = {title : "장례식장 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 장례식장 팝업 callback
+this.fn_popupCallback_dlvy = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	//trace(objRtn.DLVY_CHANGE_DT.substring(0,8));
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"FUNERAL_HALL",objRtn.DLVY_CD+" : "+objRtn.DLVY_NM);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"REGION_SIDO",objRtn.DLVY_ADDR);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DLVY_CHANGE_DT",objRtn.DLVY_CHANGE_DT.substring(0,8));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DLVY_CD",objRtn.DLVY_CD);
+}
+
+// 사전상담 조회 팝업
+this.Div00_btn_preno_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var sPopupId  = "preInfo_popup";
+    var sUrl      = "FM::FM001_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_preInfo";
+    var oOption   = {title : "사전상담 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 사전상담 팝업 callback
+this.fn_popupCallback_preInfo = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+
+	var preNo = objRtn.PRE_RCPT_NO;
+	
+	
+	this.fn_search(preNo);
+}
+
+// 문자 전송 팝업
+this.btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO")))
+	{
+		this.alert("접수번호를 선택해 주세요");
+		return;
+	}
+	
+	var mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	var hp = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_TEL");
+	var nm = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM");
+	var message = this.Tab00.Tabpage1.form.TextArea00_00.text;
+	var prgmId = "FM001_P02";
+	var sndNum = "16440765";
+	
+	var sPopupId  = "mms_popup";
+    var sUrl      = "FM::FM001_P02.xfdl";
+	var oArg      = {mgNo : mgNo, hp : hp, nm : nm, message : message, prgmId : prgmId, sndNum : sndNum};
+	var sCallBack = "fn_popupCallback_mms";
+    var oOption   = {title : "MMS 전송"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+this.Tab00_Tabpage1_btn_mmsSearch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var mgNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	
+	var sPopupId  = "mmsSearch_popup";
+    var sUrl      = "FM::FM001_P04.xfdl";
+	var oArg      = {mgNo : mgNo};
+	var sCallBack = "";
+    var oOption   = {title : "MMS 발송내역 조회"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 상담 완료처리
+this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (!this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CFM_DT")))
+	{
+		this.alert("이미 완료 처리 되었습니다.");
+	}
+	
+	var preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	
+	var id = "FM001_M03";
+	var url = "svcUrl::FM001_M03";
+	var inDs = "";
+	var outDs = "";
+	var args = "PRE_RCPT_NO="+preNo+"";
+	var callBackid = "fn_afterSave3";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave3 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	this.fn_search(preNo);
+	
+	this.alert("완료 처리 되었습니다.");
+}
+
+// 멀티 콤보
+this.fn_mComboCallback = function ()
+{
+	var val = this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo8.form.get_value();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"SERVICE_ITEM",val);
+};
+
+// 멀티 콤보
+this.fn_mComboCallback2 = function ()
+{
+	var val = this.Tab00.Tabpage1.form.Div00.form.div_mCombo8.form.get_text();
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_BP_CD",val);
+};
+
+// 멀티 콤보
+// this.fn_mComboCallback3 = function ()
+// {
+// 	var val = this.Tab00.Tabpage1.form.Div06_01.form.div_mCombo2.form.get_value();
+// 	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADD_ITEM",val);
+// };
+
+// 대상자 조회 팝업
+this.Tab00_Tabpage1_Div06_btn_preno_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+	var mode = "PA";
+	
+	var sPopupId  = "preInfo_popup";
+    var sUrl      = "FM::FM001_P01.xfdl";
+	var oArg      = {preNo : preNo, mode : mode};
+	var sCallBack = "fn_popupCallback_preInfo2";
+    var oOption   = {title : "대상자 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 대상자 조회 callback
+this.fn_popupCallback_preInfo2 = function(sPopId, sRtn)
+{
+	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+	
+    var objRtn = JSON.parse(sRtn);
+	//trace(this.gfn_isNullRtn(objRtn.OWN_NM,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PA_PRE_NO",this.gfn_isNullRtn(objRtn.PRE_RCPT_NO,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"OWN_NM",this.gfn_isNullRtn(objRtn.OWN_NM,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"OWN_GENDER",this.gfn_isNullRtn(objRtn.OWN_GENDER,""));
+	//this.ds_list_1.setColumn(this.ds_list_1.rowposition,"OWN_REL",this.gfn_isNullRtn(objRtn.OWN_REL,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"OWN_AGE",this.gfn_isNullRtn(objRtn.OWN_AGE,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CUR_REGION",this.gfn_isNullRtn(objRtn.CUR_REGION,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CUR_RESIDENCE",this.gfn_isNullRtn(objRtn.CUR_RESIDENCE,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CUR_ADDR",this.gfn_isNullRtn(objRtn.CUR_ADDR,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BASIC_LIVING",this.gfn_isNullRtn(objRtn.BASIC_LIVING,""));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CUR_CONDITION",this.gfn_isNullRtn(objRtn.CUR_CONDITION,""));
+}
+
+this.Tab00_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventInfo)
+{
+	if (e.postindex == 1)
+	{
+		var preNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO");
+		var paNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PA_PRE_NO");
+	
+		var id = "FM001_S03";
+		var url = "svcUrl::FM001_S03";
+		var inDs = "";
+		var outDs = "ds_list_3=ds_list_3";
+		var args = "PRE_RCPT_NO="+preNo+" PA_PRE_NO="+paNo+"";
+		var callBackid = "fn_afterSearch2";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
+};
+
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	//this.Tab00.Tabpage2.form.Grid00.mergeCell( 0, 1, 0, 0)
+}
+
+this.fn_valChk = function ()
+{
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"STATUS")))
+// 	{
+// 		this.alert("진행상황을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_NM")))
+	{
+		this.alert("성명을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_GENDER")))
+// 	{
+// 		this.alert("고객정보 성별을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_TEL")))
+	{
+		this.alert("고객정보 연락처를 입력하시기 바랍니다.");
+		return false;
+	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUST_AGE")))
+// 	{
+// 		this.alert("고객정보 나이를 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"KNOW_PATH")))
+// 	{
+// 		this.alert("고객정보 인지경로를 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"OWN_NM")))
+	{
+		this.alert("대상자정보 성명을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"OWN_REL")))
+	{
+		this.alert("대상자정보 관계를 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PO_BP_CD")))
+	{
+		this.alert("요청사항을 선택하시기 바랍니다.");
+		return false;
+	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUR_RESIDENCE")))
+// 	{
+// 		this.alert("대상자정보 현재거주시설을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BASIC_LIVING")))
+// 	{
+// 		this.alert("대상자정보 정부지원을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CUR_CONDITION")))
+// 	{
+// 		this.alert("대상자정보 현재상황을 입력하시기 바랍니다.");
+// 		return false;
+// 	}
+
+// 	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"RELIGION")))
+// 	{
+// 		this.alert("종교를 선택하시기 바랍니다.");
+// 		return false;
+// 	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"FUNERAL_HALL")))
+	{
+		this.alert("장례식장을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.ds_list_2.rowcount > 0)
+	{
+		for (i=0; i < this.ds_list_2.rowcount; i++)
+		{
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_TYPE")))
+			{
+				this.alert((i+1)+"번째 상담유형을 입력하시기 바랍니다.");
+				return false;
+			}
+			
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_CHNL")))
+			{
+				this.alert((i+1)+"번째 상담채널을 입력하시기 바랍니다.");
+				return false;
+			}
+			
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_DT")))
+			{
+				this.alert((i+1)+"번째 날짜를 입력하시기 바랍니다.");
+				return false;
+			}
+			
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_TIME")))
+			{
+				this.alert((i+1)+"번째 시간을 입력하시기 바랍니다.");
+				return false;
+			}
+			
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_MIN")))
+			{
+				this.alert((i+1)+"번째 분을 입력하시기 바랍니다.");
+				return false;
+			}
+			
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"CONSULT_MEMO")))
+			{
+				this.alert((i+1)+"번째 상담내용을 입력하시기 바랍니다.");
+				return false;
+			}
+		}
+	}
+};]]></Script>
+  </Form>
+</FDL>

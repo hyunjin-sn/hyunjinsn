@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="MM0002" width="1024" height="720" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1024">
+        <Div id="div_search" taborder="0" left="10" top="10" height="39" right="12" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+          <Layouts>
+            <Layout>
+              <Static id="Static03" taborder="0" text="그룹명" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static01" taborder="4" text="관리구분" left="231" top="8" width="81" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+              <Combo id="cmb_Use_YN" taborder="2" text="Combo00" left="313" top="8" width="150" height="21" innerdataset="ds_Use_YN_Search" codecolumn="CODE" datacolumn="NAME"/>
+              <Combo id="cmb_Use_YN00" taborder="3" text="Combo00" left="553" top="8" width="150" height="21" innerdataset="ds_Use_YN_Search" codecolumn="CODE" datacolumn="NAME"/>
+              <Static id="Static00" taborder="5" text="사용여부" left="471" top="8" width="81" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="1"/>
+        <Static id="Static08" taborder="2" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="10" text="w&#13;&#10;10"/>
+        <Static id="Static01" taborder="3" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="191" text="w&#13;&#10;10" right="0"/>
+        <Static id="Static05" taborder="4" text="조회결과" left="10" top="59" width="97" height="30" cssclass="sta_WF_title"/>
+        <Static id="Static03" taborder="5" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+        <Static id="Static04" taborder="6" left="0" cssclass="sta_WF_guideBlue" visible="false" text="h10" right="206" height="10" bottom="1"/>
+        <Div id="Div06" taborder="7" maxwidth="613" minwidth="" top="58" width="613" bottom="11" left="399">
+          <Layouts>
+            <Layout>
+              <Static id="sta_00" taborder="0" left="94" top="31" height="29" cssclass="sta_WF_detailLine" right="0"/>
+              <Static id="sta_01" taborder="1" left="94" top="59" height="29" cssclass="sta_WF_detailLine" right="0"/>
+              <Static id="sta_02" taborder="2" left="94" top="87" height="29" cssclass="sta_WF_detailLine" right="0"/>
+              <Static id="Static12" taborder="3" text="상세정보" left="0" top="1" width="97" height="30" cssclass="sta_WF_title"/>
+              <Edit id="edt_name" taborder="6" left="118" top="64" width="185" height="20" readonly="false"/>
+              <Edit id="edt_menuId" taborder="4" left="118" top="36" width="185" height="20" readonly="false"/>
+              <Static id="Static00" taborder="10" text="권한코드" left="0" top="31" width="115" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static01" taborder="11" text="비고" left="0" top="87" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static05" taborder="12" text="권한구분" left="0" top="59" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_name00" taborder="5" left="424" top="36" width="185" height="20" readonly="false"/>
+              <Static id="Static06" taborder="13" text="권한명" left="306" top="31" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static09" taborder="14" text="설명" left="306" top="59" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_name01" taborder="7" left="424" top="64" width="185" height="20" readonly="false"/>
+              <Edit id="edt_name03" taborder="8" left="118" top="92" width="185" height="20" readonly="false"/>
+              <Static id="Static10" taborder="15" text="사용여부" left="306" top="87" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Combo id="cmb_dept00" taborder="9" text="Combo00" left="424" top="91" width="185" height="21" innerdataset="ds_Use_YN" codecolumn="CODE" datacolumn="NAME"/>
+              <Static id="Static02" taborder="16" text="그룹별 권한 매칭" left="0" top="121" width="121" height="30" cssclass="sta_WF_title"/>
+              <Tab id="Tab00" taborder="17" tabindex="2" left="0" top="154" width="613" onchanged="Div06_Tab00_onchanged" bottom="0">
+                <Tabpages>
+                  <Tabpage id="Tabpage1" text="메뉴">
+                    <Layouts>
+                      <Layout>
+                        <Grid id="grd_list00" taborder="0" binddataset="ds_list2" scrolltype="both" minwidth="" left="0" right="0" autosizingtype="none" autosizebandtype="body" top="-1" bottom="0" autofittype="col" autoenter="select">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="300"/>
+                                <Column size="127"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="메뉴"/>
+                                <Cell col="1" text="권한"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:MENU_ID" displaytype="combocontrol" edittype="combo" combodataset="gds_menu" combocodecol="MENU_ID" combodatacol="MENU_NAME"/>
+                                <Cell col="1" text="bind:AUTH" displaytype="editcontrol" edittype="text"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage2" text="사용자">
+                    <Layouts>
+                      <Layout>
+                        <Grid id="grd_list00" taborder="0" binddataset="ds_list3" scrolltype="both" minwidth="" left="0" right="0" oncellclick="grd_list_oncellclick" autosizingtype="none" autosizebandtype="body" top="-1" bottom="0" autofittype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="342"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="사용자"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:USER_ID" combodataset="ds_user_in" combocodecol="USR_ID" combodatacol="USR_NM" combotype="filterlike" displaytype="combocontrol" edittype="combo"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage3" text="소속">
+                    <Layouts>
+                      <Layout>
+                        <Grid id="grd_list00" taborder="0" binddataset="ds_list4" scrolltype="both" minwidth="" left="0" right="0" oncellclick="grd_list_oncellclick" autosizingtype="none" autosizebandtype="body" top="-1" bottom="0" autofittype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="387"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="소속명"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" combotype="filterlike" displaytype="combocontrol" edittype="combo"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+              <Button id="btn_add" taborder="18" text="추가" top="154" width="45" height="24" right="56" visible="true" onclick="fn_addBtnClick" cssclass="btn_WF_main1"/>
+              <Button id="btn_search00" taborder="19" text="삭제" top="154" width="45" height="24" right="2" visible="true" onclick="fn_DelBtnClick" cssclass="btn_WF_main1"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static02" taborder="8" top="10" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="11" text="w&#13;&#10;10" right="625"/>
+        <Grid id="Grid00" taborder="9" left="10" top="85" width="379" binddataset="ds_list1" bottom="11" autofittype="col" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="194"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="권한코드"/>
+                <Cell col="1" text="권한명"/>
+                <Cell col="2" text="사용유무"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:G_ID" textAlign="center"/>
+                <Cell col="1" text="bind:G_NAME"/>
+                <Cell col="2" text="bind:USED_YN" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_Use_YN_Search">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">%</Col>
+            <Col id="NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="NAME">사용</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">미사용</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Level">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Use_YN">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="NAME">사용</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="NAME">미사용</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_user">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="USER_NAME" type="STRING" size="256"/>
+          <Column id="USER_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">기술지원부</Col>
+            <Col id="USER_NAME">심재문</Col>
+            <Col id="USER_ID">640</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">기술지원부</Col>
+            <Col id="USER_NAME">김원기</Col>
+            <Col id="USER_ID">111</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">온라인실사부</Col>
+            <Col id="USER_NAME">김대일</Col>
+            <Col id="USER_ID">222</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="POSITION" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="POSITION">팀원</Col>
+            <Col id="DEPT">기술지원부</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">온라인실사부</Col>
+            <Col id="POSITION">팀원</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">8사업부</Col>
+            <Col id="POSITION">팀장</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list1" onrowposchanged="ds_list1_onrowposchanged">
+        <ColumnInfo>
+          <Column id="G_ID" size="50" type="STRING"/>
+          <Column id="G_NAME" size="100" type="STRING"/>
+          <Column id="DIV" size="50" type="STRING"/>
+          <Column id="DESCRIPTION" size="200" type="STRING"/>
+          <Column id="REMARK" size="200" type="STRING"/>
+          <Column id="USED_YN" size="10" type="STRING"/>
+          <Column id="DEL_YN" size="10" type="STRING"/>
+          <Column id="REG_DATE" size="23,3" type="STRING"/>
+          <Column id="REG_USER" size="50" type="STRING"/>
+          <Column id="REG_IP" size="50" type="STRING"/>
+          <Column id="UPDATE_DATE" size="23,3" type="STRING"/>
+          <Column id="UPDATE_USER" size="50" type="STRING"/>
+          <Column id="UPDATE_IP" size="50" type="STRING"/>
+          <Column id="SYS_GRP" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list2">
+        <ColumnInfo>
+          <Column id="G_ID" type="STRING" size="256"/>
+          <Column id="MENU_ID" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="256"/>
+          <Column id="AUTH" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list3">
+        <ColumnInfo>
+          <Column id="G_ID" type="STRING" size="256"/>
+          <Column id="USER_ID" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list4">
+        <ColumnInfo>
+          <Column id="G_ID" type="STRING" size="256"/>
+          <Column id="DEPT_ID" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="mg_no" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_dummy"/>
+      <Dataset id="ds_user_in"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div06.form.edt_menuId" propid="value" datasetid="ds_list1" columnid="G_ID"/>
+      <BindItem id="item1" compid="Div06.form.edt_name00" propid="value" datasetid="ds_list1" columnid="G_NAME"/>
+      <BindItem id="item2" compid="Div06.form.edt_name" propid="value" datasetid="ds_list1" columnid="DIV"/>
+      <BindItem id="item3" compid="Div06.form.edt_name01" propid="value" datasetid="ds_list1" columnid="DESCRIPTION"/>
+      <BindItem id="item4" compid="Div06.form.edt_name03" propid="value" datasetid="ds_list1" columnid="REMARK"/>
+      <BindItem id="item5" compid="Div06.form.cmb_dept00" propid="value" datasetid="ds_list1" columnid="USED_YN"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록
+*  @MenuPath    Master_M > MM002
+*  @FileName 	MM002.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.14
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);
+	
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user2);
+	this.efn_SetGrdUserData(this.ds_dept,this.objApp.gds_dept);
+	
+	this.fn_search();
+};
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		공통입력버튼
+* @작성자	   		심재문
+* @작성일자	   		2020.04.14
+* @수정자	   
+* @수정일자
+*/
+this.fn_add = function ()
+{
+	this.ds_list1.addRow();
+	
+	this.ds_list1.setColumn(this.ds_list1.rowposition,"SYS_GRP","MM0024");
+ 	//alert(this.Div06.form.Tab00.tabindex);
+}
+
+/*******************************************************************************
+* 기      능   : 저장
+* 설      명   : 
+********************************************************************************/
+this.fn_save = function () {
+	
+// 	for (var i=0; i<this.ds_list4.rowcount; i++)
+// 	{
+// 		var deptId = this.ds_list4.getColumn(i,"DEPT_ID");
+// 		for (var j=this.ds_list4.rowcount-1; i<j; j--)
+// 		{
+// 			var deptId2 = this.ds_list4.getColumn(j,"DEPT_ID");
+// 			
+// 			if (deptId != deptId2)
+// 			{
+// 				this.alert(this.ds_list4.getColumn(j,"DEPT_ID")+ "중복으로 입력 되었습니다. 확인 바랍니다.")
+// 				return;
+// 			}
+// 		}
+// 	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+
+	var id = "MM002_M01";
+	var url = "svcUrl::MM002_M01";
+	var inDs = "ds_list_in=ds_list1:U";
+	var outDs = "";
+	var args = "INSRT_USR_ID="+regUser+" UPDATE_USR_ID="+regUser+"";
+	var callBackid = "fn_afterSave";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+/*******************************************************************************
+* 기      능   : save callback
+********************************************************************************/
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.gfn_alert(strErrorMag, "error")
+		return ;
+	}
+	//this.alert("123");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+
+	var id = "MM002_M02";
+	var url = "svcUrl::MM002_M02";
+	var inDs = "ds_list2=ds_list2:U ds_list3=ds_list3:U ds_list4=ds_list4:U";
+	var outDs = "";
+	var args = "INSRT_USR_ID="+regUser+" UPDATE_USR_ID="+regUser+"";
+	var callBackid = "fn_afterSave2";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+}
+
+this.fn_afterSave2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	this.fn_search();
+}
+
+this.fn_delete = function ()
+{
+	this.objApp.gds_menu.deleteRow(this.objApp.gds_menu.rowposition);
+ 	//alert(this.Div06.form.Tab00.tabindex);
+}
+
+this.fn_excel = function ()
+{
+	if(this.objApp.gds_menu.getRowCount() != 0)
+	{
+		alert("test");
+		this.gfn_excelExport(this.grd_list, "sheet1", "Test");
+	}
+}
+
+ /**
+* @description 		추가 버튼 팝업호출
+* @작성자	   		심재문
+* @작성일자	   	2020.04.14
+* @수정자	   
+* @수정일자
+*/
+this.fn_addBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.gfn_isNull(this.ds_list1.getColumn(this.ds_list1.rowposition,"G_ID"))){
+		this.alert("권한 내용을 저장하고 추가하시기 바랍니다.");
+		return;
+	}
+	var index = this.Div06.form.Tab00.tabindex;
+	var ds_now;
+	switch(index){
+		case 0: ds_now = this.ds_list2;break;
+		case 1: ds_now = this.ds_list3;break;
+		case 2: ds_now = this.ds_list4;break;
+	}
+	
+	
+	
+	ds_now.addRow();
+	ds_now.setColumn(ds_now.rowposition,"G_ID",this.ds_list1.getColumn(this.ds_list1.rowposition,"G_ID"));
+	
+	
+};
+
+ /**
+* @description 		Detail 삭제 버튼
+* @작성자	   		심재문
+* @작성일자	   		2020.04.14
+* @수정자	   
+* @수정일자
+*/
+this.fn_DelBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var index = this.Div06.form.Tab00.tabindex;
+	var key2;
+	var ds_now;
+	switch(index){
+		case 0: ds_now = this.ds_list2; key2 = this.ds_list2.getColumn(this.ds_list2.rowposition,"MENU_ID"); break;
+		case 1: ds_now = this.ds_list3; key2 = this.ds_list3.getColumn(this.ds_list3.rowposition,"USER_ID"); break;
+		case 2: ds_now = this.ds_list4; key2 = this.ds_list4.getColumn(this.ds_list4.rowposition,"DEPT_ID"); break;
+	}
+	
+	var type = ds_now.getRowType(ds_now.rowposition);
+	
+
+		ds_now.deleteRow(ds_now.rowposition);
+
+	
+	
+};
+
+this.fn_search = function(){
+	var id = "MM002_S01";
+	var url = "svcUrl::MM002_S01";
+	var inDs = "";
+	var outDs = "ds_list1=ds_list ds_user_in=ds_user_in";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterSearch = function(strSvcID, nErrorCode, strErrorMag){
+	if (nErrorCode < 0) 
+	{
+		this.gfn_alert(strErrorMag, "error")
+		return ;
+	}
+	
+	var gId = this.ds_list1.getColumn(0,"G_ID");
+
+	var id = "MM002_S02";
+	var url = "svcUrl::MM002_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list2 ds_list3=ds_list3 ds_list4=ds_list4";
+	var args = "G_ID="+gId;
+	var callBackid = "fn_afterSearch2";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.gfn_alert(strErrorMag, "error")
+		return ;
+	}
+}
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var gId = this.ds_list1.getColumn(this.ds_list1.rowposition,"G_ID");
+
+	var id = "MM002_S02";
+	var url = "svcUrl::MM002_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list2 ds_list3=ds_list3 ds_list4=ds_list4";
+	var args = "G_ID="+gId;
+	var callBackid = "fn_afterSearch2";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.ds_list1_onrowposchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSRowPosChangeEventInfo)
+{
+	var g_id_old = obj.getColumn(e.oldrow,"G_ID");
+	var g_id = obj.getColumn(e.newrow,"G_ID");
+	
+	if(this.gfn_isNull(g_id_old) && e.oldrow > 0){
+		if(this.confirm("작성중이던 내용을 삭제하시겠습니까?")){
+			this.ds_list1.deleteRow(e.oldrow);
+		}else{
+			this.ds_list1.set_rowposition(e.oldrow);
+			return;
+		}
+	}
+	
+	if(this.gfn_isNull(g_id)){
+		return;
+	}
+		
+	
+};
+
+this.div_search_btn_input_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var user_id = this.objApp.gds_login_info.getColumn(0,"user_id");
+	var login_ip = this.objApp.gds_login_info.getColumn(0,"LOGIN_IP");
+	if(this.gfn_isNull(this.ds_list1.getColumn(this.ds_list1.rowposition,"G_ID"))){
+		this.alert("기존 입력중이던 내용을 저장하고 추가하시기 바랍니다.");
+		return;
+	}
+	this.ds_list1.addRow();
+	this.Div06.form.cmb_dept00.set_index(0);
+	this.ds_list1.setColumn(this.ds_list1.rowposition,"REG_USER",user_id);
+	this.ds_list1.setColumn(this.ds_list1.rowposition,"REG_IP",login_ip);
+	
+	this.Div06.form.edt_name.set_readonly(false);
+	this.Div06.form.edt_name00.set_readonly(false);
+	this.Div06.form.edt_name01.set_readonly(false);
+	this.Div06.form.edt_name03.set_readonly(false);
+	
+	this.ds_list2.clearData();
+	this.ds_list3.clearData();
+	this.ds_list4.clearData();
+	
+	
+};
+]]></Script>
+  </Form>
+</FDL>

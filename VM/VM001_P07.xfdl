@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P22" width="700" height="400" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="700">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" width="698" height="398">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_00_00_00" taborder="4" left="109" top="10" height="29" cssclass="sta_WF_detailLine" right="10"/>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <TextArea id="TextArea00" taborder="1" left="10" top="38" right="10" bottom="10"/>
+              <Static id="Static23_00_00_00_00_00" taborder="2" text="고객사명" left="10" top="10" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_bpNm" taborder="3" left="114" top="14" width="569" height="21" enable="true"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO001_P01
+*  @FileName 	SO001_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var note = this.getOwnerFrame().note
+var noteDir = this.getOwnerFrame().noteDir
+var bpNm = this.getOwnerFrame().bpNm
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P22_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	var msg = "※ 접수내용\n\n"+note
+	if (!this.gfn_isNull(noteDir))
+	{
+		msg += "\n\n※ 직접처리 내용\n\n"+noteDir
+	}
+	this.Div_client.form.TextArea00.set_value(msg);
+	this.Div_client.form.edt_bpNm.set_value(bpNm);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="POPUP_TEXT" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.edt_soNo00_00_00_00_00_01" propid="value" datasetid="ds_list_1" columnid="FACL_NM"/>
+      <BindItem id="item1" compid="Div00.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR1"/>
+      <BindItem id="item2" compid="Div00.form.edt_soNo00_00_00_00" propid="value" datasetid="ds_list_1" columnid="ADDR2"/>
+      <BindItem id="item3" compid="Div00.form.edt_soNo00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="POST"/>
+      <BindItem id="item4" compid="Div00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="TEL"/>
+      <BindItem id="item5" compid="Div_client.form.edt_bpNm" propid="value" datasetid="ds_list_1" columnid="HPAGE"/>
+    </Bind>
+  </Form>
+</FDL>

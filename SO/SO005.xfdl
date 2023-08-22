@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P20" width="1400" height="600" titletext="New Form" onload="SO001_P20_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1400">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list03_00" taborder="1" scrolltype="both" minwidth="" left="10" top="80" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_1" oncellclick="Div_client_grd_list03_00_oncellclick" width="690" cellsizingtype="col" summarytype="top">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="66"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="188"/>
+                      <Column size="60"/>
+                      <Column size="47"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="창고코드"/>
+                      <Cell col="1" text="창고명"/>
+                      <Cell col="2" text="품목코드"/>
+                      <Cell col="3" text="품목명"/>
+                      <Cell col="4" text="Class"/>
+                      <Cell col="5" text="선후불"/>
+                      <Cell col="6" text="안전재고"/>
+                      <Cell col="7" text="현재재고"/>
+                      <Cell col="8" text="flag"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:sl_cd"/>
+                      <Cell col="1" text="bind:sl_nm"/>
+                      <Cell col="2" text="bind:item_cd"/>
+                      <Cell col="3" text="bind:item_nm"/>
+                      <Cell col="4" text="bind:abc_flag"/>
+                      <Cell col="5" text="bind:cbm_description"/>
+                      <Cell col="6" text="bind:ss_qty"/>
+                      <Cell col="7" text="bind:onhand_qty"/>
+                      <Cell col="8" text="expr:ss_qty-onhand_qty"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="6"/>
+                      <Cell col="6" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;ss_qty&quot;)"/>
+                      <Cell col="7" maskeditformat="##,##0" textAlign="right" displaytype="mask" text="expr:dataset.getSum(&quot;onhand_qty&quot;)"/>
+                      <Cell col="8"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static03" taborder="2" text="품목코드" left="0" top="16" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_itemCd" taborder="3" left="102" top="16" width="150" height="21" onkeyup="Div_client_edt_itemCd_onkeyup" inputmode="upper"/>
+              <Static id="Static03_00" taborder="4" text="품목명" left="280" top="16" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
+              <Edit id="edt_itemNm" taborder="5" left="382" top="16" width="318" height="21" readonly="true" visible="false"/>
+              <Static id="Static03_01" taborder="6" text="창고코드" left="0" top="46" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_poBpCd" taborder="7" left="102" top="46" width="150" height="21" onkeyup="Div_client_edt_itemCd_onkeyup" inputmode="upper"/>
+              <Static id="Static03_00_01" taborder="8" text="창고명" left="280" top="46" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
+              <Edit id="edt_poBpNm" taborder="9" left="382" top="46" width="318" height="21" readonly="true" visible="false"/>
+              <Grid id="grd_list03_00_00" taborder="10" scrolltype="both" minwidth="" left="710" right="15" top="80" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_2">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="104"/>
+                      <Column size="40"/>
+                      <Column size="105"/>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                      <Column size="303"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="일자"/>
+                      <Cell col="1" colspan="2" text="입고예정"/>
+                      <Cell col="3" colspan="3" text="출고예정"/>
+                      <Cell row="1" col="1" text="수량"/>
+                      <Cell row="1" col="2" text="발주번호"/>
+                      <Cell row="1" col="3" text="수량"/>
+                      <Cell row="1" col="4" text="주문번호"/>
+                      <Cell row="1" col="5" text="배송지"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:dlvy_dt"/>
+                      <Cell col="1" text="bind:입고예정량"/>
+                      <Cell col="2" text="bind:po_no"/>
+                      <Cell col="3" text="bind:출고예정량"/>
+                      <Cell col="4" text="bind:주문번호"/>
+                      <Cell col="5" text="bind:배송지"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_sono" taborder="11" left="252" top="16" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div_client_btn_sono_onclick"/>
+              <Button id="btn_sono00" taborder="12" left="252" top="46" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_sono_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  item 재고 팝업
+*  @MenuPath    SO > SO0001_P20
+*  @FileName 	SO0001_P20.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.06.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P20_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	// 데이터 조회
+	//this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	var args1 = this.Div_client.form.edt_itemCd.value;
+	var args2 = this.Div_client.form.edt_poBpCd.value;
+	
+	//trace(args1+">>>>"+args2);
+	
+	if (this.gfn_isNull(args1) && this.gfn_isNull(args2))
+	{
+		this.alert("품목코드 또는 창고코드를 입력 후 조회 바랍니다.");
+		return;
+	}
+
+	// 재고조회
+	var id = "SO005_S01";
+	var url = "svcUrl::SO005_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "SL_CD="+this.gfn_nvl(args2,"")+" ITEM_CD="+this.gfn_nvl(args1,"")+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	this.fn_detailSearch();
+}
+
+this.fn_detailSearch = function ()
+{
+	var args1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"item_cd");
+	var args2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"sl_cd");
+	
+	// 재고조회
+	var id = "SO005_S02";
+	var url = "svcUrl::SO005_S02";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2";
+	var args = "SL_CD="+args2+" ITEM_CD="+args1+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div_client_grd_list03_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.fn_detailSearch();
+};
+
+this.Div_client_edt_itemCd_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}	
+};
+
+this.Div00_btn_sono_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "bp_popup";
+	var sUrl      = "SO::SO005_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_fromBp";
+	var oOption   = {title : "지점조회"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 지점정보 팝업 callback
+this.fn_popupCallback_fromBp = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.Div_client.form.edt_poBpCd.set_value(objRtn.BP_CD);
+	this.Div_client.form.edt_poBpNm.set_value(objRtn.BP_NM);
+	
+}
+
+this.Div_client_btn_sono_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "item_popup";
+	var sUrl      = "SO::SO005_P02.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_item";
+	var oOption   = {title : "품목조회"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 지점정보 팝업 callback
+this.fn_popupCallback_item = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.Div_client.form.edt_itemCd.set_value(objRtn.ITEM_CD);
+	this.Div_client.form.edt_itemNm.set_value(objRtn.ITEM_NM);
+	
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="sl_cd" type="STRING" size="20"/>
+          <Column id="sl_nm" type="STRING" size="40"/>
+          <Column id="item_cd" type="STRING" size="50"/>
+          <Column id="item_nm" type="STRING" size="100"/>
+          <Column id="spec" type="STRING" size="100"/>
+          <Column id="cbm_description" type="STRING" size="50"/>
+          <Column id="ss_qty" type="BIGDECIMAL" size="40"/>
+          <Column id="onhand_qty" type="BIGDECIMAL" size="40"/>
+          <Column id="abc_flag" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="dlvy_dt" type="DATETIME" size="23"/>
+          <Column id="입고예정량" type="BIGDECIMAL" size="20"/>
+          <Column id="po_no" type="STRING" size="1"/>
+          <Column id="출고예정량" type="BIGDECIMAL" size="21"/>
+          <Column id="주문번호" type="STRING" size="18"/>
+          <Column id="배송지" type="STRING" size="100"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.edt_itemCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.edt_itemNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item2" compid="Div_client.form.edt_poBpCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item3" compid="Div_client.form.edt_poBpNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

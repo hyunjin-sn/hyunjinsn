@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="webBrowser" titletext="New Form" width="832" height="555">
+    <Layouts>
+      <Layout>
+        <WebBrowser id="wb002" taborder="1" url="http://211.106.159.87:8080/PMS/API_Bridge/doc_cost_flag.html" visible="true" left="16" top="72" width="645" height="458" onloadcompleted="wb002_onloadcompleted" onusernotify="wb002_onusernotify" border="1px solid #808080"/>
+        <Button id="Button01" taborder="1" text="넥사-&gt;web" left="232" width="203" top="16" height="39" onclick="Button01_onclick"/>
+        <Edit id="Edit00" taborder="1" value="XPLATFORM Text" left="16" width="203" top="20" height="28"/>
+        <Button id="Button00" taborder="3" text="web -&gt; 넥사" left="455" top="15" width="185" height="35" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <InitValue>
+      <Button id="Button01" text="setHtmlText"/>
+    </InitValue>
+    <Script type="xscript5.1"><![CDATA[this.Button01_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var doc = this.wb002.getProperty("document");
+	var objTxt = doc.getProperty("all").getProperty("inputText1");
+	var objBtn = doc.getProperty("all").getProperty("btnTest1");
+	if (objTxt) 
+	{
+		objTxt.setProperty("value", this.Edit00.value);
+		objBtn.callMethod("click");
+	}
+};
+
+this.wb002_onkillfocus = function (obj:WebBrowser, e:nexacro.KillFocusEventInfo)
+{
+	trace("@@@@@@@@@@@@@@   WebBrowser_onkillfocus @@@@@@@@@@@@@@@@@@");
+};
+
+this.wb002_onloadcompleted = function (obj:WebBrowser, e:nexacro.WebLoadCompEventInfo)
+{
+};
+
+this.fn_callBack = function (param)
+{
+	this.Edit00.set_value(param);
+};
+
+
+
+this.wb002_onusernotify = function (obj:WebBrowser, e:nexacro.WebTitleChangeEventInfo)
+{
+	alert("aaa");
+	trace("TOBE:" + e.userdata);
+	this.Edit00.set_value(e.userdata);
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var doc = this.wb002.getProperty("document");
+	var objTxt = doc.getProperty("all").getProperty("inputText1");
+	var objBtn = doc.getProperty("all").getProperty("btnTest1");
+	
+	if (objTxt) 
+	{
+		//objTxt.setProperty("value", this.Edit00.value);
+		objBtn.callMethod("click");
+		
+	}
+	
+};
+]]></Script>
+  </Form>
+</FDL>

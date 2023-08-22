@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P23" width="1400" height="600" titletext="New Form" onload="SO001_P23_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1400">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list03_00" taborder="1" scrolltype="both" minwidth="" left="10" right="15" top="10" bottom="460" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_1" oncellclick="Div_client_grd_list03_00_oncellclick" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="267"/>
+                      <Column size="80"/>
+                      <Column size="59"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="273"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="고객사코드"/>
+                      <Cell col="1" text="고객사명"/>
+                      <Cell col="2" text="계약번호"/>
+                      <Cell col="3" text="계약타입"/>
+                      <Cell col="4" text="시작일"/>
+                      <Cell col="5" text="종료일"/>
+                      <Cell col="6" text="계약설명"/>
+                      <Cell col="7" text="적용기간"/>
+                      <Cell col="8" text="담당부서"/>
+                      <Cell col="9" text="담당자"/>
+                      <Cell col="10" text="결산구분"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM"/>
+                      <Cell col="2" text="bind:CONT_NO" textAlign="center"/>
+                      <Cell col="3" text="bind:CONT_TYPE" textAlign="center"/>
+                      <Cell col="4" text="bind:CONT_FR_DT" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="5" text="bind:CONT_TO_DT" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="6" text="bind:CONT_NM"/>
+                      <Cell col="7" text="bind:S_DAY" textAlign="center"/>
+                      <Cell col="8" text="bind:M_DEPT_NM" textAlign="center"/>
+                      <Cell col="9" text="bind:M_USR_ID" textAlign="center"/>
+                      <Cell col="10" text="bind:PAY_COND" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="grd_list03_00_00" taborder="2" scrolltype="both" minwidth="" left="10" right="15" top="160" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_2" oncellclick="Div_client_grd_list03_00_oncellclick" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="43"/>
+                      <Column size="226"/>
+                      <Column size="143"/>
+                      <Column size="64"/>
+                      <Column size="80"/>
+                      <Column size="180"/>
+                      <Column size="36"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="58"/>
+                      <Column size="59"/>
+                      <Column size="80"/>
+                      <Column size="65"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="소속타입1"/>
+                      <Cell col="1" text="소속타입2"/>
+                      <Cell col="2" colspan="2" text="경조사유"/>
+                      <Cell col="4" text="설명"/>
+                      <Cell col="5" text="품목구분"/>
+                      <Cell col="6" text="품목코드"/>
+                      <Cell col="7" text="품목명"/>
+                      <Cell col="8" text="수량"/>
+                      <Cell col="9" text="법인단가"/>
+                      <Cell col="10" text="개인단가"/>
+                      <Cell col="11" text="구분"/>
+                      <Cell col="12" text="지점그룹"/>
+                      <Cell col="13" text="결산타입"/>
+                      <Cell col="14" text="결산구분"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:SUB_CODE1" tooltiptext="bind:SUB_CODE1"/>
+                      <Cell col="1" text="bind:SUB_CODE2" tooltiptext="bind:SUB_CODE2"/>
+                      <Cell col="2" text="bind:HS_TYPE" textAlign="center"/>
+                      <Cell col="3" text="bind:HS_NM" tooltiptext="bind:HS_NM"/>
+                      <Cell col="4" text="bind:CASE_DESC" tooltiptext="bind:CASE_DESC"/>
+                      <Cell col="5" text="bind:품목구분" tooltiptext="bind:품목구분"/>
+                      <Cell col="6" text="bind:ITEM_CD" tooltiptext="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="7" text="bind:ITEM_NM" tooltiptext="bind:ITEM_NM"/>
+                      <Cell col="8" text="bind:QTY" tooltiptext="bind:QTY" textAlign="center"/>
+                      <Cell col="9" text="bind:PRICE_COM" tooltiptext="bind:PRICE_COM"/>
+                      <Cell col="10" text="bind:PRICE_PER" tooltiptext="bind:PRICE_PER"/>
+                      <Cell col="11" text="bind:품목구분" tooltiptext="bind:품목구분"/>
+                      <Cell col="12" text="bind:BRANCH_GRP_NM" tooltiptext="bind:BRANCH_GRP_NM"/>
+                      <Cell col="13" text="bind:VAT_TYPE_NM" tooltiptext="bind:VAT_TYPE_NM"/>
+                      <Cell col="14" text="bind:PAY_COND_NM" tooltiptext="bind:PAY_COND_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  item 재고 팝업
+*  @MenuPath    SO > SO0001_P20
+*  @FileName 	SO0001_P20.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.06.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var contNo = this.getOwnerFrame().contNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P23_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	// 재고조회
+	var id = "SO001_P24";
+	var url = "svcUrl::SO001_P24";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "CONT_NO="+contNo+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+}
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="CONT_NM" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="CONT_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_FR_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_TO_DT" type="DATETIME" size="23"/>
+          <Column id="S_DAY" type="INT" size="11"/>
+          <Column id="CONT_TYPE" type="STRING" size="200"/>
+          <Column id="VALID_YN" type="STRING" size="2"/>
+          <Column id="M_DEPT_NM" type="STRING" size="40"/>
+          <Column id="M_USR_ID" type="STRING" size="60"/>
+          <Column id="CONT_DESC" type="STRING" size="400"/>
+          <Column id="SMS_YN" type="STRING" size="2"/>
+          <Column id="DLVY_BEFORE_YN" type="STRING" size="2"/>
+          <Column id="DLVY_AFTER_YN" type="STRING" size="2"/>
+          <Column id="ACC_YN" type="STRING" size="2"/>
+          <Column id="SEND_BM_YN" type="STRING" size="2"/>
+          <Column id="SEND_ITEM_YN" type="STRING" size="2"/>
+          <Column id="PAY_COND" type="STRING" size="200"/>
+          <Column id="CASE_CHK" type="STRING" size="20"/>
+          <Column id="FINAL_CHK" type="STRING" size="20"/>
+          <Column id="DEL_YN" type="STRING" size="5"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="1"/>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="2000"/>
+          <Column id="SUB_CODE1" type="STRING" size="40"/>
+          <Column id="SUB_CODE2" type="STRING" size="40"/>
+          <Column id="SUB_CODE3" type="STRING" size="3"/>
+          <Column id="CASE_NO" type="STRING" size="20"/>
+          <Column id="CASE_DESC" type="STRING" size="800"/>
+          <Column id="SEQ_NO" type="BIGDECIMAL" size="7"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="PA_ITEM_CD" type="STRING" size="20"/>
+          <Column id="CHOICE_YN" type="STRING" size="2"/>
+          <Column id="QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE_COM" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE_PER" type="BIGDECIMAL" size="17"/>
+          <Column id="BRANCH_GROUP" type="STRING" size="20"/>
+          <Column id="MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="PRM_DISP_YN" type="STRING" size="2"/>
+          <Column id="PRM_MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="VAT_TYPE" type="STRING" size="20"/>
+          <Column id="PAY_COND" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="SAVE_CHK" type="STRING" size="1"/>
+          <Column id="VAT_TYPE_NM" type="STRING" size="200"/>
+          <Column id="PAY_COND_NM" type="STRING" size="200"/>
+          <Column id="BRANCH_GRP_NM" type="STRING" size="200"/>
+          <Column id="품목구분" type="STRING" size="8"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

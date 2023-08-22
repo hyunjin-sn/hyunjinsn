@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO031" width="1300" height="600" titletext="New Form" onload="SO031_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="34" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="지점" left="390" top="5" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_bpNm" taborder="1" left="492" top="5" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static03_00" taborder="2" text="품목" left="720" top="5" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_bpNm00" taborder="3" left="822" top="5" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static03_01" taborder="4" text="등록일시" left="20" top="5" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="true"/>
+                    <Calendar id="cal_startDate" taborder="5" left="114" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" visible="true"/>
+                    <Static id="Static01" taborder="6" text="~" left="227" top="5" width="11" height="21" visible="true"/>
+                    <Calendar id="cal_endDate" taborder="7" left="239" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" visible="true"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="2" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="54" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="multiarea" autofittype="col" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" onkeydown="Div_client_grd_list_onkeydown" griduserproperty="export">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="64"/>
+                      <Column size="95"/>
+                      <Column size="200"/>
+                      <Column size="98"/>
+                      <Column size="200"/>
+                      <Column size="100"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="92"/>
+                      <Column size="80"/>
+                      <Column size="99"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="본부/지점코드"/>
+                      <Cell col="2" text="본부/지점명"/>
+                      <Cell col="3" text="품목코드"/>
+                      <Cell col="4" text="품목명"/>
+                      <Cell col="5" text="이동요청일"/>
+                      <Cell col="6" text="조정수량"/>
+                      <Cell col="7" text="비고"/>
+                      <Cell col="8" text="등록자"/>
+                      <Cell col="9" text="등록일시"/>
+                      <Cell col="10" text="수정자"/>
+                      <Cell col="11" text="수정일시"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="2" text="bind:BP_NM"/>
+                      <Cell col="3" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="4" text="bind:ITEM_NM"/>
+                      <Cell col="5" text="bind:REQ_DT"/>
+                      <Cell col="6" text="bind:QTY" textAlign="center"/>
+                      <Cell col="7" text="bind:REMARK" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="8" text="bind:INSRT_USER_NM" textAlign="center"/>
+                      <Cell col="9" text="bind:INSRT_DT" maskedittype="string" maskeditformat="####-##-## ##:##:##" displaytype="mask"/>
+                      <Cell col="10" text="bind:UPDT_USER_NM" textAlign="center"/>
+                      <Cell col="11" text="bind:UPDT_DT" maskedittype="string" maskeditformat="####-##-## ##:##:##" displaytype="mask"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점별 특이사항 등록 및 조회
+*  @MenuPath    SO > SO031
+*  @FileName 	SO031.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2023.07.26
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO031_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+	
+	this.efn_SetDatasetData2(this.ds_div,this.objApp.gds_code2,'PD003');
+};
+
+this.fn_search = function ()
+{	
+	var args1 = this.Div_client.form.div_search.form.edt_bpNm.text;
+	var args2 = this.Div_client.form.div_search.form.edt_bpNm00.text;
+	var args3 = this.Div_client.form.div_search.form.cal_startDate.value;
+	var args4 = this.Div_client.form.div_search.form.cal_endDate.value;
+	
+	// 조회
+	var id = "SO031_S01";
+	var url = "svcUrl::SO031_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "BP_NM_S="+args1+" ITEM_NM_S="+args2+" START_DATE="+args3+" END_DATE="+args4+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+// this.fn_save = function ()
+// {	
+// 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+// 	
+// 	// 등록
+// 	var id = "SO024_M01";
+// 	var url = "svcUrl::SO024_M01";
+// 	var inDs = "ds_list=ds_list:U";
+// 	var outDs = "";
+// 	var args = "INSRT_USER_ID="+regUser+"";
+// 	var callBackid = "fn_afterSve";
+// 		
+// 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+// };
+// 
+//  this.fn_afterSve = function (strSvcID, nErrorCode, strErrorMag) {
+// 	if (nErrorCode < 0) 
+// 	{
+// 		this.alert(strErrorMag)
+// 		return ;
+// 	}	
+// 	
+// 	this.alert("저장 되었습니다.");
+// 	this.fn_search();
+// }
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="50"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="BP_NM_S" type="STRING" size="250"/>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="ITEM_NM_S" type="STRING" size="150"/>
+          <Column id="REQ_DT" type="DATETIME" size="23"/>
+          <Column id="QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="REMARK" type="STRING" size="1000"/>
+          <Column id="INSRT_USER_NM" type="STRING" size="60"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_NM" type="STRING" size="60"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond1" columnid="START_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond1" columnid="END_DATE"/>
+    </Bind>
+  </Form>
+</FDL>

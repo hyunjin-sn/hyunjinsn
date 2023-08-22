@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Comm_CodePopup" width="421" height="711" titletext="New Form" onload="Comm_CodePopup_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="711" mobileorientation="landscape" width="421">
+        <Div id="div_search" taborder="0" left="10" top="10" height="39" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" width="399">
+          <Layouts>
+            <Layout>
+              <Static id="Static03" taborder="0" text="코드명" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_ClientNm" taborder="1" left="102" top="8" width="150" height="21"/>
+              <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="9" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" width="419"/>
+        <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" width="420"/>
+        <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="48" left="10" top="60" width="399" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="397"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="코드명"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:CODE_NAME" tooltiptext="bind:CODE_NAME" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_add03" taborder="4" text="선택" top="675" width="90" height="24" visible="true" onclick="fn_ok" cssclass="btn_WF_main1" left="109"/>
+        <Button id="btn_attach" taborder="5" text="닫기" top="675" width="90" height="24" visible="true" onclick="fn_attachBtnClick_1" cssclass="btn_WF_main1" left="204"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  코드 검색조건 팝업
+*  @MenuPath    Comm > Comm_CodePopup
+*  @FileName 	Comm_CodePopup.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.10.27
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+include "Lib::sz_fsp_nx.xjs";
+this.objApp = nexacro.getApplication();
+
+grpCode = this.getOwnerFrame().grpCode;
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Comm_CodePopup_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fsp_init();
+	this.gfn_formOnLoad(this);	
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+ 	this.fsp_clear();
+	this.fsp_addSearch("comm:PMS_COMM0001_S01", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_list=ds_list"	// outDs
+		,"CODE_GROUP="+grpCode	// args 
+		,""
+		,true
+	);	
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list);
+
+	this.close(json);
+};
+
+this.fn_ok = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list);
+
+	this.close(json);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list"/>
+    </Objects>
+  </Form>
+</FDL>

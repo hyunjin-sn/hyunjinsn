@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="MM0003" width="1550" height="720" titletext="New Form" onload="MM0003_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1550">
+        <Div id="div_search" taborder="0" left="3" top="3" height="39" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrolltype="none" formscrollbartype="none" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static03" taborder="0" text="MAJOR CODE명" left="0" top="8" width="126" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_name00" taborder="1" left="123" top="8" width="150" height="21"/>
+              <Combo id="cmb_Use_YN" taborder="2" text=" " left="353" top="8" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="div_search_cmb_Use_YN_onitemchanged" index="-1" autoselect="true" innerdataset="ds_useyn" value=""/>
+              <Static id="Static01" taborder="3" text="사용여부" left="271" top="8" width="75" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grd_list" taborder="1" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="none" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" autosizebandtype="nohead,noleft" onselectchanged="grd_list_onselectchanged" autoenter="select" binddataset="ds_list1" autofittype="col" height="630" width="595" top="80" left="4">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="44"/>
+                <Column size="63"/>
+                <Column size="80"/>
+                <Column size="163"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="30"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="그룹코드"/>
+                <Cell col="2" text="코드 구분"/>
+                <Cell col="3" text="그룹코드명"/>
+                <Cell col="4" text="REMARK1"/>
+                <Cell col="5" text="REMARK2"/>
+                <Cell col="6" text="REMARK3"/>
+                <Cell col="7" text="사용&#13;&#10;유무"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" text="bind:MAJOR_CODE" textAlign="center"/>
+                <Cell col="2" text="bind:CODE_DIV" edittype="combo" combodataset="ds_codeDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol"/>
+                <Cell col="3" text="bind:CODE_NAME" edittype="text"/>
+                <Cell col="4" text="bind:REMARK1" edittype="text"/>
+                <Cell col="5" text="bind:REMARK2" edittype="text"/>
+                <Cell col="6" text="bind:REMARK3" edittype="text"/>
+                <Cell col="7" text="bind:USE_YN" displaytype="checkboxcontrol" edittype="checkbox"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static05" taborder="2" text="MAJOR CODE" left="6" top="56" width="97" height="24" cssclass="sta_WF_title"/>
+        <Grid id="grd_list00" taborder="3" binddataset="ds_list2" scrolltype="both" minwidth="" oncellclick="grd_list00_oncellclick" autosizingtype="none" left="610" top="80" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" autosizebandtype="nohead,noleft" height="630" autoenter="select" autofittype="col" right="10" onkeydown="grd_list00_onkeydown" cellsizingtype="both">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="42"/>
+                <Column size="70"/>
+                <Column size="312"/>
+                <Column size="86"/>
+                <Column size="86"/>
+                <Column size="86"/>
+                <Column size="86"/>
+                <Column size="86"/>
+                <Column size="40"/>
+                <Column size="30"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="37"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="코드"/>
+                <Cell col="2" text="코드명"/>
+                <Cell col="3" text="REMARK1"/>
+                <Cell col="4" text="REMARK2"/>
+                <Cell col="5" text="REMARK3"/>
+                <Cell col="6" text="REMARK4"/>
+                <Cell col="7" text="REMARK5"/>
+                <Cell col="8" text="정렬&#13;&#10;순서"/>
+                <Cell col="9" text="사용&#13;&#10;유무"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" text="bind:CODE" textAlign="center"/>
+                <Cell col="2" text="bind:CODE_NAME" edittype="text"/>
+                <Cell col="3" text="bind:REMARK1" textAlign="center" edittype="textarea"/>
+                <Cell col="4" text="bind:REMARK2" textAlign="center" edittype="textarea"/>
+                <Cell col="5" text="bind:REMARK3" textAlign="center" edittype="textarea"/>
+                <Cell col="6" text="bind:REMARK4" textAlign="center" edittype="textarea"/>
+                <Cell col="7" text="bind:REMARK5" textAlign="center" edittype="textarea"/>
+                <Cell col="8" text="bind:SORT" textAlign="right" edittype="text"/>
+                <Cell col="9" text="bind:USE_YN" displaytype="checkboxcontrol" edittype="checkbox"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="4" text="MINOR CODE" left="612" top="56" width="97" height="24" cssclass="sta_WF_title"/>
+        <Button id="btn_add04" taborder="5" text="추가" top="46" width="45" height="24" visible="true" onclick="fn_addBtnClick" cssclass="btn_WF_main1" left="503"/>
+        <Button id="btn_add00" taborder="6" text="추가" top="46" width="45" height="24" visible="true" onclick="fn_addBtnClick2" cssclass="btn_WF_main1" right="61"/>
+        <Button id="btn_add01" taborder="7" text="삭제" top="46" width="45" height="24" visible="true" onclick="fn_delete" cssclass="btn_WF_main1" left="553"/>
+        <Button id="btn_add02" taborder="8" text="삭제" top="46" width="45" height="24" visible="true" onclick="fn_delete2" cssclass="btn_WF_main1" right="12"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list1">
+        <ColumnInfo>
+          <Column id="MAJOR_CODE" type="STRING" size="50"/>
+          <Column id="CODE_NAME" type="STRING" size="500"/>
+          <Column id="REMARK1" type="STRING" size="200"/>
+          <Column id="REMARK2" type="STRING" size="200"/>
+          <Column id="REMARK3" type="STRING" size="200"/>
+          <Column id="USE_YN" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list2">
+        <ColumnInfo>
+          <Column id="MAJOR_CODE" type="STRING" size="50"/>
+          <Column id="CODE" type="STRING" size="50"/>
+          <Column id="CODE_NAME" type="STRING" size="500"/>
+          <Column id="REMARK1" type="STRING" size="200"/>
+          <Column id="REMARK2" type="STRING" size="200"/>
+          <Column id="REMARK3" type="STRING" size="200"/>
+          <Column id="REMARK4" type="STRING" size="200"/>
+          <Column id="REMARK5" type="STRING" size="200"/>
+          <Column id="SORT" type="STRING" size="10"/>
+          <Column id="USE_YN" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+          <Column id="USE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_NAME"/>
+            <Col id="USE_YN"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_useyn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="CODE_NAME">아니오</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">예</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_codeDiv"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    관리자 > 공통코드 등록
+*  @FileName 	MM0003.xfdl 
+*  @Creator 	신기원
+*  @CreateDate 	2020.09.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.MM0003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//this.efn_SetDatasetData2(this.ds_codeDiv,this.objApp.gds_code2,'MM001');
+	
+	
+	this.fn_search();	
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.valCheck = function()
+ {
+ }
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		공통신규버튼
+* @작성자	   		신기원
+* @작성일자	   	2020.09.08
+* @수정자	   
+* @수정일자
+*/
+this.fn_add = function ()
+{
+	var pa_id = this.ds_list.getColumn(this.ds_list.rowposition,"MENU_ID")
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition, "PA_MENU_ID", pa_id)
+}
+
+ /**
+* @description 		공통조회버튼
+* @작성자	   		신기원
+* @작성일자	   	2020.09.08
+* @수정자	   
+* @수정일자
+*/
+this.fn_search = function () {	
+	var Arg_1 = this.ds_cond.getColumn(0,"CODE_NAME");
+	var Arg_2 = this.ds_cond.getColumn(0,"USE_YN");
+
+    var id = "MM003_S01";
+	var url = "svcUrl::MM003_S01";
+	var inDs = "";
+	var outDs = "ds_list1=ds_list1";
+	var args = "CODE_NAME="+Arg_1+" USE_YN="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+    if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	var Arg_1 = this.ds_list1.getColumn(this.ds_list1.rowposition,"MAJOR_CODE");
+
+	var id = "MM003_S02";
+	var url = "svcUrl::MM003_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list2";
+	var args = "MAJOR_CODE="+Arg_1+"";
+	var callBackid = "fn_search_combo";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+
+}
+
+this.fn_search_combo = function (strSvcID, nErrorCode, strErrorMag) {
+    if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+
+	var id = "VM006_S03";
+	var url = "svcUrl::VM006_S03";
+	var inDs = "";
+	var outDs = "ds_codeDiv=ds_codeDiv";
+	var args = "";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+
+}
+/*******************************************************************************
+* 기      능   : 저장
+* 설      명   : 
+********************************************************************************/
+this.fn_save = function () {
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var Arg_1 = this.ds_list1.getColumn(this.ds_list1.rowposition,"MAJOR_CODE");
+	var Arg_2 = this.ds_list1.getColumn(this.ds_list1.rowposition,"CODE_DIV");
+	
+	var id = "MM003_M01";
+	var url = "svcUrl::MM003_M01";
+	var inDs = "ds_list1=ds_list1:U ds_list2=ds_list2:U";
+	var outDs = "";
+	var args = "INSRT_USR_ID="+regUser+" MAJOR_CD="+Arg_1+" CODE_DIV="+Arg_2+"";
+	var callBackid = "fn_afterSave";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+/*******************************************************************************
+* 기      능   : save callback
+********************************************************************************/
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	this.alert("저장 되었습니다.");
+	this.fn_search();
+}
+
+/*******************************************************************************
+* 기      능   : search callback
+********************************************************************************/
+
+/*******************************************************************************
+* 기      능   : 클릭 이벤트
+* 설      명   : 그리드1 클릭 시 이벤트
+********************************************************************************/
+this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	    var Arg_1 = this.ds_list1.getColumn(this.ds_list1.rowposition,"MAJOR_CODE");
+
+		var id = "MM003_S02";
+		var url = "svcUrl::MM003_S02";
+		var inDs = "";
+		var outDs = "ds_list2=ds_list2";
+		var args = "MAJOR_CODE="+Arg_1+"";
+		var callBackid = "";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+/*******************************************************************************
+* 기      능   : 추가
+* 설      명   : MAJOR_CODE 추가
+********************************************************************************/
+this.fn_addBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list2.clear();
+	this.ds_list1.addRow();
+};
+
+/*******************************************************************************
+* 기      능   : 삭제
+* 설      명   : MAJOR_CODE 삭제
+********************************************************************************/
+this.fn_delete = function () {
+	if(this.confirm("선택된 자료를 삭제 하시겠습니까?")){
+		this.ds_list1.deleteRow(this.ds_list1.rowposition);
+	}
+	var Arg_1 = this.ds_list1.getColumn(this.ds_list1.rowposition,"MAJOR_CODE");
+
+	var id = "MM003_S02";
+	var url = "svcUrl::MM003_S02";
+	var inDs = "";
+	var outDs = "ds_list2=ds_list2";
+	var args = "MAJOR_CODE="+Arg_1+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+/*******************************************************************************
+* 기      능   : 추가
+* 설      명   : MINOR_CODE 추가
+********************************************************************************/
+this.fn_addBtnClick2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list1.getColumn(this.ds_list1.rowposition,"MAJOR_CODE")))
+	{
+		this.alert("그룹코드를 먼저 저장하시기 바랍니다.");
+ 		return;
+	}
+	
+	this.ds_list2.addRow();
+};
+
+/*******************************************************************************
+* 기      능   : 삭제
+* 설      명   : MINOR_CODE 삭제
+********************************************************************************/
+this.fn_delete2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.confirm("선택된 자료를 삭제 하시겠습니까?")){
+		this.ds_list2.deleteRow(this.ds_list2.rowposition);
+	}	
+};
+
+this.grd_list00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	
+};
+
+this.grd_list00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="div_search.form.edt_name00" propid="value" datasetid="ds_cond" columnid="CODE_NAME"/>
+      <BindItem id="item1" compid="div_search.form.cmb_Use_YN" propid="value" datasetid="ds_cond" columnid="USE_YN"/>
+    </Bind>
+  </Form>
+</FDL>

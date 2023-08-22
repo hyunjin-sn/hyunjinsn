@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO002_P01" width="1300" height="400" titletext="New Form" onload="SO002_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grd_list01" taborder="1" scrolltype="both" minwidth="" top="9" bottom="10" left="11" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" binddataset="ds_list" right="10" cellsizingtype="both" onkeydown="grd_list01_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="98"/>
+                <Column size="376"/>
+                <Column size="57"/>
+                <Column size="98"/>
+                <Column size="98"/>
+                <Column size="98"/>
+                <Column size="300"/>
+                <Column size="300"/>
+                <Column size="300"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="품목코드"/>
+                <Cell col="2" text="품목"/>
+                <Cell col="3" text="수량"/>
+                <Cell col="4" text="단가"/>
+                <Cell col="5" text="금액"/>
+                <Cell col="6" text="지점"/>
+                <Cell col="7" text="리본메시지"/>
+                <Cell col="8" text="경조사어"/>
+                <Cell col="9" text="카드메시지"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" calendardateformat="yyyy-MM-dd HH:mm:ss" calendardisplaynulltype="none" textAlign="center"/>
+                <Cell col="1" text="bind:ITEM_CD" textAlign="left" maskeditformat="###.##" displaytype="normal" edittype="none" tooltiptext="bind:ITEM_CD"/>
+                <Cell col="2" text="bind:ITEM" textAlign="left" maskeditformat="###.##" displaytype="normal" edittype="none" tooltiptext="bind:ITEM"/>
+                <Cell col="3" text="bind:SO_QTY" textAlign="center" maskeditformat="##,###" displaytype="mask"/>
+                <Cell col="4" text="bind:SO_PRICE" textAlign="right" maskeditformat="##,###" displaytype="mask" tooltiptext="bind:SO_PRICE"/>
+                <Cell col="5" text="bind:TOTAL_PRICE" textAlign="right" maskeditformat="##,###" displaytype="mask" tooltiptext="bind:TOTAL_PRICE"/>
+                <Cell col="6" text="bind:BP_NM" textAlign="left" maskeditformat="###.##" displaytype="normal" edittype="none" tooltiptext="bind:BP_NM"/>
+                <Cell col="7" text="bind:RIBBON_MESSAGE" textAlign="left" maskeditformat="###.##" tooltiptext="bind:RIBBON_MESSAGE"/>
+                <Cell col="8" text="bind:HS_MESSAGE" textAlign="left" maskeditformat="###.##" tooltiptext="bind:HS_MESSAGE"/>
+                <Cell col="9" text="bind:CARD_MESSAGE" textAlign="left" maskeditformat="###.##" tooltiptext="bind:CARD_MESSAGE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P11
+*  @FileName 	SO0001_P11.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.06
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+var branchGroup = this.getOwnerFrame().branchGroup
+var poBpCd = this.getOwnerFrame().poBpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO002_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = soNo;
+	var args2 = branchGroup;
+	var args3 = poBpCd;
+	
+	// 품목 조회
+	var id = "SO002_P02";
+	var url = "svcUrl::SO002_P02";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "SO_NO="+args1+" BRANCH_GROUP="+args2+" PO_BP_CD="+args3+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.grd_list01_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ITEM" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_tab_div10"/>
+    </Objects>
+  </Form>
+</FDL>

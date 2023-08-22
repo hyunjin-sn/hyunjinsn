@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P01" width="1200" height="400" titletext="New Form" onload="SO001_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1200">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Button id="btn_search" taborder="1" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="2" text="거래처" left="-2" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_ClientPartNm" taborder="0" left="103" top="8" width="202" height="21" onkeyup="Div_client_div_search_edt_ClientNm_onkeyup" inputmode="upper"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="60" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="493"/>
+                      <Column size="493"/>
+                      <Column size="107"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="거래처코드"/>
+                      <Cell col="1" text="거래처약칭"/>
+                      <Cell col="2" text="거래처전명"/>
+                      <Cell col="3" text="계약번호"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:bp_cd" tooltiptext="bind:bp_cd" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                      <Cell col="2" text="bind:BP_ALIAS_NM" tooltiptext="bind:BP_ALIAS_NM"/>
+                      <Cell col="3" text="bind:CONT_NO" tooltiptext="bind:CONT_NO" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO001_P01
+*  @FileName 	SO001_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var MODE = this.getOwnerFrame().MODE
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div_client.form.div_search.form.edt_ClientPartNm.set_value(MODE);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.ds_cond.getColumn(0,"BP_CD");
+ 	var Arg_2 = this.ds_cond.getColumn(0,"BP_NM");
+	trace(Arg_1);
+
+	var url = "svcUrl::SO001_P01_S01";
+	this.gfn_transaction( "SO001_P01_S01",url,"","ds_list=ds_list","BP_CD="+Arg_1+" BP_NM="+Arg_2+"","callbackFunction");
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+// 	if (this.gfn_isNull(this.ds_list.getColumn(this.ds_list.rowposition,"CONT_NO")))
+// 	{
+// 		this.alert("등록된 계약정보가 없습니다. 확인하시기 바랍니다.");
+// 		return;
+// 	}
+	this.btn_ok_onclick();
+};
+
+this.Div_client_div_search_edt_ClientNm_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_btn_search();
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="bp_cd" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="BP_ALIAS_NM" type="STRING" size="80"/>
+          <Column id="BP_FULL_NM" type="STRING" size="120"/>
+          <Column id="BP_RGST_NO" type="STRING" size="20"/>
+          <Column id="CONT_NO" type="STRING" size="256"/>
+          <Column id="REFERENCE" type="STRING" size="256"/>
+          <Column id="SO_TYPE_NM" type="STRING" size="256"/>
+          <Column id="VAT_TYPE" type="STRING" size="256"/>
+          <Column id="VAT_RATE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_CD"/>
+            <Col id="BP_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_ClientPartNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+    </Bind>
+  </Form>
+</FDL>

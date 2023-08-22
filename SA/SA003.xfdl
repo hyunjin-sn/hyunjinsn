@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SA001" width="1500" height="600" titletext="New Form" onload="SA001_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Tab id="Tab00" taborder="1" tabindex="0" left="9" top="10" right="10" bottom="0">
+                <Tabpages>
+                  <Tabpage id="Tabpage1" text="관리손익분석">
+                    <Layouts>
+                      <Layout>
+                        <Div id="div_search" taborder="0" left="0" top="10" height="34" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                          <Layouts>
+                            <Layout>
+                              <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Calendar id="txt_BaseMonth" taborder="1" top="6" height="20" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" width="125" left="93"/>
+                              <Button id="btn_del" taborder="2" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_btn_del_onclick"/>
+                              <Calendar id="txt_BaseMonth00" taborder="3" top="6" height="20" dateformat="yyyy-MM" editformat="yyyy-MM" type="spin" width="125" left="233"/>
+                              <Static id="Static01" taborder="4" text="~" left="221" top="1" width="10" height="29"/>
+                            </Layout>
+                          </Layouts>
+                        </Div>
+                        <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" autofittype="none" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="55"/>
+                                <Column size="70"/>
+                                <Column size="92"/>
+                                <Column size="52"/>
+                                <Column size="69"/>
+                                <Column size="86"/>
+                                <Column size="86"/>
+                                <Column size="62"/>
+                                <Column size="40"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="40"/>
+                                <Column size="100"/>
+                                <Column size="100"/>
+                                <Column size="100"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell rowspan="2" text="순번"/>
+                                <Cell col="1" rowspan="2" text="년월"/>
+                                <Cell col="2" rowspan="2" text="주문번호"/>
+                                <Cell col="3" rowspan="2" text="대상자"/>
+                                <Cell col="4" rowspan="2" text="고객사코드"/>
+                                <Cell col="5" rowspan="2" text="고객사명"/>
+                                <Cell col="6" rowspan="2" text="경조사유"/>
+                                <Cell col="7" rowspan="2" text="법인/개인"/>
+                                <Cell col="8" rowspan="2" text="탁송&#13;&#10;구분"/>
+                                <Cell col="9" colspan="4" text="조사용품"/>
+                                <Cell col="13" colspan="4" text="CI_케어용품"/>
+                                <Cell col="17" colspan="4" text="편의용품"/>
+                                <Cell col="21" colspan="4" text="출산용품"/>
+                                <Cell col="25" colspan="4" text="원자재판매(일괄)"/>
+                                <Cell col="29" colspan="4" text="근조화환"/>
+                                <Cell col="33" colspan="4" text="축하화환"/>
+                                <Cell col="37" colspan="4" text="플라워(관엽류)"/>
+                                <Cell col="41" colspan="4" text="플라워단품"/>
+                                <Cell col="45" colspan="4" text="음료"/>
+                                <Cell col="49" colspan="4" text="배송FL"/>
+                                <Cell col="53" colspan="4" text="배송의전"/>
+                                <Cell col="57" colspan="4" text="근조기_축기"/>
+                                <Cell col="61" colspan="4" text="의전 / 인력지원"/>
+                                <Cell col="65" colspan="4" text="의전 / 대체지원"/>
+                                <Cell col="69" colspan="4" text="의전 / 패키지"/>
+                                <Cell col="73" colspan="4" text="합계"/>
+                                <Cell row="1" col="9" text="수량"/>
+                                <Cell row="1" col="10" text="판가"/>
+                                <Cell row="1" col="11" text="원가"/>
+                                <Cell row="1" col="12" text="손익"/>
+                                <Cell row="1" col="13" text="수량"/>
+                                <Cell row="1" col="14" text="판가"/>
+                                <Cell row="1" col="15" text="원가"/>
+                                <Cell row="1" col="16" text="손익"/>
+                                <Cell row="1" col="17" text="수량"/>
+                                <Cell row="1" col="18" text="판가"/>
+                                <Cell row="1" col="19" text="원가"/>
+                                <Cell row="1" col="20" text="손익"/>
+                                <Cell row="1" col="21" text="수량"/>
+                                <Cell row="1" col="22" text="판가"/>
+                                <Cell row="1" col="23" text="원가"/>
+                                <Cell row="1" col="24" text="손익"/>
+                                <Cell row="1" col="25" text="수량"/>
+                                <Cell row="1" col="26" text="판가"/>
+                                <Cell row="1" col="27" text="원가"/>
+                                <Cell row="1" col="28" text="손익"/>
+                                <Cell row="1" col="29" text="수량"/>
+                                <Cell row="1" col="30" text="판가"/>
+                                <Cell row="1" col="31" text="원가"/>
+                                <Cell row="1" col="32" text="손익"/>
+                                <Cell row="1" col="33" text="수량"/>
+                                <Cell row="1" col="34" text="판가"/>
+                                <Cell row="1" col="35" text="원가"/>
+                                <Cell row="1" col="36" text="손익"/>
+                                <Cell row="1" col="37" text="수량"/>
+                                <Cell row="1" col="38" text="판가"/>
+                                <Cell row="1" col="39" text="원가"/>
+                                <Cell row="1" col="40" text="손익"/>
+                                <Cell row="1" col="41" text="수량"/>
+                                <Cell row="1" col="42" text="판가"/>
+                                <Cell row="1" col="43" text="원가"/>
+                                <Cell row="1" col="44" text="손익"/>
+                                <Cell row="1" col="45" text="수량"/>
+                                <Cell row="1" col="46" text="판가"/>
+                                <Cell row="1" col="47" text="원가"/>
+                                <Cell row="1" col="48" text="손익"/>
+                                <Cell row="1" col="49" text="수량"/>
+                                <Cell row="1" col="50" text="판가"/>
+                                <Cell row="1" col="51" text="원가"/>
+                                <Cell row="1" col="52" text="손익"/>
+                                <Cell row="1" col="53" text="수량"/>
+                                <Cell row="1" col="54" text="판가"/>
+                                <Cell row="1" col="55" text="원가"/>
+                                <Cell row="1" col="56" text="손익"/>
+                                <Cell row="1" col="57" text="수량"/>
+                                <Cell row="1" col="58" text="판가"/>
+                                <Cell row="1" col="59" text="원가"/>
+                                <Cell row="1" col="60" text="손익"/>
+                                <Cell row="1" col="61" text="수량"/>
+                                <Cell row="1" col="62" text="판가"/>
+                                <Cell row="1" col="63" text="원가"/>
+                                <Cell row="1" col="64" text="손익"/>
+                                <Cell row="1" col="65" text="수량"/>
+                                <Cell row="1" col="66" text="판가"/>
+                                <Cell row="1" col="67" text="원가"/>
+                                <Cell row="1" col="68" text="손익"/>
+                                <Cell row="1" col="69" text="수량"/>
+                                <Cell row="1" col="70" text="판가"/>
+                                <Cell row="1" col="71" text="원가"/>
+                                <Cell row="1" col="72" text="손익"/>
+                                <Cell row="1" col="73" text="수량"/>
+                                <Cell row="1" col="74" text="판가"/>
+                                <Cell row="1" col="75" text="원가"/>
+                                <Cell row="1" col="76" text="손익"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:YYYYMM" textAlign="center"/>
+                                <Cell col="2" text="bind:SO_NO" textAlign="center"/>
+                                <Cell col="3" text="bind:OWN_NM" textAlign="center"/>
+                                <Cell col="4" text="bind:SOLD_TO_PARTY" textAlign="center"/>
+                                <Cell col="5" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                                <Cell col="6" text="bind:HS_NM" tooltiptext="bind:HS_NM"/>
+                                <Cell col="7" text="bind:DEAL_TYPE"/>
+                                <Cell col="8" text="bind:SO_TYPE_1"/>
+                                <Cell col="9" text="bind:A01_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="10" text="bind:A01_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="11" text="bind:A01_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="12" text="bind:A01_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="13" text="bind:A98_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="14" text="bind:A98_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="15" text="bind:A98_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="16" text="bind:A98_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="17" text="bind:A99_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="18" text="bind:A99_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="19" text="bind:A99_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="20" text="bind:A99_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="21" text="bind:A02_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="22" text="bind:A02_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="23" text="bind:A02_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="24" text="bind:A02_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="25" text="bind:F01_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="26" text="bind:F01_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="27" text="bind:F01_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="28" text="bind:F01_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="29" text="bind:B01_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="30" text="bind:B01_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="31" text="bind:B01_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="32" text="bind:B01_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="33" text="bind:B02_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="34" text="bind:B02_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="35" text="bind:B02_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="36" text="bind:B02_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="37" text="bind:B98_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="38" text="bind:B98_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="39" text="bind:B98_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="40" text="bind:B98_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="41" text="bind:B99_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="42" text="bind:B99_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="43" text="bind:B99_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="44" text="bind:B99_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="45" text="bind:B20_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="46" text="bind:B20_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="47" text="bind:B20_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="48" text="bind:B20_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="49" text="bind:D01_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="50" text="bind:D01_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="51" text="bind:D01_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="52" text="bind:D01_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="53" text="bind:D02_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="54" text="bind:D02_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="55" text="bind:D02_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="56" text="bind:D02_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="57" text="bind:C03_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="58" text="bind:C03_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="59" text="bind:C03_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="60" text="bind:C03_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="61" text="bind:C01_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="62" text="bind:C01_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="63" text="bind:C01_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="64" text="bind:C01_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="65" text="bind:C99_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="66" text="bind:C99_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="67" text="bind:C99_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="68" text="bind:C99_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="69" text="bind:C02_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="70" text="bind:C02_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="71" text="bind:C02_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="72" text="bind:C02_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="73" text="bind:SUM_SO_QTY" displaytype="mask" maskeditformat="##,##0" textAlign="center"/>
+                                <Cell col="74" text="bind:SUM_NET_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="75" text="bind:SUM_SALES_COST" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="76" text="bind:SUM_PROFIT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="9" text="합  계     " textAlign="right"/>
+                                <Cell col="9"/>
+                                <Cell col="10" text="expr:dataset.getSum(&quot;A01_NET_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="11" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A01_SALES_COST&quot;)"/>
+                                <Cell col="12" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A01_PROFIT&quot;)"/>
+                                <Cell col="13" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="14" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A98_NET_AMT&quot;)"/>
+                                <Cell col="15" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A98_SALES_COST&quot;)"/>
+                                <Cell col="16" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A98_PROFIT&quot;)"/>
+                                <Cell col="17" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="18" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A99_NET_AMT&quot;)"/>
+                                <Cell col="19" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A99_SALES_COST&quot;)"/>
+                                <Cell col="20" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A99_PROFIT&quot;)"/>
+                                <Cell col="21" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="22" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A02_NET_AMT&quot;)"/>
+                                <Cell col="23" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A02_SALES_COST&quot;)"/>
+                                <Cell col="24" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;A02_PROFIT&quot;)"/>
+                                <Cell col="25" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="26" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;F01_NET_AMT&quot;)"/>
+                                <Cell col="27" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;F01_SALES_COST&quot;)"/>
+                                <Cell col="28" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;F01_PROFIT&quot;)"/>
+                                <Cell col="29" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="30" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B01_NET_AMT&quot;)"/>
+                                <Cell col="31" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B01_SALES_COST&quot;)"/>
+                                <Cell col="32" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B01_PROFIT&quot;)"/>
+                                <Cell col="33" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="34" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B02_NET_AMT&quot;)"/>
+                                <Cell col="35" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B02_SALES_COST&quot;)"/>
+                                <Cell col="36" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B02_PROFIT&quot;)"/>
+                                <Cell col="37" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="38" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B98_NET_AMT&quot;)"/>
+                                <Cell col="39" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B98_SALES_COST&quot;)"/>
+                                <Cell col="40" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B98_PROFIT&quot;)"/>
+                                <Cell col="41" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="42" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B99_NET_AMT&quot;)"/>
+                                <Cell col="43" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B99_SALES_COST&quot;)"/>
+                                <Cell col="44" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B99_PROFIT&quot;)"/>
+                                <Cell col="45" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="46" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B20_NET_AMT&quot;)"/>
+                                <Cell col="47" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B20_SALES_COST&quot;)"/>
+                                <Cell col="48" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;B20_PROFIT&quot;)"/>
+                                <Cell col="49" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="50" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D01_NET_AMT&quot;)"/>
+                                <Cell col="51" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D01_SALES_COST&quot;)"/>
+                                <Cell col="52" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D01_PROFIT&quot;)"/>
+                                <Cell col="53" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="54" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D02_NET_AMT&quot;)"/>
+                                <Cell col="55" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D02_SALES_COST&quot;)"/>
+                                <Cell col="56" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;D02_PROFIT&quot;)"/>
+                                <Cell col="57" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="58" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C03_NET_AMT&quot;)"/>
+                                <Cell col="59" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C03_SALES_COST&quot;)"/>
+                                <Cell col="60" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C03_PROFIT&quot;)"/>
+                                <Cell col="61" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="62" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C01_NET_AMT&quot;)"/>
+                                <Cell col="63" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C01_SALES_COST&quot;)"/>
+                                <Cell col="64" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C01_PROFIT&quot;)"/>
+                                <Cell col="65" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="66" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C99_NET_AMT&quot;)"/>
+                                <Cell col="67" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C99_SALES_COST&quot;)"/>
+                                <Cell col="68" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C99_PROFIT&quot;)"/>
+                                <Cell col="69" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="70" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C02_NET_AMT&quot;)"/>
+                                <Cell col="71" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C02_SALES_COST&quot;)"/>
+                                <Cell col="72" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;C02_PROFIT&quot;)"/>
+                                <Cell col="73" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="74" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;SUM_NET_AMT&quot;)"/>
+                                <Cell col="75" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;SUM_SALES_COST&quot;)"/>
+                                <Cell col="76" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="expr:dataset.getSum(&quot;SUM_PROFIT&quot;)"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Static id="Static01_00_00" taborder="2" text="검색 기간은 최대 6개월까지만 설정 부탁드립니다." top="55" height="18" font="normal bold 10pt/normal &quot;Arial&quot;" left="0" verticalAlign="top" right="1134" color="RED"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  손익관리분석 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.05
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SA001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	var sDate = this.gfn_getDate().substr(0,6);
+	
+	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth.set_value(sDate);
+	
+	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth00.set_value(sDate);
+	
+	this._gfnGridcellFix(this.Div_client.form.Tab00.Tabpage1.form.grd_list, 8);
+	
+	//this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{	
+	var args1 = this.Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth.value.substr(0,6);
+	var args2 = this.Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth00.value.substr(0,6);
+	
+	// 조회
+	var id = "SA003_S01";
+	var url = "svcUrl::SA003_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.Tab00.Tabpage1.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="YYYYMM" type="STRING" size="10"/>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="SOLD_TO_PARTY" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="DEAL_TYPE" type="STRING" size="4"/>
+          <Column id="SO_TYPE_1" type="STRING" size="4"/>
+          <Column id="A01_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="A01_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="A01_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="A01_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="A98_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="A98_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="A98_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="A98_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="A99_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="A99_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="A99_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="A99_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="A02_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="A02_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="A02_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="A02_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="F01_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="F01_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="F01_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="F01_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="B01_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="B01_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="B01_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="B01_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="B02_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="B02_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="B02_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="B02_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="B98_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="B98_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="B98_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="B98_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="B99_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="B99_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="B99_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="B99_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="B20_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="B20_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="B20_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="B20_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="D01_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="D01_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="D01_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="D01_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="D02_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="D02_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="D02_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="D02_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="C03_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="C03_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="C03_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="C03_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="C01_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="C01_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="C01_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="C01_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="C99_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="C99_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="C99_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="C99_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="C02_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="C02_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="C02_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="C02_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="SUM_SO_QTY" type="BIGDECIMAL" size="40"/>
+          <Column id="SUM_NET_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="SUM_SALES_COST" type="BIGDECIMAL" size="40"/>
+          <Column id="SUM_PROFIT" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth" propid="value" datasetid="ds_costM" columnid="YM"/>
+      <BindItem id="item1" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.txt_BaseMonth00" propid="value" datasetid="ds_costM" columnid="YM"/>
+    </Bind>
+  </Form>
+</FDL>

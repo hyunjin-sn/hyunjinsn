@@ -1,0 +1,2276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="PM0001" width="1294" height="900" titletext="New Form" onload="Form_onload">
+    <Layouts>
+      <Layout height="900" mobileorientation="landscape" width="1294">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="30" text="w&#13;&#10;10"/>
+        <Static id="Static01" taborder="2" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="32" text="w&#13;&#10;10" right="0"/>
+        <Static id="Static03" taborder="3" left="0" top="151" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="12"/>
+        <Static id="Static04" taborder="4" left="0" cssclass="sta_WF_guideBlue" visible="false" text="h10" right="208" height="10" bottom="1"/>
+        <Div id="Div00" taborder="7" text="Div00" top="160" bottom="11" async="true" left="11" width="280">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="조회결과" left="0" top="1" width="97" height="24" cssclass="sta_WF_title"/>
+              <Grid id="grd_list" taborder="1" scrolltype="both" minwidth="" autosizingtype="none" left="0" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" binddataset="ds_list_1" top="32" right="9" onselectchanged="Div00_grd_list_onselectchanged" bottom="0" autofittype="none">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="90"/>
+                      <Column size="151"/>
+                      <Column size="66"/>
+                      <Column size="104"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="프로젝트 번호"/>
+                      <Cell col="1" text="프로젝트 명"/>
+                      <Cell col="2" text="담당자"/>
+                      <Cell col="3" text="상위 프로젝트번호"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:PROJECT_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:PROJECT_NAME" tooltiptext="bind:PROJECT_NAME"/>
+                      <Cell col="2" text="bind:PROJECT_PM" textAlign="center" displaytype="combotext" combodataset="ds_user" combocodecol="USER_ID" combodatacol="USER_NAME"/>
+                      <Cell col="3" text="bind:UPPER_PROJECT_NO" textAlign="center" combodataset="ds_user" combocodecol="USER_ID" combodatacol="USER_NAME"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div06" taborder="5" maxwidth="" minwidth="" text="" top="160" left="300" right="12" bottom="11">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21" taborder="64" left="236" top="31" height="29" cssclass="sta_WF_detailLine" width="238"/>
+              <Static id="sta_16" taborder="38" left="59" top="311" height="33" cssclass="sta_WF_detailLine" width="923" text=""/>
+              <Static id="Static06" taborder="88" text="(                    %)" left="880" top="314" width="99" height="25"/>
+              <Static id="Static02" taborder="87" text="(                    %)" left="470" top="314" width="99" height="25"/>
+              <Static id="sta_04" taborder="23" left="94" top="151" height="29" cssclass="sta_WF_detailLine" width="380"/>
+              <Radio id="Radio00" taborder="65" left="106" top="156" width="363" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_pjtdiv" direction="vertical" onitemchanged="Div06_Radio00_onitemchanged"/>
+              <Static id="sta_26" taborder="80" left="567" top="273" height="29" cssclass="sta_WF_detailLine" width="415"/>
+              <Static id="sta_25" taborder="79" left="59" top="273" height="29" cssclass="sta_WF_detailLine" width="415"/>
+              <Static id="sta_06" taborder="76" left="567" top="245" height="29" cssclass="sta_WF_detailLine" width="415"/>
+              <Static id="sta_24" taborder="70" left="564" top="179" height="29" cssclass="sta_WF_detailLine" width="418"/>
+              <Static id="sta_23" taborder="67" left="94" top="179" height="29" cssclass="sta_WF_detailLine" width="380"/>
+              <Static id="sta_22" taborder="66" left="564" top="151" height="29" cssclass="sta_WF_detailLine" width="418"/>
+              <Static id="sta_09" taborder="0" left="94" top="343" height="67" cssclass="sta_WF_detailLine" width="888"/>
+              <Static id="Static20" taborder="1" text="비고" left="0" top="343" width="100" cssclass="sta_WF_detailLabel" height="67"/>
+              <Static id="sta_11" taborder="2" left="94" top="245" height="29" cssclass="sta_WF_detailLine" width="380"/>
+              <Static id="Static25" taborder="3" text="고객사명" left="0" top="245" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static26" taborder="4" text="관리부서" left="473" top="273" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static28" taborder="5" text="관리기준" left="0" top="273" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <TextArea id="TextArea_remark" taborder="15" left="104" top="348" width="873" height="58"/>
+              <Static id="Static12" taborder="16" text="상세정보" left="0" top="1" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="sta_01" taborder="17" left="94" top="59" height="29" cssclass="sta_WF_detailLine" width="888"/>
+              <Edit id="edt_pjt_nm" taborder="7" left="104" top="64" width="873" height="20"/>
+              <Static id="Static04" taborder="18" text="프로젝트 명" left="0" top="59" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="sta_02" taborder="19" left="94" top="217" height="29" cssclass="sta_WF_detailLine" width="380"/>
+              <Static id="Static01" taborder="20" text="PM" left="0" top="217" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static08" taborder="21" text="작성자" left="237" top="217" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_03" taborder="22" left="94" top="123" height="29" cssclass="sta_WF_detailLine" width="380"/>
+              <Static id="sta_05" taborder="24" left="567" top="217" height="29" cssclass="sta_WF_detailLine" width="415"/>
+              <Static id="Static03" taborder="25" text="AM" left="728" top="217" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static07" taborder="26" text="산업군" left="473" top="151" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static09" taborder="27" text="기간" left="0" top="123" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static10" taborder="28" text="AM부서" left="473" top="217" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static11" taborder="29" text="회사구분" left="0" top="151" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="sta_07" taborder="30" left="94" top="87" height="29" cssclass="sta_WF_detailLine" width="888"/>
+              <Static id="sta_08" taborder="31" left="567" top="123" height="29" cssclass="sta_WF_detailLine" width="415"/>
+              <Static id="Static14" taborder="32" text="수주일" left="473" top="123" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Calendar id="cal_pjt_regdate" taborder="14" left="577" top="128" width="128" height="20" onchanged="Div06_cal_pjt_regdate_onchanged"/>
+              <Combo id="cmb_PM" taborder="8" left="104" top="221" width="128" height="21" text="선택" value="" index="-1" codecolumn="USER_ID" datacolumn="USER_NAME" innerdataset="ds_user" type="filterlike" onitemchanged="Div06_cmb_PM_onitemchanged"/>
+              <Combo id="cmb_user" taborder="9" left="341" top="221" width="128" height="21" text="선택" value="" index="-1" codecolumn="USER_ID" datacolumn="USER_NAME" innerdataset="ds_user" type="filterlike" readonly="true"/>
+              <Combo id="cmb_AM" taborder="10" left="832" top="221" width="145" height="21" text="" value="" index="-1" codecolumn="USER_ID" datacolumn="USER_NAME" innerdataset="ds_user" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange"/>
+              <Combo id="cmb_AM_dept" taborder="11" left="577" top="221" width="147" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_dept" type="filterlike" readonly="true"/>
+              <Static id="Static19" taborder="33" text="계약서" left="473" top="179" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static18" taborder="34" text="조사지역" left="0" top="179" width="100" height="29" cssclass="sta_WF_detailLabel_ess"/>
+              <Calendar id="cal_from" taborder="12" left="104" top="127" width="128" height="21"/>
+              <Calendar id="cal_to" taborder="13" left="254" top="127" width="128" height="21"/>
+              <Static id="Static13" taborder="35" text="~" left="240" top="129" width="15" height="16"/>
+              <Static id="Static05" taborder="36" text="상위 프로젝트" left="0" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static31" taborder="37" text="계약금(VAT비포함)" left="0" top="311" width="100" cssclass="sta_WF_detailLabel" height="33" font="normal 8pt/normal &quot;Arial&quot;" padding="2px"/>
+              <Button id="btn_client" taborder="39" left="211" top="249" width="21" height="21" cssclass="btn_WF_search" onclick="Div06_btn_client_onclick"/>
+              <Edit id="edt_client" taborder="40" left="104" top="249" width="107" height="21" enable="true" readonly="true"/>
+              <Edit id="edt_client_part_m" taborder="41" left="577" top="277" width="147" height="21" readonly="true"/>
+              <Edit id="edt_client_gbn" taborder="42" left="341" top="277" width="128" height="21" readonly="true"/>
+              <Edit id="edt_client_part" taborder="43" left="341" top="249" width="128" height="21" readonly="true"/>
+              <Edit id="edt_client_ma" taborder="44" left="104" top="277" width="128" height="21" readonly="true"/>
+              <Edit id="edt_client_grade" taborder="45" left="832" top="277" width="146" height="21" readonly="true"/>
+              <Edit id="edt_upper_pjt_no" taborder="46" left="104" top="91" width="107" height="21" enable="true" readonly="true"/>
+              <Button id="btn_upper_pjt" taborder="47" left="211" top="91" width="21" height="21" cssclass="btn_WF_search" onclick="Div06_btn_upper_pjt_onclick"/>
+              <Static id="sta_19" taborder="49" left="94" top="31" height="29" cssclass="sta_WF_detailLine" width="143"/>
+              <Static id="Static23" taborder="48" text="프로젝트 번호" left="0" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_pjt_no00" taborder="6" left="104" top="35" width="128" height="21" readonly="true"/>
+              <Edit id="edt_upper_pjt_no01" taborder="50" left="236" top="91" width="741" height="21" enable="true" readonly="true" displaynulltext="상위 프로젝트명 출력"/>
+              <Button id="btn_status_N" taborder="63" text="취소" top="3" height="24" visible="true" cssclass="btn_WF_main1" left="937" width="45" onclick="Div06_btn_status_N_onclick"/>
+              <Button id="btn_status_Y" taborder="62" text="완료" top="3" height="24" visible="true" cssclass="btn_WF_main1" left="887" onclick="Div06_btn_status_Y_onclick" right="btn_status_N:5"/>
+              <Button id="btn_attach" taborder="51" text="첨부파일" top="3" height="24" visible="true" onclick="fn_attachBtnClick_1" cssclass="btn_WF_main1" left="792" right="btn_status_Y:5"/>
+              <Tab id="Tab00" taborder="52" tabindex="0" left="0" top="418" onchanged="Div06_Tab00_onchanged" bottom="1" positionstep="0" width="982" minheight="300" maxheight="">
+                <Tabpages>
+                  <Tabpage id="Tabpage2" text="진행조사방법">
+                    <Layouts>
+                      <Layout>
+                        <Static id="Static22" taborder="0" text="진행조사방법" left="3" top="0" width="121" height="30" cssclass="sta_WF_title"/>
+                        <Button id="btn_add00" taborder="1" text="추가" top="5" width="45" height="24" right="56" visible="true" onclick="fn_addBtnClick_1" cssclass="btn_WF_main1"/>
+                        <Button id="btn_search01" taborder="2" text="삭제" top="5" width="45" height="24" right="1" visible="true" onclick="fn_delBtnClick_1" cssclass="btn_WF_main1"/>
+                        <Grid id="grd_list01" taborder="3" binddataset="ds_list_5" scrolltype="both" minwidth="" right="0" top="34" bottom="0" left="0" autoenter="select" selecttype="cell" oncellclick="Div06_Tab00_Tabpage2_grd_list01_oncellclick" summarytype="default" autofittype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="92"/>
+                                <Column size="109"/>
+                                <Column size="260"/>
+                                <Column size="70"/>
+                                <Column size="102"/>
+                                <Column size="45"/>
+                                <Column size="19"/>
+                                <Column size="110"/>
+                                <Column size="110"/>
+                                <Column size="60"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell rowspan="2" text="조사번호"/>
+                                <Cell col="1" rowspan="2" text="조사방법"/>
+                                <Cell col="2" rowspan="2" text="조사설명"/>
+                                <Cell col="3" rowspan="2" text="샘플수"/>
+                                <Cell col="4" rowspan="2" text="매출액"/>
+                                <Cell col="5" rowspan="2" colspan="2" text="매출액&#13;&#10;비율"/>
+                                <Cell col="7" rowspan="2" text="시작일"/>
+                                <Cell col="8" rowspan="2" text="종료일"/>
+                                <Cell col="9" rowspan="2" text="업무&#13;&#10;등록"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:SURVEY_ID"/>
+                                <Cell col="1" text="bind:SURVEY_CODE" displaytype="combocontrol" edittype="combo" combodataset="ds_survey" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                <Cell col="2" text="bind:DESCRIPTION" displaytype="editcontrol" edittype="text"/>
+                                <Cell col="3" text="bind:SAMPLE_CNT" displaytype="maskeditcontrol" edittype="text" maskeditformat="##,###"/>
+                                <Cell col="4" text="bind:SALE_AMOUNT" displaytype="maskeditcontrol" edittype="text" maskeditformat="##,##0"/>
+                                <Cell col="5" colspan="2">
+                                  <Cell text="bind:SALE_PERCENT" displaytype="mask" textAlign="right" maskeditformat="###.##"/>
+                                  <Cell col="1" text="%" maskeditformat="###.##"/>
+                                </Cell>
+                                <Cell col="7" text="bind:SURVEY_START_DATE" displaytype="calendarcontrol" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="nulltext" edittype="date"/>
+                                <Cell col="8" text="bind:SURVEY_END_DATE" displaytype="calendarcontrol" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="nulltext" edittype="date"/>
+                                <Cell col="9" text="expr:SURVEY_CODE== '44' ? '' : '보기'" textAlign="center" color="darkblue" font="normal 700 12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" background="#ffd199"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="4" text="합    계" textAlign="center"/>
+                                <Cell col="4" text="expr:dataset.getSum(&quot;SALE_AMOUNT&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="5" colspan="5" text="expr:dataset.getSum(&quot;SALE_PERCENT&quot;)" displaytype="mask" maskeditformat="###.##"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Button id="btn_add04" taborder="4" text="기안서" top="5" width="57" height="24" right="111" visible="true" onclick="fn_requestBtnClick" cssclass="btn_WF_main1"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage1" text="매출부서">
+                    <Layouts>
+                      <Layout>
+                        <Static id="Static02" taborder="0" text="매출부서" left="0" top="1" width="121" height="30" cssclass="sta_WF_title"/>
+                        <Grid id="grd_list_2" taborder="1" binddataset="ds_list_2" scrolltype="both" minwidth="" left="0" top="34" right="0" autoenter="select" selecttype="cell" bottom="0" summarytype="default" autofittype="col" oncellposchanged="Div06_Tab00_Tabpage1_grd_list_2_oncellposchanged">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="206"/>
+                                <Column size="82"/>
+                                <Column size="125"/>
+                                <Column size="271"/>
+                                <Column size="120"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="33" band="head"/>
+                                <Row size="24"/>
+                                <Row size="40" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell/>
+                                <Cell col="1" text="매출부서명"/>
+                                <Cell col="2" text="구분" edittype="none"/>
+                                <Cell col="3" text="적용일" edittype="none"/>
+                                <Cell col="4" text="조정사유"/>
+                                <Cell col="5" text="계약금(조정포함)"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell displaytype="checkboxcontrol" text="bind:CHK"/>
+                                <Cell col="1" text="bind:DEPT_ID" edittype="expr:CHK == '0' ? 'none' : 'combo'" combodataset="ds_dept" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike" displaytype="expr:CHK == '0' ? 'combotext' : 'combocontrol'" suppress="0"/>
+                                <Cell col="2" text="bind:GBN" displaytype="combotext" combodataset="ds_survey_gbn" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                <Cell col="3" text="bind:BASE_DATE" displaytype="date" calendardateformat="yyyy-MM-dd"/>
+                                <Cell col="4" text="bind:REMARK" displaytype="expr:CHK == '0' || GBN=='0010' ? 'combotext' : 'combocontrol'" edittype="expr:CHK == '0' || GBN=='0010' ? 'none' : 'combo'" combodataset="ds_changeReason" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                                <Cell col="5" displaytype="expr:CHK == '0' ? 'number' : 'maskeditcontrol'" edittype="expr:CHK == '0' ? 'none' : 'mask'" text="bind:SALE_AMOUNT" maskeditformat="##,###"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="5" text="합    계" font="normal 700 16px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                                <Cell col="5" displaytype="number" text="expr:dataset.getSum(&quot;SALE_AMOUNT&quot;)" font="normal 700 16px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Button id="btn_add01" taborder="2" text="조정" top="5" width="45" height="24" right="141" visible="true" onclick="fn_addDept_2" cssclass="btn_WF_main1"/>
+                        <Button id="btn_add03" taborder="3" text="부서추가" top="5" width="75" height="24" right="56" visible="true" onclick="fn_addDept_3" cssclass="btn_WF_main1"/>
+                        <Button id="btn_add04" taborder="4" text="삭제" top="5" width="45" height="24" right="1" visible="true" onclick="fn_delDept" cssclass="btn_WF_main1"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage3" text="참여자">
+                    <Layouts>
+                      <Layout>
+                        <Static id="Static24" taborder="0" text="프로젝트참여자" left="3" top="0" width="121" height="30" cssclass="sta_WF_title"/>
+                        <Static id="Static02" taborder="1" text="고객참여자" left="493" top="0" width="121" height="30" cssclass="sta_WF_title"/>
+                        <Button id="btn_add" taborder="2" text="추가" top="5" width="45" height="24" right="55" visible="true" onclick="fn_addBtnClick_2" cssclass="btn_WF_main1"/>
+                        <Button id="btn_search00" taborder="3" text="삭제" top="5" width="45" height="24" right="1" visible="true" onclick="fn_delBtnClick_2" cssclass="btn_WF_main1"/>
+                        <Button id="btn_add00" taborder="4" text="추가" top="5" width="45" height="24" right="557" visible="true" onclick="fn_addBtnClick_1" cssclass="btn_WF_main1"/>
+                        <Button id="btn_search01" taborder="5" text="삭제" top="5" width="45" height="24" right="503" visible="true" onclick="fn_delBtnClick_1" cssclass="btn_WF_main1"/>
+                        <Grid id="grd_list03" taborder="6" binddataset="ds_list_3" scrolltype="both" minwidth="" left="0" right="503" top="34" bottom="0" autoenter="select" selecttype="cell" autofittype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="65"/>
+                                <Column size="65"/>
+                                <Column size="80"/>
+                                <Column size="118"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="담당"/>
+                                <Cell col="1" text="역할"/>
+                                <Cell col="2" text="성명"/>
+                                <Cell col="3" text="등록일"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:CHARGE_CODE" displaytype="combotext" edittype="none" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_charge" combotype="filterlike"/>
+                                <Cell col="1" text="bind:POSITION_CODE" displaytype="combotext" combodataset="ds_position" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                <Cell col="2" text="bind:USER_ID" displaytype="expr:POSITION_CODE == '10010' ? 'combotext' : 'combocontrol'" edittype="expr:POSITION_CODE == '10010' ? 'none' : 'combo'" combodataset="ds_user" combocodecol="USER_ID" combodatacol="USER_NAME" combotype="filterlike"/>
+                                <Cell col="3" text="bind:REG_DATE" displaytype="date" calendardisplaynulltype="nulltext"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Grid id="grd_list02" taborder="7" binddataset="ds_list_4" scrolltype="both" minwidth="" left="493" right="0" top="34" bottom="0" autoenter="select" selecttype="cell" autofittype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="85"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="111"/>
+                                <Column size="132"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="성명"/>
+                                <Cell col="1" text="직급"/>
+                                <Cell col="2" text="역할"/>
+                                <Cell col="3" text="연락처"/>
+                                <Cell col="4" text="메일"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:CLIENT_USER_CODE" combodataset="ds_client_user" combocodecol="CLIENT_USER_CD" combodatacol="USER_NAME" displaytype="combocontrol" edittype="combo" combotype="filterlike"/>
+                                <Cell col="1" text="bind:GRADE_CD" combodataset="ds_client_grade" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" combotype="filterlike"/>
+                                <Cell col="2" text="bind:POSITION_CODE" displaytype="combocontrol" edittype="combo" combodataset="ds_client_position" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                                <Cell col="3" text="bind:PHONE_NUMBER"/>
+                                <Cell col="4" text="bind:EMAIL"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Button id="btn_add01" taborder="8" text="신규" top="5" width="45" height="24" right="109" visible="false" onclick="fn_addBtnClick_2" cssclass="btn_WF_main1"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+              <Button id="btn_add03" taborder="53" text="세금계산서" top="3" height="24" visible="true" onclick="fn_TaxBtnClick" cssclass="btn_WF_main1" left="697" right="btn_attach:5"/>
+              <Static id="Static29" taborder="54" text="관리구분" left="237" top="273" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static15" taborder="55" text="자사수익 (수익율)" left="573" top="311" width="156" cssclass="sta_WF_detailLabel" height="33"/>
+              <MaskEdit id="RealRevenu" taborder="56" left="733" top="315" width="145" height="25" format="##,##0" readonly="true"/>
+              <Static id="Static21" taborder="57" text="원가 (원가율)" left="237" top="311" width="100" cssclass="sta_WF_detailLabel" height="33"/>
+              <MaskEdit id="saleAmount" taborder="58" left="104" top="315" width="128" height="25" format="##,###" readonly="true"/>
+              <Static id="sta_13" taborder="59" left="473" top="31" height="29" cssclass="sta_WF_detailLine" width="509"/>
+              <Static id="Static00" taborder="60" text="프로젝트 상태" left="473" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Button id="btn_delete" taborder="61" text="저장" top="3" height="24" visible="true" onclick="fn_save" cssclass="btn_WF_main1" left="647" right="btn_add03:5"/>
+              <Radio id="Radio01" taborder="68" left="106" top="185" width="260" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_location" direction="vertical" onitemchanged="Div06_Radio01_onitemchanged"/>
+              <Static id="Static17" taborder="69" text="(                    %)" left="370" top="181" width="97" height="25"/>
+              <Static id="Static35" taborder="71" text="보고서" left="728" top="179" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Radio id="Radio02" taborder="72" left="580" top="183" width="134" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_contractYn" direction="vertical"/>
+              <Radio id="Radio03" taborder="73" left="836" top="183" width="134" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_result" direction="vertical"/>
+              <Static id="Static16" taborder="74" text="고객사 부서" left="237" top="245" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static36" taborder="75" text="사업자번호" left="473" top="245" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Radio id="Radio04" taborder="77" left="580" top="250" width="134" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_contractYn" direction="vertical" readonly="true" enable="false"/>
+              <Static id="Static38" taborder="78" left="734" top="245" width="243" height="29" text="사업자등록번호가 있어야 &#13;&#10;세금계산서 발행이 가능합니다." font="normal 8pt/normal &quot;Arial&quot;" color="#fd011a"/>
+              <Static id="Static39" taborder="81" text="관리등급" left="728" top="273" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <MaskEdit id="saleRealcostRate" taborder="82" left="477" top="315" width="75" height="25" format="##,##0.##" readonly="true"/>
+              <MaskEdit id="RealRate" taborder="83" left="887" top="315" width="75" height="25" format="##,##0.##" readonly="true"/>
+              <MaskEdit id="MaskEdit00" taborder="84" left="377" top="184" width="72" height="20" displaynulltext="국내 비중" visible="true" readonly="true"/>
+              <Edit id="edt_pjt_status" taborder="85" left="577" top="35" width="147" height="21" readonly="true"/>
+              <Button id="btn_industry_I" taborder="86" left="955" top="155" width="21" height="21" cssclass="btn_WF_search" onclick="btn_industry_I_onclick"/>
+              <MaskEdit id="saleRealcost" taborder="89" left="341" top="315" width="127" height="25" visible="true" readonly="true" format="##,##0"/>
+              <Edit id="edt_pjtIndustry_I" taborder="90" left="577" top="155" width="378" height="21" readonly="true" onkeyup="div_search_onkeyup"/>
+              <Edit id="edt_pjtIndustryCD_I" taborder="91" left="750" top="127" width="227" height="21" readonly="true" onkeyup="div_search_onkeyup" visible="false"/>
+              <Static id="Static22" taborder="92" text="디지털 조사" left="236" top="31" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Radio id="Radio05" taborder="93" left="342" top="36" width="138" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_digital_I" direction="vertical"/>
+              <Static id="Static24" taborder="94" text="완료일" left="728" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_pjt_status00" taborder="95" left="832" top="35" width="146" height="21" readonly="true"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static02" taborder="6" top="10" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="31" text="w&#13;&#10;10" right="994"/>
+        <Button id="btn_close" taborder="8" cssclass="btn_LF_close" onclick="btn_close_onclick" left="282" width="8" height="60" top="463"/>
+        <Div id="div_search" taborder="9" left="10" top="10" height="140" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrolltype="none" formscrollbartype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static03" taborder="0" text="프로젝트번호" left="0" top="34" width="103" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static01" taborder="8" text="프로젝트명" left="281" top="34" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_PJTNM" taborder="1" left="123" top="34" width="150" height="21" onkeyup="div_search_onkeyup"/>
+              <Combo id="cmb_STATUS_S" taborder="3" text=" " left="413" top="8" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike"/>
+              <Static id="Static00" taborder="9" text="진행상태" left="281" top="8" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static02" taborder="10" text="매출부서" left="0" top="8" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static06" taborder="11" text="참여자" left="0" top="86" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static08" taborder="12" text="고객사/부서" left="0" top="112" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Button id="btn_addSearch" taborder="13" text="▼" top="5" width="45" height="24" visible="true" onclick="fn_addSearchClick" cssclass="btn_WF_main1" left="1032"/>
+              <Static id="Static09" taborder="14" text="AM 부서" left="281" top="86" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static10" taborder="15" text="프로젝트 산업군" left="281" top="60" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static11" taborder="16" text="프로젝트 기간" left="571" top="8" width="107" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Div id="div_calFromTo" taborder="7" text="Div00" left="703" top="8" width="288" height="26" url="Comm::Comm_CalFromTo.xfdl"/>
+              <Edit id="edt_PJTNO" taborder="2" left="413" top="34" width="150" height="21" onkeyup="div_search_onkeyup"/>
+              <Combo id="cmb_INUSER_S" taborder="5" text=" " left="123" top="86" width="150" height="21" value="" index="-1" type="filterlike" codecolumn="USER_ID" datacolumn="USER_NAME"/>
+              <Combo id="cmb_DEPT_S" taborder="4" text=" " left="123" top="8" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike"/>
+              <Combo id="cmb_AM_DEPT_S" taborder="6" text=" " left="413" top="86" width="150" height="21" value="" index="-1" type="filterlike" innerdataset="ds_dept_search" codecolumn="CODE" datacolumn="CODE_NAME"/>
+              <Static id="Static07" taborder="17" text="계산서" left="571" top="33" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_VAT_S" taborder="18" text="" left="703" top="34" width="141" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+              <Static id="Static12" taborder="19" text="디지털조사" left="852" top="33" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_digital_S" taborder="20" text="" left="984" top="34" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+              <Static id="Static13" taborder="21" text="구분" left="0" top="60" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_pjtDiv_S" taborder="22" text=" " left="123" top="60" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike"/>
+              <Static id="Static14" taborder="23" text="지역" left="571" top="60" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_location_S" taborder="24" text="" left="703" top="60" width="141" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+              <Static id="Static15" taborder="25" text="계약서" left="852" top="60" width="120" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_contract" taborder="26" text="" left="984" top="60" width="150" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+              <Static id="Static16" taborder="27" text="AM" left="571" top="86" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_AM_S" taborder="28" text=" " left="703" top="86" width="141" height="21" codecolumn="USER_ID" datacolumn="USER_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+              <Static id="Static04" taborder="29" text="고객사 업종" left="281" top="112" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static05" taborder="30" text="계약금 규모" left="571" top="112" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static17" taborder="31" text="조사방법" left="852" top="86" width="100" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static18" taborder="32" text="상위프로젝트 단위" left="1003" top="112" width="132" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <CheckBox id="CheckBox00" taborder="33" left="1013" top="112" width="16" height="20" onchanged="div_search_CheckBox00_onchanged"/>
+              <Button id="btn_clientIndustry" taborder="34" left="543" top="112" width="21" height="21" cssclass="btn_WF_search" onclick="edt_clientIndustry_onclick"/>
+              <Button id="btn_industry" taborder="35" left="542" top="60" width="21" height="21" cssclass="btn_WF_search" onclick="btn_industry_onclick"/>
+              <Button id="btn_survey_S" taborder="36" left="1113" top="86" width="21" height="21" cssclass="btn_WF_search" onclick="btn_survey_S_onclick"/>
+              <Button id="btn_client" taborder="37" left="251" top="112" width="21" height="21" cssclass="btn_WF_search" onclick="btn_client_onclick"/>
+              <Button id="btn_search" taborder="38" text="조회" top="5" height="24" visible="true" onclick="fn_search" cssclass="btn_WF_main1" left="1081" width="45"/>
+              <Button id="btn_add" taborder="39" text="신규" top="5" height="24" visible="true" onclick="fn_add" cssclass="btn_WF_main1" left="1129" width="45"/>
+              <Button id="btn_delete" taborder="40" text="삭제" top="5" height="24" visible="true" onclick="fn_delete" cssclass="btn_WF_main1" left="1177" width="45"/>
+              <Button id="btn_excel" taborder="41" text="엑셀" top="5" height="24" visible="true" onclick="fn_excel" cssclass="btn_WF_main1" left="1225" width="45"/>
+              <Edit id="edt_clientIndustry" taborder="42" left="414" top="112" width="129" height="21" readonly="true"/>
+              <Edit id="edt_pjtIndustry" taborder="43" left="413" top="60" width="129" height="21" readonly="true"/>
+              <Edit id="edt_survey" taborder="44" left="984" top="86" width="129" height="21" readonly="true"/>
+              <Edit id="edt_client" taborder="45" left="122" top="112" width="129" height="21" readonly="true"/>
+              <Edit id="edt_clientIndustryCD" taborder="46" left="571" top="112" width="16" height="21" visible="false"/>
+              <Edit id="edt_pjtIndustryCD" taborder="47" left="568" top="60" width="19" height="21" readonly="false" visible="false"/>
+              <Edit id="edt_surveyCD" taborder="48" left="1139" top="86" width="20" height="21" readonly="false" visible="false" onchanged="div_search_edt_surveyCD_onchanged"/>
+              <Edit id="edt_clientCD" taborder="49" left="277" top="112" width="15" height="21" readonly="false" visible="false"/>
+              <Combo id="cmb_AMT_S" taborder="50" text=" " left="703" top="112" width="141" height="21" codecolumn="CODE" datacolumn="CODE_NAME" value="" index="-1" type="filterlike" innerdataset=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item0" compid="div_search.form.div_calFromTo.form.calFrom" propid="value" datasetid="ds_list_1" columnid="dtFrom"/>
+      <BindItem id="item1" compid="div_search.form.div_calFromTo.form.calTo" propid="value" datasetid="ds_list_1" columnid="dtTo"/>
+      <BindItem id="item3" compid="Div06.form.edt_pjt_nm" propid="value" datasetid="ds_list_1" columnid="PROJECT_NAME"/>
+      <BindItem id="item5" compid="Div06.form.cal_pjt_regdate" propid="value" datasetid="ds_list_1" columnid="SUJU_DATE"/>
+      <BindItem id="item8" compid="Div06.form.cmb_PM" propid="value" datasetid="ds_list_1" columnid="PROJECT_PM"/>
+      <BindItem id="item9" compid="Div06.form.cmb_user" propid="value" datasetid="ds_list_1" columnid="PROJECT_USER"/>
+      <BindItem id="item10" compid="Div06.form.cmb_AM" propid="value" datasetid="ds_list_1" columnid="AM_ID"/>
+      <BindItem id="item15" compid="Div06.form.cal_from" propid="value" datasetid="ds_list_1" columnid="PROJECT_STARTDATE"/>
+      <BindItem id="item16" compid="Div06.form.cal_to" propid="value" datasetid="ds_list_1" columnid="PROJECT_ENDDATE"/>
+      <BindItem id="item23" compid="Div06.form.edt_client" propid="value" datasetid="ds_list_1" columnid="CLIENT_NAME"/>
+      <BindItem id="item29" compid="Div06.form.edt_client_part_m" propid="value" datasetid="ds_list_1" columnid="MA_DEPT_NAME"/>
+      <BindItem id="item25" compid="Div06.form.edt_client_gbn" propid="value" datasetid="ds_list_1" columnid="GBN_NAME"/>
+      <BindItem id="item27" compid="Div06.form.edt_client_part" propid="value" datasetid="ds_list_1" columnid="DEPT_NAME"/>
+      <BindItem id="item24" compid="Div06.form.edt_client_ma" propid="value" datasetid="ds_list_1" columnid="MA_CD_NAME"/>
+      <BindItem id="item26" compid="Div06.form.edt_client_grade" propid="value" datasetid="ds_list_1" columnid="MA_GRADE_NAME"/>
+      <BindItem id="item28" compid="Div06.form.edt_upper_pjt_no" propid="value" datasetid="ds_list_1" columnid="UPPER_PROJECT_NO"/>
+      <BindItem id="item31" compid="Div06.form.TextArea_remark" propid="value" datasetid="ds_list_1" columnid="REMARK"/>
+      <BindItem id="item32" compid="Div06.form.cmb_AM_dept" propid="value" datasetid="ds_list_1" columnid="AM_DEPT"/>
+      <BindItem id="item33" compid="Div06.form.edt_pjt_no00" propid="value" datasetid="ds_list_1" columnid="PROJECT_NO"/>
+      <BindItem id="item4" compid="Div06.form.edt_upper_pjt_no01" propid="value" datasetid="ds_list_1" columnid="UPPER_PROJECT_NAME"/>
+      <BindItem id="item2" compid="div_search.form.edt_PJTNM" propid="value" datasetid="ds_cond" columnid="PROJECT_NO"/>
+      <BindItem id="item12" compid="div_search.form.edt_PJTNO" propid="value" datasetid="ds_cond" columnid="PROJECT_NAME"/>
+      <BindItem id="item17" compid="div_search.form.cmb_STATUS_S" propid="value" datasetid="ds_cond" columnid="STATUS"/>
+      <BindItem id="item20" compid="div_search.form.cmb_DEPT_S" propid="value" datasetid="ds_cond" columnid="PROJECT_DEPT_CODE"/>
+      <BindItem id="item43" compid="div_search.form.cmb_AM_S" propid="value" datasetid="ds_cond" columnid="AM_ID"/>
+      <BindItem id="item37" compid="div_search.form.cmb_contract" propid="value" datasetid="ds_cond" columnid="CONTRACT_EXIST_CODE"/>
+      <BindItem id="item38" compid="div_search.form.cmb_digital_S" propid="value" datasetid="ds_cond" columnid="DIGITAL_YN"/>
+      <BindItem id="item39" compid="div_search.form.cmb_pjtDiv_S" propid="value" datasetid="ds_cond" columnid="PROJECT_DIV"/>
+      <BindItem id="item40" compid="div_search.form.cmb_location_S" propid="value" datasetid="ds_cond" columnid="LOCATION"/>
+      <BindItem id="item41" compid="div_search.form.cmb_INUSER_S" propid="value" datasetid="ds_cond" columnid="PROJECT_USER"/>
+      <BindItem id="item42" compid="div_search.form.cmb_AM_DEPT_S" propid="value" datasetid="ds_cond" columnid="AM_DEPT"/>
+      <BindItem id="item44" compid="div_search.form.cmb_VAT_S" propid="value" datasetid="ds_cond" columnid="PROJECT_VAT_YN"/>
+      <BindItem id="item7" compid="Div06.form.edt_client" propid="tooltiptext" datasetid="ds_list_1" columnid="CLIENT_NAME"/>
+      <BindItem id="item14" compid="Div06.form.edt_client_part" propid="tooltiptext" datasetid="ds_list_1" columnid="DEPT_NAME"/>
+      <BindItem id="item18" compid="Div06.form.edt_pjt_status" propid="value" datasetid="ds_list_1" columnid="STATUS"/>
+      <BindItem id="item19" compid="Div06.form.Radio04" propid="value" datasetid="ds_list_1" columnid="PA_NUMBER_CHK"/>
+      <BindItem id="item11" compid="Div06.form.Radio00" propid="value" datasetid="ds_list_1" columnid="PROJECT_DIV"/>
+      <BindItem id="item22" compid="Div06.form.Radio01" propid="value" datasetid="ds_list_1" columnid="RESEARCH_LOCATION"/>
+      <BindItem id="item30" compid="Div06.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="LOCATION_RATE"/>
+      <BindItem id="item34" compid="Div06.form.Radio02" propid="value" datasetid="ds_list_1" columnid="CONTRACT_EXIST_CODE"/>
+      <BindItem id="item35" compid="Div06.form.Radio03" propid="value" datasetid="ds_list_1" columnid="RESULT_CODE"/>
+      <BindItem id="item36" compid="div_search.form.edt_surveyCD" propid="value" datasetid="ds_cond" columnid="SURVEY_DIV"/>
+      <BindItem id="item45" compid="div_search.form.edt_clientIndustryCD" propid="value" datasetid="ds_cond" columnid="CLIENT_INDUSTRY"/>
+      <BindItem id="item46" compid="div_search.form.edt_clientCD" propid="value" datasetid="ds_cond" columnid="CLIENT_PART_CODE"/>
+      <BindItem id="item47" compid="div_search.form.edt_pjtIndustryCD" propid="value" datasetid="ds_cond" columnid="PROJECT_INDUSTRY_CODE"/>
+      <BindItem id="item21" compid="Div06.form.saleRealcost" propid="value" datasetid="ds_list_1" columnid="PROJECT_REAL_REVENU"/>
+      <BindItem id="item6" compid="Div06.form.edt_pjtIndustryCD_I" propid="value" datasetid="ds_list_1" columnid="PROJECT_INDUSTRY_CODE"/>
+      <BindItem id="item48" compid="Div06.form.edt_pjtIndustry_I" propid="value" datasetid="ds_list_1" columnid="PROJECT_INDUSTRY_NAME"/>
+      <BindItem id="item49" compid="div_search.form.cmb_AMT_S" propid="value" datasetid="ds_cond" columnid="PROJECT_MONEY"/>
+      <BindItem id="item50" compid="Div06.form.Radio05" propid="value" datasetid="ds_list_1" columnid="DIGITALRESEARCH"/>
+      <BindItem id="item13" compid="Div06.form.edt_pjt_status00" propid="value" datasetid="ds_list_1" columnid="PROJECT_FINISH_DATE"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록
+*  @MenuPath    PJT_M > PM0001
+*  @FileName 	PM0001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.04.25
+*  @Desction    
+*  @TO_DO : 
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+include "Lib::sz_fsp_nx.xjs";
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fsp_init();
+	this.gfn_formOnLoad(this);	
+	this.objApp = nexacro.getApplication();
+	
+	// 레프트메뉴 줄이기
+	var objApp = nexacro.getApplication();
+	//objApp.av_HFrameSet.set_separatesize("14,*");
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	//조회
+	this.fn_search();
+	
+	// 검색 DIV 세팅
+	this.div_search.set_height(36);
+	this.Div06.set_top(50);
+	this.Div00.set_top(50);
+	
+	
+};
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 콤보박스 세팅
+this.fn_setCombo = function (obj)
+{
+	// 검색조건부분
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_status_S",this.div_search.form.cmb_STATUS_S,"GRP_CODE=='N1008'",true,true);				//진행상태
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_inveMethod_S",this.div_search.form.cmb_INVE_METHOD_S,"GRP_CODE==10890",true,true);		//조사방법
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_vatStatus",this.div_search.form.cmb_VAT_S,"GRP_CODE=='N1012'",true,true);				//계약서유무
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_contract_S",this.div_search.form.cmb_contract,"GRP_CODE==10260",true,true);				//계약서유무
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_pjtDiv_S",this.div_search.form.cmb_PJTDIV_S,"GRP_CODE==10030",true,true);				//프로젝트 산업군
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_digital",this.div_search.form.cmb_digital_S,"GRP_CODE=='N1011'",true,true);				//디지털 유무
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_pjtdiv_S",this.div_search.form.cmb_pjtDiv_S,"GRP_CODE=='N1013'",true,true);				//구분
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_amt_S",this.div_search.form.cmb_AMT_S,"GRP_CODE=='N1018'",true,true);					//계약금 규모
+	this.efn_SetComboData(obj,this.objApp.gds_user,"ds_inuser_search",this.div_search.form.cmb_INUSER_S,"",true,true);							//프로젝트 담당자
+	this.efn_SetComboData(obj,this.objApp.gds_user,"ds_am_search",this.div_search.form.cmb_AM_S,"",true,true);									//AM
+	this.efn_SetComboData(obj,this.objApp.gds_dept,"ds_amDept_search",this.div_search.form.cmb_AM_DEPT_S,"",true,true);							//AM부서
+	//this.ds_amDept_search.set_keystring("S:DEPT_CD");
+	this.ds_amDept_search.filter("DEPT_GBN=='R' || DEPT_GBN=='S' || CODE_NAME=='전체'");
+	this.efn_SetComboData(obj,this.objApp.gds_dept,"ds_dept_search",this.div_search.form.cmb_DEPT_S,"",true,true);								//매출부서
+	//this.ds_dept_search.set_keystring("S:-CODE_NAME");
+	this.ds_dept_search.filter("DEPT_GBN=='R' || DEPT_GBN=='S' || CODE_NAME=='전체'");
+	
+	//trace(this.objApp.gds_dept.saveXML());
+	//this.efn_SetComboData(obj,this.objApp.gds_client_dept,"ds_client_dept_search",this.div_search.form.cmb_CUST_DEPT_S,"",true,true);			//고객사/부서
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_location_S",this.div_search.form.cmb_location_S,"GRP_CODE==10530",true,true);			//조사지역
+	this.div_search.form.cmb_VAT_S.set_index(0);																								//계산서
+
+	//입력 부분
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_location",this.Div06.form.cmb_location,"GRP_CODE==10530",false,false);					//조사지역
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_purpose",this.Div06.form.cmb_purpose,"GRP_CODE==10020",false,false);					//조사목적
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_industry",this.Div06.form.cmb_industry_I,"GRP_CODE==10030",false,false);					//프로젝트산업군
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_result",this.Div06.form.cmb_result,"GRP_CODE==10060",false,false);						//최종결과물
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_skill",this.Div06.form.cmb_skill,"GRP_CODE==10050",false,false);						//분석기법
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_propose",this.Div06.form.cmb_propose,"GRP_CODE==10220",false,false);					//제안유무
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_contract",this.Div06.form.cmb_contract,"GRP_CODE==10260",false,false);					//계약서유무
+	//this.efn_SetComboData(obj,this.objApp.gds_code,"ds_contract_type",this.Div06.form.cmb_contract_type,"GRP_CODE==10190",false,false);		//계약타입
+	
+	// 데이터셋 세팅
+	this.efn_SetDatasetData(this.ds_charge,this.objApp.gds_code,'10240');															// 담당
+	this.efn_SetDatasetData(this.ds_survey,this.objApp.gds_code,'10010');															// 조사방법
+	this.ds_survey.filter("CODE_ETC=='TOP10'");
+	this.ds_survey.insertRow(9);
+	this.ds_survey.setColumn(9,"CODE","-998");
+	this.ds_survey.setColumn(9,"CODE_NAME","기타...");
+	this.efn_SetDatasetData(this.ds_survey_gbn,this.objApp.gds_code,'N1001');														// 조사구분
+	this.efn_SetDatasetData(this.ds_position,this.objApp.gds_code,'10230');															// 역할
+	this.efn_SetDatasetData(this.ds_client_position,this.objApp.gds_code,'10250');													// 고객사 역할
+	this.efn_SetDatasetData(this.ds_client_grade,this.objApp.gds_code,'10650');														// 고객사 직급
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);																		// 유저
+	this.efn_SetGrdUserData(this.ds_dept,this.objApp.gds_dept);																		// 매출부서	
+	this.efn_SetGrdUserData(this.ds_client_user,this.objApp.gds_client_user);														// 고객참여자
+	this.efn_SetDatasetData(this.ds_purpose,this.objApp.gds_code,'10020');															// 조사목적
+	this.efn_SetDatasetData(this.ds_skill,this.objApp.gds_code,'10050');															// 분석기법
+	this.efn_SetDatasetData(this.ds_pjtdiv,this.objApp.gds_code,'N1013');															// 구분
+	this.efn_SetDatasetData(this.ds_location,this.objApp.gds_code,'10530');															// 지역
+	this.efn_SetDatasetData(this.ds_contractYn,this.objApp.gds_code,'10260');														// 계약서
+	this.efn_SetDatasetData(this.ds_result,this.objApp.gds_code,'N1014');															// 보고서
+	this.efn_SetDatasetData(this.ds_changeReason,this.objApp.gds_code,'N1015');														// 조정사유
+	
+	//멀티 체크 세팅
+	//this.Div06.form.div_mCombo1.form.fn_setDataset(this.ds_purpose);
+	//this.Div06.form.div_mCombo2.form.fn_setDataset(this.ds_skill);
+	
+	//trace(this.ds_survey_gbn.saveXML());
+};
+
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	var fDate = this.gfn_addMonth(sDate,-3).substr(0,6) + "01";
+	
+	//세팅
+	this.div_search.form.div_calFromTo.form.fn_setFromDate(fDate);
+	this.div_search.form.div_calFromTo.form.fn_setToDate(sDate);
+	
+	//alert(fDate);
+};
+
+// 주 계산
+this.fn_calSet_Week1 = function (day)
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	
+	//alert(sDate);
+
+	//1주일 이전
+	var fDate = this.gfn_addDate(sDate,day)
+	
+	//세팅
+	this.div_search.form.div_calFromTo.form.fn_setFromDate(fDate);
+	this.div_search.form.div_calFromTo.form.fn_setToDate(sDate);
+};
+
+// 월, 년 계산
+this.fn_calSet_Month = function (div)
+{
+	//현재일자
+	var sDate = new Date();				//date형
+	var sDate2 = this.gfn_getDate();	//문자형
+	var sYear = sDate.getFullYear();
+	var sMonth = sDate.getMonth()+1;
+	var fDate = '';
+	
+	//1일
+	if(div == 'Month')
+	{
+		fDate = sDate2.substr(0,6) + '01';
+	}else if (div == 'Year') { 
+		if(sMonth <= 6)
+		{
+			fDate = (sYear-1).toString() + '0701';
+		}else
+		{
+			fDate = sYear.toString() + '0701';
+		}
+	}
+	//세팅
+	this.div_search.form.div_calFromTo.form.fn_setFromDate(fDate);
+	this.div_search.form.div_calFromTo.form.fn_setToDate(sDate2);
+};
+
+// 분기 계산
+this.fn_calSet_Q = function (fDay, tDay, Q)
+{
+	//현재일자	
+	var sDate = new Date();
+	var chk = (sDate.getMonth()+1).toString();
+	var sYear = sDate.getFullYear();
+
+	var fDate = '';
+	var tDate = '';
+	
+	//회계년도 기준으로 세팅 값 변경
+	if(chk <= 6 && (Q == 1 || Q == 2))
+	{
+		fDate = (sYear-1).toString() + fDay
+		tDate = (sYear-1).toString() + tDay
+	}else if(chk > 6 && (Q == 3 || Q == 4)){
+	
+		fDate = (sYear+1).toString() + fDay
+		tDate = (sYear+1).toString() + tDay
+	}
+	else
+	{
+		fDate = sYear.toString() + fDay
+		tDate = sYear.toString() + tDay
+	}
+	
+	//세팅
+	this.div_search.form.div_calFromTo.form.fn_setFromDate(fDate);
+	this.div_search.form.div_calFromTo.form.fn_setToDate(tDate);
+};
+
+this.Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_clearAll();
+};
+
+// 데이터 초기화
+this.fn_clearAll = function ()
+{
+	this.efn_componentReadonly(this.div_search.form.components);
+};
+
+// 하위 그리드 조회
+this.fn_grd_search = function ()
+{
+	var clientCd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_COMPANY_CODE");
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	this.objApp.gds_client_user.filter("CLIENT_CD=="+clientCd);
+	this.ds_client_user.copyData(this.objApp.gds_client_user, true);
+	this.objApp.gds_client_user.filter("");
+	
+	this.fsp_clear();
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S02", false);
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S03", false);
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S04", false);
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S05", false);
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S06", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_list_2=ds_list_2 ds_list_3=ds_list_3 ds_list_4=ds_list_4 ds_list_5=ds_list_5 ds_list_6=ds_list_6"	// outDs
+		,"PROJECT_NO='"+pjt_no+"'"	// args 
+		,"fn_afterSearch1"
+		,true
+	);	
+}
+
+//계약금 합계
+this.fn_afterSearch1 = function (ErrorCode, ErrorMsg) {
+	this.salPercent();
+	//this.ds_list_2.set_keystring("G:DEPT_ID");
+	var p_status = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"STATUS_CD");
+	if( p_status == "0030"|| p_status =="0090"){
+		this.Div06.form.btn_status_Y.set_enable(false);
+		this.Div06.form.btn_status_N.set_enable(false);
+		this.Div06.form.btn_delete.set_enable(false);
+	}else{
+		this.Div06.form.btn_status_Y.set_enable(true);
+		this.Div06.form.btn_status_N.set_enable(true);
+		this.Div06.form.btn_delete.set_enable(true);
+	}
+}
+
+
+this.salPercent = function ()
+{
+	var sale_amt = this.ds_list_2.getSum("SALE_AMOUNT");
+	this.Div06.form.saleAmount.set_value(sale_amt)													//계약금 합계
+	var estMoney = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_EST_MONEY") 		//예상원가
+	var RealRevenu = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_REAL_REVENU") 	//실원가
+	
+	for(i=0; i < this.ds_list_5.rowcount; i++)
+	{
+		var sale_survey_amt = this.ds_list_5.getColumn(i,"SALE_AMOUNT");					// 조사별 매출액
+		var salePercent = sale_survey_amt / sale_amt * 100									// 프로젝트 계약금
+		
+		this.ds_list_5.setColumn(i,"SALE_PERCENT",salePercent)								// 매출액 비율
+	}
+	
+	//수익율 계산
+	var eReturn = estMoney / sale_amt * 100
+	var ExReturn = (sale_amt-estMoney) / sale_amt * 100
+	var RealRevenuRate = RealRevenu / sale_amt * 100
+	var RealCostRate = (sale_amt-RealRevenu) / sale_amt * 100
+	
+	//this.Div06.form.ExRate.set_value(eReturn);												//수익율 예상
+	//this.Div06.form.ExRevenu.set_value(sale_amt-estMoney);									//예상 자사수익
+	//this.Div06.form.ExCostRate.set_value(ExReturn);											//예상 자사수익율
+	this.Div06.form.saleRealcostRate.set_value(RealRevenuRate);								//원가율
+	this.Div06.form.RealRevenu.set_value(sale_amt-RealRevenu);								//실 자사수익
+	this.Div06.form.RealRate.set_value(RealCostRate);										//실 자사수익율
+};
+
+// 유효성 체크
+this.valCheck = function () {
+	var sale_amt_dept = this.ds_list_2.getSum("SALE_AMOUNT");
+	var sale_amt_survey = this.ds_list_5.getSum("SALE_AMOUNT");
+	//trace(sale_amt_survey - sale_amt_dept)
+	if (sale_amt_survey - sale_amt_dept != 0)
+	{
+		this.alert("진행조사방법의 매출액과 프로젝트 계약금이 같아야 합니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NAME")))
+	{
+		this.alert("프로젝트 명을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"DIGITALRESEARCH")))
+	{
+		this.alert("디지털조사를 선택하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_STARTDATE")) || this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_ENDDATE")))
+	{
+		this.alert("기간을 입력하시기 바랍니다.");
+		return false;
+		
+		if (this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_STARTDATE") > this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_ENDDATE"))
+		{
+			this.alert("프로젝트 종료일은 시작일보다 빠를 수 없습니다.");
+			return false;
+		}
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SUJU_DATE")))
+	{
+		this.alert("수주일을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_DIV")))
+	{
+		this.alert("구분을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_INDUSTRY_CODE")))
+	{
+		this.alert("산업군을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"RESEARCH_LOCATION")))
+	{
+		this.alert("조사지역을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONTRACT_EXIST_CODE")))
+	{
+		this.alert("계약서를 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"RESULT_CODE")))
+	{
+		this.alert("보고서를 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_PM")))
+	{
+		this.alert("PM을 입력하시기 바랍니다.");
+		return false;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_COMPANY_CODE")))
+	{
+		this.alert("고객사를 입력하시기 바랍니다.");
+		return false;
+	}
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		공통입력버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.04.25
+* @수정자	   
+* @수정일자
+*/
+//***********************************  조회  *****************************************
+this.fn_search = function () {
+	var fdate = this.div_search.form.div_calFromTo.form.fn_getFromDate();
+	var tdate = this.div_search.form.div_calFromTo.form.fn_getToDate();
+	 
+	this.ds_cond.setColumn(0,"START_DATE",fdate);
+	this.ds_cond.setColumn(0,"END_DATE",tdate);
+	
+	//trace(this.ds_cond.saveXML());
+	
+	this.fsp_clear();
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S01", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,"ds_cond=ds_cond"	// inDs
+		,"ds_list_1=ds_list_1"	// outDs
+		,""	// args 
+		,""
+		,true
+	);	
+	
+	this.Div06.form.Tab00.set_tabindex(0)  //진행조사방법 탭
+};
+
+//***********************************  입력  *****************************************
+this.fn_add = function ()
+{
+	var toDay = this.gfn_getDate();
+	
+	// 데이터 초기화
+	this.Div06.form.saleAmount.set_value("");
+	this.ds_list_2.clearData();
+	this.ds_list_3.clearData();
+	this.ds_list_4.clearData();
+	this.ds_list_5.clearData();
+	
+	this.ds_list_1.addRow();
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_USER",this.objApp.gds_login_info.getColumn(0,"user_id"));
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"SUJU_DATE",toDay);
+	
+	this.ds_list_6.setColumn(0,"CODE","0010");
+	this.ds_list_6.setColumn(0,"CODE_NAME","등록");
+	
+	// 매출부서
+	this.ds_list_2.addRow();
+	this.fn_setDeptData();
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"GBN","0010");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHK","1");					// 삭제 가능 플래그
+	
+	//참여자
+	this.ds_list_3.addRow();
+	this.ds_list_3.addRow();
+	this.ds_list_3.setColumn(0,"CHARGE_CODE","10010");
+	this.ds_list_3.setColumn(0,"POSITION_CODE","10010");
+	this.ds_list_3.setColumn(0,"REG_DATE",toDay);
+	this.ds_list_3.setColumn(1,"USER_ID",this.objApp.gds_login_info.getColumn(0,"user_id"));
+	this.ds_list_3.setColumn(1,"CHARGE_CODE","10010");
+	this.ds_list_3.setColumn(1,"POSITION_CODE","10030");
+	this.ds_list_3.setColumn(1,"REG_DATE",toDay);
+	
+	this.Div06.form.Tab00.set_tabindex(1);
+	this.Div06.form.MaskEdit00.set_readonly(true);
+	
+	// 저장버튼
+	this.Div06.form.btn_delete.set_enable(true);
+}
+
+//***********************************  저장  *****************************************
+this.fn_save = function () {
+	if(this.valCheck() == false)
+	{
+		return;
+	}
+	
+	// 프로젝트 신규등록
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")
+	
+	var pjt_money = this.ds_list_2.getSum("SALE_AMOUNT");
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_MONEY",pjt_money)
+	
+	if (this.gfn_isNull(pjt_no))
+	{
+		// 프로젝트 신규등록
+		this.fn_newPjt();
+	} 
+	else 
+	{
+		// 프로젝트 수정
+		this.fn_updatePjt();
+	}	
+}
+
+/*******************************************************************************
+* 기      능   : 프로젝트 번호 생성
+********************************************************************************/
+this.fn_newPjt = function () {
+	// 파라미터
+	//var co_id = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CO_ID")
+	// 프로젝트 번호 생성	
+	this.fsp_clear();
+	this.fsp_addSearch("pjt_m:PMS_PM0001_INDEX_S01", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_pjtno=ds_pjtno_1"	// outDs
+		,"CO_ID=39"//+co_id	// args 
+		,"fn_afterPjtnosearch"
+		,true
+	);	
+}
+/*******************************************************************************
+* 기      능   : 프로젝트 신규저장
+* 비      고   : CALLBACK에 저장을 두는 이유는 프로젝트번호 생성 프로시저 후 바로 this.ds_pjtno.getColumn이 안되기 때문
+********************************************************************************/
+this.fn_afterPjtnosearch = function (ErrorCode, ErrorMsg) {	
+	// 파라미터
+	var pjt_no = this.ds_pjtno.getColumn(0,"PROJECT_NO");	
+	
+	// 실제 저장
+	this.fsp_clear();
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I01"	// insert
+		, ""	// update
+		, ""	// delete 
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I02"	// insert
+		, ""	// update
+		, ""	// delete 
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);	
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I03"	// insert
+		, ""	// update
+		, ""	// delete 
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I04"	// insert
+		, ""	// update
+		, ""	// delete 
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I05"	// insert
+		, ""	// update
+		, ""	// delete 
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	// 서버 호출 
+	this.fsp_callService(
+		""
+		,""
+		,"ds_list_1=ds_list_1:U ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U"	// inDs
+		,""	// outDs
+		,"PROJECT_NUM='"+pjt_no+"'"	// args 
+		,"fn_afterSave"
+		,false
+	); 
+	
+}
+
+/*******************************************************************************
+* 기      능   : 프로젝트 수정
+********************************************************************************/
+this.fn_updatePjt = function () {	
+	var pjtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	
+	this.fsp_clear();
+	this.fsp_addSave(
+		""	// insert
+		, "pjt_m:PMS_PM0001_U01"	// update
+		, ""	// delete
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I02"	// insert
+		, ""	// update
+		, ""	// delete
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);	
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I03"	// insert
+		, "pjt_m:PMS_PM0001_U03"	// update
+		, "pjt_m:PMS_PM0001_D03"	// delete
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I04"	// insert
+		, "pjt_m:PMS_PM0001_U04"	// update
+		, "pjt_m:PMS_PM0001_D04"	// delete
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	this.fsp_addSave(
+		"pjt_m:PMS_PM0001_I05"	// insert
+		, "pjt_m:PMS_PM0001_U05"	// update
+		, "pjt_m:PMS_PM0001_D05"	// delete
+		, ""	// flag column 명
+		, ""	// key sql id
+		, 0	// key 증가 값
+		, "" 
+		, 0 
+		, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+	);
+	// 서버 호출 
+	this.fsp_callService(
+		""
+		,""
+		,"ds_list_1=ds_list_1:U ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U"	// inDs
+		,""	// outDs
+		,"PROJECT_NUM='"+pjtNo+"'"	// args 
+		,"fn_afterSave"
+		,false
+	); 
+}
+
+/*******************************************************************************
+* 기      능   : save callback
+********************************************************************************/
+this.fn_afterSave = function (ErrorCode, ErrorMsg) {
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")))
+	{
+		this.fn_search();				// 프로젝트 조회
+	}
+	
+	this.alert("저장 되었습니다.");	
+	this.fn_grd_search();			// 프로젝트 상세 조회 (매출부서, 조사방법 등)
+}
+
+this.fn_setDeptData = function ()
+{
+	var pjtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	var deptId = this.ds_list_2.getColumn(0,"DEPT_ID");
+	var toDay = this.gfn_getDate();
+	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"BASE_DATE",toDay);			// 적용일
+	if (!this.gfn_isNull(pjtNo))
+	{
+		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"PROJECT_NO",pjtNo);	// 프로젝트 번호
+	}
+	
+	if (!this.gfn_isNull(deptId))
+	{
+		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"DEPT_ID",deptId);		// 부서 ID
+	} else
+	{
+		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"DEPT_ID",this.objApp.gds_login_info.getColumn(0,"dept_id"));
+	}
+};
+
+/**
+* @description 		매출부서 추가 버튼 호출
+* @작성자	   		심재문
+* @작성일자	   		2019.08.08
+* @수정자	   
+* @수정일자
+*/
+this.fn_addDept_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	// 매출부서
+	this.ds_list_2.addRow();
+	this.fn_setDeptData();
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"GBN","0020");				// 조정
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHK","1");					// 삭제 가능 플래그
+}
+
+this.fn_addDept_3 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	// 매출부서
+	this.ds_list_2.addRow();
+	this.fn_setDeptData();
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"GBN","0030");				// 부서추가
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHK","1");					// 삭제 가능 플래그
+}
+
+this.fn_delDept = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	// 매출부서
+	if (this.ds_list_2.getColumn(this.ds_list_2.rowposition,"GBN") == "0010")
+	{
+		this.alert("신규 데이터는 삭제 할 수 없습니다.");
+	} else if (this.ds_list_2.getColumn(this.ds_list_2.rowposition,"CHK") == "1")
+	{
+		this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+	} else
+	{
+		this.alert("저장 된 데이터는 삭제 할 수 없습니다.");
+	}
+}
+
+/**
+* @description 		TAB 안의 추가 버튼 호출
+* @작성자	   		심재문
+* @작성일자	   		2019.06.24
+* @수정자	   
+* @수정일자
+*/
+this.fn_addBtnClick_1 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var pjtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	
+	if (this.Div06.form.Tab00.tabindex == 0)
+	{
+		// 진행조사 방법
+		this.ds_list_5.addRow();
+		if (!this.gfn_isNull(pjtNo))
+		{
+			this.ds_list_5.setColumn(this.ds_list_5.rowposition,"PROJECT_NO",pjtNo);
+		}
+	}
+	else if (this.Div06.form.Tab00.tabindex == 2)
+	{
+		// 프로젝트 참여자
+		this.ds_list_3.addRow();
+		//this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PROJECT_NO",pjtNo);
+		this.ds_list_3.setColumn(this.ds_list_3.rowposition,"CHARGE_CODE","10010");
+		this.ds_list_3.setColumn(this.ds_list_3.rowposition,"POSITION_CODE","10030");
+	}
+};
+
+this.fn_addBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var pjtNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	var clientCd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_COMPANY_CODE");
+	var partCd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_PART_CODE");
+	
+	if (this.gfn_isNull(clientCd))
+	{
+		this.alert("고객사를 선택해 주세요");
+		return;
+	} else if (this.gfn_isNull(partCd))
+	{
+		this.alert("고객사 부서를 선택해 주세요");
+		return;
+	}
+	
+	// 고객 참여자
+	this.ds_list_4.addRow();
+	this.ds_list_4.setColumn(this.ds_list_4.rowposition,"CLIENT_COMPANY_CODE",clientCd);
+	this.ds_list_4.setColumn(this.ds_list_4.rowposition,"CLIENT_PART_CODE",partCd);
+	
+	if (!this.gfn_isNull(pjtNo))
+	{
+		this.ds_list_4.setColumn(this.ds_list_4.rowposition,"PROJECT_NO",pjtNo);
+	}
+};
+
+//***********************************  삭제  *****************************************
+// 프로젝트
+this.fn_delete = function ()
+{
+		if(this.confirm("프로젝트를 삭제 하시겠습니까?")){
+			
+			var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")
+			
+			this.ds_list_1.deleteRow(this.ds_list_1.rowposition);
+	
+			this.fsp_clear();
+			this.fsp_addSave(
+				""	// insert
+				, ""	// update
+				, "pjt_m:PMS_PM0001_D01"	// delete
+				, ""	// flag column 명
+				, ""	// key sql id
+				, 0	// key 증가 값
+				, "" 
+				, 0 
+				, "N"	// 실행타입  (프로시저 : N, 일반 CRUD : B)
+			);
+			// 서버 호출 
+			this.fsp_callService(
+				""
+				,""
+				,"ds_list_1=ds_list_1:U"	// inDs
+				,""	// outDs
+				,"PROJECT_NO='"+pjt_no+"'"	// args 
+				,"fn_afterSave"
+				,false
+			); 
+		}
+}
+/**
+* @description 		TAB 안의 삭제 버튼 호출
+* @작성자	   		심재문
+* @작성일자	   		2019.06.24
+* @수정자	   
+* @수정일자
+*/
+this.fn_delBtnClick_1 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.Div06.form.Tab00.tabindex == 0)
+	{
+		// 진행조사 방법
+		this.ds_list_5.deleteRow(this.ds_list_5.rowposition);		
+	}
+	else if (this.Div06.form.Tab00.tabindex == 1)
+	{
+		// 매출부서
+		this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+	}
+	else if (this.Div06.form.Tab00.tabindex == 2)
+	{
+		// 프로젝트 참여자
+		if (this.ds_list_3.getColumn(this.ds_list_3.rowposition,"CHARGE_CODE") == "10010")
+		{
+			if (this.confirm("삭제 하시겠습니까?"))
+			{
+				this.ds_list_3.deleteRow(this.ds_list_3.rowposition);
+			}			
+		} else
+		{
+			this.alert("역할이 연구원인 것만 삭제 할 수 있습니다.");
+		}
+	}
+};
+
+this.fn_delBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	// 고객 참여자
+	this.ds_list_4.deleteRow(this.ds_list_4.rowposition);
+};
+
+//***********************************  엑셀  *****************************************
+this.fn_excel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.ds_list_1.rowcount != 0)
+	{
+		//this.gfn_excelExport(this.grd_list, "sheet1", "Test");
+		//this.gfn_excelExport(this.grd_list, "*?*?*?*?*?*?*?","");
+		this._gfnGridExcelExport(this.Div00.form.grd_list)
+	}	
+};
+
+ /**
+* @description 		검색조건 추가 버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.04.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_addSearchClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var searchHigh = this.div_search.height;
+	//alert(this.div_search.top);
+	if(searchHigh == 36)
+	{
+		this.div_search.set_height(140);
+		
+		this.Div06.set_top(160);
+		this.Div00.set_top(160);
+		
+		this.div_search.form.btn_addSearch.set_text("▲");
+	}else
+	{
+		this.div_search.set_height(36);
+		this.Div06.set_top(50);
+		this.Div00.set_top(50);
+
+		this.div_search.form.btn_addSearch.set_text("▼");
+	}
+	
+};
+
+ /**
+* @description 		그리드 숨기기
+* @작성자	   		심재문
+* @작성일자	   		2019.04.26
+* @수정자	   
+* @수정일자
+*/
+this.btn_close_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var grdWidth = this.Div00.width;
+	if(grdWidth == 280)
+	{
+		this.Div00.set_width(0);
+		this.btn_close.set_left(0);
+		this.Div06.set_left(20);
+		this.btn_close.set_cssclass("btn_LF_open");
+	}else
+	{
+		this.Div00.set_width(280);
+		this.btn_close.set_left(282);
+		this.Div06.set_left(300);
+		this.btn_close.set_cssclass("btn_LF_close");
+	}
+};
+
+
+/**
+* @description 		달력세팅 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.06.16
+* @수정자	   
+* @수정일자
+*/
+// 주
+this.div_search_btn_week_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var fDate = this.gfn_getDayOfWeek(0);
+	var tDate = this.gfn_getDayOfWeek(6);
+	
+	this.div_search.form.div_calFromTo.form.fn_setFromDate(fDate);
+	this.div_search.form.div_calFromTo.form.fn_setToDate(tDate);	
+};
+
+// 월
+this.div_search_btn_month_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Month('Month');
+};
+
+// 년
+this.div_search_btn_year_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Month('Year');
+};
+
+// 1분기
+this.div_search_btn_Q1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Q('0701', '0930',1);
+};
+
+// 2분기
+this.div_search_btn_Q2_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Q('1001', '1231',2);
+};
+
+// 3분기
+this.div_search_btn_Q3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Q('0101', '0331',3);
+};
+
+//4 분기
+this.div_search_btn_Q4_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_calSet_Q('0401', '0630',4);
+};
+
+//AM combo event
+this.Div06_cmb_AM_canitemchange = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	var row = this.objApp.gds_user.findRow("USER_ID",e.postvalue)
+	var deptId = this.objApp.gds_user.getColumn(row,"DEPT_ID")
+	//trace(deptId);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"AM_DEPT",deptId)
+};
+
+/**
+* @description 		고객사 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.07.03
+* @수정자	   
+* @수정일자
+*/
+this.Div06_btn_client_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "client_popup";
+    var sUrl      = "PJT_M::PM0001_P01_2.xfdl";
+	var oArg      = {CLIENT_CD:this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_COMPANY_CODE"),
+					CODE:this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CLIENT_PART_CODE")};
+	var sCallBack = "fn_popupCallback";
+    var oOption   = {title : "고객사 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 고객사 팝업 callback
+this.fn_popupCallback = function(sPopId, sRtn)
+{
+	if (!this.gfn_isNull(sRtn))
+	{
+		var objRtn = JSON.parse(sRtn);
+		
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CLIENT_COMPANY_CODE",objRtn.CLIENT_CD);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CLIENT_NAME",objRtn.CLIENT_NAME);			
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CLIENT_PART_CODE",objRtn.CODE);            
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DEPT_NAME",objRtn.DEPT_NAME);            
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_DEPT_CD",this.gfn_isNullRtn(objRtn.MA_DEPT_CD));          
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_DEPT_NAME",this.gfn_isNullRtn(objRtn.MA_DEPT_NAME));          
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_CD",this.gfn_isNullRtn(objRtn.MA_CD));              
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_CD_NAME",this.gfn_isNullRtn(objRtn.MA_CD_NAME));              
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"GBN",this.gfn_isNullRtn(objRtn.GBN));             
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"GBN_NAME",this.gfn_isNullRtn(objRtn.GBN_NAME));             
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_GRADE_CD",this.gfn_isNullRtn(objRtn.MA_GRADE_CD));           
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"MA_GRADE_NAME",this.gfn_isNullRtn(objRtn.MA_GRADE_NAME));  
+		
+		this.objApp.gds_client_user.filter("CLIENT_CD=="+objRtn.CLIENT_CD);
+		this.ds_client_user.copyData(this.objApp.gds_client_user, true);
+		this.objApp.gds_client_user.filter("");
+	}
+}                                                                                                       
+
+/**
+* @description 		상위프로젝트 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.07.04
+* @수정자	   
+* @수정일자
+*/
+this.Div06_btn_upper_pjt_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "project_popup";
+    var sUrl      = "PJT_M::PM0001_P02.xfdl";
+	//var sUrl      = "www.naver.com";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_project";
+    //var oOption   = {popuptype:"modeless",title : "프로젝트 정보",width:"600",height:"500"};
+	var oOption   = {title : "프로젝트 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 프로젝트 팝업 callback
+this.fn_popupCallback_project = function(sPopId, sRtn)
+{
+	//trace(sRtn);
+	if (!this.gfn_isNull(sRtn))
+	{
+		var objRtn = JSON.parse(sRtn); 
+
+		if (objRtn.ALLCHK == "1")
+		{
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CO_ID",objRtn.CO_ID);								
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_PROJECT_NO",objRtn.PROJECT_NO);			        
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_PROJECT_NAME",objRtn.PROJECT_NAME);             
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_PM",objRtn.PROJECT_PM);                      
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_USER",objRtn.PROJECT_USER);                   
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"SUJU_DATE",objRtn.SUJU_DATE);                    
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_DEPT_CODE",objRtn.PROJECT_DEPT_CODE);                     
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"AM_ID",objRtn.AM_ID);                          
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"AM_DEPT",objRtn.AM_DEPT);                               
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DIGITALRESEARCH",objRtn.DIGITALRESEARCH);                         
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_PURPOSE_CODE",objRtn.PROJECT_PURPOSE_CODE);                    
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_INDUSTRY_CODE",objRtn.PROJECT_INDUSTRY_CODE); 						
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROPOSE_EXIST_CODE",objRtn.PROPOSE_EXIST_CODE);               
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONTRACT_EXIST_CODE",objRtn.CONTRACT_EXIST_CODE);              
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"IN_OUT",objRtn.IN_OUT);                      
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"RESULT_CODE",objRtn.RESULT_CODE);                   
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ANALYSIS_SKILL_CODE",objRtn.ANALYSIS_SKILL_CODE);                    
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_STARTDATE",objRtn.PROJECT_STARTDATE);                      
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_ENDDATE",objRtn.PROJECT_ENDDATE);        
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"REMARK",objRtn.REMARK);        		
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_YN","1");
+		}                                                                                                                   
+		else if (objRtn.ALLCHK == "")
+		{                                                                                                                   
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_PROJECT_NO",objRtn.PROJECT_NO);			        
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_PROJECT_NAME",objRtn.PROJECT_NAME);    
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"UPPER_YN","1");  
+		}    
+	}
+}               
+
+/**
+* @description 		첨부파일 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.07.09
+* @수정자	   
+* @수정일자
+*/
+this.fn_attachBtnClick_1 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")
+	var eval_Cd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"EVAL_GROUP_CD")
+	var coid = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CO_ID")
+	//trace(eval_Cd);
+	var sPopupId  = "attach_popup";
+    var sUrl      = "PJT_M::PM0001_P03_3.xfdl";
+	var oArg      = {pjtno : pjt_no, evalCd : eval_Cd, co_id:coid, survey_ds_id:"ds_list_5"};
+	var sCallBack = "fn_popupCallback_attach";
+    var oOption   = {title : "첨부파일"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	
+	
+	//this.parent.parent.parent.attach_popup.form.test();
+};
+
+/**
+* @description 		진행조사방법 그리드 셀 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.07.16
+* @수정자	   
+* @수정일자
+*/
+this.Div06_Tab00_Tabpage2_grd_list01_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")						// 프로젝트번호
+	var survey_seq = this.ds_list_5.getColumn(this.ds_list_5.rowposition,"SURVEY_SEQ")					// 조사 seq
+	var co_id = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CO_ID")							// CO_ID
+	//trace(pjt_no+'>>'+survey_seq)
+	if(e.col == 9 && this.ds_list_5.getColumn(this.ds_list_5.rowposition,"SURVEY_CODE") != 44)
+	{		
+		if(this.gfn_isNull(survey_seq))
+		{
+			alert("진행조사방법을 저장 후 진행 바랍니다.");
+			return;
+		}
+		
+		var sPopupId  = "survey_popup";
+		var sUrl      = "PJT_M::PM0001_P04.xfdl";
+		var oArg      = {co_id : co_id, 
+						 pjt_no : pjt_no,
+						 survey_seq : survey_seq};
+		var sCallBack = "fn_popupCallback_work";
+		var oOption   = {title : "조사업무"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}
+};
+
+// 조사업무 팝업 callback
+// this.fn_popupCallback_attach = function(sPopId, sRtn)
+// {
+// 	this.fn_grd_search();
+// }
+
+/**
+* @description 		세금계산서 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.07.24
+* @수정자	   
+* @수정일자
+*/
+this.fn_TaxBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")						// 프로젝트번호
+	var vatSeq = "";
+	
+	var sPopupId  = "tax_popup";
+	var sUrl      = "PJT_M::PM0001_P05.xfdl";
+	var oArg      = {pjt_no : pjt_no, vatSeq : vatSeq};
+	var sCallBack = "fn_popupCallback_tax";
+	var oOption   = {title : "세금계산서"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+/**
+* @description 		기안서 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.08.19
+* @수정자	   
+* @수정일자
+*/
+this.fn_requestBtnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.ds_list_5.rowcount == 0)
+	{
+		this.alert("조사 등록 후 기안서 작성하시기 바랍니다.");
+		return;
+	}
+	var pjt_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")						// 프로젝트번호
+	
+	
+	var sPopupId  = "request_popup";
+	var sUrl      = "PJT_M::PM0001_P06.xfdl";
+	var oArg      = {pjt_no : pjt_no};
+	var sCallBack = "fn_popupCallback_request";
+	var oOption   = {title : "기안서"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+//프로젝트 그리드 이벤트
+this.Div00_grd_list_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{	
+	if(!this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO")))
+	{
+		this.fn_grd_search();
+		//trace("123");
+		this.fn_locaChk();
+	}
+};
+
+// 매출부서 계약금 자동 세팅
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	//trace(e.col)
+	if (e.col == 7)
+	{
+		this.Div06.form.saleAmount.set_value(this.ds_list_2.getSum("SALE_AMOUNT"));
+	}
+};
+
+// 프로젝트 비용 자동 세팅
+this.ds_list_5_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	this.salPercent();
+
+	if (e.col == 3)
+	{
+		if (this.ds_list_5.getColumn(this.ds_list_5.rowposition,"SURVEY_CODE") == -998)
+		{
+			var sPopupId  = "search_popup";
+			var sUrl      = "Comm::Comm_CodePopup_3.xfdl";
+			var oArg      = {head_1 : "온라인",
+							 head_2 : "오프라인",
+							 head_3 : "기타",
+							 filter_1 : "GRP_CODE=='10010' && CODE_DIV=='0001' && IS_USE=='0001'",
+							 filter_2 : "GRP_CODE=='10010' && CODE_DIV=='0002' && IS_USE=='0001'",
+							 filter_3 : "GRP_CODE=='10010' && CODE_DIV=='0003' && IS_USE=='0001'",
+							 mode : "save"};
+			var sCallBack = "fn_popupCallback_save";
+			var oOption   = {title : "조사방법"};
+			this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+		}
+	}
+};
+
+// 조사방법 저장 팝업 callback
+this.fn_popupCallback_save = function(sPopId, sRtn)
+{
+	var objRtn = sRtn.split(":");
+
+ 	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"SURVEY_CODE",objRtn[0]);
+}
+
+// 고객 참여자 자동 세팅
+this.ds_list_4_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	//trace(e.col);
+	if (e.col == 5)
+	{
+		var userCd = this.ds_list_4.getColumn(this.ds_list_4.rowposition,"CLIENT_USER_CODE");
+		var row = this.objApp.gds_client_user.findRow("CLIENT_USER_CD",userCd)
+		var duty = this.objApp.gds_client_user.getColumn(row,"DUTY")
+		var tellNum = this.objApp.gds_client_user.getColumn(row,"TELL_NUM")
+		var eMail = this.objApp.gds_client_user.getColumn(row,"EMAIL")
+		//trace(row+":::"+duty+":::"+tellNum+":::"+eMail);
+		this.ds_list_4.setColumn(this.ds_list_4.rowposition,"GRADE_CD",duty)
+		this.ds_list_4.setColumn(this.ds_list_4.rowposition,"PHONE_NUMBER",tellNum)
+		this.ds_list_4.setColumn(this.ds_list_4.rowposition,"EMAIL",eMail)
+	}
+};
+
+this.Div00_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+// 	trace("");
+// 	// 작성중인 프로젝트 데이터 체크
+// 	if(this.ds_list_1.rowcount > 0)
+// 	{
+// 		if(e.oldrow != -1 && this.gfn_isNull(this.ds_list_1.getColumn(e.oldrow,"PROJECT_NO")))
+// 		{
+// 			if(this.confirm("작성중인 프로젝트를 삭제 하시겠습니까?"))
+// 			{
+// 				this.ds_list_1.deleteRow(e.oldrow);
+// 			}else
+// 			{
+// 				this.ds_list_1.set_rowposition(e.oldrow)
+// 				return;
+// 			}
+// 		}		
+// 	}
+};
+
+/**
+* @description 		조회 팝업
+* @작성자	   		심재문
+* @작성일자	   		2019.10.27
+* @수정자	   
+* @수정일자
+*/
+// 조사방법 조회
+this.btn_survey_S_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "search_popup";
+	var sUrl      = "Comm::Comm_CodePopup_3.xfdl";
+	var oArg      = {head_1 : "온라인",
+					 head_2 : "오프라인",
+					 head_3 : "기타",
+					 filter_1 : "GRP_CODE=='10010' && CODE_DIV=='0001' && IS_USE=='0001'",
+					 filter_2 : "GRP_CODE=='10010' && CODE_DIV=='0002' && IS_USE=='0001'",
+					 filter_3 : "GRP_CODE=='10010' && CODE_DIV=='0003' && IS_USE=='0001'",
+					 mode : "search"};
+	var sCallBack = "fn_popupCallback_search";
+	var oOption   = {title : "조사방법"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 조사방법 조회 팝업 callback
+this.fn_popupCallback_search = function(sPopId, sRtn)
+{
+	var objRtn = sRtn.split(":");
+
+ 	this.div_search.form.edt_survey.set_value(objRtn[1]);
+ 	this.ds_cond.setColumn(this.ds_cond.rowposition,"SURVEY_DIV",objRtn[0]);
+}
+
+// 고객사 업종 조회
+this.edt_clientIndustry_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "search_popup";
+	var sUrl      = "Comm::Comm_CodePopup.xfdl";
+	var oArg      = {grpCode : "10040"};
+	var sCallBack = "fn_popupCallback_clientIndustry";
+	var oOption   = {title : "고객사 업종"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 고객사 업종 조회 팝업 callback
+this.fn_popupCallback_clientIndustry = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.div_search.form.edt_clientIndustry.set_value(objRtn.CODE_NAME);
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"CLIENT_INDUSTRY",objRtn.CODE);
+}
+
+// 고객사 부서 조회 팝업
+this.btn_client_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "client_popup";
+    var sUrl      = "PJT_M::PM0001_P01_2.xfdl";
+	var oArg      = {MODE : "Search"};
+	var sCallBack = "fn_popupCallback_client";
+    var oOption   = {title : "고객사 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 고객사 업종 조회 팝업 callback
+this.fn_popupCallback_client = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.div_search.form.edt_client.set_value(objRtn.CODE_NAME);
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"CLIENT_PART_CODE",objRtn.CODE);
+}
+
+// 프로젝트 산업군 조회 팝업
+this.btn_industry_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "industry_popup";
+    var sUrl      = "Comm::Comm_CodePopup_3.xfdl";
+	var oArg      = {head_1 : "제품",
+					 head_2 : "서비스",
+					 head_3 : "기타",
+					 filter_1 : "GRP_CODE=='10030' && CODE_ETC=='D001' && IS_USE=='0001'",
+					 filter_2 : "GRP_CODE=='10030' && CODE_ETC=='D002' && IS_USE=='0001'",
+					 filter_3 : "GRP_CODE=='10030' && CODE_ETC=='D003' && IS_USE=='0001'",
+					 mode : "search"};
+	var sCallBack = "fn_popupCallback_industry";
+    var oOption   = {title : "프로젝트 산업군"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 프로젝트 산업군 조회 팝업 callback
+this.fn_popupCallback_industry = function(sPopId, sRtn)
+{
+	var objRtn = sRtn.split(":");
+
+ 	this.div_search.form.edt_pjtIndustry.set_value(objRtn[1]);
+ 	this.ds_cond.setColumn(this.ds_cond.rowposition,"PROJECT_INDUSTRY_CODE",objRtn[0]);
+}
+
+// 프로젝트 산업군 입력 팝업
+this.btn_industry_I_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "industry_popup";
+    var sUrl      = "Comm::Comm_CodePopup_3.xfdl";
+	var oArg      = {head_1 : "제품",
+					 head_2 : "서비스",
+					 head_3 : "기타",
+					 filter_1 : "GRP_CODE=='10030' && CODE_ETC=='D001' && IS_USE=='0001'",
+					 filter_2 : "GRP_CODE=='10030' && CODE_ETC=='D002' && IS_USE=='0001'",
+					 filter_3 : "GRP_CODE=='10030' && CODE_ETC=='D003' && IS_USE=='0001'",
+					 mode : "save"};
+	var sCallBack = "fn_popupCallback_industry2";
+    var oOption   = {title : "프로젝트 산업군"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 프로젝트 산업군 조회 팝업 callback
+this.fn_popupCallback_industry2 = function(sPopId, sRtn)
+{
+	if (!this.gfn_isNull(sRtn))
+	{
+		var objRtn = sRtn.split(":");
+		
+		this.Div06.form.edt_pjtIndustry_I.set_value(objRtn[1]);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PROJECT_INDUSTRY_CODE",objRtn[0]);
+	}
+}
+
+// 국내 비중 처리
+this.Div06_Radio01_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_locaChk();
+};
+
+// 국내 비중 처리
+this.fn_locaChk = function ()
+{
+	var locaVal = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"RESEARCH_LOCATION");
+	//trace(locaVal);
+	if (locaVal == "10010" || locaVal == "10020")
+	{
+		this.Div06.form.MaskEdit00.set_value("");
+		this.Div06.form.MaskEdit00.set_readonly(true);
+	} else
+	{
+		this.Div06.form.MaskEdit00.set_readonly(false);
+	}
+};
+
+// 검색조건 값 변경시 조회
+this.div_search_cmb_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+
+this.div_search_onkeyup = function(obj:nexacro.Div,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+// 상위 프로젝트 조회
+this.fn_upperSearch = function ()
+{
+	this.fsp_clear();
+	this.fsp_addSearch("pjt_m:PMS_PM0001_S07", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_list_1=ds_list_1"	// outDs
+		,""	// args 
+		,""
+		,true
+	);	
+};
+
+this.div_search_CheckBox00_onchanged = function(obj:nexacro.CheckBox,e:nexacro.CheckBoxChangedEventInfo)
+{
+	if (this.div_search.form.CheckBox00.value == true)
+	{
+		this.fn_upperSearch();
+	}
+	else if (this.div_search.form.CheckBox00.value == false)
+	{
+		this.fn_search();
+	}
+};
+
+// 프로젝트 참여자 PM 자동입력
+this.Div06_cmb_PM_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.ds_list_3.setColumn(0,"USER_ID",e.postvalue)
+};
+
+this.Div06_btn_status_Y_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.confirm("완료처리 하시겠습니까?")){
+		//완료 로직 처리 후 
+		this.fn_StatusUpdate("0030");
+	}
+};
+
+this.Div06_btn_status_N_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.confirm("프로젝트를 취소하시겠습니까?")){
+		this.fn_StatusUpdate("0090");
+	}
+};
+
+this.fn_StatusUpdate = function(flag){
+	
+	var co_id = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CO_ID");
+	var project_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PROJECT_NO");
+	var set_dte = this.gfn_getDate();
+	var user_id = this.objApp.gds_login_info.getColumn(0,"user_id");
+	var login_ip = this.objApp.gds_login_info.getColumn(0,"LOGIN_IP");
+	
+	this.fsp_clear();
+	this.fsp_addSearch("pjt_m:PMS_PM0001_U06", false);
+	// 서버 호출 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_s_result=ds_result_1"	// outDs
+		,"CO_ID='"+co_id+"' PROJECT_NO='"+project_no+"' SET_DTE='"+set_dte+"' LOGIN_USER='"+user_id+"' LOGIN_IP='"+login_ip+"' FLAG='"+flag+"'"
+		,"fn_afterStatus"
+		,false
+	);
+}
+
+this.fn_afterStatus = function(){
+	var msg = this.ds_s_result.getColumn(0,"MSG");
+	var E_msg = this.ds_s_result.getColumn(0,"ERROR_MSG");
+	
+	if(msg == "OK"){
+		this.alert("완료 처리 되었습니다.");
+		this.fn_search();				// 프로젝트 조회
+		this.fn_grd_search();
+	}else if (msg == "CANCEL"){
+		this.alert("취소 처리 되었습니다.");
+		this.fn_search();				// 프로젝트 조회
+		this.fn_grd_search();
+	}else if (msg == "ERROR"){
+		this.alert(E_msg);
+	}
+}
+
+var bef_date = null;
+this.Div06_cal_pjt_regdate_onchanged = function(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo)
+{
+	bef_date = e.prevalue;//이전데이터로 바꿔주기위한 전역변수
+	trace(bef_date);
+	this.getCloseData("fn_afterCloseGet"); //콜백함수 등록 
+};
+
+
+this.fn_afterCloseGet = function(){
+	var c_month = this.ds_close_data.getColumn(0,"MONTH");
+	var n_month = this.Div06.form.cal_pjt_regdate.value.substring(0,6);
+	if(n_month <= c_month){
+		this.alert("마감된 월로 변경하실 수 없습니다.");
+		this.Div06.form.cal_pjt_regdate.set_value(bef_date);
+		bef_date = null;
+		return;
+	}
+}
+
+
+this.getCloseData = function(after_func){
+	
+	this.fsp_clear();
+	this.fsp_addSearch("management:PMS_GET_LAST_CLOSEMONTH", false);
+	// connect the server 
+	this.fsp_callService(
+		""
+		,""
+		,""	// inDs
+		,"ds_close_data=ds_close"	// outDs
+		,""	// args 
+		,after_func
+		,true
+	);	
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="CO_ID" size="11" type="INT"/>
+          <Column id="EVAL_GROUP_CD" type="STRING" size="256"/>
+          <Column id="PROJECT_NO" size="20" type="STRING"/>
+          <Column id="PROJECT_NAME" size="100" type="STRING"/>
+          <Column id="PROJECT_PM" size="11" type="INT"/>
+          <Column id="PROJECT_USER" type="INT" size="11"/>
+          <Column id="SUJU_DATE" size="23,3" type="STRING"/>
+          <Column id="PROJECT_DEPT_CODE" size="11" type="INT"/>
+          <Column id="AM_ID" size="11" type="INT"/>
+          <Column id="AM_DEPT" size="11" type="INT"/>
+          <Column id="DIGITALRESEARCH" size="30" type="STRING"/>
+          <Column id="UPPER_YN" size="1" type="STRING"/>
+          <Column id="UPPER_PROJECT_NO" size="20" type="STRING"/>
+          <Column id="UPPER_PROJECT_NAME" type="STRING" size="256"/>
+          <Column id="PROJECT_PURPOSE_CODE" size="20" type="STRING"/>
+          <Column id="KEYWORD" size="200" type="STRING"/>
+          <Column id="PROJECT_INDUSTRY_CODE" size="20" type="STRING"/>
+          <Column id="PROJECT_INDUSTRY_NAME" type="STRING" size="256"/>
+          <Column id="PROJECT_DIV" type="STRING" size="256"/>
+          <Column id="PROPOSE_EXIST_CODE" size="20" type="STRING"/>
+          <Column id="CONTRACT_EXIST_CODE" size="20" type="STRING"/>
+          <Column id="IN_OUT" size="20" type="STRING"/>
+          <Column id="RESEARCH_LOCATION" size="20" type="STRING"/>
+          <Column id="LOCATION_RATE" type="STRING" size="256"/>
+          <Column id="RESULT_CODE" size="20" type="STRING"/>
+          <Column id="ANALYSIS_SKILL_CODE" size="200" type="STRING"/>
+          <Column id="PROJECT_STARTDATE" size="23,3" type="STRING"/>
+          <Column id="PROJECT_ENDDATE" size="23,3" type="STRING"/>
+          <Column id="REMARK" size="200" type="STRING"/>
+          <Column id="SALE_AMOUNT" type="STRING" size="256"/>
+          <Column id="SALE_TOTAL_AMOUNT" type="STRING" size="256"/>
+          <Column id="CLIENT_COMPANY_CODE" size="20" type="STRING"/>
+          <Column id="CLIENT_NAME" type="STRING" size="256"/>
+          <Column id="CLIENT_PART_CODE" size="20" type="STRING"/>
+          <Column id="DEPT_NAME" type="STRING" size="256"/>
+          <Column id="PA_NUMBER_CHK" type="STRING" size="256"/>
+          <Column id="MA_DEPT_CD" type="STRING" size="256"/>
+          <Column id="MA_DEPT_NAME" type="STRING" size="256"/>
+          <Column id="MA_CD" type="STRING" size="256"/>
+          <Column id="MA_CD_NAME" type="STRING" size="256"/>
+          <Column id="GBN" type="STRING" size="256"/>
+          <Column id="GBN_NAME" type="STRING" size="256"/>
+          <Column id="MA_GRADE_CD" type="STRING" size="256"/>
+          <Column id="MA_GRADE_NAME" type="STRING" size="256"/>
+          <Column id="CONTACT_TYPE_CODE" size="20" type="STRING"/>
+          <Column id="PROJECT_MONEY" size="20,2" type="BIGDECIMAL"/>
+          <Column id="PROJECT_EST_MONEY" type="BIGDECIMAL" size="256"/>
+          <Column id="PROJECT_REAL_REVENU" type="STRING" size="256"/>
+          <Column id="PROJECT_LAST_MONEY" size="20,2" type="BIGDECIMAL"/>
+          <Column id="CHK_TEST_COMPLETE" type="STRING" size="256"/>
+          <Column id="CHK_TEST_DATE" type="STRING" size="256"/>
+          <Column id="PROJECT_FINISH_DATE" size="23,3" type="STRING"/>
+          <Column id="DROP_DATE" size="23,3" type="STRING"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+          <Column id="PROJECT_VAT_YN" type="STRING" size="256"/>
+          <Column id="DEL_YN" size="1" type="STRING"/>
+          <Column id="REG_DATE" size="23,3" type="STRING"/>
+          <Column id="REG_USER" size="50" type="STRING"/>
+          <Column id="REG_IP" size="50" type="STRING"/>
+          <Column id="UPDATE_DATE" size="23,3" type="STRING"/>
+          <Column id="UPDATE_USER" size="50" type="STRING"/>
+          <Column id="UPDATE_IP" size="50" type="STRING"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CO_ID" size="11" type="BIGDECIMAL"/>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="PROJECT_NO" size="20" type="STRING"/>
+          <Column id="DEPT_ID" size="11" type="BIGDECIMAL"/>
+          <Column id="SEQ" size="11" type="BIGDECIMAL"/>
+          <Column id="GBN" size="5" type="STRING"/>
+          <Column id="BASE_DATE" size="23" type="STRING"/>
+          <Column id="EST_MONEY" type="STRING" size="256"/>
+          <Column id="SALE_AMOUNT" size="20" type="STRING"/>
+          <Column id="SALE_TOTAL_AMOUNT" size="20" type="STRING"/>
+          <Column id="REMARK" size="500" type="STRING"/>
+          <Column id="DEL_YN" size="1" type="STRING"/>
+          <Column id="REG_DATE" size="23" type="STRING"/>
+          <Column id="REG_USER" size="50" type="STRING"/>
+          <Column id="REG_IP" size="50" type="STRING"/>
+          <Column id="UPDATE_DATE" size="23" type="STRING"/>
+          <Column id="UPDATE_USER" size="50" type="STRING"/>
+          <Column id="UPDATE_IP" size="50" type="STRING"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="CO_ID" size="11" type="BIGDECIMAL"/>
+          <Column id="EVAL_GROUP_CD" type="STRING" size="256"/>
+          <Column id="PROJECT_NO" size="20" type="STRING"/>
+          <Column id="USER_ID" size="11" type="BIGDECIMAL"/>
+          <Column id="USER_SEQ" size="20" type="STRING"/>
+          <Column id="SURVEY_SEQ" size="11" type="BIGDECIMAL"/>
+          <Column id="SURVEY_CODE" size="20" type="STRING"/>
+          <Column id="SURVEY_ID" size="20" type="STRING"/>
+          <Column id="CHARGE_CODE" size="20" type="STRING"/>
+          <Column id="POSITION_CODE" size="20" type="STRING"/>
+          <Column id="DEL_YN" size="1" type="STRING"/>
+          <Column id="REG_DATE" size="23" type="STRING"/>
+          <Column id="REG_USER" size="50" type="STRING"/>
+          <Column id="REG_IP" size="50" type="STRING"/>
+          <Column id="UPDATE_DATE" size="23" type="STRING"/>
+          <Column id="UPDATE_USER" size="50" type="STRING"/>
+          <Column id="UPDATE_IP" size="50" type="STRING"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_4" oncolumnchanged="ds_list_4_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CO_ID" size="11" type="INT"/>
+          <Column id="PROJECT_NO" size="20" type="STRING"/>
+          <Column id="USER_CLIENT_SEQ" type="STRING" size="256"/>
+          <Column id="CLIENT_COMPANY_CODE" size="20" type="STRING"/>
+          <Column id="CLIENT_PART_CODE" size="20" type="STRING"/>
+          <Column id="CLIENT_USER_CODE" size="20" type="STRING"/>
+          <Column id="USER_NAME" type="STRING" size="256"/>
+          <Column id="POSITION_CODE" size="20" type="STRING"/>
+          <Column id="GRADE_CD" type="STRING" size="256"/>
+          <Column id="GRADE_NM" type="STRING" size="256"/>
+          <Column id="POSITION_NM" type="STRING" size="256"/>
+          <Column id="PHONE_NUMBER" type="STRING" size="256"/>
+          <Column id="EMAIL" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_5" oncolumnchanged="ds_list_5_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CO_ID" size="11" type="INT"/>
+          <Column id="EVAL_GROUP_CD" type="STRING" size="256"/>
+          <Column id="PROJECT_NO" size="20" type="STRING"/>
+          <Column id="SURVEY_SEQ" size="11" type="INT"/>
+          <Column id="SURVEY_CODE" size="20" type="STRING"/>
+          <Column id="SURVEY_ID" size="20" type="STRING"/>
+          <Column id="DESCRIPTION" size="200" type="STRING"/>
+          <Column id="SAMPLE_CNT" size="11" type="INT"/>
+          <Column id="SALE_AMOUNT" size="20,2" type="BIGDECIMAL"/>
+          <Column id="SURVEY_START_DATE" type="STRING" size="256"/>
+          <Column id="SURVEY_END_DATE" type="STRING" size="256"/>
+          <Column id="SALE_PERCENT" type="STRING" size="256"/>
+          <Column id="SURVEY_STATUS" size="20" type="STRING"/>
+          <Column id="SURVEY_STATUS_CHANGE_DATE" size="23,3" type="STRING"/>
+          <Column id="REQUEST_S" type="STRING" size="256"/>
+          <Column id="REQUEST_E" type="STRING" size="256"/>
+          <Column id="SURVEY_S" type="STRING" size="256"/>
+          <Column id="SURVEY_E" type="STRING" size="256"/>
+          <Column id="DP_S" type="STRING" size="256"/>
+          <Column id="DP_E" type="STRING" size="256"/>
+          <Column id="QC_S" type="STRING" size="256"/>
+          <Column id="QC_E" type="STRING" size="256"/>
+          <Column id="MAKE_S" type="STRING" size="256"/>
+          <Column id="MAKE_E" type="STRING" size="256"/>
+          <Column id="PUNCH_S" type="STRING" size="256"/>
+          <Column id="PUNCH_E" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_charge"/>
+      <Dataset id="ds_survey"/>
+      <Dataset id="ds_position"/>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_dept"/>
+      <Dataset id="ds_pjtno">
+        <ColumnInfo>
+          <Column id="PROJECT_NO" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="PROJECT_NAME" size="255" type="STRING"/>
+          <Column id="PROJECT_NO" size="255" type="STRING"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+          <Column id="PROJECT_DEPT_CODE" size="255" type="STRING"/>
+          <Column id="PROJECT_PM" size="255" type="STRING"/>
+          <Column id="PROJECT_USER" size="255" type="STRING"/>
+          <Column id="CONTRACT_EXIST_CODE" size="255" type="STRING"/>
+          <Column id="PROJECT_VAT_YN" type="STRING" size="256"/>
+          <Column id="PROJECT_DIV" type="STRING" size="256"/>
+          <Column id="DIGITAL_YN" type="STRING" size="256"/>
+          <Column id="PROJECT_INDUSTRY_CODE" size="255" type="STRING"/>
+          <Column id="LOCATION" type="STRING" size="256"/>
+          <Column id="CLIENT_PART_CODE" size="255" type="STRING"/>
+          <Column id="AM_DEPT" type="STRING" size="256"/>
+          <Column id="AM_ID" size="255" type="STRING"/>
+          <Column id="SURVEY_DIV" type="STRING" size="256"/>
+          <Column id="CLIENT_INDUSTRY" type="STRING" size="256"/>
+          <Column id="PROJECT_MONEY" type="STRING" size="256"/>
+          <Column id="START_DATE" size="255" type="STRING"/>
+          <Column id="END_DATE" size="255" type="STRING"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="PROJECT_NAME"/>
+            <Col id="PROJECT_NO"/>
+            <Col id="STATUS"/>
+            <Col id="PROJECT_DEPT_CODE"/>
+            <Col id="PROJECT_PM"/>
+            <Col id="PROJECT_USER"/>
+            <Col id="CONTRACT_EXIST_CODE"/>
+            <Col id="PROJECT_INDUSTRY_CODE"/>
+            <Col id="CLIENT_PART_CODE"/>
+            <Col id="AM_ID"/>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_client_position"/>
+      <Dataset id="ds_client_grade"/>
+      <Dataset id="ds_client_user"/>
+      <Dataset id="ds_survey_gbn"/>
+      <Dataset id="ds_purpose"/>
+      <Dataset id="ds_skill"/>
+      <Dataset id="ds_list_6">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_pjtdiv"/>
+      <Dataset id="ds_location"/>
+      <Dataset id="ds_contractYn"/>
+      <Dataset id="ds_result"/>
+      <Dataset id="ds_changeReason"/>
+      <Dataset id="ds_digital_I">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">해당</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="CODE_NAME">비해당</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_close_data"/>
+      <Dataset id="ds_s_result"/>
+    </Objects>
+  </Form>
+</FDL>

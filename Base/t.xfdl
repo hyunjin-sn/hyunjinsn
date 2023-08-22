@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="t" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="Static00" taborder="0" text="주문일시" left="33" top="26" width="307" height="54" cssclass="abc"/>
+        <Grid id="Grid00" taborder="1" left="172" top="117" width="508" height="253" binddataset="ds_list" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="MG"/>
+                <Cell col="1" text="SEQ"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:MG" displaytype="text" edittype="text"/>
+                <Cell col="1" text="bind:SEQ" displaytype="text" edittype="text"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="2" text="Button00" left="517" top="44" width="135" height="52" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="3" text="Button01" left="271" top="40" width="120" height="50" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MG" type="STRING" size="256"/>
+          <Column id="SEQ" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.addRow();
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var val = this.ds_list.getColumn(1,"MG_NO");
+	this.ds_list.setColumn(val,"SEQ","12")
+};
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	trace(this.ds_list.getColumn(e.row,"MG_NO"))
+};
+]]></Script>
+  </Form>
+</FDL>

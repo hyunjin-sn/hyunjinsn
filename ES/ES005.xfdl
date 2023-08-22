@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ES005" width="1300" height="600" titletext="New Form" onload="ES005_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="90" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" binddataset="ds_list_2" minwidth="" bottom="0" left="10" top="40" right="10" onheadclick="Div_menu_grd_list_onheadclick" onkeydown="Div_client_grd_list_onkeydown" oncellclick="Div_client_grd_list_oncellclick" background="" cellsizingtype="both" autofittype="col" autoenter="select" selecttype="cell" summarytype="top">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="52"/>
+                      <Column size="100"/>
+                      <Column size="100"/>
+                      <Column size="300"/>
+                      <Column size="300"/>
+                      <Column size="70"/>
+                      <Column size="79"/>
+                      <Column size="100"/>
+                      <Column size="100"/>
+                      <Column size="259"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="품목그룹"/>
+                      <Cell col="2" text="품목코드"/>
+                      <Cell col="3" text="품목명"/>
+                      <Cell col="4" text="규격"/>
+                      <Cell col="5" text="단위"/>
+                      <Cell col="6" text="수량"/>
+                      <Cell col="7" text="판가"/>
+                      <Cell col="8" text="원가"/>
+                      <Cell col="9" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:ITEM_GRP" textAlign="center" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_item_grp" displaytype="combotext"/>
+                      <Cell col="2" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="3" text="bind:ITEM_CD" textAlign="center" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##" maskedittype="string" displaytype="combocontrol" edittype="combo" combodatacol="ITEM_NM" combodataset="ds_item" combocodecol="ITEM_CD" background="#fafdc8" combotype="filterlike"/>
+                      <Cell col="4" textAlign="center" text="bind:SPEC" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM"/>
+                      <Cell col="5" textAlign="center" text="bind:BASIC_UNIT" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM"/>
+                      <Cell col="6" textAlign="center" calendardisplaynulltype="none" maskeditformat="##,###" maskedittype="number" text="bind:BASE_QTY" edittype="mask" background="#fafdc8"/>
+                      <Cell col="7" textAlign="right" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" text="bind:SELL_PRICE"/>
+                      <Cell col="8" textAlign="right" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" text="bind:PUR_PRICE"/>
+                      <Cell col="9" textAlign="center" calendardisplaynulltype="none" text="bind:REMARK" edittype="text" background="#fafdc8"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="7" textAlign="right" text="합       계           "/>
+                      <Cell col="7" text="expr:dataset.getSum(&quot;SELL_PRICE&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;PUR_PRICE&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
+                      <Cell col="9"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile00" taborder="2" top="14" text="행추가" cssclass="btn_WF_main1" height="21" onclick="Div06_00_btn_addfile_onclick" right="88" width="70"/>
+              <Button id="btn_addfile00_00" taborder="3" top="14" text="행삭제" cssclass="btn_WF_main1" height="21" onclick="Div06_00_btn_addfile00_onclick" right="11" width="70"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="1" text="Div00" left="10" top="4" height="91" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00" taborder="0" left="99" top="57" height="29" cssclass="sta_WF_detailLine" right="580"/>
+              <Static id="sta_21" taborder="1" left="99" top="29" height="29" cssclass="sta_WF_detailLine" right="580"/>
+              <Static id="Static23" taborder="2" text="관리번호" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Button id="btn_vocno" taborder="4" top="33" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_vocno_onclick" width="21" left="260"/>
+              <Edit id="edt_soNo" taborder="3" left="104" top="33" height="21" readonly="true" enable="true" displaynulltext="자동 저장 됩니다." width="156"/>
+              <Static id="Static23_00" taborder="5" text="서비스 상품명" left="0" top="57" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static05" taborder="6" text="서비스 상품 정보" left="0" top="-3" width="177" height="30" cssclass="sta_WF_title"/>
+              <Edit id="edt_soNo00_00_00_00_00_01" taborder="7" left="104" top="61" width="246" height="21"/>
+              <Static id="Static23_01" taborder="8" text="유효기간" left="354" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_00" taborder="9" text="확정여부" left="354" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Calendar id="cal_startDate" taborder="10" left="458" top="33" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static01" taborder="11" text="~" left="571" top="33" width="10" height="29"/>
+              <Calendar id="cal_endDate" taborder="12" left="583" top="33" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static23_01_00" taborder="13" text="비고" left="697" top="29" width="100" cssclass="sta_WF_detailLabel" height="57"/>
+              <Static id="sta_21_00_00" taborder="14" left="796" top="29" height="57" cssclass="sta_WF_detailLine" right="0"/>
+              <TextArea id="TextArea00" taborder="15" left="801" top="34" width="369" height="47"/>
+              <Button id="btn_addfile" taborder="16" top="47" text="상품 복사" cssclass="btn_WF_main1" height="21" width="77" left="1189" onclick="Div00_btn_addfile_onclick"/>
+              <Radio id="Radio00" taborder="17" left="473" top="58" width="207" height="28" direction="vertical" innerdataset="ds_cfnYn" codecolumn="CODE" datacolumn="CODE_NAME"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  서비스 상품구성
+*  @MenuPath    ES > ES005
+*  @FileName 	ES005.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.11.30
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.ES005_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_add();
+	
+	//날짜 세팅
+	this.fn_setCal();	
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	//var fDate = this.gfn_addDate(sDate,-31);
+	var eDate = "29991231"
+	
+	this.Div00.form.cal_startDate.set_value(sDate);
+	this.Div00.form.cal_endDate.set_value(eDate);
+};
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData2(this.ds_item_grp,this.objApp.gds_code2,'ES022');		// 품목그룹
+	
+	var id = "ES005_S02";
+	var url = "svcUrl::ES005_S02";
+	var inDs = "";
+	var outDs = "ds_item=ds_item";
+	var args = "";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_add = function ()
+{
+	this.ds_list_1.addRow();
+	
+	this.ds_list_2.clearData();
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CFM_FLG","0");
+};
+
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2020.11.30
+* @수정자	   
+* @수정일자
+*/
+this.fn_search = function (gNo)
+{
+	var Arg_1 = gNo;
+	
+	if (this.gfn_isNull(Arg_1))
+	{
+		Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"GOODS_NO");
+	}
+	
+	var id = "ES005_S01";
+	var url = "svcUrl::ES005_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "GOODS_NO="+Arg_1+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+// 저장
+this.fn_save = function ()
+{
+	if(this.fn_valChk() == false)
+	{
+		return;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "ES005_M01";
+	var url = "svcUrl::ES005_M01";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_detailSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 디테일 저장
+this.fn_detailSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var gNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"GOODS_NO");
+
+	if (this.gfn_isNull(gNo))
+	{
+		gNo = this.ds_list_out.getColumn(this.ds_list_out.rowposition,"GOODS_NO")
+	}	
+
+	var id = "ES005_M02";
+	var url = "svcUrl::ES005_M02";
+	var inDs = "ds_list_2=ds_list_2:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+" GOODS_NO="+gNo+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 저장 callback
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	
+	var gNo = this.ds_list_out.getColumn(0,"GOODS_NO");
+	
+	this.fn_search(gNo);
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+// edit enter event
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		//this.fn_filter();
+		this.fn_search();
+	}
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+// 품목추가
+this.Div06_00_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.addRow();
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"BASE_QTY","1");
+};
+
+// 품목 삭제
+this.Div06_00_btn_addfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+this.fn_valChk = function ()
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"GOODS_NM")))
+	{
+		this.alert("서비스 상품명을 입력하시기 바랍니다.");
+		return false;
+	}
+};
+
+// 관리번호 조회
+this.Div00_btn_vocno_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "itemInfo_popup";
+    var sUrl      = "ES::ES005_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_itemInfo";
+    var oOption   = {title : "서비스상품 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 사전상담 팝업 callback
+this.fn_popupCallback_itemInfo = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+
+	var gNo = objRtn.GOODS_NO;
+	
+	
+	this.fn_search(gNo);
+}
+
+// 상품 복사 기능
+this.Div00_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "itemInfo_popup";
+    var sUrl      = "ES::ES005_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_itemInfo2";
+    var oOption   = {title : "서비스상품 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 사전상담 팝업 callback
+this.fn_popupCallback_itemInfo2 = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+
+	var gNo = objRtn.GOODS_NO;
+	
+	
+	var id = "ES005_S01";
+	var url = "svcUrl::ES005_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "GOODS_NO="+gNo+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+}
+
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.ds_list_1.deleteAll();
+	this.ds_list_1.addRow();
+	//날짜 세팅
+	this.fn_setCal();	
+	
+	// 대상자		
+	this.ds_list_2.set_updatecontrol(false);
+	
+	for(var i=0; i<this.ds_list_2.rowcount;i++)
+	{
+		this.ds_list_2.setRowType(i,Dataset.ROWTYPE_INSERT);
+	}
+	
+	this.ds_list_2.set_updatecontrol(true);
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="GOODS_NO" type="STRING" size="18"/>
+          <Column id="GOODS_NM" type="STRING" size="30"/>
+          <Column id="VALID_FR_DT" type="DATETIME" size="23"/>
+          <Column id="VALID_TO_DT" type="DATETIME" size="23"/>
+          <Column id="CFM_FLG" type="STRING" size="10"/>
+          <Column id="REMARK" type="STRING" size="50"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="GOODS_NO" type="STRING" size="18"/>
+          <Column id="GOODS_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="ITEM_GRP" type="STRING" size="10"/>
+          <Column id="ITEM_CD" type="STRING" size="18"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SPEC" type="STRING" size="100"/>
+          <Column id="BASIC_UNIT" type="STRING" size="3"/>
+          <Column id="BASE_QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="SELL_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="PUR_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="REMARK" type="STRING" size="50"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item"/>
+      <Dataset id="ds_list_out">
+        <ColumnInfo>
+          <ConstColumn id="ConstColumn0" type="STRING" size="30"/>
+          <Column id="GOODS_NO" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item_grp"/>
+      <Dataset id="ds_cfnYn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">확정</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="CODE_NAME">미확정</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono02_00" propid="value" datasetid="ds_cond" columnid="OWN_NM"/>
+      <BindItem id="item0" compid="Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="GOODS_NO"/>
+      <BindItem id="item8" compid="Div00.form.Radio00_00" propid="value" datasetid="ds_list_1" columnid="CAFETERIA"/>
+      <BindItem id="item9" compid="Div00.form.Radio00_00_00" propid="value" datasetid="ds_list_1" columnid="CANTEEN"/>
+      <BindItem id="item10" compid="Div00.form.Radio00_00_00_00" propid="value" datasetid="ds_list_1" columnid="WAIT_ROOM"/>
+      <BindItem id="item11" compid="Div00.form.Radio00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CONV_FAC"/>
+      <BindItem id="item12" compid="Div00.form.Radio00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="MANAGE"/>
+      <BindItem id="item2" compid="Div00.form.cal_startDate" propid="value" datasetid="ds_list_1" columnid="VALID_FR_DT"/>
+      <BindItem id="item3" compid="Div00.form.cal_endDate" propid="value" datasetid="ds_list_1" columnid="VALID_TO_DT"/>
+      <BindItem id="item4" compid="Div00.form.edt_soNo00_00_00_00_00_01" propid="value" datasetid="ds_list_1" columnid="GOODS_NM"/>
+      <BindItem id="item6" compid="Div00.form.TextArea00" propid="value" datasetid="ds_list_1" columnid="REMARK"/>
+      <BindItem id="item5" compid="Div00.form.Radio00" propid="value" datasetid="ds_list_1" columnid="CFM_FLG"/>
+    </Bind>
+  </Form>
+</FDL>

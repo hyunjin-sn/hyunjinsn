@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Top" width="1022" height="70" titletext="New Form" onload="Frame_Top_onload" onsize="Frame_Top_onsize">
+    <Layouts>
+      <Layout height="70" mobileorientation="landscape" width="1022">
+        <Static id="Static00" taborder="1" left="0" top="30" height="40" cssclass="sta_TF_bg2" right="0"/>
+        <Static id="Static01" taborder="3" left="0" top="0" height="30" right="0" cssclass="sta_TF_bg1"/>
+        <Button id="btn_logout" taborder="4" text="로그아웃" top="7" width="62" height="18" cssclass="btn_TF_logout" onclick="btn_logout_onclick" right="66"/>
+        <Static id="sta_userNm" taborder="5" top="3" width="379" height="26" cssclass="sta_TF_text1" right="133" color="white" textAlign="right"/>
+        <ImageViewer id="img_logo" taborder="0" left="5" top="10" width="155" height="41" stretch="fixaspectratio" onclick="img_logo_onclick" border="0px none" image="url('theme://images/logo_5.png')" background="transparent" text=""/>
+        <Button id="btn_chg_pw" taborder="6" text="암호변경" top="7" width="62" height="18" cssclass="btn_TF_logout" right="0" onclick="btn_chg_pw_onclick"/>
+        <Div id="div_top" taborder="2" left="200" height="30" border="0px none" background="transparent" borderRadius="20px / 20px" right="10" bottom="6" text="">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_menu"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = this.gfn_getApplication();
+this.fv_prefix = "TOP_";
+
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Frame_Top_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+// 	if(this.objApp.gds_menu.rowcount > 0)
+// 	{
+// 		this.objApp.gds_menu.filter("LEV=='0'");
+// 		this.ds_menu.copyData(this.objApp.gds_menu, true);
+// 		this.objApp.gds_menu.filter("");
+// 		this.fn_setTopMenu();
+// 	}
+	//this.objApp.av_topLoadFlag = "1";
+};
+
+/* Top Menu Set */
+this.fn_setTopMenu = function ()
+{
+	this.objApp.gds_menu.filter("LEV=='0'");
+    this.ds_menu.copyData(this.objApp.gds_menu, true);
+	//trace(this.objApp.gds_menu.saveXML());
+    this.objApp.gds_menu.filter("");
+    //this.fn_setTopMenu();
+	var objBtn;
+	//trace(this.ds_menu.saveXML());
+	for(var i=0; i<this.ds_menu.rowcount; i++) 
+	{
+		var strID   = this.ds_menu.getColumn(i, "MENU_ID");
+		var strName = this.ds_menu.getColumn(i, "MENU_NAME");
+		var strImg  = this.ds_menu.getColumn(i, "MENU_IMG");
+        
+		this.fn_createMenu(i, strID, strName, strImg);
+	}
+};
+
+// Top Menu Button creation
+this.fn_createMenu = function (index, strID, strName, strImg)
+{
+	var objBtn = new Button();
+	objBtn.init(this.fv_prefix + strID, ((index * 133)), 0, (index * 133) + 133 - (index * 133), 30);
+	this.div_top.addChild(objBtn.name, objBtn);
+	objBtn.set_text(strName);
+	objBtn.menuid = strID;
+    objBtn.set_cssclass("btn_TF_mnu")
+	objBtn.setEventHandler("onclick", this.fn_menuClick, this);
+	objBtn.set_visible(true);
+	objBtn.show();
+};
+
+this.fn_menuClick = function (obj:Button, e:ClickEventInfo)
+{
+	//this.alert(obj.menuid);
+    this.objApp.av_LeftFrame.form.fn_changeMenu(obj.menuid);
+};  
+
+this.img_logo_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+    this.objApp.av_VFrameSet1.set_separatesize("32,*,0");	
+};
+
+this.btn_logout_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(system.navigatorname == "nexacro")
+	{		
+// 		var sMsgId = "confirm.logout";
+// 		var arrArg = "";
+// 		var sPopId = sMsgId;
+// 		var sMsgCallback = "fn_msgCallback";
+// 		
+// 		this.gfn_alert(sMsgId, arrArg, sPopId, sMsgCallback);	
+		
+		if (this.confirm("로그아웃 하시겠습니까?"))
+		{
+			this.objApp.exit();
+		}		
+	}
+	else
+	{
+		window.top.location.reload(true);
+	}		
+};
+
+this.fn_msgCallback = function (strId, strVal)
+{
+	trace(strId);
+	trace("123");
+	if(strId == "confirm.logout"){
+		if(strVal)
+		{			
+		    this.objApp.exit();
+		}
+	}
+};
+
+// 암호변경
+this.btn_chg_pw_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+// 	trace(this.objApp.gds_login_info.saveXML());
+// 	return;
+	var usrId = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var usrNm = this.objApp.gds_login_info.getColumn(0,"USR_NM");
+	
+	var bpCd = "";
+	
+// 	var sPopupId  = "bpEtc_popup";
+// 	var sUrl      = "SO::SO001_P22.xfdl";
+// 	var oArg      = {bpCd : bpCd};
+// 	var sCallBack = "";
+// 	var oOption   = {title : "고객사 특이사항"};
+// 	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	
+	var sPopupId  = "chgPw_popup";
+    var sUrl      = "Comm::Comm_LoginPasswordChg.xfdl";
+	var oArg      = {usrId : usrId, usrNm : usrNm};
+	var sCallBack = "fn_popupCallback_chgPw";
+    var oOption   = {title : "암호 변경"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 고객사 팝업 callback
+this.fn_popupCallback_chgPw = function(sPopId, sRtn)
+{
+    //var objRtn = JSON.parse(sRtn);
+}
+]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="sta_userNm" propid="text" datasetid="gds_login_info" columnid="VIEW_NAME"/>
+    </Bind>
+  </Form>
+</FDL>

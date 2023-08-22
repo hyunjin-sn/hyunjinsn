@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Grid.grd_mCombo
+{
+	-nexa-border : 0px none;
+	background : #ffffff;
+}
+.Grid.grd_mCombo .body
+{
+	-nexa-border : 0px none;
+	border-radius : 0px;
+}
+.Grid.grd_mCombo .body .row .cell
+{
+	-nexa-background-odd : #ffffff;
+	-nexa-border : 1px solid #ffffff,0px none,1px solid #dddddd;
+	-nexa-padding : 3px 10px;
+	background : #ffffff;
+}
+.Grid.grd_mCombo .body .row .cell[status=mouseover]
+{
+	-nexa-background-odd : #f1f9fe;
+	background : #f1f9fe;
+}
+.Grid.grd_mCombo .body .row .cell[userstatus=selected]
+{
+	-nexa-background-odd : #d1ebfc;
+	background : #d1ebfc;
+}
+.Edit.edt1[status=readonly]
+{
+	background : #f0f0f0;
+	font : 20px "Malgun Gothic","Verdana";
+}]]></XCSS>

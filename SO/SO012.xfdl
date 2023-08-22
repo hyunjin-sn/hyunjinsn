@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO012" width="1560" height="600" titletext="New Form" onload="SO012_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1560">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00_03" taborder="0" text="발주지점" left="8" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static00_03_00" taborder="1" text="배송지" left="308" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono02" taborder="2" left="113" top="5" width="185" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_sono02_00" taborder="3" left="418" top="5" width="210" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="41" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" binddataset="ds_list" minwidth="" bottom="0" left="10" top="79" onheadclick="Div_menu_grd_list_onheadclick" onkeydown="Div_client_grd_list_onkeydown" oncellclick="Div_client_grd_list_oncellclick" background="" cellsizingtype="both" autofittype="col" autoenter="select" selecttype="cell" summarytype="top" taborder="3" width="905">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="52"/>
+                      <Column size="250"/>
+                      <Column size="250"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="발주지점"/>
+                      <Cell col="2" text="배송지"/>
+                      <Cell col="3" text="거리"/>
+                      <Cell col="4" text="배송금액"/>
+                      <Cell col="5" text="기준거리"/>
+                      <Cell col="6" text="기준금액"/>
+                      <Cell col="7" text="초과거리"/>
+                      <Cell col="8" text="초과금액"/>
+                      <Cell col="9" text="통행료"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM" textAlign="left"/>
+                      <Cell col="2" text="bind:DLVY_NM" textAlign="left" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##" maskedittype="string" combotype="filterlike"/>
+                      <Cell col="3" textAlign="right" calendardisplaynulltype="none" text="bind:DISTANCE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="4" textAlign="right" calendardisplaynulltype="none" text="bind:DLVY_AMT" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0" background="yellow"/>
+                      <Cell col="5" textAlign="right" calendardisplaynulltype="none" text="bind:BASE_DISTANCE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="6" textAlign="right" calendardisplaynulltype="none" text="bind:BASE_PRICE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="7" textAlign="right" calendardisplaynulltype="none" text="bind:ADD_DISTANCE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="8" textAlign="right" calendardisplaynulltype="none" text="bind:ADD_AMT" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="9" textAlign="right" calendardisplaynulltype="none" text="bind:HIPASS_PRICE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask" maskeditformat="##,##0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Div id="Div06" taborder="4" top="48" width="617" maxwidth="613" minwidth="" left="925" bottom="0">
+                <Layouts>
+                  <Layout>
+                    <Static id="sta_00" taborder="0" left="94" top="31" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_01" taborder="1" left="94" top="59" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static12" taborder="3" text="상세정보" left="0" top="1" width="97" height="30" cssclass="sta_WF_title"/>
+                    <Edit id="edt_name" taborder="2" left="118" top="64" width="470" height="20" readonly="true"/>
+                    <Static id="sta_03" taborder="4" left="94" top="87" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static00" taborder="5" text="지점" left="0" top="31" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static05" taborder="6" text="배송지" left="0" top="59" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Combo id="cmb_Use_YN00_00" taborder="7" text="Combo00" left="118" top="35" width="491" height="21" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_Div06_cmb_Use_YN00_onitemchanged" innerdataset="ds_bp" type="filterlike"/>
+                    <Button id="btn_bpCd" taborder="8" left="588" top="64" width="21" height="20" cssclass="btn_WF_search" text="" onclick="div_search_btn_bpCd_onclick"/>
+                    <Static id="Static11" taborder="9" text="거리" left="0" top="87" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01" taborder="10" left="118" top="91" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static01" taborder="11" text="Km" left="286" top="90" width="25" height="22"/>
+                    <Static id="sta_03_00_00_00" taborder="12" left="94" top="171" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_00_00_00" taborder="13" text="통행료" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_00_01_00" taborder="14" left="118" top="175" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static01_00_00_00" taborder="15" text="원 " left="286" top="174" width="48" height="22"/>
+                    <Static id="Static11_01" taborder="16" text="배송비 금액" left="312" top="87" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_01" taborder="17" left="430" top="91" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_00_00_00_01" taborder="18" text="원 " left="598" top="90" width="12" height="22"/>
+                    <Static id="sta_03_01" taborder="19" left="94" top="115" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_02" taborder="20" text="기준거리" left="0" top="115" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_02" taborder="21" left="118" top="119" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_02" taborder="22" text="Km" left="286" top="118" width="25" height="22"/>
+                    <Static id="Static11_01_00" taborder="23" text="기준거리 금액" left="312" top="115" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_01_00" taborder="24" left="430" top="119" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_00_00_00_01_00" taborder="25" text="원 " left="598" top="118" width="12" height="22"/>
+                    <Static id="sta_03_01_00" taborder="26" left="94" top="143" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_02_00" taborder="27" text="초과거리" left="0" top="143" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_02_00" taborder="28" left="118" top="147" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_02_00" taborder="29" text="Km" left="286" top="146" width="25" height="22"/>
+                    <Static id="Static11_01_00_00" taborder="30" text="초과거리 금액" left="312" top="143" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_01_00_00" taborder="31" left="430" top="147" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_00_00_00_01_00_00" taborder="32" text="원 " left="598" top="146" width="12" height="22"/>
+                    <Static id="sta_03_00" taborder="33" left="94" top="199" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_00" taborder="34" text="기준거리단가" left="0" top="199" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_00" taborder="35" left="118" top="203" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static01_00" taborder="36" text="원   /   " left="286" top="202" width="48" height="22"/>
+                    <MaskEdit id="MaskEdit00_01_00_00" taborder="37" left="338" top="203" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static01_01" taborder="38" text="Km" left="509" top="202" width="25" height="22"/>
+                    <Static id="sta_03_00_00" taborder="39" left="94" top="227" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_00_00" taborder="40" text="초과거리단가" left="0" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_00_01" taborder="41" left="118" top="231" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static01_00_00" taborder="42" text="원   /   " left="286" top="230" width="48" height="22"/>
+                    <MaskEdit id="MaskEdit00_01_00_00_00" taborder="43" left="338" top="231" width="164" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown" readonly="true"/>
+                    <Static id="Static01_01_00" taborder="44" text="Km" left="509" top="230" width="25" height="22"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static12_00" taborder="5" text="의전지점 리스트" left="10" top="49" width="139" height="30" cssclass="sta_WF_title"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  수발주현황 조회
+*  @MenuPath    SO > SO012
+*  @FileName 	SO012.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.06.30
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO012_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+	
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+//콤보세팅
+this.fn_setCombo = function (obj)
+{	
+	var id = "SO012_S02";
+	var url = "svcUrl::SO012_S02";
+	var inDs = "";
+	var outDs = "ds_bp=ds_list";
+	var args = "";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2021.07.01
+* @수정자	   
+* @수정일자
+*/
+this.fn_add = function ()
+{
+	this.ds_list.addRow();
+	
+	this.ds_list.setColumn(this.ds_list.rowposition,"ADD_BASE","1");
+};
+
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2021.07.01
+* @수정자	   
+* @수정일자
+*/
+this.fn_search = function ()
+{
+	var args1 = this.ds_cond.getColumn(0,"BP_NM");
+	var args2 = this.ds_cond.getColumn(0,"DLVY_NM");
+	
+	var id = "SO012_S01";
+	var url = "svcUrl::SO012_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "BP_NM="+args1+" DLVY_NM="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+ /**
+* @description 		저장버튼
+* @작성자	   		심재문
+* @작성일자	   	2021.07.01
+* @수정자	   
+* @수정일자
+*/
+this.fn_save = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO012_M01";
+	var url = "svcUrl::SO012_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.")
+	this.fn_search();
+}
+
+this.fn_delete = function ()
+{
+	if(this.confirm("삭제 하시겠습니까?"))
+	{
+		this.ds_list.deleteRow(this.ds_list.rowposition);
+		this.fn_save();
+	}
+};
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div_client_Div06_MaskEdit00_01_onkeydown = function(obj:nexacro.MaskEdit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_cost();
+	}
+};
+
+this.fn_cost = function ()
+{
+	var distance = this.Div_client.form.Div06.form.MaskEdit00_01.value;					// 거리
+	var hipass = this.Div_client.form.Div06.form.MaskEdit00_01_00_01_00.value;			// 통행료
+	var basePrice = this.Div_client.form.Div06.form.MaskEdit00_01_00.value;				// 기준거리단가
+	var baseDistance = this.Div_client.form.Div06.form.MaskEdit00_01_00_00.value;		// 기준거리
+	var addPrice = this.Div_client.form.Div06.form.MaskEdit00_01_00_01.value;			// 초과거리단가
+
+	
+	this.ds_list.setColumn(this.ds_list.rowposition,"DLVY_AMT",parseInt(basePrice)+parseInt(hipass)+((parseInt(distance)-parseInt(baseDistance))*parseInt(addPrice)));
+	this.ds_list.setColumn(this.ds_list.rowposition,"ADD_DISTANCE",parseInt(distance)-parseInt(baseDistance));
+	this.ds_list.setColumn(this.ds_list.rowposition,"ADD_AMT",(parseInt(distance)-parseInt(baseDistance))*parseInt(addPrice));
+};
+
+// 배송지 팝업
+this.div_search_btn_bpCd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var hsGu = "";
+	var code = "";
+
+	var sPopupId  = "dlvy_popup";
+	var sUrl      = "SO::SO001_P03.xfdl";
+	var oArg      = {code : code, hsGu : hsGu};
+	var sCallBack = "fn_popupCallback_dlvy";
+	var oOption   = {title : "배송지 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 배송지 팝업 callback
+this.fn_popupCallback_dlvy = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	this.ds_list.setColumn(this.ds_list.rowposition,"DLVY_CD",objRtn.DLVY_CD);
+	this.ds_list.setColumn(this.ds_list.rowposition,"DLVY_NM",objRtn.DLVY_NM);
+}
+this.Div_client_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	system.execBrowser("https://www.google.com/maps/d/viewer?mid=1ZChUAUKSetFUwDsUfzp26oeG5CYiKuM2&ll=35.85723367422953%2C128.61535188901246&z=7");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="PO_BP_CD" type="STRING" size="50"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="DLVY_CD" type="STRING" size="50"/>
+          <Column id="DLVY_NM" type="STRING" size="200"/>
+          <Column id="DISTANCE" type="BIGDECIMAL" size="20"/>
+          <Column id="DLVY_AMT" type="BIGDECIMAL" size="20"/>
+          <Column id="BASE_DISTANCE" type="BIGDECIMAL" size="20"/>
+          <Column id="BASE_PRICE" type="BIGDECIMAL" size="20"/>
+          <Column id="ADD_DISTANCE" type="BIGDECIMAL" size="21"/>
+          <Column id="ADD_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="HIPASS_PRICE" type="BIGDECIMAL" size="20"/>
+          <Column id="ADD_PRICE" type="BIGDECIMAL" size="20"/>
+          <Column id="ADD_BASE" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_NM" type="STRING" size="255"/>
+          <Column id="DLVY_NM" type="STRING" size="255"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_NM"/>
+            <Col id="DLVY_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_bp"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono02" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.edt_sono02_00" propid="value" datasetid="ds_cond" columnid="DLVY_NM"/>
+      <BindItem id="item4" compid="Div_client.form.Div06.form.edt_name" propid="value" datasetid="ds_list" columnid="DLVY_NM"/>
+      <BindItem id="item0" compid="Div_client.form.Div06.form.MaskEdit00_01" propid="value" datasetid="ds_list" columnid="DISTANCE"/>
+      <BindItem id="item10" compid="Div_client.form.Div06.form.MaskEdit00_01_01" propid="value" datasetid="ds_list" columnid="DLVY_AMT"/>
+      <BindItem id="item11" compid="Div_client.form.Div06.form.MaskEdit00_01_02" propid="value" datasetid="ds_list" columnid="BASE_DISTANCE"/>
+      <BindItem id="item12" compid="Div_client.form.Div06.form.MaskEdit00_01_01_00" propid="value" datasetid="ds_list" columnid="BASE_PRICE"/>
+      <BindItem id="item13" compid="Div_client.form.Div06.form.MaskEdit00_01_02_00" propid="value" datasetid="ds_list" columnid="ADD_DISTANCE"/>
+      <BindItem id="item14" compid="Div_client.form.Div06.form.MaskEdit00_01_01_00_00" propid="value" datasetid="ds_list" columnid="ADD_AMT"/>
+      <BindItem id="item3" compid="Div_client.form.Div06.form.MaskEdit00_01_00" propid="value" datasetid="ds_list" columnid="BASE_PRICE"/>
+      <BindItem id="item5" compid="Div_client.form.Div06.form.MaskEdit00_01_00_00" propid="value" datasetid="ds_list" columnid="BASE_DISTANCE"/>
+      <BindItem id="item6" compid="Div_client.form.Div06.form.MaskEdit00_01_00_01" propid="value" datasetid="ds_list" columnid="ADD_PRICE"/>
+      <BindItem id="item7" compid="Div_client.form.Div06.form.MaskEdit00_01_00_00_00" propid="value" datasetid="ds_list" columnid="ADD_BASE"/>
+      <BindItem id="item8" compid="Div_client.form.Div06.form.MaskEdit00_01_00_01_00" propid="value" datasetid="ds_list" columnid="HIPASS_PRICE"/>
+      <BindItem id="item9" compid="Div_client.form.Div06.form.cmb_Use_YN00_00" propid="value" datasetid="ds_list" columnid="PO_BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="grid_DynamicCreate" left="0" top="0" width="1024" height="768" titletext="Dynamic Create">
+    <Layouts>
+      <Layout height="768" width="1024">
+        <Button id="Button00" taborder="0" text="Create" position="absolute" onclick="Button00_onclick" left="21" top="36" width="135" height="36"/>
+        <Static id="Static02" text="Creating dynamic grid using script" position="absolute" left="15" top="12" width="628" height="18" cssclass="sta_WF_subtitP" onclick="Static02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_test1" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function (obj:Button, e:ClickEventInfo)
+{
+	var objGrid = new Grid();
+	objGrid.init("GridNm", 37, 100, 367, 352,null,null);
+
+	// Add Object to Parent Form
+	this.addChild("Grid02", objGrid);
+
+	objGrid.createFormat();
+
+	// Show Object 
+	objGrid.show();
+
+	// Create dataset 
+	var objDs = new Dataset();
+	objDs.set_name("ds_test");
+
+	objDs.addColumn("no", "string");
+	objDs.addColumn("name", "string");
+	objDs.addColumn("age", "int");
+	objDs.addColumn("age2", "int");
+
+	// Dataset Data Input
+	for (var i = 0; i < 5; i++) 
+	{
+		var nRow = objDs.addRow();
+
+		objDs.setColumn(nRow, "no", i);
+		objDs.setColumn(nRow, "name", 'employ_' + i);
+		objDs.setColumn(nRow, "age", (10 + i));
+		objDs.setColumn(nRow, "age2", (11 + i));
+	}
+	
+	//objGrid.set_binddataset("ds_test");
+    objGrid.set_binddataset(objDs);
+
+	objGrid.appendContentsRow("head");
+	objGrid.appendContentsRow("body");
+	objGrid.appendContentsRow("summ");
+
+	// Col Generation
+	// Append one column by default from  appendContentsRow()
+	objGrid.appendContentsCol();
+	objGrid.appendContentsCol();
+
+	// Col Size Setting
+	objGrid.setFormatColProperty(0, "size", 100);
+	objGrid.setFormatColProperty(1, "size", 100);
+	objGrid.setFormatColProperty(2, "size", 100);
+	objGrid.setFormatColProperty(3, "size", 100);
+
+	// band setting by cell properties
+	for (var r = 0; r < objDs.getColCount(); r++) 
+	{
+		var colinfo = objDs.getColumnInfo(r);
+		objGrid.setCellProperty("head", r, "text", colinfo.name);
+		objGrid.setCellProperty("body", r, "text", "bind:" + colinfo.name);
+		if (r == 2) 
+		{
+			objGrid.setCellProperty("summ", r, "text", "expr:dataset.getSum('" + colinfo.name + "')");
+		}
+		else if(r == 1)
+		{
+			objGrid.setCellProperty("summ", r, "text", "total");
+		}
+	}
+}
+]]></Script>
+  </Form>
+</FDL>
