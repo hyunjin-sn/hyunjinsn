@@ -18,6 +18,8 @@
                     <Combo id="Combo00_00" taborder="6" text="Combo00" left="878" top="4" width="104" height="21" innerdataset="ds_status" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
                     <Static id="Static03_01_01" taborder="7" text="생산일정검토" left="4" top="4" width="101" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="Combo00_01" taborder="8" text="Combo00" left="118" top="4" width="154" height="21" innerdataset="ds_chk" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
+                    <Static id="Static03_01_00_01" taborder="9" text="클래스" left="990" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_00_01" taborder="10" text="Combo00" left="1094" top="4" width="104" height="21" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged" innerdataset="ds_class"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -32,6 +34,9 @@
                       <Column size="223"/>
                       <Column size="42"/>
                       <Column size="59"/>
+                      <Column size="78"/>
+                      <Column size="60"/>
+                      <Column size="60"/>
                       <Column size="80"/>
                       <Column size="100"/>
                       <Column size="100"/>
@@ -62,7 +67,6 @@
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
-                      <Column size="80"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -75,41 +79,43 @@
                       <Cell col="2" rowspan="2" text="품목명"/>
                       <Cell col="3" rowspan="2" text="선후불"/>
                       <Cell col="4" rowspan="2" text="상태"/>
-                      <Cell col="5" rowspan="2" text="생산예정일&#13;&#10;ERP"/>
-                      <Cell col="6" rowspan="2" text="생산예정일&#13;&#10;HJW"/>
-                      <Cell col="7" rowspan="2" text="생산예정일&#13;&#10;변경 사유"/>
-                      <Cell col="8" rowspan="2" text="자재발주&#13;&#10;필요일"/>
-                      <Cell col="9" rowspan="2" text="생산필요일"/>
-                      <Cell col="10" rowspan="2" text="┼"/>
-                      <Cell col="11" rowspan="2" text="생산&#13;&#10;도래&#13;&#10;일수"/>
-                      <Cell col="12" rowspan="2" text="생산일정검토"/>
-                      <Cell col="13" rowspan="2" text="메모"/>
-                      <Cell col="14" rowspan="2" text="생산&#13;&#10;예정&#13;&#10;수량"/>
-                      <Cell col="15" rowspan="2" text="월평균출고량"/>
-                      <Cell col="16" rowspan="2" text="파주현재고&#13;&#10;+지점부족수량"/>
-                      <Cell col="17" text="파주"/>
-                      <Cell col="18" colspan="4" text="본부지점"/>
-                      <Cell col="22" rowspan="2" text="탁송량"/>
-                      <Cell col="23" rowspan="2" text="대표+종속&#13;&#10;합산출고량"/>
-                      <Cell col="24" rowspan="2" text="출고기간"/>
-                      <Cell col="25" colspan="5" text="파주"/>
-                      <Cell col="30" colspan="4" text="본부지점"/>
-                      <Cell col="34" rowspan="2" text="최소생산수량"/>
-                      <Cell col="35" rowspan="2" text="세트수량"/>
-                      <Cell row="1" col="17" text="재고"/>
-                      <Cell row="1" col="18" text="재고"/>
-                      <Cell row="1" col="19" text="부족수량"/>
-                      <Cell row="1" col="20" text="과보유수량"/>
-                      <Cell row="1" col="21" text="이동중재고"/>
-                      <Cell row="1" col="25" text="재고"/>
-                      <Cell row="1" col="26" text="안전재고"/>
-                      <Cell row="1" col="27" text="안전재고ERP"/>
-                      <Cell row="1" col="28" text="부족수량"/>
-                      <Cell row="1" col="29" text="과보유수량"/>
-                      <Cell row="1" col="30" text="재고"/>
-                      <Cell row="1" col="31" text="안전재고"/>
-                      <Cell row="1" col="32" text="부족수량"/>
-                      <Cell row="1" col="33" text="과보유수량"/>
+                      <Cell col="5" rowspan="2" text="CLASS"/>
+                      <Cell col="6" rowspan="2" text="LOT_SIZE"/>
+                      <Cell col="7" rowspan="2" text="생산주기"/>
+                      <Cell col="8" rowspan="2" text="생산예정일&#13;&#10;ERP"/>
+                      <Cell col="9" rowspan="2" text="생산예정일&#13;&#10;HJW"/>
+                      <Cell col="10" rowspan="2" text="생산예정일&#13;&#10;변경 사유"/>
+                      <Cell col="11" rowspan="2" text="자재발주&#13;&#10;필요일"/>
+                      <Cell col="12" rowspan="2" text="생산필요일"/>
+                      <Cell col="13" rowspan="2" text="┼"/>
+                      <Cell col="14" rowspan="2" text="생산&#13;&#10;도래&#13;&#10;일수"/>
+                      <Cell col="15" rowspan="2" text="생산일정검토"/>
+                      <Cell col="16" rowspan="2" text="메모"/>
+                      <Cell col="17" rowspan="2" text="생산&#13;&#10;예정&#13;&#10;수량"/>
+                      <Cell col="18" rowspan="2" text="월평균출고량"/>
+                      <Cell col="19" rowspan="2" text="파주현재고&#13;&#10;+지점부족수량"/>
+                      <Cell col="20" text="파주"/>
+                      <Cell col="21" colspan="4" text="본부지점"/>
+                      <Cell col="25" rowspan="2" text="탁송량"/>
+                      <Cell col="26" rowspan="2" text="대표+종속&#13;&#10;합산출고량"/>
+                      <Cell col="27" rowspan="2" text="출고기간"/>
+                      <Cell col="28" colspan="4" text="파주"/>
+                      <Cell col="32" colspan="4" text="본부지점"/>
+                      <Cell col="36" rowspan="2" text="최소생산수량"/>
+                      <Cell col="37" rowspan="2" text="세트수량"/>
+                      <Cell row="1" col="20" text="재고"/>
+                      <Cell row="1" col="21" text="재고"/>
+                      <Cell row="1" col="22" text="부족수량"/>
+                      <Cell row="1" col="23" text="과보유수량"/>
+                      <Cell row="1" col="24" text="이동중재고"/>
+                      <Cell row="1" col="28" text="재고"/>
+                      <Cell row="1" col="29" text="안전재고ERP"/>
+                      <Cell row="1" col="30" text="부족수량"/>
+                      <Cell row="1" col="31" text="과보유수량"/>
+                      <Cell row="1" col="32" text="재고"/>
+                      <Cell row="1" col="33" text="안전재고"/>
+                      <Cell row="1" col="34" text="부족수량"/>
+                      <Cell row="1" col="35" text="과보유수량"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
@@ -117,37 +123,39 @@
                       <Cell col="2" text="bind:품목명" tooltiptext="bind:품목명" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="3" text="bind:선후불" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" tooltiptext="bind:선후불"/>
                       <Cell col="4" text="bind:상태" tooltiptext="bind:상태" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'buttoncontrol' : 'nomal'" edittype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'button' : 'none'"/>
-                      <Cell col="5" text="bind:생산예정일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="6" text="bind:P_SCHD_DT" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd" displaytype="calendarcontrol" edittype="date" background="yellow"/>
-                      <Cell col="7" text="bind:P_SCHD_MEMO" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd" edittype="text" tooltiptext="bind:P_SCHD_MEMO" background="yellow"/>
-                      <Cell col="8" text="bind:자재발주필요일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="9" text="bind:생산필요일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="10" text="expr:CNT&gt;0 ? '┼' : ''" displaytype="expr:CNT&gt;0 ? 'buttoncontrol' : 'nomal'" edittype="expr:CNT&gt;0 ? 'button' : 'none'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="11" text="bind:생산지연일수" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="12" text="bind:생산일정검토" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" tooltiptext="bind:생산일정검토"/>
-                      <Cell col="13" text="expr:MEMO_CHK=='1' ? '메모 (Y)' : '메모 (N)'" displaytype="expr:MEMO_CHK=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO_CHK=='1' ? 'button' : 'none'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="14" text="bind:생산예정수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="15" text="bind:월평균출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="16" text="bind:파주현재고_지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="17" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="18" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="19" text="bind:본부지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="20" text="bind:본부지점과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="21" text="bind:이동중재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="22" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="23" text="bind:출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="24" text="bind:출고기간" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="25" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="26" text="bind:파주안전재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="27" text="bind:파주안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="28" text="bind:파주부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="29" text="bind:파주과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="30" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="31" text="bind:본부지점안전재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="32" text="bind:본부지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="33" text="bind:본부지점과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="34" text="bind:최소생산수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="35" text="bind:세트수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="5" text="bind:CLASS" tooltiptext="bind:CLASS" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="6" text="bind:LOT_SIZE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="7" text="bind:P_CYCLE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" textAlign="right"/>
+                      <Cell col="8" text="bind:생산예정일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="9" text="bind:P_SCHD_DT" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd" displaytype="calendarcontrol" edittype="date" background="yellow"/>
+                      <Cell col="10" text="bind:P_SCHD_MEMO" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd" edittype="text" tooltiptext="bind:P_SCHD_MEMO" background="yellow"/>
+                      <Cell col="11" text="bind:자재발주필요일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="12" text="bind:생산필요일" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="13" text="expr:CNT&gt;0 ? '┼' : ''" displaytype="expr:CNT&gt;0 ? 'buttoncontrol' : 'nomal'" edittype="expr:CNT&gt;0 ? 'button' : 'none'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="14" text="bind:생산지연일수" calendardisplaynulltype="none" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="15" text="bind:생산일정검토" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" tooltiptext="bind:생산일정검토"/>
+                      <Cell col="16" text="expr:MEMO_CHK=='1' ? '메모 (Y)' : '메모 (N)'" displaytype="expr:MEMO_CHK=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO_CHK=='1' ? 'button' : 'none'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="17" text="bind:생산예정수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="18" text="bind:월평균출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="19" text="bind:파주현재고_지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="20" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="21" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="22" text="bind:본부지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="23" text="bind:본부지점과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="24" text="bind:이동중재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="25" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="26" text="bind:출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="27" text="bind:출고기간" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="28" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="29" text="bind:파주안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="30" text="bind:파주부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="31" text="bind:파주과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="32" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="33" text="bind:본부지점안전재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="34" text="bind:본부지점부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="35" text="bind:본부지점과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="36" text="bind:최소생산수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="37" text="bind:세트수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -184,6 +192,10 @@ this.SO002_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	this.gfn_formOnLoad(this);	
 	
 	this._gfnGridcellFix(this.Div_client.form.grd_list, 12);
+	
+	this.Div_client.form.div_search.form.Combo00.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_00.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_00_01.set_index(0);
 	
 	this.fn_setCombo(obj);
 	//날짜 세팅
@@ -317,7 +329,8 @@ this.fn_filter = function ()
 	var itemCd = this.Div_client.form.div_search.form.edt_sono.text;							// 품목코드
 	var div = this.Div_client.form.div_search.form.Combo00.value;								// 선후불
 	var status = this.Div_client.form.div_search.form.Combo00_00.value;							// 품목상태
-	var chk = this.Div_client.form.div_search.form.Combo00_01.text;							// 생산일정검토
+	var chk = this.Div_client.form.div_search.form.Combo00_01.text;								// 생산일정검토
+	var cls = this.Div_client.form.div_search.form.Combo00_00_01.value;							// 클래스
 		
 	var filterstr = "";
 	
@@ -343,6 +356,14 @@ this.fn_filter = function ()
 		if(this.gfn_isNull(filterstr))
 			filterstr = "상태=='"+status+"'";
 		else filterstr += " && 상태=='"+status+"'";				
+	}
+	
+	//클래스
+	if(!this.gfn_isNull(cls) && cls != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "CLASS=='"+cls+"'";
+		else filterstr += " && CLASS=='"+cls+"'";				
 	}
 
 	//생산일정검토
@@ -409,7 +430,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		}		
 	}
 	
-	if (e.col == 10)
+	if (e.col == 13)
 	{
 		if (this.ds_list.getColumn(e.row,"CNT") > 0)
 		{
@@ -425,7 +446,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		}		
 	}
 	
-	if (e.col == 13)
+	if (e.col == 16)
 	{
 		var itemCd = this.ds_list.getColumn(this.ds_list.rowposition,"품목코드");
 		var pProdPlanDt = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"생산예정일"),"");
@@ -599,6 +620,46 @@ this.fn_color = function (currow)
           <Row>
             <Col id="CODE">기존생산일정준수</Col>
             <Col id="CODE_NAME">기존생산일정준수</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">S Class</Col>
+            <Col id="CODE_NAME">S Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A Class</Col>
+            <Col id="CODE_NAME">A Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B Class</Col>
+            <Col id="CODE_NAME">B Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C Class</Col>
+            <Col id="CODE_NAME">C Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D Class</Col>
+            <Col id="CODE_NAME">D Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E Class</Col>
+            <Col id="CODE_NAME">E Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Z Class (일괄,단품용)</Col>
+            <Col id="CODE_NAME">Z Class (일괄,단품용)</Col>
           </Row>
         </Rows>
       </Dataset>

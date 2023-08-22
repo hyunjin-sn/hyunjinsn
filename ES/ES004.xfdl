@@ -42,6 +42,9 @@
                       <Column size="83"/>
                       <Column size="83"/>
                       <Column size="83"/>
+                      <Column size="83"/>
+                      <Column size="83"/>
+                      <Column size="83"/>
                       <Column size="250"/>
                     </Columns>
                     <Rows>
@@ -62,8 +65,11 @@
                       <Cell col="10" text="배치중단"/>
                       <Cell col="11" text="생산중단"/>
                       <Cell col="12" text="세트수량"/>
-                      <Cell col="13" text="대표품목코드"/>
-                      <Cell col="14" text="대표품목명"/>
+                      <Cell col="13" text="CLASS"/>
+                      <Cell col="14" text="LOT_SIZE"/>
+                      <Cell col="15" text="생산주기"/>
+                      <Cell col="16" text="대표품목코드"/>
+                      <Cell col="17" text="대표품목명"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -79,8 +85,11 @@
                       <Cell col="10" textAlign="center" calendardisplaynulltype="none" text="bind:STOP_YN" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask"/>
                       <Cell col="11" textAlign="center" calendardisplaynulltype="none" text="bind:STOP_PROD_YN" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask"/>
                       <Cell col="12" textAlign="center" calendardisplaynulltype="none" text="bind:SET_BASE_QTY" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="mask"/>
-                      <Cell col="13" textAlign="center" calendardisplaynulltype="none" text="bind:PA_ITEM_CD" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
-                      <Cell col="14" textAlign="left" calendardisplaynulltype="none" text="bind:PA_ITEM_NM" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="13" textAlign="center" calendardisplaynulltype="none" text="bind:CLASS" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="14" textAlign="center" calendardisplaynulltype="none" text="bind:LOT_SIZE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="15" textAlign="center" calendardisplaynulltype="none" text="bind:P_CYCLE" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="16" textAlign="center" calendardisplaynulltype="none" text="bind:PA_ITEM_CD" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="17" textAlign="left" calendardisplaynulltype="none" text="bind:PA_ITEM_NM" combodataset="ds_useYn" combocodecol="CODE" combodatacol="CODE_NAME"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -88,36 +97,36 @@
               <Div id="Div06" taborder="4" top="48" width="614" maxwidth="613" minwidth="" left="925" bottom="0" text="">
                 <Layouts>
                   <Layout>
-                    <Static id="sta_04_02_01" taborder="87" left="94" top="379" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="sta_04_02_00" taborder="81" left="94" top="407" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="sta_04_02" taborder="79" left="94" top="351" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="sta_04_01_00" taborder="62" left="94" top="255" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_04_02_01" taborder="87" left="94" top="435" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_04_02_00" taborder="81" left="94" top="463" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_04_02" taborder="79" left="94" top="407" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_04_01_00" taborder="62" left="94" top="311" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="sta_04_00" taborder="27" left="94" top="536" height="29" cssclass="sta_WF_detailLine" right="190" visible="false"/>
-                    <Static id="sta_02_00" taborder="21" left="94" top="143" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_02_00" taborder="21" left="94" top="199" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="sta_00" taborder="0" left="94" top="31" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="sta_01" taborder="1" left="94" top="59" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="sta_02" taborder="6" left="94" top="115" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="Static12" taborder="8" text="상세정보 - 기본" left="0" top="1" width="118" height="30" cssclass="sta_WF_title"/>
                     <Edit id="edt_name" taborder="7" left="118" top="64" width="491" height="20" readonly="true"/>
-                    <Static id="sta_03" taborder="9" left="94" top="171" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="sta_04" taborder="10" left="94" top="199" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_03" taborder="9" left="94" top="227" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="sta_04" taborder="10" left="94" top="255" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Static id="Static02" taborder="11" text="사용여부" left="306" top="31" width="1" cssclass="sta_WF_detailLabel_ess" height="29"/>
                     <Static id="Static03" taborder="12" text="단위" left="306" top="115" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Edit id="edt_menuId" taborder="2" left="118" top="36" width="185" height="20" onchanged="Div06_edt_menuId_onchanged" readonly="true"/>
                     <Static id="Static00" taborder="13" text="품목코드" left="0" top="31" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Static id="Static05" taborder="14" text="품목명" left="0" top="59" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static06" taborder="15" text="품목그룹" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static09" taborder="16" text="품목구분" left="306" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static06" taborder="15" text="품목그룹" left="0" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static09" taborder="16" text="품목구분" left="306" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Static id="Static10" taborder="17" text="규격" left="0" top="115" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Edit id="edt_name04" taborder="3" left="118" top="120" width="185" height="20" readonly="true"/>
                     <Edit id="edt_name05" taborder="4" left="424" top="120" width="185" height="20" readonly="true"/>
-                    <Static id="Static11" taborder="18" text="표준원가" left="0" top="199" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static16" taborder="19" text="표준판가" left="306" top="199" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Combo id="cmb_Use_YN00" taborder="5" text="Combo00" left="118" top="176" width="185" height="21" innerdataset="ds_item_grp" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_Div06_cmb_Use_YN00_onitemchanged"/>
-                    <Static id="Static02_00" taborder="20" text="유효기간" left="0" top="143" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Calendar id="Calendar00_00" taborder="22" left="118" top="148" width="126" height="20" readonly="true" innerdataset="ds_list" datecolumn="reg_date"/>
-                    <Calendar id="Calendar01_00" taborder="23" left="264" top="148" width="126" height="20" readonly="true" innerdataset="ds_list" datecolumn="update_date"/>
-                    <Static id="Static01" taborder="24" text="~" left="250" top="145" width="10" height="26"/>
+                    <Static id="Static11" taborder="18" text="표준원가" left="0" top="255" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static16" taborder="19" text="표준판가" left="306" top="255" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Combo id="cmb_Use_YN00" taborder="5" text="Combo00" left="118" top="232" width="185" height="21" innerdataset="ds_item_grp" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_Div06_cmb_Use_YN00_onitemchanged"/>
+                    <Static id="Static02_00" taborder="20" text="유효기간" left="0" top="199" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Calendar id="Calendar00_00" taborder="22" left="118" top="204" width="126" height="20" readonly="true" innerdataset="ds_list" datecolumn="reg_date"/>
+                    <Calendar id="Calendar01_00" taborder="23" left="264" top="204" width="126" height="20" readonly="true" innerdataset="ds_list" datecolumn="update_date"/>
+                    <Static id="Static01" taborder="24" text="~" left="250" top="201" width="10" height="26"/>
                     <Static id="Static12_00" taborder="25" text="본부구분" left="0" top="503" width="97" height="30" cssclass="sta_WF_title" visible="false"/>
                     <Static id="Static11_00" taborder="26" text="A 적용비율" left="0" top="536" width="115" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
                     <Static id="Static01_00" taborder="28" text="%" left="190" top="537" width="10" height="26" visible="false"/>
@@ -139,46 +148,54 @@
                     <MaskEdit id="MaskEdit00_00_00_00" taborder="44" left="309" top="624" width="111" height="21" format="##,##0" readonly="true" visible="false"/>
                     <Static id="Static16_00_00_00_00" taborder="45" text="적용원가" left="216" top="620" width="90" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
                     <Combo id="cmb_Use_YN00_00" taborder="46" text="Combo00" left="425" top="516" width="185" height="21" innerdataset="ds_item_div" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" visible="false"/>
-                    <MaskEdit id="MaskEdit00_01" taborder="47" left="118" top="203" width="184" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
-                    <MaskEdit id="MaskEdit00_01_00" taborder="48" left="425" top="203" width="184" height="21" format="##,##0"/>
+                    <MaskEdit id="MaskEdit00_01" taborder="47" left="118" top="259" width="184" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <MaskEdit id="MaskEdit00_01_00" taborder="48" left="425" top="259" width="184" height="21" format="##,##0"/>
                     <MaskEdit id="MaskEdit00_02" taborder="49" left="118" top="540" width="66" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_02_onkeydown" visible="false"/>
                     <MaskEdit id="MaskEdit00_02_00" taborder="50" left="118" top="568" width="66" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_02_00_onkeydown" visible="false"/>
                     <MaskEdit id="MaskEdit00_02_00_00" taborder="51" left="118" top="596" width="66" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_02_00_00_onkeydown" visible="false"/>
                     <MaskEdit id="MaskEdit00_02_00_00_00" taborder="52" left="118" top="624" width="66" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_02_00_00_00_onkeydown" visible="false"/>
-                    <Static id="sta_04_01" taborder="53" left="94" top="227" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="Static11_01" taborder="54" text="추가여부" left="0" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static16_01" taborder="55" text="공제여부" left="306" top="255" width="115" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
-                    <CheckBox id="CheckBox00" taborder="56" left="205" top="232" width="59" height="20"/>
-                    <CheckBox id="CheckBox00_00" taborder="57" left="511" top="260" width="59" height="20" visible="false"/>
+                    <Static id="sta_04_01" taborder="53" left="94" top="283" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static11_01" taborder="54" text="추가여부" left="0" top="283" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static16_01" taborder="55" text="공제여부" left="306" top="311" width="115" cssclass="sta_WF_detailLabel" height="29" visible="false"/>
+                    <CheckBox id="CheckBox00" taborder="56" left="205" top="288" width="59" height="20"/>
+                    <CheckBox id="CheckBox00_00" taborder="57" left="511" top="316" width="59" height="20" visible="false"/>
                     <Static id="sta_01_00" taborder="58" left="94" top="87" height="29" cssclass="sta_WF_detailLine" right="0"/>
                     <Edit id="edt_name00" taborder="59" left="118" top="92" width="491" height="20" readonly="true"/>
                     <Static id="Static05_00" taborder="60" text="품목일반정보" left="0" top="87" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static11_01_00" taborder="61" text="의전대표품목" left="0" top="255" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <CheckBox id="CheckBox00_01" taborder="63" left="205" top="260" width="59" height="20"/>
-                    <Static id="Static16_01_01" taborder="64" text="대체여부" left="306" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <CheckBox id="CheckBox00_00_00" taborder="65" left="511" top="232" width="59" height="20"/>
-                    <Static id="Static16_01_00" taborder="66" text="공제여부" left="306" top="255" width="1" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
-                    <Div id="div_mCombo8" taborder="67" text="Div00" left="425" top="175" width="184" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_item_div2" callbackfunc="fn_mComboCallback"/>
-                    <CheckBox id="CheckBox01" taborder="68" text="품목구분 전체" left="489" top="147" width="114" height="20" onchanged="Div_client_Div06_CheckBox01_onchanged"/>
-                    <Static id="sta_04_01_00_00" taborder="69" left="94" top="323" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="Static16_01_02" taborder="70" text="배치중단여부" left="306" top="323" width="115" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
-                    <CheckBox id="CheckBox00_00_01" taborder="71" left="511" top="328" width="59" height="20" visible="true"/>
-                    <Static id="Static11_01_00_00" taborder="72" text="신규여부" left="0" top="323" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <CheckBox id="CheckBox00_01_00" taborder="73" left="205" top="328" width="59" height="20"/>
-                    <Static id="Static16_01_00_00" taborder="74" text="공제여부" left="306" top="323" width="1" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
-                    <Static id="Static11_02" taborder="75" text="1회 생산량" left="0" top="351" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <MaskEdit id="MaskEdit00_01_01" taborder="76" left="119" top="355" width="183" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
-                    <Static id="Static16_02" taborder="77" text="SET품목 최소수량" left="0" top="379" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <MaskEdit id="MaskEdit00_01_00_00" taborder="78" left="119" top="383" width="183" height="21" format="##,##0"/>
-                    <Static id="Static11_02_00" taborder="80" text="대표품목" left="0" top="407" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Edit id="edt_name04_00" taborder="82" left="118" top="412" width="96" height="20" readonly="true"/>
-                    <Edit id="edt_name05_00" taborder="83" left="284" top="412" width="325" height="20" readonly="true"/>
-                    <Button id="btn_sono" taborder="84" left="214" top="412" width="21" height="20" cssclass="btn_WF_search" text="" onclick="Div_client_btn_sono_onclick"/>
-                    <Button id="Button00" taborder="85" text="삭제" left="233" top="412" width="49" height="20" onclick="Div_client_Div06_Button00_onclick"/>
-                    <Static id="Static12_01" taborder="86" text="상세정보 - 안전재고" left="0" top="289" width="134" height="30" cssclass="sta_WF_title"/>
-                    <Static id="Static11_02_01" taborder="88" text="생산중단여부" left="306" top="351" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Static id="Static11_02_01_00" taborder="89" left="306" top="379" width="1" cssclass="sta_WF_detailLabel" height="29"/>
-                    <CheckBox id="CheckBox00_00_01_00" taborder="90" left="511" top="356" width="59" height="20" visible="true"/>
+                    <Static id="Static11_01_00" taborder="61" text="의전대표품목" left="0" top="311" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <CheckBox id="CheckBox00_01" taborder="63" left="205" top="316" width="59" height="20"/>
+                    <Static id="Static16_01_01" taborder="64" text="대체여부" left="306" top="283" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <CheckBox id="CheckBox00_00_00" taborder="65" left="511" top="288" width="59" height="20"/>
+                    <Static id="Static16_01_00" taborder="66" text="공제여부" left="306" top="311" width="1" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
+                    <Div id="div_mCombo8" taborder="67" text="Div00" left="425" top="231" width="184" height="23" url="Comm::Comm_MultiCombo.xfdl" combocodecolumn="CODE" combodatacolumn="CODE_NAME" comboinnerdataset="ds_item_div2" callbackfunc="fn_mComboCallback"/>
+                    <CheckBox id="CheckBox01" taborder="68" text="품목구분 전체" left="489" top="203" width="114" height="20" onchanged="Div_client_Div06_CheckBox01_onchanged"/>
+                    <Static id="sta_04_01_00_00" taborder="69" left="94" top="379" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static16_01_02" taborder="70" text="배치중단여부" left="306" top="379" width="115" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
+                    <CheckBox id="CheckBox00_00_01" taborder="71" left="511" top="384" width="59" height="20" visible="true"/>
+                    <Static id="Static11_01_00_00" taborder="72" text="신규여부" left="0" top="379" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <CheckBox id="CheckBox00_01_00" taborder="73" left="205" top="384" width="59" height="20"/>
+                    <Static id="Static16_01_00_00" taborder="74" text="공제여부" left="306" top="379" width="1" cssclass="sta_WF_detailLabel" height="29" visible="true"/>
+                    <Static id="Static11_02" taborder="75" text="1회 생산량" left="0" top="407" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_01" taborder="76" left="119" top="411" width="183" height="21" format="##,##0" onkeydown="Div_client_Div06_MaskEdit00_01_onkeydown"/>
+                    <Static id="Static16_02" taborder="77" text="SET품목 최소수량" left="0" top="435" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <MaskEdit id="MaskEdit00_01_00_00" taborder="78" left="119" top="439" width="183" height="21" format="##,##0"/>
+                    <Static id="Static11_02_00" taborder="80" text="대표품목" left="0" top="463" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_name04_00" taborder="82" left="118" top="468" width="96" height="20" readonly="true"/>
+                    <Edit id="edt_name05_00" taborder="83" left="284" top="468" width="325" height="20" readonly="true"/>
+                    <Button id="btn_sono" taborder="84" left="214" top="468" width="21" height="20" cssclass="btn_WF_search" text="" onclick="Div_client_btn_sono_onclick"/>
+                    <Button id="Button00" taborder="85" text="삭제" left="233" top="468" width="49" height="20" onclick="Div_client_Div06_Button00_onclick"/>
+                    <Static id="Static12_01" taborder="86" text="상세정보 - 안전재고" left="0" top="345" width="134" height="30" cssclass="sta_WF_title"/>
+                    <Static id="Static11_02_01" taborder="88" text="생산중단여부" left="306" top="407" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static11_02_01_00" taborder="89" left="306" top="435" width="1" cssclass="sta_WF_detailLabel" height="29"/>
+                    <CheckBox id="CheckBox00_00_01_00" taborder="90" left="511" top="412" width="59" height="20" visible="true"/>
+                    <Static id="sta_02_01" taborder="91" left="94" top="143" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static03_00" taborder="92" text="LOT_SIZE" left="306" top="143" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static10_00" taborder="93" text="CLASS" left="0" top="143" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_name04_01" taborder="94" left="118" top="148" width="185" height="20" readonly="true"/>
+                    <Edit id="edt_name05_01" taborder="95" left="424" top="148" width="185" height="20" readonly="true"/>
+                    <Static id="sta_02_01_00" taborder="96" left="94" top="171" height="29" cssclass="sta_WF_detailLine" right="0"/>
+                    <Static id="Static10_00_00" taborder="97" text="생산주기" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_name04_01_00" taborder="98" left="118" top="176" width="185" height="20" readonly="false"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -645,6 +662,9 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
       <BindItem id="item29" compid="Div_client.form.Div06.form.edt_name04_00" propid="value" datasetid="ds_list" columnid="PA_ITEM_CD"/>
       <BindItem id="item30" compid="Div_client.form.Div06.form.edt_name05_00" propid="value" datasetid="ds_list" columnid="PA_ITEM_NM"/>
       <BindItem id="item31" compid="Div_client.form.Div06.form.CheckBox00_00_01_00" propid="value" datasetid="ds_list" columnid="STOP_PROD_YN"/>
+      <BindItem id="item32" compid="Div_client.form.Div06.form.edt_name04_01" propid="value" datasetid="ds_list" columnid="CLASS"/>
+      <BindItem id="item33" compid="Div_client.form.Div06.form.edt_name05_01" propid="value" datasetid="ds_list" columnid="LOT_SIZE"/>
+      <BindItem id="item34" compid="Div_client.form.Div06.form.edt_name04_01_00" propid="value" datasetid="ds_list" columnid="P_CYCLE"/>
     </Bind>
   </Form>
 </FDL>

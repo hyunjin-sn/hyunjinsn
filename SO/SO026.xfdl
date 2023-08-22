@@ -20,6 +20,8 @@
                     <Combo id="Combo00_00" taborder="8" text="Combo00" left="924" top="4" width="104" height="21" innerdataset="ds_status" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
                     <Static id="Static03_01_00_00" taborder="9" text="메모여부" left="1040" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="Combo00_00_00" taborder="10" text="Combo00" left="1144" top="4" width="104" height="21" innerdataset="ds_memo" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
+                    <Static id="Static03_01_00_01" taborder="11" text="클래스" left="1270" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_00_01" taborder="12" text="Combo00" left="1374" top="4" width="104" height="21" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged" innerdataset="ds_class"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -35,11 +37,15 @@
                       <Column size="250"/>
                       <Column size="60"/>
                       <Column size="92"/>
+                      <Column size="72"/>
+                      <Column size="60"/>
+                      <Column size="60"/>
                       <Column size="58"/>
                       <Column size="87"/>
                       <Column size="58"/>
                       <Column size="58"/>
                       <Column size="58"/>
+                      <Column size="38"/>
                       <Column size="58"/>
                       <Column size="81"/>
                       <Column size="58"/>
@@ -48,7 +54,6 @@
                       <Column size="58"/>
                       <Column size="58"/>
                       <Column size="79"/>
-                      <Column size="58"/>
                       <Column size="58"/>
                       <Column size="58"/>
                       <Column size="58"/>
@@ -78,41 +83,43 @@
                       <Cell col="3" rowspan="2" text="품목명"/>
                       <Cell col="4" rowspan="2" text="선후불"/>
                       <Cell col="5" rowspan="2" text="품목&#13;&#10;상태"/>
-                      <Cell col="6" colspan="4" text="기준출고량"/>
-                      <Cell col="10" rowspan="2" text="탁송량&#13;&#10;(30일)"/>
-                      <Cell col="11" colspan="6" text="본부지점"/>
-                      <Cell col="17" colspan="6" text="파주"/>
-                      <Cell col="23" colspan="4" text="생산"/>
-                      <Cell col="27" rowspan="2" text="메모"/>
-                      <Cell col="28" colspan="4" text="전국"/>
-                      <Cell col="32" rowspan="2" text="세트수량"/>
-                      <Cell col="33" colspan="2" text="가용일수"/>
-                      <Cell row="1" col="6" text="출고량"/>
-                      <Cell row="1" col="7" text="출고량&#13;&#10;(대표,종속 합)"/>
-                      <Cell row="1" col="8" text="출고기간"/>
-                      <Cell row="1" col="9" text="일평균&#13;&#10;출고량"/>
-                      <Cell row="1" col="11" text="현재고"/>
-                      <Cell row="1" col="12" text="현재고&#13;&#10;(대표,종속 합)"/>
-                      <Cell row="1" col="13" text="안전재고"/>
-                      <Cell row="1" col="14" text="부족수량"/>
-                      <Cell row="1" col="15" text="과보유&#13;&#10;수량"/>
-                      <Cell row="1" col="16" text="이동중&#13;&#10;재고"/>
-                      <Cell row="1" col="17" text="현재고"/>
-                      <Cell row="1" col="18" text="현재고&#13;&#10;(대표,종속 합)"/>
-                      <Cell row="1" col="19" text="안전재고"/>
-                      <Cell row="1" col="20" text="안전재고&#13;&#10;ERP"/>
-                      <Cell row="1" col="21" text="부족수량"/>
-                      <Cell row="1" col="22" text="과보유&#13;&#10;수량"/>
-                      <Cell row="1" col="23" text="생산예정일"/>
-                      <Cell row="1" col="24" text="┼"/>
-                      <Cell row="1" col="25" text="생산&#13;&#10;예정수량"/>
-                      <Cell row="1" col="26" text="1회&#13;&#10;생산량"/>
-                      <Cell row="1" col="28" text="현재고"/>
-                      <Cell row="1" col="29" text="안전재고"/>
-                      <Cell row="1" col="30" text="부족수량"/>
-                      <Cell row="1" col="31" text="과보유&#13;&#10;수량"/>
-                      <Cell row="1" col="33" text="파주"/>
-                      <Cell row="1" col="34" text="전국"/>
+                      <Cell col="6" rowspan="2" text="CLASS"/>
+                      <Cell col="7" rowspan="2" text="LOT_SIZE"/>
+                      <Cell col="8" rowspan="2" text="생산주기"/>
+                      <Cell col="9" colspan="4" text="기준출고량"/>
+                      <Cell col="13" rowspan="2" colspan="2" text="탁송량&#13;&#10;(30일)"/>
+                      <Cell col="15" colspan="6" text="본부지점"/>
+                      <Cell col="21" colspan="5" text="파주"/>
+                      <Cell col="26" colspan="4" text="생산"/>
+                      <Cell col="30" rowspan="2" text="메모"/>
+                      <Cell col="31" colspan="4" text="전국"/>
+                      <Cell col="35" rowspan="2" text="세트수량"/>
+                      <Cell col="36" colspan="2" text="가용일수"/>
+                      <Cell row="1" col="9" text="출고량"/>
+                      <Cell row="1" col="10" text="출고량&#13;&#10;(대표,종속 합)"/>
+                      <Cell row="1" col="11" text="출고기간"/>
+                      <Cell row="1" col="12" text="일평균&#13;&#10;출고량"/>
+                      <Cell row="1" col="15" text="현재고"/>
+                      <Cell row="1" col="16" text="현재고&#13;&#10;(대표,종속 합)"/>
+                      <Cell row="1" col="17" text="안전재고"/>
+                      <Cell row="1" col="18" text="부족수량"/>
+                      <Cell row="1" col="19" text="과보유&#13;&#10;수량"/>
+                      <Cell row="1" col="20" text="이동중&#13;&#10;재고"/>
+                      <Cell row="1" col="21" text="현재고"/>
+                      <Cell row="1" col="22" text="현재고&#13;&#10;(대표,종속 합)"/>
+                      <Cell row="1" col="23" text="안전재고&#13;&#10;ERP"/>
+                      <Cell row="1" col="24" text="부족수량"/>
+                      <Cell row="1" col="25" text="과보유&#13;&#10;수량"/>
+                      <Cell row="1" col="26" text="생산예정일"/>
+                      <Cell row="1" col="27" text="┼"/>
+                      <Cell row="1" col="28" text="생산&#13;&#10;예정수량"/>
+                      <Cell row="1" col="29" text="1회&#13;&#10;생산량"/>
+                      <Cell row="1" col="31" text="현재고"/>
+                      <Cell row="1" col="32" text="안전재고"/>
+                      <Cell row="1" col="33" text="부족수량"/>
+                      <Cell row="1" col="34" text="과보유&#13;&#10;수량"/>
+                      <Cell row="1" col="36" text="파주"/>
+                      <Cell row="1" col="37" text="전국"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
@@ -121,67 +128,70 @@
                       <Cell col="3" text="bind:품목명" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="4" text="bind:선후불" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="5" text="bind:상태" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'buttoncontrol' : 'nomal'" edittype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'button' : 'none'"/>
-                      <Cell col="6" text="bind:표준출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="7" text="bind:출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="8" text="bind:출고기간" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="9" text="bind:일평균출고량" maskeditformat="##,##0.#0" displaytype="mask" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="10" text="bind:탁송량" maskeditformat="##,##0" displaytype="expr:탁송량!='0' ? 'buttoncontrol' : 'nomal'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" textAlign="right"/>
-                      <Cell col="11" text="bind:본부지점재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="12" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="13" text="bind:본부지점안전재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="14" text="bind:본부지점부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="15" text="bind:본부지점과보유수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="16" text="bind:이동중재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="17" text="bind:파주재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="18" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="19" text="bind:파주안전재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="20" text="bind:파주안전재고ERP" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="21" text="bind:파주부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="22" text="bind:파주과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="23" text="bind:생산예정일" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="24" text="expr:CNT&gt;0 ? '┼' : ''" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:CNT&gt;0 ? 'buttoncontrol' : 'nomal'" edittype="expr:CNT&gt;0 ? 'button' : 'none'"/>
-                      <Cell col="25" text="bind:생산예정수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="26" text="bind:최소생산수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="27" text="expr:MEMO_CHK=='1' ? '메모 (Y)' : '메모 (N)'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:MEMO_CHK=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO_CHK=='1' ? 'button' : 'none'"/>
-                      <Cell col="28" text="bind:전국재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="29" text="bind:전국안전재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="30" text="bind:전국부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="31" text="bind:전국과보유수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="32" text="bind:세트수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="33" text="bind:가용일수" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="34" text="bind:전국가용일수" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="6" text="bind:CLASS" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="7" text="bind:LOT_SIZE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="8" text="bind:P_CYCLE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" verticalAlign="middle" textAlign="right"/>
+                      <Cell col="9" text="bind:표준출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="10" text="bind:출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="11" text="bind:출고기간" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="12" text="bind:일평균출고량" maskeditformat="##,##0.#0" displaytype="mask" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="13" text="bind:탁송량" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" textAlign="right"/>
+                      <Cell col="14" text="expr:탁송량!='0' ? '확인' : ''" displaytype="expr:탁송량!='0' ? 'buttoncontrol' : 'nomal'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="15" text="bind:본부지점재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="16" text="bind:본부지점재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="17" text="bind:본부지점안전재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="18" text="bind:본부지점부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="19" text="bind:본부지점과보유수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="20" text="bind:이동중재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="21" text="bind:파주재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="22" text="bind:파주재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="23" text="bind:파주안전재고ERP" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="24" text="bind:파주부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="25" text="bind:파주과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="26" text="bind:생산예정일" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="27" text="expr:CNT&gt;0 ? '┼' : ''" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:CNT&gt;0 ? 'buttoncontrol' : 'nomal'" edittype="expr:CNT&gt;0 ? 'button' : 'none'"/>
+                      <Cell col="28" text="bind:생산예정수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="29" text="bind:최소생산수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="30" text="expr:MEMO_CHK=='1' ? '메모 (Y)' : '메모 (N)'" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:MEMO_CHK=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO_CHK=='1' ? 'button' : 'none'"/>
+                      <Cell col="31" text="bind:전국재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="32" text="bind:전국안전재고" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="33" text="bind:전국부족수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="34" text="bind:전국과보유수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="35" text="bind:세트수량" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="36" text="bind:가용일수" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="37" text="bind:전국가용일수" displaytype="mask" maskeditformat="##,##0" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                     </Band>
                     <Band id="summary">
-                      <Cell colspan="6" text="합    계    " textAlign="right"/>
-                      <Cell col="6" text="expr:dataset.getSum(&quot;표준출고량&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
-                      <Cell col="7" text="expr:dataset.getSum(&quot;출고량&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
-                      <Cell col="8" maskeditformat="##,###"/>
-                      <Cell col="9" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;일평균출고량&quot;)" textAlign="right"/>
-                      <Cell col="10" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;탁송량&quot;)" textAlign="right"/>
-                      <Cell col="11" text="expr:dataset.getSum(&quot;본부지점재고_ORIGIN&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="12" text="expr:dataset.getSum(&quot;본부지점재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="13" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;본부지점안전재고&quot;)" textAlign="right"/>
-                      <Cell col="14" text="expr:dataset.getSum(&quot;본부지점부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="15" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;본부지점과보유수량&quot;)" textAlign="right"/>
-                      <Cell col="16" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;이동중재고&quot;)" textAlign="right"/>
-                      <Cell col="17" text="expr:dataset.getSum(&quot;파주재고_ORIGIN&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="18" text="expr:dataset.getSum(&quot;파주재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="19" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;파주안전재고&quot;)" textAlign="right"/>
-                      <Cell col="20" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;파주안전재고ERP&quot;)" textAlign="right"/>
-                      <Cell col="21" text="expr:dataset.getSum(&quot;파주부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="22" text="expr:dataset.getSum(&quot;파주과보유수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="23" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="24" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="25" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell colspan="9" text="합    계    " textAlign="right"/>
+                      <Cell col="9" text="expr:dataset.getSum(&quot;표준출고량&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
+                      <Cell col="10" text="expr:dataset.getSum(&quot;출고량&quot;)" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
+                      <Cell col="11" maskeditformat="##,###"/>
+                      <Cell col="12" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;일평균출고량&quot;)" textAlign="right"/>
+                      <Cell col="13" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;탁송량&quot;)" textAlign="right"/>
+                      <Cell col="14"/>
+                      <Cell col="15" text="expr:dataset.getSum(&quot;본부지점재고_ORIGIN&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="16" text="expr:dataset.getSum(&quot;본부지점재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="17" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;본부지점안전재고&quot;)" textAlign="right"/>
+                      <Cell col="18" text="expr:dataset.getSum(&quot;본부지점부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="19" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;본부지점과보유수량&quot;)" textAlign="right"/>
+                      <Cell col="20" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;이동중재고&quot;)" textAlign="right"/>
+                      <Cell col="21" text="expr:dataset.getSum(&quot;파주재고_ORIGIN&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="22" text="expr:dataset.getSum(&quot;파주재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="23" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;파주안전재고ERP&quot;)" textAlign="right"/>
+                      <Cell col="24" text="expr:dataset.getSum(&quot;파주부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="25" text="expr:dataset.getSum(&quot;파주과보유수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
                       <Cell col="26" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="27" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
-                      <Cell col="28" text="expr:dataset.getSum(&quot;전국재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="29" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;전국안전재고&quot;)" textAlign="right"/>
-                      <Cell col="30" text="expr:dataset.getSum(&quot;전국부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="31" text="expr:dataset.getSum(&quot;전국과보유수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="32" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="33" displaytype="mask" maskeditformat="##,###"/>
-                      <Cell col="34" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="27" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="28" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="29" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="30" displaytype="mask" maskeditformat="##,###" textAlign="right"/>
+                      <Cell col="31" text="expr:dataset.getSum(&quot;전국재고&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="32" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;전국안전재고&quot;)" textAlign="right"/>
+                      <Cell col="33" text="expr:dataset.getSum(&quot;전국부족수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="34" text="expr:dataset.getSum(&quot;전국과보유수량&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="35" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="36" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="37" displaytype="mask" maskeditformat="##,###"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -217,11 +227,12 @@ this.SO020_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);	
 	
-	this._gfnGridcellFix(this.Div_client.form.grd_list, 5);
+	this._gfnGridcellFix(this.Div_client.form.grd_list, 8);
 	
 	this.Div_client.form.div_search.form.Combo00.set_index(0);
 	this.Div_client.form.div_search.form.Combo00_00.set_index(0);
 	this.Div_client.form.div_search.form.Combo00_00_00.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_00_01.set_index(0);
 	
 	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
 	{
@@ -367,7 +378,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		}		
 	}
 	
-	if (e.col == 24)
+	if (e.col == 27)
 	{
 		if (this.ds_list.getColumn(e.row,"CNT") > 0)
 		{
@@ -383,7 +394,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		}		
 	}
 	
-	if (e.col == 27)
+	if (e.col == 30)
 	{
 		var itemCd = this.ds_list.getColumn(this.ds_list.rowposition,"품목코드");
 		var pProdPlanDt = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"생산예정일"),"");
@@ -396,7 +407,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
 	}
 	
-	if (e.col == 10)
+	if (e.col == 14)
 	{
 		if (this.ds_list.getColumn(this.ds_list.rowposition,"탁송량") != 0)
 		{
@@ -424,6 +435,7 @@ this.fn_filter = function ()
 	var div = this.Div_client.form.div_search.form.Combo00.value;								// 선후불
 	var status = this.Div_client.form.div_search.form.Combo00_00.value;							// 품목상태
 	var memo = this.Div_client.form.div_search.form.Combo00_00_00.value;						// 메모여부
+	var cls = this.Div_client.form.div_search.form.Combo00_00_01.value;							// 클래스
 		
 	var filterstr = "";
 	
@@ -449,6 +461,14 @@ this.fn_filter = function ()
 		if(this.gfn_isNull(filterstr))
 			filterstr = "상태=='"+status+"'";
 		else filterstr += " && 상태=='"+status+"'";				
+	}
+	
+	//클래스
+	if(!this.gfn_isNull(cls) && cls != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "CLASS=='"+cls+"'";
+		else filterstr += " && CLASS=='"+cls+"'";				
 	}
 
 	//메모여부
@@ -601,6 +621,46 @@ this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.Gr
           <Row>
             <Col id="CODE">1</Col>
             <Col id="CODE_NAME">메모 (Y)</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">S Class</Col>
+            <Col id="CODE_NAME">S Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A Class</Col>
+            <Col id="CODE_NAME">A Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B Class</Col>
+            <Col id="CODE_NAME">B Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C Class</Col>
+            <Col id="CODE_NAME">C Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D Class</Col>
+            <Col id="CODE_NAME">D Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E Class</Col>
+            <Col id="CODE_NAME">E Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Z Class (일괄,단품용)</Col>
+            <Col id="CODE_NAME">Z Class (일괄,단품용)</Col>
           </Row>
         </Rows>
       </Dataset>
