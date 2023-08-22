@@ -950,6 +950,7 @@
 // * 추가
 // test
 // test
+tesr
 // /***********************************************************************************************/
 
 this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
