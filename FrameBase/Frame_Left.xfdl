@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Left" width="200" height="663" titletext="frameLeft" onload="Frame_Left_onload" cssclass="frm_bg">
+    <Layouts>
+      <Layout height="663" width="200">
+        <Button id="btn_myMenu" taborder="2" text="Bookmark" top="5" height="30" cssclass="btn_LF_myMenu" onclick="btn_menu_onclick" width="90" left="100" visible="false"/>
+        <Button id="btn_menu" taborder="1" text="Menu" left="10" top="5" height="30" cssclass="btn_LF_menu" onclick="btn_menu_onclick" width="180"/>
+        <Div id="div_left" taborder="2" left="10" top="btn_menu:0" cssclass="div_LF_bg" bottom="10" right="10">
+          <Layouts>
+            <Layout>
+              <Grid id="grd_menu" taborder="0" left="0" top="0" cssclass="grd_LF_mnutree" binddataset="ds_menu" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,all" treeuseline="false" bottom="0" width="180" treeuseimage="false" oncellclick="div_left_grd_menu_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="177"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NAME" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:LEV" tooltiptext="bind:MENU_NAME"/>
+                    </Band>
+                  </Format>
+                  <Format id="mymenu">
+                    <Columns>
+                      <Column size="172"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NAME"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btn_close" taborder="3" right="0" top="227" width="8" height="60" cssclass="btn_LF_close" onclick="btn_close_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_menu">
+        <ColumnInfo>
+          <Column id="MENU_ID" size="50" type="STRING"/>
+          <Column id="PA_MENU_ID" size="50" type="STRING"/>
+          <Column id="LEFT_MENU" type="STRING" size="256"/>
+          <Column id="MENU_NAME" size="50" type="STRING"/>
+          <Column id="DEPTH_FULLNAME" size="255" type="STRING"/>
+          <Column id="SORT" size="255" type="STRING"/>
+          <Column id="PRGM_FULL_PATH" size="100" type="STRING"/>
+          <Column id="DESCRIPTION" size="200" type="STRING"/>
+          <Column id="PRGM_ID" size="100" type="STRING"/>
+          <Column id="PRGM_PATH" size="100" type="STRING"/>
+          <Column id="PRGM_FILE_NAME" size="100" type="STRING"/>
+          <Column id="MENU_ORDR" size="5" type="STRING"/>
+          <Column id="USED_YN" size="5" type="STRING"/>
+          <Column id="REMARK" size="200" type="STRING"/>
+          <Column id="LEV" size="11" type="BIGDECIMAL"/>
+          <Column id="DEL_YN" size="5" type="STRING"/>
+          <Column id="REG_DATE" size="23" type="STRING"/>
+          <Column id="REG_USER" size="50" type="STRING"/>
+          <Column id="REG_IP" size="50" type="STRING"/>
+          <Column id="UPDATE_DATE" size="23" type="STRING"/>
+          <Column id="UPDATE_USER" size="50" type="STRING"/>
+          <Column id="UPDATE_IP" size="50" type="STRING"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    FrameBase > Frame_Left
+*  @FileName 	Frame_Left.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.04.10
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = this.gfn_getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Frame_Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//Global DataSet 세팅
+};
+this.btn_menu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    if(e.fromobject.id == "btn_menu"){
+        this.btn_menu.setSelectStatus(true);
+        this.btn_myMenu.setSelectStatus(false);
+        this.div_left.form.grd_menu.set_formatid("default");
+        this.div_left.form.grd_menu.set_binddataset("ds_menu");
+    }
+    else{
+        this.btn_menu.setSelectStatus(false);
+        this.btn_myMenu.setSelectStatus(true);
+        this.div_left.form.grd_menu.set_formatid("mymenu");	
+        this.div_left.form.grd_menu.set_binddataset("gds_myMenu");
+    }
+};
+
+// 상단 Top메뉴 변경시 하위메뉴 변경
+this.fn_changeMenu = function(sTopMenuId)
+{
+	//alert(sTopMenuId);
+	sTopMenuId1 = new String(sTopMenuId);
+	
+	var sExpr = "LEFT_MENU == '" + sTopMenuId1.substring(0,2) + "' && LEV != '0'";
+
+	this.objApp.gds_menu.set_enableevent(false);
+	this.ds_menu.set_enableevent(false);
+	this.objApp.gds_menu.filter(sExpr);
+	var a = this.ds_menu.copyData(this.objApp.gds_menu, true);
+	this.objApp.gds_menu.filter("");
+	this.objApp.gds_menu.set_enableevent(true);
+	this.ds_menu.set_enableevent(true);
+};
+
+
+this.div_left_grd_menu_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var objDs = obj.getBindDataset();
+    var arrArg = [];
+// 	alert(objDs.getColumn(e.row, "MENU_ID"));
+// 	alert(objDs.getColumn(e.row, "MENU_NAME"));
+// 	alert(objDs.getColumn(e.row, "PRGM_FULL_PATH"));	
+	
+	this.gfn_openForm(objDs, e.row, arrArg);
+};
+
+// Left 접고 펼치기
+this.btn_close_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fnLeftMenuAction();
+};
+
+/**
+ * @description Left 접고/펼치기 (frameWorkTitle에서 호출)
+*/
+this.fnLeftMenuAction = function()
+{
+	var objApp = nexacro.getApplication();
+
+	if(objApp.av_HFrameSet.separatesize == "14,*")
+	{
+		objApp.av_HFrameSet.set_separatesize("200,*");
+		this.btn_close.set_cssclass("btn_LF_close");
+	}
+	else
+	{
+		objApp.av_HFrameSet.set_separatesize("14,*");
+		this.btn_close.set_cssclass("btn_LF_open");
+	}
+};]]></Script>
+  </Form>
+</FDL>

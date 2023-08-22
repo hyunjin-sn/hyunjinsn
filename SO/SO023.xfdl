@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO020" width="1700" height="710" titletext="New Form" onload="SO020_onload">
+    <Layouts>
+      <Layout height="710" mobileorientation="landscape" width="1700">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="품목명" left="300" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="402" top="4" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static03_00" taborder="2" text="지점명" left="20" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00" taborder="3" left="122" top="4" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="93" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" autofittype="col" width="949" onselectchanged="Div_client_grd_list_onselectchanged">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="43"/>
+                      <Column size="64"/>
+                      <Column size="109"/>
+                      <Column size="79"/>
+                      <Column size="206"/>
+                      <Column size="89"/>
+                      <Column size="53"/>
+                      <Column size="53"/>
+                      <Column size="89"/>
+                      <Column size="130"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="37" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="지점코드"/>
+                      <Cell col="2" text="지점명"/>
+                      <Cell col="3" text="품목코드"/>
+                      <Cell col="4" text="품목명"/>
+                      <Cell col="5" text="최종&#13;&#10;이동요청일"/>
+                      <Cell col="6" text="이동중&#13;&#10;재고"/>
+                      <Cell col="7" text="조정&#13;&#10;수량"/>
+                      <Cell col="8" text="이동요청일"/>
+                      <Cell col="9" text="비고"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="2" text="bind:BP_NM"/>
+                      <Cell col="3" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="4" text="bind:ITEM_NM"/>
+                      <Cell col="5" text="bind:MOVE_DT" textAlign="center" calendardisplaynulltype="none"/>
+                      <Cell col="6" text="bind:MOVE_QTY" textAlign="center"/>
+                      <Cell col="7" text="bind:조정수량" textAlign="center" edittype="expr:비고=='PD0016' || 비고=='PD0019' || 비고=='PD0042' ? 'mask' : 'none'" background="YELLOW" maskeditautoselect="true"/>
+                      <Cell col="8" textAlign="center" calendardisplaynulltype="none" background="YELLOW" text="bind:이동요청일" displaytype="date"/>
+                      <Cell col="9" text="bind:비고" textAlign="center" edittype="combo" background="YELLOW" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2"/>
+                      <Cell col="3"/>
+                      <Cell col="4"/>
+                      <Cell col="5"/>
+                      <Cell col="6" text="expr:dataset.getSum(&quot;MOVE_QTY&quot;)" displaytype="mask" textAlign="center" maskeditformat="##,##0"/>
+                      <Cell col="7"/>
+                      <Cell col="8"/>
+                      <Cell col="9"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05" taborder="4" text="용품 이동중재고 확인 - 1" left="10" top="55" width="189" height="30" cssclass="sta_WF_title" onclick="Div_client_Static05_onclick"/>
+              <Static id="Static05_00" taborder="5" text="요청대비 입고현황 - 3" left="1190" top="55" width="159" height="30" cssclass="sta_WF_title" onclick="Div_client_Static05_onclick"/>
+              <Grid id="grd_list00" taborder="6" binddataset="ds_list_1" scrolltype="both" minwidth="" bottom="0" left="1189" top="460" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" autofittype="col" width="500">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="144"/>
+                      <Column size="64"/>
+                      <Column size="110"/>
+                      <Column size="64"/>
+                      <Column size="101"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="바코드"/>
+                      <Cell col="2" colspan="2" text="이동요청지점"/>
+                      <Cell col="4" colspan="2" text="입고지점"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:lot_no" textAlign="center"/>
+                      <Cell col="2" text="bind:trns_cd" textAlign="center"/>
+                      <Cell col="3" text="bind:BP_NM" textAlign="left" tooltiptext="bind:BP_NM"/>
+                      <Cell col="4" text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="5" text="bind:BP_NM_IN" textAlign="left" tooltiptext="bind:BP_NM_IN"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00_00" taborder="7" text="QR코드별 입고현황 - 4" left="1192" width="157" height="30" cssclass="sta_WF_title" onclick="Div_client_Static05_onclick" top="419"/>
+              <Grid id="grd_list00_00" taborder="8" binddataset="ds_list_2" scrolltype="both" minwidth="" left="1189" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" autofittype="col" width="500" height="317" top="93">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="94"/>
+                      <Column size="60"/>
+                      <Column size="94"/>
+                      <Column size="60"/>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="순번"/>
+                      <Cell col="1" colspan="2" text="파주 -&gt; 지점/본부"/>
+                      <Cell col="3" colspan="2" text="지점/본부 입고"/>
+                      <Cell col="5" rowspan="2" text="미입고&#13;&#10;수량"/>
+                      <Cell col="6" rowspan="2" text="과입고&#13;&#10;수량"/>
+                      <Cell row="1" col="1" text="입고대상지점"/>
+                      <Cell row="1" col="2" text="출고수량"/>
+                      <Cell row="1" col="3" text="입고지점"/>
+                      <Cell row="1" col="4" text="입고수량"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="1" text="bind:BP_NM" textAlign="left" tooltiptext="bind:BP_NM" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="2" text="bind:CNT" textAlign="center" tooltiptext="bind:CNT" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="3" text="bind:BP_NM2" textAlign="left" tooltiptext="bind:BP_NM2" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="4" text="bind:CNT2" textAlign="center" tooltiptext="bind:CNT2" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="5" text="bind:미입고" textAlign="center" tooltiptext="bind:미입고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="6" text="bind:과입고" textAlign="center" tooltiptext="bind:과입고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2" displaytype="mask" text="expr:dataset.getSum(&quot;CNT&quot;)" textAlign="center" maskeditformat="##,##0"/>
+                      <Cell col="3"/>
+                      <Cell col="4" displaytype="mask" text="expr:dataset.getSum(&quot;CNT2&quot;)" textAlign="center" maskeditformat="##,##0"/>
+                      <Cell col="5" displaytype="mask" text="expr:dataset.getSum(&quot;미입고&quot;)" textAlign="center" maskeditformat="##,##0"/>
+                      <Cell col="6" displaytype="mask" text="expr:dataset.getSum(&quot;과입고&quot;)" textAlign="center" maskeditformat="##,##0"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="grd_list01" taborder="9" binddataset="ds_list_1_2" scrolltype="both" minwidth="" bottom="0" left="969" top="93" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" autofittype="col" width="210" oncellclick="Div_client_grd_list01_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="35"/>
+                      <Column size="89"/>
+                      <Column size="35"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="37" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="이동요청일"/>
+                      <Cell col="2"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:REQ_DT"/>
+                      <Cell col="2" text="선택" textAlign="center" displaytype="buttoncontrol" edittype="button"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_01" taborder="10" text="이동요청일 - 2" left="970" top="55" width="97" height="30" cssclass="sta_WF_title" onclick="Div_client_Static05_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  용품 판매대비 재고현황 조회
+*  @MenuPath    SO > SO020
+*  @FileName 	SO020.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.04.20
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO020_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.efn_SetDatasetData2(this.ds_div,this.objApp.gds_code2,'PD003');		// 비고
+	
+	this.ds_div.insertRow(0);
+	this.ds_div.setColumn(0,"CODE","-999");
+	this.ds_div.setColumn(0,"CODE_NAME","");
+		
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+
+};
+
+this.fn_search = function ()
+{	
+	// 조회
+	var id = "SO023_S01";
+	var url = "svcUrl::SO023_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_save = function ()
+{	
+	var moveQty = this.ds_list.getColumn(this.ds_list.rowposition,"MOVE_QTY");
+	var chgQty = this.ds_list.getColumn(this.ds_list.rowposition,"조정수량");
+	var moveDt = this.ds_list.getColumn(this.ds_list.rowposition,"이동요청일");
+	var remark = this.ds_list.getColumn(this.ds_list.rowposition,"비고");
+	
+// 	if (chgQty > moveQty)
+// 	{
+// 		this.alert("조정수량은 이동중재고보다 클 수 없습니다.")
+// 		return;
+// 	}
+	
+	if (this.gfn_isNull(moveDt))
+	{
+		this.alert("이동요청일을 선택 바랍니다.")
+		return;
+	}
+	
+	if (this.gfn_isNull(remark))
+	{
+		this.alert("비고를 선택 바랍니다.")
+		return;
+	}
+	
+	var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"BP_CD");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+
+	var id = "SO023_M01";
+	var url = "svcUrl::SO023_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "BP_CD="+bpCd+" INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 저장 callback
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.")
+	this.fn_search();
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}	
+};
+
+this.Div_client_div_search_cmb_insrtUser_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+
+this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.ds_list_1.clearData();
+	this.ds_list_2.clearData();
+	
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+	
+	if (e.col == 5 || e.col == 6 || e.col == 7 || e.col == 8 || e.col == 9 || e.col == 10)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else 
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+
+	var args1 = this.ds_list.getColumn(this.ds_list.rowposition,"ITEM_CD");
+
+	// 조회
+	var id = "SO023_S02";
+	var url = "svcUrl::SO023_S02";
+	var inDs = "";
+	var outDs = "ds_list_1_2=ds_list_1_2";
+	var args = "ITEM_CD="+args1+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_filter = function ()
+{
+	var itemCd = this.Div_client.form.div_search.form.edt_sono.text;							// 품목
+	var bpCd = this.Div_client.form.div_search.form.edt_sono00.text;							// 지점
+		
+	var filterstr = "";
+	
+	//품목명	
+	if(!this.gfn_isNull(itemCd))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "ITEM_NM.indexOf('"+itemCd+"')!='-1'";
+		else filterstr += " && ITEM_NM.indexOf('"+itemCd+"')!='-1'";
+// 		if(this.gfn_isNull(filterstr))
+// 		{
+// 			filterstr = "ITEM_NM.indexOf('"+itemCd+"')!='-1'";
+// 			filterstr += " || ITEM_CD.indexOf('"+itemCd+"')!='-1'";	
+// 		} else
+// 		{
+// 			filterstr += " && ITEM_NM.indexOf('"+itemCd+"')!='-1'";
+// 			filterstr += " || ITEM_CD.indexOf('"+itemCd+"')!='-1'";	
+// 		}
+	}
+	
+	//지점	
+	if(!this.gfn_isNull(bpCd))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "BP_NM.indexOf('"+bpCd+"')!='-1'";
+		else filterstr += " && BP_NM.indexOf('"+bpCd+"')!='-1'";
+// 		if(this.gfn_isNull(filterstr))
+// 		{
+// 			filterstr = "BP_NM.indexOf('"+bpCd+"')!='-1'";
+// 			filterstr += " || BP_CD.indexOf('"+bpCd+"')!='-1'";			
+// 		} else
+// 		{
+// 			filterstr += " && BP_NM.indexOf('"+bpCd+"')!='-1'";
+// 			filterstr += " || BP_CD.indexOf('"+bpCd+"')!='-1'";	
+// 		}
+	}
+	//trace(filterstr)
+	this.ds_list.set_filterstr(filterstr);
+};
+ 
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.fn_color = function (currow)
+{	
+	var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"BP_NM");
+	var chk1 = this.ds_list_2.getColumn(currow,"미입고");
+	var chk2 = this.ds_list_2.getColumn(currow,"과입고");
+	var chk3 = this.ds_list_2.getColumn(currow,"BP_NM");
+	
+	if (bpCd == chk3 && !this.gfn_isNull(chk1) || bpCd == chk3 && !this.gfn_isNull(chk2))
+	{
+		return "status3";
+	}
+};
+
+this.fn_color2 = function (currow)
+{	
+	var bpNm2 = this.ds_list_3.getColumn(currow,"BP_NM");
+
+	for (var i=0; i<this.ds_list_1.rowcount; i++)
+	{
+		if (bpNm2 == this.ds_list_1.getColumn(i,"BP_NM"))
+		{			
+			return "status3";
+		}
+	}
+};
+
+this.Div_client_grd_list01_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 2)
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"이동요청일",this.ds_list_1_2.getColumn(e.row,"REQ_DT"))
+	}
+	
+	var args1 = this.ds_list_1_2.getColumn(this.ds_list_1_2.rowposition,"REQ_DT");
+	var args2 = this.ds_list_1_2.getColumn(this.ds_list_1_2.rowposition,"ITEM_CD");
+
+	// 조회
+	var id = "SO023_P01_S";
+	var url = "svcUrl::SO023_P01_S";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "START_DATE="+args1+" ITEM_CD="+args2+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.ds_list_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	var remark = this.ds_list.getColumn(e.row,"비고");
+	if (e.columnid == "비고")
+	{
+		if (remark == "PD0017" || remark == "PD0018")
+		{
+			this.ds_list.setColumn(e.row,"조정수량",0);
+		}
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="GOOD_ON_HAND_QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="MOVE_DT" type="DATETIME" size="23"/>
+          <Column id="MOVE_QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="조정수량" type="BIGDECIMAL" size="20"/>
+          <Column id="이동요청일" type="DATETIME" size="23"/>
+          <Column id="비고" type="STRING" size="1000"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="OWN_NM" type="STRING" size="256"/>
+          <Column id="SO_NO" type="STRING" size="256"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+          <Column id="PO_BP_NM" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="AD_NM" type="STRING" size="256"/>
+          <Column id="AD_SUP_CD" type="STRING" size="256"/>
+          <Column id="DIV" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BP_NM"/>
+            <Col id="OWN_NM"/>
+            <Col id="SO_NO"/>
+            <Col id="STATUS"/>
+            <Col id="PO_BP_NM"/>
+            <Col id="DEL_YN"/>
+            <Col id="BP_CD"/>
+            <Col id="AD_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="plant_cd" type="STRING" size="20"/>
+          <Column id="item_cd" type="STRING" size="20"/>
+          <Column id="sl_cd" type="STRING" size="20"/>
+          <Column id="tracking_no" type="STRING" size="20"/>
+          <Column id="lot_no" type="STRING" size="20"/>
+          <Column id="lot_sub_no" type="BIGDECIMAL" size="7"/>
+          <Column id="good_on_hand_qty" type="BIGDECIMAL" size="20"/>
+          <Column id="bad_on_hand_qty" type="BIGDECIMAL" size="20"/>
+          <Column id="insrt_user_id" type="STRING" size="20"/>
+          <Column id="insrt_dt" type="DATETIME" size="23"/>
+          <Column id="updt_user_id" type="STRING" size="20"/>
+          <Column id="updt_dt" type="DATETIME" size="23"/>
+          <Column id="move_dt" type="DATETIME" size="23"/>
+          <Column id="trns_cd" type="STRING" size="20"/>
+          <Column id="mvmt_no" type="STRING" size="50"/>
+          <Column id="insrt_system" type="STRING" size="10"/>
+          <Column id="mvmt_no_sender" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM_IN" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="CNT" type="INT" size="11"/>
+          <Column id="BP_NM2" type="STRING" size="200"/>
+          <Column id="CNT2" type="INT" size="11"/>
+          <Column id="TEL_NO2" type="STRING" size="20"/>
+          <Column id="미입고" type="INT" size="11"/>
+          <Column id="과입고" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="TEL_NO2" type="STRING" size="255"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_1_2">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="REQ_DT" type="DATETIME" size="23"/>
+          <Column id="조정수량" type="INT" size="11"/>
+          <Column id="비고" type="STRING" size="255"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div"/>
+    </Objects>
+  </Form>
+</FDL>

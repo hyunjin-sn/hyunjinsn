@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P01" width="300" height="121" titletext="New Form" onload="FM003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="121" mobileorientation="landscape" width="300">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="110" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_00_00_00" taborder="7" left="109" top="10" height="58" cssclass="sta_WF_detailLine" width="177"/>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static23_00_00_00_00_00" taborder="1" text="임종일시" left="10" top="10" width="100" cssclass="sta_WF_detailLabel_ess" height="58"/>
+              <Calendar id="cal_dlvyDt" taborder="2" left="114" top="14" width="165" height="21" onchanged="Div00_cal_dlvyDt_onchanged" background="#fafdc8"/>
+              <Combo id="cmb_time" taborder="3" left="114" top="42" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time" background="#fafdc8"/>
+              <Static id="Static00_00_01" taborder="4" text="시" left="169" top="39" width="20" height="29"/>
+              <Combo id="cmb_min" taborder="5" left="186" top="42" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute" background="#fafdc8"/>
+              <Static id="Static00_00_01_00" taborder="6" text="분 경" left="243" top="39" width="29" height="29"/>
+              <Button id="btn_mms" taborder="8" left="214" top="80" width="71" height="21" text="저장" cssclass="btn_WF_main1" onclick="btn_ok_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    VM > VM001_P02
+*  @FileName 	VM001_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.08.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var preNo = this.getOwnerFrame().preNo
+var preNo_out = this.getOwnerFrame().preNo_out
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.ds_list.addRow();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//2개월 이전
+	var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list.getColumn(0,"DT")) || this.gfn_isNull(this.ds_list.getColumn(0,"TIME")) || this.gfn_isNull(this.ds_list.getColumn(0,"MIN")))
+	{
+		this.alert("임종일시를 입력 후 저장하시기 바랍니다.");
+		return;
+	}
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "FM001_P03_M01";
+	var url = "svcUrl::FM001_P03_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "PRE_RCPT_NO_IN="+preNo+" PRE_RCPT_NO_OUT="+preNo_out+" UPDT_USER_ID="+regUser+"";
+	var callBackid = "fn_afterUpdate";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+}
+
+// 업데이트 콜백
+this.fn_afterUpdate = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.ds_list.setColumn(this.ds_list.rowposition,"SAVE_YN","Y")
+	this.alert("저장 되었습니다.");
+	
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="DT" type="DATETIME" size="23"/>
+          <Column id="TIME" type="STRING" size="256"/>
+          <Column id="MIN" type="STRING" size="256"/>
+          <Column id="SAVE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_time">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">00</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="NAME">01</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="NAME">02</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="NAME">03</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="NAME">04</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="NAME">05</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="NAME">06</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">7</Col>
+            <Col id="NAME">07</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">8</Col>
+            <Col id="NAME">08</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">9</Col>
+            <Col id="NAME">09</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="NAME">10</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">11</Col>
+            <Col id="NAME">11</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">12</Col>
+            <Col id="NAME">12</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">13</Col>
+            <Col id="NAME">13</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">14</Col>
+            <Col id="NAME">14</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">15</Col>
+            <Col id="NAME">15</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">16</Col>
+            <Col id="NAME">16</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">17</Col>
+            <Col id="NAME">17</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">18</Col>
+            <Col id="NAME">18</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">19</Col>
+            <Col id="NAME">19</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">20</Col>
+            <Col id="NAME">20</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">21</Col>
+            <Col id="NAME">21</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">22</Col>
+            <Col id="NAME">22</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">23</Col>
+            <Col id="NAME">23</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_minute">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0</Col>
+            <Col id="NAME">00</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">10</Col>
+            <Col id="NAME">10</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">20</Col>
+            <Col id="NAME">20</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">30</Col>
+            <Col id="NAME">30</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">40</Col>
+            <Col id="NAME">40</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">50</Col>
+            <Col id="NAME">50</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.cal_dlvyDt" propid="value" datasetid="ds_list" columnid="DT"/>
+      <BindItem id="item1" compid="Div_client.form.cmb_time" propid="value" datasetid="ds_list" columnid="TIME"/>
+      <BindItem id="item2" compid="Div_client.form.cmb_min" propid="value" datasetid="ds_list" columnid="MIN"/>
+    </Bind>
+  </Form>
+</FDL>

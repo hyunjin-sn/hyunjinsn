@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM001_P03" width="1100" height="500" titletext="New Form" onload="VM001_P03_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="500" mobileorientation="landscape" width="1100">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+        <Div id="Div00" taborder="1" text="Div00" left="10" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="VOC 조사내용 조회" left="0" top="5" width="127" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid00" taborder="1" left="0" top="37" binddataset="ds_list" autoenter="select" selecttype="cell" griduserproperty="!sort" right="659" bottom="10" autofittype="col" oncellclick="Div00_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="237"/>
+                      <Column size="145"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell rowspan="2" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:INSRT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left"/>
+                      <Cell col="2" rowspan="2" text="bind:INSRT_DT" calendardisplaynulltype="none" displaytype="mask" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell row="1" col="1" text="bind:DIV" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_telInfo00_00" taborder="2" left="200" top="8" height="21" text="조회" cssclass="btn_WF_main1" onclick="fn_search" right="820"/>
+              <Button id="btn_del" taborder="3" left="360" top="8" height="21" text="행삭제" cssclass="btn_WF_main1" right="660" onclick="Div00_btn_del_onclick"/>
+              <Button id="btn_add" taborder="4" left="280" top="8" height="21" text="행추가" cssclass="btn_WF_main1" right="740" onclick="Div00_btn_add_onclick"/>
+              <TextArea id="TextArea00" taborder="5" left="450" top="37" bottom="206" right="10" onchanged="Div00_TextArea00_onchanged"/>
+              <Static id="Static05_00" taborder="6" text="VOC 조사내용" left="450" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid00_00" taborder="7" left="450" top="332" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="10" bottom="10" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="130"/>
+                      <Column size="185"/>
+                      <Column size="130"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="파일구분"/>
+                      <Cell col="2" text="파일명"/>
+                      <Cell col="3" text="등록일"/>
+                      <Cell col="4" text="파일찾기"/>
+                      <Cell col="5" text="다운"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" tooltiptext="bind:DIV" textAlign="left"/>
+                      <Cell col="2" text="bind:FILENAME" textAlign="left" tooltiptext="bind:FILENAME"/>
+                      <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell col="4" displaytype="buttoncontrol" text="파일찾기"/>
+                      <Cell col="5" text="다운로드" displaytype="buttoncontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static12" taborder="8" text="VOC 조사내용 첨부파일" left="450" top="301" width="150" height="24" cssclass="sta_WF_title"/>
+              <Button id="btn_addfile1" taborder="9" left="928" top="303" height="21" text="행추가" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_addfile1_onclick"/>
+              <Button id="btn_delfile1" taborder="10" left="1010" top="303" height="21" text="행삭제" cssclass="btn_WF_main1" right="10" onclick="Div00_btn_delfile1_onclick"/>
+              <Button id="btn_telInfo00_00_00" taborder="11" left="1008" top="9" height="21" text="저장" cssclass="btn_WF_main1" onclick="fn_save" right="12"/>
+              <Button id="btn_memo" taborder="12" left="928" top="9" height="21" text="메모" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_memo_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="2" text="Div00" left="1110" top="0" visible="false" bottom="0" width="1090">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="VOC 고객대응 조회" left="0" top="5" width="133" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00" taborder="1" left="200" top="8" height="21" text="조회" cssclass="btn_WF_main1" onclick="fn_search" right="820"/>
+              <Button id="btn_del" taborder="2" left="360" top="8" height="21" text="행삭제" cssclass="btn_WF_main1" right="660" onclick="Div00_btn_del_onclick"/>
+              <Button id="btn_add" taborder="3" left="280" top="8" height="21" text="행추가" cssclass="btn_WF_main1" right="740" onclick="Div00_btn_add_onclick"/>
+              <TextArea id="TextArea00" taborder="4" left="450" top="37" bottom="206" right="10" onchanged="Div00_TextArea00_onchanged"/>
+              <Static id="Static05_00" taborder="5" text="VOC 고객대응" left="450" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Static id="Static12" taborder="6" text="VOC 고객대응 첨부파일" left="450" top="301" width="160" height="24" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00_00" taborder="7" left="1008" top="9" height="21" text="저장" cssclass="btn_WF_main1" onclick="fn_save" right="12"/>
+              <Grid id="Grid00" taborder="8" left="0" top="37" binddataset="ds_list" autoenter="select" selecttype="cell" griduserproperty="!sort" right="659" bottom="10" autofittype="col" oncellclick="Div00_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="237"/>
+                      <Column size="145"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell rowspan="2" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:INSRT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left"/>
+                      <Cell col="2" rowspan="2" text="bind:INSRT_DT" calendardisplaynulltype="none" displaytype="mask" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell row="1" col="1" text="bind:DIV" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile1" taborder="9" left="928" top="303" height="21" text="행추가" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_addfile1_onclick"/>
+              <Grid id="Grid00_00" taborder="10" left="450" top="332" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="10" bottom="10" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="137"/>
+                      <Column size="185"/>
+                      <Column size="121"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="파일구분"/>
+                      <Cell col="2" text="파일명"/>
+                      <Cell col="3" text="등록일"/>
+                      <Cell col="4" text="파일찾기"/>
+                      <Cell col="5" text="다운"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV" combodataset="ds_fileKind" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="2" text="bind:FILENAME"/>
+                      <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string"/>
+                      <Cell col="4" displaytype="buttoncontrol" text="파일찾기"/>
+                      <Cell col="5" text="다운로드" displaytype="buttoncontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_delfile1" taborder="11" left="1010" top="303" height="21" text="행삭제" cssclass="btn_WF_main1" right="10" onclick="Div00_btn_delfile1_onclick"/>
+              <Button id="btn_memo" taborder="12" left="928" top="9" height="21" text="메모" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_memo_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="3" text="Div00" left="2200" top="0" visible="false" bottom="0" width="1090">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00_00_00" taborder="14" left="549" top="264" height="29" cssclass="sta_WF_detailLine" width="531"/>
+              <Static id="Static05" taborder="0" text="VOC F/B 결과 조회" left="0" top="5" width="150" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00" taborder="1" left="200" top="8" height="21" text="조회" cssclass="btn_WF_main1" onclick="fn_search" right="820"/>
+              <Button id="btn_del" taborder="2" left="360" top="8" height="21" text="행삭제" cssclass="btn_WF_main1" right="660" onclick="Div00_btn_del_onclick"/>
+              <Button id="btn_add" taborder="3" left="280" top="8" height="21" text="행추가" cssclass="btn_WF_main1" right="740" onclick="Div00_btn_add_onclick"/>
+              <TextArea id="TextArea00" taborder="4" left="450" top="37" bottom="235" right="10" onchanged="Div00_TextArea00_onchanged"/>
+              <Static id="Static05_00" taborder="5" text="VOC  F/B 결과" left="450" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Static id="Static12" taborder="6" text="VOC  F/B 결과 첨부파일" left="450" top="301" width="180" height="24" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00_00" taborder="7" left="1008" top="9" height="21" text="저장" cssclass="btn_WF_main1" onclick="fn_save" right="12"/>
+              <Grid id="Grid00" taborder="8" left="0" top="37" binddataset="ds_list" autoenter="select" selecttype="cell" griduserproperty="!sort" right="659" bottom="10" autofittype="col" oncellclick="Div00_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="237"/>
+                      <Column size="145"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell rowspan="2" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:INSRT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left"/>
+                      <Cell col="2" rowspan="2" text="bind:INSRT_DT" calendardisplaynulltype="none" displaytype="mask" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell row="1" col="1" text="bind:DIV" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile1" taborder="9" left="928" top="303" height="21" text="행추가" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_addfile1_onclick"/>
+              <Grid id="Grid00_00" taborder="10" left="450" top="332" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="10" bottom="10" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="137"/>
+                      <Column size="185"/>
+                      <Column size="121"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="파일구분"/>
+                      <Cell col="2" text="파일명"/>
+                      <Cell col="3" text="등록일"/>
+                      <Cell col="4" text="파일찾기"/>
+                      <Cell col="5" text="다운"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV" combodataset="ds_fileKind" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="2" text="bind:FILENAME"/>
+                      <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string"/>
+                      <Cell col="4" displaytype="buttoncontrol" text="파일찾기"/>
+                      <Cell col="5" text="다운로드" displaytype="buttoncontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_delfile1" taborder="11" left="1010" top="303" height="21" text="행삭제" cssclass="btn_WF_main1" right="10" onclick="Div00_btn_delfile1_onclick"/>
+              <Static id="Static23_00_00" taborder="12" text="손실금액" left="450" top="264" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static23_00_00_00" taborder="13" text="구상금액" left="768" top="264" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <MaskEdit id="MaskEdit00" taborder="15" left="554" top="268" width="211" height="21" format="##,###"/>
+              <MaskEdit id="MaskEdit00_00" taborder="16" left="872" top="268" width="204" height="21" format="##,###"/>
+              <Button id="btn_memo" taborder="17" left="928" top="9" height="21" text="메모" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_memo_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="4" text="Div00" left="3290" top="0" visible="false" bottom="0" width="1090">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="VOC 의견조회" left="0" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00" taborder="1" left="200" top="8" height="21" text="조회" cssclass="btn_WF_main1" onclick="fn_search" right="820"/>
+              <Button id="btn_del" taborder="2" left="360" top="8" height="21" text="행삭제" cssclass="btn_WF_main1" right="660" onclick="Div00_btn_del_onclick"/>
+              <Button id="btn_add" taborder="3" left="280" top="8" height="21" text="행추가" cssclass="btn_WF_main1" right="740" onclick="Div00_btn_add_onclick"/>
+              <TextArea id="TextArea00" taborder="4" left="450" top="37" bottom="206" right="10" onchanged="Div00_TextArea00_onchanged"/>
+              <Static id="Static05_00" taborder="5" text="VOC 의견등록" left="450" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Static id="Static12" taborder="6" text="VOC 의견 첨부파일" left="450" top="301" width="150" height="24" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00_00" taborder="7" left="1008" top="9" height="21" text="저장" cssclass="btn_WF_main1" onclick="fn_save" right="12"/>
+              <Grid id="Grid00" taborder="8" left="0" top="37" binddataset="ds_list" autoenter="select" selecttype="cell" griduserproperty="!sort" right="659" bottom="10" autofittype="col" oncellclick="Div00_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="237"/>
+                      <Column size="145"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell rowspan="2" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:INSRT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left"/>
+                      <Cell col="2" rowspan="2" text="bind:INSRT_DT" calendardisplaynulltype="none" displaytype="mask" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                      <Cell row="1" col="1" text="bind:DIV" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile1" taborder="9" left="928" top="303" height="21" text="행추가" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_addfile1_onclick"/>
+              <Grid id="Grid00_00" taborder="10" left="450" top="332" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="10" bottom="10" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="137"/>
+                      <Column size="185"/>
+                      <Column size="121"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="파일구분"/>
+                      <Cell col="2" text="파일명"/>
+                      <Cell col="3" text="등록일"/>
+                      <Cell col="4" text="파일찾기"/>
+                      <Cell col="5" text="다운"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:DIV" combodataset="ds_fileKind" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="2" text="bind:FILENAME"/>
+                      <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string"/>
+                      <Cell col="4" displaytype="buttoncontrol" text="파일찾기"/>
+                      <Cell col="5" text="다운로드" displaytype="buttoncontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_delfile1" taborder="11" left="1010" top="303" height="21" text="행삭제" cssclass="btn_WF_main1" right="10" onclick="Div00_btn_delfile1_onclick"/>
+              <Button id="btn_memo" taborder="12" left="928" top="9" height="21" text="메모" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_memo_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div04" taborder="5" text="Div00" left="4390" top="0" visible="false" bottom="0" width="1090">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="VOC 전체조회" left="0" top="5" width="97" height="30" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00" taborder="1" left="200" top="8" height="21" text="조회" cssclass="btn_WF_main1" onclick="fn_search" right="820"/>
+              <Button id="btn_del" taborder="2" left="360" top="8" height="21" text="행삭제" cssclass="btn_WF_main1" right="660" onclick="Div00_btn_del_onclick"/>
+              <Button id="btn_add" taborder="3" left="280" top="8" height="21" text="행추가" cssclass="btn_WF_main1" right="740" onclick="Div00_btn_add_onclick"/>
+              <Static id="Static12" taborder="4" text="VOC 첨부파일" left="712" top="7" width="150" height="24" cssclass="sta_WF_title"/>
+              <Button id="btn_telInfo00_00_00" taborder="5" left="728" top="9" height="21" text="저장" cssclass="btn_WF_main1" onclick="fn_save" right="292" visible="false"/>
+              <Grid id="Grid00" taborder="6" left="0" top="37" binddataset="ds_list" autoenter="select" selecttype="cell" griduserproperty="export" right="388" bottom="9" autofittype="col" autosizingtype="row" extendsizetype="row" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="31"/>
+                      <Column size="125"/>
+                      <Column size="545"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="성명/구분/일시"/>
+                      <Cell col="2" text="VOC 내용"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell rowspan="3" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" rowspan="3">
+                        <Cell text="bind:INSRT_USER_ID" displaytype="combotext" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" textAlign="left"/>
+                        <Cell row="1" text="bind:DIV" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                        <Cell row="2" text="bind:INSRT_DT" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string"/>
+                      </Cell>
+                      <Cell col="2" rowspan="3">
+                        <Cell text="bind:NOTE"/>
+                        <Cell row="1"/>
+                        <Cell row="2"/>
+                      </Cell>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_addfile1" taborder="7" left="928" top="9" height="21" text="행추가" cssclass="btn_WF_main1" right="92" onclick="Div00_btn_addfile1_onclick"/>
+              <Grid id="Grid00_00" taborder="8" left="710" top="38" binddataset="ds_file" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="10" bottom="9" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="38"/>
+                      <Column size="0"/>
+                      <Column size="159"/>
+                      <Column size="111"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="파일구분"/>
+                      <Cell col="2" text="파일명"/>
+                      <Cell col="3" text="등록일"/>
+                      <Cell col="4" text="파일찾기"/>
+                      <Cell col="5" text="다운"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:FILENAME"/>
+                      <Cell col="2" text="bind:FILENAME"/>
+                      <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string"/>
+                      <Cell col="4" displaytype="buttoncontrol" text="파일찾기"/>
+                      <Cell col="5" text="다운로드" displaytype="buttoncontrol"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_delfile1" taborder="9" left="1010" top="9" height="21" text="행삭제" cssclass="btn_WF_main1" right="10" onclick="Div00_btn_delfile1_onclick"/>
+              <Button id="btn_memo" taborder="10" left="648" top="9" height="21" text="메모" cssclass="btn_WF_main1" right="372" onclick="Div00_btn_memo_onclick" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P06
+*  @FileName 	SO0001_P06.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.27
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var vocNo = this.getOwnerFrame().vocNo
+var vocSeq = this.getOwnerFrame().vocSeq
+var div = this.getOwnerFrame().div
+var mode = this.getOwnerFrame().mode
+var soNo = this.getOwnerFrame().soNo
+var button = this.getOwnerFrame().button
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM001_P03_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//DIV 세팅
+	this.fn_set_div();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	// 데이터 조회
+	this.fn_search();
+	
+	//this.fn_add();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fn_set_div = function ()
+{	
+	if (mode == "1")
+	{
+		this.Div00.set_visible(true);
+		this.Div01.set_visible(false);
+		this.Div02.set_visible(false);
+		this.Div03.set_visible(false);
+		this.Div04.set_visible(false);
+		
+		if (this.gfn_isNull(soNo))
+		{
+			this.Div00.form.btn_memo.set_visible(false);
+		} else
+		{
+			this.Div00.form.btn_memo.set_visible(true);
+		}
+		
+		if (button == "0")
+		{
+			this.Div00.form.btn_telInfo00_00.set_visible(false);
+			this.Div00.form.btn_add.set_visible(false);
+			this.Div00.form.btn_del.set_visible(false);
+			this.Div00.form.btn_memo.set_visible(false);
+			this.Div00.form.btn_telInfo00_00_00.set_visible(false);
+			this.Div00.form.btn_addfile1.set_visible(false);
+			this.Div00.form.btn_delfile1.set_visible(false);
+		}
+		// 20230814_김상훈 추가
+		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+		var chkUser = this.ds_list.getColumn(this.ds_list.rowposition,"INSRT_USER_ID");
+		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+		if (deptCd != "H4400" && deptCd != "H4410" && deptCd != "H5290" && regUser != chkUser)
+		{
+			this.Div00.form.btn_del.set_visible(false);
+		} else
+		{
+			this.Div00.form.btn_del.set_visible(true);
+		}
+		//----------------------
+	} else if (mode == "2")
+	{
+		this.Div01.set_left(10);
+		this.Div00.set_visible(false);
+		this.Div01.set_visible(true);
+		this.Div02.set_visible(false);
+		this.Div03.set_visible(false);
+		this.Div04.set_visible(false);
+		if (this.gfn_isNull(soNo))
+		{
+			this.Div01.form.btn_memo.set_visible(false);
+		} else
+		{
+			this.Div01.form.btn_memo.set_visible(true);
+		}
+		
+		if (button == "0")
+		{
+			this.Div01.form.btn_telInfo00_00.set_visible(false);
+			this.Div01.form.btn_add.set_visible(false);
+			this.Div01.form.btn_del.set_visible(false);
+			this.Div01.form.btn_memo.set_visible(false);
+			this.Div01.form.btn_telInfo00_00_00.set_visible(false);
+			this.Div01.form.btn_addfile1.set_visible(false);
+			this.Div01.form.btn_delfile1.set_visible(false);
+		}
+	} else if (mode == "3")
+	{
+		this.Div02.set_left(10);
+		this.Div00.set_visible(false);
+		this.Div01.set_visible(false);
+		this.Div02.set_visible(true);
+		this.Div03.set_visible(false);
+		this.Div04.set_visible(false);
+		if (this.gfn_isNull(soNo))
+		{
+			this.Div02.form.btn_memo.set_visible(false);
+		} else
+		{
+			this.Div02.form.btn_memo.set_visible(true);
+		}
+		
+		if (button == "0")
+		{
+			this.Div02.form.btn_telInfo00_00.set_visible(false);
+			this.Div02.form.btn_add.set_visible(false);
+			this.Div02.form.btn_del.set_visible(false);
+			this.Div02.form.btn_memo.set_visible(false);
+			this.Div02.form.btn_telInfo00_00_00.set_visible(false);
+			this.Div02.form.btn_addfile1.set_visible(false);
+			this.Div02.form.btn_delfile1.set_visible(false);
+		}
+	} else if (mode == "4")
+	{
+		this.Div03.set_left(10);
+		this.Div00.set_visible(false);
+		this.Div01.set_visible(false);
+		this.Div02.set_visible(false);
+		this.Div03.set_visible(true);
+		this.Div04.set_visible(false);
+		if (this.gfn_isNull(soNo))
+		{
+			this.Div03.form.btn_memo.set_visible(false);
+		} else
+		{
+			this.Div03.form.btn_memo.set_visible(true);
+		}
+	} else if (mode == "5")
+	{
+		this.Div04.set_left(10);
+		this.Div00.set_visible(false);
+		this.Div01.set_visible(false);
+		this.Div02.set_visible(false);
+		this.Div03.set_visible(false);
+		this.Div04.set_visible(true);
+		if (this.gfn_isNull(soNo))
+		{
+			this.Div03.form.btn_memo.set_visible(false);
+		} else
+		{
+			this.Div03.form.btn_memo.set_visible(true);
+		}
+		
+		if (button == "0")
+		{
+			this.Div04.form.btn_telInfo00_00.set_visible(false);
+			this.Div04.form.btn_add.set_visible(false);
+			this.Div04.form.btn_del.set_visible(false);
+			this.Div04.form.btn_memo.set_visible(false);
+			this.Div04.form.btn_telInfo00_00_00.set_visible(false);
+			this.Div04.form.btn_addfile1.set_visible(false);
+			this.Div04.form.btn_delfile1.set_visible(false);
+		}
+	}
+}
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+};
+
+// 조회
+this.fn_add = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"INSRT_USER_ID",regUser);	
+	if (div == "0001")
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"DIV","0001");
+		this.Div00.form.btn_telInfo00_00_00.set_enable(true);
+	} else if (div == "0002")
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"DIV","0002");
+		this.Div01.form.btn_telInfo00_00_00.set_enable(true);
+	} else if (div == "0003")
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"DIV","0003");
+		this.Div02.form.btn_telInfo00_00_00.set_enable(true);
+	} else if (div == "0004")
+	{
+		this.ds_list.setColumn(this.ds_list.rowposition,"DIV","0004");
+		this.Div03.form.btn_telInfo00_00_00.set_enable(true);
+	}
+	this.Div04.form.btn_telInfo00_00_00.set_enable(true);
+}
+ 
+// 조회
+this.fn_search = function ()
+{		
+	// NOTE 조회
+	var id = "VM002_P01_S01";
+	var url = "svcUrl::VM002_P01_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+" DIV="+div+"";
+	var callBackid = "fn_afterdetailsearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 조회 콜백
+this.fn_afterdetailsearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var noteSeq = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"NOTE_SEQ"),0);
+	
+	// NOTE 조회
+	var id = "VM002_P01_S02";
+	var url = "svcUrl::VM002_P01_S02";
+	var inDs = "";
+	var outDs = "ds_file=ds_file";
+	var args = "VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+" DIV="+div+" NOTE_SEQ="+noteSeq+"";
+	var callBackid = "fn_aftersearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 조회 콜백
+this.fn_aftersearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+//저장
+this.fn_save = function ()
+{		
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	// 내용 등록
+	var id = "VM002_P01_M01";
+	var url = "svcUrl::VM002_P01_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "ds_list_out=ds_list_out";
+	var args = "INSRT_USER_ID="+regUser+" VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+" DIV="+div+"";
+	var callBackid = "fn_filesave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 저장 콜백
+this.fn_filesave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	if (this.ds_list_out.rowcount == 0)
+	{
+		this.alert("내용을 먼저 저장하시기 바랍니다.");
+		return;
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var noteSeq = this.ds_list.getColumn(this.ds_list.rowposition,"NOTE_SEQ");
+	
+	if (this.gfn_isNull(noteSeq))
+	{
+		noteSeq = this.ds_list_out.getColumn(0,"NOTE_SEQ");
+	}
+	
+	// 첨부파일 저장
+	var id = "VM002_P01_M02";
+	var url = "svcUrl::VM002_P01_M02";
+	var inDs = "ds_file=ds_file:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" VOC_NO="+vocNo+" VOC_SEQ="+vocSeq+" DIV="+div+" NOTE_SEQ="+noteSeq+"";
+	var callBackid = "fn_aftersave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 저장 콜백
+this.fn_aftersave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_search();
+	this.alert("저장 되었습니다.")
+} 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+// 첨부파일 추가
+this.Div00_btn_addfile1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.ds_file.addRow();
+	//trace(mode);
+	if (div == "0001")
+	{
+		this.ds_file.setColumn(this.ds_file.rowposition,"DIV","0001");
+	} else if (div == "0002")
+	{
+		this.ds_file.setColumn(this.ds_file.rowposition,"DIV","0002");
+	} else if (div == "0003")
+	{
+		this.ds_file.setColumn(this.ds_file.rowposition,"DIV","0003");
+	} else if (div == "0004")
+	{
+		this.ds_file.setColumn(this.ds_file.rowposition,"DIV","0004");
+	}	
+};
+
+// 첨부파일 삭제
+this.Div00_btn_delfile1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_file.deleteRow(this.ds_file.rowposition);
+};
+
+// 내용 추가
+this.Div00_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_add();
+
+	this.ds_file.clearData();
+};
+
+// 내용 삭제
+this.Div00_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.deleteRow(this.ds_list.rowposition);
+	this.ds_file.deleteAll();
+};
+
+// 내용 그리드 클릭 이벤트
+this.Div00_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var chkUser = this.ds_list.getColumn(this.ds_list.rowposition,"INSRT_USER_ID");
+	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+		
+	//if (deptCd != "H1430" && deptCd != "H2610" && regUser != chkUser) 20230814_김상훈
+	if (deptCd != "H4400" && deptCd != "H4410" && deptCd != "H5290" && regUser != chkUser)
+	{
+		this.Div00.form.btn_telInfo00_00_00.set_enable(false);
+		this.Div01.form.btn_telInfo00_00_00.set_enable(false);
+		this.Div02.form.btn_telInfo00_00_00.set_enable(false);
+		this.Div03.form.btn_telInfo00_00_00.set_enable(false);
+		this.Div04.form.btn_telInfo00_00_00.set_enable(false);
+	} else
+	{
+		this.Div00.form.btn_telInfo00_00_00.set_enable(true);
+		this.Div01.form.btn_telInfo00_00_00.set_enable(true);
+		this.Div02.form.btn_telInfo00_00_00.set_enable(true);
+		this.Div03.form.btn_telInfo00_00_00.set_enable(true);
+		this.Div04.form.btn_telInfo00_00_00.set_enable(true);
+	}
+
+	this.fn_afterdetailsearch();
+};
+
+// 첨부파일 그리드 클릭 이벤트
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 4)
+	{
+		if (this.ds_list.rowcount == 0)
+		{
+			this.alert("내용을 먼저 저장 후 첨부파일을 등록하시기 바랍니다.")
+			return;
+		}
+		this.FileUpTransfer00.clearFileList();
+		this.FileDialog00.open("FileUPload Dialog", 3);
+	}
+	
+	if (e.col == 5)
+	{
+		var file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH").replace(/\\/gi,"/");
+		var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+		var r_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+		//trace(file_path+">>"+file_name+">>"+r_file_name)
+		var file_url = "http://182.162.91.66:8081/web/"+file_path+r_file_name+file_name.substring(file_name.lastIndexOf("."));
+	
+		this.FileDownTransfer00.set_downloadfilename( file_name ); 
+		this.FileDownTransfer00.download(file_url);
+	}
+};
+
+this.FileDialog00_onclose = function(obj:nexacro.FileDialog,e:nexacro.FileDialogEventInfo)
+{
+	//trace( "FileDialog00_onclose//////"+obj.name+"_"+e.eventid );
+	//trace(e.virtualfiles.length);
+	for (var i = 0, len = e.virtualfiles.length, vFile; i < len; i++)
+	{
+		vFile = e.virtualfiles[i];
+		
+		this.FileUpTransfer00.addFile("file0"+i,vFile);
+		
+		vFile.addEventHandler("onsuccess", this.FileDialog_VirtualFile_onsuccess, this);
+		vFile.addEventHandler("onerror", this.FileDialog_VirtualFile_onerror, this);
+		vFile.open(null, 1);
+		
+		//this._vFiles.push(vFile);
+	}
+
+};
+
+
+this.FileDialog_VirtualFile_onerror = function(obj, e)
+{
+	//trace( obj.name+"_"+e.eventid );
+	//trace( "e.statuscode:"+e.statuscode );
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.")
+}
+this.FileDialog_VirtualFile_onsuccess = function(obj, e)
+{
+	//trace("FileDialog_VirtualFile_onsuccess init");
+	var size_table = ["KB", "MB", "GB", "TB", "PB"];
+	
+	function cutFileSize(filesize, rate, count)
+	{
+		var ret = (filesize / (Math.pow(rate, count + 1))).toFixed(2);
+		if (ret < rate)
+		{
+			if (size_table[count])
+			{
+				return ret + " " + size_table[count];
+			}
+			else
+			{
+				return filesize + " Byte";
+			}
+		}
+		else
+		{
+			return cutFileSize(filesize, rate, ++count);
+		}
+	};
+
+
+	if (e.reason == 1)
+	{
+		obj.getFileSize();
+	}
+	else if (e.reason == 9)
+	{
+		
+		var d = new Date();
+		
+		var yy = (new Date()).getYear();
+		var tmpStr = (new Date()).getTime();
+		tmpStr = ("0000000" + tmpStr.toString()).substr(-8);
+		var display_name = vocNo + "_"+tmpStr
+	
+		this.ds_file.setColumn(this.ds_file.rowposition, "REAL_FILENAME", display_name);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILENAME", obj.filename);
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_SIZE", cutFileSize(e.filesize, Math.pow(2, 10), 0));
+		this.ds_file.setColumn(this.ds_file.rowposition, "FILE_PATH", "nui\\uploadFiles\\"+yy+"\\VOC\\"+vocNo+"\\");
+		
+		this.fileSave();
+	}
+};
+
+
+this.FileUpTransfer00_onerror = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferErrorEventInfo)
+{
+	//trace("11 " +obj.name+"_"+e.eventid );
+	//trace(e.ErrorMsg);
+	//trace(e.errorobj);
+	//this.alert("업로드에 실패했습니다.\r\n다시시도 부탁드립니다.");
+	this.alert("업로드에 실패했습니다. 다시시도 부탁드립니다.");
+};
+
+this.FileUpTransfer00_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferEventinfo)
+{
+	//trace("2 " + obj.name+"_"+e.eventid );
+	
+	this.fn_UploadSave();
+};
+
+this.fn_UploadSave = function(){
+	this.fn_save();
+}
+
+this.fileSave = function(){
+	var real_filename = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+	var real_file_path = this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH");
+
+	this.FileUpTransfer00.setPostData(
+		"filename",
+		real_filename
+	);
+
+	this.FileUpTransfer00.setPostData(
+		"filepath",
+		real_file_path
+	);
+	//trace("123123");
+
+	this.FileUpTransfer00.upload("JSP::fileUpload_postdatatest.jsp?PATH22="+real_file_path);
+}
+this.FileDownTransfer00_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferEventInfo)
+{
+	this.alert("정상적으로 다운로드 되었습니다.");
+};
+
+this.Div00_btn_memo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "memo_popup";
+	var sUrl      = "SO::SO002_P01.xfdl";
+	var oArg      = {soNo : soNo, mode : "V"};
+	var sCallBack = "fn_popupCallback_memo";
+	var oOption   = {title : "메모"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 고객사 팝업 callback
+this.fn_popupCallback_memo = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	
+	var memo = this.ds_list.getColumn(this.ds_list.rowposition,"NOTE")+"\n\n메모내용 : "+objRtn.MEMO
+	this.ds_list.setColumn(this.ds_list.rowposition,"NOTE",memo);
+}]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="VOC_NO" type="STRING" size="18"/>
+          <Column id="VOC_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="NOTE_SEQ" type="BIGDECIMAL" size="4"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="NOTE" type="STRING" size="2000"/>
+          <Column id="REMARK1" type="STRING" size="200"/>
+          <Column id="REMARK2" type="STRING" size="200"/>
+          <Column id="REMARK3" type="STRING" size="200"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="LOSS_AMT" type="STRING" size="256"/>
+          <Column id="CLAIM_AMT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_file">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="VOC_NO" type="STRING" size="18"/>
+          <Column id="VOC_SEQ" type="INT" size="10"/>
+          <Column id="NOTE_SEQ" type="INT" size="10"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="REAL_FILENAME" type="STRING" size="255"/>
+          <Column id="FILENAME" type="STRING" size="255"/>
+          <Column id="FILE_SIZE" type="STRING" size="255"/>
+          <Column id="FILE_PATH" type="STRING" size="255"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_div">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">0001</Col>
+            <Col id="CODE_NAME">VOC 조사내용</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0002</Col>
+            <Col id="CODE_NAME">VOC 고객대응</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0003</Col>
+            <Col id="CODE_NAME">VOC 고객F/B결과</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">0004</Col>
+            <Col id="CODE_NAME">VOC 의견</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <FileDialog id="FileDialog00" onclose="FileDialog00_onclose"/>
+      <FileUpTransfer id="FileUpTransfer00" onsuccess="FileUpTransfer00_onsuccess" onerror="FileUpTransfer00_onerror"/>
+      <FileDownTransfer id="FileDownTransfer00" onsuccess="FileDownTransfer00_onsuccess" onerror="FileDownTransfer00_onerror"/>
+      <Dataset id="ds_list_out"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item3" compid="Div06.form.edt_soNo00_00_01" propid="value" datasetid="ds_list_1" columnid="CUST_NM"/>
+      <BindItem id="item5" compid="Div06.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="CUST_TEL"/>
+      <BindItem id="item6" compid="Div06.form.edt_soNo00_00_01_00" propid="value" datasetid="ds_list_1" columnid="DLVY_NM"/>
+      <BindItem id="item7" compid="Div06.form.edt_soNo00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item8" compid="Div06.form.edt_soNo00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="REGION_CD"/>
+      <BindItem id="item0" compid="Div00.form.TextArea00" propid="value" datasetid="ds_list" columnid="NOTE"/>
+      <BindItem id="item1" compid="Div01.form.TextArea00" propid="value" datasetid="ds_list" columnid="NOTE"/>
+      <BindItem id="item2" compid="Div02.form.TextArea00" propid="value" datasetid="ds_list" columnid="NOTE"/>
+      <BindItem id="item4" compid="Div03.form.TextArea00" propid="value" datasetid="ds_list" columnid="NOTE"/>
+      <BindItem id="item9" compid="Div02.form.MaskEdit00" propid="value" datasetid="ds_list" columnid="LOSS_AMT"/>
+      <BindItem id="item10" compid="Div02.form.MaskEdit00_00" propid="value" datasetid="ds_list" columnid="CLAIM_AMT"/>
+    </Bind>
+  </Form>
+</FDL>

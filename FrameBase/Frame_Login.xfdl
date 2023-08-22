@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Login" width="390" height="370" titletext="Login" background="" onload="Frame_Login_onload">
+    <Layouts>
+      <Layout height="370" width="390">
+        <Static id="st_sizeBase" taborder="99" left="0" top="0" width="50.00%" height="50.00%"/>
+        <Div id="div_login" taborder="0" text="" left="st_sizeBase:-195" top="st_sizeBase:-185" width="390" height="370" cssclass="div_loginBg">
+          <Layouts>
+            <Layout>
+              <Edit id="edt_id" taborder="0" left="56" top="167" width="279" height="50" text="admin" cssclass="edt_Login_id" displaynulltext="아이디를 입력해주세요" autoselect="false"/>
+              <Edit id="edt_pw" taborder="1" left="56" top="224" width="279" height="50" text="admin" password="true" cssclass="edt_Login_pw" displaynulltext="비밀번호를 입력해주세요" onkeydown="div_login_edt_pw_onkeydown" textAlign="left"/>
+              <Button id="btn_login" taborder="2" left="56" top="294" width="279" height="50" onclick="div_login_btn_login_onclick" text="로그인" cssclass="btn_Login"/>
+              <ImageViewer id="img_logo" taborder="3" left="106" top="47" width="170" height="58" stretch="fixaspectratio" onclick="img_logo_onclick" border="0px none" image="url('theme://images/logo_5.png')" background="transparent" text=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_login">
+        <ColumnInfo>
+          <Column id="ID" type="STRING" size="256"/>
+          <Column id="PW" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="MENU_NAME" type="STRING" size="256"/>
+          <Column id="USED_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_NAME"/>
+            <Col id="USED_YN"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="RESULT" type="STRING" size="5"/>
+          <Column id="RESULT_TXT" type="STRING" size="34"/>
+          <Column id="USR_ID" type="STRING" size="255"/>
+          <Column id="USR_NM" type="STRING" size="255"/>
+          <Column id="DEPT_NM" type="STRING" size="255"/>
+          <Column id="CD_CD" type="STRING" size="255"/>
+          <Column id="DEPT_CD" type="STRING" size="255"/>
+          <Column id="USE_YN" type="STRING" size="255"/>
+          <Column id="USR_GP" type="STRING" size="255"/>
+          <Column id="EMAIL" type="STRING" size="255"/>
+          <Column id="VIEW_NAME" type="STRING" size="255"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="div_login.form.edt_id" propid="value" datasetid="ds_login" columnid="ID"/>
+      <BindItem id="item1" compid="div_login.form.edt_pw" propid="value" datasetid="ds_login" columnid="PW"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * 폼변수 선언 영역
+ ************************************************************************************************/
+this.objApp 	  = this.gfn_getApplication();
+this.objMainframe = this.objApp.mainframe;
+
+
+
+/************************************************************************************************
+ * 폼 이벤트 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+this.Frame_Login_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//trace("-------------------login_onload_start2---------------------");
+//  st_sizeBase에 기준으로 Arrangement 사용
+//  this.Form_Login_onsize(); 
+
+	//trace("-------------------login_onload_end---------------------");
+	this.div_login.form.edt_id.setFocus();
+
+};
+
+
+this.fn_gdsSet = function()
+{
+	var id = this.div_login.form.edt_id.value;
+	
+	var url = "svcUrl::ZZ_GDS_INFO";
+	this.transaction( "ZZ_GDS_INFO",url,"","gds_menu=ds_menu gds_code=ds_code gds_code2=ds_code2 gds_dept=ds_dept gds_user=ds_user gds_user2=ds_user2 gds_user3=ds_user3 gds_user4=ds_user4 gds_post=ds_post","USER_ID="+id+"","fn_afterSearch");
+}
+
+/*******************************************************************************
+* 기      능   : search callback
+********************************************************************************/
+
+this.fn_afterSearch = function (ErrorCode, ErrorMsg) {
+	
+	this.objApp.av_LeftFrame.form.btn_menu.setSelectStatus(true);
+	// TOP 메뉴 클릭시 레프트메뉴 변경(디폴트=PMS)
+	
+    this.objApp.av_LeftFrame.form.fn_changeMenu(this.objApp.gds_menu.getColumn(0, "MENU_ID"));
+	
+	// TOP 메뉴 뿌리기
+	this.objApp.av_TopFrame.form.fn_setTopMenu();
+}
+
+/*
+this.Form_Login_onsize = function()
+{		
+	var nLeft = (this.objMainframe.width / 2)  - Math.round((this.div_login.form.getOffsetWidth()) / 2);
+	var nTop  = (this.objMainframe.height / 2) - Math.round((this.div_login.form.getOffsetHeight()) / 2);
+	
+	if(nLeft <= 0)
+	{
+		this.div_login.form.setOffsetLeft(0);
+	}
+	else
+	{
+		this.div_login.setOffsetLeft(nLeft);
+		this.div_login.setOffsetTop(nTop);
+	}
+};
+*/
+
+this.div_login_btn_login_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//로그인체크
+	this.LoginAction();	
+};
+
+this.LoginAction = function(){
+	
+	var usrid = this.div_login.form.edt_id.value;
+	var pw = this.div_login.form.edt_pw.value;
+	//this.alert(id+"|||"+pw);
+	if(this.gfn_isNull(usrid) || this.gfn_isNull(pw))
+	{
+		this.alert("아이디와 비밀번호를 입력 바랍니다.");
+		return;
+	}
+	
+// 	var url = "svcUrl::ZZ_LOGIN";
+// 	this.transaction( "ZZ_LOGIN",url,"","ds_result=ds_list","LOGIN_ID="+id+" LOGIN_PW="+pw+"","fn_afterLogin");
+// 	
+	var id = "ZZ_LOGIN";
+	var url = "svcUrl::ZZ_LOGIN";
+	var inDs = "";
+	var outDs = "ds_result=ds_list";
+	var args = "LOGIN_ID="+usrid+" LOGIN_PW="+pw+"";
+	var callBackid = "fn_afterLogin";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterLogin = function(){
+ 	var result = this.ds_result.getColumn(0,"RESULT");
+ 	var result_txt = this.ds_result.getColumn(0,"RESULT_TXT");
+	//this.alert(result_txt);
+	
+	//trace(this.ds_result.saveXML());
+	//성공
+	if (result == "SUCCESS")
+	{
+		this.objApp.gds_login_info.clear();
+		this.objApp.gds_login_info.copyData(this.ds_result, true);
+		this.fn_gdsSet();
+		this.fn_setFrame();	
+		return;	
+	} else	//실패
+	{
+		this.ds_result.clearData();
+		this.div_login.form.edt_pw.set_value("");
+		this.alert(result_txt);		
+	}
+}
+
+/**
+* 로그인 성공시 처리 프레임 변경 등...
+* @return 
+* @example
+* @memberOf 
+*/ 
+this.fn_setFrame = function()
+{
+    //Login Frame Size 0
+	this.objApp.av_VFrameSet.set_separatesize("0,70,*,20");     
+
+    //Env Variable					
+	nexacro.setEnvironmentVariable("ev_userId"  , this.objApp.gds_user.getColumn(0,"USER_ID"));
+	nexacro.setEnvironmentVariable("ev_userName", this.objApp.gds_user.getColumn(0,"USER_NAME"));
+};
+
+
+
+this.div_login_edt_pw_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13){
+		this.LoginAction();
+		
+	}
+};
+
+this.st_sizeBase_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	
+};
+
+this.div_login_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	alert(window.location.protocol + "//" + window.location.host)
+};
+]]></Script>
+  </Form>
+</FDL>

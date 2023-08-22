@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM002_P01" width="1200" height="600" titletext="New Form" onload="CM002_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1200">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="595" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="9" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="46"/>
+                      <Column size="80"/>
+                      <Column size="249"/>
+                      <Column size="249"/>
+                      <Column size="359"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="48" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="계약번호"/>
+                      <Cell col="2" text="고객사"/>
+                      <Cell col="3" text="계약명"/>
+                      <Cell col="4" text="품목명"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:CONT_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:BP_NM"/>
+                      <Cell col="3" text="bind:CONT_NM"/>
+                      <Cell col="4" text="bind:ITEM_NM" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_contType"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  계약조회 팝업
+*  @MenuPath    CM > CM002_P01
+*  @FileName 	CM002_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.03.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mode = this.getOwnerFrame().mode
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM002_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fn_search = function ()
+{
+	var id = "CM004_P02_S";
+	var url = "svcUrl::CM004_P02_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_btn_search();
+	}
+};
+
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="20"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="PACK_ITEM_CD" type="STRING" size="20"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="CONT_NM" type="STRING" size="200"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="256"/>
+          <Column id="CONT_NM" type="STRING" size="256"/>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="CUST_NM" type="STRING" size="256"/>
+          <Column id="VALID_YN" type="STRING" size="256"/>
+          <Column id="VALID_YN2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CONT_NO"/>
+            <Col id="CONT_NM"/>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="CUST_NM"/>
+            <Col id="VALID_YN"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_yn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">미확정</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">확정</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_contType"/>
+      <Dataset id="ds_yn2">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">미등록</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">등록</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

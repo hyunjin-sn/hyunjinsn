@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM004_P01" width="900" height="400" titletext="New Form" onload="CM004_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="900">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="1" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="품목코드" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_itemCd" taborder="1" left="102" top="8" width="87" height="21" onkeyup="Div_client_div_search_edt_itemCd_onkeyup"/>
+                    <Button id="btn_search" taborder="3" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="4" text="품목명" left="192" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_itemNm" taborder="2" left="297" top="8" width="202" height="21" onkeyup="Div_client_div_search_edt_itemCd_onkeyup"/>
+                    <Static id="Static00_00" taborder="5" text="패키지상품 등록여부" left="502" top="8" width="143" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Radio id="Radio00" taborder="6" left="659" top="6" width="130" height="23" innerdataset="ds_yn" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" onitemchanged="Div_client_div_search_Radio00_onitemchanged"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" left="10" right="10" top="60" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" cellsizingtype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="99"/>
+                      <Column size="410"/>
+                      <Column size="265"/>
+                      <Column size="59"/>
+                      <Column size="59"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="품목코드"/>
+                      <Cell col="1" text="품목명"/>
+                      <Cell col="2" text="규격"/>
+                      <Cell col="3" text="등록여부"/>
+                      <Cell col="4" text="사용여부"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="1" text="bind:ITEM_NM"/>
+                      <Cell col="2" text="bind:SPEC" textAlign="center"/>
+                      <Cell col="3" text="bind:CHK" textAlign="center"/>
+                      <Cell col="4" text="bind:CHK2" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  품목정보 팝업
+*  @MenuPath    CM > CM0004_P01
+*  @FileName 	CM0004_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.03.24
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var contNo = this.getOwnerFrame().contNo
+var hsType = this.getOwnerFrame().hsType
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM004_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	
+	this.Div_client.form.div_search.form.Radio00.set_index(1);
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = contNo;
+	var args2 = hsType;
+	var args3 = this.gfn_nvl(this.Div_client.form.div_search.form.edt_itemCd.value,"");
+	var args4 = this.gfn_nvl(this.Div_client.form.div_search.form.edt_itemNm.value,"");
+	var args5 = this.gfn_nvl(this.Div_client.form.div_search.form.Radio00.value,"");
+	//trace(args3);
+	
+	// 상품 조회
+	var id = "CM004_P01_S";
+	var url = "svcUrl::CM004_P01_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "CONT_NO="+args1+" HS_TYPE="+args2+" ITEM_CD="+args3+" ITEM_NM="+args4+" CHK="+args5+"";
+	var callBackid = "fn_aftersearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_aftersearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.04.07
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_div_search_edt_itemCd_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+this.Div_client_div_search_Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SPEC" type="STRING" size="100"/>
+          <Column id="BASIC_UNIT" type="STRING" size="3"/>
+          <Column id="UNIT" type="STRING" size="200"/>
+          <Column id="MINOR_NM" type="STRING" size="200"/>
+          <Column id="ITEM_GROUP_CD" type="STRING" size="10"/>
+          <Column id="ITEM_GROUP_NM" type="STRING" size="40"/>
+          <Column id="ITEM_IMAGE_FLG" type="STRING" size="1"/>
+          <Column id="FORMAL_NM" type="STRING" size="60"/>
+          <Column id="VALID_FROM_DT" type="DATETIME" size="23"/>
+          <Column id="VALID_TO_DT" type="DATETIME" size="23"/>
+          <Column id="VAT_TYPE" type="STRING" size="5"/>
+          <Column id="VAT_RATE" type="BIGDECIMAL" size="17"/>
+          <Column id="ITEM_ACCT" type="STRING" size="2"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_yn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">Y</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_itemCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_itemNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+    </Bind>
+  </Form>
+</FDL>

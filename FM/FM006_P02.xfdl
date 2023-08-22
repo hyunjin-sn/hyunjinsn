@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM006_P02" width="1400" height="600" titletext="New Form" onload="FM006_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1400">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list03_00" taborder="1" scrolltype="both" minwidth="" left="10" right="15" top="10" bottom="460" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_1" oncellclick="Div_client_grd_list03_00_oncellclick" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="267"/>
+                      <Column size="80"/>
+                      <Column size="59"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="273"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="고객사코드"/>
+                      <Cell col="1" text="고객사명"/>
+                      <Cell col="2" text="계약번호"/>
+                      <Cell col="3" text="계약타입"/>
+                      <Cell col="4" text="시작일"/>
+                      <Cell col="5" text="종료일"/>
+                      <Cell col="6" text="계약설명"/>
+                      <Cell col="7" text="적용기간"/>
+                      <Cell col="8" text="담당부서"/>
+                      <Cell col="9" text="담당자"/>
+                      <Cell col="10" text="결산구분"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:bp_cd" textAlign="center"/>
+                      <Cell col="1" text="bind:bp_nm"/>
+                      <Cell col="2" text="bind:cont_no" textAlign="center"/>
+                      <Cell col="3" text="bind:cont_type_nm" textAlign="center"/>
+                      <Cell col="4" text="bind:cont_fr_dt" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="5" text="bind:cont_to_dt" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="6" text="bind:cont_desc"/>
+                      <Cell col="7" text="bind:s_day" textAlign="center"/>
+                      <Cell col="8" text="bind:dept_nm" textAlign="center"/>
+                      <Cell col="9" text="bind:prsn_nm" textAlign="center"/>
+                      <Cell col="10" text="bind:pay_cond_nm" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="grd_list03_00_00" taborder="2" scrolltype="both" minwidth="" left="10" right="15" top="210" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_2" oncellclick="Div_client_grd_list03_00_oncellclick" cellsizingtype="both">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="43"/>
+                      <Column size="226"/>
+                      <Column size="100"/>
+                      <Column size="80"/>
+                      <Column size="180"/>
+                      <Column size="36"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="58"/>
+                      <Column size="59"/>
+                      <Column size="80"/>
+                      <Column size="65"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="소속타입1"/>
+                      <Cell col="1" text="소속타입2"/>
+                      <Cell col="2" colspan="2" text="경조사유"/>
+                      <Cell col="4" text="품목구분"/>
+                      <Cell col="5" text="품목코드"/>
+                      <Cell col="6" text="품목명"/>
+                      <Cell col="7" text="수량"/>
+                      <Cell col="8" text="법인단가"/>
+                      <Cell col="9" text="개인단가"/>
+                      <Cell col="10" text="금액"/>
+                      <Cell col="11" text="발주금액"/>
+                      <Cell col="12" text="필수여부"/>
+                      <Cell col="13" text="지점그룹"/>
+                      <Cell col="14" text="결산타입"/>
+                      <Cell col="15" text="결산구분"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:sub_type_code_nm1" subsumtext="소계" background="#fafdc8"/>
+                      <Cell col="1" text="bind:sub_type_code_nm2" subsumtext="소계"/>
+                      <Cell col="2" text="bind:hs_code" subsumtext="소계" textAlign="center"/>
+                      <Cell col="3" text="bind:hs_nm" subsumtext="소계"/>
+                      <Cell col="4" text="bind:item_group_nm" subsumtext="소계"/>
+                      <Cell col="5" text="bind:item_cd" subsumtext="소계"/>
+                      <Cell col="6" text="bind:item_nm" subsumtext="소계"/>
+                      <Cell col="7" text="bind:qty" textAlign="center"/>
+                      <Cell col="8" text="bind:price_so"/>
+                      <Cell col="9" text="bind:price_so2"/>
+                      <Cell col="10" text="bind:PRICE" cssclass="expr:comp.parent.parent.fn_sum(currow)"/>
+                      <Cell col="11" text="bind:price_po"/>
+                      <Cell col="12" text="bind:mandatory_yn" textAlign="center"/>
+                      <Cell col="13" text="bind:branch_grp_nm"/>
+                      <Cell col="14" text="bind:vat_type_nm"/>
+                      <Cell col="15" text="bind:pay_cond_nm"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="10"/>
+                      <Cell col="10" text="expr:dataset.getSum(&quot;PRICE&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="11"/>
+                      <Cell col="12"/>
+                      <Cell col="13"/>
+                      <Cell col="14"/>
+                      <Cell col="15"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static00_00" taborder="3" text="경조TYPE 검색 : " left="19" top="172" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Combo id="Combo00" taborder="4" left="126" top="176" width="146" height="21" type="filterlike" codecolumn="HS_CODE" datacolumn="HS_NM" innerdataset="ds_hs" onitemchanged="Div_client_Combo00_onitemchanged"/>
+              <Static id="Static00_00_00" taborder="5" text="소속1 검색 : " left="299" top="172" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Combo id="Combo00_00" taborder="6" left="406" top="176" width="146" height="21" type="filterlike" codecolumn="SUB_CODE1" datacolumn="SUB_CODE1_NM" innerdataset="ds_sosoc1" onitemchanged="Div_client_Combo00_onitemchanged"/>
+              <Static id="Static00_00_00_00" taborder="7" text="소속2 검색 : " left="569" top="172" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Combo id="Combo00_00_00" taborder="8" left="676" top="176" width="146" height="21" type="filterlike" codecolumn="SUB_CODE2" datacolumn="SUB_CODE2_NM" innerdataset="ds_sosoc2" onitemchanged="Div_client_Combo00_onitemchanged"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  계약조회 팝업
+*  @MenuPath    FM > FM0006_P02
+*  @FileName 	FM0006_P02.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.19
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var contNo = this.getOwnerFrame().contNo
+var hsCd = this.getOwnerFrame().hsCd
+var sosoc1 = this.getOwnerFrame().sosoc1
+var sosoc2 = this.getOwnerFrame().sosoc2
+var sosoc3 = this.getOwnerFrame().sosoc3
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM006_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	// 조회
+	var id = "SO001_P24";
+	var url = "svcUrl::SO001_P24";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "CONT_NO="+contNo+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	var id = "FM006_P02_S";
+	var url = "svcUrl::FM006_P02_S";
+	var inDs = "";
+	var outDs = "ds_sosoc1=ds_sosoc1 ds_sosoc2=ds_sosoc2 ds_sosoc3=ds_sosoc3 ds_hs=ds_hs";
+	var args = "CONT_NO="+contNo+"";
+	var callBackid = "fn_aftersearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+ this.fn_aftersearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	this.Div_client.form.Combo00.set_value(hsCd);
+	this.Div_client.form.Combo00_00.set_value(sosoc1);
+	this.Div_client.form.Combo00_00_00.set_value(sosoc2);
+	
+	this.filter();
+}
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+
+this.Div_client_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.filter();
+};
+
+this.filter = function ()
+{
+	var search1 = this.Div_client.form.Combo00.text;
+	var search2 = this.Div_client.form.Combo00_00.text;
+	var search3 = this.Div_client.form.Combo00_00_00.text;
+		
+	var filterstr = "";
+	if(!this.gfn_isNull(search1) && search1 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "hs_nm.indexOf('"+search1+"')!='-1'";
+		else
+			filterstr += " && hs_nm.indexOf('"+search1+"')!='-1'";				
+	}
+	
+	// 접수자
+	if(!this.gfn_isNull(search2) && search2 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "sub_type_code_nm1.indexOf('"+search2+"')!='-1'";
+		else
+			filterstr += " && sub_type_code_nm1.indexOf('"+search2+"')!='-1'";				
+	}
+	
+	// 주문처
+	if(!this.gfn_isNull(search3) && search3 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "sub_type_code_nm2.indexOf('"+search3+"')!='-1'";
+		else
+			filterstr += " && sub_type_code_nm2.indexOf('"+search3+"')!='-1'";				
+	}
+	
+	this.ds_list_2.set_filterstr(filterstr);	
+	
+	for ( var i=0; i<this.ds_list_2.getRowCount(); i++ ){
+	    if( this.ds_list_2.getRowLevel(i) == 1 ){
+			this.Div_client.form.grd_list03_00_00.mergeCell(0,6,i,i);
+		}
+	}
+};
+
+// 소계 색상변경
+this.fn_sum = function (currow)
+{
+	var yn = this.Div_client.form.grd_list03_00_00.getCellText(currow,"0");
+	
+	if (yn == "소계")
+	{
+		return "status11";
+	}
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="bp_cd" type="STRING" size="20"/>
+          <Column id="bp_nm" type="STRING" size="200"/>
+          <Column id="cont_no" type="STRING" size="20"/>
+          <Column id="cont_type_nm" type="STRING" size="200"/>
+          <Column id="cont_fr_dt" type="DATETIME" size="23"/>
+          <Column id="cont_to_dt" type="DATETIME" size="23"/>
+          <Column id="valid_yn" type="STRING" size="1"/>
+          <Column id="cont_desc" type="STRING" size="200"/>
+          <Column id="s_day" type="INT" size="11"/>
+          <Column id="dept_nm" type="STRING" size="20"/>
+          <Column id="prsn_nm" type="STRING" size="20"/>
+          <Column id="pay_cond_nm" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" keystring="G:-mandatory_yn">
+        <ColumnInfo>
+          <Column id="sub_type_code_nm1" type="STRING" size="402"/>
+          <Column id="sub_type_code_nm2" type="STRING" size="402"/>
+          <Column id="hs_code" type="STRING" size="20"/>
+          <Column id="hs_nm" type="STRING" size="1000"/>
+          <Column id="item_group_nm" type="STRING" size="40"/>
+          <Column id="item_cd" type="STRING" size="20"/>
+          <Column id="item_nm" type="STRING" size="100"/>
+          <Column id="qty" type="BIGDECIMAL" size="20"/>
+          <Column id="price_so" type="BIGDECIMAL" size="20"/>
+          <Column id="price_so2" type="BIGDECIMAL" size="20"/>
+          <Column id="price_po" type="BIGDECIMAL" size="20"/>
+          <Column id="mandatory_yn" type="STRING" size="1"/>
+          <Column id="branch_grp_nm" type="STRING" size="200"/>
+          <Column id="prm_disp_yn" type="STRING" size="1"/>
+          <Column id="prm_mandatory_yn" type="STRING" size="1"/>
+          <Column id="vat_type" type="STRING" size="20"/>
+          <Column id="vat_type_nm" type="STRING" size="200"/>
+          <Column id="pay_cond_nm" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sosoc1"/>
+      <Dataset id="ds_sosoc2"/>
+      <Dataset id="ds_hs"/>
+      <Dataset id="ds_sosoc3"/>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P16" width="900" height="965" titletext="New Form" onload="SO001_P16_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="965" mobileorientation="landscape" width="900">
+        <Plugin id="Plugin00" taborder="0" left="20" top="16" width="860" height="928" classid="{5DA6D279-ADDA-4F5B-821F-B211EB09EF1A}" classid64="{5DA6D279-ADDA-4F5B-821F-B211EB09EF1A}"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  결제 팝업
+*  @MenuPath    SO > SO0001_P15
+*  @FileName 	SO0001_P15.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+var poBpCd = this.getOwnerFrame().poBpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P16_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	trace(soNo+">>>"+poBpCd);
+	var str="";
+    str +="connection.servlet=http://182.162.91.66/OZReport70/Server.aspx@@";
+	 str +="connection.reportname=SE009MA1_KO843.ozr@@";
+	 str +="information.debug=true@@";
+	 str +="viewer.namespace=UNIERP_64\\ozviewer@@";
+	 //str +="viewer.mode=export@@"; // 미리보기 없이 바로 파일 변환으로 설정합니다.
+	 str +="viewer.useprogressbar=false@@"; // 프로그레스 바를 감춥니다
+	 str +="odi.odinames=SE009MA1_KO843@@";
+	 str +="odi.SE009MA1_KO843.pcount=1@@";
+ 	 str +="odi.SE009MA1_KO843.args1=SO_NO="+soNo+"@@";
+		 //파일을 미리보기 없이 저장하는 방법
+	 str +="export.mode=silent@@"; // 설정하는 창을 사용하지 않습니다.
+	 str +="export.path=C:\\@@"; // 저장경로
+	 str +="export.filename=test@@"; // 저장파일명
+	 str +="export.format=pdf@@"; // 파일 형식
+	 str +="export.confirmsave=false@@"; // 파일저장 확인 메시지를 사용안합니다.
+	 this.Plugin00.callMethod("CreateReportEx",str,"@@");  //넥사크로에서 오즈뷰어 호출시에 callMethod 
+	 
+	 
+// 	 var str="";
+//     str +="connection.servlet=http://182.162.91.66/OZReport70/Server.aspx@@";
+// 	 str +="connection.reportname=SO007MA1_KO843_2.ozr@@";
+// 	 str +="information.debug=true@@";
+// 	 str +="viewer.namespace=UNIERP_64\\ozviewer@@";
+// 	 //str +="viewer.mode=export@@"; // 미리보기 없이 바로 파일 변환으로 설정합니다.
+// 	 str +="viewer.useprogressbar=false@@"; // 프로그레스 바를 감춥니다
+// 	 str +="odi.odinames=SO001";
+// 	 str +="odi.SO007MA1_KO843_2.pcount=2";
+// 	 // SO007MA1_KO843_2
+// 	 str +="odi.SO007MA1_KO843_2.args1=SP_ID=146@@";
+// 	 str +="odi.SO007MA1_KO843_2.args2=PO_BP_CD=B1021@@";
+// 		 //파일을 미리보기 없이 저장하는 방법
+// 	 str +="export.mode=silent@@"; // 설정하는 창을 사용하지 않습니다.
+// 	 str +="export.path=C:\\@@"; // 저장경로
+// 	 str +="export.filename=test@@"; // 저장파일명
+// 	 str +="export.format=pdf@@"; // 파일 형식
+// 	 str +="export.confirmsave=false@@"; // 파일저장 확인 메시지를 사용안합니다.
+// 	 this.Plugin00.callMethod("CreateReportEx",str,"@@");  //넥사크로에서 오즈뷰어 호출시에 callMethod 
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		작업시작버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.14
+* @수정자	   
+* @수정일자
+*/
+this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+
+};
+
+this.btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	// PARAM   SP_ID="146"    PO_BP_CD="B1021"
+	//this.alert("123");
+	var str="";
+    str +="connection.servlet=http://182.162.91.62/OZReport/Server.aspx@@";
+	 str +="connection.reportname=SO007MA1_KO843_2.ozr@@";
+	 str +="information.debug=true@@";
+	 str +="viewer.namespace=UNIERP_64\\ozviewer@@";
+	 str +="viewer.mode=export@@"; // 미리보기 없이 바로 파일 변환으로 설정합니다.
+	 str +="viewer.useprogressbar=false@@"; // 프로그레스 바를 감춥니다
+	 str +="odi.odinames=SO007MA1_KO843_2";
+	 str +="odi.SO007MA1_KO843_2.pcount=21";
+
+	 str +="odi.SO007MA1_KO843_2.args1=dbAliasName=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args2=DBLANG=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args3=AmtDecPoint=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args4=QtyDecPoint=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args5=UnitCostDecPoint=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args6=ExchRateDecPoint=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args7=AmtRndPolicy=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args8=QtyRndPolicy=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args9=UnitCostRndPolicy=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args10=ExchRateRndPolicy=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args11=Num1000=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args12=DateFormat=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args13=MonthFormat=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args14=ArrCur=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args15=ArrDecPoint=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args16=ArrRndPolicy=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args17=ArrDefaultDec=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args18=gAlignOpt=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args19=UsrID=aaa@@";
+	 str +="odi.SO007MA1_KO843_2.args20=SP_ID=146@@";
+	 str +="odi.SO007MA1_KO843_2.args21=PO_BP_CD=B1021@@";
+	 str +="pdf.fontembedding=true@@"; // 파일 형식
+		 //파일을 미리보기 없이 저장하는 방법
+	 str +="export.mode=silent@@"; // 설정하는 창을 사용하지 않습니다.
+	 str +="export.path=D:\\User\\Desktop\\@@"; // 저장경로
+	 str +="export.filename=test55@@"; // 저장파일명
+	 str +="export.format=pdf@@"; // 파일 형식
+	 str +="export.confirmsave=false@@"; // 파일저장 확인 메시지를 사용안합니다.
+	 this.Plugin00.callMethod("CreateReportEx",str,"@@");  //넥사크로에서 오즈뷰어 호출시에 callMethod 
+	 
+	 //trace(str);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

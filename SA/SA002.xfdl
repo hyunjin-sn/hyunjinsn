@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SA001" width="1500" height="600" titletext="New Form" onload="SA001_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Tab id="Tab00" taborder="1" tabindex="0" left="9" top="10" right="10" bottom="0">
+                <Tabpages>
+                  <Tabpage id="Tabpage1" text="품목별 매입 매출">
+                    <Layouts>
+                      <Layout>
+                        <Div id="div_search" taborder="0" left="0" top="10" height="62" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                          <Layouts>
+                            <Layout>
+                              <Button id="btn_del" taborder="1" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_btn_del_onclick"/>
+                              <Static id="Static00_01" taborder="0" text="주문접수일시" left="-2" top="4" width="108" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Calendar id="cal_startDate" taborder="3" left="108" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" background="#fafdc8"/>
+                              <Static id="Static01" taborder="2" text="~" left="221" top="4" width="10" height="29"/>
+                              <Calendar id="cal_endDate" taborder="4" left="233" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" background="#fafdc8"/>
+                              <Static id="Static00_00" taborder="12" text="고객사" left="350" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_soldToNm" taborder="5" left="452" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_03" taborder="13" text="주문자" left="588" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_reqNm" taborder="6" left="693" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_03_00" taborder="14" text="대상자" left="818" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_ownNm" taborder="7" left="923" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_00_00" taborder="15" text="발주지점" left="350" top="33" width="98" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_soldToNm00" taborder="9" left="452" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_00_00_00" taborder="16" text="품목명" left="0" top="33" width="89" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_soldToNm00_00" taborder="8" left="108" top="33" width="234" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_03_01" taborder="17" text="배송지" left="588" top="32" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_reqNm00" taborder="10" left="693" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                              <Static id="Static00_03_00_00" taborder="18" text="주문번호" left="818" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Edit id="edt_ownNm00" taborder="11" left="923" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                            </Layout>
+                          </Layouts>
+                        </Div>
+                        <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="area" autofittype="none" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="41"/>
+                                <Column size="99"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="73"/>
+                                <Column size="324"/>
+                                <Column size="80"/>
+                                <Column size="60"/>
+                                <Column size="60"/>
+                                <Column size="76"/>
+                                <Column size="109"/>
+                                <Column size="143"/>
+                                <Column size="80"/>
+                                <Column size="306"/>
+                                <Column size="233"/>
+                                <Column size="52"/>
+                                <Column size="95"/>
+                                <Column size="95"/>
+                                <Column size="91"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="주문번호"/>
+                                <Cell col="2" text="접수경로"/>
+                                <Cell col="3" text="주문접수일"/>
+                                <Cell col="4" text="고객사코드"/>
+                                <Cell col="5" text="고객사"/>
+                                <Cell col="6" text="결산일자"/>
+                                <Cell col="7" text="주문자"/>
+                                <Cell col="8" text="대상자"/>
+                                <Cell col="9" text="호칭"/>
+                                <Cell col="10" text="경조사유"/>
+                                <Cell col="11" text="발주지점"/>
+                                <Cell col="12" text="품목코드"/>
+                                <Cell col="13" text="품목명"/>
+                                <Cell col="14" text="배송지"/>
+                                <Cell col="15" text="수량"/>
+                                <Cell col="16" text="매출단가(법인)"/>
+                                <Cell col="17" text="매출단가(개인)"/>
+                                <Cell col="18" text="매출금액"/>
+                                <Cell col="19" text="매입단가"/>
+                                <Cell col="20" text="매입금액"/>
+                                <Cell col="21" text="손익"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                                <Cell col="2" text="bind:RCPT_METH"/>
+                                <Cell col="3" text="bind:ORDER_DT" displaytype="date" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" textAlign="center"/>
+                                <Cell col="4" text="bind:SOLD_TO_PARTY" textAlign="center"/>
+                                <Cell col="5" text="bind:BP_NM"/>
+                                <Cell col="6" text="bind:PAY_COND" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" textAlign="center"/>
+                                <Cell col="7" text="bind:REQ_NM" textAlign="center"/>
+                                <Cell col="8" text="bind:OWN_NM" textAlign="center"/>
+                                <Cell col="9" text="bind:HOCHING"/>
+                                <Cell col="10" text="bind:hs_nm"/>
+                                <Cell col="11" text="bind:PO_BP_NM"/>
+                                <Cell col="12" text="bind:ITEM_CD" textAlign="center"/>
+                                <Cell col="13" text="bind:ITEM_NM"/>
+                                <Cell col="14" text="bind:DLVY_NM"/>
+                                <Cell col="15" text="bind:SO_QTY" displaytype="mask" maskeditformat="##,###" textAlign="center"/>
+                                <Cell col="16" text="bind:SO_PRICE" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="17" text="bind:BILL_AMT_ADD" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="18" text="bind:AMT" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="19" text="bind:PUR_PRICE" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="20" text="bind:PUR_AMT" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="21" text="bind:PROFIT_LOSS" displaytype="mask" maskeditformat="##,###"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="16" text="합     계            " textAlign="right"/>
+                                <Cell col="16" text="expr:dataset.getSum(&quot;SO_PRICE&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="17" text="expr:dataset.getSum(&quot;BILL_AMT_ADD&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="18" text="expr:dataset.getSum(&quot;AMT&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                                <Cell col="19" maskeditformat="##,###" displaytype="mask" text="expr:dataset.getSum(&quot;PUR_PRICE&quot;)"/>
+                                <Cell col="20" maskeditformat="##,###" displaytype="mask" text="expr:dataset.getSum(&quot;PUR_AMT&quot;)"/>
+                                <Cell col="21" maskeditformat="##,###" displaytype="mask" text="expr:dataset.getSum(&quot;PROFIT_LOSS&quot;)"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  손익관리분석 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.08.17
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SA001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//this._gfnGridcellFix(this.Div_client.form.Tab00.Tabpage1.form.grd_list, 4);
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+// 	var dt = this.gfn_addMonth(sDate,-1);
+// 	
+// 	dt1 = new String(dt);
+// 
+// 	var lastDay = this.gfn_getLastDate(dt1.substring(0,6));
+// 	
+// 	//3개월 이전
+//  	var sDate = dt1.substring(0,6) + "01";
+//  	var fDate = dt1.substring(0,6) + lastDay;
+// 	
+// 	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_startDate.set_value(fDate);
+// 	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_endDate.set_value(sDate);
+
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	var fDate = this.gfn_getDate().substr(0,6) + "01";
+	//var fDate = this.gfn_addDate(sDate,-2);
+	
+	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_startDate.set_value(fDate);
+ 	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{	
+	var args1 = this.ds_cond.getColumn(this.ds_cond.rowposition,"START_DATE");
+	var args2 = this.ds_cond.getColumn(this.ds_cond.rowposition,"END_DATE");
+	
+	// 조회
+	var id = "SA002_S01";
+	var url = "svcUrl::SA002_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	this.fn_filter();
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.Tab00.Tabpage1.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+
+this.fn_filter = function ()
+{
+	var soNo = this.ds_cond.getColumn(this.ds_cond.rowposition,"SO_NO");							// 주문번호
+	var soldToNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"BP_NM");						// 고객사	
+	var reqNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"REQ_NM");							// 주문자
+	var ownNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"OWN_NM");							// 대상자
+	var poBpNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"PO_BP_NM");						// 발주지점
+	var dlvyNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"DLVY_NM");						// 배송지
+	var itemNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"ITEM_NM");						// 배송지
+		
+	var filterstr = "";
+	
+	//주문번호		
+	if(!this.gfn_isNull(soNo))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "SO_NO.indexOf('"+soNo+"')!='-1'";
+		else
+			filterstr += " && SO_NO.indexOf('"+soNo+"')!='-1'";				
+	}
+	
+	// 고객사
+	if(!this.gfn_isNull(soldToNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "BP_NM.indexOf('"+soldToNm+"')!='-1'";
+		else
+			filterstr += " && BP_NM.indexOf('"+soldToNm+"')!='-1'";				
+	}
+	
+	//주문자		
+	if(!this.gfn_isNull(reqNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "REQ_NM.indexOf('"+reqNm+"')!='-1'";
+		else
+			filterstr += " && REQ_NM.indexOf('"+reqNm+"')!='-1'";				
+	}
+	
+	//대상자		
+	if(!this.gfn_isNull(ownNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "OWN_NM.indexOf('"+ownNm+"')!='-1'";
+		else
+			filterstr += " && OWN_NM.indexOf('"+ownNm+"')!='-1'";				
+	}
+	
+	//발주지점		
+	if(!this.gfn_isNull(poBpNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "PO_BP_NM.indexOf('"+poBpNm+"')!='-1'";
+		else
+			filterstr += " && PO_BP_NM.indexOf('"+poBpNm+"')!='-1'";				
+	}
+	
+	//배송지		
+	if(!this.gfn_isNull(dlvyNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "DLVY_NM.indexOf('"+dlvyNm+"')!='-1'";
+		else
+			filterstr += " && DLVY_NM.indexOf('"+dlvyNm+"')!='-1'";				
+	}
+	
+	//배송지		
+	if(!this.gfn_isNull(itemNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "ITEM_NM.indexOf('"+itemNm+"')!='-1'";
+		else
+			filterstr += " && ITEM_NM.indexOf('"+itemNm+"')!='-1'";				
+	}
+	//trace(soldToNm)
+	this.ds_list.set_filterstr(filterstr);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="SO_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="RCPT_METH" type="STRING" size="200"/>
+          <Column id="ORDER_DT" type="DATETIME" size="23"/>
+          <Column id="SOLD_TO_PARTY" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="PAY_COND" type="STRING" size="200"/>
+          <Column id="REQ_NM" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="hs_nm" type="STRING" size="100"/>
+          <Column id="PO_BP_NM" type="STRING" size="200"/>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SO_QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="SO_PRICE" type="BIGDECIMAL" size="20"/>
+          <Column id="BILL_AMT_ADD" type="BIGDECIMAL" size="20"/>
+          <Column id="DLVY_NM" type="STRING" size="200"/>
+          <Column id="PUR_PRICE" type="BIGDECIMAL" size="40"/>
+          <Column id="AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PROFIT_LOSS" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="REQ_NM" type="STRING" size="256"/>
+          <Column id="OWN_NM" type="STRING" size="256"/>
+          <Column id="ITEM_NM" type="STRING" size="256"/>
+          <Column id="PO_BP_NM" type="STRING" size="256"/>
+          <Column id="DLVY_NM" type="STRING" size="256"/>
+          <Column id="SO_NO" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_startDate2" propid="value" datasetid="ds_cond" columnid="START_DATE2"/>
+      <BindItem id="item2" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item4" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_soldToNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item5" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_reqNm" propid="value" datasetid="ds_cond" columnid="REQ_NM"/>
+      <BindItem id="item6" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_ownNm" propid="value" datasetid="ds_cond" columnid="OWN_NM"/>
+      <BindItem id="item7" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_soldToNm00" propid="value" datasetid="ds_cond" columnid="PO_BP_NM"/>
+      <BindItem id="item8" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_soldToNm00_00" propid="value" datasetid="ds_cond" columnid="ITEM_NM"/>
+      <BindItem id="item9" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_reqNm00" propid="value" datasetid="ds_cond" columnid="DLVY_NM"/>
+      <BindItem id="item10" compid="Div_client.form.Tab00.Tabpage1.form.div_search.form.edt_ownNm00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM001_P05" width="401" height="431" titletext="New Form" onload="VM001_P05_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="431" mobileorientation="landscape" width="401">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="10" bottom="10" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="MMS 발송 대상자" left="0" top="-5" width="130" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid00" taborder="1" left="0" top="30" binddataset="ds_list" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" right="1" bottom="0" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                      <Column size="156"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="순번"/>
+                      <Cell col="2" text="발송 대상자"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                      <Cell col="1" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="2" combodataset="ds_user" combocodecol="USR_NM" combodatacol="USR_NM" text="bind:USER_NM" combotype="filterlike" displaytype="editcontrol" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_mms" taborder="2" left="310" top="-1" height="21" text="발송" cssclass="btn_WF_main1" right="3" onclick="Div00_btn_mms_onclick"/>
+              <Button id="btn_add" taborder="3" left="230" top="-1" height="21" text="추가" cssclass="btn_WF_main1" right="83" onclick="Div00_btn_add_onclick" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P06
+*  @FileName 	SO0001_P06.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.27
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var preNo = this.getOwnerFrame().preNo
+var hp = this.getOwnerFrame().hp
+var nm = this.getOwnerFrame().nm
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM001_P05_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	// 데이터 조회
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"USER_NM",nm);
+	this.ds_list.setColumn(this.ds_list.rowposition,"HP",hp);
+	this.ds_list.setColumn(this.ds_list.rowposition,"CHK","1");
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = deptCd;
+	var args2 = mode;
+	//trace(args3);
+	
+	// 조회
+	var id = "VM001_P04_S";
+	var url = "svcUrl::VM001_P04_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "DEPT_CD="+args1+" MODE="+args2+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div00_btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.set_updatecontrol(false);
+		
+	for(var i=0; i<this.ds_list.rowcount;i++)
+	{
+		if (this.ds_list.getColumn(i,"CHK") == 1)
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_INSERT);
+		} else
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_NORMAL);
+		}
+	}
+	
+	this.ds_list.set_updatecontrol(true);
+	
+ 	var message = "http://m.hyunjinsn.com/KO843_mobile/Module/MO/PCR.aspx?pre_rcpt_no="+preNo
+// 	time = new String(time);
+// 	time = time.substr(0,4)+"-"+time.substr(4,2)+"-"+time.substr(6,2)+" "+time.substr(8,2)+":"+time.substr(10,2)
+// 	
+// 	if (mode == "urgent")
+// 	{
+// 		message = "[긴급처리 요청]\nVOC 처리를 요청하였습니다.\n- VOC 등록번호 \n: "+vocNo+"\n- 적정 처리시간 \n: "+time+"\n빠른 처리 부탁드립니다."
+// 	} else if (mode == "nomal")
+// 	{
+// 		message = "[일반처리 요청]\nVOC 처리를 요청하였습니다.\n- VOC 등록번호 \n: "+vocNo+"\n- VOC유형1 \n: "+divType1+"\n- VOC유형2 \n: "+divType2+"\n- VOC내용 \n: "+divType3+"\n- 처리자 : "+doUser+"\n- 적정 처리시간 \n: "+time+"\n빠른 처리 부탁드립니다."
+// 	} else if (mode == "direct")
+// 	{
+// 		message = "[직접처리 완료]\n"+rcptUser+"님이 VOC 직접처리를 완료하였습니다.\n(VOC 등록번호 : "+vocNo+")"
+// 	}
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	// 문자발송
+	var id = "FM001_P02_M01";
+	var url = "svcUrl::FM001_P02_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" MG_NO="+preNo+" MESSAGE='"+message+"'";
+	var callBackid = "fn_aftermms";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// mms 발송 callback
+this.fn_aftermms = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("정상적으로 발송 되었습니다.")
+}
+
+this.Div00_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"CHK","1");
+};
+
+this.ds_list_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "USER_NM")
+	{
+		var nm = this.ds_list.getColumn(this.ds_list.rowposition,"USER_NM");
+		var row = this.objApp.gds_user.findRow("USR_NM",nm);
+
+		var hp = this.objApp.gds_user.getColumn(row,"HP");
+		this.ds_list.setColumn(this.ds_list.rowposition,"HP",hp);
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="USER_NM" type="STRING" size="256"/>
+          <Column id="HP" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+    </Objects>
+  </Form>
+</FDL>

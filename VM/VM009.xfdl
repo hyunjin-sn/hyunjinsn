@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM009" width="1590" height="810" titletext="New Form" onload="VM009_onload">
+    <Layouts>
+      <Layout height="810" mobileorientation="landscape" width="1590">
+        <Div id="div_search" taborder="0" left="10" top="10" height="100" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="조회일시" left="18" top="16" width="123" height="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel2"/>
+              <Static id="Static00_00" taborder="1" text="조회기간 (접수일)" left="18" top="56" width="199" height="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel2"/>
+              <Calendar id="cal_startDate" taborder="2" left="249" top="55" width="110" height="29" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static01_00" taborder="3" text="~" left="362" top="58" width="10" height="29"/>
+              <Calendar id="cal_endDate" taborder="4" left="374" top="55" width="110" height="29" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <MaskEdit id="MaskEdit00" taborder="5" left="251" top="11" width="148" height="30" type="string" format="####-##-## ##:##:##" textAlign="left"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="1" text="Div00" left="10" top="145" height="655" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static24" taborder="0" text="전체 VOC 접수" left="13" top="22" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Static id="Static24_00" taborder="1" text="처리자 미접수" left="13" top="117" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Static id="Static24_00_00" taborder="2" text="처리중(납기준수)" left="13" top="212" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Static id="Static24_00_00_00" taborder="3" text="처리중(납기 미준수)" left="13" top="307" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Static id="Static24_00_00_00_00" taborder="4" text="완료(납기준수)" left="13" top="402" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Static id="Static24_00_00_00_00_00" taborder="5" text="완료(납기 미준수)" left="13" top="497" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Edit id="Edit00" taborder="6" left="268" top="17" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Edit id="Edit00_00" taborder="7" left="268" top="111" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Edit id="Edit00_00_00" taborder="8" left="268" top="207" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Edit id="Edit00_00_00_00" taborder="9" left="268" top="303" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Edit id="Edit00_00_00_00_00" taborder="10" left="268" top="397" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Edit id="Edit00_00_00_00_00_00" taborder="11" left="268" top="492" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Static id="Static00" taborder="12" text="건" left="367" top="22" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Static id="Static00_00" taborder="13" text="건" left="367" top="117" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Static id="Static00_00_00" taborder="14" text="건" left="367" top="212" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Static id="Static00_00_00_00" taborder="15" text="건" left="367" top="307" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Static id="Static00_00_00_00_00" taborder="16" text="건" left="367" top="402" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Static id="Static00_00_00_00_00_00" taborder="17" text="건" left="367" top="497" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Grid id="Grid00" taborder="18" left="470" top="45" bottom="0" binddataset="ds_result" onkeydown="Div02_Tab00_Tabpage1_grd_list01_onkeydown" oncellclick="Div00_Grid00_oncellclick" selecttype="cell" right="0" cellsizingtype="col" griduserproperty="export">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="56"/>
+                      <Column size="62"/>
+                      <Column size="99"/>
+                      <Column size="79"/>
+                      <Column size="53"/>
+                      <Column size="116"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="83"/>
+                      <Column size="74"/>
+                      <Column size="284"/>
+                      <Column size="116"/>
+                      <Column size="116"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30" band="head"/>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="1" text="VOC이동" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="2" text="VOC번호" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="3" text="접수일" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="4" text="접수자" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="5" text="VOC유형1" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="6" text="VOC유형2" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="7" text="VOC내용" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="8" text="처리팀" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="9" text="처리자" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="10" text="고객사" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="11" text="VOC대상1" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="12" text="VOC대상2" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="1" text="이동" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="buttoncontrol" textAlign="center"/>
+                      <Cell col="2" text="bind:VOC_NO" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="3" text="bind:RCPT_DT" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="4" text="bind:RCPT_USER" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="center" displaytype="combotext"/>
+                      <Cell col="5" text="bind:DIV_TYPE1" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_voc_type1" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="center" displaytype="combotext"/>
+                      <Cell col="6" text="bind:DIV_TYPE2" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_voc_type2" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="combotext"/>
+                      <Cell col="7" text="bind:DIV_TYPE3" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_voc_type3" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="combotext"/>
+                      <Cell col="8" text="bind:ACT_DEPT_CD1" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="left" displaytype="combotext" combocodecol="DEPT_CD" combodatacol="DEPT_NM" combodataset="ds_voc_dept1"/>
+                      <Cell col="9" text="bind:ACT_DEPT_CD2" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left" displaytype="combotext"/>
+                      <Cell col="10" text="bind:CUST_NM" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                      <Cell col="11" text="bind:DIV_DEPT_CD1" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_voc_dept3" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="combotext"/>
+                      <Cell col="12" text="bind:DIV_DEPT_CD2" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="combotext"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static24_01" taborder="19" text="전체 VOC 접수 건수" left="470" top="2" width="277" height="30" cssclass="sta_WF_title3"/>
+              <Button id="btn_1" taborder="20" text="조회" top="19" height="34" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1" width="42" left="415"/>
+              <Button id="btn_2" taborder="21" text="조회" top="113" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_2_onclick" width="42" left="415"/>
+              <Button id="btn_3" taborder="22" text="조회" top="209" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_3_onclick" width="42" left="415"/>
+              <Button id="btn_4" taborder="23" text="조회" top="304" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_4_onclick" width="42" left="415"/>
+              <Button id="btn_5" taborder="24" text="조회" top="400" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_5_onclick" width="42" left="415"/>
+              <Button id="btn_6" taborder="25" text="조회" top="494" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_6_onclick" width="42" left="415"/>
+              <Static id="Static24_00_00_00_00_00_00" taborder="26" text="직접처리" left="13" top="587" width="217" height="30" cssclass="sta_WF_title3"/>
+              <Edit id="Edit00_00_00_00_00_00_00" taborder="27" left="268" top="582" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106"/>
+              <Static id="Static00_00_00_00_00_00_00" taborder="28" text="건" left="367" top="587" height="30" cssclass="sta_WF_title2" width="36"/>
+              <Button id="btn_6_00" taborder="29" text="조회" top="584" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_7_onclick" width="42" left="415"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_startDate2" propid="value" datasetid="ds_cond" columnid="START_DATE2"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item2" compid="Div00.form.Edit00" propid="value" datasetid="ds_list" columnid="CNT1"/>
+      <BindItem id="item4" compid="Div00.form.Edit00_00" propid="value" datasetid="ds_list" columnid="CNT2"/>
+      <BindItem id="item5" compid="Div00.form.Edit00_00_00" propid="value" datasetid="ds_list" columnid="CNT3"/>
+      <BindItem id="item6" compid="Div00.form.Edit00_00_00_00" propid="value" datasetid="ds_list" columnid="CNT4"/>
+      <BindItem id="item7" compid="Div00.form.Edit00_00_00_00_00" propid="value" datasetid="ds_list" columnid="CNT5"/>
+      <BindItem id="item8" compid="Div00.form.Edit00_00_00_00_00_00" propid="value" datasetid="ds_list" columnid="CNT6"/>
+      <BindItem id="item0" compid="Div00.form.Edit00_00_00_00_00_00_00" propid="value" datasetid="ds_list" columnid="CNT7"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  대시보드
+*  @MenuPath    VM > VM009
+*  @FileName 	VM009.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.03.25
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM009_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	//this.fn_search();
+};
+
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	var fDate = this.gfn_getDate().substr(0,6) + "01";
+	//var fDate = this.gfn_addDate(sDate,-1);
+	
+	this.div_search.form.cal_startDate.set_value(fDate);
+	this.div_search.form.cal_endDate.set_value(sDate);
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+ 	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	
+	this.efn_SetDatasetData2(this.ds_voc_type1,this.objApp.gds_code2,'VA005');		// VOC유형
+	this.efn_SetDatasetData2(this.ds_voc_type2,this.objApp.gds_code2,'VA006');		// VOC유형2
+	this.efn_SetDatasetData2(this.ds_voc_type3,this.objApp.gds_code2,'VA007');		// VOC내용
+	this.efn_SetDatasetData2(this.ds_voc_dept3,this.objApp.gds_code2,'VA008');		// VOC대상1
+	
+	this.efn_SetGrdUserData(this.ds_voc_dept1,this.objApp.gds_dept);
+	
+	var id = "VM001_S04";
+	var url = "svcUrl::VM001_S04";
+	var inDs = "";
+	var outDs = "ds_voc_dept4=ds_list";
+	var args = "FLAG=''";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	//trace(args3);
+	
+	// 조회
+	var id = "VM009_S01";
+	var url = "svcUrl::VM009_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var dte = this.gfn_getDate("time")
+
+	this.div_search.form.MaskEdit00.set_value(dte);
+}
+
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "1";
+	this.Div00.form.Static24_01.set_text("전체 VOC 접수건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_2_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "2";
+	this.Div00.form.Static24_01.set_text("처리자 미접수 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "3";
+	this.Div00.form.Static24_01.set_text("처리중(납기준수) 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_4_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "4";
+	this.Div00.form.Static24_01.set_text("처리중(납기 미준수) 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_5_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "5";
+	this.Div00.form.Static24_01.set_text("완료(납기준수) 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_6_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "6";
+	this.Div00.form.Static24_01.set_text("완료(납기 미준수) 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_7_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "7";
+	this.Div00.form.Static24_01.set_text("직접처리 건수");
+	
+	// 조회
+	var id = "VM009_S02";
+	var url = "svcUrl::VM009_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+
+// 복사기능
+this.Div02_Tab00_Tabpage1_grd_list01_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+
+this.Div00_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 1)
+	{
+		var vocNo = this.ds_result.getColumn(this.ds_result.rowposition,"VOC_NO");
+
+		var arrArg = [];
+		this.gfn_openForm2(this.objApp.gds_menu, "VM001", arrArg, vocNo);	
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="VOC_NO" type="STRING" size="18"/>
+          <Column id="RCPT_DT" type="DATETIME" size="23"/>
+          <Column id="RCPT_USER" type="STRING" size="10"/>
+          <Column id="DIV_TYPE1" type="STRING" size="10"/>
+          <Column id="DIV_TYPE2" type="STRING" size="10"/>
+          <Column id="DIV_TYPE3" type="STRING" size="10"/>
+          <Column id="ACT_DEPT_CD1" type="STRING" size="10"/>
+          <Column id="ACT_DEPT_CD2" type="STRING" size="10"/>
+          <Column id="CUST_NM" type="STRING" size="500"/>
+          <Column id="DIV_DEPT_CD1" type="STRING" size="10"/>
+          <Column id="DIV_DEPT_CD2" type="STRING" size="10"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_status"/>
+      <Dataset id="ds_list"/>
+      <Dataset id="ds_voc_type1"/>
+      <Dataset id="ds_voc_type2"/>
+      <Dataset id="ds_voc_type3"/>
+      <Dataset id="ds_voc_dept1"/>
+      <Dataset id="ds_voc_dept3"/>
+      <Dataset id="ds_voc_dept4"/>
+    </Objects>
+  </Form>
+</FDL>

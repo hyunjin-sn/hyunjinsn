@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Comm_CodePopup_4" width="1030" height="451" titletext="New Form" onload="Comm_CodePopup_4_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="451" mobileorientation="landscape" width="1030">
+        <Grid id="grd_list3" taborder="0" scrolltype="both" minwidth="" bottom="53" top="10" onheadclick="Div_menu_grd_list_onheadclick" autofittype="col" width="253" left="513" binddataset="ds_list_3">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="212"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                <Cell col="1" text="bind:CODE_NAME" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list2" taborder="1" scrolltype="both" minwidth="" bottom="53" left="261" top="10" onheadclick="Div_menu_grd_list_onheadclick" autofittype="col" width="253" binddataset="ds_list_2">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="212"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                <Cell col="1" text="bind:CODE_NAME" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="grd_list" taborder="2" scrolltype="both" minwidth="" bottom="53" left="10" top="10" autofittype="col" width="253" binddataset="ds_list_1">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="212"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                <Cell col="1" text="bind:CODE_NAME" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_add03" taborder="3" text="선택" top="413" width="90" height="24" visible="true" onclick="fn_ok" cssclass="btn_WF_main1" left="420"/>
+        <Button id="btn_attach" taborder="4" text="닫기" top="413" width="90" height="24" visible="true" onclick="fn_attachBtnClick_1" cssclass="btn_WF_main1" left="515"/>
+        <Static id="Static38" taborder="5" left="685" top="405" width="204" height="29" text="※ 저장은 한개만 선택 가능합니다." font="normal 10pt/normal &quot;Arial&quot;" color="#fd011a"/>
+        <Grid id="grd_list4" taborder="6" scrolltype="both" minwidth="" bottom="53" top="10" onheadclick="Div_menu_grd_list_onheadclick" autofittype="col" width="253" left="765" binddataset="ds_list_4">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="212"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                <Cell col="1" text="bind:CODE_NAME" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    PJT_M > PM0001_P01
+*  @FileName 	PM0002_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.06.25
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+include "Lib::sz_fsp_nx.xjs";
+this.objApp = nexacro.getApplication();
+var head_1 = this.getOwnerFrame().head_1;
+var head_2 = this.getOwnerFrame().head_2;
+var head_3 = this.getOwnerFrame().head_3;
+var head_4 = this.getOwnerFrame().head_3;
+var filter_1 = this.getOwnerFrame().filter_1;
+var filter_2 = this.getOwnerFrame().filter_2;
+var filter_3 = this.getOwnerFrame().filter_3;
+var filter_4 = this.getOwnerFrame().filter_4;
+var mode = this.getOwnerFrame().mode;
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Comm_CodePopup_4_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fsp_init();
+	this.gfn_formOnLoad(this);	
+	
+	// 데이터 조회
+	this.fn_search();
+
+	
+	//trace("112434");
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	this.fn_setDs(this.objApp.gds_code, filter_1, this.ds_list_1, this.grd_list, head_1);				// 마케팅
+	this.fn_setDs(this.objApp.gds_code, filter_2, this.ds_list_2, this.grd_list2, head_2);				// 공공
+	this.fn_setDs(this.objApp.gds_code, filter_3, this.ds_list_3, this.grd_list3, head_3);				// 대학
+	this.fn_setDs(this.objApp.gds_code, filter_4, this.ds_list_4, this.grd_list4, head_4);				// 기타
+ };
+ 
+ // 그리드 조회
+ this.fn_setDs = function (gds, filter, ds, grd, head)
+ {
+	grd.setCellProperty( "head", 0, "text", head);
+	
+ 	gds.filter(filter);
+	ds.copyData(gds, true);													
+	ds.addColumn("CHK", "STRING");
+	for(var i=0; i<ds.rowcount; i++){
+		ds.setColumn(i, "CHK", "0");
+	}
+	gds.filter("");
+ };
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.07.01
+* @수정자	   
+* @수정일자
+*/
+this.fn_ok = function()
+{
+	var CODE = "";
+	var CODE_NAME = "";
+	var CODE_ETC = "";
+	
+ 	for (i=0; i < this.ds_list_1.rowcount; i++)
+	{
+		if (this.ds_list_1.getColumn(i,"CHK") == 1)
+		{
+			if (this.gfn_isNull(CODE))
+			{
+				CODE = this.ds_list_1.getColumn(i,"CODE")
+			} else
+			{
+				CODE += ","+this.ds_list_1.getColumn(i,"CODE")
+			}
+			
+			if (this.gfn_isNull(CODE_NAME))
+			{
+				CODE_NAME = this.ds_list_1.getColumn(i,"CODE_NAME")
+			} else
+			{
+				CODE_NAME += ","+this.ds_list_1.getColumn(i,"CODE_NAME")
+			}
+			
+			if (this.gfn_isNull(CODE_ETC))
+			{
+				CODE_ETC = this.ds_list_1.getColumn(i,"CODE_ETC")
+			} else
+			{
+				CODE_ETC += ","+this.ds_list_1.getColumn(i,"CODE_ETC")
+			}
+		}	
+	}
+	
+	for (i=0; i < this.ds_list_2.rowcount; i++)
+	{
+		if (this.ds_list_2.getColumn(i,"CHK") == 1)
+		{
+			if (this.gfn_isNull(CODE))
+			{
+				CODE = this.ds_list_2.getColumn(i,"CODE")
+			} else
+			{
+				CODE += ","+this.ds_list_2.getColumn(i,"CODE")
+			}
+			
+			if (this.gfn_isNull(CODE_NAME))
+			{
+				CODE_NAME = this.ds_list_2.getColumn(i,"CODE_NAME")
+			} else
+			{
+				CODE_NAME += ","+this.ds_list_2.getColumn(i,"CODE_NAME")
+			}
+			
+			if (this.gfn_isNull(CODE_ETC))
+			{
+				CODE_ETC = this.ds_list_2.getColumn(i,"CODE_ETC")
+			} else
+			{
+				CODE_ETC += ","+this.ds_list_2.getColumn(i,"CODE_ETC")
+			}
+		}	
+	}
+	
+	for (i=0; i < this.ds_list_3.rowcount; i++)
+	{
+		if (this.ds_list_3.getColumn(i,"CHK") == 1)
+		{
+			if (this.gfn_isNull(CODE))
+			{
+				CODE = this.ds_list_3.getColumn(i,"CODE")
+			} else
+			{
+				CODE += ","+this.ds_list_3.getColumn(i,"CODE")
+			}
+			
+			if (this.gfn_isNull(CODE_NAME))
+			{
+				CODE_NAME = this.ds_list_3.getColumn(i,"CODE_NAME")
+			} else
+			{
+				CODE_NAME += ","+this.ds_list_3.getColumn(i,"CODE_NAME")
+			}
+			
+			if (this.gfn_isNull(CODE_ETC))
+			{
+				CODE_ETC = this.ds_list_3.getColumn(i,"CODE_ETC")
+			} else
+			{
+				CODE_ETC += ","+this.ds_list_3.getColumn(i,"CODE_ETC")
+			}
+		}	
+	}
+	
+	for (i=0; i < this.ds_list_4.rowcount; i++)
+	{
+		if (this.ds_list_4.getColumn(i,"CHK") == 1)
+		{
+			if (this.gfn_isNull(CODE))
+			{
+				CODE = this.ds_list_4.getColumn(i,"CODE")
+			} else
+			{
+				CODE += ","+this.ds_list_4.getColumn(i,"CODE")
+			}
+			
+			if (this.gfn_isNull(CODE_NAME))
+			{
+				CODE_NAME = this.ds_list_4.getColumn(i,"CODE_NAME")
+			} else
+			{
+				CODE_NAME += ","+this.ds_list_4.getColumn(i,"CODE_NAME")
+			}
+			
+			if (this.gfn_isNull(CODE_ETC))
+			{
+				CODE_ETC = this.ds_list_4.getColumn(i,"CODE_ETC")
+			} else
+			{
+				CODE_ETC += ","+this.ds_list_4.getColumn(i,"CODE_ETC")
+			}
+		}	
+	}
+	//trace(CODE+":"+CODE_NAME+":"+CODE_ETC);
+	this.close(CODE+":"+CODE_NAME+":"+CODE_ETC);
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.btn_ok_onclick();
+};
+
+this.grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list_1);
+
+	this.close(json);
+};
+
+this.grd_list2_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list_2);
+
+	this.close(json);
+};
+
+this.grd_list3_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list_3);
+
+	this.close(json);
+};
+
+this.grd_list4_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var json = this.efn_jsonRtn(this.ds_list_4);
+
+	this.close(json);
+};
+
+this.fn_attachBtnClick_1 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+
+this.fn_dsChk = function (ds_1, ds_2, ds_3, ds_4)
+{
+	//trace(ds_4);
+	if (ds_1.getColumn(ds_1.rowposition,"CHK") == true)
+	{
+		for (i=0; i < ds_1.rowcount; i++)
+		{
+			if (i != ds_1.rowposition)
+			{
+				ds_1.setColumn(i,"CHK","0")
+			}
+		}
+		for (i=0; i < ds_2.rowcount; i++)
+		{
+			ds_2.setColumn(i,"CHK","0")
+		}
+		for (i=0; i < ds_3.rowcount; i++)
+		{
+			ds_3.setColumn(i,"CHK","0")
+		}
+		for (i=0; i < ds_4.rowcount; i++)
+		{
+			ds_4.setColumn(i,"CHK","0")
+		}
+	}
+};
+
+this.ds_list_1_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.col == 8)
+	{
+		if (mode == "save")
+		{
+			this.fn_dsChk(this.ds_list_1,this.ds_list_2,this.ds_list_3,this.ds_list_4)
+		}
+	}
+};
+
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	//trace(e.col)
+	if (e.col == 8)
+	{
+		if (mode == "save")
+		{
+			this.fn_dsChk(this.ds_list_2,this.ds_list_1,this.ds_list_3,this.ds_list_4)
+		}
+	}
+};
+
+this.ds_list_3_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	//trace(e.col)
+	if (e.col == 8)
+	{
+		if (mode == "save")
+		{
+			this.fn_dsChk(this.ds_list_3,this.ds_list_2,this.ds_list_1,this.ds_list_4)
+		}
+	}
+};
+
+this.ds_list_4_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	//trace(e.col)
+	if (e.col == 8)
+	{
+		if (mode == "save")
+		{
+			this.fn_dsChk(this.ds_list_4,this.ds_list_2,this.ds_list_1,this.ds_list_3)
+		}
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1" oncolumnchanged="ds_list_1_oncolumnchanged"/>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged"/>
+      <Dataset id="ds_list_3" oncolumnchanged="ds_list_3_oncolumnchanged"/>
+      <Dataset id="ds_list_4" oncolumnchanged="ds_list_4_oncolumnchanged"/>
+    </Objects>
+  </Form>
+</FDL>

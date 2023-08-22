@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="test_tran" width="1120" height="620" titletext="Transaction 샘플" onload="form_onload">
+    <Layouts>
+      <Layout height="620" width="1120">
+        <WebBrowser id="wbs00" taborder="0" left="10" top="51" width="1090" height="549" onloadcompleted="wbs00_onloadcompleted"/>
+        <Button id="btn_reportCall" taborder="1" text="리포트 보기" left="980" top="10" width="120" height="30" onclick="btn_reportCall_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	// 화면 초기화를 위한 공통함수 호출(필수)
+
+};
+
+// 리포트 보기 클릭시 webBrowser 컴포넌트에 연계 URL(OZ index) 호출
+this.btn_reportCall_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//var sUrl = "http://211.106.159.87:8080/PMS/API/test_oz.html";	// 로컬테스트 환경에 맞게 주소변경하세요
+	this.wbs00.set_url(sUrl);
+};
+
+// URL 정보에 따른 화면이 로딩된 후처리 이벤트
+this.wbs00_onloadcompleted = function(obj:nexacro.WebBrowser,e:nexacro.WebLoadCompEventInfo)
+{
+	trace("[wbs00_onloadcompleted]");
+	// OZ 리포트 뷰어 동작을 위한 함수 호출
+	this.fn_ozCall();	
+};
+
+// 실제 뷰어 동작을 위한 수행
+this.fn_ozCall = function()
+{
+	var csvdata = '1{@}Park Chan Ho{@}Texas{@@}2{@}Shin Ki Sung{@}Seoul{@@}3{@}Kim Byung Hyun{@}Arizona{@@}{@@@}{@@}1{@}Park Chan Ho{@}Texas{@@}2{@}Shin Ki Sung{@}Seoul{@@}3{@}Kim Byung Hyun{@}Arizona{@@}{@@@}';
+	var coldiv = '{@}'; //컬럼 구분자
+	var rowdiv = '{@@}'; //로우 구분자
+	var setdiv = '{@@@}'; // 데이터셋 구분자
+	
+	var ozParamStr ='connection.servlet=/oz70/server#OZ#'+
+					'connection.reportname=/sample/csvSample.ozr#OZ#'+
+					'connection.pcount=5#OZ#'+
+					'connection.args1=csvdata='+csvdata+'#OZ#'+
+					'connection.args2=coldiv='+coldiv+'#OZ#'+
+					'connection.args3=rowdiv='+rowdiv+'#OZ#'+
+					'connection.args4=setdiv='+setdiv+'#OZ#'+
+					'connection.args5=title=CSV Sample#OZ#';	
+
+	if(system.navigatorname.toUpperCase() == "NEXACRO")
+	{
+		trace("NEXACRO RUNTIME");		
+		this.wbs00.callMethod("fn_setServlet", ozParamStr);
+		this.wbs00.callMethod("fn_ozStart");
+	}
+	else
+	{
+		trace("WEB BROWSER");
+		//this.wbs00.document.getElementById("servlet").value = "/oz70/server";
+		this.wbs00.document.getElementById("ozParam").value = ozParamStr;
+		this.wbs00.callMethod("fn_ozStart");		
+	}
+}]]></Script>
+    <Objects>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="ssn" type="STRING" size="13"/>
+          <Column id="name" type="STRING" size="20"/>
+          <Column id="point" type="BIGDECIMAL" size="11"/>
+          <Column id="regUserId" type="STRING" size="8"/>
+          <Column id="regDate" type="DATE" size="8"/>
+          <Column id="chgUserId" type="STRING" size="8"/>
+          <Column id="chgDate" type="DATE" size="8"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="ssn">1</Col>
+            <Col id="name">1</Col>
+            <Col id="point">1</Col>
+            <Col id="regUserId">1</Col>
+            <Col id="regDate">1</Col>
+            <Col id="chgUserId">1</Col>
+            <Col id="chgDate">1</Col>
+          </Row>
+          <Row>
+            <Col id="point">2</Col>
+            <Col id="ssn">2</Col>
+            <Col id="name">2</Col>
+            <Col id="regUserId">2</Col>
+            <Col id="regDate">2</Col>
+            <Col id="chgUserId">2</Col>
+            <Col id="chgDate">2</Col>
+          </Row>
+          <Row>
+            <Col id="ssn">3</Col>
+            <Col id="name">3</Col>
+            <Col id="point">3</Col>
+            <Col id="regUserId">3</Col>
+            <Col id="regDate">3</Col>
+            <Col id="chgUserId">3</Col>
+            <Col id="chgDate">3</Col>
+          </Row>
+          <Row>
+            <Col id="ssn">4</Col>
+            <Col id="name">4</Col>
+            <Col id="point">4</Col>
+            <Col id="regUserId">4</Col>
+            <Col id="regDate">4</Col>
+            <Col id="chgUserId">4</Col>
+            <Col id="chgDate">4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

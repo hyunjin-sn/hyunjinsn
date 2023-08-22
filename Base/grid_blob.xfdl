@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="np_blob" classname="test1" left="0" top="0" width="624" height="623" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="0.8%" top="34" right="1.12%" height="158" binddataset="Dataset00" autofittype="col" autoenter="none" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="200" band="left"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="130"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="name"/>
+                <Cell col="1" text="photo"/>
+              </Band>
+              <Band id="body">
+                <Cell edittype="text" text="bind:PIC_NAME"/>
+                <Cell col="1" displaytype="imagecontrol" edittype="none" text="bind:PIC_IMG"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnSearch" taborder="6" text="Search" onclick="btnSearch_onclick" left="0.98%" top="8" right="88.29%" height="22"/>
+        <Button id="btnDelete" taborder="9" text="Delete" left="88.13%" top="8" right="1.14%" height="22" onclick="btnDelete_onclick"/>
+        <Button id="btnAdd" taborder="10" text="Add photo" onclick="btnAdd_onclick" left="13.01%" top="8" right="76.26%" height="22"/>
+        <Button id="btnUpdate" taborder="11" text="Update" onclick="btnUpdate_onclick" left="25.04%" top="8" right="64.23%" height="22"/>
+        <ImageViewer id="ImageViewer00" taborder="12" left="0.96%" top="200" right="1.28%" height="229"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00" firefirstcount="0" firenextcount="0" useclientlayout="true" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="PIC_NAME" type="STRING" size="256"/>
+          <Column id="PIC_IMG" type="BLOB" size="256"/>
+          <Column id="PIC_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <FileDialog id="FileDialog00" filterindex="0" defaultextension="false" onclose="FileDialog00_onclose" async="false"/>
+      <VirtualFile id="VirtualFile00" onsuccess="VirtualFile00_onsuccess" onerror="VirtualFile00_onerror"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="ImageViewer00" propid="image" datasetid="Dataset00" columnid="PIC_IMG"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[
+this.btnSearch_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{ //search
+	var strSvcId 		= "search";
+	var strURL 	= "http://172.10.13.53:8080/tobe/np_select_blob.jsp";
+	var strIntputDs = ""
+	var strOutputDs = "Dataset00=out_ds";
+	var strParam = ""
+	var strFnCallback 	= "fn_callback";
+	this.transaction(strSvcId,strURL,strIntputDs,strOutputDs,strParam,strFnCallback);
+}
+
+var temprow;
+this.btnAdd_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	temprow = null;
+	var rtn = this.FileDialog00.open("File Open", FileDialog.LOAD, "\\Images\\");
+}
+
+this.Grid00_oncelldblclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	if(e.cell ==1){
+		temprow = e.row;
+		var rtn = this.FileDialog00.open("File Open", FileDialog.LOAD, "\\Images\\");
+	}
+}
+
+this.FileDialog00_onclose = function(obj:FileDialog, e:nexacro.FileDialogEventInfo)
+{
+	var rtn = this.VirtualFile00.open(e.virtualfiles[0].fullpath, nexacro.VirtualFile.openBinary);
+}
+
+this.VirtualFile00_onsuccess = function(obj:VirtualFile, e:nexacro.VirtualFileEventInfo)
+{
+	trace("@@@@@@ AsyncVFile onsuccess : " + e.reason);
+	
+	
+	switch (e.reason)
+	{
+		// open
+		case 1 :
+			trace("@@@@@@ open");
+			this.VirtualFile00.read();
+			break;
+		
+		// close
+		case 2 :
+			trace("@@@@@@ close");
+			break;
+		
+		// read
+		case 3 :
+			trace("@@@@@@ read");
+			trace(e.binarydata);
+			trace(temprow);
+			
+			var objDate = new Date();
+            var nTime = objDate.getTime();
+
+			if(temprow == null){
+				var nRow= this.Dataset00.addRow();
+				this.Dataset00.setColumn(nRow, "PIC_IMG", e.binarydata);
+				this.Dataset00.setColumn(nRow, "PIC_NAME", this.VirtualFile00.filename);
+				this.Dataset00.setColumn(nRow, "PIC_ID", nTime);
+			} else {
+				this.Dataset00.setColumn(temprow, "PIC_IMG", e.binarydata);
+				this.Dataset00.setColumn(temprow, "PIC_NAME",  this.VirtualFile00.filename);
+			}
+			obj.getFileSize();
+			this.VirtualFile00.close();
+			break;
+		
+		// readLine
+		case 4 :
+			trace("@@@@@@ readLine");
+			break;
+		
+		// seek
+		case 5 :
+			trace("@@@@@@ seek");
+			break;
+		
+		// write
+		case 6 :
+			trace("@@@@@@ write");
+			this.VirtualFile00.close();
+			break;
+		
+		// remove
+		case 7 :
+			trace("@@@@@@ remove");
+			break;
+		
+		// getFileList
+		case 8 :
+			trace("@@@@@@ getFileList");			
+			break;
+		
+		// getFileSize
+		case 9 :
+			trace("@@@@@@ getFileSize");
+			//this.alert("e.filesize : " + e.filesize);
+			break;
+		
+		// isExist
+		case 10 :
+			trace("@@@@@@ isExist");
+			if (e.fileisexist)
+			{
+				trace("File is exist.");
+			}
+			else
+			{
+				trace("File is not exist.");
+			}
+			break;
+	}
+}
+
+this.VirtualFile00_onerror = function(obj:VirtualFile, e:nexacro.VirtualFileErrorEventInfo)
+{
+	trace("VirtualFile00_onerror : " + e.errormsg);
+}
+
+this.btnUpdate_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	//update
+	var strSvcID = "save";
+	var strURL = "http://172.10.13.53:8080/tobe/np_save_blob.jsp";
+	var strIntputDs = "in_ds=Dataset00:U";
+	var strOutputDs = "";
+	var strParam = "sVal1=1";
+	var strFnCallback = "fn_callback";
+
+	this.transaction(strSvcID, strURL, strIntputDs, strOutputDs, strParam, strFnCallback);
+}
+
+this.fn_callback = function(trID, nErrCD, sErrMSG)
+{
+	if(trID == "search")
+	{
+		if (nErrCD < 0)
+		{
+			this.alert("search : Fail!!!:"+sErrMSG);
+		}
+		else
+		{
+			this.alert("search : Success");
+		}
+	}
+	else if(trID == "save")
+	{
+		if(nErrCD < 0)
+		{
+			this.alert("save : Fail!!!"+sErrMSG);
+		}
+		else
+		{
+			this.alert("save : Success");
+		}
+	}
+}
+
+this.btnDelete_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Dataset00.deleteRow(this.Dataset00.rowposition);	
+}
+
+
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="TM004_P01" width="1200" height="880" titletext="New Form" onload="TM004_P01_onload">
+    <Layouts>
+      <Layout height="880" mobileorientation="landscape" width="1200">
+        <ImageViewer id="ImageViewer00" taborder="0" left="10" top="10" stretch="fit" right="10" bottom="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    TM > TM0004_P01
+*  @FileName 	TM0004_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.02.25
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var file_path = this.getOwnerFrame().file_path
+var real_file_name = this.getOwnerFrame().real_file_name
+var file_name = this.getOwnerFrame().file_name
+var status = this.getOwnerFrame().status
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.TM004_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	file_path = file_path.replace(/\\/gi,"/");
+	
+	if (status == "HJW")
+	{
+		file_url = "http://182.162.91.66:8081/web/"+file_path+real_file_name+file_name.substring(file_name.lastIndexOf("."));
+	} else
+	{
+		file_url = "http://182.162.91.66:8081/web/"+file_path;
+	}
+	
+	this.ImageViewer00.set_image(file_url);
+};
+]]></Script>
+  </Form>
+</FDL>

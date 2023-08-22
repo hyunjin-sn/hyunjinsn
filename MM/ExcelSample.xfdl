@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="ExcelSample" classname="ExcelSample" left="0" top="0" width="640" height="480" titletext="New Form" onload="ExcelSample_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="grd_lamborghini" taborder="0" useinputpanel="false" left="0" top="72" right="0" bottom="213" binddataset="ds_lamborghini">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="106"/>
+                <Column size="80"/>
+                <Column size="128"/>
+                <Column size="80"/>
+                <Column size="74"/>
+                <Column size="89"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NAME"/>
+                <Cell col="1" text="YEAR"/>
+                <Cell col="2" text="ENGINE"/>
+                <Cell col="3" text="POWER"/>
+                <Cell col="4" text="TORQUE"/>
+                <Cell col="5" text="MAXSPEED"/>
+                <Cell col="6" text="WEIGHT"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:NAME"/>
+                <Cell col="1" text="bind:YEAR"/>
+                <Cell col="2" text="bind:ENGINE"/>
+                <Cell col="3" text="bind:POWER"/>
+                <Cell col="4" text="bind:TORQUE"/>
+                <Cell col="5" text="bind:MAXSPEED"/>
+                <Cell col="6" text="bind:WEIGHT"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_export" taborder="1" text="Excel Export" left="168" top="6" width="120" height="50" onclick="btn_export_onclick"/>
+        <Static id="st_title" taborder="2" text="Excel Export" left="16" top="11" width="120" height="45"/>
+        <Button id="btn_import" taborder="3" text="Excel Import" left="304" top="6" width="120" height="50" onclick="btn_import_onclick"/>
+        <Grid id="grd_ferrari" taborder="4" binddataset="ds_ferrari" useinputpanel="false" left="0" top="277" right="0" bottom="8">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="106"/>
+                <Column size="80"/>
+                <Column size="128"/>
+                <Column size="80"/>
+                <Column size="74"/>
+                <Column size="89"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NAME"/>
+                <Cell col="1" text="YEAR"/>
+                <Cell col="2" text="ENGINE"/>
+                <Cell col="3" text="POWER"/>
+                <Cell col="4" text="TORQUE"/>
+                <Cell col="5" text="MAXSPEED"/>
+                <Cell col="6" text="WEIGHT"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:NAME"/>
+                <Cell col="1" text="bind:YEAR"/>
+                <Cell col="2" text="bind:ENGINE"/>
+                <Cell col="3" text="bind:POWER"/>
+                <Cell col="4" text="bind:TORQUE"/>
+                <Cell col="5" text="bind:MAXSPEED"/>
+                <Cell col="6" text="bind:WEIGHT"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsdata" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+      <Dataset id="ds_lamborghini" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="YEAR" type="DATE" size="256"/>
+          <Column id="ENGINE" type="STRING" size="256"/>
+          <Column id="POWER" type="INT" size="256"/>
+          <Column id="TORQUE" type="INT" size="256"/>
+          <Column id="MAXSPEED" type="INT" size="256"/>
+          <Column id="WEIGHT" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="NAME">Miura</Col>
+            <Col id="YEAR">1966</Col>
+            <Col id="ENGINE">3900cc V12 </Col>
+            <Col id="POWER">350</Col>
+            <Col id="WEIGHT">980</Col>
+            <Col id="MAXSPEED">278</Col>
+            <Col id="TORQUE">37.5</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Countach</Col>
+            <Col id="YEAR">1971</Col>
+            <Col id="ENGINE">4000cc V12 DOHC</Col>
+            <Col id="POWER">375</Col>
+            <Col id="MAXSPEED">295</Col>
+            <Col id="TORQUE">36.8</Col>
+            <Col id="WEIGHT">1065</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Diablo</Col>
+            <Col id="YEAR">1990</Col>
+            <Col id="ENGINE">5707cc V12 DOHC</Col>
+            <Col id="POWER">492</Col>
+            <Col id="TORQUE">59.1</Col>
+            <Col id="WEIGHT">1530</Col>
+            <Col id="MAXSPEED">325</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Murcielago</Col>
+            <Col id="WEIGHT">1650</Col>
+            <Col id="YEAR">2001</Col>
+            <Col id="POWER">588</Col>
+            <Col id="TORQUE">66.3</Col>
+            <Col id="ENGINE">6200cc V12 DOHC</Col>
+            <Col id="MAXSPEED">340</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Reventon</Col>
+            <Col id="YEAR">2007</Col>
+            <Col id="POWER">650</Col>
+            <Col id="ENGINE">6500cc V12 DOHC</Col>
+            <Col id="TORQUE">67.34</Col>
+            <Col id="WEIGHT">1655</Col>
+            <Col id="MAXSPEED">340</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Aventador</Col>
+            <Col id="YEAR">2011</Col>
+            <Col id="ENGINE">6500cc V12 DOHC</Col>
+            <Col id="POWER">700</Col>
+            <Col id="TORQUE">70.3</Col>
+            <Col id="WEIGHT">1575</Col>
+            <Col id="MAXSPEED">370</Col>
+          </Row>
+          <Row>
+            <Col id="NAME">Veneno</Col>
+            <Col id="YEAR">2013</Col>
+            <Col id="POWER">750</Col>
+            <Col id="ENGINE">6500cc V12 DOHC</Col>
+            <Col id="MAXSPEED">355</Col>
+            <Col id="WEIGHT">1450</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_ferrari" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="YEAR" type="DATE" size="256"/>
+          <Column id="ENGINE" type="STRING" size="256"/>
+          <Column id="POWER" type="INT" size="256"/>
+          <Column id="TORQUE" type="INT" size="256"/>
+          <Column id="MAXSPEED" type="INT" size="256"/>
+          <Column id="WEIGHT" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[//---------------------------------------------------------------------------
+// nexacro 엑셀 내보내기 가져 오기 샘플
+//---------------------------------------------------------------------------
+
+include "Lib::commExcel.xjs";
+// Excel 서버 모듈에 의해 동작하게 됩니다. (xeni)
+// (web.xml 참고)
+this.exportUrl = "http://182.162.91.66:8081/XExportImport" ;	// export URL
+this.importUrl = "http://182.162.91.66:8081/XImport" ;			// import URL
+
+//-----------------------------------------------------------------------
+// Export 버튼 클릭시 이벤트 핸들러
+//-----------------------------------------------------------------------
+this.btn_export_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var	arrObjGrid = new Array(this.grd_lamborghini,this.grd_ferrari);
+	this.fn_exportExcel(arrObjGrid);
+}
+
+//-----------------------------------------------------------------------
+// Grid를 Excel 내보내는 함수
+// Entry arrObjGrid:그리드 오브젝트가 들어있는 배열
+//  배열에 담긴 여러 Grid 개체를 하나의 파일의  여러 시트에 걸쳐 출력합니다.
+//-----------------------------------------------------------------------
+this.fn_exportExcel = function (arrObjGrid)
+{
+	var	exportObj ;
+	exportObj = new ExcelExportObject("Export00", this);		// ExcelExport 객체 생성
+	exportObj.set_exporttype(nexacro.ExportTypes.EXCEL2007);	//내보내기 할 엑셀 형식 지정
+
+	exportObj.addEventHandler("onsuccess", this.Export00_onsuccess, this);	// onsuccess 이벤트 연결
+	exportObj.addEventHandler("onerror", this.Export00_onerror, this);		// onerror 이벤트 연결 
+	
+	// 다음은 내보낼 Grid를 하나의 파일에 여러 시트에 출력하는 for문입니다.
+	var	objGrid ;
+	var	i,nMax ;
+	var	strSheetName
+	nMax = arrObjGrid.length ;
+	for(i=0 ; i < nMax ; i++){
+		objGrid = arrObjGrid[i] ;		
+		strSheetName = "Sheet"+(i+1) ;	
+		exportObj.addExportItem(nexacro.ExportItemTypes.GRID, objGrid, strSheetName+"!A1");	
+	}
+
+	exportObj.set_exportfilename("exData");				
+	exportObj.set_exporturl(this.exportUrl);			
+	exportObj.exportData();								
+	exportObj = null;									
+}
+
+this.Export00_onsuccess = function(obj:ExcelExportObject,  e:nexacro.ExcelExportEventInfo)
+{
+	trace(obj.name + ":" + e.eventid);
+	trace("\ne.eventid/e.fromobject/e.fromreferenceobject/e.url: " + e.eventid+"/"+e.fromobject+"/"+e.fromreferenceobject+"/"+e.url);
+}
+
+
+this.Export00_onerror = function(obj:ExcelExportObject,  e:nexacro.ExcelExportErrorEventInfo)
+{
+	trace(obj.name + ":" + e.eventid);
+	trace("\ne.eventid: " + e.eventid);
+	trace("\ne.fromobject: " + e.fromobject);
+	trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+	trace("\ne.errorcode: " +  e.errorcode);
+	trace("\ne.errormsg: " + e.errormsg);
+}
+
+
+//-----------------------------------------------------------------------
+// Import 버튼 클릭시 이벤트 핸들러
+//-----------------------------------------------------------------------
+this.btn_import_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_ferrari.clearData();
+	
+	this.gfnExcelImport("ds_ferrari","sheet1","A2","fnImportCallback","ds_ferrari",this);
+	//this.fn_importExcel("Sheet1","A1:G8","ds_ferrari");
+	trace("ds_ferrari 2222222222::: "+ this.ds_ferrari.saveXML());
+}
+
+this.fnImportCallback = function()
+{
+	trace("ds_ferrari::: "+ this.ds_ferrari.saveXML());
+	//this.grd_ferrari.createFormat();
+}
+
+//-----------------------------------------------------------------------
+// 데이터셋에 Excel 가져 오기 함수
+//-----------------------------------------------------------------------
+this.fn_importExcel = function(strSheetName, strSheetArea, strDsName)
+{
+	var importObj ;	
+	importObj = new ExcelImportObject("Import00",this);				
+	importObj.set_importurl(this.importUrl);						
+	importObj.set_importtype(nexacro.ImportTypes.EXCEL);			
+	importObj.addEventHandler("onsuccess", this.Import00_onsuccess, this);	
+	importObj.addEventHandler("onerror", this.Import00_onerror, this);		
+	
+// 	var param2 = "[command=getsheetdata;output=outDs;body=" + strSheetName + "!" + strSheetArea +";]";
+//   	var param3 = "[" + strDsName + "=outDs]";
+	var	param2 = strSheetName+"!"+strSheetArea ;
+	var	param3 = strDsName+"=output1" ;
+	trace("strDsName :::" +strDsName);
+	trace("param3 :::" +param3);
+	importObj.set_importfilemode("local");
+	importObj.importData("", param2, param3);
+	this.addChild("Import00", importObj);
+	importObj = null;												
+}
+
+this.Import00_onsuccess = function(obj:ExcelImportObject,  e:nexacro.ExcelImportEventInfo)
+{
+	trace(obj.name + ":" + e.eventid);
+	trace("ds_ferrari::: "+ this.ds_ferrari.saveXML());
+	//this.grd_ferrari.set_binddataset(this.ds_ferrari);
+	//this.grd_ferrari.createFormat();
+}
+
+this.Import00_onerror = function(obj:ExcelImportObject,  e:nexacro.ExcelImportErrorEventInfo)
+{
+	trace(obj.name + "  :::  " + e.eventid);
+	trace("\ne.fromobject: " + e.fromobject);
+	trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+	trace("\ne.errorcode: " +  e.errorcode);
+	trace("\ne.errormsg: " + e.errormsg);
+}
+
+]]></Script>
+  </Form>
+</FDL>

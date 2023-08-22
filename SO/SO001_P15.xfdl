@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P15" width="530" height="350" titletext="New Form" onload="SO001_P15_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="350" mobileorientation="landscape" width="530">
+        <Static id="sta_24_01" taborder="33" left="356" top="41" height="29" cssclass="sta_WF_detailLine" width="164"/>
+        <Static id="sta_24" taborder="3" left="101" top="41" height="29" cssclass="sta_WF_detailLine" width="165"/>
+        <Button id="btn_confirm" taborder="0" left="367" top="312" width="69" height="21" text="결제" cssclass="btn_WF_main1" onclick="btn_confirm_onclick"/>
+        <Button id="btn_cancel" taborder="1" left="447" top="312" width="69" height="21" text="취소" cssclass="btn_WF_main1" onclick="btn_cancel_onclick"/>
+        <Static id="Static19" taborder="2" text="총금액" left="10" top="41" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Static id="Static05_00" taborder="4" text="결제" left="10" top="8" width="97" height="24" cssclass="sta_WF_title"/>
+        <Static id="Static08" taborder="5" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" text="w&#13;&#10;10" height="350"/>
+        <MaskEdit id="MaskEdit_totAmt" taborder="6" left="115" top="45" width="146" height="21" format="##,##0" readonly="true"/>
+        <Static id="Static08_00" taborder="7" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" text="w&#13;&#10;10" height="350" right="0"/>
+        <Static id="sta_24_00" taborder="8" left="101" top="69" height="29" cssclass="sta_WF_detailLine" width="418"/>
+        <Static id="Static19_00" taborder="9" text="과세 금액" left="10" top="69" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <Static id="Static35_00" taborder="10" text="비과세 금액" left="265" top="69" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+        <MaskEdit id="MaskEdit_cost1" taborder="11" left="115" top="73" width="146" height="21" format="##,###" autoselect="true" displaynulltext="0"/>
+        <MaskEdit id="MaskEdit_cost2" taborder="12" left="369" top="73" width="146" height="21" format="##,###" autoselect="true" displaynulltext="0"/>
+        <Static id="sta_24_00_00" taborder="13" left="101" top="97" height="29" cssclass="sta_WF_detailLine" width="418"/>
+        <Static id="Static19_00_00" taborder="14" text="공급가액" left="10" top="97" width="100" cssclass="sta_WF_detailLabel_ess" height="29" font="normal 600 10pt/normal &quot;Arial&quot;" color="#0d2cf6"/>
+        <Static id="Static35_00_00" taborder="15" text="부가세액" left="265" top="97" width="100" cssclass="sta_WF_detailLabel_ess" height="29" font="normal 600 10pt/normal &quot;Arial&quot;" color="#0d2cf6"/>
+        <MaskEdit id="MaskEdit_cost3" taborder="16" left="115" top="101" width="146" height="21" format="##,##0" enable="false"/>
+        <MaskEdit id="MaskEdit_cost4" taborder="17" left="369" top="101" width="146" height="21" format="##,##0" displaynulltext="0" enable="false"/>
+        <Static id="sta_24_00_00_00" taborder="18" left="101" top="125" height="29" cssclass="sta_WF_detailLine" width="418"/>
+        <Static id="Static19_00_00_00" taborder="19" text="카드번호" left="10" top="125" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <MaskEdit id="MaskEdit_cardNo" taborder="20" left="115" top="129" width="400" height="21" type="string" format="####-####-####-####" textAlign="left" autoselect="true" enable="false"/>
+        <Static id="sta_24_00_00_00_00" taborder="21" left="101" top="153" height="29" cssclass="sta_WF_detailLine" width="418"/>
+        <Static id="Static19_00_00_00_00" taborder="22" text="카드 유효년월" left="10" top="153" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Static id="Static35_00_00_00_00" taborder="23" text="할부개월" left="265" top="153" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <Static id="sta_24_00_00_00_00_00" taborder="24" left="101" top="181" height="122" cssclass="sta_WF_detailLine" width="418"/>
+        <Static id="Static19_00_00_00_00_00" taborder="25" text="메모" left="10" top="181" width="100" cssclass="sta_WF_detailLabel" height="122"/>
+        <TextArea id="TA_memo" taborder="26" left="115" top="185" width="400" height="114"/>
+        <Calendar id="txt_Month" taborder="27" left="115" top="157" width="145" height="21" editformat="yyyy-MM" dateformat="yyyy-MM" type="spin" showmonthspin="false" onkeyup="div_search_txt_Month_onkeyup" enable="false"/>
+        <Static id="Static00" taborder="28" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="0"/>
+        <Static id="Static00_00" taborder="29" left="0" top="340" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="0"/>
+        <Combo id="CB_div" taborder="30" text="" left="369" top="157" width="146" height="21" codecolumn="CODE" datacolumn="CODE_NAME" innerdataset="ds_div"/>
+        <Static id="Static19_01" taborder="31" text="결제 가능 금액" left="265" top="41" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+        <MaskEdit id="MaskEdit_totAmt00" taborder="32" left="370" top="45" width="145" height="21" format="##,##0" readonly="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  결제 팝업
+*  @MenuPath    SO > SO0001_P15
+*  @FileName 	SO0001_P15.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.25
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+var seq = this.getOwnerFrame().seq
+var payAmt = this.getOwnerFrame().payAmt
+var cardNum = this.getOwnerFrame().cardNum
+var ym = this.getOwnerFrame().ym
+var paySum = this.getOwnerFrame().paySum
+var paychk = this.getOwnerFrame().paychk
+var netAmt = this.getOwnerFrame().netAmt
+var vatAmt = this.getOwnerFrame().vatAmt
+var ownNm = this.getOwnerFrame().ownNm
+var dlvyDt = this.getOwnerFrame().dlvyDt
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P15_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//세팅
+	
+	//trace(payAmt);
+	var payCost = parseInt(nexacro.round(this.gfn_nvl(netAmt,0)/1.1,0));
+	var payCost2 = parseInt(this.gfn_nvl(vatAmt,0));
+	var payVat = parseInt(this.gfn_nvl(netAmt,0)) - parseInt(this.gfn_nvl(payCost,0));
+	
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"BILL_AMT",paychk);
+	this.ds_list.setColumn(this.ds_list.rowposition,"CAN_AMT",paychk-paySum);
+	this.ds_list.setColumn(this.ds_list.rowposition,"CARD_NO",cardNum);
+	this.ds_list.setColumn(this.ds_list.rowposition,"CARD_YM",ym);
+	this.ds_list.setColumn(this.ds_list.rowposition,"COST1",netAmt);
+	this.ds_list.setColumn(this.ds_list.rowposition,"COST2",vatAmt);
+	this.ds_list.setColumn(this.ds_list.rowposition,"COST3",payCost+payCost2);
+	this.ds_list.setColumn(this.ds_list.rowposition,"COST4",payVat);
+		
+	this.CB_div.set_index(0);
+	// 데이터 조회
+	//this.fn_search();
+	//trace(soNo);
+	
+	var id = "SO001_P15_S01";
+	var url = "svcUrl::SO001_P15_S01";
+	var inDs = "";
+	var outDs = "ds_bp_nm=ds_bp_nm";
+	var args = "SO_NO="+soNo+"";
+	var callBackid = "fn_afterBpSearch";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		결제버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.25
+* @수정자	   
+* @수정일자
+*/
+this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var chkAmt = parseInt(this.ds_list.getColumn(this.ds_list.rowposition,"COST3"));
+	var chkAmt2 = parseInt(this.ds_list.getColumn(this.ds_list.rowposition,"COST4"));
+	var chkPay = parseInt(this.ds_list.getColumn(this.ds_list.rowposition,"CAN_AMT"));
+	var chk = chkAmt+chkAmt2;
+	//trace(chk+">>"+chkPay)
+	if (chk > chkPay)
+	{
+		this.alert("결제 가능 금액을 초과 하였습니다. 확인 바랍니다.")
+		return;
+	}
+	
+	//http://localhost:8080/xup/FrontControllerServlet.do?service=xupservice&format=xml&version=xplatform&domain=xup&model=SO001_P13
+	//this.WebBrowser00.set_url("https://www.kkokjee.com/openapi/v1/partner/payment/cardpay.json?access_token=8087caf69c5058260b514cb8e31511442cb4fa6576ec4cb2120ad7ad43ccf9f9&store_screen_name=111111&employee_screen_name=111111&card_no=6258400026142610&card_date=202405&amount=10&tax=1&fee=0&comment=test&addtional_data=20200515");
+	var dte = this.gfn_getDate();
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	//trace("123");
+	// 결제
+// 	var access_token = "8087caf69c5058260b514cb8e31511442cb4fa6576ec4cb2120ad7ad43ccf9f9";
+// 	var store_screen_name = "111111";
+// 	var employee_screen_name = "111111";
+	
+	var access_token = "a0ba43224a2048027aeb4734a851bdcbc0d70350569d66a16cdf6aaec6800f72";
+	var store_screen_name = "69hyunjin";
+	var employee_screen_name = "69hyunjin";
+	var card_no = this.ds_list.getColumn(this.ds_list.rowposition,"CARD_NO");
+	var card_date = this.ds_list.getColumn(this.ds_list.rowposition,"CARD_YM").substring(0,6);
+	var amount = this.ds_list.getColumn(this.ds_list.rowposition,"COST3");
+	var tax = this.ds_list.getColumn(this.ds_list.rowposition,"COST4");
+	var fee = 0;
+	var installment = this.ds_list.getColumn(this.ds_list.rowposition,"CARD_MONTH");
+	var bpNm = this.ds_bp_nm.getColumn(0,"BP_FULL_NM");
+	var comment = "대상자 : " + ownNm + "\n고객사 : " + bpNm +"\n배송일자 : "+ dlvyDt
+	
+	if (this.gfn_isNull(tax))
+	{
+		tax = 0;
+	}
+	
+	var id = "SO001_P15_CARD_CONFIRM";
+	var url = "svcUrl::SO001_P15_CARD_CONFIRM";
+	var inDs = "";
+	var outDs = "ds_return=ds_list";
+	var args = "access_token="+access_token+" store_screen_name="+store_screen_name+" employee_screen_name="+employee_screen_name+" card_no="+card_no+" card_date="+card_date+" amount="+amount+" tax="+tax+" fee="+fee+" installment="+installment+" comment='"+comment+"'";
+	var callBackid = "fn_afterPay";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	//this.close("");
+};
+
+//결제 콜백
+this.fn_afterPay = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag);
+		return ;
+	}
+	//trace(this.ds_return.saveXML());
+	if (this.ds_return.getColumn(this.ds_return.rowposition,"code") == "200")
+	{
+		var cost1 = this.ds_list.getColumn(this.ds_list.rowposition,"COST1");
+		var cost2 = this.ds_list.getColumn(this.ds_list.rowposition,"COST2");
+		var cost3 = this.ds_list.getColumn(this.ds_list.rowposition,"COST3");
+		var cost4 = this.ds_list.getColumn(this.ds_list.rowposition,"COST4");
+		var cost5 = parseInt(cost3)+parseInt(cost4);
+		var card_app_no = this.ds_return.getColumn(this.ds_return.rowposition,"APPROVAL_NO");
+		var orderNo = this.ds_return.getColumn(this.ds_return.rowposition,"ORDER_NO");
+		var uuid = this.ds_return.getColumn(this.ds_return.rowposition,"UUID");
+		
+		var id = "SO001_P15_CARD_CALLBACK";
+		var url = "svcUrl::SO001_P15_CARD_CALLBACK";
+		var inDs = "";
+		var outDs = "";
+		var args = "card_app_no="+card_app_no+" PAYAT_ORDER_NO="+orderNo+" UUID="+uuid+" so_no="+soNo+" seq="+seq+" COST1="+cost1+" COST2="+cost2+" COST3="+cost3+" COST4="+cost4+" COST5="+cost5+"";
+		var callBackid = "fn_afterCallback";		
+		
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	} else
+	{
+		this.alert(this.ds_return.getColumn(this.ds_return.rowposition,"message"));
+		return;
+	}
+}
+
+this.fn_afterCallback = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag);
+		return ;
+	}
+	
+	this.alert("정상적으로 결제 되었습니다.");
+	this.close("");
+}
+
+this.btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+this.ds_list_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "COST1" || e.columnid == "COST2")
+	{
+		var netAmt = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"COST1"),0);
+		var payCost2 = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"COST2"),0);
+		var payCost = nexacro.round(netAmt/1.1,0);
+		var payVat = netAmt - payCost;
+
+		if (this.gfn_isNull(netAmt))
+		{
+			this.alert("금액에 빈값을 넣을 수 없습니다. 0 이라도 입력 바랍니다.");
+			this.ds_list.setColumn(0,"COST1",e.oldvalue);
+			return;
+		}
+		
+		if (this.gfn_isNull(payCost2))
+		{
+			this.alert("금액에 빈값을 넣을 수 없습니다. 0 이라도 입력 바랍니다.");
+			this.ds_list.setColumn(e.row,"COST2",e.oldvalue);
+			return;
+		}
+	
+		this.ds_list.setColumn(this.ds_list.rowposition,"COST3",parseInt(payCost)+parseInt(payCost2));
+		this.ds_list.setColumn(this.ds_list.rowposition,"COST4",parseInt(payVat));
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="BILL_AMT" type="STRING" size="256"/>
+          <Column id="CAN_AMT" type="STRING" size="256"/>
+          <Column id="COST1" type="STRING" size="256"/>
+          <Column id="COST2" type="STRING" size="256"/>
+          <Column id="COST3" type="STRING" size="256"/>
+          <Column id="COST4" type="STRING" size="256"/>
+          <Column id="CARD_NO" type="STRING" size="256"/>
+          <Column id="CARD_YM" type="STRING" size="256"/>
+          <Column id="CARD_MONTH" type="STRING" size="256"/>
+          <Column id="MEMO" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_NAME">일시불</Col>
+            <Col id="CODE">0</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">2개월</Col>
+            <Col id="CODE">2</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">3개월</Col>
+            <Col id="CODE">3</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">4개월</Col>
+            <Col id="CODE">4</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">5개월</Col>
+            <Col id="CODE">5</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">6개월</Col>
+            <Col id="CODE">6</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">7개월</Col>
+            <Col id="CODE">7</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">8개월</Col>
+            <Col id="CODE">8</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">9개월</Col>
+            <Col id="CODE">9</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">10개월</Col>
+            <Col id="CODE">10</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">11개월</Col>
+            <Col id="CODE">11</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">12개월</Col>
+            <Col id="CODE">12</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_return">
+        <ColumnInfo>
+          <Column id="message" type="STRING" size="256"/>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="APPROVAL_NO" type="STRING" size="256"/>
+          <Column id="ORDER_NO" type="STRING" size="256"/>
+          <Column id="UUID" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_bp_nm"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="txt_Month" propid="value" datasetid="ds_list" columnid="CARD_YM"/>
+      <BindItem id="item1" compid="MaskEdit_totAmt" propid="value" datasetid="ds_list" columnid="BILL_AMT"/>
+      <BindItem id="item2" compid="MaskEdit_cost1" propid="value" datasetid="ds_list" columnid="COST1"/>
+      <BindItem id="item3" compid="MaskEdit_cost2" propid="value" datasetid="ds_list" columnid="COST2"/>
+      <BindItem id="item4" compid="MaskEdit_cost3" propid="value" datasetid="ds_list" columnid="COST3"/>
+      <BindItem id="item5" compid="MaskEdit_cost4" propid="value" datasetid="ds_list" columnid="COST4"/>
+      <BindItem id="item6" compid="MaskEdit_cardNo" propid="value" datasetid="ds_list" columnid="CARD_NO"/>
+      <BindItem id="item7" compid="CB_div" propid="value" datasetid="ds_list" columnid="CARD_MONTH"/>
+      <BindItem id="item8" compid="TA_memo" propid="value" datasetid="ds_list" columnid="MEMO"/>
+      <BindItem id="item9" compid="MaskEdit_totAmt00" propid="value" datasetid="ds_list" columnid="CAN_AMT"/>
+    </Bind>
+  </Form>
+</FDL>

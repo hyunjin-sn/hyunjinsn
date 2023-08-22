@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO008" width="1500" height="600" titletext="New Form" onload="SO008_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Tab id="Tab00" taborder="1" tabindex="0" left="9" top="10" right="10" bottom="0">
+                <Tabpages>
+                  <Tabpage id="Tabpage1" text="배송일 기준">
+                    <Layouts>
+                      <Layout>
+                        <Div id="div_search" taborder="0" left="0" top="10" height="34" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                          <Layouts>
+                            <Layout>
+                              <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Button id="btn_del" taborder="1" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_Tab00_Tabpage1_div_search_btn_del_onclick"/>
+                              <Calendar id="cal_startDate" taborder="2" left="91" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                              <Static id="Static01" taborder="3" text="~" left="210" top="5" width="7" height="18"/>
+                              <Calendar id="cal_endDate" taborder="4" left="222" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                            </Layout>
+                          </Layouts>
+                        </Div>
+                        <Grid id="grd_list" taborder="1" binddataset="ds_list_1" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" autofittype="none" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" oncellclick="Div_client_Tab00_Tabpage1_grd_list_oncellclick">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="54"/>
+                                <Column size="98"/>
+                                <Column size="84"/>
+                                <Column size="90"/>
+                                <Column size="90"/>
+                                <Column size="66"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="239"/>
+                                <Column size="50"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="156"/>
+                                <Column size="80"/>
+                                <Column size="96"/>
+                                <Column size="109"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="102"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="주문번호"/>
+                                <Cell col="2" text="접수경로"/>
+                                <Cell col="3" text="주문접수일"/>
+                                <Cell col="4" text="배송요구일"/>
+                                <Cell col="5" text="주문자"/>
+                                <Cell col="6" text="대상자"/>
+                                <Cell col="7" text="경조사유"/>
+                                <Cell col="8" text="품목코드"/>
+                                <Cell col="9" text="품목명"/>
+                                <Cell col="10" text="수량"/>
+                                <Cell col="11" text="고객청구금액"/>
+                                <Cell col="12" text="미결제"/>
+                                <Cell col="13" text="결제구분"/>
+                                <Cell col="14" text="진행상태"/>
+                                <Cell col="15" text="리본문구"/>
+                                <Cell col="16" text="메모개수"/>
+                                <Cell col="17" text="주문자 회사명"/>
+                                <Cell col="18" text="주문자 부서명"/>
+                                <Cell col="19" text="대상자 회사명"/>
+                                <Cell col="20" text="대상자 부서명"/>
+                                <Cell col="21" text="발주지점"/>
+                                <Cell col="22" text="발주지점전화번호"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:주문번호" textAlign="center"/>
+                                <Cell col="2" text="bind:접수경로"/>
+                                <Cell col="3" text="bind:주문접수일"/>
+                                <Cell col="4" text="bind:배송요구일"/>
+                                <Cell col="5" text="bind:주문자"/>
+                                <Cell col="6" text="bind:대상자"/>
+                                <Cell col="7" text="bind:경조사유"/>
+                                <Cell col="8" text="bind:품목코드"/>
+                                <Cell col="9" text="bind:품목명"/>
+                                <Cell col="10" text="bind:개인결제금액" textAlign="center"/>
+                                <Cell col="11" text="bind:고객청구금액"/>
+                                <Cell col="12" text="bind:미결제"/>
+                                <Cell col="13" text="bind:결제구분"/>
+                                <Cell col="14" text="bind:진행상태"/>
+                                <Cell col="15" text="bind:리본문구"/>
+                                <Cell col="16" text="bind:메모개수" textAlign="center" displaytype="expr:메모개수=='0' ? 'nomal' : 'buttoncontrol'" edittype="expr:메모개수=='0' ? 'none' : 'button'"/>
+                                <Cell col="17" text="bind:주문자 회사명"/>
+                                <Cell col="18" text="bind:주문자 부서명"/>
+                                <Cell col="19" text="bind:대상자 회사명"/>
+                                <Cell col="20" text="bind:대상자 부서명"/>
+                                <Cell col="21" text="bind:발주지점"/>
+                                <Cell col="22" text="bind:발주지점전화번호"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage2" text="접수일 기준">
+                    <Layouts>
+                      <Layout>
+                        <Div id="div_search" taborder="0" left="0" top="10" height="34" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                          <Layouts>
+                            <Layout>
+                              <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                              <Button id="btn_del" taborder="1" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_btn_del_onclick"/>
+                              <Calendar id="cal_startDate" taborder="2" left="91" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                              <Static id="Static01" taborder="3" text="~" left="210" top="5" width="7" height="18"/>
+                              <Calendar id="cal_endDate" taborder="4" left="222" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                            </Layout>
+                          </Layouts>
+                        </Div>
+                        <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" autofittype="none" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="54"/>
+                                <Column size="98"/>
+                                <Column size="84"/>
+                                <Column size="90"/>
+                                <Column size="90"/>
+                                <Column size="66"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="239"/>
+                                <Column size="50"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="156"/>
+                                <Column size="80"/>
+                                <Column size="102"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="96"/>
+                                <Column size="109"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="주문번호"/>
+                                <Cell col="2" text="접수경로"/>
+                                <Cell col="3" text="주문접수일"/>
+                                <Cell col="4" text="배송요구일"/>
+                                <Cell col="5" text="주문자"/>
+                                <Cell col="6" text="대상자"/>
+                                <Cell col="7" text="경조사유"/>
+                                <Cell col="8" text="품목명"/>
+                                <Cell col="9" text="수량"/>
+                                <Cell col="10" text="고객청구금액"/>
+                                <Cell col="11" text="미결제"/>
+                                <Cell col="12" text="결제구분"/>
+                                <Cell col="13" text="진행상태"/>
+                                <Cell col="14" text="리본문구"/>
+                                <Cell col="15" text="발주지점"/>
+                                <Cell col="16" text="발주지점전화번호"/>
+                                <Cell col="17" text="플라워메모"/>
+                                <Cell col="18" text="메모개수"/>
+                                <Cell col="19" text="주문자 회사명"/>
+                                <Cell col="20" text="주문자 부서명"/>
+                                <Cell col="21" text="대상자 회사명"/>
+                                <Cell col="22" text="대상자 부서명"/>
+                                <Cell col="23" text="품목코드"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:주문번호" textAlign="center"/>
+                                <Cell col="2" text="bind:접수경로"/>
+                                <Cell col="3" text="bind:주문접수일"/>
+                                <Cell col="4" text="bind:배송요구일"/>
+                                <Cell col="5" text="bind:주문자"/>
+                                <Cell col="6" text="bind:대상자"/>
+                                <Cell col="7" text="bind:경조사유"/>
+                                <Cell col="8" text="bind:품목명"/>
+                                <Cell col="9" text="bind:개인결제금액" textAlign="center"/>
+                                <Cell col="10" text="bind:고객청구금액"/>
+                                <Cell col="11" text="bind:미결제"/>
+                                <Cell col="12" text="bind:결제구분"/>
+                                <Cell col="13" text="bind:진행상태"/>
+                                <Cell col="14" text="bind:리본문구"/>
+                                <Cell col="15" text="bind:발주지점"/>
+                                <Cell col="16" text="bind:발주지점전화번호"/>
+                                <Cell col="17" text="bind:플라워메모"/>
+                                <Cell col="18" text="bind:메모개수" textAlign="center" displaytype="expr:메모개수=='0' ? 'nomal' : 'buttoncontrol'" edittype="expr:메모개수=='0' ? 'none' : 'button'"/>
+                                <Cell col="19" text="bind:주문자 회사명"/>
+                                <Cell col="20" text="bind:주문자 부서명"/>
+                                <Cell col="21" text="bind:대상자 회사명"/>
+                                <Cell col="22" text="bind:대상자 부서명"/>
+                                <Cell col="23" text="bind:품목코드"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  신우리데이터 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_getDate();
+	
+	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_endDate.set_value(sDate);
+	this.Div_client.form.Tab00.Tabpage2.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.Tab00.Tabpage2.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{	
+	var args1 = this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_startDate.value;
+	var args2 = this.Div_client.form.Tab00.Tabpage1.form.div_search.form.cal_endDate.value;
+	var args3 = this.Div_client.form.Tab00.Tabpage2.form.div_search.form.cal_startDate.value;
+	var args4 = this.Div_client.form.Tab00.Tabpage2.form.div_search.form.cal_endDate.value;
+	
+	// 조회
+	var id = "SO008_S01";
+	var url = "svcUrl::SO008_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list ds_list_1=ds_list_1";
+	var args = "START_DATE="+args3+" END_DATE="+args4+" START_DATE2="+args1+" END_DATE2="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.Tab00.Tabpage2.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_Tab00_Tabpage1_div_search_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.Tab00.Tabpage1.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 26)
+	{
+		var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"주문번호")
+
+		var sPopupId  = "memo_popup";
+		var sUrl      = "SO::SO002_P01.xfdl";
+		var oArg      = {soNo : soNo, mode : "S"};
+		var sCallBack = "";
+		var oOption   = {title : "메모"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}	
+};
+
+this.Div_client_Tab00_Tabpage1_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 26)
+	{
+		var soNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"주문번호")
+
+		var sPopupId  = "memo_popup";
+		var sUrl      = "SO::SO002_P01.xfdl";
+		var oArg      = {soNo : soNo, mode : "S"};
+		var sCallBack = "";
+		var oOption   = {title : "메모"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}	
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="순번" type="LONG" size="20"/>
+          <Column id="주문번호" type="STRING" size="18"/>
+          <Column id="접수경로" type="STRING" size="200"/>
+          <Column id="주문접수일" type="DATETIME" size="23"/>
+          <Column id="배송요구일" type="DATETIME" size="23"/>
+          <Column id="배송완료일" type="STRING" size="1"/>
+          <Column id="주문자" type="STRING" size="20"/>
+          <Column id="주문자 회사명" type="STRING" size="1000"/>
+          <Column id="주문자 부서명" type="STRING" size="1000"/>
+          <Column id="대상자" type="STRING" size="20"/>
+          <Column id="대상자 회사명" type="STRING" size="1000"/>
+          <Column id="대상자 부서명" type="STRING" size="1000"/>
+          <Column id="경조사유" type="STRING" size="100"/>
+          <Column id="품목코드" type="STRING" size="50"/>
+          <Column id="품목명" type="STRING" size="100"/>
+          <Column id="고객청구금액" type="BIGDECIMAL" size="20"/>
+          <Column id="발주금액" type="BIGDECIMAL" size="20"/>
+          <Column id="발주지점" type="STRING" size="200"/>
+          <Column id="발주지점전화번호" type="STRING" size="20"/>
+          <Column id="플라워메모" type="STRING" size="2000"/>
+          <Column id="개인결제금액" type="BIGDECIMAL" size="20"/>
+          <Column id="미결제" type="STRING" size="1073741823"/>
+          <Column id="진행상태" type="STRING" size="200"/>
+          <Column id="리본문구" type="STRING" size="1073741823"/>
+          <Column id="메모1" type="STRING" size="500"/>
+          <Column id="메모2" type="STRING" size="500"/>
+          <Column id="메모개수" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="순번" type="LONG" size="20"/>
+          <Column id="주문번호" type="STRING" size="18"/>
+          <Column id="접수경로" type="STRING" size="200"/>
+          <Column id="주문접수일" type="DATETIME" size="23"/>
+          <Column id="배송요구일" type="DATETIME" size="23"/>
+          <Column id="배송완료일" type="STRING" size="1"/>
+          <Column id="주문자" type="STRING" size="20"/>
+          <Column id="주문자 회사명" type="STRING" size="1000"/>
+          <Column id="주문자 부서명" type="STRING" size="1000"/>
+          <Column id="대상자" type="STRING" size="20"/>
+          <Column id="대상자 회사명" type="STRING" size="1000"/>
+          <Column id="대상자 부서명" type="STRING" size="1000"/>
+          <Column id="경조사유" type="STRING" size="100"/>
+          <Column id="품목코드" type="STRING" size="50"/>
+          <Column id="품목명" type="STRING" size="100"/>
+          <Column id="고객청구금액" type="BIGDECIMAL" size="20"/>
+          <Column id="발주금액" type="BIGDECIMAL" size="20"/>
+          <Column id="발주지점" type="STRING" size="200"/>
+          <Column id="발주지점전화번호" type="STRING" size="20"/>
+          <Column id="플라워메모" type="STRING" size="2000"/>
+          <Column id="개인결제금액" type="BIGDECIMAL" size="20"/>
+          <Column id="미결제" type="STRING" size="1073741823"/>
+          <Column id="진행상태" type="STRING" size="200"/>
+          <Column id="리본문구" type="STRING" size="1073741823"/>
+          <Column id="메모1" type="STRING" size="500"/>
+          <Column id="메모2" type="STRING" size="500"/>
+          <Column id="메모개수" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div00.form.cal_startDate00" propid="value" datasetid="ds_list_1" columnid="CONT_DT"/>
+    </Bind>
+  </Form>
+</FDL>

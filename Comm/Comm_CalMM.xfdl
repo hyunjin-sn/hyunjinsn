@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="cmm_calMM" width="96" height="21" titletext="월 달력" onload="form_onload">
+    <Layouts>
+      <Layout height="21" width="96">
+        <Calendar id="cal_yM" taborder="0" left="0" top="0" width="96" height="21" dateformat="yyyy-MM" editformat="yyyy-MM" popuptype="none" ondropdown="cal_yM_ondropdown"/>
+        <PopupDiv id="pdv_cal" text="PopupDiv00" visible="false" left="0" top="21" width="187" height="206" cssclass="pdv_WF_MonthCalBg">
+          <Layouts>
+            <Layout>
+              <Static id="sta_title" taborder="0" text="월 선택" left="0" top="0" height="35" right="0" uWord="popup.monthselect" cssclass="sta_POP_Title"/>
+              <Button id="btn_before" taborder="0" left="8" top="43" width="21" height="21" onclick="pdv_cal_btn_before_onclick" background="URL(&quot;theme://images/cal_prev_D.png&quot;)"/>
+              <Button id="btn_pdvClose" taborder="1" top="6" width="21" height="21" right="10" onclick="pdv_cal_btn_pdvCancle_onclick" cssclass="btn_POP_Close"/>
+              <Button id="btn_next" taborder="0" top="43" width="21" height="21" right="10" onclick="pdv_cal_btn_next_onclick" cssclass="btn_WF_ShuttleR" background="URL(&quot;theme://images/cal_next_D.png&quot;)" text=""/>
+              <Static id="sta_yYYY" taborder="2" text="9999" left="26" top="43" height="21" right="26" textAlign="center" font="bold 12pt &quot;맑은 고딕&quot;" onclick="pdv_cal_sta_yYYY_onclick"/>
+              <Button id="btn1" taborder="3" text="01" left="8" top="70" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn2" taborder="3" text="02" left="51" top="70" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn3" taborder="3" text="03" left="94" top="70" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn4" taborder="3" text="04" left="137" top="70" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn5" taborder="3" text="05" left="8" top="113" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn6" taborder="3" text="06" left="51" top="113" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn7" taborder="3" text="07" left="94" top="113" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn8" taborder="3" text="08" left="137" top="113" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn9" taborder="3" text="09" left="8" top="156" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn10" taborder="3" text="10" left="51" top="156" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn11" taborder="3" text="11" left="94" top="156" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+              <Button id="btn12" taborder="3" text="12" left="137" top="156" width="40" height="40" onclick="pdv_cal_btn1_onclick" cssclass="btn_WF_CRUD"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  @MenuPath    Comm > Comm_CalMM (공통 월달력)
+*  @FileName 	Comm_CalMM.xfdl 
+*  @Creator 	Education
+*  @CreateDate 	2019.01.10
+*  @Desction    월달력
+************** 소스 수정 이력 ***************************************************
+*  date          		Modifier                Description
+*******************************************************************************
+*  2019.01.10     	Education 	                최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.fv_today;
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);//초기화[필수]
+	
+	this.fv_today = this.gfn_getDate(); //오늘날짜세팅
+	this.fn_init();
+};
+/************************************************************************************************
+* TRANSACTION 서비스 호출 처리
+************************************************************************************************/
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분
+ ************************************************************************************************/
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* @description 달력초기화
+*/
+this.fn_init = function()
+{
+	//요구사항에 따라 오늘날짜 3개월 등등 지정 현재 디폴트="";
+	this.cal_yM.set_value("");
+};
+
+/**
+* @description  컴포넌트 날짜 값 호출
+*/ 
+this.fn_getValue = function()
+{
+	if(this.cal_yM.value != "" ){
+		var rtn = this.cal_yM.value.substr(0,6);
+	}
+	return rtn;
+};
+
+/**
+* @description   컴포넌트 날짜 값 셋팅
+*/  
+this.fn_setValue = function(sDate)
+{
+	this.cal_yM.set_value(sDate);
+};
+
+/**
+* @description    컴포넌트 enable 셋팅
+*/   
+this.fn_setEnable = function(bValue)
+{
+	this.cal_yM.set_enable(bValue);
+};
+
+/**
+* @description    컴포넌트 Readonly 셋팅
+*/ 
+this.fn_setReadonly = function(bValue)
+{
+	this.cal_yM.set_readonly(bValue);
+};
+
+/**
+* @description    컴포넌트 필수 css 셋팅
+*/  
+this.fn_setEssential = function(bValue)
+{
+	//CSS Class가있는 경우 클래스설정 임시로 노란표시
+	if(bValue){
+		this.cal_yM.set_background("yellow");
+	}else{
+		this.cal_yM.set_background("");
+	}
+};
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+* @description   Calendar_ondropdown 이벤트 시 popDiv컴포넌트 띄우기
+*/   
+this.cal_yM_ondropdown = function(obj:nexacro.Calendar,e:nexacro.EventInfo)
+{
+	var sDate = this.cal_yM.value;
+	if( this.gfn_isNull(sDate) ) sDate = this.fv_today;
+	
+	this.pdv_cal.form.sta_yYYY.set_text(sDate.substr(0,4));
+	
+	var oForm = this.parent.parent;
+	var nTop = 0;
+	// 상단 팝업
+	if (oForm.getOffsetHeight() < (this.parent.getOffsetBottom() + this.pdv_cal.getOffsetHeight())) {
+		nTop = -1 * (this.pdv_cal.getOffsetHeight() + 1);
+	}
+	else {
+		nTop = this.parent.getOffsetHeight(); 
+	}
+	
+	var nLeft = 0;
+	// 우측 정렬
+	if (oForm.getOffsetWidth() < (this.parent.getOffsetRight() + this.pdv_cal.getOffsetWidth()) ) {
+		nLeft = this.parent.getOffsetWidth() - this.pdv_cal.getOffsetWidth();
+	}
+	else {
+		nLeft = 0; 
+	}
+	
+	this.pdv_cal.trackPopupByComponent(this,nLeft,nTop);
+};
+
+/**
+* @description   월달력 popDiv컴포넌트 닫기
+*/    
+this.pdv_cal_btn_pdvCancle_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.pdv_cal.closePopup();
+};
+
+/**
+* @description   이전 년도 버튼 클릭
+*/   
+this.pdv_cal_btn_before_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sDate = nexacro.toNumber( this.pdv_cal.form.sta_yYYY.text);
+	this.pdv_cal.form.sta_yYYY.set_text(sDate - 1 );
+	
+};
+
+/**
+* @description  다음년도 버튼 클릭
+*/    
+this.pdv_cal_btn_next_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sDate =nexacro.toNumber( this.pdv_cal.form.sta_yYYY.text);
+	this.pdv_cal.form.sta_yYYY.set_text(sDate + 1 );
+};
+
+/**
+* @description  월 버튼 클릭
+*/     
+this.pdv_cal_btn1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var rtn = this.pdv_cal.form.sta_yYYY.text + obj.text;
+	this.cal_yM.set_value(rtn);
+	this.pdv_cal.closePopup();
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

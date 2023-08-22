@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM004_P02" width="581" height="521" titletext="New Form" onload="FM004_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="521" mobileorientation="landscape" width="581">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="510" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="Grid01_00" taborder="1" left="10" top="10" width="558" autofittype="col" binddataset="ds_list" oncellclick="Div_client_grd_list_oncelldblclick" bottom="0" autoenter="select" onkeydown="Div_client_Grid01_00_onkeydown">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="438"/>
+                      <Column size="83"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="질문"/>
+                      <Cell col="2" text="점수"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:QUESTION" textAlign="left" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM"/>
+                      <Cell col="2" text="bind:ANSWER" textAlign="center" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NM" displaytype="mask"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="2" text="점수 합계" textAlign="right"/>
+                      <Cell col="2" text="expr:dataset.getSum(&quot;ANSWER&quot;)+&quot;점&quot;" displaytype="mask" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Q & A 팝업
+*  @MenuPath    FM > FM005_P01
+*  @FileName 	FM005_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.01.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM004_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{
+	var id = "FM005_P01_S";
+	var url = "svcUrl::FM005_P01_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "MG_NO="+mgNo+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.Div_client_Grid01_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="QUESTION" type="STRING" size="200"/>
+          <Column id="ANSWER" type="STRING" size="50"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

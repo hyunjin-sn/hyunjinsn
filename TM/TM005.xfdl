@@ -1,0 +1,2011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO009" width="1700" height="840" titletext="New Form" onload="SO009_onload">
+    <Layouts>
+      <Layout height="840" mobileorientation="landscape" width="1700">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Div id="div_search" taborder="2" left="10" top="10" height="40" right="11" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01" taborder="0" text="주문일시" left="-12" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Calendar id="cal_startDate" taborder="1" left="88" top="8" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static01" taborder="2" text="~" left="201" top="8" width="10" height="29"/>
+              <Calendar id="cal_endDate" taborder="3" left="213" top="8" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Static id="Static00_02" taborder="4" text="의전본부" left="337" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_soStatus" taborder="5" left="443" top="9" width="120" height="21" text="선택" value="" index="-1" codecolumn="BP_CD" datacolumn="BP_NM" type="filterlike" onitemchanged="Div_client_div_search_cmb_insrtUser_onitemchanged" autoselect="true" innerdataset="ds_poBp" enable="false"/>
+              <Edit id="edt_soldToNm00_00_00_00" taborder="18" left="1492" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00_00_00_00_00" taborder="6" text="의전팀장" left="1390" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_soldToNm00_00_00" taborder="14" left="1292" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00_00_00_00" taborder="7" text="주문번호" left="1190" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_soldToNm00_00" taborder="13" left="1082" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00_00_00" taborder="8" text="상담내역" left="980" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_soldToNm00" taborder="12" left="872" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00_00" taborder="9" text="고객사" left="770" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_soldToNm" taborder="10" left="672" top="9" width="89" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+              <Static id="Static00_00" taborder="11" text="대상자" left="570" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static05_00" taborder="3" text="주문내역" left="12" top="59" width="97" height="24" cssclass="sta_WF_title"/>
+        <Grid id="grd_list" taborder="4" scrolltype="both" minwidth="" bottom="10" left="10" top="93" width="640" binddataset="ds_list_1" onselectchanged="grd_list_onselectchanged" cellsizingtype="col" selecttype="cell" onkeydown="grd_list_onkeydown" griduserproperty="export" oncellclick="grd_list_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="38"/>
+                <Column size="91"/>
+                <Column size="199"/>
+                <Column size="44"/>
+                <Column size="47"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="44"/>
+                <Column size="159"/>
+                <Column size="159"/>
+                <Column size="42"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+                <Column size="74"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="35" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="순번"/>
+                <Cell col="1" rowspan="2" text="주문번호"/>
+                <Cell col="2" rowspan="2" text="고객사명"/>
+                <Cell col="3" rowspan="2" text="대상자"/>
+                <Cell col="4" rowspan="2" text="본부&#13;&#10;마감&#13;&#10;여부"/>
+                <Cell col="5" rowspan="2" text="의전본부"/>
+                <Cell col="6" rowspan="2" text="경조사유"/>
+                <Cell col="7" rowspan="2" text="의전&#13;&#10;팀장"/>
+                <Cell col="8" rowspan="2" text="상담내역"/>
+                <Cell col="9" rowspan="2" text="상품명"/>
+                <Cell col="10" rowspan="2" text="본부&#13;&#10;비율"/>
+                <Cell col="11" colspan="7" text="기본"/>
+                <Cell col="18" colspan="3" text="추가"/>
+                <Cell col="21" colspan="3" text="대체"/>
+                <Cell col="24" colspan="5" text="합계"/>
+                <Cell col="29" colspan="3" text="고객결제"/>
+                <Cell col="32" rowspan="2" text="탁송"/>
+                <Cell col="33" rowspan="2" text="배송료"/>
+                <Cell col="34" rowspan="2" text="탁송료"/>
+                <Cell col="35" rowspan="2" text="지도사&#13;&#10;근무비"/>
+                <Cell row="1" col="11" text="패키지&#13;&#10;금액"/>
+                <Cell row="1" col="12" text="회사지원&#13;&#10;금액"/>
+                <Cell row="1" col="13" text="행사&#13;&#10;차감액"/>
+                <Cell row="1" col="14" text="공제금액"/>
+                <Cell row="1" col="15" text="기본 &#13;&#10;매출금액"/>
+                <Cell row="1" col="16" text="기본 &#13;&#10;매입금액"/>
+                <Cell row="1" col="17" text="기본(본부) &#13;&#10;이익금액"/>
+                <Cell row="1" col="18" text="추가 &#13;&#10;매출금액"/>
+                <Cell row="1" col="19" text="추가 &#13;&#10;매입금액"/>
+                <Cell row="1" col="20" text="추가(본부) &#13;&#10;이익금액"/>
+                <Cell row="1" col="21" text="대체 &#13;&#10;매출금액"/>
+                <Cell row="1" col="22" text="대체 &#13;&#10;매입금액"/>
+                <Cell row="1" col="23" text="대체(본부) &#13;&#10;이익금액"/>
+                <Cell row="1" col="24" text="매출합계"/>
+                <Cell row="1" col="25" text="매입합계"/>
+                <Cell row="1" col="26" text="이익합계&#13;&#10;(본부)"/>
+                <Cell row="1" col="27" text="본부정산액"/>
+                <Cell row="1" col="28" text="본부수령액"/>
+                <Cell row="1" col="29" text="현금결제액"/>
+                <Cell row="1" col="30" text="카드결제액"/>
+                <Cell row="1" col="31" text="고객결제액"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" textAlign="center"/>
+                <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                <Cell col="2" text="bind:BP_FULL_NM"/>
+                <Cell col="3" text="bind:OWN_NM" textAlign="center"/>
+                <Cell col="4" text="bind:PO_CFM_STATUS" textAlign="center"/>
+                <Cell col="5" text="bind:BP_NM" textAlign="center"/>
+                <Cell col="6" text="bind:HS_NM" textAlign="left"/>
+                <Cell col="7" text="bind:EMP_NM" textAlign="center"/>
+                <Cell col="8" text="bind:AD_NM" textAlign="left"/>
+                <Cell col="9" text="bind:ITEM_NM" textAlign="left"/>
+                <Cell col="10" text="bind:PO_RATE" textAlign="right" displaytype="mask" maskeditformat="##,##0.0"/>
+                <Cell col="11" text="bind:LIST_PRICE" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="12" text="bind:BASE_DISCOUNT_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="13" text="bind:DISCOUNT_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="14" text="bind:DDT_PKG_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="15" text="bind:BASE_PKG_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="16" text="bind:BASE_PKG_PUR_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="17" text="bind:BASE_PKG_PO_PROFIT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="18" text="bind:ADD_PKG_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="19" text="bind:ADD_PKG_PUR_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="20" text="bind:ADD_PKG_PO_PROFIT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="21" text="bind:CHG_PKG_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="22" text="bind:CHG_PKG_PUR_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="23" text="bind:CHG_PKG_PO_PROFIT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="24" text="bind:TOTAL_AMT2" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="25" text="bind:TOTAL_PUR" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="26" text="bind:TOTAL_PO_PROFIT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="27" text="bind:TOTAL_PO_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="28" text="bind:TOTAL_PO_GET" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="29" text="bind:CASH_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="30" text="bind:CARD_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                <Cell col="31" textAlign="right" displaytype="mask" maskeditformat="##,##0" text="bind:AMT2"/>
+                <Cell col="32" textAlign="right" maskeditformat="##,##0" text="bind:SO_TYPE"/>
+                <Cell col="33" textAlign="right" maskeditformat="##,##0" text="bind:DLVY_AMT"/>
+                <Cell col="34" textAlign="right" maskeditformat="##,##0" text="bind:STO_AMT"/>
+                <Cell col="35" textAlign="right" maskeditformat="##,##0" text="bind:ACTIVE_AMT"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="Div00" taborder="5" text="Div00" left="666" top="61" height="770" width="1024">
+          <Layouts>
+            <Layout>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01_00_00_01" taborder="55" left="94" top="235" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01_00_00_00" taborder="53" left="94" top="291" height="29" cssclass="sta_WF_detailLine" width="916"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01_00_00" taborder="48" left="174" top="146" height="29" cssclass="sta_WF_detailLine" width="804" visible="false"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_00_00" taborder="40" left="94" top="115" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="21" left="94" top="179" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00" taborder="3" left="94" top="31" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="Static05_00" taborder="0" text="주문정보" left="3" top="1" width="97" height="24" cssclass="sta_WF_title"/>
+              <Edit id="edt_usr1" taborder="1" left="121" top="35" width="91" height="21" readonly="true"/>
+              <Static id="Static31" taborder="2" text="성명(대상자)" left="0" top="31" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_00" taborder="4" text="장례식장" left="217" top="31" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Edit id="edt_usr1_00" taborder="5" left="322" top="35" width="212" height="21" readonly="true"/>
+              <Edit id="edt_usr1_00_00" taborder="6" left="539" top="35" width="107" height="21" readonly="true"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00" taborder="7" left="94" top="59" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Edit id="edt_usr1_01" taborder="8" left="121" top="63" width="91" height="21" readonly="true"/>
+              <Static id="Static31_01" taborder="9" text="경조사유" left="0" top="59" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_00_00" taborder="10" text="행사팀장" left="217" top="59" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Edit id="edt_usr1_00_01" taborder="11" left="452" top="63" width="82" height="21" readonly="true"/>
+              <Edit id="edt_usr1_00_00_00" taborder="12" left="539" top="63" width="107" height="21" readonly="true"/>
+              <Edit id="edt_usr1_00_01_00" taborder="13" left="322" top="63" width="126" height="21" readonly="true"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_00" taborder="14" left="94" top="87" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Edit id="edt_usr1_01_00" taborder="15" left="121" top="91" width="193" height="21" readonly="true"/>
+              <Static id="Static31_01_00" taborder="16" text="고객사" left="0" top="87" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_00_00_00" taborder="17" text="상담내역" left="318" top="87" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Edit id="edt_usr1_01_00_00" taborder="18" left="422" top="91" width="223" height="21" readonly="true"/>
+              <Static id="Static05_00_01" taborder="19" text="요약" left="3" top="151" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static31_01_01" taborder="20" text="기본PKG 매출" left="0" top="179" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_01_01_00" taborder="22" text="추가 매출" left="216" top="179" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_01_01_00_00" taborder="23" text="대체 매출" left="447" top="179" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01_00" taborder="24" left="94" top="207" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="Static31_01_01_01" taborder="25" text="기본PKG 매입" left="0" top="207" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_01_01_00_01" taborder="26" text="추가 매입" left="216" top="207" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Static id="Static31_01_01_00_00_01" taborder="27" text="대체 매입" left="447" top="207" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00" taborder="28" left="121" top="183" width="91" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_00" taborder="29" left="121" top="211" width="91" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_01" taborder="30" left="336" top="183" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_00_00" taborder="31" left="336" top="211" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_01_00" taborder="32" left="568" top="183" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_00_00_00" taborder="33" left="568" top="211" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static04_00_00_00" taborder="34" text="마감일시" left="650" top="59" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <MaskEdit id="MaskEdit01" taborder="35" left="756" top="63" width="137" height="21" type="string" format="####-##-## ##:##" textAlign="left" displaynulltext="자동저장 됩니다" readonly="true"/>
+              <Static id="Static04_00_00" taborder="36" text="마감자" left="650" top="31" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Combo id="cmb_chkUser" taborder="37" left="755" top="35" width="138" height="21" text="선택" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" autoselect="true" innerdataset="ds_user" onitemchanged="cmb_chkUser_onitemchanged" readonly="true"/>
+              <Static id="Static31_00_00_00_00" taborder="38" text="상품명" left="0" top="115" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <Edit id="edt_usr1_01_00_00_00" taborder="39" left="121" top="119" width="524" height="21" readonly="true"/>
+              <Tab id="Tab00" taborder="41" tabindex="0" left="-3" top="330" width="1026" height="440">
+                <Tabpages>
+                  <Tabpage id="Tabpage1" text="기본 패키지 매입">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="7" left="3" top="19" height="29" cssclass="sta_WF_detailLine" width="1022"/>
+                        <Grid id="grd_list00_00" taborder="0" scrolltype="both" minwidth="" left="3" top="93" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" cellsizingtype="col" right="0" binddataset="ds_list_2" bottom="0" oncellclick="Div00_Tab00_Tabpage1_grd_list00_00_oncellclick">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="111"/>
+                                <Column size="288"/>
+                                <Column size="61"/>
+                                <Column size="80"/>
+                                <Column size="181"/>
+                                <Column size="57"/>
+                                <Column size="80"/>
+                                <Column size="198"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="구분"/>
+                                <Cell col="2" text="품목명"/>
+                                <Cell col="3" text="수량"/>
+                                <Cell col="4" text="매입금액"/>
+                                <Cell col="5" text="매입처"/>
+                                <Cell col="6" text="결제여부"/>
+                                <Cell col="7" text="표준원가"/>
+                                <Cell col="8" text="비고"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:GUBUN" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" displaytype="combotext" combotype="filterlike"/>
+                                <Cell col="2" text="bind:ITEM_CD" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" textAlign="left" displaytype="combotext" combotype="filterlike"/>
+                                <Cell col="3" text="bind:QTY" maskeditformat="##,##0" textAlign="center" comboautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="4" text="bind:PURCHASE_AMT" maskeditformat="##,##0" edittype="mask" textAlign="right" comboautoselect="true" maskeditautoselect="true" background="#fafdc8"/>
+                                <Cell col="5" text="bind:PURCHASE_COMPANY" displaytype="combotext" edittype="combo" combodataset="ds_company" combocodecol="BP_CD" combodatacol="BP_NM" textAlign="left" combotype="filterlike"/>
+                                <Cell col="6" text="bind:PURCHASE_PAY_YN" textAlign="center"/>
+                                <Cell col="7" text="bind:PUR_PRICE" maskeditformat="##,##0" textAlign="right" comboautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="8" text="bind:REMARK" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" textAlign="left" combotype="filterlike" edittype="text"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell/>
+                                <Cell col="1"/>
+                                <Cell col="2"/>
+                                <Cell col="3"/>
+                                <Cell col="4" text="expr:dataset.getSum(&quot;PURCHASE_AMT&quot;)" displaytype="mask" maskeditformat="##,##0"/>
+                                <Cell col="5"/>
+                                <Cell col="6"/>
+                                <Cell col="7" maskeditformat="##,##0"/>
+                                <Cell col="8"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Static id="Static31_01_01" taborder="1" text="정산 기준금액" left="3" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00" taborder="2" left="108" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00" taborder="3" text="공제금액" left="219" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01" taborder="4" left="324" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00_00" taborder="5" text="매입합계" left="435" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00" taborder="6" left="540" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00_00_00" taborder="8" text="본부 이익율" left="653" top="19" width="100" cssclass="sta_WF_detailLabel_ess" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00_00" taborder="9" left="758" top="23" width="39" height="21" format="##,###.##" background="#fafdc8" onchanged="Div00_Tab00_Tabpage1_MaskEdit00_01_00_00_onchanged" autoselect="true" readonly="false" enable="false"/>
+                        <Static id="Static31_01_01_00_00_00_00" taborder="10" text="본부 이익금" left="822" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00_00_00" taborder="11" left="927" top="23" width="93" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static00" taborder="12" text="%" left="804" top="21" width="13" height="25"/>
+                        <Button id="btn_addfile" taborder="13" left="791" top="62" text="행추가" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage1_btn_addfile_onclick"/>
+                        <Button id="btn_delfile" taborder="14" left="873" top="62" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage1_btn_delfile_onclick"/>
+                        <Button id="btn_delfile00" taborder="15" left="953" top="62" text="기타매출" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage1_btn_delfile00_onclick"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage2" text="     추가 매입     ">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="0" left="3" top="19" height="29" cssclass="sta_WF_detailLine" width="868"/>
+                        <Button id="btn_addfile" taborder="1" left="952" top="62" text="RT" cssclass="btn_WF_main1" width="70" height="21" onclick="btn_addfile_onclick" visible="true"/>
+                        <Button id="btn_delfile" taborder="2" left="454" top="62" text="조정" cssclass="btn_WF_main1" width="70" height="21" onclick="btn_delfile_onclick" visible="false"/>
+                        <Static id="Static31_01_01" taborder="3" text="추가금액" left="3" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00" taborder="4" left="108" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00" taborder="5" text="R.T" left="219" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01" taborder="6" left="324" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00_00" taborder="7" text="매입합계" left="435" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00" taborder="8" left="540" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Grid id="grd_list00_00" taborder="9" scrolltype="both" minwidth="" left="3" top="92" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" cellsizingtype="col" right="0" binddataset="ds_list_3" bottom="0" oncellclick="Div00_Tab00_Tabpage2_grd_list00_00_oncellclick">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="111"/>
+                                <Column size="305"/>
+                                <Column size="47"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="170"/>
+                                <Column size="52"/>
+                                <Column size="52"/>
+                                <Column size="24"/>
+                                <Column size="89"/>
+                                <Column size="182"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="37" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="구분"/>
+                                <Cell col="2" text="품목명"/>
+                                <Cell col="3" text="수량"/>
+                                <Cell col="4" text="판매금액"/>
+                                <Cell col="5" text="배부&#13;&#10;판매금액"/>
+                                <Cell col="6" text="매입금액"/>
+                                <Cell col="7" text="배부&#13;&#10;매입금액"/>
+                                <Cell col="8" text="매입처"/>
+                                <Cell col="9" text="결제&#13;&#10;여부"/>
+                                <Cell col="10" colspan="2" text="본부&#13;&#10;이익율"/>
+                                <Cell col="12" text="본부&#13;&#10;이익금"/>
+                                <Cell col="13" text="비고"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:GUBUN" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" combotype="filterlike"/>
+                                <Cell col="2" text="bind:ITEM_CD" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" displaytype="combotext" textAlign="left" combotype="filterlike"/>
+                                <Cell col="3" text="bind:QTY" maskeditformat="##,##0" textAlign="center" editautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="4" text="bind:AMT" maskeditformat="##,##0" textAlign="right" editautoselect="true" maskeditautoselect="true" displaytype="mask" edittype="mask"/>
+                                <Cell col="5" text="bind:AMT2" maskeditformat="##,##0" textAlign="right" editautoselect="true" maskeditautoselect="true" displaytype="mask"/>
+                                <Cell col="6" text="bind:PURCHASE_AMT" maskeditformat="##,##0" edittype="mask" textAlign="right" editautoselect="true" maskeditautoselect="true" background="#fafdc8"/>
+                                <Cell col="7" text="bind:PURCHASE_AMT2" maskeditformat="##,##0" textAlign="right" editautoselect="true" maskeditautoselect="true" displaytype="mask"/>
+                                <Cell col="8" text="bind:PURCHASE_COMPANY" displaytype="combotext" edittype="combo" combodataset="ds_company" combocodecol="BP_CD" combodatacol="BP_NM" textAlign="left" combotype="filterlike"/>
+                                <Cell col="9" text="bind:PURCHASE_PAY_YN" combodataset="ds_yn" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="center"/>
+                                <Cell col="10" textAlign="right" maskeditformat="##,##0.0" displaytype="mask" text="bind:PO_RATE" editautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="11" textAlign="center" maskeditformat="##,##0" text="%"/>
+                                <Cell col="12" textAlign="right" maskeditformat="##,##0" displaytype="mask" text="bind:PO_PROFIT" editautoselect="true"/>
+                                <Cell col="13" text="bind:REMARK" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" textAlign="left" combotype="filterlike" edittype="text"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell/>
+                                <Cell col="1"/>
+                                <Cell col="2"/>
+                                <Cell col="3"/>
+                                <Cell col="4" text="expr:dataset.getSum(&quot;AMT&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="5" text="expr:dataset.getSum(&quot;AMT2&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="6" text="expr:dataset.getSum(&quot;PURCHASE_AMT&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="7" text="expr:dataset.getSum(&quot;PURCHASE_AMT2&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="8"/>
+                                <Cell col="9"/>
+                                <Cell col="10"/>
+                                <Cell col="11"/>
+                                <Cell col="12" text="expr:dataset.getSum(&quot;PO_PROFIT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="13"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Static id="Static31_01_01_00_00_00" taborder="10" text="본부 이익금" left="652" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00_00" taborder="11" left="757" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Button id="btn_addfile00" taborder="12" left="293" top="62" text="행추가" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage2_btn_addfile00_onclick"/>
+                        <Button id="btn_delfile00" taborder="13" left="375" top="62" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage2_btn_delfile00_onclick"/>
+                        <Button id="btn_delfile01" taborder="14" left="535" top="62" text="기타원가" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage2_btn_delfile01_onclick"/>
+                        <Button id="btn_delfile01_00" taborder="15" left="615" top="62" text="본사이익조정" cssclass="btn_WF_main1" width="91" height="21" visible="false" onclick="Div00_Tab00_Tabpage2_btn_delfile01_00_onclick"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage3" text="     대체 매입     ">
+                    <Layouts>
+                      <Layout>
+                        <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="0" left="3" top="19" height="29" cssclass="sta_WF_detailLine" width="651"/>
+                        <Button id="btn_addfile" taborder="1" left="871" top="44" text="행추가" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage3_btn_addfile_onclick"/>
+                        <Button id="btn_delfile" taborder="2" left="953" top="44" text="행삭제" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage3_btn_delfile_onclick"/>
+                        <Static id="Static31_01_01" taborder="3" text="대체금액" left="3" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00" taborder="4" left="108" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Static id="Static31_01_01_00" taborder="5" text="매입합계" left="219" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01" taborder="6" left="324" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                        <Grid id="grd_list00_00" taborder="7" scrolltype="both" minwidth="" left="3" top="75" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" cellsizingtype="col" right="0" binddataset="ds_list_4" bottom="0" oncellclick="Div00_Tab00_Tabpage3_grd_list00_00_oncellclick">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="111"/>
+                                <Column size="320"/>
+                                <Column size="61"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="223"/>
+                                <Column size="52"/>
+                                <Column size="52"/>
+                                <Column size="23"/>
+                                <Column size="89"/>
+                                <Column size="194"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="34" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="구분"/>
+                                <Cell col="2" text="품목명"/>
+                                <Cell col="3" text="수량"/>
+                                <Cell col="4" text="판매금액"/>
+                                <Cell col="5" text="매입금액"/>
+                                <Cell col="6" text="매입처"/>
+                                <Cell col="7" text="결제&#13;&#10;여부"/>
+                                <Cell col="8" colspan="2" text="본부&#13;&#10;이익율"/>
+                                <Cell col="10" text="본부&#13;&#10;이익금"/>
+                                <Cell col="11" text="비고"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:GUBUN" displaytype="combotext" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left" combotype="filterlike"/>
+                                <Cell col="2" text="bind:ITEM_CD" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" displaytype="combotext" textAlign="left" combotype="filterlike"/>
+                                <Cell col="3" text="bind:QTY" maskeditformat="##,##0" textAlign="center" editautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="4" text="bind:AMT" maskeditformat="##,##0" textAlign="right" editautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="5" text="bind:PURCHASE_AMT" maskeditformat="##,##0" edittype="mask" textAlign="right" editautoselect="true" maskeditautoselect="true" background="#fafdc8"/>
+                                <Cell col="6" text="bind:PURCHASE_COMPANY" displaytype="combotext" edittype="combo" combodataset="ds_company" combocodecol="BP_CD" combodatacol="BP_NM" textAlign="left" combotype="filterlike"/>
+                                <Cell col="7" text="bind:PURCHASE_PAY_YN" combodataset="ds_yn" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="center" editautoselect="true"/>
+                                <Cell col="8" text="bind:PO_RATE" textAlign="right" displaytype="mask" maskeditformat="##,###.##" editautoselect="true" maskeditautoselect="true"/>
+                                <Cell col="9" text="%" textAlign="center" maskeditformat="##,##0"/>
+                                <Cell col="10" text="bind:PO_PROFIT" textAlign="right" maskeditformat="##,##0" displaytype="mask"/>
+                                <Cell col="11" text="bind:REMARK" combodataset="ds_item" combocodecol="ITEM_CD" combodatacol="ITEM_NM" textAlign="left" combotype="filterlike" edittype="text"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell/>
+                                <Cell col="1"/>
+                                <Cell col="2"/>
+                                <Cell col="3"/>
+                                <Cell col="4" text="expr:dataset.getSum(&quot;AMT&quot;)" displaytype="mask" maskeditformat="##,##0"/>
+                                <Cell col="5" text="expr:dataset.getSum(&quot;PURCHASE_AMT&quot;)" displaytype="mask" maskeditformat="##,##0"/>
+                                <Cell col="6"/>
+                                <Cell col="7"/>
+                                <Cell col="8"/>
+                                <Cell col="9"/>
+                                <Cell col="10"/>
+                                <Cell col="11"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Static id="Static31_01_01_00_00_00" taborder="8" text="본부 이익금" left="436" top="19" width="100" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+                        <MaskEdit id="MaskEdit00_01_00_00" taborder="9" left="541" top="23" width="107" height="21" format="##,###" readonly="true"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage4" text="  고객 결제현황  ">
+                    <Layouts>
+                      <Layout>
+                        <Grid id="grd_list00_00" taborder="0" scrolltype="both" minwidth="" left="3" top="43" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="220" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" right="479" binddataset="ds_list_5">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="53"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="123"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="49"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="결제방법"/>
+                                <Cell col="2" text="결제금액"/>
+                                <Cell col="3" text="발행일"/>
+                                <Cell col="4" text="승인번호"/>
+                                <Cell col="5" text="발급번호"/>
+                                <Cell col="6" text="삭제"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:PAY_TYPE" textAlign="center" displaytype="combotext" combodataset="ds_payDiv" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                                <Cell col="2" text="bind:BILL_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right" edittype="expr:comp.parent.parent.parent.parent.parent.parent.fn_pay(currow)" maskeditautoselect="true"/>
+                                <Cell col="3" text="bind:INSRT_DT" displaytype="mask" maskedittype="string" maskeditformat="####-##-## ##:##:##" textAlign="center" calendardisplaynulltype="none"/>
+                                <Cell col="4" text="bind:CARD_APP_NO" textAlign="center" edittype="expr:comp.parent.parent.parent.parent.parent.parent.fn_pay2(currow)"/>
+                                <Cell col="5" text="bind:ORDER_NO" textAlign="center" edittype="expr:comp.parent.parent.parent.parent.parent.parent.fn_pay3(currow)"/>
+                                <Cell col="6" textAlign="center" edittype="expr:PAY_TYPE=='CX' || PAY_TYPE=='CY' ? 'button' : 'none'" displaytype="expr:PAY_TYPE=='CX' || PAY_TYPE=='CY' ? 'buttoncontrol' : 'nomal'" text="expr:PAY_TYPE=='CX' || PAY_TYPE=='CY' ? '삭제' : ''"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell/>
+                                <Cell col="1"/>
+                                <Cell col="2" text="expr:dataset.getSum(&quot;BILL_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="3"/>
+                                <Cell col="4"/>
+                                <Cell col="5"/>
+                                <Cell col="6"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Button id="btn_addfile" taborder="1" left="394" top="12" text="카드" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage4_btn_addfile_onclick"/>
+                        <Button id="btn_delfile" taborder="2" left="476" top="12" text="현금" cssclass="btn_WF_main1" width="70" height="21" visible="false" onclick="Div00_Tab00_Tabpage4_btn_delfile_onclick"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage5" text="       메모       ">
+                    <Layouts>
+                      <Layout>
+                        <TextArea id="TextArea00" taborder="0" left="7" top="42" width="730" height="159"/>
+                        <Static id="Static05_00" taborder="1" text="특이사항" left="3" top="8" width="97" height="24" cssclass="sta_WF_title"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage6" text="       이미지       ">
+                    <Layouts>
+                      <Layout>
+                        <Static id="Static12" taborder="0" text="첨부파일" left="5" top="12" width="150" height="24" cssclass="sta_WF_title"/>
+                        <Grid id="Grid00_00" taborder="1" left="3" top="43" binddataset="ds_file" autoenter="select" selecttype="cell" griduserproperty="!sort" autofittype="col" height="341" width="441" onselectchanged="Div00_Tab00_Tabpage6_Grid00_00_onselectchanged" oncellclick="Div00_Tab00_Tabpage6_Grid00_00_oncellclick" cellsizingtype="col">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="136"/>
+                                <Column size="186"/>
+                                <Column size="130"/>
+                                <Column size="50"/>
+                                <Column size="50"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="파일명"/>
+                                <Cell col="2" text="파일명"/>
+                                <Cell col="3" text="등록일"/>
+                                <Cell col="4" text="다운"/>
+                                <Cell col="5" text="보기"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:TYPE" textAlign="left" tooltiptext="bind:TYPE"/>
+                                <Cell col="2" text="bind:FILENAME" textAlign="left" tooltiptext="bind:FILENAME"/>
+                                <Cell col="3" text="bind:INSRT_DT" displaytype="mask" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" maskeditformat="####-##-## ##:##:##" maskedittype="string" textAlign="center"/>
+                                <Cell col="4" text="다운" displaytype="buttoncontrol"/>
+                                <Cell col="5" text="보기" displaytype="buttoncontrol"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <ImageViewer id="ImageViewer00" taborder="2" left="468" top="45" width="558" height="339" stretch="fit"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                  <Tabpage id="Tabpage7" text="     인력 현황     ">
+                    <Layouts>
+                      <Layout>
+                        <Grid id="grd_list00_00" taborder="0" scrolltype="both" minwidth="" left="3" top="36" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="210" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" binddataset="ds_list_7" right="13">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="48"/>
+                                <Column size="154"/>
+                                <Column size="63"/>
+                                <Column size="80"/>
+                                <Column size="122"/>
+                                <Column size="122"/>
+                                <Column size="54"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="80"/>
+                                <Column size="109"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="관리사"/>
+                                <Cell col="2" text="직급"/>
+                                <Cell col="3" text="근무구분"/>
+                                <Cell col="4" text="입실시간"/>
+                                <Cell col="5" text="퇴실시간"/>
+                                <Cell col="6" text="지원시간"/>
+                                <Cell col="7" text="주행거리(km)"/>
+                                <Cell col="8" text="위탁비"/>
+                                <Cell col="9" text="교통비"/>
+                                <Cell col="10" text="유류비"/>
+                                <Cell col="11" text="비고"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:ACT_CD" textAlign="center" displaytype="combotext" combocodecol="EMP_NO" combodatacol="EMP_NM" combodataset="ds_G" combotype="filterlike"/>
+                                <Cell col="2" text="bind:ROLE_NM" textAlign="center" combocodecol="EMP_NO" combodatacol="EMP_NM" combodataset="ds_G" combotype="filterlike"/>
+                                <Cell col="3" text="bind:ACT_TYPE" textAlign="center" displaytype="combotext" combodataset="ds_act_type" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                                <Cell col="4" text="bind:ACT_DT_IN" textAlign="center" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string"/>
+                                <Cell col="5" text="bind:ACT_DT_OUT" calendardateformat="yyyy-MM-dd" textAlign="center" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string"/>
+                                <Cell col="6" text="bind:HH" textAlign="center"/>
+                                <Cell col="7" text="bind:ACT_KM" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="8" text="bind:ACT_CON_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="9" text="bind:ACT_TRAFFIC_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="10" text="bind:ACT_OIL_AMT" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                                <Cell col="11" text="bind:ACT_REMARK" maskeditformat="##,##0"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="8"/>
+                                <Cell col="8" text="expr:dataset.getSum(&quot;ACT_CON_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="9" text="expr:dataset.getSum(&quot;ACT_TRAFFIC_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="10" text="expr:dataset.getSum(&quot;ACT_OIL_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="11"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Grid id="grd_list00_00_00" taborder="1" scrolltype="both" minwidth="" left="3" top="289" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="123" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" binddataset="ds_list_8" right="13">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="40"/>
+                                <Column size="62"/>
+                                <Column size="106"/>
+                                <Column size="106"/>
+                                <Column size="54"/>
+                                <Column size="98"/>
+                                <Column size="212"/>
+                                <Column size="212"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                                <Row size="24" band="summ"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="순번"/>
+                                <Cell col="1" text="지도사"/>
+                                <Cell col="2" text="입실시간"/>
+                                <Cell col="3" text="퇴실시간"/>
+                                <Cell col="4" text="지원시간"/>
+                                <Cell col="5" text="금액"/>
+                                <Cell col="6" text="비고"/>
+                                <Cell col="7" text="특이사항"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="expr:currow+1" textAlign="center"/>
+                                <Cell col="1" text="bind:ACT_CD" textAlign="center" displaytype="combotext" combodataset="ds_F" combocodecol="EMP_NO" combodatacol="EMP_NM"/>
+                                <Cell col="2" text="bind:ACT_DT_IN" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string" textAlign="center"/>
+                                <Cell col="3" text="bind:ACT_DT_OUT" displaytype="mask" maskeditformat="####-##-## ##:##" maskedittype="string" textAlign="center"/>
+                                <Cell col="4" text="bind:HH" textAlign="center"/>
+                                <Cell col="5" text="bind:ACT_CON_AMT" textAlign="right" displaytype="mask" maskeditformat="##,##0"/>
+                                <Cell col="6" text="bind:ACT_REMARK" displaytype="combotext" combodataset="ds_act_remark" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                                <Cell col="7" text="bind:REMARK" combodataset="ds_act_remark" combocodecol="CODE" combodatacol="CODE_NAME"/>
+                              </Band>
+                              <Band id="summary">
+                                <Cell colspan="5"/>
+                                <Cell col="5" displaytype="mask" text="expr:dataset.getSum(&quot;ACT_CON_AMT&quot;)" textAlign="right" maskeditformat="##,##0"/>
+                                <Cell col="6"/>
+                                <Cell col="7"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                        <Static id="Static05_00_00" taborder="2" text="관리사 리스트" left="4" top="7" width="97" height="24" cssclass="sta_WF_title"/>
+                        <Static id="Static05_00_00_00" taborder="3" text="지도사 리스트" left="4" top="256" width="97" height="24" cssclass="sta_WF_title"/>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
+                </Tabpages>
+              </Tab>
+              <Static id="Static31_01_01_01_00" taborder="42" text="기본PKG이익(본사)" left="80" top="146" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px" visible="false"/>
+              <MaskEdit id="MaskEdit00_00_01" taborder="43" left="201" top="150" width="91" height="21" format="##,##0" visible="false" readonly="true"/>
+              <Static id="Static31_01_01_00_01_00" taborder="44" text="추가이익(본사)" left="296" top="146" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px" visible="false"/>
+              <MaskEdit id="MaskEdit00_00_00_01" taborder="45" left="416" top="150" width="107" height="21" format="##,##0" visible="false" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00" taborder="46" text="대체이익(본사)" left="527" top="146" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px" visible="false"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00" taborder="47" left="648" top="150" width="107" height="21" format="##,##0" visible="false" readonly="true"/>
+              <Static id="Static31_01_01_01_00_00" taborder="49" text="본부 합계" left="679" top="235" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_01_00" taborder="50" left="800" top="239" width="94" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_01_00_00" taborder="51" text="본부 정산/수령액" left="679" top="291" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_01_00" taborder="52" left="799" top="295" width="95" height="21" format="##,##0" visible="true" readonly="true"/>
+              <CheckBox id="CheckBox00" taborder="54" text="마감" left="930" top="37" width="93" height="38" font="normal 25pt/normal &quot;Arial&quot;" onclick="Div00_CheckBox00_onclick"/>
+              <Static id="Static31_01_01_01_00_01" taborder="56" text="기본PKG이익(본부)" left="0" top="235" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_01_01" taborder="57" left="121" top="239" width="91" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_01_00_01" taborder="58" text="추가이익(본부)" left="216" top="235" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_01_01" taborder="59" left="336" top="239" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00_01" taborder="60" text="대체이익(본부)" left="447" top="235" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00_00" taborder="61" left="568" top="239" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00_02" taborder="62" text="고객결제(카드)" left="0" top="291" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00_01" taborder="63" left="121" top="295" width="91" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_01_00_00_00" taborder="64" text="매출 합계" left="679" top="179" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_01_00_00" taborder="65" left="800" top="183" width="94" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_01_00_00_00_00" taborder="66" text="매입 합계" left="679" top="207" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_01_00_00_00" taborder="67" left="800" top="211" width="94" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_01_00_00_00_00_00" taborder="68" text="본사 합계" left="759" top="146" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px" visible="false"/>
+              <MaskEdit id="MaskEdit00_00_01_00_00_00_00" taborder="69" left="880" top="150" width="94" height="21" format="##,##0" visible="false" readonly="true"/>
+              <Static id="Static04_00_00_00_00" taborder="70" text="마감취소일시" left="650" top="115" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <MaskEdit id="MaskEdit01_00" taborder="71" left="756" top="119" width="137" height="21" type="string" format="####-##-## ##:##" textAlign="left" displaynulltext="자동저장 됩니다" readonly="true"/>
+              <Static id="Static04_00_00_01" taborder="72" text="마감취소자" left="650" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Combo id="cmb_chkUser00" taborder="73" left="755" top="91" width="138" height="21" text="선택" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" autoselect="true" innerdataset="ds_user" onitemchanged="cmb_chkUser_onitemchanged" readonly="true"/>
+              <Static id="Static31_01_01_00_01_00_02" taborder="74" text="고객결제(현금)" left="216" top="291" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_01_02" taborder="75" left="336" top="295" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00_00" taborder="76" text="고객결제 합계금액" left="447" top="291" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00_02" taborder="77" left="568" top="295" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="sta_01_00_00_00_00_00_00_00_00_00_01_00_00_00_00" taborder="78" left="94" top="263" height="29" cssclass="sta_WF_detailLine" width="804"/>
+              <Static id="Static31_01_01_00_01_00_00_00" taborder="79" text="지도사 근무비" left="679" top="263" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_01_00_00" taborder="80" left="799" top="267" width="95" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00_02_00" taborder="81" text="대체정산액" left="0" top="263" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00_01_00" taborder="82" left="121" top="267" width="91" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_01_00_02_00" taborder="83" text="배송료" left="216" top="263" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_01_02_00" taborder="84" left="336" top="267" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static31_01_01_00_00_01_00_00_00" taborder="85" text="탁송료" left="447" top="263" width="117" cssclass="sta_WF_detailLabel" height="29" padding="2px"/>
+              <MaskEdit id="MaskEdit00_00_00_00_00_02_00" taborder="86" left="568" top="267" width="107" height="21" format="##,##0" visible="true" readonly="true"/>
+              <MaskEdit id="MaskEdit00_00_00_01_00_01" taborder="87" left="911" top="295" width="95" height="21" format="##,##0" visible="true" readonly="true"/>
+              <Static id="Static00" taborder="88" text="/" left="900" top="293" width="11" height="23"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BP_CD"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="BP_FULL_NM" type="STRING" size="200"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="EMP_NM" type="STRING" size="30"/>
+          <Column id="HAND_TEL_NO" type="STRING" size="20"/>
+          <Column id="DLVY_NM" type="STRING" size="100"/>
+          <Column id="M_ROOM_NO" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="AD_CD" type="STRING" size="20"/>
+          <Column id="AD_NM" type="STRING" size="500"/>
+          <Column id="M_BOSS_DEPT" type="STRING" size="20"/>
+          <Column id="SO_TYPE" type="STRING" size="4"/>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="LIST_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="DDT_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_DISCOUNT_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="DISCOUNT_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_PO_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_PO_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_PO_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_AMT2" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_PUR" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_PO_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_PO_GET" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_PO_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CASH_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CARD_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="AMT2" type="BIGDECIMAL" size="40"/>
+          <Column id="AMT1" type="BIGDECIMAL" size="40"/>
+          <Column id="TOTAL_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PO_RATE" type="BIGDECIMAL" size="11"/>
+          <Column id="CFM_YN" type="STRING" size="20"/>
+          <Column id="CFM_STATUS" type="STRING" size="4"/>
+          <Column id="CFM_DT" type="DATETIME" size="23"/>
+          <Column id="CFM_USER_ID" type="STRING" size="13"/>
+          <Column id="CFM_CANCEL_DT" type="DATETIME" size="23"/>
+          <Column id="CFM_CANCEL_USER_ID" type="STRING" size="13"/>
+          <Column id="PO_CFM_YN" type="STRING" size="20"/>
+          <Column id="PO_CFM_STATUS" type="STRING" size="4"/>
+          <Column id="PO_CFM_DT" type="DATETIME" size="23"/>
+          <Column id="PO_CFM_USER_ID" type="STRING" size="13"/>
+          <Column id="PO_CFM_CANCEL_DT" type="DATETIME" size="23"/>
+          <Column id="PO_CFM_CANCEL_USER_ID" type="STRING" size="13"/>
+          <Column id="REMARK" type="STRING" size="2000"/>
+          <Column id="BP_GROUP" type="STRING" size="5"/>
+          <Column id="D_PAY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="DLVY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="STO_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACTIVE_AMT" type="BIGDECIMAL" size="19"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_poBp"/>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="SEQ_NO" type="INT" size="3"/>
+          <Column id="GUBUN" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="PUR_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="PURCHASE_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PURCHASE_PAY_YN" type="STRING" size="20"/>
+          <Column id="PURCHASE_COMPANY" type="STRING" size="256"/>
+          <Column id="PO_RATE" type="STRING" size="256"/>
+          <Column id="PO_PROFIT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_3" oncolumnchanged="ds_list_3_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="SEQ_NO" type="INT" size="3"/>
+          <Column id="GUBUN" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="PURCHASE_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PURCHASE_PAY_YN" type="STRING" size="20"/>
+          <Column id="PURCHASE_COMPANY" type="STRING" size="255"/>
+          <Column id="PO_RATE" type="STRING" size="255"/>
+          <Column id="PO_PROFIT" type="BIGDECIMAL" size="255"/>
+          <Column id="REMARK" type="STRING" size="255"/>
+          <Column id="PURCHASE_AMT2" type="BIGDECIMAL" size="40"/>
+          <Column id="PREV_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PREV_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="AMT2" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_4" oncolumnchanged="ds_list_4_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="SEQ_NO" type="INT" size="3"/>
+          <Column id="GUBUN" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="PURCHASE_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="PURCHASE_PAY_YN" type="STRING" size="20"/>
+          <Column id="PURCHASE_COMPANY" type="STRING" size="256"/>
+          <Column id="PO_RATE" type="STRING" size="256"/>
+          <Column id="PO_PROFIT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_5" oncolumnchanged="ds_list_5_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="SEQ" type="INT" size="11"/>
+          <Column id="PAY_TYPE" type="STRING" size="30"/>
+          <Column id="BILL_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="CARD_APP_NO" type="STRING" size="30"/>
+          <Column id="ORDER_NO" type="STRING" size="30"/>
+          <Column id="UUID" type="STRING" size="20"/>
+          <Column id="CASH_NM" type="STRING" size="20"/>
+          <Column id="HP" type="STRING" size="20"/>
+          <Column id="E_MAIL" type="STRING" size="100"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div"/>
+      <Dataset id="ds_item"/>
+      <Dataset id="ds_company"/>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="BASE_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="ADD_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_PUR_AMT" type="BIGDECIMAL" size="40"/>
+          <Column id="CHG_PKG_PROFIT" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_payDiv">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">C1</Col>
+            <Col id="CODE_NAME">카드</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C2</Col>
+            <Col id="CODE_NAME">현금</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">CX</Col>
+            <Col id="CODE_NAME">카드(조정)</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">CY</Col>
+            <Col id="CODE_NAME">현금(조정)</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_6">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="PO_RATE" type="BIGDECIMAL" size="20"/>
+          <Column id="PO_CFM_YN" type="STRING" size="20"/>
+          <Column id="PO_CFM_DT" type="DATETIME" size="23"/>
+          <Column id="PO_CFM_USER_ID" type="STRING" size="20"/>
+          <Column id="PO_CFM_CANCEL_DT" type="DATETIME" size="23"/>
+          <Column id="PO_CFM_CANCEL_USER_ID" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="2000"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_7" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="ACT_GUBUN" type="STRING" size="1"/>
+          <Column id="ACT_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="ACT_CD" type="STRING" size="10"/>
+          <Column id="ACT_TYPE" type="STRING" size="10"/>
+          <Column id="ACT_DT_IN" type="DATETIME" size="23"/>
+          <Column id="ACT_DT_OUT" type="DATETIME" size="23"/>
+          <Column id="HH" type="INT" size="11"/>
+          <Column id="ACT_REMARK" type="STRING" size="100"/>
+          <Column id="ACT_CON_AMT" type="BIGDECIMAL" size="11"/>
+          <Column id="ACT_GIVE_DT" type="DATETIME" size="23"/>
+          <Column id="PAY_YYMM" type="DATETIME" size="23"/>
+          <Column id="PAY_SEQ" type="STRING" size="2"/>
+          <Column id="PAY_DT" type="DATETIME" size="23"/>
+          <Column id="TAX_TIMESTAMP" type="DATETIME" size="23"/>
+          <Column id="ACT_TRAFFIC_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACT_OIL_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACT_KM" type="BIGDECIMAL" size="19"/>
+          <Column id="ROLE_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_8" oncolumnchanged="ds_list_3_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="ACT_GUBUN" type="STRING" size="1"/>
+          <Column id="ACT_SEQ" type="BIGDECIMAL" size="6"/>
+          <Column id="ACT_CD" type="STRING" size="10"/>
+          <Column id="ACT_TYPE" type="STRING" size="10"/>
+          <Column id="ACT_DT_IN" type="DATETIME" size="23"/>
+          <Column id="ACT_DT_OUT" type="DATETIME" size="23"/>
+          <Column id="HH" type="INT" size="11"/>
+          <Column id="ACT_REMARK" type="STRING" size="100"/>
+          <Column id="ACT_CON_AMT" type="BIGDECIMAL" size="11"/>
+          <Column id="ACT_GIVE_DT" type="DATETIME" size="23"/>
+          <Column id="PAY_YYMM" type="DATETIME" size="23"/>
+          <Column id="PAY_SEQ" type="STRING" size="2"/>
+          <Column id="PAY_DT" type="DATETIME" size="23"/>
+          <Column id="TAX_TIMESTAMP" type="DATETIME" size="23"/>
+          <Column id="ACT_TRAFFIC_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACT_OIL_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACT_KM" type="BIGDECIMAL" size="19"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_act_type"/>
+      <Dataset id="ds_G"/>
+      <Dataset id="ds_F"/>
+      <Dataset id="ds_act_remark"/>
+      <Dataset id="ds_list_9">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="G_PAY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="F_PAY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="D_PAY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="DLVY_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="STO_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="ACTIVE_AMT" type="BIGDECIMAL" size="19"/>
+          <Column id="CLOSE_YN" type="STRING" size="5"/>
+          <Column id="CLOSE_USER_ID" type="STRING" size="13"/>
+          <Column id="CLOSE_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <FileDownTransfer id="FileDownTransfer00" onsuccess="FileDownTransfer00_onsuccess" onerror="FileDownTransfer00_onerror"/>
+      <Dataset id="ds_file">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="RND_NO" type="STRING" size="18"/>
+          <Column id="SEQ" type="INT" size="11"/>
+          <Column id="DIV" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="REAL_FILENAME" type="STRING" size="200"/>
+          <Column id="FILENAME" type="STRING" size="200"/>
+          <Column id="FILE_SIZE" type="STRING" size="200"/>
+          <Column id="FILE_PATH" type="STRING" size="200"/>
+          <Column id="TYPE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_statusChk">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div00_00_00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item2" compid="Div00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item3" compid="Div00_00_00.form.edt_mRoomNo" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item4" compid="Div00_00_00.form.edt_mRoomNo00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item5" compid="Div00_00_00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item0" compid="div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item6" compid="Div_client.form.div_search.form.cal_startDate2" propid="value" datasetid="ds_cond" columnid="START_DATE2"/>
+      <BindItem id="item7" compid="div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item8" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item9" compid="Div00.form.edt_usr1" propid="value" datasetid="ds_list_1" columnid="OWN_NM"/>
+      <BindItem id="item10" compid="Div00.form.edt_usr1_00" propid="value" datasetid="ds_list_1" columnid="DLVY_NM"/>
+      <BindItem id="item11" compid="Div00.form.edt_usr1_00_00" propid="value" datasetid="ds_list_1" columnid="M_ROOM_NO"/>
+      <BindItem id="item12" compid="Div00.form.edt_usr1_01" propid="value" datasetid="ds_list_1" columnid="HS_NM"/>
+      <BindItem id="item13" compid="Div00.form.edt_usr1_00_01" propid="value" datasetid="ds_list_1" columnid="EMP_NM"/>
+      <BindItem id="item14" compid="Div00.form.edt_usr1_00_00_00" propid="value" datasetid="ds_list_1" columnid="HAND_TEL_NO"/>
+      <BindItem id="item15" compid="Div00.form.edt_usr1_00_01_00" propid="value" datasetid="ds_list_1" columnid="BP_NM"/>
+      <BindItem id="item16" compid="Div00.form.edt_usr1_01_00" propid="value" datasetid="ds_list_1" columnid="BP_FULL_NM"/>
+      <BindItem id="item17" compid="Div00.form.edt_usr1_01_00_00" propid="value" datasetid="ds_list_1" columnid="AD_NM"/>
+      <BindItem id="item18" compid="Div00.form.MaskEdit01" propid="value" datasetid="ds_list_6" columnid="PO_CFM_DT"/>
+      <BindItem id="item19" compid="MaskEdit01_01" propid="value" datasetid="ds_list_3" columnid="REC_DT"/>
+      <BindItem id="item20" compid="Div00.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_AMT"/>
+      <BindItem id="item21" compid="Div00.form.MaskEdit00_01" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_AMT"/>
+      <BindItem id="item22" compid="Div00.form.MaskEdit00_01_00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_AMT"/>
+      <BindItem id="item23" compid="Div00.form.MaskEdit00_00" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_PUR_AMT"/>
+      <BindItem id="item24" compid="Div00.form.MaskEdit00_00_00" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_PUR_AMT"/>
+      <BindItem id="item25" compid="Div00.form.MaskEdit00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_PUR_AMT"/>
+      <BindItem id="item26" compid="Div00.form.cmb_chkUser" propid="value" datasetid="ds_list_6" columnid="PO_CFM_USER_ID"/>
+      <BindItem id="item28" compid="Div00.form.edt_usr1_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="ITEM_NM"/>
+      <BindItem id="item27" compid="div_search.form.cmb_soStatus" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item29" compid="Div00.form.Tab00.Tabpage1.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="PKG_AMT"/>
+      <BindItem id="item32" compid="Div00.form.Tab00.Tabpage2.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_AMT"/>
+      <BindItem id="item35" compid="Div00.form.Tab00.Tabpage3.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_AMT"/>
+      <BindItem id="item36" compid="Div00.form.Tab00.Tabpage3.form.MaskEdit00_01" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_PUR_AMT"/>
+      <BindItem id="item42" compid="Div00.form.CheckBox00" propid="value" datasetid="ds_list_6" columnid="PO_CFM_YN"/>
+      <BindItem id="item43" compid="Div00.form.Tab00.Tabpage1.form.MaskEdit00_01_00_00" propid="value" datasetid="ds_list_1" columnid="PO_RATE"/>
+      <BindItem id="item46" compid="Div00.form.MaskEdit00_00_01_01" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_PO_PROFIT"/>
+      <BindItem id="item47" compid="Div00.form.MaskEdit00_00_00_01_01" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_PO_PROFIT"/>
+      <BindItem id="item48" compid="Div00.form.MaskEdit00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_PO_PROFIT"/>
+      <BindItem id="item49" compid="Div00.form.MaskEdit00_00_00_00_00_01" propid="value" datasetid="ds_list_1" columnid="CARD_AMT"/>
+      <BindItem id="item50" compid="Div00.form.Tab00.Tabpage3.form.MaskEdit00_01_00_00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_PO_PROFIT"/>
+      <BindItem id="item51" compid="Div00.form.Tab00.Tabpage5.form.TextArea00" propid="value" datasetid="ds_list_6" columnid="REMARK"/>
+      <BindItem id="item30" compid="Div00.form.MaskEdit01_00" propid="value" datasetid="ds_list_6" columnid="PO_CFM_CANCEL_DT"/>
+      <BindItem id="item31" compid="Div00.form.cmb_chkUser00" propid="value" datasetid="ds_list_6" columnid="PO_CFM_CANCEL_USER_ID"/>
+      <BindItem id="item33" compid="Div00.form.MaskEdit00_00_01" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_PROFIT"/>
+      <BindItem id="item34" compid="Div00.form.MaskEdit00_00_00_01" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_PROFIT"/>
+      <BindItem id="item37" compid="Div00.form.MaskEdit00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CHG_PKG_PROFIT"/>
+      <BindItem id="item38" compid="Div00.form.MaskEdit00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="TOTAL_AMT2"/>
+      <BindItem id="item39" compid="Div00.form.MaskEdit00_00_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="TOTAL_PUR"/>
+      <BindItem id="item40" compid="Div00.form.MaskEdit00_00_01_00" propid="value" datasetid="ds_list_1" columnid="TOTAL_PO_PROFIT"/>
+      <BindItem id="item41" compid="Div00.form.MaskEdit00_00_01_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="TOTAL_PROFIT"/>
+      <BindItem id="item44" compid="Div00.form.MaskEdit00_00_00_01_00" propid="value" datasetid="ds_list_1" columnid="TOTAL_PO_AMT"/>
+      <BindItem id="item45" compid="Div00.form.MaskEdit00_00_00_01_02" propid="value" datasetid="ds_list_1" columnid="CASH_AMT"/>
+      <BindItem id="item52" compid="Div00.form.MaskEdit00_00_00_00_00_02" propid="value" datasetid="ds_list_1" columnid="AMT2"/>
+      <BindItem id="item53" compid="Div00.form.Tab00.Tabpage1.form.MaskEdit00_01_00" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_PUR_AMT"/>
+      <BindItem id="item54" compid="Div00.form.Tab00.Tabpage1.form.MaskEdit00_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="BASE_PKG_PO_PROFIT"/>
+      <BindItem id="item55" compid="Div00.form.Tab00.Tabpage2.form.MaskEdit00_01_00" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_PUR_AMT"/>
+      <BindItem id="item56" compid="Div00.form.Tab00.Tabpage2.form.MaskEdit00_01_00_00" propid="value" datasetid="ds_list_1" columnid="ADD_PKG_PO_PROFIT"/>
+      <BindItem id="item57" compid="Div00.form.Tab00.Tabpage1.form.MaskEdit00_01" propid="value" datasetid="ds_list_1" columnid="DDT_PKG_AMT"/>
+      <BindItem id="item58" compid="Div00.form.MaskEdit00_00_00_01_00_00" propid="value" datasetid="ds_list_1" columnid="ACTIVE_AMT"/>
+      <BindItem id="item59" compid="Div00.form.MaskEdit00_00_00_00_00_01_00" propid="value" datasetid="ds_list_1" columnid="D_PAY_AMT"/>
+      <BindItem id="item60" compid="Div00.form.MaskEdit00_00_00_01_02_00" propid="value" datasetid="ds_list_1" columnid="DLVY_AMT"/>
+      <BindItem id="item61" compid="Div00.form.MaskEdit00_00_00_00_00_02_00" propid="value" datasetid="ds_list_1" columnid="STO_AMT"/>
+      <BindItem id="item62" compid="Div00.form.MaskEdit00_00_00_01_00_01" propid="value" datasetid="ds_list_1" columnid="TOTAL_PO_GET"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    SORS > 화환 반입금지 배송지
+*  @FileName 	SO0009.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.05.21
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO009_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this._gfnGridcellFix(this.grd_list, 1);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ // 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	this.efn_SetDatasetData2(this.ds_div,this.objApp.gds_code2,'FS016');			// 품목구분
+	
+	var id = "TM004_S01_P01";
+	var url = "svcUrl::TM004_S01_P01";
+	var inDs = "";
+	var outDs = "ds_poBp=ds_poBp ds_company=ds_company ds_item=ds_item";
+	var args = "USR_ID="+"220023"+"";
+	var callBackid = "fn_aftersearchComm";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+	
+	/*
+	H4130 : PI팀
+	H4410 : 경영지원팀
+	H4000 : 운영관리부문
+	H4210 : 의전관리팀
+	H4400 : 경영관리실
+	H4420 : 재무팀
+	H4320 : (X)재무팀
+	H5000 : 영업부문
+	
+	2023-08-18 홍진수 대리 작업진행
+	H4200 : 의전관리실
+	*/	
+	if (deptCd == "H4130" || deptCd == "H4410" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5000" || deptCd == "H4400" || deptCd == "H4420" || deptCd == "H4200")
+	{
+		this.ds_poBp.insertRow(0);
+		this.ds_poBp.setColumn(0,"BP_CD","-999");
+		this.ds_poBp.setColumn(0,"BP_NM","전체");
+		this.div_search.form.cmb_soStatus.set_index(0);
+		this.div_search.form.cmb_soStatus.set_enable(true);
+	} else
+	{
+		this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_CD",deptCd);
+	}
+	
+	//this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_CD","C1002")
+	//this.fn_search();
+}
+
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-5);
+	
+	this.div_search.form.cal_startDate.set_value(fDate);
+	this.div_search.form.cal_endDate.set_value(sDate);
+	
+// 	this.div_search.form.cal_startDate.set_value("20210919");
+// 	this.div_search.form.cal_endDate.set_value("20210919");
+};
+  /**
+* @description 		공통조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2021.05.21
+* @수정자	   
+* @수정일자
+*/
+// 조회
+this.fn_search = function ()
+{	
+	var Arg_1 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_2 = this.ds_cond.getColumn(0,"END_DATE");
+	var Arg_3 = this.ds_cond.getColumn(0,"BP_CD");
+	var Arg_4 = "M20";
+	
+	var id = "TM005_S01";
+	var url = "svcUrl::TM005_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+" PO_BP_CD="+Arg_3+" PO_BP_DIV="+Arg_4+"";
+	var callBackid = "fn_aftersearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_filter();
+}
+
+this.grd_list_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{	
+	if (this.ds_list_1.getRowType(e.oldrow) == 4)
+	{
+		if (this.confirm("수정사항이 있습니다. 저장하시겠습니까? 취소 시 재조회 됩니다."))
+		{
+			this.fn_save();
+		} else
+		{
+			this.fn_search();
+		}
+	}
+	
+	if (e.col == 0)
+	{
+		this.grd_list.set_selecttype("row");
+	} else
+	{
+		this.grd_list.set_selecttype("multiarea");
+	}
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
+	var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"M_BOSS_DEPT");
+	
+	var id = "TM005_S02";
+	var url = "svcUrl::TM005_S02";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2 ds_list_3=ds_list_3 ds_list_4=ds_list_4 ds_list_5=ds_list_5 ds_list_6=ds_list_6 ds_list_7=ds_list_7 ds_list_8=ds_list_8 ds_list_9=ds_list_9 ds_G=ds_G ds_F=ds_F ds_file=ds_file";
+	var args = "SO_NO="+Arg_1+" PO_BP_CD="+Arg_2+"";
+	var callBackid = "fn_aftersearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersearch2 = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	if (this.ds_list_6.rowcount == 0)
+	{
+		this.ds_list_6.addRow();
+	}
+	
+	//this.fn_summury();
+}
+
+this.fn_summury = function ()
+{
+	var cardAmt = 0;
+	var ddtAmt = 0;
+	var etcPurAmt = 0;
+	var chgPurAmt = 0;
+	var etcAmt = 0;
+	var rt = 0;
+	
+	var saleAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BASE_PKG_AMT"),0);   					//기본 매출
+	var baseAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PKG_AMT"),0);   						//정산기준금액
+	var purchaseAmt = this.gfn_nvl(this.ds_list_2.getSum("PURCHASE_AMT"),0);												//기본 매입
+	var saleAmt2 = this.gfn_nvl(this.ds_list_3.getSum("AMT2"),0);   														//추가 매출
+	var purchaseAmt2 = this.gfn_nvl(this.ds_list_3.getSum("PURCHASE_AMT2"),0);   											//추가 매입
+	var addProfit = this.gfn_nvl(this.ds_list_3.getSum("PO_PROFIT"),0);														//추가 이익금
+	var saleAmt3 = this.gfn_nvl(this.ds_list_4.getSum("AMT"),0);   															//대체 매출
+	var purchaseAmt3 = this.gfn_nvl(this.ds_list_4.getSum("PURCHASE_AMT"),0);   											//대체 매입		
+	var addProfit2 = this.gfn_nvl(this.ds_list_4.getSum("PO_PROFIT"),0);													//대체 이익금
+// 	var baseAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BASE_PKG_AMT"),0);
+// 	var addAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ADD_PKG_AMT"),0);
+// 	var chgAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CHG_PKG_AMT"),0);
+	var rate = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PO_RATE"),0);
+	
+	// 카드결제액
+	this.ds_list_5.filter("PAY_TYPE=='C1' || PAY_TYPE=='CX'")
+	cardAmt = this.gfn_nvl(this.ds_list_5.getSum("BILL_AMT"),0);
+	trace(cardAmt)
+	this.ds_list_5.filter("")
+	
+	var cashAmt = 0;
+	// 현금결제액
+	this.ds_list_5.filter("PAY_TYPE=='C2' || PAY_TYPE=='CY'")
+	cashAmt = this.gfn_nvl(this.ds_list_5.getSum("BILL_AMT"),0);
+	this.ds_list_5.filter("")	
+	
+	// 추가 RT
+	this.ds_list_3.filter("GUBUN=='FS0082'")
+	rt = this.gfn_nvl(this.ds_list_3.getSum("AMT2"),0);
+	this.ds_list_3.filter("")
+	
+	// 기본 기타매출
+	this.ds_list_2.filter("GUBUN=='FS0085'")
+	//this.Div00.form.Tab00.Tabpage1.form.MaskEdit00_01.set_value(this.gfn_nvl(this.ds_list_2.getSum("PURCHASE_AMT"),0));
+	etcAmt = this.gfn_nvl(this.ds_list_2.getSum("AMT"),0);
+	this.ds_list_2.filter("")
+	
+	// 추가 기타원가
+	this.ds_list_3.filter("GUBUN=='FS0084'")
+	//this.Div00.form.Tab00.Tabpage1.form.MaskEdit00_01.set_value(this.gfn_nvl(this.ds_list_2.getSum("PURCHASE_AMT"),0));
+	etcPurAmt = this.gfn_nvl(this.ds_list_3.getSum("PURCHASE_AMT2"),0);
+	this.ds_list_3.filter("")
+	
+	// 본사이익조정
+	this.ds_list_3.filter("GUBUN=='FS0086'")
+	//this.Div00.form.Tab00.Tabpage1.form.MaskEdit00_01.set_value(this.gfn_nvl(this.ds_list_2.getSum("PURCHASE_AMT"),0));
+	chgPurAmt = this.gfn_nvl(this.ds_list_3.getSum("PURCHASE_AMT2"),0);
+	this.ds_list_3.filter("")
+
+	// 기본 공제
+	this.ds_list_2.filter("GUBUN=='FS0054'")
+	//this.Div00.form.Tab00.Tabpage1.form.MaskEdit00_01.set_value(this.gfn_nvl(this.ds_list_2.getSum("PURCHASE_AMT"),0));
+	ddtAmt = this.gfn_nvl(this.ds_list_2.getSum("AMT"),0);
+	this.ds_list_2.filter("")
+	
+	// 기본 매출
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BASE_PKG_AMT",baseAmt+ddtAmt+etcAmt);
+	
+	saleAmt = this.gfn_nvl(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BASE_PKG_AMT"),0);
+	
+	// 기본 공제
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DDT_PKG_AMT",ddtAmt);
+	
+	// 기본 매입합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BASE_PKG_PUR_AMT",purchaseAmt);
+	
+	// 기본 본부 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BASE_PKG_PO_PROFIT",(saleAmt-purchaseAmt)*this.gfn_nvl(rate,0)/100);
+
+	//기본 본사 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BASE_PKG_PROFIT",(saleAmt-purchaseAmt)*(100-this.gfn_nvl(rate,0))/100);
+	
+	// 추가 RT
+	this.Div00.form.Tab00.Tabpage2.form.MaskEdit00_01.set_value(rt);
+	
+	// 추가 매출합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADD_PKG_AMT",saleAmt2-rt);
+	
+	// 추가 매입합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADD_PKG_PUR_AMT",purchaseAmt2-etcPurAmt-chgPurAmt);
+	
+	// 추가 본부 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADD_PKG_PO_PROFIT",addProfit);
+	
+	//추가 본사 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ADD_PKG_PROFIT",saleAmt2-purchaseAmt2-addProfit);
+	
+	// 대체 매출합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHG_PKG_AMT",saleAmt3);
+	
+	// 대체 매입합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHG_PKG_PUR_AMT",purchaseAmt3);
+	
+	// 대체 본부 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHG_PKG_PO_PROFIT",addProfit2);
+	
+	//대체 본사 이익금
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHG_PKG_PROFIT",saleAmt3-purchaseAmt3-addProfit2);
+	
+	// 매출 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_AMT2",saleAmt+saleAmt2+saleAmt3-rt);
+	
+	// 매입 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_PUR",purchaseAmt+purchaseAmt2+purchaseAmt3-etcPurAmt-chgPurAmt);
+	
+	// 본부 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_PO_PROFIT",((saleAmt-purchaseAmt)*this.gfn_nvl(rate,0)/100)+addProfit+addProfit2);
+	
+	// 본사 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_PROFIT",((saleAmt-purchaseAmt)*(100-this.gfn_nvl(rate,0))/100)+(saleAmt2-purchaseAmt2-addProfit)+(saleAmt3-purchaseAmt3-addProfit2));
+	
+	// 카드 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CARD_AMT",cardAmt);
+	
+	// 현금 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CASH_AMT",cashAmt);
+	
+	// 고객결제 합계
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"AMT2",cardAmt+cashAmt);
+	
+	//본부 수령액
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_PO_GET",(purchaseAmt+purchaseAmt2+purchaseAmt3-etcPurAmt-chgPurAmt-rt)+(((saleAmt-purchaseAmt)*this.gfn_nvl(rate,0)/100)+addProfit+addProfit2)-cashAmt);
+	
+	//본부 정산액
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"TOTAL_PO_AMT",(purchaseAmt+purchaseAmt2+purchaseAmt3-etcPurAmt-chgPurAmt-rt)+(((saleAmt-purchaseAmt)*this.gfn_nvl(rate,0)/100)+addProfit+addProfit2));
+};
+
+// RT 추가
+this.btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"GUBUN","FS0082");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"ITEM_CD","C3710029");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"QTY",1);
+	
+	
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PO_RATE",60);
+};
+
+// 조정 추가
+this.btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"GUBUN","FS0083");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"ITEM_CD","C3710030");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"QTY",1);
+};
+
+// 카드 추가
+this.Div00_Tab00_Tabpage4_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_5.addRow();
+	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"PAY_TYPE","CX");
+};
+
+// 현금 추가
+this.Div00_Tab00_Tabpage4_btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_5.addRow();
+	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"PAY_TYPE","CY");
+};
+
+this.fn_save = function ()
+{
+	if (this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PO_CFM_YN") == "1")
+	{
+		this.alert("마감된 데이터는 수정할 수 없습니다. 마감 풀고 진행하시기 바랍니다.")
+		return;
+	}
+	
+	var Arg_1 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "TM005_M01";
+	var url = "svcUrl::TM005_M01";
+	var inDs = "ds_list_6=ds_list_6:U ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+Arg_1+"";
+	var callBackid = "fn_aftersave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersave = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
+	var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"M_BOSS_DEPT");
+	
+	var id = "TM005_S02";
+	var url = "svcUrl::TM005_S02";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2 ds_list_3=ds_list_3 ds_list_4=ds_list_4 ds_list_5=ds_list_5 ds_list_6=ds_list_6 ds_list_7=ds_list_7 ds_list_8=ds_list_8 ds_list_9=ds_list_9 ds_G=ds_G ds_F=ds_F ds_file=ds_file";
+	var args = "SO_NO="+Arg_1+" PO_BP_CD="+Arg_2+"";
+	var callBackid = "fn_aftersearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_cmb_insrtUser_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+// 결제금액 가능하게 풀기
+this.fn_pay = function (currow)
+{
+	
+	var payDiv = this.ds_list_5.getColumn(this.ds_list_5.rowposition,"PAY_TYPE");
+
+	if (payDiv == "CX" || payDiv == "CY")
+	{
+		return "mask";
+	} else
+	{
+		return "none";
+	}
+};
+
+// 승인번호 가능하게 풀기
+this.fn_pay2 = function (currow)
+{
+	
+	var payDiv = this.ds_list_5.getColumn(this.ds_list_5.rowposition,"PAY_TYPE");
+	//trace(payDiv)
+	if (payDiv == "CX" || payDiv == "CY")
+	{
+		return "text";
+	} else
+	{
+		return "none";
+	}
+};
+
+
+// 발급번호 가능하게 풀기
+this.fn_pay3 = function (currow)
+{
+	
+	var payDiv = this.ds_list_5.getColumn(this.ds_list_5.rowposition,"PAY_TYPE");
+
+	if (payDiv == "CX" || payDiv == "CY")
+	{
+		return "text";
+	} else
+	{
+		return "none";
+	}
+};
+
+this.Tab00_Tabpage1_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	if (e.col == "6" && this.ds_list_5.getColumn(e.row,"PAY_TYPE") == "CX" || e.col == "6" && this.ds_list_5.getColumn(e.row,"PAY_TYPE") == "CY")
+	{
+		this.ds_list_5.deleteRow(e.row);
+		
+		this.fn_summury();
+	}
+};
+
+this.Div00_Tab00_Tabpage1_MaskEdit00_01_00_00_onchanged = function(obj:nexacro.MaskEdit,e:nexacro.ChangeEventInfo)
+{
+	this.fn_summury();
+};
+
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "QTY" || e.columnid == "AMT" || e.columnid == "PURCHASE_AMT")
+	{
+		this.fn_summury();
+	}
+};
+
+this.ds_list_3_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_3.getColumn(this.ds_list_3.rowposition,"PO_RATE")) || this.ds_list_3.getColumn(this.ds_list_3.rowposition,"PO_RATE") == 0)
+	{
+		this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PO_RATE",60);
+	}
+	
+	if (e.columnid == "QTY" || e.columnid == "AMT" || e.columnid == "PURCHASE_AMT" || e.columnid == "PO_RATE")
+	{	
+		var prePurAmt = this.gfn_nvl(this.ds_list_3.getColumn(e.row,"PREV_PUR_AMT"),0);
+		var purchaseAmt = this.gfn_nvl(this.ds_list_3.getColumn(e.row,"PURCHASE_AMT"),0);
+		this.ds_list_3.setColumn(e.row,"PURCHASE_AMT2", purchaseAmt-prePurAmt);
+		
+		var preAmt = this.gfn_nvl(this.ds_list_3.getColumn(e.row,"PREV_AMT"),0);
+		var Amt = this.gfn_nvl(this.ds_list_3.getColumn(e.row,"AMT"),0);
+		this.ds_list_3.setColumn(e.row,"AMT2", Amt-preAmt);
+		
+		this.ds_list_3.setColumn(e.row,"PO_PROFIT",(this.ds_list_3.getColumn(e.row,"AMT2")-this.ds_list_3.getColumn(e.row,"PURCHASE_AMT2"))*this.ds_list_3.getColumn(e.row,"PO_RATE")/100)
+		this.fn_summury();
+	}
+};
+
+this.ds_list_4_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "QTY" || e.columnid == "AMT" || e.columnid == "PURCHASE_AMT" || e.columnid == "PO_RATE")
+	{
+		this.ds_list_4.setColumn(e.row,"PO_PROFIT",(this.ds_list_4.getColumn(e.row,"AMT")-this.ds_list_4.getColumn(e.row,"PURCHASE_AMT"))*this.ds_list_4.getColumn(e.row,"PO_RATE")/100)
+		this.fn_summury();
+	}
+};
+
+this.ds_list_5_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "BILL_AMT")
+	{
+		this.fn_summury();
+	}
+};
+
+this.Div00_CheckBox00_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{		
+	if (this.Div00.form.CheckBox00.value == true)
+	{
+		if (this.confirm("마감 처리 하시겠습니까?"))
+		{
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_YN","1");
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_STATUS","마감");
+			
+			var Arg_1 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+			var id = "TM005_M01";
+			var url = "svcUrl::TM005_M01";
+			var inDs = "ds_list_6=ds_list_6:U ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U";
+			var outDs = "";
+			var args = "INSRT_USER_ID="+Arg_1+"";
+			var callBackid = "fn_aftersave2";
+				
+			this.gfn_transaction( id, url, inDs, outDs, args, callBackid);			
+		} else
+		{
+			this.Div00.form.CheckBox00.set_value(false);
+			return;
+		}		
+	} else
+	{
+		if (this.confirm("마감 취소 하시겠습니까?"))
+		{
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_YN","0");
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_STATUS","");
+			
+			var Arg_1 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+			var id = "TM005_M01";
+			var url = "svcUrl::TM005_M01";
+			var inDs = "ds_list_6=ds_list_6:U ds_list_2=ds_list_2:U ds_list_3=ds_list_3:U ds_list_4=ds_list_4:U ds_list_5=ds_list_5:U";
+			var outDs = "";
+			var args = "INSRT_USER_ID="+Arg_1+"";
+			var callBackid = "fn_aftersave2";
+				
+			this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+		} else
+		{
+			this.Div00.form.CheckBox00.set_value(true);
+			return;
+		}		
+	}
+};
+
+this.fn_aftersave2 = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
+	
+	var id = "TM005_S03";
+	var url = "svcUrl::TM005_S03";
+	var inDs = "";
+	var outDs = "ds_statusChk=ds_statusChk";
+	var args = "SO_NO="+Arg_1+"";
+	var callBackid = "fn_aftersave3";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_aftersave3 = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var statusChk = this.ds_statusChk.getColumn(0,"SO_NO");
+	
+	if (this.gfn_isNull(statusChk))
+	{
+		this.Div00.form.CheckBox00.set_value(false);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_YN","0");
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PO_CFM_STATUS","");
+			
+		this.alert("주문 상태가 본부장 확인 이상인 경우만 마감할 수 있습니다. 확인 바랍니다.")
+		return;
+	}
+	
+	this.ds_list_1.set_updatecontrol(false);
+		
+	this.ds_list_1.setRowType(this.ds_list_1.rowposition,Dataset.ROWTYPE_INSERT);
+	
+	this.ds_list_1.set_updatecontrol(true);
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PO_CFM_YN");
+	var Arg_2 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
+	
+	var id = "TM005_M02";
+	var url = "svcUrl::TM005_M02";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "";
+	var args = "CHK="+Arg_1+" INSRT_USER_ID="+Arg_2+" SO_NO="+Arg_3+"";
+	var callBackid = "fn_afterclose";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterclose = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
+	var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"M_BOSS_DEPT");
+	
+	var id = "TM005_S02";
+	var url = "svcUrl::TM005_S02";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2 ds_list_3=ds_list_3 ds_list_4=ds_list_4 ds_list_5=ds_list_5 ds_list_6=ds_list_6 ds_list_7=ds_list_7 ds_list_8=ds_list_8 ds_list_9=ds_list_9 ds_G=ds_G ds_F=ds_F ds_file=ds_file";
+	var args = "SO_NO="+Arg_1+" PO_BP_CD="+Arg_2+"";
+	var callBackid = "fn_aftersearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.Div00_Tab00_Tabpage3_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var payYn = this.gfn_nvl(this.ds_list_4.getColumn(e.row,"PURCHASE_PAY_YN"),"N");
+	if (e.col == 7)
+	{
+		if (payYn == "Y")
+		{
+			this.ds_list_4.setColumn(e.row,"PURCHASE_PAY_YN","N");
+		} else
+		{
+			this.ds_list_4.setColumn(e.row,"PURCHASE_PAY_YN","Y");
+		}
+	}
+};
+
+this.Div00_Tab00_Tabpage2_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var payYn = this.gfn_nvl(this.ds_list_3.getColumn(e.row,"PURCHASE_PAY_YN"),"N");
+	if (e.col == 9)
+	{
+		if (payYn == "Y")
+		{
+			this.ds_list_3.setColumn(e.row,"PURCHASE_PAY_YN","N");
+		} else
+		{
+			this.ds_list_3.setColumn(e.row,"PURCHASE_PAY_YN","Y");
+		}
+	}
+};
+
+this.Div00_Tab00_Tabpage1_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var payYn = this.gfn_nvl(this.ds_list_2.getColumn(e.row,"PURCHASE_PAY_YN"),"N");
+	if (e.col == 6)
+	{
+		if (payYn == "Y")
+		{
+			this.ds_list_2.setColumn(e.row,"PURCHASE_PAY_YN","N");
+		} else
+		{
+			this.ds_list_2.setColumn(e.row,"PURCHASE_PAY_YN","Y");
+		}
+	}
+};
+
+// 기본패키지 행추가
+this.Div00_Tab00_Tabpage1_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//trace(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"AD_CD"))
+	if (this.ds_list_1.getColumn(this.ds_list_1.rowposition,"AD_CD") == "CM0240")
+	{
+		this.alert("대체지원 입니다. 확인 부탁드립니다.")
+		return;
+	}
+	
+	this.ds_list_2.addRow();
+	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"GUBUN","FS0052");	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"QTY",1);
+};
+
+// 기타매출 추가
+this.Div00_Tab00_Tabpage1_btn_delfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.addRow();
+	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"GUBUN","FS0085");	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ITEM_CD","C3710034");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"QTY",1);
+};
+
+// 기본패키지 행삭제
+this.Div00_Tab00_Tabpage1_btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+// 추가 행추가
+this.Div00_Tab00_Tabpage2_btn_addfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+	
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"GUBUN","FS0053");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"QTY",1);
+};
+
+// 추가 행삭제
+this.Div00_Tab00_Tabpage2_btn_delfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.deleteRow(this.ds_list_3.rowposition);
+};
+
+// 추가 기타원가 추가
+this.Div00_Tab00_Tabpage2_btn_delfile01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+	
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"GUBUN","FS0084");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"ITEM_CD","C3710033");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"QTY",1);
+};
+
+// 본사이익조정
+this.Div00_Tab00_Tabpage2_btn_delfile01_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_3.addRow();
+	
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"GUBUN","FS0086");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"ITEM_CD","C3710035");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_3.setColumn(this.ds_list_3.rowposition,"QTY",1);
+};
+
+// 대체 행추가
+this.Div00_Tab00_Tabpage3_btn_addfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.ds_list_4.addRow();
+	
+	this.ds_list_4.setColumn(this.ds_list_4.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
+	this.ds_list_4.setColumn(this.ds_list_4.rowposition,"PURCHASE_PAY_YN","N");
+	this.ds_list_4.setColumn(this.ds_list_4.rowposition,"QTY",1);
+};
+
+// 대체 행삭제
+this.Div00_Tab00_Tabpage3_btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_4.deleteRow(this.ds_list_4.rowposition);
+};
+
+// 파일 다운
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	
+};
+
+this.FileDownTransfer00_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferEventInfo)
+{
+	this.alert("정상적으로 다운로드 되었습니다.");
+};
+
+this.Div00_Tab00_Tabpage6_Grid00_00_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{
+	var file_path = this.gfn_nvl(this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH"),"");
+	var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+	
+	file_path = file_path.replace(/\\/gi,"/");
+	
+	var file_url = "http://182.162.91.66:8081/web/"+file_path;
+	
+	this.Div00.form.Tab00.Tabpage6.form.ImageViewer00.set_image(file_url);
+	
+	if (e.col == 4)
+	{		
+		this.FileDownTransfer00.set_downloadfilename( file_name ); 
+		this.FileDownTransfer00.download(file_url);
+	}
+};
+
+
+// 검색기능
+this.fn_filter = function ()
+{
+	var soNo = this.div_search.form.edt_soldToNm00_00_00.text;								// 주문번호
+	var ownNm = this.div_search.form.edt_soldToNm.text;										// 대상자
+	var soldToNm = this.div_search.form.edt_soldToNm00.text;								// 고객사
+	var adNm = this.div_search.form.edt_soldToNm00_00.text;									// 상담내역
+	var empNm = this.div_search.form.edt_soldToNm00_00_00_00.text;							// 의전팀장
+	
+		
+	var filterstr = "";
+	
+	//주문번호		
+	if(!this.gfn_isNull(soNo))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "SO_NO.indexOf('"+soNo+"')!='-1'";
+		else
+			filterstr += " && SO_NO.indexOf('"+soNo+"')!='-1'";				
+	}
+	
+	//대상자
+	if(!this.gfn_isNull(ownNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "OWN_NM.indexOf('"+ownNm+"')!='-1'";
+		else
+			filterstr += " && OWN_NM.indexOf('"+ownNm+"')!='-1'";				
+	}
+	
+	//고객사
+	if(!this.gfn_isNull(soldToNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "BP_FULL_NM.indexOf('"+soldToNm+"')!='-1'";
+		else
+			filterstr += " && BP_FULL_NM.indexOf('"+soldToNm+"')!='-1'";				
+	}
+	
+	//상담내역
+	if(!this.gfn_isNull(adNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "AD_NM.indexOf('"+adNm+"')!='-1'";
+		else
+			filterstr += " && AD_NM.indexOf('"+adNm+"')!='-1'";				
+	}
+	
+	//의전팀장
+	if(!this.gfn_isNull(empNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "EMP_NM.indexOf('"+empNm+"')!='-1'";
+		else
+			filterstr += " && EMP_NM.indexOf('"+empNm+"')!='-1'";				
+	}
+	
+	this.ds_list_1.set_filterstr(filterstr);
+}
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}
+};
+
+this.Div00_Tab00_Tabpage6_Grid00_00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 5)
+	{
+		var file_path = this.gfn_nvl(this.ds_file.getColumn(this.ds_file.rowposition,"FILE_PATH"),"");
+		var real_file_name = this.ds_file.getColumn(this.ds_file.rowposition,"REAL_FILENAME");
+		var file_name = this.ds_file.getColumn(this.ds_file.rowposition,"FILENAME");
+		var status = this.ds_file.getColumn(this.ds_file.rowposition,"STATUS");
+		
+		var sPopupId  = "client_popup";
+		var sUrl      = "TM::TM004_P01.xfdl";
+		var oArg      = {file_path : file_path, real_file_name : real_file_name, file_name : file_name, status : status};
+		var sCallBack = "fn_popupCallback_client";
+		var oOption   = {title : "이미지"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

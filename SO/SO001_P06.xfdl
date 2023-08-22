@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P04" width="900" height="400" titletext="New Form" onload="SO001_P04_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="900">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="1" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="지점코드" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_ClientNm" taborder="1" left="102" top="8" width="150" height="21"/>
+                    <Button id="btn_search" taborder="3" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="4" text="지점명" left="252" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_ClientPartNm" taborder="2" left="357" top="8" width="202" height="21"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list03_00" taborder="3" scrolltype="both" minwidth="" left="10" right="10" top="60" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="65"/>
+                      <Column size="65"/>
+                      <Column size="80"/>
+                      <Column size="118"/>
+                      <Column size="118"/>
+                      <Column size="118"/>
+                      <Column size="118"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="지점"/>
+                      <Cell col="1" text="유형"/>
+                      <Cell col="2" text="성명"/>
+                      <Cell col="3" text="연락처1"/>
+                      <Cell col="4" text="연락처2"/>
+                      <Cell col="5" text="팩스"/>
+                      <Cell col="6" text="이메일"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:POINT" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_charge" combotype="filterlike"/>
+                      <Cell col="1" text="bind:TYPE" combodataset="ds_position" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                      <Cell col="2" text="bind:NAME" combodataset="ds_user" combocodecol="USER_ID" combodatacol="USER_NAME" combotype="filterlike"/>
+                      <Cell col="3" text="bind:HP" calendardisplaynulltype="nulltext"/>
+                      <Cell col="4" text="bind:TEL" calendardisplaynulltype="nulltext"/>
+                      <Cell col="5" text="bind:FAX" calendardisplaynulltype="nulltext"/>
+                      <Cell col="6" text="bind:EMAIL" calendardisplaynulltype="nulltext"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P06
+*  @FileName 	SO0001_P06.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.27
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var clientCd = this.getOwnerFrame().clientCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P04_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//데이터셋 세팅
+	this.ds_cond.setColumn(0,"BP_CD",clientCd)								// 거래처코드
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	var bpCd = this.ds_cond.getColumn(0,"BP_CD")
+	
+	var url = "svcUrl::SO001_P04";
+	this.gfn_transaction( "SO001_P04",url,"","ds_list=ds_list","BP_CD="+bpCd+"","callbackFunction");
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.04.07
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="PRSN_TYPE" type="STRING" size="10"/>
+          <Column id="PRSN_TYPE_NM" type="STRING" size="200"/>
+          <Column id="REPRE_NM" type="STRING" size="50"/>
+          <Column id="TEL_NO1" type="STRING" size="20"/>
+          <Column id="TEL_NO2" type="STRING" size="20"/>
+          <Column id="FAX_NO" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_CD"/>
+            <Col id="BP_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_ClientNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_ClientPartNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+    </Bind>
+  </Form>
+</FDL>

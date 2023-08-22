@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO009" width="1300" height="840" titletext="New Form" onload="SO009_onload">
+    <Layouts>
+      <Layout height="840" mobileorientation="landscape" width="1300">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Div id="div_search" taborder="2" left="10" top="10" height="40" right="11" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01_00" taborder="0" text="배송지" left="-2" top="7" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_dlvy" taborder="1" left="98" top="8" width="300" height="21" onkeyup="div_search_edt_sono00_onkeyup"/>
+              <Static id="Static00_01_00_00" taborder="2" text="주소" left="418" top="7" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_addr" taborder="3" left="518" top="8" width="300" height="21" onkeyup="div_search_edt_sono00_onkeyup"/>
+              <Static id="Static00_01_00_00_00" taborder="4" text="등록여부" left="828" top="7" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Combo id="cmb_yn" taborder="5" text="Combo00" left="929" top="8" width="120" height="20" innerdataset="ds_chk" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="div_search_Combo00_onitemchanged"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static05_00" taborder="3" text="배송지" left="12" top="59" width="97" height="24" cssclass="sta_WF_title"/>
+        <Static id="Static05_00_00" taborder="4" text="반입가능품목" left="822" top="61" width="97" height="24" cssclass="sta_WF_title"/>
+        <Grid id="grd_list00_00" taborder="5" binddataset="ds_list_2" scrolltype="both" minwidth="" left="820" top="96" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="734" width="470" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="51"/>
+                <Column size="95"/>
+                <Column size="330"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="품목코드"/>
+                <Cell col="2" text="품목명"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" text="bind:ITEM_CD" textAlign="center" combodataset="ds_hs" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+                <Cell col="2" text="bind:ITEM_NM" textAlign="left" combodataset="ds_hs" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_add_hs" taborder="6" left="1084" top="63" text="행추가" cssclass="btn_WF_main1" width="60" height="21" onclick="Tab00_Tabpage1_btn_add_hs_onclick" visible="false"/>
+        <Button id="btn_add2_hs" taborder="7" left="1152" top="63" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Tab00_Tabpage1_btn_add2_hs_onclick"/>
+        <Button id="btn_del_hs" taborder="8" left="1228" top="63" text="행삭제" cssclass="btn_WF_main1" width="60" height="21" onclick="Tab00_Tabpage1_btn_del_hs_onclick"/>
+        <Grid id="grd_list" taborder="9" binddataset="ds_list_1" scrolltype="both" minwidth="" bottom="10" left="10" top="96" autofittype="col" width="790" onselectchanged="Tab00_Tabpage1_grd_list00_onselectchanged">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="87"/>
+                <Column size="100"/>
+                <Column size="178"/>
+                <Column size="403"/>
+                <Column size="63"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="배송지유형명"/>
+                <Cell col="2" text="배송지코드"/>
+                <Cell col="3" text="상호"/>
+                <Cell col="4" text="주소"/>
+                <Cell col="5" text="등록여부"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" textAlign="center"/>
+                <Cell col="1" text="bind:DLVY_TYPE_NM" textAlign="center"/>
+                <Cell col="2" text="bind:DLVY_CD" textAlign="center"/>
+                <Cell col="3" text="bind:DLVY_NM" textAlign="left" tooltiptext="bind:DLVY_NM"/>
+                <Cell col="4" text="bind:DLVY_ADDR" textAlign="left" tooltiptext="bind:DLVY_ADDR"/>
+                <Cell col="5" text="bind:CHK" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1" oncolumnchanged="ds_list_1_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="DLVY_CD" type="STRING" size="20"/>
+          <Column id="DLVY_TYPE" type="STRING" size="20"/>
+          <Column id="DLVY_TYPE_NM" type="STRING" size="200"/>
+          <Column id="DLVY_NM" type="STRING" size="200"/>
+          <Column id="DLVY_ADDR" type="STRING" size="200"/>
+          <Column id="TEL_NO1" type="STRING" size="20"/>
+          <Column id="REMARK" type="STRING" size="200"/>
+          <Column id="DLVY_CHANGE_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="DLVY_CD" type="STRING" size="256"/>
+          <Column id="ITEM_CD" type="STRING" size="256"/>
+          <Column id="ITEM_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item_multi"/>
+      <Dataset id="ds_chk">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">등록</Col>
+            <Col id="CODE">Y</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">미등록</Col>
+            <Col id="CODE">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div00_00_00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item2" compid="Div00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item3" compid="Div00_00_00.form.edt_mRoomNo" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item4" compid="Div00_00_00.form.edt_mRoomNo00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item5" compid="Div00_00_00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item18" compid="div_search.form.edt_dlvy" propid="value" datasetid="ds_bp" columnid="BP_NM"/>
+      <BindItem id="item0" compid="div_search.form.edt_addr" propid="value" datasetid="ds_bp" columnid="BP_NM"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    SORS > 화환 반입금지 배송지
+*  @FileName 	SO0009.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.05.21
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO009_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+  /**
+* @description 		공통조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2021.05.21
+* @수정자	   
+* @수정일자
+*/
+// 조회
+this.fn_search = function ()
+{	
+	var id = "SO009_S02";
+	var url = "svcUrl::SO009_S02";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "";
+	var callBackid = "fn_aftersearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+// 저장
+this.fn_save = function ()
+{
+	for (var i=0; i<this.ds_list_2.rowcount; i++)
+	{
+		for (var j=this.ds_list_2.rowcount; j < i; j--)
+		{
+			var chk1 = this.ds_list_2.getColumn(i,"ITEM_CD");
+			var chk2 = this.ds_list_2.getColumn(j,"ITEM_CD");
+			
+			if (chk1 == chk2)
+			{
+				this.alert(i+"번째 중복된 품목이 있습니다. 확인 바랍니다.");
+				return;
+			}
+		}
+	}
+	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO009_M01";
+	var url = "svcUrl::SO009_M01";
+	var inDs = "ds_list_2=ds_list_2:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+"";
+	var callBackid = "fn_aftersave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_aftersave = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	
+	this.fn_search();
+}
+
+// 그리드 변경 이벤트
+this.Tab00_Tabpage1_grd_list00_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{
+	var dlvyCd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"DLVY_CD");
+	
+	var id = "SO009_S01";
+	var url = "svcUrl::SO009_S01";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2";
+	var args = "DLVY_CD="+dlvyCd+"";
+	var callBackid = "fn_aftersearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// 품목 일괄추가
+this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.ds_item_multi.clearData();
+	
+	var sPopupId  = "item_popup";
+	var sUrl      = "SO::SO009_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_item";
+	var oOption   = {title : "품목선택"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 품목 일괄 callback
+this.fn_popupCallback_item = function(sPopId, sRtn)
+{
+	if (this.ds_item_multi.rowcount > 0)
+	{
+		for(var i = 0; i < this.ds_item_multi.rowcount; i++)
+		{
+			this.ds_list_2.addRow();
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"DLVY_CD",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"DLVY_CD"));
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ITEM_CD",this.ds_item_multi.getColumn(i,"ITEM_CD"));
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ITEM_NM",this.ds_item_multi.getColumn(i,"ITEM_NM"));
+		}
+	}	
+}
+
+// 품목삭제
+this.Tab00_Tabpage1_btn_del_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+// 	if (this.confirm("정말 삭제하시겠습니까?"))
+// 	{
+		this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+// 		this.fn_save();
+// 	}	
+};
+
+
+// 배송지 검색
+this.div_search_edt_sono00_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.ds_list_1.set_filterstr("");
+		var val = this.div_search.form.edt_dlvy.value;
+		var val2 = this.div_search.form.edt_addr.value;
+		var val3 = this.div_search.form.cmb_yn.value;
+		
+		var filterstr = "";
+		
+		// 배송지
+		if(!this.gfn_isNull(val))
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DLVY_NM.indexOf('"+val+"')!='-1'";
+			else
+				filterstr += " && DLVY_NM.indexOf('"+val+"')!='-1'";				
+		}
+		
+		// 주소
+		if(!this.gfn_isNull(val2))
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "DLVY_ADDR.indexOf('"+val2+"')!='-1'";
+			else
+				filterstr += " && DLVY_ADDR.indexOf('"+val2+"')!='-1'";				
+		}
+		
+		// 등록여부
+		if(!this.gfn_isNull(val3) && val3 != "-999")
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "CHK.indexOf('"+val3+"')!='-1'";
+			else
+				filterstr += " && CHK.indexOf('"+val3+"')!='-1'";				
+		}
+		
+		this.ds_list_1.set_filterstr(filterstr);
+	}	
+};
+this.div_search_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.ds_list_1.set_filterstr("");
+	var val = this.div_search.form.edt_dlvy.value;
+	var val2 = this.div_search.form.edt_addr.value;
+	var val3 = this.div_search.form.cmb_yn.value;
+	
+	var filterstr = "";
+	
+	// 배송지
+	if(!this.gfn_isNull(val))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "DLVY_NM.indexOf('"+val+"')!='-1'";
+		else
+			filterstr += " && DLVY_NM.indexOf('"+val+"')!='-1'";				
+	}
+	
+	// 주소
+	if(!this.gfn_isNull(val2))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "DLVY_ADDR.indexOf('"+val2+"')!='-1'";
+		else
+			filterstr += " && DLVY_ADDR.indexOf('"+val2+"')!='-1'";				
+	}
+	
+	// 등록여부
+	if(!this.gfn_isNull(val3) && val3 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "CHK.indexOf('"+val3+"')!='-1'";
+		else
+			filterstr += " && CHK.indexOf('"+val3+"')!='-1'";				
+	}
+	
+	this.ds_list_1.set_filterstr(filterstr);
+};
+]]></Script>
+  </Form>
+</FDL>

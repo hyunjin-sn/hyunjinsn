@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P14" width="800" height="200" titletext="New Form" onload="SO001_P14_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="200" mobileorientation="landscape" width="800">
+        <Static id="Static00" taborder="0" text="발주 확정 취소 작업을 진행합니다. 계속 하시겠습니까?" left="40" top="10" width="400" height="60" color="#f49004" font="bold 16px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+        <CheckBox id="chk_alram" taborder="1" text="알림톡 발송여부" left="56" top="81" width="150" height="20"/>
+        <CheckBox id="chk_call" taborder="2" text="오토콜 발송여부" left="56" top="122" width="150" height="20"/>
+        <Static id="Static01" taborder="3" left="180" top="81" width="132" height="20"/>
+        <Static id="Static03" taborder="4" left="180" top="122" width="132" height="20"/>
+        <Button id="btn_confirm" taborder="5" left="640" top="169" width="69" height="21" text="작업시작" cssclass="btn_WF_main1" onclick="btn_confirm_onclick"/>
+        <Button id="btn_cancel" taborder="6" left="720" top="169" width="69" height="21" text="취소" cssclass="btn_WF_main1" onclick="btn_cancel_onclick"/>
+        <Grid id="grd_list03" taborder="7" scrolltype="both" minwidth="" top="76" left="325" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" width="465" height="74" binddataset="ds_list_2" oncellclick="Div00_grd_list03_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="67"/>
+                <Column size="122"/>
+                <Column size="229"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="구분"/>
+                <Cell col="1" text="지점/본부"/>
+                <Cell col="2" text="취소 사유(필수)" color="#f30111"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:BRANCH_GROUP" textAlign="center"/>
+                <Cell col="1" combotype="filterlike" text="bind:BP_NM"/>
+                <Cell col="2" combotype="filterlike" text="bind:REASON" displaytype="editcontrol" edittype="text"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  발주확정 팝업
+*  @MenuPath    SO > SO0001_P13
+*  @FileName 	SO0001_P13.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.14
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var soNo = this.getOwnerFrame().soNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P14_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//세팅
+	this.chk_alram.set_value(true);
+	this.chk_call.set_value(true);
+	
+	// 데이터 조회
+	this.fn_search();
+	//trace(soNo);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {		
+	// 발송 조회
+	var id = "SO001_P13";
+	var url = "svcUrl::SO001_P13";
+	var inDs = "";
+	var outDs = "ds_list=ds_list ds_list_2=ds_list_2";
+	var args = "SO_NO="+soNo+"";
+	//var args = "SO_NO=201909010122";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function ()
+ {
+	//trace(this.ds_list.getColumn(0,"CHK"));
+	this.ds_list.filter("DATA_TYPE=='SEND_TALK_FLAG'")
+	if (this.ds_list.getColumn(0,"CHK") == "1")
+	{
+		this.Static01.set_text("[ 발송 내역 있음 ]")
+	} else
+	{
+		this.Static01.set_text("[ 발송 내역 없음 ]")
+	}
+	this.ds_list.filter("")
+	
+	this.ds_list.filter("DATA_TYPE=='SEND_AUTO_CALL'")
+	if (this.ds_list.getColumn(0,"CHK") == "1")
+	{
+		this.Static03.set_text("[ 발송 내역 있음 ]")
+	} else
+	{
+		this.Static03.set_text("[ 발송 내역 없음 ]")
+	}
+	this.ds_list.filter("")
+ };
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		작업시작버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.14
+* @수정자	   
+* @수정일자
+*/
+this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	for (var i=0; i<this.ds_list_2.rowcount; i++)
+	{
+		if (this.gfn_isNull(this.ds_list_2.getColumn(i,"REASON")))
+		{
+			this.alert(i+1+"번째 취소사유를 입력 바랍니다.")
+			return;
+		}
+	}
+	//trace(this.chk_alram.value);
+	this.ds_list_out.addRow();
+	if (this.chk_alram.value == true)
+	{
+		this.ds_list_out.setColumn(0,"SEND_TALK_FLAG","1");
+	} else
+	{
+		this.ds_list_out.setColumn(0,"SEND_TALK_FLAG","0");
+	}
+	
+	if (this.chk_call.value == true)
+	{
+		this.ds_list_out.setColumn(0,"SEND_AUTO_CALL","1");
+	} else
+	{
+		this.ds_list_out.setColumn(0,"SEND_AUTO_CALL","0");
+	}
+	
+	if (this.ds_list_2.rowcount == 1)
+	{
+		this.ds_list_out.setColumn(0,"F_BRANCH_GROUP",this.ds_list_2.getColumn(0,"BRANCH_GROUP"));
+		this.ds_list_out.setColumn(0,"F_BP_CD",this.ds_list_2.getColumn(0,"BP_CD"));
+		this.ds_list_out.setColumn(0,"F_BP_NM",this.ds_list_2.getColumn(0,"BP_NM"));
+		this.ds_list_out.setColumn(0,"F_REASON",this.ds_list_2.getColumn(0,"REASON"));
+	} else if (this.ds_list_2.rowcount == 2)
+	{
+		this.ds_list_out.setColumn(0,"F_BRANCH_GROUP",this.ds_list_2.getColumn(0,"BRANCH_GROUP"));
+		this.ds_list_out.setColumn(0,"F_BP_CD",this.ds_list_2.getColumn(0,"BP_CD"));
+		this.ds_list_out.setColumn(0,"F_BP_NM",this.ds_list_2.getColumn(0,"BP_NM"));
+		this.ds_list_out.setColumn(0,"F_REASON",this.ds_list_2.getColumn(0,"REASON"));
+		this.ds_list_out.setColumn(0,"M_BRANCH_GROUP",this.ds_list_2.getColumn(1,"BRANCH_GROUP"));
+		this.ds_list_out.setColumn(0,"M_BP_CD",this.ds_list_2.getColumn(1,"BP_CD"));
+		this.ds_list_out.setColumn(0,"M_BP_NM",this.ds_list_2.getColumn(1,"BP_NM"));
+		this.ds_list_out.setColumn(0,"M_REASON",this.ds_list_2.getColumn(1,"REASON"));
+	}
+	
+	
+	this.close(this.efn_jsonRtn(this.ds_list_out));
+};
+
+this.btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="DATA_TYPE" type="STRING" size="10"/>
+          <Column id="CHK" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_out">
+        <ColumnInfo>
+          <Column id="SEND_TALK_FLAG" type="STRING" size="256"/>
+          <Column id="SEND_FAX_FLAG" type="STRING" size="256"/>
+          <Column id="SEND_AUTO_CALL" type="STRING" size="256"/>
+          <Column id="F_BRANCH_GROUP" type="STRING" size="256"/>
+          <Column id="F_BP_CD" type="STRING" size="256"/>
+          <Column id="F_BP_NM" type="STRING" size="256"/>
+          <Column id="F_REASON" type="STRING" size="256"/>
+          <Column id="M_BRANCH_GROUP" type="STRING" size="256"/>
+          <Column id="M_BP_CD" type="STRING" size="256"/>
+          <Column id="M_BP_NM" type="STRING" size="256"/>
+          <Column id="M_REASON" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="BRANCH_GROUP" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="REASON" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P01" width="1200" height="400" titletext="New Form" onload="SO001_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="1200">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" height="398" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="10" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="53"/>
+                      <Column size="80"/>
+                      <Column size="97"/>
+                      <Column size="338"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="주문번호"/>
+                      <Cell col="2" text="품목명"/>
+                      <Cell col="3" text="고객사명"/>
+                      <Cell col="4" text="대상자"/>
+                      <Cell col="5" text="주문자"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:AD_NM"/>
+                      <Cell col="3" text="bind:BP_NM"/>
+                      <Cell col="4" text="bind:OWN_NM" textAlign="center"/>
+                      <Cell col="5" text="bind:REQ_NM" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO001_P01
+*  @FileName 	SO001_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var args1 = this.getOwnerFrame().args1		// 시작일
+var args2 = this.getOwnerFrame().args2		// 종료일
+var args3 = this.getOwnerFrame().args3		// 고객사코드
+var args4 = this.getOwnerFrame().args4		// 의전본부
+var args5 = this.getOwnerFrame().args5		// 품목유형
+var args6 = this.getOwnerFrame().args6		// 품목명
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_search = function ()
+{
+	// 조회
+	var id = "TM001_P01_S";
+	var url = "svcUrl::TM001_P01_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" BP_CD="+args3+" PO_BP_CD="+args4+" AD_CD="+args5+" AD_NM="+args6+"";
+	var callBackid = "fn_afterSearch";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="AD_NM" type="STRING" size="100"/>
+          <Column id="AD_CD" type="STRING" size="20"/>
+          <Column id="PO_BP_CD" type="STRING" size="20"/>
+          <Column id="SOLD_TO_PARTY" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="REQ_NM" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_CD"/>
+            <Col id="BP_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

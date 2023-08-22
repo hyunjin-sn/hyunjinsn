@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P19" width="800" height="380" titletext="New Form" onload="SO001_P19_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="380" mobileorientation="landscape" width="800">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="sta_24" taborder="11" left="464" top="144" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="1" left="0" top="102" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="2" scrolltype="both" minwidth="" left="10" right="400" top="144" bottom="10" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" onkeydown="Div_client_grd_list_onkeydown">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="94"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="주문번호"/>
+                      <Cell col="1" text="접수자"/>
+                      <Cell col="2" text="주문자"/>
+                      <Cell col="3" text="대상자"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="1" text="bind:INSRT_USER_ID"/>
+                      <Cell col="2" text="bind:REQ_NM"/>
+                      <Cell col="3" text="bind:OWN_NM" textAlign="center" maskeditformat="##,###"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static03_00" taborder="3" text="고객사" left="0" top="33" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_bpCd" taborder="4" left="102" top="33" width="388" height="21" onkeyup="Div_client_div_search_edt_bpCd_onkeyup" readonly="true"/>
+              <Static id="Static00_00" taborder="5" text="배송지" left="1" top="68" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_bpNm" taborder="6" left="101" top="68" width="389" height="21" onkeyup="Div_client_div_search_edt_bpCd_onkeyup" readonly="true"/>
+              <Static id="Static05_00" taborder="7" text="중복주문정보" left="20" top="1" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static05_00_00" taborder="8" text="주문 상세 정보" left="429" top="110" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static35" taborder="9" text="주문번호" left="425" top="144" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mNm" taborder="10" left="529" top="148" width="201" height="21" enable="true" readonly="false"/>
+              <Static id="sta_24_00" taborder="12" left="464" top="172" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00" taborder="13" text="접수자" left="425" top="172" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mNm00" taborder="14" left="529" top="176" width="201" height="21" enable="true" readonly="false"/>
+              <Static id="sta_24_00_00" taborder="15" left="464" top="200" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00" taborder="16" text="주문일자" left="425" top="200" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_24_00_00_00" taborder="17" left="464" top="228" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00_00" taborder="18" text="배송일자" left="425" top="228" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_24_00_00_00_00" taborder="19" left="464" top="256" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00_00_00" taborder="20" text="경조사유" left="425" top="256" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_24_00_00_00_00_00" taborder="21" left="464" top="284" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00_00_00_00" taborder="22" text="고인명" left="425" top="284" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mNm00_00_00_00_00" taborder="23" left="529" top="288" width="201" height="21" enable="true" readonly="false"/>
+              <Static id="sta_24_00_00_00_00_00_00" taborder="24" left="464" top="312" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00_00_00_00_00" taborder="25" text="대상자" left="425" top="312" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mNm00_00_00_00_00_00" taborder="26" left="529" top="316" width="201" height="21" enable="true" readonly="false"/>
+              <Static id="sta_24_00_00_00_00_00_00_00" taborder="27" left="464" top="340" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="Static35_00_00_00_00_00_00_00" taborder="28" text="주문자" left="425" top="340" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mNm00_00_00_00_00_00_00" taborder="29" left="529" top="344" width="201" height="21" enable="true" readonly="false"/>
+              <MaskEdit id="MaskEdit01" taborder="30" left="530" top="232" width="200" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" readonly="true"/>
+              <MaskEdit id="MaskEdit01_00" taborder="31" left="530" top="204" width="200" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" readonly="true"/>
+              <Edit id="edt_mNm00_00_00_00_00_01" taborder="32" left="529" top="260" width="201" height="21" enable="true" readonly="false"/>
+              <Static id="Static01" taborder="33" text="※ 주문번호를 더블 클릭 시 해당 주문번호가 조회 됩니다." left="11" top="117" width="389" height="25" color="RED"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점정보 팝업
+*  @MenuPath    SO > SO0001_P11
+*  @FileName 	SO0001_P11.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.06
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var bpCd = this.getOwnerFrame().bpCd
+var bpNm = this.getOwnerFrame().bpNm
+var dlvyCd = this.getOwnerFrame().dlvyCd
+var dlvyNm = this.getOwnerFrame().dlvyNm
+var soNo = this.getOwnerFrame().soNo
+var dlvyDt = this.getOwnerFrame().dlvyDt
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P19_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div_client.form.edt_bpCd.set_value(bpNm);
+	this.Div_client.form.edt_bpNm.set_value(dlvyNm);
+	
+	// 데이터 조회
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {	
+	var args1 = bpCd;
+	var args2 = dlvyCd;
+	var args3 = soNo;
+	var args4 = dlvyDt;
+	
+	// 중복 확인
+	var id = "SO001_P07";
+	var url = "svcUrl::SO001_P07";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "SOLD_TO_PARTY="+args1+" DLVY_CD="+args2+" SO_NO="+args3+" DLVY_DT2="+args4+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	this.close(this.efn_jsonRtn(this.ds_list));
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="SO_DT" type="DATETIME" size="23"/>
+          <Column id="DLVY_DT" type="DATETIME" size="23"/>
+          <Column id="HS_CD" type="STRING" size="20"/>
+          <Column id="M_NAME" type="STRING" size="20"/>
+          <Column id="OWN_NM" type="STRING" size="20"/>
+          <Column id="REQ_NM" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.edt_bpCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item1" compid="Div_client.form.edt_bpNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item2" compid="Div_client.form.edt_mNm" propid="value" datasetid="ds_list" columnid="SO_NO"/>
+      <BindItem id="item3" compid="Div_client.form.edt_mNm00" propid="value" datasetid="ds_list" columnid="INSRT_USER_ID"/>
+      <BindItem id="item10" compid="Div_client.form.MaskEdit01" propid="value" datasetid="ds_list" columnid="DLVY_DT"/>
+      <BindItem id="item5" compid="Div_client.form.MaskEdit01_00" propid="value" datasetid="ds_list" columnid="SO_DT"/>
+      <BindItem id="item6" compid="Div_client.form.edt_mNm00_00_00_00_00" propid="value" datasetid="ds_list" columnid="M_NAME"/>
+      <BindItem id="item7" compid="Div_client.form.edt_mNm00_00_00_00_00_00" propid="value" datasetid="ds_list" columnid="OWN_NM"/>
+      <BindItem id="item8" compid="Div_client.form.edt_mNm00_00_00_00_00_00_00" propid="value" datasetid="ds_list" columnid="REQ_NM"/>
+      <BindItem id="item9" compid="Div_client.form.edt_mNm00_00_00_00_00_01" propid="value" datasetid="ds_list" columnid="HS_CD"/>
+    </Bind>
+  </Form>
+</FDL>

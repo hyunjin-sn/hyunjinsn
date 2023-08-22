@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P23" width="1061" height="671" titletext="New Form" onload="SO001_P23_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="671" mobileorientation="landscape" width="1061">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <ImageViewer id="ImageViewer00" taborder="1" text="ImageViewer00" left="10" top="10" right="10" image="url('theme::HJW/images2/SO001_sinwoori.jpg')" stretch="fit" height="5371"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="bp_cd" type="STRING" size="20"/>
+          <Column id="bp_nm" type="STRING" size="200"/>
+          <Column id="cont_no" type="STRING" size="20"/>
+          <Column id="cont_type_nm" type="STRING" size="200"/>
+          <Column id="cont_fr_dt" type="DATETIME" size="23"/>
+          <Column id="cont_to_dt" type="DATETIME" size="23"/>
+          <Column id="valid_yn" type="STRING" size="1"/>
+          <Column id="cont_desc" type="STRING" size="200"/>
+          <Column id="s_day" type="INT" size="11"/>
+          <Column id="dept_nm" type="STRING" size="20"/>
+          <Column id="prsn_nm" type="STRING" size="20"/>
+          <Column id="pay_cond_nm" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="sub_type_code_nm1" type="STRING" size="402"/>
+          <Column id="sub_type_code_nm2" type="STRING" size="402"/>
+          <Column id="hs_code" type="STRING" size="20"/>
+          <Column id="hs_nm" type="STRING" size="1000"/>
+          <Column id="item_group_nm" type="STRING" size="40"/>
+          <Column id="item_cd" type="STRING" size="20"/>
+          <Column id="item_nm" type="STRING" size="100"/>
+          <Column id="qty" type="BIGDECIMAL" size="20"/>
+          <Column id="price_so" type="BIGDECIMAL" size="20"/>
+          <Column id="price_so2" type="BIGDECIMAL" size="20"/>
+          <Column id="price_po" type="BIGDECIMAL" size="20"/>
+          <Column id="mandatory_yn" type="STRING" size="1"/>
+          <Column id="branch_grp_nm" type="STRING" size="200"/>
+          <Column id="prm_disp_yn" type="STRING" size="1"/>
+          <Column id="prm_mandatory_yn" type="STRING" size="1"/>
+          <Column id="vat_type" type="STRING" size="20"/>
+          <Column id="vat_type_nm" type="STRING" size="200"/>
+          <Column id="pay_cond_nm" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

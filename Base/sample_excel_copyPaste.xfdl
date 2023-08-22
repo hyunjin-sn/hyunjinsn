@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="sample_excel_copyPaste" classname="sample_excel_copyPaste" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="4.59%" top="44" right="34.77%" height="281" binddataset="productionPlanList" selecttype="area" autoenter="select" onkeydown="Grid00_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="SAENGSAN_PLAN_NO"/>
+                <Cell col="1" text="SAENGSAN_GYEHOEK"/>
+                <Cell col="2" text="SAENGSAN_PLAN_DE"/>
+                <Cell col="3" text="SAENGSAN_GYEHOEK_NO_AUTO"/>
+                <Cell col="4" text="SAENGSAN_BUSEO"/>
+                <Cell col="5" text="SAENGSAN_PLANJA"/>
+                <Cell col="6" text="JEPUM_CD"/>
+                <Cell col="7" text="JEPUM_NM"/>
+                <Cell col="8" text="JUNGRYANG"/>
+                <Cell col="9" text="BATCH_SU"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:SAENGSAN_PLAN_NO"/>
+                <Cell col="1" text="bind:SAENGSAN_GYEHOEK"/>
+                <Cell col="2" text="bind:SAENGSAN_PLAN_DE"/>
+                <Cell col="3" text="bind:SAENGSAN_GYEHOEK_NO_AUTO"/>
+                <Cell col="4" text="bind:SAENGSAN_BUSEO"/>
+                <Cell col="5" text="bind:SAENGSAN_PLANJA"/>
+                <Cell col="6" text="bind:JEPUM_CD"/>
+                <Cell col="7" text="bind:JEPUM_NM"/>
+                <Cell col="8" text="bind:JUNGRYANG"/>
+                <Cell col="9" text="bind:BATCH_SU"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <PopupDiv id="PopupDiv00" visible="false" left="60" top="353" width="290" height="334" oncloseup="PopupDiv00_oncloseup">
+          <Layouts>
+            <Layout>
+              <TextArea id="TextArea00" taborder="0" left="10" top="35" width="265" height="230" wordWrap="char"/>
+              <Button id="Button00" taborder="1" text="확인" left="55" top="283" width="166" height="34" onclick="PopupDiv00_Button00_onclick"/>
+              <Static id="Static00" taborder="2" text="복사한 데이터를 붙여 넣고 확인 버튼을 클릭 하세요." left="13" top="1" width="259" height="38" wordWrap="char"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="productionPlanList" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" cancolumnchange="productionPlanList_cancolumnchange" onrowposchanged="productionPlanList_onrowposchanged">
+        <ColumnInfo>
+          <Column id="SAENGSAN_PLAN_NO" type="STRING" size="256"/>
+          <Column id="SAENGSAN_GYEHOEK" type="STRING" size="256"/>
+          <Column id="SAENGSAN_PLAN_DE" type="STRING" size="256"/>
+          <Column id="SAENGSAN_GYEHOEK_NO_AUTO" type="STRING" size="256"/>
+          <Column id="SAENGSAN_BUSEO" type="STRING" size="256"/>
+          <Column id="SAENGSAN_PLANJA" type="STRING" size="256"/>
+          <Column id="JEPUM_CD" type="STRING" size="256"/>
+          <Column id="JEPUM_NM" type="STRING" size="256"/>
+          <Column id="JUNGRYANG" type="BIGDECIMAL" size="256"/>
+          <Column id="BATCH_SU" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="SAENGSAN_PLAN_NO"/>
+            <Col id="SAENGSAN_GYEHOEK"/>
+            <Col id="SAENGSAN_PLAN_DE"/>
+            <Col id="SAENGSAN_GYEHOEK_NO_AUTO"/>
+            <Col id="SAENGSAN_BUSEO"/>
+            <Col id="SAENGSAN_PLANJA"/>
+            <Col id="JEPUM_CD"/>
+            <Col id="JEPUM_NM"/>
+            <Col id="JUNGRYANG"/>
+            <Col id="BATCH_SU"/>
+          </Row>
+          <Row>
+            <Col id="SAENGSAN_PLAN_NO"/>
+            <Col id="SAENGSAN_GYEHOEK"/>
+            <Col id="SAENGSAN_PLAN_DE"/>
+            <Col id="SAENGSAN_GYEHOEK_NO_AUTO"/>
+            <Col id="SAENGSAN_BUSEO"/>
+            <Col id="SAENGSAN_PLANJA"/>
+            <Col id="JEPUM_CD"/>
+            <Col id="JEPUM_NM"/>
+            <Col id="JUNGRYANG"/>
+            <Col id="BATCH_SU"/>
+          </Row>
+          <Row>
+            <Col id="SAENGSAN_PLAN_NO"/>
+            <Col id="SAENGSAN_GYEHOEK"/>
+            <Col id="SAENGSAN_PLAN_DE"/>
+            <Col id="SAENGSAN_GYEHOEK_NO_AUTO"/>
+            <Col id="SAENGSAN_BUSEO"/>
+            <Col id="SAENGSAN_PLANJA"/>
+            <Col id="JEPUM_CD"/>
+            <Col id="JEPUM_NM"/>
+            <Col id="JUNGRYANG"/>
+            <Col id="BATCH_SU"/>
+          </Row>
+          <Row>
+            <Col id="SAENGSAN_PLAN_NO"/>
+            <Col id="SAENGSAN_GYEHOEK"/>
+            <Col id="SAENGSAN_PLAN_DE"/>
+            <Col id="SAENGSAN_GYEHOEK_NO_AUTO"/>
+            <Col id="SAENGSAN_BUSEO"/>
+            <Col id="SAENGSAN_PLANJA"/>
+            <Col id="JEPUM_CD"/>
+            <Col id="JEPUM_NM"/>
+            <Col id="JUNGRYANG"/>
+            <Col id="BATCH_SU"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Grid00_onkeydown = function(obj:Grid, e:nexacro.KeyEventInfo)
+{
+	//복사(Ctrl + C), 붙여넣기(Ctrl + V) 키입력처리 공통함수 호출
+	this.gfn_grdCopy_Paste(obj, e);
+}
+
+
+this.PopupDiv00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PopupDiv00.closePopup();
+};
+
+this.PopupDiv00_oncloseup = function(obj:nexacro.PopupDiv,e:nexacro.EventInfo)
+{
+	this.fn_paste(this.Grid00,this.PopupDiv00.form.TextArea00.value);
+	this.PopupDiv00.form.TextArea00.set_value("");
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="VM007_P02" width="432" height="441" titletext="New Form" onload="SO001_P00_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="441" mobileorientation="landscape" width="432">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="10" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" right="0" height="40">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="고객사" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="txtBpCd" taborder="1" left="82" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1" left="352"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="70" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" left="10" top="60" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col" selecttype="multiarea" binddataset="ds_list1" right="0" bottom="0">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="150"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="코드"/>
+                      <Cell col="1" text="고객사명"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:BP_CD"/>
+                      <Cell col="1" text="bind:BP_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  고객사 조회 팝업
+*  @MenuPath    VM > VM007_P02
+*  @FileName 	VM007_P02.xfdl 
+*  @Creator 	신기원
+*  @CreateDate 	2020.11.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.VM007_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	this.fn_search();
+}
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fn_search = function ()
+{
+	var Arg_1 = this.gfn_nvl(this.ds_cond.getColumn(0,"BP_CD"),"");
+
+    var id = "VM007_S01";
+	var url = "svcUrl::VM007_S01";
+	var inDs = "";
+	var outDs = "ds_list1=ds_list1";
+	var args = "BP_CD="+Arg_1+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+    if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		신기원
+* @작성일자	   	2020.11.15
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+}
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.btn_ok_onclick();
+}
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_btn_search();
+	}
+}
+
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list1));
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list1">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="ROWNUM" type="LONG" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_CD"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.txtBpCd" propid="accessibilityaction" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.txtBpCd" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

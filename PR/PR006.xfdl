@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SA001" width="1500" height="600" titletext="New Form" onload="SA001_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="0" left="9" top="10" height="34" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="조회년도" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="txt_BaseMonth" taborder="1" top="6" height="20" dateformat="yyyy" editformat="yyyy" type="spin" width="125" left="93"/>
+                    <Button id="btn_del" taborder="2" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_btn_del_onclick"/>
+                    <Static id="Static03_00" taborder="3" text="품목명" left="260" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="4" left="362" top="4" width="227" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Grid id="grd_list" taborder="2" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="9" top="60" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col" autofittype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="39"/>
+                      <Column size="67"/>
+                      <Column size="238"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                      <Column size="55"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="순번"/>
+                      <Cell col="1" rowspan="2" text="품목코드"/>
+                      <Cell col="2" rowspan="2" text="품목명"/>
+                      <Cell col="3" colspan="13" text="판매량"/>
+                      <Cell col="16" colspan="13" text="탁송량"/>
+                      <Cell row="1" col="3" text="1월"/>
+                      <Cell row="1" col="4" text="2월"/>
+                      <Cell row="1" col="5" text="3월"/>
+                      <Cell row="1" col="6" text="4월"/>
+                      <Cell row="1" col="7" text="5월"/>
+                      <Cell row="1" col="8" text="6월"/>
+                      <Cell row="1" col="9" text="7월"/>
+                      <Cell row="1" col="10" text="8월"/>
+                      <Cell row="1" col="11" text="9월"/>
+                      <Cell row="1" col="12" text="10월"/>
+                      <Cell row="1" col="13" text="11월"/>
+                      <Cell row="1" col="14" text="12월"/>
+                      <Cell row="1" col="15" text="합계"/>
+                      <Cell row="1" col="16" text="1월"/>
+                      <Cell row="1" col="17" text="2월"/>
+                      <Cell row="1" col="18" text="3월"/>
+                      <Cell row="1" col="19" text="4월"/>
+                      <Cell row="1" col="20" text="5월"/>
+                      <Cell row="1" col="21" text="6월"/>
+                      <Cell row="1" col="22" text="7월"/>
+                      <Cell row="1" col="23" text="8월"/>
+                      <Cell row="1" col="24" text="9월"/>
+                      <Cell row="1" col="25" text="10월"/>
+                      <Cell row="1" col="26" text="11월"/>
+                      <Cell row="1" col="27" text="12월"/>
+                      <Cell row="1" col="28" text="합계"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:품목코드" textAlign="center"/>
+                      <Cell col="2" text="bind:품목명" tooltiptext="bind:품목명"/>
+                      <Cell col="3" text="bind:MONTH1"/>
+                      <Cell col="4" text="bind:MONTH2"/>
+                      <Cell col="5" text="bind:MONTH3"/>
+                      <Cell col="6" text="bind:MONTH4"/>
+                      <Cell col="7" text="bind:MONTH5"/>
+                      <Cell col="8" text="bind:MONTH6"/>
+                      <Cell col="9" text="bind:MONTH7"/>
+                      <Cell col="10" text="bind:MONTH8"/>
+                      <Cell col="11" text="bind:MONTH9"/>
+                      <Cell col="12" text="bind:MONTH10"/>
+                      <Cell col="13" text="bind:MONTH11"/>
+                      <Cell col="14" text="bind:MONTH12"/>
+                      <Cell col="15" text="bind:BASE_TOTAL"/>
+                      <Cell col="16" text="bind:STO_MONTH1"/>
+                      <Cell col="17" text="bind:STO_MONTH2"/>
+                      <Cell col="18" text="bind:STO_MONTH3"/>
+                      <Cell col="19" text="bind:STO_MONTH4"/>
+                      <Cell col="20" text="bind:STO_MONTH5"/>
+                      <Cell col="21" text="bind:STO_MONTH6"/>
+                      <Cell col="22" text="bind:STO_MONTH7"/>
+                      <Cell col="23" text="bind:STO_MONTH8"/>
+                      <Cell col="24" text="bind:STO_MONTH9"/>
+                      <Cell col="25" text="bind:STO_MONTH10"/>
+                      <Cell col="26" text="bind:STO_MONTH11"/>
+                      <Cell col="27" text="bind:STO_MONTH12"/>
+                      <Cell col="28" text="bind:STO_TOTAL"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2"/>
+                      <Cell col="3" text="expr:dataset.getSum(&quot;MONTH1&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="4" text="expr:dataset.getSum(&quot;MONTH2&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="5" text="expr:dataset.getSum(&quot;MONTH3&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="6" text="expr:dataset.getSum(&quot;MONTH4&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="7" text="expr:dataset.getSum(&quot;MONTH5&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;MONTH6&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="9" text="expr:dataset.getSum(&quot;MONTH7&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="10" text="expr:dataset.getSum(&quot;MONTH8&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="11" text="expr:dataset.getSum(&quot;MONTH9&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="12" text="expr:dataset.getSum(&quot;MONTH10&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="13" text="expr:dataset.getSum(&quot;MONTH11&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="14" text="expr:dataset.getSum(&quot;MONTH12&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="15" text="expr:dataset.getSum(&quot;BASE_TOTAL&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="16" text="expr:dataset.getSum(&quot;STO_MONTH1&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="17" text="expr:dataset.getSum(&quot;STO_MONTH2&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="18" text="expr:dataset.getSum(&quot;STO_MONTH3&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="19" text="expr:dataset.getSum(&quot;STO_MONTH4&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="20" text="expr:dataset.getSum(&quot;STO_MONTH5&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="21" text="expr:dataset.getSum(&quot;STO_MONTH6&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="22" text="expr:dataset.getSum(&quot;STO_MONTH7&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="23" text="expr:dataset.getSum(&quot;STO_MONTH8&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="24" text="expr:dataset.getSum(&quot;STO_MONTH9&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="25" text="expr:dataset.getSum(&quot;STO_MONTH10&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="26" text="expr:dataset.getSum(&quot;STO_MONTH11&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="27" text="expr:dataset.getSum(&quot;STO_MONTH12&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="28" text="expr:dataset.getSum(&quot;STO_TOTAL&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  손익관리분석 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.05
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SA001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	var sDate = this.gfn_getDate().substr(0,4);
+	
+	this.Div_client.form.div_search.form.txt_BaseMonth.set_value(sDate);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{	
+	var args1 = this.Div_client.form.div_search.form.txt_BaseMonth.value.substr(0,4);
+	
+	// 조회
+	var id = "PR006_S01";
+	var url = "svcUrl::PR006_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "YYYY="+args1+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+};
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+
+this.fn_filter = function ()
+{
+	var itemCd = this.Div_client.form.div_search.form.edt_sono.text;							// 품목코드
+// 	var div = this.Div_client.form.div_search.form.Combo00.value;								// 선후불
+// 	var status = this.Div_client.form.div_search.form.Combo00_00.value;							// 품목상태
+// 	var memo = this.Div_client.form.div_search.form.Combo00_00_00.value;						// 메모여부
+		
+	var filterstr = "";
+	
+	//품목명	
+	if(!this.gfn_isNull(itemCd))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "품목명.indexOf('"+itemCd+"')!='-1'";
+			filterstr += " || 품목코드.indexOf('"+itemCd+"')!='-1'";				
+	}
+	
+// 	//선후불	
+// 	if(!this.gfn_isNull(div) && div != "전체")
+// 	{
+// 		if(this.gfn_isNull(filterstr))
+// 			filterstr = "선후불=='"+div+"'";
+// 		else filterstr += " && 선후불=='"+div+"'";				
+// 	}
+// 	
+// 	//품목상태
+// 	if(!this.gfn_isNull(status) && status != "전체")
+// 	{
+// 		if(this.gfn_isNull(filterstr))
+// 			filterstr = "상태=='"+status+"'";
+// 		else filterstr += " && 상태=='"+status+"'";				
+// 	}
+	
+	this.ds_list.set_filterstr(filterstr);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="품목코드" type="STRING" size="50"/>
+          <Column id="품목명" type="STRING" size="100"/>
+          <Column id="월평균출고량" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH1" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH2" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH3" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH4" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH5" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH6" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH7" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH8" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH9" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH10" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH11" type="BIGDECIMAL" size="40"/>
+          <Column id="MONTH12" type="BIGDECIMAL" size="40"/>
+          <Column id="BASE_TOTAL" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH1" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH2" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH3" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH4" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH5" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH6" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH7" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH8" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH9" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH10" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH11" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_MONTH12" type="BIGDECIMAL" size="40"/>
+          <Column id="STO_TOTAL" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.txt_BaseMonth" propid="value" datasetid="ds_costM" columnid="YM"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+    </Bind>
+  </Form>
+</FDL>

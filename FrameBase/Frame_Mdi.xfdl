@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Mdi" width="862" height="35" titletext="New Form" onload="MdiFrame_onload" scrollbartype="none" cssclass="frm_bg">
+    <Layouts>
+      <Layout height="35" mobileorientation="landscape" width="862">
+        <Static id="Static00" taborder="7" left="0" top="0" height="100%" width="100%"/>
+        <Button id="btn_home" taborder="0" left="3" top="8" width="24" cssclass="btn_MF_home" onclick="btn_home_onclick" height="23" background="transparent"/>
+        <Tab id="tab_mdi" taborder="6" tabindex="0" left="32" onchanged="tab_mdi_onchanged" onextrabuttonclick="tab_mdi_onextrabuttonclick" showextrabutton="true" top="6" right="111" onlbuttondown="tab_mdi_onlbuttondown" bottom="1" cssclass="tab_MF_tab" extrabuttonsize="20 20">
+          <Tabpages>
+            <Tabpage id="Tabpage5" text="Tabpage5"/>
+          </Tabpages>
+        </Tab>
+        <Button id="btn_menuOpen" taborder="8" left="200" top="90" width="13" height="26" cssclass="btn_WF_menuClose" onclick="btn_menuOpen_onclick"/>
+        <Button id="btn_closeAll" taborder="1" top="8" width="20" height="20" cssclass="btn_MF_allX" right="10" onclick="fn_arrange"/>
+        <Button id="btn_vertical" taborder="2" top="8" width="20" height="20" cssclass="btn_MF_H" right="30" onclick="fn_arrange"/>
+        <Button id="btn_horizontal" taborder="3" top="8" width="20" height="20" cssclass="btn_MF_V" right="50" onclick="fn_arrange"/>
+        <Button id="btn_cascade" taborder="4" top="8" width="20" height="20" cssclass="btn_MF_min" right="70" onclick="fn_arrange"/>
+        <Button id="btn_maximize" taborder="5" top="8" width="20" height="20" cssclass="btn_MF_max" right="90" onclick="fn_arrange"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.objApp = this.gfn_getApplication();
+
+this.MdiFrame_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//기본 tabpage delete
+	this.tab_mdi.removeTabpage(0);	
+};
+
+// 탭 추가
+this.fn_addTab = function(sFormId, sMenuNm)
+{
+	this.tab_mdi.insertTabpage(sFormId, -1, "", sMenuNm);
+	this.objApp.av_VFrameSet1.set_separatesize("35,0,*");	
+}
+
+this.tab_mdi_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventInfo)
+{
+	var sFormID = obj.tabpages[e.postindex].name;	
+	this.objApp.av_WorkFrame[sFormID].form.setFocus();
+	this.objApp.av_VFrameSet1.set_separatesize("35,0,*");	
+};
+
+this.tab_mdi_onextrabuttonclick = function(obj:nexacro.Tab,e:nexacro.TabMouseEventInfo)
+{
+	var sFormID = obj.tabpages[e.index].name;	
+	obj.removeTabpage(e.index);	
+	
+	this.objApp.av_WorkFrame[sFormID].form.close();
+    
+    var nRow = this.objApp.gds_openForm.findRow("FORM_ID", sFormID);
+    this.objApp.gds_openForm.deleteRow(nRow);
+    if(obj.getTabpageCount() < 1){
+        this.objApp.av_VFrameSet1.set_separatesize("35,*,0");	
+    }    
+};
+
+this.fn_arrange = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var strType = obj.name.replace("btn_", "");    
+	var arrObj = this.objApp.av_WorkFrame.all;
+	
+	switch(strType)
+	{
+		case "maximize" :
+			for(var i=0; i<arrObj.length; i++) 
+			{
+				this.objApp.av_WorkFrame.frames[i].set_openstatus("maximize");			
+				this.objApp.av_WorkFrame.frames[i].set_showtitlebar(false);                
+				this.objApp.av_WorkFrame.frames[i].set_border("0px none");
+			}
+		break;
+		case "closeAll" :
+ 			for(var i=arrObj.length-1; i>=0; i--) 
+			{
+				trace(arrObj[i].form.name);
+ 				arrObj[i].form.close();
+ 				this.tab_mdi.removeTabpage(i);
+			}
+            this.objApp.gds_openForm.clearData();			
+            this.objApp.av_VFrameSet1.set_separatesize("35,*,0");	
+		break;
+	    default :
+			for(var i=0; i<arrObj.length; i++) 
+			{
+				this.objApp.av_WorkFrame.frames[i].set_openstatus("normal");			
+				this.objApp.av_WorkFrame.frames[i].set_showtitlebar(true);                
+				this.objApp.av_WorkFrame.frames[i].set_border("1px solid #5d6468");
+//				this.objApp.av_WorkFrame.frames[i].titlebar.closebutton.set_enable(false);
+			}            
+			this.objApp.av_WorkFrame.arrange(strType);
+	    break;
+	}
+	
+};
+
+this.btn_home_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.objApp.av_VFrameSet1.set_separatesize("35,*,0");
+};
+
+this.tab_mdi_onlbuttondown = function(obj:nexacro.Tab,e:nexacro.MouseEventInfo)
+{
+	if(obj.getTabpageCount() > 0){
+        this.objApp.av_VFrameSet1.set_separatesize("35,0,*");
+    }
+};
+
+this.btn_menuOpen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    if(this.objApp.av_HFrameSet.separatesize == "0,*"){
+        this.objApp.av_HFrameSet.set_separatesize("200,*");		
+        obj.set_cssclass("btn_WF_menuClose");
+    }
+    else{
+        this.objApp.av_HFrameSet.set_separatesize("0,*");		
+        obj.set_cssclass("btn_WF_menuOpen");
+    }
+};
+]]></Script>
+  </Form>
+</FDL>

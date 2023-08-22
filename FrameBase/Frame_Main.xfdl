@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FrameMain" width="1500" height="720" cssclass="frm_bg" onload="FrameMain_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1500"/>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.objApp 	  = this.gfn_getApplication();
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	alert(this.objApp.gds_menu.getColumn(0,"MENU_ID"));
+};
+
+this.FrameMain_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//alert("111");
+	trace(this.objApp.gds_login_info.saveXML())
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

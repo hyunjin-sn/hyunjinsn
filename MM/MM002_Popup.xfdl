@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="MM0002_Popup" width="600" height="450" titletext="New Form" onload="MM0002_Popup_onload">
+    <Layouts>
+      <Layout height="450" mobileorientation="landscape" width="600">
+        <Div id="Div_menu" taborder="6" text="Div00" left="0" top="1" width="600" height="449" visible="false">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="메뉴명" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="gds_menu" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="col" autosizebandtype="allband" bottom="59" left="10" top="60" right="10" onheadclick="Div_menu_grd_list_onheadclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48" band="left"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="메뉴 ID"/>
+                      <Cell col="2" text="상위 메뉴 ID"/>
+                      <Cell col="3" text="메뉴명"/>
+                      <Cell col="4" text="메뉴설명"/>
+                      <Cell col="5" text="사용여부"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell edittype="checkbox" displaytype="checkboxcontrol" text="bind:CHK"/>
+                      <Cell col="1" text="bind:MENU_ID"/>
+                      <Cell col="2" text="bind:PA_MENU_ID"/>
+                      <Cell col="3" text="bind:MENU_NAME"/>
+                      <Cell col="4" text="bind:DESCRIPTION"/>
+                      <Cell col="5" text="bind:USED_YN" combodataset="ds_Use_YN" combocodecol="CODE" combodatacol="NAME" displaytype="combotext"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_ok" taborder="4" text="OK" left="235" top="408" width="60" height="25" onclick="fn_ok" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btn_cancel" taborder="5" text="Cancel" left="305" top="408" width="60" height="25" onclick="fn_cancel" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div_user" taborder="1" text="Div00" left="600" top="1" width="600" height="449" visible="false">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="부서" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="3" text="성명" left="230" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_name01" taborder="4" left="303" top="8" width="150" height="21"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="col" autosizebandtype="allband" bottom="59" left="10" top="60" right="10" binddataset="ds_user" onheadclick="Div_user_grd_list_onheadclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="DEPT"/>
+                      <Cell col="2" text="USER_NAME"/>
+                      <Cell col="3" text="USER_ID"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:CHK" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="bind:DEPT"/>
+                      <Cell col="2" text="bind:USER_NAME"/>
+                      <Cell col="3" text="bind:USER_ID"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_ok" taborder="4" text="OK" left="235" top="408" width="60" height="25" onclick="fn_ok" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btn_cancel" taborder="5" text="Cancel" left="305" top="408" width="60" height="25" onclick="fn_cancel" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div_user" taborder="6" text="Div00" left="610" top="1" width="600" height="449" visible="false">
+                <Layouts>
+                  <Layout>
+                    <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                      <Layouts>
+                        <Layout>
+                          <Static id="Static03" taborder="0" text="그룹명" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                          <Static id="Static01" taborder="3" text="관리구분" left="231" top="8" width="81" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                          <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+                          <Combo id="cmb_Use_YN" taborder="2" text="Combo00" left="313" top="8" width="150" height="21" innerdataset="ds_Use_YN_Search" codecolumn="CODE" datacolumn="NAME"/>
+                          <Button id="btn_search" taborder="4" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                        </Layout>
+                      </Layouts>
+                    </Div>
+                    <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+                    <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+                    <Grid id="grd_list" taborder="3" binddataset="gds_menu" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="col" autosizebandtype="allband" bottom="59" left="10" top="60" right="10">
+                      <Formats>
+                        <Format id="default">
+                          <Columns>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                          </Columns>
+                          <Rows>
+                            <Row size="24" band="head"/>
+                            <Row size="24"/>
+                          </Rows>
+                          <Band id="head">
+                            <Cell text="메뉴 ID"/>
+                            <Cell col="1" text="상위 메뉴 ID"/>
+                            <Cell col="2" text="메뉴명"/>
+                            <Cell col="3" text="메뉴설명"/>
+                            <Cell col="4" text="프로그램아이디"/>
+                            <Cell col="5" text="전체경로"/>
+                            <Cell col="6" text="파일명"/>
+                            <Cell col="7" text="메뉴정렬"/>
+                            <Cell col="8" text="사용여부"/>
+                            <Cell col="9" text="메뉴레벨"/>
+                          </Band>
+                          <Band id="body">
+                            <Cell text="bind:MENU_ID"/>
+                            <Cell col="1" text="bind:PA_MENU_ID"/>
+                            <Cell col="2" text="bind:MENU_NAME"/>
+                            <Cell col="3" text="bind:DESCRIPTION"/>
+                            <Cell col="4" text="bind:PRGM_ID"/>
+                            <Cell col="5" text="bind:PRGM_FULL_PATH"/>
+                            <Cell col="6" text="bind:PRGM_FILE_NAME"/>
+                            <Cell col="7" text="bind:MENU_ORDR"/>
+                            <Cell col="8" text="bind:USED_YN" combodataset="ds_Use_YN" combocodecol="CODE" combodatacol="NAME" displaytype="combotext"/>
+                            <Cell col="9" text="bind:LEVEL" combodataset="ds_Level" combocodecol="CODE" combodatacol="CODE" textAlign="center"/>
+                          </Band>
+                        </Format>
+                      </Formats>
+                    </Grid>
+                    <Button id="btn_ok" taborder="4" text="OK" left="235" top="408" width="60" height="25" onclick="fn_ok" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Button id="btn_cancel" taborder="5" text="Cancel" left="305" top="408" width="60" height="25" onclick="fn_cancel" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div_dept" taborder="2" text="Div00" left="1200" top="1" width="600" height="449" visible="false">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="부서명" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Static id="Static00" taborder="3" text="성명" left="230" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_name01" taborder="4" left="303" top="8" width="150" height="21"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="col" autosizebandtype="allband" bottom="59" left="10" top="60" right="10" binddataset="ds_dept" onheadclick="Div_dept_grd_list_onheadclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell edittype="checkbox" displaytype="checkboxcontrol"/>
+                      <Cell col="1" text="DEPT"/>
+                      <Cell col="2" text="POSITION"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:CHK" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="bind:DEPT"/>
+                      <Cell col="2" text="bind:POSITION"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_ok" taborder="4" text="OK" left="235" top="408" width="60" height="25" onclick="fn_ok" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Button id="btn_cancel" taborder="5" text="Cancel" left="305" top="408" width="60" height="25" onclick="fn_cancel" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+              <Div id="Div_user" taborder="6" text="Div00" left="610" top="1" width="600" height="449" visible="false">
+                <Layouts>
+                  <Layout>
+                    <Div id="div_search" taborder="0" left="10" top="10" height="39" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                      <Layouts>
+                        <Layout>
+                          <Static id="Static03" taborder="0" text="그룹명" left="0" top="8" width="71" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                          <Static id="Static01" taborder="3" text="관리구분" left="231" top="8" width="81" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                          <Edit id="edt_name00" taborder="1" left="73" top="8" width="150" height="21"/>
+                          <Combo id="cmb_Use_YN" taborder="2" text="Combo00" left="313" top="8" width="150" height="21" innerdataset="ds_Use_YN_Search" codecolumn="CODE" datacolumn="NAME"/>
+                          <Button id="btn_search" taborder="4" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                        </Layout>
+                      </Layouts>
+                    </Div>
+                    <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+                    <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+                    <Grid id="grd_list" taborder="3" binddataset="gds_menu" scrolltype="both" minwidth="" oncellclick="grd_list_oncellclick" autosizingtype="col" autosizebandtype="allband" bottom="59" left="10" top="60" right="10">
+                      <Formats>
+                        <Format id="default">
+                          <Columns>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                            <Column size="80"/>
+                          </Columns>
+                          <Rows>
+                            <Row size="24" band="head"/>
+                            <Row size="24"/>
+                          </Rows>
+                          <Band id="head">
+                            <Cell text="메뉴 ID"/>
+                            <Cell col="1" text="상위 메뉴 ID"/>
+                            <Cell col="2" text="메뉴명"/>
+                            <Cell col="3" text="메뉴설명"/>
+                            <Cell col="4" text="프로그램아이디"/>
+                            <Cell col="5" text="전체경로"/>
+                            <Cell col="6" text="파일명"/>
+                            <Cell col="7" text="메뉴정렬"/>
+                            <Cell col="8" text="사용여부"/>
+                            <Cell col="9" text="메뉴레벨"/>
+                          </Band>
+                          <Band id="body">
+                            <Cell text="bind:MENU_ID"/>
+                            <Cell col="1" text="bind:PA_MENU_ID"/>
+                            <Cell col="2" text="bind:MENU_NAME"/>
+                            <Cell col="3" text="bind:DESCRIPTION"/>
+                            <Cell col="4" text="bind:PRGM_ID"/>
+                            <Cell col="5" text="bind:PRGM_FULL_PATH"/>
+                            <Cell col="6" text="bind:PRGM_FILE_NAME"/>
+                            <Cell col="7" text="bind:MENU_ORDR"/>
+                            <Cell col="8" text="bind:USED_YN" combodataset="ds_Use_YN" combocodecol="CODE" combodatacol="NAME" displaytype="combotext"/>
+                            <Cell col="9" text="bind:LEVEL" combodataset="ds_Level" combocodecol="CODE" combodatacol="CODE" textAlign="center"/>
+                          </Band>
+                        </Format>
+                      </Formats>
+                    </Grid>
+                    <Button id="btn_ok" taborder="4" text="OK" left="235" top="408" width="60" height="25" onclick="fn_ok" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                    <Button id="btn_cancel" taborder="5" text="Cancel" left="305" top="408" width="60" height="25" onclick="fn_cancel" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase=""/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    Master_M > MM0002_Popup
+*  @FileName 	MM0002_Popup.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2019.04.23
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.MM0002_Popup_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//this.gfn_formOnLoad(this);	
+	
+	var strParam1 = this.parent.param1;
+	trace(strParam1);
+	// 부모 TAB에 따른 자식 DIV 호출
+	if(strParam1 == 0)
+	{
+		this.Div_menu.set_visible(true);
+	}
+	else if (strParam1 == 1)
+	{
+		this.Div_user.set_left(0);
+		this.Div_user.set_visible(true);
+	}
+	else if (strParam1 == 2)
+	{
+		this.Div_dept.set_left(0);
+		this.Div_dept.set_visible(true);
+	}	
+	
+	// 체크 설정
+	this.objApp.gds_menu.addColumn("CHK", "STRING");
+	for(var i=0; i<this.objApp.gds_menu.rowcount; i++){
+		this.objApp.gds_menu.setColumn(i, "CHK", "0");
+	}	
+	
+// 	this.Grid2.insertContentsCol("body", 0);
+// 	this.Grid2.setCellProperty("body", 0, "text", "bind:CHK");
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+ 
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.04.23
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+};
+
+ /**
+* @description 		그리드 헤더 체크
+* @작성자	   		심재문
+* @작성일자	   		2019.04.23
+* @수정자	   
+* @수정일자
+*/
+this.Div_menu_grd_list_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 0){
+		var nValue = this.Div_menu.form.grd_list.getCellText(-1, 0); // -1:Head
+		//this.Grid2.getCellText(-1, 0); // -1:Head
+		nValue = (nValue == "1" ? "0" : "1");				
+        this.objApp.gds_menu.set_enableevent(false);
+		for(var i=0; i < this.objApp.gds_menu.rowcount; i++){
+			this.objApp.gds_menu.setColumn(i, "CHK", nValue);
+		}
+        this.objApp.gds_menu.set_enableevent(true);
+		//Head
+		this.Div_menu.form.grd_list.setCellProperty("Head", 0, "text", nValue);
+	}
+};
+
+this.Div_user_grd_list_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 0){
+		var nValue = this.Div_user.form.grd_list.getCellText(-1, 0); // -1:Head
+		//this.Grid2.getCellText(-1, 0); // -1:Head
+		nValue = (nValue == "1" ? "0" : "1");				
+        this.ds_user.set_enableevent(false);
+		for(var i=0; i < this.ds_user.rowcount; i++){
+			this.ds_user.setColumn(i, "CHK", nValue);
+		}
+        this.ds_user.set_enableevent(true);
+		//Head
+		this.Div_user.form.grd_list.setCellProperty("Head", 0, "text", nValue);
+	}
+};
+
+this.Div_dept_grd_list_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 0){
+		var nValue = this.Div_dept.form.grd_list.getCellText(-1, 0); // -1:Head
+		//this.Grid2.getCellText(-1, 0); // -1:Head
+		nValue = (nValue == "1" ? "0" : "1");				
+        this.ds_dept.set_enableevent(false);
+		for(var i=0; i < this.ds_dept.rowcount; i++){
+			this.ds_dept.setColumn(i, "CHK", nValue);
+		}
+        this.ds_dept.set_enableevent(true);
+		//Head
+		this.Div_dept.form.grd_list.setCellProperty("Head", 0, "text", nValue);
+	}
+};
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   		2019.04.23
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_user">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="USER_NAME" type="STRING" size="256"/>
+          <Column id="USER_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">기술지원부</Col>
+            <Col id="USER_NAME">심재문</Col>
+            <Col id="USER_ID">640</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">기술지원부</Col>
+            <Col id="USER_NAME">김원기</Col>
+            <Col id="USER_ID">111</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">온라인실사부</Col>
+            <Col id="USER_NAME">김대일</Col>
+            <Col id="USER_ID">222</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="POSITION" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="POSITION">팀원</Col>
+            <Col id="DEPT">기술지원부</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">온라인실사부</Col>
+            <Col id="POSITION">팀원</Col>
+          </Row>
+          <Row>
+            <Col id="CHK">0</Col>
+            <Col id="DEPT">8사업부</Col>
+            <Col id="POSITION">팀장</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

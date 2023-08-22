@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM005_P02" width="1031" height="751" titletext="New Form" onload="FM005_P02_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="751" mobileorientation="landscape" width="1031">
+        <Div id="Div_client" taborder="1" text="Div00" left="11" top="0" height="1030" right="1">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="Div00" taborder="1" text="Div00" left="0" top="11" width="999" height="149">
+                <Layouts>
+                  <Layout>
+                    <Static id="sta_21_00_00" taborder="28" left="99" top="113" height="29" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="sta_21_01" taborder="8" left="90" top="85" height="29" cssclass="sta_WF_detailLine" width="909"/>
+                    <Static id="sta_21_00" taborder="0" left="99" top="57" height="29" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="sta_21" taborder="1" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="Static23" taborder="2" text="가족성명" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo" taborder="3" left="104" top="33" width="142" height="21" readonly="false" enable="true"/>
+                    <Static id="Static23_00" taborder="4" text="고인명" left="0" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static23_00_00" taborder="5" text="고인 나이" left="250" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static05" taborder="6" text="내담자" left="0" top="-3" width="97" height="30" cssclass="sta_WF_title"/>
+                    <Static id="Static23_00_00_00_00_00" taborder="7" text="나이" left="250" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static23_00_00_00_00_00_00_00" taborder="9" text="상담일자" left="0" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo00" taborder="10" left="354" top="33" width="141" height="21" readonly="false" enable="true"/>
+                    <Edit id="edt_soNo01" taborder="11" left="104" top="61" width="142" height="21" readonly="false" enable="true"/>
+                    <Edit id="edt_soNo00_01" taborder="12" left="355" top="61" width="140" height="21" readonly="false" enable="true"/>
+                    <Static id="Static23_00_00_00_00_00_00" taborder="13" text="연락처" left="499" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo00_00" taborder="14" left="603" top="33" width="141" height="21" readonly="false" enable="true"/>
+                    <Static id="Static23_00_00_00_00_00_00_01" taborder="15" text="사망사유" left="748" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo00_00_00" taborder="16" left="852" top="33" width="141" height="21" readonly="false" enable="true"/>
+                    <Static id="Static23_00_00_00" taborder="17" text="주소" left="499" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo00_01_00" taborder="18" left="603" top="61" width="390" height="21" readonly="false" enable="true"/>
+                    <Calendar id="cal_startDate" taborder="19" left="104" top="89" width="141" height="21" dateformat="yyyy-MM-dd"/>
+                    <Static id="Static23_00_00_00_00_00_00_00_00" taborder="20" text="장례일자" left="250" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Calendar id="cal_startDate00" taborder="21" left="354" top="89" width="141" height="21" dateformat="yyyy-MM-dd"/>
+                    <Combo id="cmb_age01" taborder="22" left="603" top="89" width="141" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" oneditclick="Div00_cmb_hsCd_oneditclick" tabstop="false" innerdataset="ds_hs"/>
+                    <Static id="Static23_00_00_00_00" taborder="23" text="관계" left="499" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Static id="Static23_00_00_00_00_01" taborder="24" text="상담방법" left="748" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Combo id="cmb_age01_00" taborder="25" left="852" top="89" width="141" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" oneditclick="Div00_cmb_hsCd_oneditclick" tabstop="false" innerdataset=""/>
+                    <Static id="Static23_00_01" taborder="26" text="제목" left="0" top="113" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_soNo01_00" taborder="27" left="104" top="117" width="889" height="21" readonly="false" enable="true"/>
+                    <Button id="btn_add" taborder="29" left="837" top="0" height="21" text="저장" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_btn_add_onclick" width="71"/>
+                    <Button id="btn_del" taborder="30" left="927" top="0" height="21" text="삭제" cssclass="btn_WF_main1" onclick="Div00_btn_del_onclick" width="71"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="Div00_00" taborder="2" text="Div00" left="0" top="163" width="999" height="867">
+                <Layouts>
+                  <Layout>
+                    <Static id="sta_21_00_01_00" taborder="15" left="99" top="739" height="120" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="sta_21_00_01" taborder="12" left="99" top="620" height="120" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="sta_21_00" taborder="6" left="99" top="148" height="120" cssclass="sta_WF_detailLine" width="900"/>
+                    <TextArea id="TextArea00_00" taborder="5" left="104" top="152" width="889" height="112"/>
+                    <Static id="sta_21" taborder="0" left="99" top="29" height="120" cssclass="sta_WF_detailLine" width="900"/>
+                    <Static id="Static23" taborder="1" text="개요" left="0" top="29" width="100" cssclass="sta_WF_detailLabel" height="120"/>
+                    <Static id="Static05" taborder="2" text="상담내용" left="0" top="-3" width="97" height="30" cssclass="sta_WF_title"/>
+                    <TextArea id="TextArea00" taborder="3" left="104" top="33" width="889" height="112"/>
+                    <Static id="Static23_00" taborder="4" text="사망시의 상황" left="0" top="148" width="100" cssclass="sta_WF_detailLabel" height="120"/>
+                    <Static id="sta_21_00_00" taborder="7" left="99" top="267" height="354" cssclass="sta_WF_detailLine" width="900"/>
+                    <TextArea id="TextArea00_00_00" taborder="8" left="104" top="271" width="889" height="346"/>
+                    <Static id="Static23_00_00" taborder="9" text="내담자의&#13;&#10;&#13;&#10;상담분석" left="0" top="267" width="100" cssclass="sta_WF_detailLabel" height="354"/>
+                    <Static id="Static23_00_01" taborder="10" text="현행과제 &#13;&#10;&#13;&#10;및 &#13;&#10;&#13;&#10;진단" left="0" top="620" width="100" cssclass="sta_WF_detailLabel" height="120" textAlign="center"/>
+                    <TextArea id="TextArea00_00_01" taborder="11" left="104" top="624" width="889" height="112"/>
+                    <Static id="Static23_00_01_00" taborder="13" text="추후&#13;&#10;&#13;&#10;조치사항" left="0" top="739" width="100" cssclass="sta_WF_detailLabel" height="120" textAlign="center"/>
+                    <TextArea id="TextArea00_00_01_00" taborder="14" left="104" top="743" width="889" height="112"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Q & A 팝업
+*  @MenuPath    FM > FM005_P01
+*  @FileName 	FM005_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.01.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM005_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_consultType",this.Div_client.form.Div00.form.cmb_age01_00,"MAJOR_CODE=='PB009'",false,false);					// 상담방법
+
+	var id = "CM001_S02";
+	var url = "svcUrl::CM001_S02";
+	var inDs = "";
+	var outDs = "ds_hs=ds_hs";
+	var args = "";
+	var callBackid = "fn_hs_search";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_search = function ()
+{
+	var id = "FM005_P02_S";
+	var url = "svcUrl::FM005_P02_S";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "MG_NO="+mgNo+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	if (this.ds_list.rowcount == 0)
+	{
+		this.ds_list.addRow();
+		this.ds_list.setColumn(this.ds_list.rowposition,"MG_NO",mgNo);
+	}
+}
+
+// 저장
+this.fn_save = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	// 디테일
+	var id = "FM005_P02_M";
+	var url = "svcUrl::FM005_P02_M";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" MG_NO="+mgNo+"";
+	var callBackid = "fn_afterSave";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_search();
+	
+	this.alert("저장 되었습니다.");	
+}
+
+// 삭제
+this.fn_save2 = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	// 디테일
+	var id = "FM005_P02_M";
+	var url = "svcUrl::FM005_P02_M";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser+" MG_NO="+mgNo+"";
+	var callBackid = "fn_afterSave2";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_search();
+	
+	this.alert("삭제 되었습니다.");	
+}
+
+ // 저장
+this.Tab00_Tabpage1_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_save();
+};
+
+ // 삭제
+this.Div00_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.confirm("삭제 하시겠습니까?"))
+	{
+		this.ds_list.deleteRow(this.ds_list.rowposition);
+		
+		this.fn_save2();
+	}	
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="REQ_NM" type="STRING" size="20"/>
+          <Column id="REQ_AGE" type="STRING" size="20"/>
+          <Column id="REQ_HP" type="STRING" size="20"/>
+          <Column id="REQ_ADDR" type="STRING" size="100"/>
+          <Column id="M_NM" type="STRING" size="20"/>
+          <Column id="M_AGE" type="STRING" size="20"/>
+          <Column id="REASON" type="STRING" size="20"/>
+          <Column id="CONSULT_DT" type="DATETIME" size="23"/>
+          <Column id="FU_DT" type="DATETIME" size="23"/>
+          <Column id="TITLE" type="STRING" size="200"/>
+          <Column id="REL_CD" type="STRING" size="20"/>
+          <Column id="CONSULT_DIV" type="STRING" size="20"/>
+          <Column id="CONTENT1" type="STRING" size="32767"/>
+          <Column id="CONTENT2" type="STRING" size="32767"/>
+          <Column id="CONTENT3" type="STRING" size="32767"/>
+          <Column id="CONTENT4" type="STRING" size="256"/>
+          <Column id="CONTENT5" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="20"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_hs">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="10"/>
+          <Column id="CODE_NAME" type="STRING" size="100"/>
+          <Column id="HCALL_YN" type="STRING" size="1"/>
+          <Column id="HS_GU" type="STRING" size="1"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.Div00.form.edt_soNo" propid="value" datasetid="ds_list" columnid="REQ_NM"/>
+      <BindItem id="item4" compid="Div_client.form.Div00.form.edt_soNo00" propid="value" datasetid="ds_list" columnid="REQ_AGE"/>
+      <BindItem id="item0" compid="Div_client.form.Div00.form.edt_soNo01" propid="value" datasetid="ds_list" columnid="M_NM"/>
+      <BindItem id="item2" compid="Div_client.form.Div00.form.edt_soNo00_01" propid="value" datasetid="ds_list" columnid="M_AGE"/>
+      <BindItem id="item3" compid="Div_client.form.Div00.form.edt_soNo00_00" propid="value" datasetid="ds_list" columnid="REQ_HP"/>
+      <BindItem id="item5" compid="Div_client.form.Div00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list" columnid="REASON"/>
+      <BindItem id="item6" compid="Div_client.form.Div00.form.edt_soNo00_01_00" propid="value" datasetid="ds_list" columnid="REQ_ADDR"/>
+      <BindItem id="item7" compid="Div_client.form.Div00.form.cal_startDate" propid="value" datasetid="ds_list" columnid="CONSULT_DT"/>
+      <BindItem id="item8" compid="Div_client.form.div_search.form.cal_startDate00" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item9" compid="Div_client.form.Div00.form.cal_startDate00" propid="value" datasetid="ds_list" columnid="FU_DT"/>
+      <BindItem id="item10" compid="Div_client.form.Div00.form.cmb_age01" propid="value" datasetid="ds_list" columnid="REL_CD"/>
+      <BindItem id="item11" compid="Div_client.form.Div00.form.cmb_age01_00" propid="value" datasetid="ds_list" columnid="CONSULT_DIV"/>
+      <BindItem id="item12" compid="Div_client.form.Div00.form.edt_soNo01_00" propid="value" datasetid="ds_list" columnid="TITLE"/>
+      <BindItem id="item13" compid="Div_client.form.Div00_00.form.TextArea00" propid="value" datasetid="ds_list" columnid="CONTENT1"/>
+      <BindItem id="item14" compid="Div_client.form.Div00_00.form.TextArea00_00" propid="value" datasetid="ds_list" columnid="CONTENT2"/>
+      <BindItem id="item15" compid="Div_client.form.Div00_00.form.TextArea00_00_00" propid="value" datasetid="ds_list" columnid="CONTENT3"/>
+      <BindItem id="item16" compid="Div_client.form.Div00_00.form.TextArea00_00_01" propid="value" datasetid="ds_list" columnid="CONTENT4"/>
+      <BindItem id="item17" compid="Div_client.form.Div00_00.form.TextArea00_00_01_00" propid="value" datasetid="ds_list" columnid="CONTENT5"/>
+    </Bind>
+  </Form>
+</FDL>

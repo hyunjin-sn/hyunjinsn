@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO002_1" width="1300" height="600" titletext="New Form" onload="SO002_1_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1300">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="55" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="주문번호" left="340" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="442" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_00" taborder="2" text="고객사" left="-4" top="29" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static00_01" taborder="3" text="주문일시" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="4" left="98" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Calendar id="cal_endDate" taborder="5" left="223" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="6" text="~" left="211" top="4" width="10" height="29"/>
+                    <Edit id="edt_soldToNm" taborder="7" left="98" top="29" width="235" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_03" taborder="8" text="대상자" left="588" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_reqNm" taborder="9" left="693" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_03_00_00" taborder="10" text="의전본부" left="340" top="29" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static00_03_00" taborder="11" text="상품명" left="588" top="28" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_reqNm00" taborder="12" left="693" top="29" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_sono00" taborder="13" left="442" top="29" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_03_00_01" taborder="14" text="지원내역" left="828" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_reqNm00_00" taborder="15" left="933" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Static id="Static00_03_00_02" taborder="16" text="구분" left="828" top="28" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_reqNm00_01" taborder="17" left="933" top="29" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="65" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="74" right="10" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="58"/>
+                      <Column size="100"/>
+                      <Column size="68"/>
+                      <Column size="197"/>
+                      <Column size="54"/>
+                      <Column size="80"/>
+                      <Column size="74"/>
+                      <Column size="80"/>
+                      <Column size="173"/>
+                      <Column size="245"/>
+                      <Column size="245"/>
+                      <Column size="54"/>
+                      <Column size="80"/>
+                      <Column size="63"/>
+                      <Column size="57"/>
+                      <Column size="75"/>
+                      <Column size="56"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="194"/>
+                      <Column size="194"/>
+                      <Column size="399"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="주문번호"/>
+                      <Cell col="2" text="고객사코드"/>
+                      <Cell col="3" text="고객사명"/>
+                      <Cell col="4" text="대상자"/>
+                      <Cell col="5" text="경조사유"/>
+                      <Cell col="6" text="배송지코드"/>
+                      <Cell col="7" text="장례식장"/>
+                      <Cell col="8" text="구분"/>
+                      <Cell col="9" text="상품명"/>
+                      <Cell col="10" text="지원내역"/>
+                      <Cell col="11" text="본부코드"/>
+                      <Cell col="12" text="의전본부"/>
+                      <Cell col="13" text="본부비율"/>
+                      <Cell col="14" text="의전팀장"/>
+                      <Cell col="15" text="실비청구여부"/>
+                      <Cell col="16" text="본부구분"/>
+                      <Cell col="17" text="패키지금액"/>
+                      <Cell col="18" text="회사지원금액"/>
+                      <Cell col="19" text="행사차감액"/>
+                      <Cell col="20" text="공제금액"/>
+                      <Cell col="21" text="정산기준금액"/>
+                      <Cell col="22" text="기본패키지금액"/>
+                      <Cell col="23" text="기본매입금액"/>
+                      <Cell col="24" text="기본본부이익"/>
+                      <Cell col="25" text="기본본사이익"/>
+                      <Cell col="26" text="추가매출금액"/>
+                      <Cell col="27" text="추가매입금액"/>
+                      <Cell col="28" text="추가이익본부"/>
+                      <Cell col="29" text="추가이익본사"/>
+                      <Cell col="30" text="대체매출금액"/>
+                      <Cell col="31" text="대체매입금액"/>
+                      <Cell col="32" text="대체이익본부"/>
+                      <Cell col="33" text="대체이익본사"/>
+                      <Cell col="34" text="매출합계"/>
+                      <Cell col="35" text="매입합계"/>
+                      <Cell col="36" text="본부이익합계"/>
+                      <Cell col="37" text="본사이익합계"/>
+                      <Cell col="38" text="본부수령액"/>
+                      <Cell col="39" text="본부정산액"/>
+                      <Cell col="40" text="현금결제액"/>
+                      <Cell col="41" text="카드결제액"/>
+                      <Cell col="42" text="고객결제금액"/>
+                      <Cell col="43" text="관리사위탁비"/>
+                      <Cell col="44" text="지도사근무비"/>
+                      <Cell col="45" text="배송료"/>
+                      <Cell col="46" text="RT"/>
+                      <Cell col="47" text="본사이익조정"/>
+                      <Cell col="48" text="기타원가"/>
+                      <Cell col="49" text="기타매출"/>
+                      <Cell col="50" text="비고_본부"/>
+                      <Cell col="51" text="비고_본사"/>
+                      <Cell col="52" text="주문품목명"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:주문번호" textAlign="center"/>
+                      <Cell col="2" text="bind:고객사코드" tooltiptext="bind:고객사코드" textAlign="center"/>
+                      <Cell col="3" text="bind:고객사명" tooltiptext="bind:고객사명"/>
+                      <Cell col="4" text="bind:대상자" textAlign="center"/>
+                      <Cell col="5" text="bind:경조사유" tooltiptext="bind:경조사유"/>
+                      <Cell col="6" text="bind:배송지코드" tooltiptext="bind:배송지코드" textAlign="center"/>
+                      <Cell col="7" text="bind:장례식장" tooltiptext="bind:장례식장"/>
+                      <Cell col="8" text="bind:구분" tooltiptext="bind:구분"/>
+                      <Cell col="9" text="bind:패키지명" tooltiptext="bind:패키지명"/>
+                      <Cell col="10" text="bind:지원내역" tooltiptext="bind:지원내역"/>
+                      <Cell col="11" text="bind:본부코드" textAlign="center"/>
+                      <Cell col="12" text="bind:의전본부" textAlign="center"/>
+                      <Cell col="13" text="bind:본부비율" textAlign="center" displaytype="mask" maskeditformat="##.0"/>
+                      <Cell col="14" text="bind:의전팀장" textAlign="center"/>
+                      <Cell col="15" text="bind:실비청구업체 여부" textAlign="center"/>
+                      <Cell col="16" text="bind:본부구분" textAlign="center"/>
+                      <Cell col="17" text="bind:패키지금액" displaytype="number"/>
+                      <Cell col="18" text="bind:회사지원금액"/>
+                      <Cell col="19" text="bind:행사차감액"/>
+                      <Cell col="20" text="bind:공제금액"/>
+                      <Cell col="21" text="bind:정산기준금액"/>
+                      <Cell col="22" text="bind:기본패키지금액"/>
+                      <Cell col="23" text="bind:기본매입금액"/>
+                      <Cell col="24" text="bind:기본본부이익"/>
+                      <Cell col="25" text="bind:기본본사이익"/>
+                      <Cell col="26" text="bind:추가매출금액"/>
+                      <Cell col="27" text="bind:추가매입금액"/>
+                      <Cell col="28" text="bind:추가이익본부"/>
+                      <Cell col="29" text="bind:추가이익본사"/>
+                      <Cell col="30" text="bind:대체매출금액"/>
+                      <Cell col="31" text="bind:대체매입금액"/>
+                      <Cell col="32" text="bind:대체이익본부"/>
+                      <Cell col="33" text="bind:대체이익본사"/>
+                      <Cell col="34" text="bind:매출합계"/>
+                      <Cell col="35" text="bind:총매입액"/>
+                      <Cell col="36" text="bind:본부이익합계"/>
+                      <Cell col="37" text="bind:본사이익합계"/>
+                      <Cell col="38" text="bind:본부수령액"/>
+                      <Cell col="39" text="bind:본부정산액"/>
+                      <Cell col="40" text="bind:현금결제액"/>
+                      <Cell col="41" text="bind:카드결제액"/>
+                      <Cell col="42" text="bind:고객결제금액"/>
+                      <Cell col="43" text="bind:관리사위탁비"/>
+                      <Cell col="44" text="bind:지도사근무비"/>
+                      <Cell col="45" text="bind:배송료"/>
+                      <Cell col="46" text="bind:RT"/>
+                      <Cell col="47" text="bind:본사이익조정"/>
+                      <Cell col="48" text="bind:기타원가"/>
+                      <Cell col="49" text="bind:기타매출"/>
+                      <Cell col="50" text="bind:비고_본부"/>
+                      <Cell col="51" text="bind:비고_본사"/>
+                      <Cell col="52" text="bind:주문품목명"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell/>
+                      <Cell col="1"/>
+                      <Cell col="2"/>
+                      <Cell col="3"/>
+                      <Cell col="4"/>
+                      <Cell col="5"/>
+                      <Cell col="6"/>
+                      <Cell col="7"/>
+                      <Cell col="8"/>
+                      <Cell col="9"/>
+                      <Cell col="10"/>
+                      <Cell col="11"/>
+                      <Cell col="12"/>
+                      <Cell col="13"/>
+                      <Cell col="14"/>
+                      <Cell col="15"/>
+                      <Cell col="16"/>
+                      <Cell col="17" text="expr:dataset.getSum(&quot;패키지금액&quot;)" maskeditformat="##,##0" displaytype="mask" textAlign="right"/>
+                      <Cell col="18" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;회사지원금액&quot;)"/>
+                      <Cell col="19" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;행사차감액&quot;)"/>
+                      <Cell col="20" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;공제금액&quot;)"/>
+                      <Cell col="21" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;정산기준금액&quot;)"/>
+                      <Cell col="22" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본패키지금액&quot;)"/>
+                      <Cell col="23" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본매입금액&quot;)"/>
+                      <Cell col="24" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본부이익&quot;)"/>
+                      <Cell col="25" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본사이익&quot;)"/>
+                      <Cell col="26" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매출금액&quot;)"/>
+                      <Cell col="27" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매입금액&quot;)"/>
+                      <Cell col="28" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본부&quot;)"/>
+                      <Cell col="29" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본사&quot;)"/>
+                      <Cell col="30" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매출금액&quot;)"/>
+                      <Cell col="31" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매입금액&quot;)"/>
+                      <Cell col="32" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본부&quot;)"/>
+                      <Cell col="33" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본사&quot;)"/>
+                      <Cell col="34" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;매출합계&quot;)"/>
+                      <Cell col="35" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;총매입액&quot;)"/>
+                      <Cell col="36" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부이익합계&quot;)"/>
+                      <Cell col="37" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익합계&quot;)"/>
+                      <Cell col="38" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부수령액&quot;)"/>
+                      <Cell col="39" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부정산액&quot;)"/>
+                      <Cell col="40" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;현금결제액&quot;)"/>
+                      <Cell col="41" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;카드결제액&quot;)"/>
+                      <Cell col="42" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;고객결제금액&quot;)"/>
+                      <Cell col="43" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;관리사위탁비&quot;)"/>
+                      <Cell col="44" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;지도사근무비&quot;)"/>
+                      <Cell col="45" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;배송료&quot;)"/>
+                      <Cell col="46" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;RT&quot;)"/>
+                      <Cell col="47" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익조정&quot;)"/>
+                      <Cell col="48" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타원가&quot;)"/>
+                      <Cell col="49" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타매출&quot;)"/>
+                      <Cell col="50"/>
+                      <Cell col="51"/>
+                      <Cell col="52"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  패키지리스트 조회
+*  @MenuPath    TM > TM012
+*  @FileName 	TM012.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.02.10
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO002_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-2);
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+
+};
+
+this.fn_search = function ()
+{
+	var args1 = this.Div_client.form.div_search.form.cal_startDate.value;
+	var args2 = this.Div_client.form.div_search.form.cal_endDate.value;
+	
+	// 조회
+	var id = "TM012_S01";
+	var url = "svcUrl::TM012_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.fn_filter();
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_filter = function ()
+{	
+	var filterstr = "";
+	var soNo = this.ds_cond.getColumn(this.ds_cond.rowposition,"SO_NO");
+	var ownNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"OWN_NM");
+	var bpNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"BP_NM");
+	var poBpNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"PO_BP_NM");
+	var adNm = this.ds_cond.getColumn(this.ds_cond.rowposition,"AD_NM");
+	var adSup = this.ds_cond.getColumn(this.ds_cond.rowposition,"AD_SUP_CD");
+	var div = this.ds_cond.getColumn(this.ds_cond.rowposition,"DIV");
+	
+	// 주문번호		
+	if(!this.gfn_isNull(soNo))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "주문번호.indexOf('"+soNo+"')!='-1'";
+		else
+			filterstr += " && 주문번호.indexOf('"+soNo+"')!='-1'";				
+	}
+	
+	// 대상자		
+	if(!this.gfn_isNull(ownNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "대상자.indexOf('"+ownNm+"')!='-1'";
+		else
+			filterstr += " && 대상자.indexOf('"+ownNm+"')!='-1'";				
+	}
+	
+	// 고객사		
+	if(!this.gfn_isNull(bpNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "고객사명.indexOf('"+bpNm+"')!='-1'";
+		else
+			filterstr += " && 고객사명.indexOf('"+bpNm+"')!='-1'";				
+	}
+	
+	// 발주지점		
+	if(!this.gfn_isNull(poBpNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "의전본부.indexOf('"+poBpNm+"')!='-1'";
+		else
+			filterstr += " && 의전본부.indexOf('"+poBpNm+"')!='-1'";				
+	}
+	
+	// 상품명	
+	if(!this.gfn_isNull(adNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "패키지명.indexOf('"+adNm+"')!='-1'";
+		else
+			filterstr += " && 패키지명.indexOf('"+adNm+"')!='-1'";				
+	}
+	
+	// 지원내역	
+	if(!this.gfn_isNull(adSup))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "지원내역.indexOf('"+adSup+"')!='-1'";
+		else
+			filterstr += " && 지원내역.indexOf('"+adSup+"')!='-1'";				
+	}
+	
+	// 구분	
+	if(!this.gfn_isNull(div))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "구분.indexOf('"+div+"')!='-1'";
+		else
+			filterstr += " && 구분.indexOf('"+div+"')!='-1'";				
+	}
+	
+	this.ds_list.set_filterstr(filterstr);
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}	
+};
+
+this.Div_client_div_search_cmb_insrtUser_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="주문번호" type="STRING" size="20"/>
+          <Column id="본부코드" type="STRING" size="20"/>
+          <Column id="의전본부" type="STRING" size="500"/>
+          <Column id="본부구분" type="STRING" size="4"/>
+          <Column id="의전팀장" type="STRING" size="20"/>
+          <Column id="경조사유" type="STRING" size="200"/>
+          <Column id="구분" type="STRING" size="100"/>
+          <Column id="패키지코드" type="STRING" size="20"/>
+          <Column id="패키지명" type="STRING" size="100"/>
+          <Column id="패키지금액" type="BIGDECIMAL" size="20"/>
+          <Column id="공제금액" type="BIGDECIMAL" size="20"/>
+          <Column id="회사지원금액" type="BIGDECIMAL" size="20"/>
+          <Column id="행사차감액" type="BIGDECIMAL" size="20"/>
+          <Column id="정산기준금액" type="BIGDECIMAL" size="20"/>
+          <Column id="기본패키지금액" type="BIGDECIMAL" size="20"/>
+          <Column id="기본매입금액" type="BIGDECIMAL" size="20"/>
+          <Column id="기본본부이익" type="BIGDECIMAL" size="20"/>
+          <Column id="기본본사이익" type="BIGDECIMAL" size="20"/>
+          <Column id="추가매출금액" type="BIGDECIMAL" size="20"/>
+          <Column id="추가매입금액" type="BIGDECIMAL" size="20"/>
+          <Column id="추가이익본부" type="BIGDECIMAL" size="20"/>
+          <Column id="추가이익본사" type="BIGDECIMAL" size="20"/>
+          <Column id="대체매출금액" type="BIGDECIMAL" size="20"/>
+          <Column id="대체매입금액" type="BIGDECIMAL" size="20"/>
+          <Column id="대체이익본부" type="BIGDECIMAL" size="20"/>
+          <Column id="대체이익본사" type="BIGDECIMAL" size="20"/>
+          <Column id="매출합계" type="BIGDECIMAL" size="20"/>
+          <Column id="매입합계" type="BIGDECIMAL" size="20"/>
+          <Column id="본부이익합계" type="BIGDECIMAL" size="20"/>
+          <Column id="본사이익합계" type="BIGDECIMAL" size="20"/>
+          <Column id="본부수령액" type="BIGDECIMAL" size="20"/>
+          <Column id="본부정산액" type="BIGDECIMAL" size="20"/>
+          <Column id="현금결제액" type="BIGDECIMAL" size="20"/>
+          <Column id="카드결제액" type="BIGDECIMAL" size="20"/>
+          <Column id="고객결제금액" type="BIGDECIMAL" size="20"/>
+          <Column id="비고_본부" type="STRING" size="2000"/>
+          <Column id="비고_본사" type="STRING" size="2000"/>
+          <Column id="기타매출" type="BIGDECIMAL" size="40"/>
+          <Column id="기타원가" type="BIGDECIMAL" size="40"/>
+          <Column id="본사이익조정" type="BIGDECIMAL" size="40"/>
+          <Column id="RT" type="BIGDECIMAL" size="40"/>
+          <Column id="주문품목명" type="STRING" size="1073741823"/>
+          <Column id="고객사코드" type="STRING" size="256"/>
+          <Column id="배송지코드" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="OWN_NM" type="STRING" size="256"/>
+          <Column id="SO_NO" type="STRING" size="256"/>
+          <Column id="STATUS" type="STRING" size="256"/>
+          <Column id="PO_BP_NM" type="STRING" size="256"/>
+          <Column id="DEL_YN" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="AD_NM" type="STRING" size="256"/>
+          <Column id="AD_SUP_CD" type="STRING" size="256"/>
+          <Column id="DIV" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BP_NM"/>
+            <Col id="OWN_NM"/>
+            <Col id="SO_NO"/>
+            <Col id="STATUS"/>
+            <Col id="PO_BP_NM"/>
+            <Col id="DEL_YN"/>
+            <Col id="BP_CD"/>
+            <Col id="AD_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item4" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_soldToNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.edt_reqNm" propid="value" datasetid="ds_cond" columnid="OWN_NM"/>
+      <BindItem id="item6" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_reqNm00" propid="value" datasetid="ds_cond" columnid="AD_NM"/>
+      <BindItem id="item5" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="PO_BP_NM"/>
+      <BindItem id="item7" compid="Div_client.form.div_search.form.edt_reqNm00_00" propid="value" datasetid="ds_cond" columnid="AD_SUP_CD"/>
+      <BindItem id="item8" compid="Div_client.form.div_search.form.edt_reqNm00_01" propid="value" datasetid="ds_cond" columnid="DIV"/>
+    </Bind>
+  </Form>
+</FDL>

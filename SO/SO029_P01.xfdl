@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P22" width="561" height="291" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="291" mobileorientation="landscape" width="561">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <TextArea id="TextArea00" taborder="1" left="10" top="40" right="10" bottom="10"/>
+              <Button id="btn_add" taborder="2" text="저장" top="11" width="52" height="24" cssclass="btn_WF_main1" right="11" onclick="Div_client_btn_add_onclick"/>
+              <Static id="Static05_00_00" taborder="3" text="재요청 사유 등록" left="12" top="11" width="138" height="24" cssclass="sta_WF_title" onclick="Static05_00_00_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  생산일정 메모
+*  @MenuPath    SO > SO026_P01
+*  @FileName 	SO026_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.07.13
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P22_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);
+	
+	this.ds_list.addRow();
+	//this.alert(mgNo);
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.Div_client_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_save();
+};
+
+this.fn_save = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var reason = this.Div_client.form.TextArea00.text;
+	
+	// 등록
+	var id = "SO029_P01_M";
+	var url = "svcUrl::SO029_P01_M";
+	var inDs = "";
+	var outDs = "";
+	var args = "MG_NO="+mgNo+" INSRT_USER_ID="+regUser+" REQUEST_REASON='"+reason+"'";
+	var callBackid = "fn_afterSve";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+};
+
+ this.fn_afterSve = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+	this.alert("저장 되었습니다.");
+}]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="P_PROD_PLAN_DT" type="STRING" size="23"/>
+          <Column id="REMARK" type="STRING" size="4000"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.TextArea00" propid="value" datasetid="ds_list" columnid="REMARK"/>
+    </Bind>
+  </Form>
+</FDL>

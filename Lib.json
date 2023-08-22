@@ -1,0 +1,16 @@
+{
+	"name": "Lib",
+	"version": "1.0.0.0",
+	"description": "Library for nexacro platform17",
+	"license": "",
+	"scripts": [
+        "Lib/Frame.js",
+        "Lib/Util.js",
+        "Lib/Transaction.js",
+        "Lib/Validation.js",
+        "Lib/Popup.js",
+        "Lib/Message.js",
+        "Lib/Grid.js",
+        "Lib/Excel.js",
+	]
+}

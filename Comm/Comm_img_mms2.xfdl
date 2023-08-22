@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Comm_img_mms2" width="841" height="691" titletext="New Form" onload="Comm_img_mms2_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="691" mobileorientation="landscape" width="841">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="10" bottom="10" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static05" taborder="0" text="MMS 발송 대상자" left="0" top="-5" width="130" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid00" taborder="1" left="0" binddataset="ds_list" oncellclick="Grid00_oncellclick" autoenter="select" selecttype="cell" griduserproperty="!sort" autofittype="col" width="380" height="305" top="30">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                      <Column size="90"/>
+                      <Column size="185"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="1" text="순번"/>
+                      <Cell col="2" text="성명"/>
+                      <Cell col="3" text="연락처"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                      <Cell col="1" text="expr:currow+1" textAlign="center"/>
+                      <Cell col="2" combodataset="ds_user" combocodecol="USR_NM" combodatacol="USR_NM" text="bind:USER_NM" combotype="filterlike" edittype="text"/>
+                      <Cell col="3" combodataset="ds_user" combocodecol="USR_NM" combodatacol="USR_NM" text="bind:HP" combotype="filterlike" edittype="text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_mms" taborder="2" left="310" top="-1" height="21" text="발송" cssclass="btn_WF_main1" onclick="Div00_btn_mms_onclick" width="68"/>
+              <Button id="btn_add" taborder="3" left="230" top="-1" height="21" text="추가" cssclass="btn_WF_main1" onclick="Div00_btn_add_onclick" width="68"/>
+              <Static id="Static05_00" taborder="4" text="MMS 발송 이력" left="0" top="345" width="130" height="30" cssclass="sta_WF_title"/>
+              <Grid id="Grid00_00" taborder="5" left="0" top="377" binddataset="ds_list_2" cellsizingtype="both" selecttype="cell" onkeydown="Div_client_Grid00_onkeydown" autofittype="col" height="289" width="380">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="37"/>
+                      <Column size="115"/>
+                      <Column size="123"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="연락처"/>
+                      <Cell col="2" text="일시"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow + 1" textAlign="center"/>
+                      <Cell col="1" text="bind:HP" textAlign="center"/>
+                      <Cell col="2" text="bind:INSRT_DT" textAlign="center" displaytype="mask" maskedittype="string" maskeditformat="####-##-## ##:##:##"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <TextArea id="TextArea00" taborder="6" width="408" height="285" top="50" left="410"/>
+              <TextArea id="TextArea00_00" taborder="7" width="408" height="290" left="410" top="376"/>
+              <Static id="Static05_01" taborder="8" text="MMS 발송 메시지 내용" left="410" top="18" width="150" height="30" cssclass="sta_WF_title"/>
+              <Static id="Static05_01_00" taborder="9" text="MMS 발송이력 메시지 내용" left="410" top="345" width="180" height="30" cssclass="sta_WF_title"/>
+              <Static id="Static00" taborder="10" text="※ 등록 된 이미지가 없을 시 문자 발송이 되지 않습니다." left="411" top="0" width="319" height="22" color="RED" font="normal bold 10pt/normal &quot;Arial&quot;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  MMS 이미지 전송 팝업
+*  @MenuPath    Comm > Comm_img_mms2
+*  @FileName 	Comm_img_mms2.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.24
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var mgNo = this.getOwnerFrame().mgNo
+var hp = this.getOwnerFrame().hp
+var nm = this.getOwnerFrame().nm
+var hp2 = this.getOwnerFrame().hp2
+var nm2 = this.getOwnerFrame().nm2
+var message = this.getOwnerFrame().message
+var prgmId = this.getOwnerFrame().prgmId
+var sndNum = this.getOwnerFrame().sndNum
+var fileNm = this.getOwnerFrame().fileNm
+var title = this.getOwnerFrame().title
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.Comm_img_mms2_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+		
+	if (this.gfn_isNull(hp2))
+	{
+		this.ds_list.addRow();
+		this.ds_list.setColumn(0,"USER_NM",nm);
+		this.ds_list.setColumn(0,"HP",hp);
+		this.ds_list.setColumn(0,"MESSAGE",message);
+		this.ds_list.setColumn(0,"CHK","1");
+		
+		this.ds_list.addRow();
+		this.ds_list.setColumn(1,"USER_NM","강철");
+		this.ds_list.setColumn(1,"HP","010-8214-3179");
+		this.ds_list.setColumn(1,"MESSAGE",message);
+		this.ds_list.setColumn(1,"CHK","1");
+	} else
+	{
+		this.ds_list.addRow();
+		this.ds_list.setColumn(0,"USER_NM",nm);
+		this.ds_list.setColumn(0,"HP",hp);
+		this.ds_list.setColumn(0,"MESSAGE",message);
+		this.ds_list.setColumn(0,"CHK","1");
+		
+		this.ds_list.addRow();
+		this.ds_list.setColumn(1,"USER_NM",nm2);
+		this.ds_list.setColumn(1,"HP",hp2);
+		this.ds_list.setColumn(1,"MESSAGE",message);
+		this.ds_list.setColumn(1,"CHK","1");
+		
+		this.ds_list.addRow();
+		this.ds_list.setColumn(2,"USER_NM","강철");
+		this.ds_list.setColumn(2,"HP","010-8214-3179");
+		this.ds_list.setColumn(2,"MESSAGE",message);
+		this.ds_list.setColumn(2,"CHK","1");
+	}
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/ 
+ this.fn_search = function ()
+{	
+	var id = "SO001_P24_S";
+	var url = "svcUrl::SO001_P24_S";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list";
+	var args = "SO_NO="+mgNo+" PRGR_ID="+prgmId+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+this.Div00_btn_mms_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.ds_list.set_updatecontrol(false);
+		
+	for(var i=0; i<this.ds_list.rowcount;i++)
+	{
+		if (this.ds_list.getColumn(i,"CHK") == 1 && this.gfn_isNull(this.ds_list.getColumn(i,"MESSAGE")))
+		{
+			this.alert((i+1)+"번째 메시지 내용이 없습니다. 확인하시기 바랍니다.");
+			return;
+		}
+	
+		if (this.ds_list.getColumn(i,"CHK") == 1)
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_INSERT);
+		} else
+		{
+			this.ds_list.setRowType(i,Dataset.ROWTYPE_NORMAL);
+		}
+	}
+	
+	this.ds_list.set_updatecontrol(true);
+		
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+
+	// 문자발송
+	var id = "ZZ_MMS_IMG_SND";
+	var url = "svcUrl::ZZ_MMS_IMG_SND";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "MG_NO='"+mgNo+"' INSRT_USER_ID="+regUser+" PRGR_ID="+prgmId+" TITLE="+title+" FILE_NAME="+fileNm+" SND_NUM="+sndNum+"";
+	var callBackid = "fn_aftermms";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+// mms 발송 callback
+this.fn_aftermms = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("정상적으로 발송 되었습니다.");
+	
+	this.fn_search();
+}
+
+this.Div00_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{		
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"MESSAGE",message);
+	this.ds_list.setColumn(this.ds_list.rowposition,"CHK","1");
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list" oncolumnchanged="ds_list_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="USER_NM" type="STRING" size="256"/>
+          <Column id="HP" type="STRING" size="256"/>
+          <Column id="MESSAGE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_user"/>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="SEQ" type="INT" size="10"/>
+          <Column id="PRGR_ID" type="STRING" size="20"/>
+          <Column id="MG_NO" type="STRING" size="20"/>
+          <Column id="SN" type="INT" size="10"/>
+          <Column id="HP" type="STRING" size="20"/>
+          <Column id="SND_MSG" type="STRING" size="2000"/>
+          <Column id="INSRT_USER" type="STRING" size="20"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.TextArea00" propid="value" datasetid="ds_list" columnid="MESSAGE"/>
+      <BindItem id="item1" compid="Div00.form.TextArea00_00" propid="value" datasetid="ds_list_2" columnid="SND_MSG"/>
+    </Bind>
+  </Form>
+</FDL>

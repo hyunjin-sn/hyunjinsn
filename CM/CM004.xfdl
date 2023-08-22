@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM003" width="1610" height="840" titletext="New Form" onload="CM003_onload">
+    <Layouts>
+      <Layout height="840" mobileorientation="landscape" width="1610">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Div id="Div00" taborder="2" text="Div00" left="10" top="10" width="1588" height="116">
+          <Layouts>
+            <Layout>
+              <Static id="sta_21_00" taborder="27" left="99" top="85" height="29" cssclass="sta_WF_detailLine" width="1305"/>
+              <Static id="sta_01_01" taborder="13" left="94" top="57" height="29" cssclass="sta_WF_detailLine" width="1310"/>
+              <Static id="Static04_00_00_00" taborder="8" text="계약기간" left="505" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="sta_21" taborder="4" left="99" top="29" height="29" cssclass="sta_WF_detailLine" width="1305"/>
+              <Static id="Static23" taborder="1" text="계약번호" left="0" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static05_00" taborder="3" text="계약 정보" left="0" top="1" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static04_00_00" taborder="2" text="계약종류" left="869" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo" taborder="0" left="104" top="33" width="123" height="21" enable="true" readonly="true" background="#fafdc8"/>
+              <Static id="Static23_00" taborder="5" text="계약명" left="253" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mRoomNo00" taborder="6" left="357" top="33" width="364" height="21" enable="true" readonly="true"/>
+              <Combo id="Combo00" taborder="7" left="972" top="61" width="146" height="21" type="filterlike" codecolumn="CODE" datacolumn="CODE_NAME" readonly="true"/>
+              <Calendar id="cal_startDate" taborder="9" left="608" top="61" width="113" height="21" dateformat="yyyy-MM-dd" autoselect="true" readonly="true"/>
+              <Static id="Static01" taborder="10" text="~" left="733" top="61" width="7" height="18"/>
+              <Calendar id="cal_endDate" taborder="11" left="751" top="61" width="113" height="21" dateformat="yyyy-MM-dd" autoselect="true" readonly="true"/>
+              <Static id="Static04_00_00_01" taborder="12" text="계약체결일" left="253" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Calendar id="cal_startDate00" taborder="14" left="357" top="61" width="145" height="21" dateformat="yyyy-MM-dd" autoselect="true" readonly="true"/>
+              <Static id="Static23_01" taborder="15" text="고객사" left="726" top="29" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo00" taborder="16" left="830" top="33" width="288" height="21" enable="true" readonly="true"/>
+              <Static id="Static23_01_00" taborder="17" text="경조타입" left="0" top="57" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_soNo00_00" taborder="18" left="104" top="61" width="145" height="21" enable="true" readonly="true"/>
+              <Static id="Static23_02" taborder="19" text="상품금액" left="1122" top="29" width="127" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Static id="Static23_00_00" taborder="20" text="행사 차감 금액" left="1122" top="57" width="127" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <MaskEdit id="MaskEdit00" taborder="21" left="1254" top="33" width="145" height="21" format="##,###" readonly="true"/>
+              <MaskEdit id="MaskEdit00_00" taborder="22" left="1254" top="61" width="145" height="21" format="##,###" readonly="true"/>
+              <Button id="btn_bpCd" taborder="23" left="228" top="33" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_bpCd_onclick"/>
+              <Button id="btn_add_sosoc_type00_00" taborder="24" top="64" text="다른 고객으로등록" cssclass="btn_WF_main1" width="126" height="21" right="44" onclick="Div00_btn_add_sosoc_type00_00_onclick"/>
+              <Button id="btn_add_sosoc_type00_00_00" taborder="25" top="33" text="표준유형 불러오기" cssclass="btn_WF_main1" width="127" height="21" right="44" onclick="Div00_00_00_btn_add_sosoc_type00_00_onclick"/>
+              <Static id="Static23_00_01" taborder="26" text="품목명" left="253" top="85" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_mRoomNo00_00" taborder="28" left="357" top="89" width="508" height="21" enable="true" readonly="true"/>
+              <Static id="Static23_00_01_00" taborder="29" text="품목코드" left="0" top="85" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
+              <Edit id="edt_mRoomNo00_00_00" taborder="30" left="104" top="89" width="123" height="21" enable="true" readonly="true" background="#fafdc8"/>
+              <Button id="btn_bpCd00" taborder="31" left="227" top="89" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_bpCd00_onclick"/>
+              <Static id="Static23_00_00_00" taborder="32" text="페이백 제한 금액" left="1122" top="85" width="127" cssclass="sta_WF_detailLabel_ess" height="29" visible="false"/>
+              <MaskEdit id="MaskEdit00_00_00" taborder="33" left="1254" top="89" width="145" height="21" format="##,###" readonly="false" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00_00" taborder="3" text="Div00" left="10" top="134" width="1590" height="698">
+          <Layouts>
+            <Layout>
+              <Static id="sta_01_01" taborder="6" left="94" top="520" height="177" cssclass="sta_WF_detailLine" width="466" visible="false"/>
+              <TextArea id="TextArea00_00" taborder="4" left="105" top="526" bottom="7" onchanged="Div00_TextArea00_onchanged" width="449" visible="false"/>
+              <Static id="Static04_00_00_02" taborder="5" text="비고" left="0" top="520" width="100" cssclass="sta_WF_detailLabel" height="177" visible="false"/>
+              <Grid id="grd_list00" taborder="0" scrolltype="both" minwidth="" top="39" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="577" autofittype="col" onselectchanged="Tab00_Tabpage1_grd_list00_onselectchanged" cellsizingtype="col" right="2" extendsizetype="none" width="1588" summarytype="top" binddataset="ds_list_2" onkeydown="Div00_00_grd_list00_onkeydown" oncellclick="Div00_00_grd_list00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="42"/>
+                      <Column size="42"/>
+                      <Column size="42"/>
+                      <Column size="101"/>
+                      <Column size="101"/>
+                      <Column size="101"/>
+                      <Column size="267"/>
+                      <Column size="180"/>
+                      <Column size="64"/>
+                      <Column size="48"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="82"/>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                      <Column size="77"/>
+                      <Column size="51"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="순번"/>
+                      <Cell col="1" rowspan="2" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="2" rowspan="2" text="삭제"/>
+                      <Cell col="3" rowspan="2" text="품목그룹"/>
+                      <Cell col="4" rowspan="2" text="구분"/>
+                      <Cell col="5" rowspan="2" text="품목코드"/>
+                      <Cell col="6" rowspan="2" text="품목"/>
+                      <Cell col="7" rowspan="2" text="규격"/>
+                      <Cell col="8" rowspan="2" text="단위"/>
+                      <Cell col="9" rowspan="2" text="수량"/>
+                      <Cell col="10" colspan="2" text="판가"/>
+                      <Cell col="12" colspan="2" text="원가"/>
+                      <Cell col="14" colspan="2" text="공제"/>
+                      <Cell col="16" colspan="2" text="업그레이드 차감"/>
+                      <Cell col="18" rowspan="2" text="추가&#13;&#10;여부"/>
+                      <Cell col="19" rowspan="2" text="공제&#13;&#10;여부"/>
+                      <Cell col="20" rowspan="2" text="대체&#13;&#10;여부"/>
+                      <Cell col="21" rowspan="2" text="업그레이드&#10;여부"/>
+                      <Cell col="22" rowspan="2" text="정렬&#13;&#10;순서"/>
+                      <Cell row="1" col="10" text="단가"/>
+                      <Cell row="1" col="11" text="금액"/>
+                      <Cell row="1" col="12" text="단가"/>
+                      <Cell row="1" col="13" text="금액"/>
+                      <Cell row="1" col="14" text="단가"/>
+                      <Cell row="1" col="15" text="금액"/>
+                      <Cell row="1" col="16" text="단가"/>
+                      <Cell row="1" col="17" text="금액"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell textAlign="center" text="expr:currow+1"/>
+                      <Cell col="1" textAlign="center" displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
+                      <Cell col="2" textAlign="center" displaytype="buttoncontrol" edittype="button" text="삭제"/>
+                      <Cell col="3" text="bind:ITEM_GRP" textAlign="center" combodataset="ds_itemGrp" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top" displaytype="combotext"/>
+                      <Cell col="4" text="bind:ITEM_DIV" textAlign="center" combodataset="ds_itemDiv" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top" displaytype="combotext"/>
+                      <Cell col="5" text="bind:ITEM_CD" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top"/>
+                      <Cell col="6" text="bind:ITEM_CD" textAlign="left" combodataset="ds_item" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" displaytype="combocontrol" combotype="filterlike"/>
+                      <Cell col="7" text="bind:SPEC" textAlign="left" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" verticalAlign="top"/>
+                      <Cell col="8" text="bind:BASIC_UNIT" textAlign="center" combodataset="ds_unit" combocodecol="CODE" combodatacol="CODE_NAME" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="9" text="bind:QTY" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="mask" maskeditformat="##,##0" background="#fafdc8" editautoselect="true" maskeditautoselect="true"/>
+                      <Cell col="10" text="bind:PRICE" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0" edittype="mask" background="#fafdc8" editautoselect="true" maskeditautoselect="true"/>
+                      <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:AMT" maskeditformat="##,##0"/>
+                      <Cell col="12" text="bind:PUR_PRICE" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0"/>
+                      <Cell col="13" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:PUR_AMT" maskeditformat="##,##0"/>
+                      <Cell col="14" text="bind:DDT_PRICE" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0" editautoselect="true" maskeditautoselect="true" cssclass="expr:comp.parent.parent.parent.fn_ddtPrice(currow)" edittype="expr:comp.parent.parent.parent.fn_ddtPrice2(currow)"/>
+                      <Cell col="15" text="bind:DDT_AMT" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0" editautoselect="true" maskeditautoselect="true"/>
+                      <Cell col="16" text="bind:CHG_PRICE" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0" editautoselect="true" maskeditautoselect="true" cssclass="expr:comp.parent.parent.parent.fn_chgPrice(currow)" edittype="expr:comp.parent.parent.parent.fn_chgPrice2(currow)"/>
+                      <Cell col="17" text="bind:CHG_AMT" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" maskeditformat="##,##0" editautoselect="true" maskeditautoselect="true"/>
+                      <Cell col="18" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:ADD_FLG" maskeditformat="##,##0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="19" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:DDT_FLG" maskeditformat="##,##0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="20" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:CHG_FLG" maskeditformat="##,##0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="21" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:UP_FLG" maskeditformat="##,##0" displaytype="checkboxcontrol" edittype="checkbox"/>
+                      <Cell col="22" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" text="bind:ORDR" maskeditformat="##,##0" edittype="mask"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="11" text="합  계   " textAlign="right"/>
+                      <Cell col="11" text="expr:comp.parent.parent.parent.fn_sumPrice(currow)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="12"/>
+                      <Cell col="13" text="expr:dataset.getSum(&quot;PUR_AMT&quot;)" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="14"/>
+                      <Cell col="15" text="expr:comp.parent.parent.parent.fn_sumPrice2(currow)" maskeditformat="##,###" displaytype="mask"/>
+                      <Cell col="16"/>
+                      <Cell col="17" text="expr:dataset.getSum(&quot;CHK_AMT&quot;)" maskeditformat="##,###" displaytype="mask"/>
+                      <Cell col="18" maskeditformat="##,###"/>
+                      <Cell col="19" maskeditformat="##,###"/>
+                      <Cell col="20" maskeditformat="##,###"/>
+                      <Cell col="21" maskeditformat="##,###"/>
+                      <Cell col="22" maskeditformat="##,###"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00_00" taborder="1" text="품목리스트" top="2" width="116" height="24" cssclass="sta_WF_title" right="1473"/>
+              <Button id="btn_add_sosoc_type00" taborder="2" top="3" text="행추가" cssclass="btn_WF_main1" width="60" height="21" right="3" onclick="Div00_00_btn_add_sosoc_type00_onclick"/>
+              <Button id="btn_del_sosoc_type" taborder="3" top="3" text="행삭제" cssclass="btn_WF_main1" width="60" height="21" right="74" onclick="Div00_00_btn_del_sosoc_type_onclick" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <CheckBox id="chk" taborder="4" text="사용여부" left="1280" top="132" width="140" height="38" font="normal 600 20pt/normal &quot;Arial&quot;" onclick="CheckBox00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="20"/>
+          <Column id="CONT_NM" type="STRING" size="200"/>
+          <Column id="PACK_ITEM_CD" type="STRING" size="20"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="CONT_TYPE" type="STRING" size="20"/>
+          <Column id="CONT_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_FR_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_TO_DT" type="DATETIME" size="23"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="LIST_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="DISCOUNT_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="DDT_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="ITEM_NM" type="STRING" size="256"/>
+          <Column id="REMARK" type="STRING" size="256"/>
+          <Column id="CHK" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2" oncolumnchanged="ds_list_2_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="CHK" type="STRING" size="1"/>
+          <Column id="CONT_NO" type="STRING" size="20"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="PACK_ITEM_CD" type="STRING" size="20"/>
+          <Column id="SEQ" type="INT" size="11"/>
+          <Column id="ITEM_DIV" type="STRING" size="20"/>
+          <Column id="ITEM_GRP" type="STRING" size="20"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SPEC" type="STRING" size="100"/>
+          <Column id="BASIC_UNIT" type="STRING" size="3"/>
+          <Column id="QTY" type="BIGDECIMAL" size="17"/>
+          <Column id="PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="PUR_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="PUR_AMT" type="BIGDECIMAL" size="33"/>
+          <Column id="ADD_YN" type="STRING" size="4"/>
+          <Column id="DEL_YN" type="STRING" size="4"/>
+          <Column id="DDT_FLG" type="STRING" size="10"/>
+          <Column id="DDT_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="CHG_FLG" type="STRING" size="10"/>
+          <Column id="CHG_PRICE" type="BIGDECIMAL" size="17"/>
+          <Column id="ADD_FLG" type="STRING" size="10"/>
+          <Column id="UP_FLG" type="STRING" size="10"/>
+          <Column id="DDT_AMT" type="BIGDECIMAL" size="33"/>
+          <Column id="CHG_AMT" type="BIGDECIMAL" size="33"/>
+          <Column id="ORDR" type="INT" size="255"/>
+          <Column id="INSRT_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="20"/>
+          <Column id="CONT_NM" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="CONT_TYPE" type="STRING" size="20"/>
+          <Column id="CONT_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_FR_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_TO_DT" type="DATETIME" size="23"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="BP_PAY_AMT" type="BIGDECIMAL" size="17"/>
+          <Column id="DISCOUNT_AMT" type="BIGDECIMAL" size="17"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item"/>
+      <Dataset id="ds_itemDiv"/>
+      <Dataset id="ds_itemGrp"/>
+      <Dataset id="ds_copy">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="256"/>
+          <Column id="HS_TYPE" type="STRING" size="256"/>
+          <Column id="PACK_ITEM_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.edt_soNo" propid="value" datasetid="ds_list_1" columnid="CONT_NO"/>
+      <BindItem id="item6" compid="Div00.form.edt_cMemo00" propid="value" datasetid="ds_item_tip2" columnid="TIP_DESC"/>
+      <BindItem id="item7" compid="Div00.form.cal_startDate" propid="value" datasetid="ds_list_1" columnid="CONT_FR_DT"/>
+      <BindItem id="item8" compid="Div00.form.cal_endDate" propid="value" datasetid="ds_list_1" columnid="CONT_TO_DT"/>
+      <BindItem id="item9" compid="Div00.form.edt_mRoomNo00" propid="value" datasetid="ds_list_1" columnid="CONT_NM"/>
+      <BindItem id="item12" compid="Div00.form.Combo00" propid="value" datasetid="ds_list_1" columnid="CONT_TYPE"/>
+      <BindItem id="item13" compid="Div00.form.cal_startDate00" propid="value" datasetid="ds_list_1" columnid="CONT_DT"/>
+      <BindItem id="item11" compid="Div00_00.form.edt_cMemo00" propid="value" datasetid="ds_item_tip2" columnid="TIP_DESC"/>
+      <BindItem id="item18" compid="Div00.form.edt_soNo00" propid="value" datasetid="ds_list_1" columnid="BP_CD"/>
+      <BindItem id="item19" compid="Div00.form.edt_soNo00_00" propid="value" datasetid="ds_list_1" columnid="HS_TYPE"/>
+      <BindItem id="item10" compid="Div00.form.MaskEdit00" propid="value" datasetid="ds_list_1" columnid="LIST_PRICE"/>
+      <BindItem id="item14" compid="Div00_00.form.MaskEdit00_00" propid="value" datasetid="ds_list_2" columnid="DISCOUNT_AMT"/>
+      <BindItem id="item15" compid="Div00.form.MaskEdit00_00" propid="value" datasetid="ds_list_1" columnid="DISCOUNT_AMT"/>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.TextArea00_00_00" propid="value" datasetid="ds_list_1" columnid="MSG_MEMO"/>
+      <BindItem id="item2" compid="Div00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list_1" columnid="ITEM_NM"/>
+      <BindItem id="item3" compid="Div00.form.edt_mRoomNo00_00_00" propid="value" datasetid="ds_list_1" columnid="PACK_ITEM_CD"/>
+      <BindItem id="item4" compid="Div00_00.form.TextArea00_00" propid="value" datasetid="ds_list_1" columnid="REMARK"/>
+      <BindItem id="item5" compid="Div00.form.MaskEdit00_00_00" propid="value" datasetid="ds_list_1" columnid="DDT_AMT"/>
+      <BindItem id="item16" compid="chk" propid="value" datasetid="ds_list_1" columnid="CHK"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    CMS > 회사지원 내역 등록
+*  @FileName 	CM0003.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.01.28
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	//this.ds_bp.addRow();
+	this.ds_list_1.addRow();
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetComboData(obj,this.objApp.gds_code,"ds_contType",this.Div00.form.Combo00,"MAJOR_CD=='XN040'",false,false);	// 계약유형
+	this.efn_SetDatasetData2(this.ds_itemDiv,this.objApp.gds_code2,'CM003');		    // 품목구분
+	this.efn_SetDatasetData2(this.ds_itemGrp,this.objApp.gds_code2,'CM002');		    // 품목그룹
+	
+	var id = "CM004_S02";
+	var url = "svcUrl::CM004_S02";
+	var inDs = "";
+	var outDs = "ds_item=ds_item";
+	var args = "";
+	var callBackid = "fn_commSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_commSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+}
+
+this.fn_search = function (contNo, hsType, itemCd)
+{
+	var Arg_1 = "";
+	var Arg_2 = "";
+		
+	if (this.gfn_isNull(contNo) || this.gfn_isNull(hsType) || this.gfn_isNull(itemCd))
+	{
+		Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+		Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+		Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD");
+	} else
+	{
+		Arg_1 = contNo;
+		Arg_2 = hsType;
+		Arg_3 = itemCd;
+	}	
+	
+	if (this.gfn_isNull(Arg_1))
+	{
+		this.alert("계약번호를 선택하세요.");
+		return;
+	}
+	
+	if (this.gfn_isNull(Arg_3))
+	{
+		this.alert("품목코드를 선택하세요.");
+		return;
+	}
+	
+	var id = "CM004_S01";
+	var url = "svcUrl::CM004_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "CONT_NO="+Arg_1+" HS_TYPE="+Arg_2+" ITEM_CD="+Arg_3+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.fn_save = function ()
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO")))
+	{
+		this.alert("계약번호를 선택하세요");
+		return;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD")))
+	{
+		this.alert("품목코드를 선택하세요");
+		return;
+	}
+	
+	for(var i=0; i<this.ds_list_2.rowcount;i++)
+	{
+		if (this.gfn_isNull(this.ds_list_2.getColumn(i,"QTY")) || this.gfn_isNull(this.ds_list_2.getColumn(i,"PRICE")))
+		{
+			this.alert((i+1)+"번째 수량 및 단가를 확인바랍니다.");
+			return;
+		}
+	}
+
+	for(var i=0; i<this.ds_list_2.rowcount; i++)
+	{
+		//trace(this.ds_list_2.getColumn(i,"DDT_FLG"))
+		if (this.ds_list_2.getColumn(i,"DDT_FLG") == "1" || this.ds_list_2.getColumn(i,"DDT_FLG") == true)
+		{
+			if (this.gfn_isNull(this.ds_list_2.getColumn(i,"DDT_PRICE")))
+			{
+				this.alert((i+1)+"번째 페이백단가를 입력바랍니다.");
+				return;
+			}
+		}
+	}
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+	var Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD");
+	var Arg_4 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "CM004_M01";
+	var url = "svcUrl::CM004_M01";
+	var inDs = "ds_list_1=ds_list_1:U ds_list_2=ds_list_2:U";
+	var outDs = "";
+	var args = "CONT_NO="+Arg_1+" HS_TYPE="+Arg_2+" INSRT_USER_ID="+Arg_4+" ITEM_CD="+Arg_3+"";
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	this.fn_search(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO"),this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE"),this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD"));
+}
+
+this.fn_delete = function ()
+{
+	if (this.confirm("정말 삭제하시겠습니까?"))
+	{
+		this.ds_list_1.deleteRow(this.ds_list_1.rowposition);
+		this.ds_list_2.deleteAll();
+			
+		var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+		var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+		var Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD");
+		var Arg_4 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+		
+		var id = "CM004_M01";
+		var url = "svcUrl::CM004_M01";
+		var inDs = "ds_list_1=ds_list_1:U ds_list_2=ds_list_2:U";
+		var outDs = "";
+		var args = "CONT_NO="+Arg_1+" HS_TYPE="+Arg_2+" INSRT_USER_ID="+Arg_4+" ITEM_CD="+Arg_3+"";
+		var callBackid = "fn_afterSave";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}	
+};
+
+// 계약 팝업
+this.div_search_btn_bpCd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_1.clearData();
+	
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM003_P01.xfdl";
+	var oArg      = {mode : "", mode2 : "CM004"};
+	var sCallBack = "fn_popupCallback_cont";
+	var oOption   = {title : "계약 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 계약 팝업 callback
+this.fn_popupCallback_cont = function(sPopId, sRtn)
+{
+	// json textarea 엔터값 변환
+ 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+
+    var objRtn = JSON.parse(sRtn);	
+	
+	this.ds_list_1.addRow();
+
+	if (objRtn.SAVE_YN == "Y")
+	{
+		if (!this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ITEM_CD")))
+		{
+			this.fn_search(objRtn.CONT_NO, objRtn.HS_TYPE, this.ds_list_1.getColumn(this.ds_list_1.rowposition,"ITEM_CD"));
+		}
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NO",objRtn.CONT_NO);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NM",objRtn.CONT_NM);		
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BP_CD",objRtn.BP_CD+" : "+objRtn.BP_NM);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TYPE",objRtn.CONT_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_DT",objRtn.CONT_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_FR_DT",objRtn.CONT_FR_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TO_DT",objRtn.CONT_TO_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"HS_TYPE",objRtn.HS_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DISCOUNT_AMT",objRtn.DISCOUNT_AMT);
+	} else
+	{
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NO",objRtn.CONT_NO);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NM",objRtn.CONT_NM);		
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BP_CD",objRtn.BP_CD+" : "+objRtn.BP_NM);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TYPE",objRtn.CONT_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_DT",objRtn.CONT_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_FR_DT",objRtn.CONT_FR_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TO_DT",objRtn.CONT_TO_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"HS_TYPE",objRtn.HS_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DISCOUNT_AMT",objRtn.DISCOUNT_AMT);
+		
+		this.ds_list_2.clearData();
+		this.ds_list_3.clearData();
+	}
+}
+
+// 품목팝업
+this.Div00_btn_bpCd00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var contNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var hsType = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+	var mode = "";
+	
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM004_P01.xfdl";
+	var oArg      = {contNo : contNo, hsType : hsType, mode : mode};
+	var sCallBack = "fn_popupCallback_item";
+	var oOption   = {title : "패키지 품목 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 계약 팝업 callback
+this.fn_popupCallback_item = function(sPopId, sRtn)
+{
+	// json textarea 엔터값 변환
+ 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+
+    var objRtn = JSON.parse(sRtn);	
+
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD",objRtn.ITEM_CD);
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ITEM_NM",objRtn.ITEM_NM);
+	
+	
+	if (objRtn.CHK == "Y" && !this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO")))
+	{
+		this.fn_search(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO"), this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE"), objRtn.ITEM_CD);
+	}
+}
+
+// 표준유형
+this.Div00_00_00_btn_add_sosoc_type00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM004_P02.xfdl";
+	var oArg      = {mode : ""};
+	var sCallBack = "fn_popupCallback_cont3";
+	var oOption   = {title : "표준유형 계약정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 표준유형 callback
+this.fn_popupCallback_cont3 = function(sPopId, sRtn)
+{
+	// json textarea 엔터값 변환
+ 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+
+    var objRtn = JSON.parse(sRtn);	
+	
+	if (this.ds_copy.rowcount < 1)
+	{
+		this.ds_copy.addRow();
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"CONT_NO",objRtn.CONT_NO);
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"HS_TYPE",objRtn.HS_TYPE);
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"PACK_ITEM_CD",objRtn.PACK_ITEM_CD);
+	}
+	
+	var id = "CM004_S01";
+	var url = "svcUrl::CM004_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2";
+	var args = "CONT_NO="+objRtn.CONT_NO+" HS_TYPE="+objRtn.HS_TYPE+" ITEM_CD="+objRtn.PACK_ITEM_CD+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NO","");
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD","");
+	
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM003_P01.xfdl";
+	var oArg      = {mode : "copy", mode2 : "CM004"};
+	var sCallBack = "fn_popupCallback_cont2";
+	var oOption   = {title : "계약 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+}
+
+// 기존 고객사 복사
+this.Div00_btn_add_sosoc_type00_00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO")))
+	{
+		this.alert("저장할 계약을 먼저 선택해주세요.");
+		return;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD")))
+	{
+		this.alert("저장할 품목을 먼저 선택해주세요.");
+		return;
+	}
+	
+	if (this.ds_list_2.rowcount < 1)
+	{
+		this.alert("복사할 데이터가 없습니다. 계약번호 및 품목코드를 다시 선택하세요.");
+		return;
+	}
+	
+	if (this.ds_copy.rowcount < 1)
+	{
+		this.ds_copy.addRow();
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"CONT_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO"));
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"HS_TYPE",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE"));
+		this.ds_copy.setColumn(this.ds_copy.rowposition,"PACK_ITEM_CD",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD"));
+	}
+	
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM003_P01.xfdl";
+	var oArg      = {mode : "copy", mode2 : "CM004"};
+	var sCallBack = "fn_popupCallback_cont2";
+	var oOption   = {title : "다른 고객으로 등록"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 계약 팝업 callback
+this.fn_popupCallback_cont2 = function(sPopId, sRtn)
+{
+	// json textarea 엔터값 변환
+ 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+
+    var objRtn = JSON.parse(sRtn);	
+	//trace(this.ds_copy.rowcount)
+// 	if (objRtn.CONT_NO != this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO") && objRtn.PACK_ITEM_CD != this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD"))
+// 	{
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NO",objRtn.CONT_NO);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_NM",objRtn.CONT_NM);		
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"BP_CD",objRtn.BP_CD+" : "+objRtn.BP_NM);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TYPE",objRtn.CONT_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_DT",objRtn.CONT_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_FR_DT",objRtn.CONT_FR_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CONT_TO_DT",objRtn.CONT_TO_DT);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"HS_TYPE",objRtn.HS_TYPE);
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"DISCOUNT_AMT",objRtn.DISCOUNT_AMT);
+		
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD","");
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"ITEM_NM","");
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHK","");
+		if (this.ds_copy.rowcount > 0)
+		{
+			this.fn_searchPack();
+		} else
+		{
+			// 계약정보
+			this.ds_list_1.set_updatecontrol(false);
+				
+			this.ds_list_1.setRowType(0,Dataset.ROWTYPE_INSERT);
+			
+			this.ds_list_1.set_updatecontrol(true);
+			
+			// 품목리스트
+			this.ds_list_2.set_updatecontrol(false);
+				
+			for(var i=0; i<this.ds_list_2.rowcount;i++)
+			{
+				this.ds_list_2.setRowType(i,Dataset.ROWTYPE_INSERT);
+			}
+			
+			this.ds_list_2.set_updatecontrol(true);
+		}
+	//} 
+	
+	// 고객사 결제금액 세팅		
+	this.ds_list_2.filter("CHK=='1'");
+	total_amt = this.ds_list_2.getSum("AMT");
+	this.ds_list_2.filter("");
+	
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"LIST_PRICE",total_amt);
+}
+
+this.fn_searchPack = function ()
+{
+	var args1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var args2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+	var args3 = this.ds_copy.getColumn(this.ds_copy.rowposition,"CONT_NO");
+	var args4 = this.ds_copy.getColumn(this.ds_copy.rowposition,"HS_TYPE");
+	var args5 = this.ds_copy.getColumn(this.ds_copy.rowposition,"PACK_ITEM_CD");
+	
+	var id = "CM004_S03";
+	var url = "svcUrl::CM004_S03";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2";
+	var args = "CONT_NO1="+args1+" HS_TYPE1="+args2+" CONT_NO2="+args3+" HS_TYPE2="+args4+" ITEM_CD2="+args5+"";
+	var callBackid = "fn_afterSearch3";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch3 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	// 고객사 결제금액 세팅
+	this.ds_list_2.filter("CHK=='1'");
+	total_amt = this.ds_list_2.getSum("AMT");
+	this.ds_list_2.filter("");
+
+	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"LIST_PRICE",total_amt);
+	
+	// 계약정보
+	this.ds_list_1.set_updatecontrol(false);
+		
+	this.ds_list_1.setRowType(0,Dataset.ROWTYPE_INSERT);
+	
+	this.ds_list_1.set_updatecontrol(true);
+			
+	// 품목리스트
+	this.ds_list_2.set_updatecontrol(false);
+		
+	for(var i=0; i<this.ds_list_2.rowcount;i++)
+	{
+		this.ds_list_2.setRowType(i,Dataset.ROWTYPE_INSERT);
+	}
+	
+	this.ds_list_2.set_updatecontrol(true);
+	
+	this.ds_copy.clearData();
+}
+
+// 품목리스트 추가
+this.Div00_00_btn_add_sosoc_type00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO")))
+	{
+		this.alert("계약번호를 선택해주세요");
+		return;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD")))
+	{
+		this.alert("품목코드를 선택해주세요");
+		return;
+	}
+	
+	if (this.ds_list_2.rowcount < 1)
+	{
+		this.ds_list_2.addRow();
+	} else 
+	{
+		this.ds_list_2.insertRow(this.ds_list_2.rowposition);
+	}	
+	
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHK","1");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ADD_FLG","1");
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"UP_FLG","1");
+};
+
+// 품목리스트 삭제
+this.Div00_00_btn_del_sosoc_type_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+};
+
+this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "CHK" || e.col == 2 || e.columnid == "QTY" || e.columnid == "PRICE" || e.columnid == "ITEM_CD" || e.columnid == "DDT_PRICE" || e.columnid == "CHG_PRICE")
+	{
+		var qty = this.ds_list_2.getColumn(e.row,"QTY");
+		var price = this.ds_list_2.getColumn(e.row,"PRICE");
+		var purPrice = this.ds_list_2.getColumn(e.row,"PUR_PRICE");
+		var ddtPrice = this.ds_list_2.getColumn(e.row,"DDT_PRICE");
+		var chgPrice = this.ds_list_2.getColumn(e.row,"CHG_PRICE");
+		var total_amt = 0;
+		
+		// 판매금액 자동 계산
+		this.ds_list_2.setColumn(e.row,"AMT",qty*price);
+		this.ds_list_2.setColumn(e.row,"PUR_AMT",qty*purPrice);
+		this.ds_list_2.setColumn(e.row,"DDT_AMT",qty*ddtPrice);
+		this.ds_list_2.setColumn(e.row,"CHG_AMT",qty*chgPrice);
+		
+		if (!this.gfn_isNull(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"QTY")) && !this.gfn_isNull(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"PRICE")))
+		{
+			// 고객사 결제금액 세팅		
+			this.ds_list_2.filter("CHK=='1'");
+			total_amt = this.ds_list_2.getSum("AMT");
+			this.ds_list_2.filter("");
+			
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"LIST_PRICE",total_amt);
+		}		
+		
+	}
+	
+	if (e.columnid == "ITEM_CD")
+	{
+		var itemCd = this.ds_list_2.getColumn(e.row,"ITEM_CD")
+		var idx = this.ds_list_2.findRow("ITEM_CD",this.ds_list_2.getColumn(e.row,"ITEM_CD"));
+
+		if (idx != e.row)
+		{
+			this.alert(idx+1+"번째 중복된 코드가 있습니다.");
+			this.ds_list_2.deleteRow(e.row);
+			return;
+		}
+		
+		var idx = this.ds_item.findRow("CODE",e.newvalue);
+
+		this.ds_list_2.setColumn(e.row,"SPEC",this.ds_item.getColumn(idx,"SPEC"));
+		this.ds_list_2.setColumn(e.row,"BASIC_UNIT",this.ds_item.getColumn(idx,"BASIC_UNIT"));
+		this.ds_list_2.setColumn(e.row,"PRICE",this.ds_item.getColumn(idx,"SELL_PRICE"));
+		this.ds_list_2.setColumn(e.row,"ITEM_GRP",this.ds_item.getColumn(idx,"ITEM_GRP"));
+		this.ds_list_2.setColumn(e.row,"ITEM_DIV",this.ds_item.getColumn(idx,"ITEM_DIV"));		
+		this.ds_list_2.setColumn(e.row,"PUR_PRICE",this.ds_item.getColumn(idx,"PUR_PRICE"));	
+	}
+};
+
+this.Div00_00_grd_list00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+// 소계 색상변경
+this.fn_ddtPrice = function (currow)
+{	
+	var flg = this.ds_list_2.getColumn(currow,"DDT_FLG");
+
+	if (flg == "1" || flg == true)
+	{
+		return "status3";
+	}
+};
+
+this.fn_ddtPrice2 = function (currow)
+{
+	var flg = this.ds_list_2.getColumn(currow,"DDT_FLG");
+
+	if (flg == "1" || flg == true)
+	{
+		return "mask";
+	} else
+	{
+		return "none";
+	} 
+};
+
+this.fn_chgPrice = function (currow)
+{	
+	var flg = this.ds_list_2.getColumn(currow,"UP_FLG");
+
+	if (flg == "1" || flg == true)
+	{
+		return "status3";
+	}
+};
+
+this.fn_chgPrice2 = function (currow)
+{
+	var flg = this.ds_list_2.getColumn(currow,"UP_FLG");
+
+	if (flg == "1" || flg == true)
+	{
+		return "mask";
+	} else
+	{
+		return "none";
+	} 
+};
+
+
+this.CheckBox00_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO")))
+	{
+		this.alert("계약번호를 선택하세요");
+		return;
+	}
+	
+	if (this.gfn_isNull(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD")))
+	{
+		this.alert("품목코드를 선택하세요");
+		return;
+	}
+	
+	for (var i=0; i<this.ds_list_2.rowcount; i++)
+	{
+		if (this.gfn_isNull(this.ds_list_2.getColumn(i,"INSRT_DT")))
+		{
+			this.alert("저장 먼저 하시기 바랍니다.");
+			this.chk.set_value(false);
+			return;
+		}
+	}
+	
+	if (this.chk.value == true)
+	{
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHK","1");
+	} else
+	{
+		this.ds_list_1.setColumn(this.ds_list_1.rowposition,"CHK","");
+	}
+	
+	var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE");
+	var Arg_3 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD");
+	var Arg_4 = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "CM004_M02";
+	var url = "svcUrl::CM004_M02";
+	var inDs = "ds_list_1=ds_list_1:U";
+	var outDs = "";
+	var args = "CONT_NO="+Arg_1+" HS_TYPE="+Arg_2+" INSRT_USER_ID="+Arg_4+" ITEM_CD="+Arg_3+"";
+	var callBackid = "fn_afterSave2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("확인완료 되었습니다.");
+	this.fn_search(this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO"),this.ds_list_1.getColumn(this.ds_list_1.rowposition,"HS_TYPE"),this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PACK_ITEM_CD"));
+}
+
+// 체크된 것만 합계 금액 내기
+this.fn_sumPrice = function ()
+{
+	var sumPrice = 0;
+	for (var i=0; i< this.ds_list_2.rowcount; i++)
+	{
+		if (this.ds_list_2.getColumn(i,"CHK") == "1")
+		{
+			sumPrice += (parseInt(this.ds_list_2.getColumn(i,"AMT")))
+		}
+	}	
+	return sumPrice;
+};
+
+// 체크된 것만 합계 금액 내기(공제)
+this.fn_sumPrice2 = function ()
+{
+	var sumPrice2 = 0;
+	for (var i=0; i< this.ds_list_2.rowcount; i++)
+	{
+		if (this.ds_list_2.getColumn(i,"CHK") == "1")
+		{
+			sumPrice2 += (parseInt(this.gfn_nvl(this.ds_list_2.getColumn(i,"DDT_AMT"),0)))
+		}
+	}	
+	return sumPrice2;	
+};
+
+this.Div00_00_grd_list00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == "2")
+	{
+		this.ds_list_2.deleteRow(this.ds_list_2.rowposition);
+		
+		if (!this.gfn_isNull(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"QTY")) && !this.gfn_isNull(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"PRICE")))
+		{
+			// 고객사 결제금액 세팅		
+			this.ds_list_2.filter("CHK=='1'");
+			total_amt = this.ds_list_2.getSum("AMT");
+			this.ds_list_2.filter("");
+			
+			this.ds_list_1.setColumn(this.ds_list_1.rowposition,"LIST_PRICE",total_amt);
+		}
+	}
+	
+	if (e.col == 19)
+	{
+		if (this.ds_list_2.getColumn(this.ds_list_2.rowposition,"DDP_FLG") != "1")
+		{
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"DDT_PRICE",0);
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"DDT_AMT",0);
+		}
+	}
+	
+	if (e.col == 20)
+	{
+		if (this.ds_list_2.getColumn(this.ds_list_2.rowposition,"UP_FLG") != "1")
+		{
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHG_PRICE",0);
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"CHG_AMT",0);
+		}
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

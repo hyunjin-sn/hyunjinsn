@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P22" width="700" height="400" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="400" mobileorientation="landscape" width="700">
+        <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" width="698" height="398">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <TextArea id="TextArea00" taborder="1" left="10" top="10" right="10" bottom="10"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  메뉴권한등록 팝업
+*  @MenuPath    SO > SO001_P01
+*  @FileName 	SO001_P01.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.04.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var bpCd = this.getOwnerFrame().bpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P22_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.fn_search = function ()
+{
+	var id = "SO001_P21";
+	var url = "svcUrl::SO001_P21";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "BP_CD="+bpCd+"";
+	var callBackid = "aaa";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	//trace("123");
+};
+
+this.aaa = function ()
+{
+	//trace(this.ds_list.saveXML());
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="POPUP_TEXT" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.TextArea00" propid="value" datasetid="ds_list" columnid="POPUP_TEXT"/>
+    </Bind>
+  </Form>
+</FDL>

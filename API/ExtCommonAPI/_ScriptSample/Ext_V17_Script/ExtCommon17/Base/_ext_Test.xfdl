@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="_ext_Test" width="1280" height="720" titletext="New Form" onload="Form_onload" onclose="Form_onclose">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="btn_ext_messagebox" taborder="0" text="_ext_messagebox" left="19" top="18" width="120" height="50" right="" bottom="" onclick="btn_ext_messagebox_onclick"/>
+        <Button id="btn_ext_Test_Grp00" taborder="1" text="_ext_Test_Grp00" left="160" top="18" width="120" height="50" onclick="btn_ext_Test_Grp00_onclick"/>
+        <Button id="btn_ext_Test_makejsobject" taborder="2" text="_ext_Test_makejsobject" left="302" top="18" width="178" height="50" onclick="btn_ext_Test_makejsobject_onclick"/>
+        <Button id="btn_ext_Test_system" taborder="3" text="ext_Test_system" left="18" top="114" width="120" height="50" onclick="btn_ext_Test_system_onclick"/>
+        <Button id="btn_LOAD_TEST" taborder="4" text="LOAD_TEST" left="527" top="20" width="120" height="50" onclick="btn_LOAD_TEST_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.objExtCommon = {};
+this.objExtURL = "D:\\_WORK_Project_Nexacro17\\_ExtCommonV17\\_src\\ExtCommonV17\\Release_v8_Version5\\ExtCommonV17.dll";
+
+
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//this.objExtCommon = nexacro._addExtensionModule(this.objExtURL);
+	var navigatorFullName = system.navigatorfullname;
+	trace( navigatorFullName );
+};
+
+this.Form_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+		nexacro._clearExtensionModule(this.objExtURL);
+		this.objExtCommon = null;
+		this.objExtCommon  = {};
+};
+
+/************************************************************************/
+/*  Test 용 함수                                                        													 */
+/************************************************************************/
+this.btn_ext_messagebox_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.objExtCommon._ext_Test_messagebox("Nexacro 17 / Call Test ");
+
+};
+
+this.btn_ext_Test_Grp00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+//trace( typeof(this.objExtCommon.objGroup) );
+trace( (this.objExtCommon.objGroup) );
+	trace( "objGroup Test ::  " +  this.objExtCommon.objGroup._ext_Test_Grp00("Hello ","World !!!") );  	
+};
+
+this.btn_ext_Test_makejsobject_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var arg1 = "안녕";
+	var arg2 = "HELLO";
+	
+	var objTest = this.objExtCommon._ext_Test_makejsobject(arg1, arg2);
+	//var objTest = this.objExtCommon._ext_Test_makejsobject();
+			
+	if(typeof(objTest) == "object" )
+	{ 
+		trace( "_ext_Test_makejsobject :: " + objTest.안녕);
+	}
+	else
+	{
+		trace( "Type : [ "+ typeof(objTest) + " ] Value : [ "  + objTest  + " ] ");
+	}
+};
+
+this.btn_ext_Test_system_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objTest = this.objExtCommon._ext_excuteProcess();
+	
+	trace( "System Call Test ::  " + objTest);
+};
+
+this.btn_LOAD_TEST_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+trace( "Test : " + this.objExtCommon );
+	this.objExtCommon = nexacro._addExtensionModule(this.objExtURL);
+	trace("Test2 : " + this.objExtCommon );
+};
+]]></Script>
+  </Form>
+</FDL>

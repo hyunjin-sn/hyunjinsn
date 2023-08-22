@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO008" width="1500" height="600" titletext="New Form" onload="SO008_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1500">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="1" left="10" top="10" height="34" right="9" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="기간" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="1" left="91" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="2" text="~" left="210" top="5" width="7" height="18"/>
+                    <Calendar id="cal_endDate" taborder="3" left="222" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Grid id="grd_list" taborder="2" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" selecttype="cell" autofittype="col" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" onsummaryclick="Div_client_grd_list_onsummaryclick" width="439">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="47"/>
+                      <Column size="80"/>
+                      <Column size="95"/>
+                      <Column size="64"/>
+                      <Column size="48"/>
+                      <Column size="65"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="의전본부"/>
+                      <Cell col="2" text="대상건수(PKG)"/>
+                      <Cell col="3" text="사용건수"/>
+                      <Cell col="4" text="시행율"/>
+                      <Cell col="5" text="보급수량"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM"/>
+                      <Cell col="2" text="bind:TOTAL_CNT" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="3" text="bind:CNT2" maskeditformat="##,##0" displaytype="mask"/>
+                      <Cell col="4" text="bind:RATE" displaytype="mask" maskeditformat="##.0"/>
+                      <Cell col="5" text="bind:REMARK1" textAlign="right" maskeditformat="##,##0" displaytype="mask"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="Grid00" taborder="3" left="469" top="80" width="1020" binddataset="ds_list_2" autofittype="col" bottom="0">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="53"/>
+                      <Column size="96"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="59"/>
+                      <Column size="64"/>
+                      <Column size="232"/>
+                      <Column size="155"/>
+                      <Column size="96"/>
+                      <Column size="125"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" text="주문번호"/>
+                      <Cell col="2" text="주문일자"/>
+                      <Cell col="3" text="의전본부"/>
+                      <Cell col="4" text="행사팀장"/>
+                      <Cell col="5" text="고객사코드"/>
+                      <Cell col="6" text="고객사명"/>
+                      <Cell col="7" text="장례식장"/>
+                      <Cell col="8" text="경조사유"/>
+                      <Cell col="9" text="상담내역"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center"/>
+                      <Cell col="1" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:SO_DT" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="3" text="bind:PO_BP_NM" textAlign="center"/>
+                      <Cell col="4" text="bind:EMP_NM" textAlign="center"/>
+                      <Cell col="5" text="bind:SOLD_TO_PARTY" textAlign="center"/>
+                      <Cell col="6" text="bind:BP_NM"/>
+                      <Cell col="7" text="bind:DLVY_NM"/>
+                      <Cell col="8" text="bind:HS_NM"/>
+                      <Cell col="9" text="bind:CODE_NAME"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00" taborder="4" text="주문상세내역" left="472" top="49" width="97" height="24" cssclass="sta_WF_title"/>
+              <Static id="Static05_00_00" taborder="5" text="사용현황" left="16" top="49" width="97" height="24" cssclass="sta_WF_title"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  신우리데이터 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//
+	var fDate = this.gfn_addMonth(sDate,0).substr(0,6) + "01";
+	//var fDate = this.gfn_getDate();
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{	
+	var args1 = this.Div_client.form.div_search.form.cal_startDate.value;
+	var args2 = this.Div_client.form.div_search.form.cal_endDate.value;
+	
+	// 조회
+	var id = "TM010_S01";
+	var url = "svcUrl::TM010_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var args1 = this.Div_client.form.div_search.form.cal_startDate.value;
+	var args2 = this.Div_client.form.div_search.form.cal_endDate.value;
+	var args3 = this.ds_list.getColumn(e.row,"BP_CD");
+	
+	// 조회
+	var id = "TM010_S02";
+	var url = "svcUrl::TM010_S02";
+	var inDs = "";
+	var outDs = "ds_list_2=ds_list_2";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" PO_BP_CD="+args3+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="TOTAL_CNT" type="INT" size="11"/>
+          <Column id="CNT2" type="INT" size="11"/>
+          <Column id="RATE" type="FLOAT" size="22"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list_2">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="PO_BP_NM" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="SO_DT" type="DATETIME" size="23"/>
+          <Column id="SOLD_TO_PARTY" type="STRING" size="10"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="EMP_NM" type="STRING" size="30"/>
+          <Column id="DLVY_NM" type="STRING" size="100"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="CODE_NAME" type="STRING" size="500"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div00.form.cal_startDate00" propid="value" datasetid="ds_list_1" columnid="CONT_DT"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_list_1" columnid="CONT_FR_DT"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_list_1" columnid="CONT_TO_DT"/>
+    </Bind>
+  </Form>
+</FDL>

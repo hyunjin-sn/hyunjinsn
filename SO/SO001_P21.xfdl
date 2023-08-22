@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P21" width="900" height="161" titletext="New Form" onload="SO001_P21_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="161" mobileorientation="landscape" width="900">
+        <WebBrowser id="WebBrowser00" taborder="0" left="20" top="25" right="37" onusernotify="WebBrowser00_onusernotify" height="115"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  팩스전송 팝업
+*  @MenuPath    SO > SO0001_P21
+*  @FileName 	SO0001_P21.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.06.16
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var faxSono = this.getOwnerFrame().faxSono
+var poBpCd = this.getOwnerFrame().poBpCd
+var soNo = this.getOwnerFrame().soNo
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P21_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//this.WebBrowser00.set_url("http://182.162.91.66/OZReport70/serverbind/serverbind.html");
+	
+	trace(poBpCd);
+	
+	var fileNm = faxSono+".pdf"
+	
+	if(system.navigatorname == "nexacro"){ //runtime
+		
+		var str;
+		
+		str ='<html>'; 
+		str +='<title>ServerExport';
+		str +='</title>';
+		str +='<head>';
+		str +='<meta http-equiv="content-type" content="application/x-www-form-urlencoded; charset=UTF-8">';
+		str +='</head>';
+		str +='<body>';
+		str +='<form id="postform" name="postform" action="http://182.162.91.66/OZReport70/serverbind/serverbind.aspx" method="post" accept-charset="utf-8">';
+		
+		//str +='	<input type="hidden" id="filename" name="filename" value="sample123.pdf"/>';
+		str +='	<input type="hidden" id="filename" name="filename" value="'+fileNm+'"/>';
+		str +='	<input type="hidden" id="reportname" name="connection.reportname" value="SO001.ozr"/>';
+		
+		str +=' <input type="hidden" id="pcount" name="pcount" value="2"/>';
+		str +=' <input type="hidden" id="args1" name="args1" value="SO_NO='+soNo+'"/>';
+		str +=' <input type="hidden" id="args2" name="args2" value="PO_BP_CD='+poBpCd+'"/>';
+		 
+		str +='</form>';
+		str +='<script type="text/javascript">';
+		str +='	document.title = "faxInterface";';
+		str +='	document.postform.submit();';
+		str +='</script>';
+		str +='</body>';
+		str +='</html>';
+		trace(str);
+	
+		this.WebBrowser00.getProperty("document").callMethod("Write", str);
+		this.WebBrowser00.getProperty("document").callMethod("Close");	
+	}
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+this.WebBrowser00_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{
+	trace(e.userdata);
+};
+]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

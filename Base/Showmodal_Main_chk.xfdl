@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <TypeDefinition url="..\..\default_typedef.xml"/>
+  <Form id="showmodal_parent" classname="popup_test1" left="0" top="0" width="760" height="430" titletext="Show modal form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="popup" left="30" top="65" width="200" height="40" onclick="Button00_onclick"/>
+        <Static id="Static07" taborder="1" text="This is sample used to send the parameter to popup opened by showmodal, passing &quot;123&quot; to popup" cssclass="sta_WF_explain" left="30" top="25" width="700" height="30" verticalAlign="top"/>
+        <Static id="Static00" taborder="2" text="Received parameter by callback function, which is exdecuted  when popup is closed" cssclass="sta_WF_explain" left="30" top="145" width="700" height="30" verticalAlign="top"/>
+        <Edit id="Edit00" taborder="3" left="30" top="185" height="40" style="align:center middle;" width="569"/>
+        <Grid id="Grid00" taborder="4" left="30" top="235" width="375" height="135"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.lfn_Dialog("frmpop01", "Base::Showmodal_Popup_chk.xfdl", "123", 10, 10, 400, 400, true, "f_pop_callback");
+}
+
+this.lfn_Dialog = function (sFormId, sUrl, sArg, nLeft, nTop, nWidth, nHeight, bModeless, sCallbackFunc)
+{
+	var newChild = null;
+	var objParentFrame = this.getOwnerFrame();
+
+	newChild = new ChildFrame();
+	newChild.init(sFormId, nLeft, nTop, nWidth, nHeight, null, null, sUrl);
+	newChild.autosize = true;
+	newChild.showModal(objParentFrame, {pv_arg:sArg}, this, sCallbackFunc);
+}
+
+this.f_pop_callback=function(v1,v2)
+{
+	this.Edit00.set_value(v1 + " / " + v2);
+	this.Grid00.set_binddataset("ds_parent");
+	this.Grid00.createFormat();
+	this.Grid00.setCellProperty("body",0,"displaytype","checkboxcontrol")
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_parent"/>
+    </Objects>
+  </Form>
+</FDL>
