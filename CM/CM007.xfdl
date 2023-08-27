@@ -12,6 +12,7 @@
                   <Layout>
                     <Static id="Static03" taborder="0" text="고객사" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_itemCd" taborder="1" left="102" top="8" width="157" height="21" onkeyup="Div_client_div_search_edt_itemCd_onkeyup" onchanged="Div_client_div_search_edt_itemCd_onchanged"/>
+                    <Button id="btn_excel" taborder="2" top="8" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="10" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -20,17 +21,17 @@
                 <Formats>
                   <Format id="default">
                     <Columns>
+                      <Column size="74"/>
+                      <Column size="101"/>
                       <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
+                      <Column size="69"/>
+                      <Column size="74"/>
+                      <Column size="69"/>
+                      <Column size="75"/>
+                      <Column size="72"/>
+                      <Column size="100"/>
+                      <Column size="91"/>
+                      <Column size="89"/>
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
@@ -39,46 +40,46 @@
                       <Column size="80"/>
                     </Columns>
                     <Rows>
-                      <Row size="24" band="head"/>
+                      <Row size="34" band="head"/>
                       <Row size="24"/>
                     </Rows>
                     <Band id="head">
-                      <Cell text="BP_CD"/>
-                      <Cell col="1" text="BP_NM"/>
-                      <Cell col="2" text="CONT_NO"/>
-                      <Cell col="3" text="XN040_NM"/>
-                      <Cell col="4" text="XS024_NM"/>
-                      <Cell col="5" text="HS_TYPE"/>
-                      <Cell col="6" text="XN053_NM"/>
-                      <Cell col="7" text="ITEM_CD"/>
-                      <Cell col="8" text="ITEM_NM"/>
-                      <Cell col="9" text="sub_nm1"/>
-                      <Cell col="10" text="sub_nm2"/>
-                      <Cell col="11" text="CASE_NM"/>
-                      <Cell col="12" text="man_yn"/>
-                      <Cell col="13" text="p_com"/>
-                      <Cell col="14" text="p_per"/>
-                      <Cell col="15" text="dept_nm"/>
-                      <Cell col="16" text="fr_dt"/>
+                      <Cell text="고객사&#13;&#10;코드"/>
+                      <Cell col="1" text="고객사명"/>
+                      <Cell col="2" text="계약번호"/>
+                      <Cell col="3" text="계약종류"/>
+                      <Cell col="4" text="청구조건"/>
+                      <Cell col="5" text="경조타입"/>
+                      <Cell col="6" text="지점구분"/>
+                      <Cell col="7" text="품목코드"/>
+                      <Cell col="8" text="품목명"/>
+                      <Cell col="9" text="소속1"/>
+                      <Cell col="10" text="소속2"/>
+                      <Cell col="11" text="유형"/>
+                      <Cell col="12" text="팔수여부"/>
+                      <Cell col="13" text="법인단가"/>
+                      <Cell col="14" text="개인단가"/>
+                      <Cell col="15" text="영업팀"/>
+                      <Cell col="16" text="계약일자"/>
                     </Band>
                     <Band id="body">
-                      <Cell text="bind:BP_CD" suppressalign="middle"/>
-                      <Cell col="1" text="bind:BP_NM" suppressalign="first"/>
-                      <Cell col="2" text="bind:CONT_NO" suppressalign="middle"/>
-                      <Cell col="3" text="bind:XN040_NM" suppressalign="middle"/>
-                      <Cell col="4" text="bind:XS024_NM" suppressalign="middle"/>
-                      <Cell col="5" text="bind:HS_TYPE" suppressalign="middle"/>
-                      <Cell col="6" text="bind:XN053_NM" suppressalign="middle"/>
-                      <Cell col="7" text="bind:ITEM_CD" suppressalign="middle"/>
-                      <Cell col="8" text="bind:ITEM_NM" suppressalign="first"/>
-                      <Cell col="9" text="bind:sub_nm1" suppressalign="first"/>
-                      <Cell col="10" text="bind:sub_nm2" suppressalign="first"/>
-                      <Cell col="11" text="bind:CASE_NM" suppressalign="middle"/>
-                      <Cell col="12" text="bind:man_yn" suppressalign="middle"/>
-                      <Cell col="13" text="bind:p_com" suppressalign="middle"/>
-                      <Cell col="14" text="bind:p_per" suppressalign="middle"/>
-                      <Cell col="15" text="bind:dept_nm" suppressalign="middle"/>
-                      <Cell col="16" text="bind:fr_dt" suppressalign="middle"/>
+                      <Cell text="bind:BP_CD" suppressalign="first" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM" suppressalign="first" textAlign="center"/>
+                      <Cell col="2" text="bind:CONT_NO" suppressalign="first" textAlign="center"/>
+                      <Cell col="3" text="bind:XN040_NM" suppressalign="first" textAlign="center"/>
+                      <Cell col="4" text="bind:XS024_NM" suppressalign="first" textAlign="center"/>
+                      <Cell col="5" text="bind:HS_TYPE" suppressalign="first" textAlign="center"/>
+                      <Cell col="6" text="bind:XN053_NM" suppressalign="first" textAlign="center"/>
+                      <Cell col="7" text="bind:ITEM_CD" suppressalign="first" textAlign="center"/>
+                      <Cell col="8" text="bind:ITEM_NM" suppressalign="first" textAlign="left"/>
+                      <Cell col="9" text="bind:sub_nm1" suppressalign="first" textAlign="left"/>
+                      <Cell col="10" text="bind:sub_nm2" suppressalign="first" textAlign="left"/>
+                      <Cell col="11" text="bind:CASE_NM" suppressalign="first" textAlign="center"/>
+                      <Cell col="12" text="bind:man_yn" suppressalign="first" textAlign="center"/>
+                      <Cell col="13" text="bind:p_com" suppressalign="first" textAlign="right"/>
+                      <Cell col="14" text="bind:p_per" suppressalign="first" textAlign="right"/>
+                      <Cell col="15" text="bind:dept_nm" suppressalign="first" textAlign="center"/>
+                      <Cell col="16" text="bind:fr_dt" suppressalign="first" textAlign="center"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -117,6 +118,7 @@ this.CM007_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	//this.fn_search();
 };
 
+this.fn_search = function ()
  {		
 	// 고객사 조회
 	var id = "CM007_S01";
@@ -193,9 +195,10 @@ this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEven
 	this.gfn_grdCopy_Paste(obj, e);
 };
 
-
-
-
+this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">
