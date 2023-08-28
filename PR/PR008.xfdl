@@ -44,6 +44,7 @@
                       <Column size="60"/>
                       <Column size="170"/>
                       <Column size="118"/>
+                      <Column size="48"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -62,6 +63,7 @@
                       <Cell col="8" colspan="2" text="출발지점"/>
                       <Cell col="10" colspan="2" text="도착지점"/>
                       <Cell col="12" text="물류금액"/>
+                      <Cell col="13" text="메모"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -77,10 +79,12 @@
                       <Cell col="10" text="bind:TS_BP_CD" textAlign="center"/>
                       <Cell col="11" text="bind:도착지점" tooltiptext="bind:도착지점"/>
                       <Cell col="12" text="bind:PO_AMT"/>
+                      <Cell col="13" displaytype="expr:MEMO_CHK=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO_CHK=='1' ? 'button' : 'none'" text="expr:MEMO_CHK=='1' ? '메모 (Y)' : '메모 (N)'"/>
                     </Band>
                     <Band id="summary">
                       <Cell colspan="12" text="합계   " textAlign="right"/>
                       <Cell col="12" text="expr:dataset.getSum(&quot;PO_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="13"/>
                     </Band>
                   </Format>
                 </Formats>
