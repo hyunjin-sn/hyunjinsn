@@ -1,29 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO021" width="1300" height="600" titletext="New Form" onload="SO021_onload">
+  <Form id="SO021" width="1300" height="630" titletext="New Form" onload="SO021_onload">
     <Layouts>
-      <Layout height="600" mobileorientation="landscape" width="1300">
+      <Layout height="630" mobileorientation="landscape" width="1300">
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="60" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
-                    <Static id="Static03" taborder="0" text="품목코드" left="340" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono" taborder="1" left="442" top="4" width="106" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03" taborder="0" text="품목코드" left="270" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="372" top="4" width="86" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
                     <Static id="Static03_00" taborder="2" text="데이터 생성일시" left="10" top="4" width="138" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <MaskEdit id="MaskEdit00" taborder="3" left="161" top="4" width="148" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" readonly="true"/>
+                    <MaskEdit id="MaskEdit00" taborder="3" left="138" top="4" width="127" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" readonly="true"/>
                     <Button id="btn_excel" taborder="4" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
-                    <Static id="Static03_01" taborder="5" text="지점명" left="860" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono00" taborder="6" left="962" top="4" width="106" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
-                    <Static id="Static03_02" taborder="7" text="품목명" left="550" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono01" taborder="8" left="652" top="4" width="196" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01" taborder="5" text="지점명" left="719" top="4" width="78" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static03_01_onclick"/>
+                    <Edit id="edt_sono00" taborder="6" left="801" top="4" width="106" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_02" taborder="7" text="품목명" left="460" top="4" width="81" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono01" taborder="8" left="561" top="4" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01_00" taborder="9" text="지점구분" left="909" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_00" taborder="10" text="Combo00" left="1003" top="4" width="104" height="21" innerdataset="ds_cond1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
+                    <Static id="Static03_01_00_00" taborder="11" text="현재고" left="10" top="33" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_02" taborder="12" text="Combo00" left="138" top="33" width="104" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
+                    <Static id="Static03_01_00_00_00" taborder="13" text="과보유수량" left="270" top="32" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_03" taborder="14" text="Combo00" left="372" top="32" width="84" height="21" innerdataset="ds_cb2" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_03_onitemchanged"/>
+                    <Static id="Static03_01_00_00_00_00" taborder="15" text="이동중재고" left="463" top="32" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_04" taborder="16" text="Combo00" left="561" top="32" width="104" height="21" innerdataset="ds_cb3" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_04_onitemchanged"/>
+                    <Static id="Static03_01_00_00_00_00_00" taborder="17" text="품목상태" left="1109" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_01" taborder="18" text="Combo00" left="1199" top="6" width="104" height="21" innerdataset="ds_status" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_01_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
-              <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="52" right="10" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" oncelldblclick="Div_client_grd_list_oncelldblclick">
+              <Static id="Static03" taborder="2" left="0" top="69" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="10" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" oncelldblclick="Div_client_grd_list_oncelldblclick">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -198,6 +208,12 @@ this.SO021_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);	
 	
+	this.Div_client.form.div_search.form.Combo00_00.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_01.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_02.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_03.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_04.set_index(0);
+	
 	if (!this.gfn_isNull(this.objApp.gds_so_no.getColumn(0,"SO_NO")))
 	{
 		this.ds_cond.setColumn(0,"ITEM_CD",this.objApp.gds_so_no.getColumn(0,"SO_NO"));
@@ -215,7 +231,7 @@ this.SO021_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 //콤보세팅
 this.fn_setCombo = function (obj)
 {
-
+	
 };
 
 this.fn_search = function ()
@@ -363,6 +379,12 @@ this.fn_filter = function ()
 	var itemCd = this.Div_client.form.div_search.form.edt_sono.text;							// 품목코드
 	var slNm = this.Div_client.form.div_search.form.edt_sono00.text;							// 지점
 	var itemNm = this.Div_client.form.div_search.form.edt_sono01.text;							// 품목명
+	
+	var slcode = this.Div_client.form.div_search.form.Combo00_00.value;							// 지점구분코드
+	var status = this.Div_client.form.div_search.form.Combo00_01.value;							// 품목상태
+	var hqty = this.Div_client.form.div_search.form.Combo00_02.value;							// 현재고
+	var fqty = this.Div_client.form.div_search.form.Combo00_03.value;							// 과보유수량
+	var iqty = this.Div_client.form.div_search.form.Combo00_04.value;							// 이동중재고
 		
 	var filterstr = "";
 	
@@ -393,6 +415,74 @@ this.fn_filter = function ()
 			filterstr += " && 지점명.indexOf('"+slNm+"')!='-1'";				
 	}
 	
+	//지점구분
+	if(!this.gfn_isNull(slcode) && slcode != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "지점코드.indexOf('"+slcode+"')!='-1'";
+		else 
+			filterstr += " && 지점코드.indexOf('"+slcode+"')!='-1'";			
+	}
+	
+	//품목상태
+	if(!this.gfn_isNull(status) && status != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "품목상태=='"+status+"'";
+		else filterstr += " && 품목상태=='"+status+"'";				
+	}
+	
+	//현재고
+	if(!this.gfn_isNull(hqty) && hqty != "-999")
+	{
+		if(hqty == "0")
+		{	if(this.gfn_isNull(filterstr))
+				filterstr = "지점현재고_ORIGIN == '0'";
+			else 
+				filterstr += " && 지점현재고_ORIGI N== '0'";	
+		} else
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "지점현재고_ORIGIN != '0'";
+			else 
+				filterstr += " && 지점현재고_ORIGIN != '0'";	
+		}		
+	}
+	
+	//과보유수량
+	if(!this.gfn_isNull(fqty) && fqty != "-999")
+	{
+		if(fqty == "0")
+		{	if(this.gfn_isNull(filterstr))
+				filterstr = "과보유수량 == '0'";
+			else 
+				filterstr += " && 과보유수량 == '0'";	
+		} else
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "과보유수량!= '0'";
+			else 
+				filterstr += " && 과보유수량 != '0'";	
+		}		
+	}
+	
+	//이동중재고
+	if(!this.gfn_isNull(iqty) && iqty != "-999")
+	{
+		if(iqty == "0")
+		{	if(this.gfn_isNull(filterstr))
+				filterstr = "이동중재고 == '0'";
+			else 
+				filterstr += " && 이동중재고 == '0'";	
+		} else
+		{
+			if(this.gfn_isNull(filterstr))
+				filterstr = "이동중재고 != '0'";
+			else 
+				filterstr += " && 이동중재고 != '0'";	
+		}		
+	}
+	
 	this.ds_list.set_filterstr(filterstr);
 };
 
@@ -400,6 +490,33 @@ this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.Gr
 {
 	this.Div_client.form.grd_list.set_selecttype("row");
 };
+
+this.Div_client_div_search_Combo00_00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_02_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_03_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_04_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">
@@ -444,6 +561,105 @@ this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.Gr
           <Row>
             <Col id="START_DATE"/>
             <Col id="END_DATE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_status">
+        <ColumnInfo>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">종속 품목</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">대표 품목</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">배치 중단</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cond1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">B</Col>
+            <Col id="CODE_NAME">플라워</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">C</Col>
+            <Col id="CODE_NAME">의전</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">0</Col>
+            <Col id="CODE_NAME">0 만</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">0 제외</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb2">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">0</Col>
+            <Col id="CODE_NAME">0 만</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">0 제외</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb3">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">0</Col>
+            <Col id="CODE_NAME">0 만</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">0 제외</Col>
           </Row>
         </Rows>
       </Dataset>
