@@ -439,7 +439,7 @@ this.fn_filter = function ()
 		{	if(this.gfn_isNull(filterstr))
 				filterstr = "지점현재고_ORIGIN == '0'";
 			else 
-				filterstr += " && 지점현재고_ORIGI N== '0'";	
+				filterstr += " && 지점현재고_ORIGIN == '0'";	
 		} else
 		{
 			if(this.gfn_isNull(filterstr))
@@ -615,11 +615,11 @@ this.Div_client_div_search_Combo00_04_onitemchanged = function(obj:nexacro.Combo
           </Row>
           <Row>
             <Col id="CODE_CODE">0</Col>
-            <Col id="CODE_NAME">0 만</Col>
+            <Col id="CODE_NAME">수량 0</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">0 제외</Col>
+            <Col id="CODE_NAME">수량 0 제외</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -635,11 +635,11 @@ this.Div_client_div_search_Combo00_04_onitemchanged = function(obj:nexacro.Combo
           </Row>
           <Row>
             <Col id="CODE_CODE">0</Col>
-            <Col id="CODE_NAME">0 만</Col>
+            <Col id="CODE_NAME">수량 0</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">0 제외</Col>
+            <Col id="CODE_NAME">수량 0 제외</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -655,11 +655,11 @@ this.Div_client_div_search_Combo00_04_onitemchanged = function(obj:nexacro.Combo
           </Row>
           <Row>
             <Col id="CODE_CODE">0</Col>
-            <Col id="CODE_NAME">0 만</Col>
+            <Col id="CODE_NAME">수량 0</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">0 제외</Col>
+            <Col id="CODE_NAME">수량 0 제외</Col>
           </Row>
         </Rows>
       </Dataset>
