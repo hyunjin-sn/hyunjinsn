@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO001_P22" width="561" height="291" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
+  <Form id="PR008_P01" width="561" height="291" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
     <Layouts>
       <Layout height="291" mobileorientation="landscape" width="561">
         <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
@@ -15,11 +15,11 @@
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/**
-*  생산일정 메모
-*  @MenuPath    SO > SO026_P01
-*  @FileName 	SO026_P01.xfdl 
-*  @Creator 	심재문
-*  @CreateDate 	2022.07.13
+*  탁송사유 메모
+*  @MenuPath    PR > PR008_P01
+*  @FileName 	PR008_P01.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2023.08.28
 *  @Desction    
 *************************** 소스 수정 이력 ************************************
 *  date          		        Modifier                      Description
@@ -27,8 +27,7 @@
 *  
 *******************************************************************************
 */
-var itemCd = this.getOwnerFrame().itemCd
-var pProdPlanDt = this.getOwnerFrame().pProdPlanDt
+var so_no = this.getOwnerFrame().so_no
 /************************************************************************************************
  * FORM 변수 선언 영역
  ************************************************************************************************/
@@ -37,13 +36,9 @@ this.objApp = nexacro.getApplication();
 /***********************************************************************************************
 * FORM EVENT 영역(onload)
 /***********************************************************************************************/
-this.SO001_P22_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+this.PR008_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);
-	
-	this.
-	
-	pProdPlanDt = this.gfn_nvl(pProdPlanDt,"19000101");
 
 	this.fn_search();
 };
@@ -58,11 +53,11 @@ this.SO001_P22_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  ************************************************************************************************/
 this.fn_search = function ()
 {	
-	var id = "SO026_P01_S";
-	var url = "svcUrl::SO026_P01_S";
+	var id = "PR008_P01_S";
+	var url = "svcUrl::PR008_P01_S";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
-	var args = "ITEM_CD="+itemCd+" P_PROD_PLAN_DT="+pProdPlanDt+"";
+	var args = "SO_NO="+so_no+"";
 	var callBackid = "fn_afterSearch";
 	
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
@@ -79,8 +74,7 @@ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
 	if (this.ds_list.rowcount == 0)
 	{
 		this.ds_list.addRow();
-		this.ds_list.setColumn(this.ds_list.rowposition,"ITEM_CD",itemCd);
-		this.ds_list.setColumn(this.ds_list.rowposition,"P_PROD_PLAN_DT",pProdPlanDt);
+		this.ds_list.setColumn(this.ds_list.rowposition,"SO_NO",so_no);
 	}
 }
 this.Div_client_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
@@ -93,8 +87,8 @@ this.fn_save = function ()
 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	
 	// 등록
-	var id = "SO026_P01_M";
-	var url = "svcUrl::SO026_P01_M";
+	var id = "PR008_P01_M";
+	var url = "svcUrl::PR008_P01_M";
 	var inDs = "ds_list=ds_list:U";
 	var outDs = "";
 	var args = "INSRT_USER_ID="+regUser+"";

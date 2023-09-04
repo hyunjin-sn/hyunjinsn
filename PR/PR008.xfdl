@@ -194,8 +194,25 @@ this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
+	if (e.col == 13)
+	{
+		var SO_NO = this.ds_list.getColumn(this.ds_list.rowposition,"주문번호");
+		var sPopupId  = "memo_popup";
+		var sUrl      = "PR::PR008_P01.xfdl";
+		var oArg      = {so_no : so_no};
+		var sCallBack = "fn_popupCallback_memo";
+		var oOption   = {title : "메모"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}
+	
 	this.gfn_grdCopy_Paste(obj, e);
 };
+
+// 배송지 팝업 callback
+this.fn_popupCallback_memo = function(sPopId, sRtn)
+{
+    //this.fn_search();
+}
 
 this.fn_filter = function ()
 {
