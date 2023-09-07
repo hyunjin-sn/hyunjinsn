@@ -37,7 +37,7 @@
                             </Layout>
                           </Layouts>
                         </Div>
-                        <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="area" autofittype="none" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col">
+                        <Grid id="grd_list" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="0" top="80" right="0" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="multiarea" autofittype="none" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col">
                           <Formats>
                             <Format id="default">
                               <Columns>
