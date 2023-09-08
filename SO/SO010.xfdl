@@ -187,9 +187,10 @@
         <Div id="Div01" taborder="5" text="Div01" left="1017" top="10" height="490" right="10">
           <Layouts>
             <Layout>
-              <Static id="sta_05_00_00_00" taborder="5" top="399" height="86" cssclass="sta_WF_detailLine" right="1" left="94"/>
+              <Static id="sta_05_00_00_00_00" taborder="9" top="345" height="86" cssclass="sta_WF_detailLine" right="1" left="94"/>
+              <Static id="sta_05_00_00_00" taborder="5" top="430" height="55" cssclass="sta_WF_detailLine" right="1" left="94"/>
               <Static id="Static05_00" taborder="0" text="주문팁" left="0" top="1" width="59" height="24" cssclass="sta_WF_title"/>
-              <Grid id="grd_list01" taborder="1" scrolltype="both" minwidth="" top="30" left="0" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" height="370" right="0" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" binddataset="ds_grd1" autosizingtype="row" extendsizetype="row" onkeydown="Div01_grd_list01_onkeydown" cellsizingtype="row">
+              <Grid id="grd_list01" taborder="1" scrolltype="both" minwidth="" top="30" left="0" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" height="316" right="0" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" binddataset="ds_grd1" autosizingtype="row" extendsizetype="row" onkeydown="Div01_grd_list01_onkeydown" cellsizingtype="row">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -206,8 +207,10 @@
               </Grid>
               <Button id="btn_copySo" taborder="2" top="5" height="21" text="주문복사" cssclass="btn_WF_main1" onclick="Div00_btn_copySo_onclick" right="0" width="71"/>
               <Edit id="edt_search" taborder="3" left="66" top="5" width="130" height="21" readonly="false" onkeyup="Div01_edt_search_onkeyup" autoselect="true" displaynulltext="주문팁 검색"/>
-              <Static id="Static10_00_00_00" taborder="4" text="법인 요청 메모" left="0" top="399" width="100" cssclass="sta_WF_detailLabel" height="86"/>
-              <TextArea id="TextArea00" taborder="6" top="403" height="77" right="6" left="103" readonly="true"/>
+              <Static id="Static10_00_00_00" taborder="4" text="법인 요청 메모" left="0" top="430" width="100" cssclass="sta_WF_detailLabel" height="55"/>
+              <TextArea id="TextArea00" taborder="6" top="434" height="47" right="6" left="103" readonly="true"/>
+              <Static id="Static10_00_00_00_00" taborder="7" text="CRM 고객&#13;&#10;입력정보" left="0" top="345" width="100" cssclass="sta_WF_detailLabel" height="86" textAlign="center"/>
+              <TextArea id="TextArea00_00" taborder="8" top="349" height="78" right="6" left="103" readonly="true"/>
             </Layout>
           </Layouts>
         </Div>
@@ -8073,6 +8076,7 @@ this.Div00_btn_manual00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEve
       <BindItem id="item108" compid="edt_cMemo00" propid="value" datasetid="ds_item_tip2" columnid="TIP_DESC"/>
       <BindItem id="item109" compid="Div02.form.Tab00.Tabpage1.form.cmb_case" propid="value" datasetid="ds_soAdd" columnid="ADD_CD4"/>
       <BindItem id="item110" compid="Div00.form.edt_mNm00" propid="value" datasetid="ds_list" columnid="YES_ITEM"/>
+      <BindItem id="item111" compid="Div01.form.TextArea00_00" propid="value" datasetid="ds_soAdd" columnid="ADD_CD11"/>
     </Bind>
   </Form>
 </FDL>

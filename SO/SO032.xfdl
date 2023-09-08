@@ -12,10 +12,10 @@
                     <Button id="btn_excel" taborder="0" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
                     <Static id="Static03" taborder="1" text="우편번호" left="24" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_zip" taborder="2" left="126" top="4" width="82" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
-                    <Static id="Static03_01_00" taborder="3" text="배송지" left="254" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="edt_dlvy" taborder="4" text="Combo00" left="358" top="4" width="290" height="21" innerdataset="ds_dlvy_in" codecolumn="DLVY_CD" datacolumn="DLVY_NM" onitemchanged="Div_client_div_search_Combo00_onitemchanged" type="filterlike"/>
-                    <Static id="Static03_00" taborder="5" text="주소" left="718" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
-                    <Edit id="edt_addr" taborder="6" left="820" top="4" width="212" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper" visible="false"/>
+                    <Static id="Static03_01_00" taborder="3" text="배송지" left="564" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="edt_dlvy" taborder="4" text="Combo00" left="668" top="4" width="290" height="21" innerdataset="ds_dlvy_in" codecolumn="DLVY_CD" datacolumn="DLVY_NM" onitemchanged="Div_client_div_search_Combo00_onitemchanged" type="filterlike"/>
+                    <Static id="Static03_00" taborder="5" text="주소" left="214" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_addr" taborder="6" left="316" top="4" width="212" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -29,6 +29,8 @@
                       <Column size="68"/>
                       <Column size="200"/>
                       <Column size="200"/>
+                      <Column size="200"/>
+                      <Column size="200"/>
                       <Column size="400"/>
                     </Columns>
                     <Rows>
@@ -40,14 +42,18 @@
                       <Cell col="1" text="우편번호&#13;&#10;(앞4자리)"/>
                       <Cell col="2" text="시/도"/>
                       <Cell col="3" text="시/군/구"/>
-                      <Cell col="4" text="배송지"/>
+                      <Cell col="4" text="동/면/읍"/>
+                      <Cell col="5" text="주소"/>
+                      <Cell col="6" text="배송지"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
                       <Cell col="1" text="bind:ZIP_CODE" textAlign="center" edittype="text"/>
                       <Cell col="2" text="bind:PROVINCE" tooltiptext="bind:PROVINCE" edittype="text"/>
                       <Cell col="3" text="bind:CITY" tooltiptext="bind:CITY" edittype="text"/>
-                      <Cell col="4" text="bind:DLVY_CD" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" tooltiptext="bind:DLVY_CD" background="yellow" displaytype="combocontrol" combotype="filterlike" combocodecol="DLVY_CD" combodatacol="DLVY_NM" combodataset="ds_dlvy"/>
+                      <Cell col="4" text="bind:DONG" tooltiptext="bind:DONG" edittype="text"/>
+                      <Cell col="5" text="bind:ADDRESS" tooltiptext="bind:ADDRESS" edittype="text"/>
+                      <Cell col="6" text="bind:DLVY_CD" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" tooltiptext="bind:DLVY_CD" background="yellow" displaytype="combocontrol" combotype="filterlike" combocodecol="DLVY_CD" combodatacol="DLVY_NM" combodataset="ds_dlvy"/>
                     </Band>
                   </Format>
                 </Formats>
