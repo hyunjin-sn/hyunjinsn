@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="PR008_P01" width="561" height="291" titletext="New Form" onload="SO001_P22_onload" border="1px solid black">
+  <Form id="PR008_P01" width="561" height="291" titletext="New Form" onload="PR008_P01_onload" border="1px solid black">
     <Layouts>
       <Layout height="291" mobileorientation="landscape" width="561">
         <Div id="Div_client" taborder="1" text="Div00" left="0" top="0" right="0" bottom="0">
@@ -28,6 +28,7 @@
 *******************************************************************************
 */
 var so_no = this.getOwnerFrame().so_no
+
 /************************************************************************************************
  * FORM 변수 선언 영역
  ************************************************************************************************/
@@ -61,7 +62,6 @@ this.fn_search = function ()
 	var callBackid = "fn_afterSearch";
 	
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
-	//trace("123");
 };
 
 this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
@@ -76,7 +76,8 @@ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
 		this.ds_list.addRow();
 		this.ds_list.setColumn(this.ds_list.rowposition,"SO_NO",so_no);
 	}
-}
+};
+
 this.Div_client_btn_add_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.fn_save();
@@ -106,18 +107,17 @@ this.fn_save = function ()
 	
 	this.alert("저장 되었습니다.");
 	this.fn_search();
-}]]></Script>
+};]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
-          <Column id="ITEM_CD" type="STRING" size="20"/>
-          <Column id="P_PROD_PLAN_DT" type="STRING" size="23"/>
-          <Column id="REMARK" type="STRING" size="4000"/>
+          <Column id="SO_NO" type="STRING" size="20"/>
+          <Column id="MEMO" type="STRING" size="4000"/>
         </ColumnInfo>
       </Dataset>
     </Objects>
     <Bind>
-      <BindItem id="item0" compid="Div_client.form.TextArea00" propid="value" datasetid="ds_list" columnid="REMARK"/>
+      <BindItem id="item0" compid="Div_client.form.TextArea00" propid="value" datasetid="ds_list" columnid="MEMO"/>
     </Bind>
   </Form>
 </FDL>
