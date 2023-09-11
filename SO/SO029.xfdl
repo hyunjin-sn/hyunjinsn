@@ -287,7 +287,7 @@ this.fn_chk = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || depcCd == "H4130")
+	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "combocontrol";
 	} else
@@ -301,7 +301,7 @@ this.fn_chk2 = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || depcCd == "H4130")
+	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "combo";
 	} else
@@ -315,7 +315,7 @@ this.fn_comm = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || depcCd == "H4130")
+	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "textareacontrol";
 	} else
@@ -329,7 +329,7 @@ this.fn_comm2 = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || depcCd == "H4130")
+	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "textarea";
 	} else
