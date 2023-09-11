@@ -30,17 +30,17 @@
                   <Format id="default">
                     <Columns>
                       <Column size="44"/>
-                      <Column size="93"/>
+                      <Column size="87"/>
                       <Column size="101"/>
-                      <Column size="80"/>
-                      <Column size="250"/>
-                      <Column size="80"/>
-                      <Column size="250"/>
-                      <Column size="60"/>
-                      <Column size="167"/>
-                      <Column size="60"/>
-                      <Column size="167"/>
-                      <Column size="388"/>
+                      <Column size="68"/>
+                      <Column size="243"/>
+                      <Column size="78"/>
+                      <Column size="235"/>
+                      <Column size="57"/>
+                      <Column size="158"/>
+                      <Column size="57"/>
+                      <Column size="154"/>
+                      <Column size="395"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -120,11 +120,11 @@ this.fn_setCal = function ()
 {
 	//현재일자
 	var sDate = this.gfn_getDate();
-	//3개월 이전
+	//1개월 이전
 	var fDate = this.gfn_getDate().substr(0,6) + "01";
 	//var fDate = this.gfn_addDate(sDate,6);
 	
-	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_startDate.set_value(sDate);
 	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
 };
 
