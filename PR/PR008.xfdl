@@ -287,7 +287,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		var sUrl      = "PR::PR008_P01.xfdl";
 		var oArg      = {so_no : so_no};
 		var sCallBack = "fn_popupCallback_memo";
-		var oOption   = {title : "탁송정보"};
+		var oOption   = {title : "메모"};
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
 	}
 };
@@ -295,7 +295,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 // 메모 callback
 this.fn_popupCallback_memo = function(sPopId, sRtn)
 {
-    //this.fn_search();
+    this.fn_search();
 };]]></Script>
     <Objects>
       <Dataset id="ds_list">
