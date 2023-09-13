@@ -136,8 +136,8 @@
                       <Cell col="12" text="bind:출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="13" text="bind:출고기간" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="14" text="bind:기준출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0.00"/>
-                      <Cell col="15" text="bind:도착탁송량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:도착탁송량!='0' ? 'buttoncontrol' : 'nomal'"/>
-                      <Cell col="16" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:탁송량!='0' ? 'buttoncontrol' : 'nomal'"/>
+                      <Cell col="15" text="bind:도착탁송량" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="16" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_test1(currow)"/>
                       <Cell col="17" text="bind:지점현재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="18" text="bind:지점현재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="19" text="bind:안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
@@ -584,7 +584,24 @@ this.Div_client_div_search_Combo00_06_onitemchanged = function(obj:nexacro.Combo
 {
 	this.fn_filter();
 };
-]]></Script>
+
+this.fn_test = function (currow)
+{
+	var dcstoq = this.ds_list.getColumn(currow,"도착탁송량");
+	if (dcstoq != 0 )
+	{
+		return "status5";			
+	}  
+};
+
+this.fn_test1 = function (currow)
+{
+	var stoq = this.ds_list.getColumn(currow,"탁송량");
+	if (stoq != 0 )
+	{
+		return "status5";			
+	}  
+};]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
