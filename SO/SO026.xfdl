@@ -87,7 +87,8 @@
                       <Cell col="7" rowspan="2" text="LOT_SIZE"/>
                       <Cell col="8" rowspan="2" text="생산주기"/>
                       <Cell col="9" colspan="4" text="기준출고량"/>
-                      <Cell col="13" rowspan="2" colspan="2" text="탁송량&#13;&#10;(30일)"/>
+                      <Cell col="13" rowspan="2" text="탁송량&#13;&#10;(30일)"/>
+                      <Cell col="14" rowspan="2" text="확인"/>
                       <Cell col="15" colspan="6" text="본부지점"/>
                       <Cell col="21" colspan="5" text="파주"/>
                       <Cell col="26" colspan="4" text="생산"/>
