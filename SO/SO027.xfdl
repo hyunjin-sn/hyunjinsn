@@ -34,6 +34,8 @@
                     <Combo id="Combo00_00_01" taborder="22" text="Combo00" left="1394" top="5" width="104" height="21" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_01_onitemchanged" innerdataset="ds_class"/>
                     <Static id="Static03_01_00_00_00_00_01" taborder="23" text="파주현재고" left="928" top="32" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="Combo00_06" taborder="24" text="Combo00" left="1023" top="32" width="104" height="21" innerdataset="ds_cb5" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_06_onitemchanged"/>
+                    <Static id="Static00_00_00_00_00_00" taborder="25" top="33" height="20" background="#fa857f" right="138" width="30"/>
+                    <Static id="Static01_00_00_00_00" taborder="26" text=": 탁송발생이력조회" top="31" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="6" width="122"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -590,7 +592,7 @@ this.fn_test = function (currow)
 	var dcstoq = this.ds_list.getColumn(currow,"도착탁송량");
 	if (dcstoq != 0 )
 	{
-		return "status5";			
+		return "status6";			
 	}  
 };
 
@@ -599,7 +601,7 @@ this.fn_test1 = function (currow)
 	var stoq = this.ds_list.getColumn(currow,"탁송량");
 	if (stoq != 0 )
 	{
-		return "status5";			
+		return "status6";			
 	}  
 };]]></Script>
     <Objects>
