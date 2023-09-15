@@ -43,8 +43,11 @@
                       <Column size="167"/>
                       <Column size="60"/>
                       <Column size="167"/>
+                      <Column size="64"/>
+                      <Column size="152"/>
+                      <Column size="93"/>
                       <Column size="98"/>
-                      <Column size="106"/>
+                      <Column size="116"/>
                       <Column size="54"/>
                     </Columns>
                     <Rows>
@@ -63,9 +66,11 @@
                       <Cell col="7" text="품목명"/>
                       <Cell col="8" colspan="2" text="출발지점"/>
                       <Cell col="10" colspan="2" text="도착지점"/>
-                      <Cell col="12" text="물류금액"/>
-                      <Cell col="13" text="터미널"/>
-                      <Cell col="14" text="메모"/>
+                      <Cell col="12" colspan="2" text="배송지"/>
+                      <Cell col="14" text="도착일"/>
+                      <Cell col="15" text="물류금액"/>
+                      <Cell col="16" text="터미널"/>
+                      <Cell col="17" text="메모"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -80,15 +85,27 @@
                       <Cell col="9" text="bind:출발지점" tooltiptext="bind:출발지점"/>
                       <Cell col="10" text="bind:TS_BP_CD" textAlign="center"/>
                       <Cell col="11" text="bind:도착지점" tooltiptext="bind:도착지점"/>
-                      <Cell col="12" text="bind:PO_AMT"/>
-                      <Cell col="13" displaytype="normal" edittype="none" text="bind:MOVE_ARR_LOC"/>
-                      <Cell col="14" displaytype="expr:MEMO=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO=='1' ? 'button' : 'none'" text="expr:MEMO=='1' ? '메모 (Y)' : '메모 (N)'"/>
-                    </Band>
-                    <Band id="summary">
-                      <Cell colspan="12" text="합계   " textAlign="right"/>
-                      <Cell col="12" text="expr:dataset.getSum(&quot;PO_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="12"/>
                       <Cell col="13"/>
                       <Cell col="14"/>
+                      <Cell col="15" text="bind:PO_AMT"/>
+                      <Cell col="16" displaytype="normal" edittype="none" text="bind:MOVE_ARR_LOC"/>
+                      <Cell col="17" displaytype="expr:MEMO=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO=='1' ? 'button' : 'none'" text="expr:MEMO=='1' ? '메모 (Y)' : '메모 (N)'"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="6" text="합계   " textAlign="right"/>
+                      <Cell col="6"/>
+                      <Cell col="7"/>
+                      <Cell col="8"/>
+                      <Cell col="9"/>
+                      <Cell col="10"/>
+                      <Cell col="11"/>
+                      <Cell col="12"/>
+                      <Cell col="13"/>
+                      <Cell col="14"/>
+                      <Cell col="15" text="expr:dataset.getSum(&quot;PO_AMT&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="16"/>
+                      <Cell col="17"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -129,7 +146,7 @@ this.SO002_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	//this.fn_setCombo(obj);
 	//날짜 세팅
 	this.fn_setCal();
-	
+	this._gfnGridcellFix(this.Div_client.form.grd_list, 5);
 	this.fn_search();
 };
 
