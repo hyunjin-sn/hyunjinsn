@@ -191,6 +191,8 @@ this.fn_setCombo = function (obj)
 	var dte = this.gfn_getDate("time")
 
 	this.div_search.form.MaskEdit00.set_value(dte);
+	
+	this.fn_filter();
 }
 
  this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
@@ -274,6 +276,19 @@ this.fn_filter = function ()
 			filterstr += " && PO_BP_NM.indexOf('"+poBpNm+"')!='-1'";				
 	}
 	
+	if(this.gfn_isNull(filterstr))
+		filterstr = "PO_BP_CD!='B2028'";
+	else filterstr += " && PO_BP_CD!='B2028'";		
+	
+	if(this.gfn_isNull(filterstr))
+		filterstr = "PO_BP_CD!='B2028'";
+	else filterstr += " && PO_BP_CD!='B2030'";	
+	
+	if(this.gfn_isNull(filterstr))
+		filterstr = "PO_BP_CD!='B2028'";
+	else filterstr += " && PO_BP_CD!='B2029'";	
+		
+			
 	this.ds_result.set_filterstr(filterstr);
 	
 	//filterstr = "";
