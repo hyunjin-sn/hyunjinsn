@@ -6419,6 +6419,12 @@ this.fn_valChk = function ()
 			this.alert(this.ds_list_2.getColumn(i,"ITEM_NM")+"에 대한 지점을 선택하시기 바랍니다.");
 			return false;
 		}
+		
+		if (this.ds_list_2.getColumn(i,"PO_BP_CD") == "B2033")
+		{
+			this.alert(this.ds_list_2.getColumn(i,"ITEM_NM")+"에 대한 지점 변경이 필요합니다. 확인 바랍니다.");
+			return false;
+		}
 	}
 	
 	this.ds_list_2.filter("CHK == '1' && RIBBON_CHK=='Y'")
