@@ -9,7 +9,7 @@
               <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
-                    <Button id="btn_excel" taborder="0" top="4" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
+                    <Button id="btn_excel" taborder="0" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
                     <Static id="Static03" taborder="1" text="품목명" left="274" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_sono" taborder="2" left="376" top="4" width="156" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
                     <Static id="Static03_01" taborder="3" text="선후불" left="554" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
