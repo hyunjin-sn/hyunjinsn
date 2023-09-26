@@ -17,8 +17,8 @@
                     <Combo id="cmb_Use_YN00" taborder="5" text="Combo00" left="738" top="4" width="136" height="21" innerdataset="ds_item_grp" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" type="filterlike" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
                     <Static id="Static00_03_00_00_00" taborder="6" text="품목구분" left="878" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="cmb_Use_YN00_00" taborder="7" text="Combo00" left="978" top="4" width="136" height="21" innerdataset="ds_item_div" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" type="filterlike" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
-                    <Static id="Static00_03_00_00_00_00" taborder="8" text="등록여부" left="1128" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="cmb_Use_YN00_00_00" taborder="9" text="Combo00" left="1228" top="4" width="80" height="21" innerdataset="ds_saveYn" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
+                    <Static id="Static00_03_00_00_00_00" taborder="8" text="등록여부" left="1134" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_Use_YN00_00_00" taborder="9" text="Combo00" left="1234" top="4" width="80" height="21" innerdataset="ds_saveYn" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -194,8 +194,10 @@
                     <Edit id="edt_name04_01" taborder="94" left="118" top="148" width="185" height="20" readonly="true"/>
                     <Edit id="edt_name05_01" taborder="95" left="424" top="148" width="185" height="20" readonly="true"/>
                     <Static id="sta_02_01_00" taborder="96" left="94" top="171" height="29" cssclass="sta_WF_detailLine" right="0"/>
-                    <Static id="Static10_00_00" taborder="97" text="생산주기" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Edit id="edt_name04_01_00" taborder="98" left="118" top="176" width="185" height="20" readonly="false"/>
+                    <Static id="Static10_00_00" taborder="97" text="생산주기" left="306" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Edit id="edt_name04_01_00" taborder="98" left="424" top="176" width="185" height="20" readonly="false"/>
+                    <Static id="Static10_00_00_00" taborder="99" text="CLASS등급" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+                    <Combo id="Combo00_02" taborder="100" text="Combo00" left="118" top="175" width="185" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -590,6 +592,10 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
           <Column id="SET_BASE_QTY" type="BIGDECIMAL" size="17"/>
           <Column id="PA_ITEM_NM" type="STRING" size="100"/>
           <Column id="STOP_PROD_YN" type="STRING" size="256"/>
+          <Column id="CLASS" type="STRING" size="256"/>
+          <Column id="LOT_SIZE" type="BIGDECIMAL" size="256"/>
+          <Column id="P_CYCLE" type="STRING" size="256"/>
+          <Column id="EXT1_CD" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">
@@ -628,6 +634,34 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
         </Rows>
       </Dataset>
       <Dataset id="ds_item_div2"/>
+      <Dataset id="ds_cb1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
     </Objects>
     <Bind>
       <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono02" propid="value" datasetid="ds_cond" columnid="ITEM_CD"/>
@@ -665,6 +699,7 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
       <BindItem id="item32" compid="Div_client.form.Div06.form.edt_name04_01" propid="value" datasetid="ds_list" columnid="CLASS"/>
       <BindItem id="item33" compid="Div_client.form.Div06.form.edt_name05_01" propid="value" datasetid="ds_list" columnid="LOT_SIZE"/>
       <BindItem id="item34" compid="Div_client.form.Div06.form.edt_name04_01_00" propid="value" datasetid="ds_list" columnid="P_CYCLE"/>
+      <BindItem id="item35" compid="Div_client.form.Div06.form.Combo00_02" propid="value" datasetid="ds_list" columnid="EXT1_CD"/>
     </Bind>
   </Form>
 </FDL>
