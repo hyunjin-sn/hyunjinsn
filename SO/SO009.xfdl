@@ -47,7 +47,7 @@
         <Button id="btn_add_hs" taborder="6" left="1084" top="63" text="행추가" cssclass="btn_WF_main1" width="60" height="21" onclick="Tab00_Tabpage1_btn_add_hs_onclick" visible="false"/>
         <Button id="btn_add2_hs" taborder="7" left="1152" top="63" text="행추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Tab00_Tabpage1_btn_add2_hs_onclick"/>
         <Button id="btn_del_hs" taborder="8" left="1228" top="63" text="행삭제" cssclass="btn_WF_main1" width="60" height="21" onclick="Tab00_Tabpage1_btn_del_hs_onclick"/>
-        <Grid id="grd_list" taborder="9" binddataset="ds_list_1" scrolltype="both" minwidth="" bottom="10" left="10" top="96" autofittype="col" width="790" onselectchanged="Tab00_Tabpage1_grd_list00_onselectchanged">
+        <Grid id="grd_list" taborder="9" binddataset="ds_list_1" scrolltype="both" minwidth="" bottom="10" left="10" top="96" autofittype="col" width="790" onselectchanged="Tab00_Tabpage1_grd_list00_onselectchanged" selecttype="cell">
           <Formats>
             <Format id="default">
               <Columns>
