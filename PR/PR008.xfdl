@@ -91,7 +91,7 @@
                       <Cell col="11" text="bind:도착지점" tooltiptext="bind:도착지점"/>
                       <Cell col="12" text="bind:DLVY_CD" textAlign="center"/>
                       <Cell col="13" text="bind:DLVY_NM" tooltiptext="bind:DLVY_NM"/>
-                      <Cell col="14" calendardateformat="yyyy-MM-dd" edittype="none" displaytype="mask" maskedittype="string" maskeditlimitbymask="none" text="bind:DT_8" maskeditformat="####-##-##" textAlign="center"/>
+                      <Cell col="14" calendardateformat="yyyy-MM-dd" edittype="none" displaytype="expr:DT_8==null ? 'nomal' : 'mask'" maskedittype="string" maskeditlimitbymask="none" text="bind:DT_8" maskeditformat="####-##-##" textAlign="center"/>
                       <Cell col="15" text="bind:PO_AMT"/>
                       <Cell col="16" displaytype="normal" edittype="none" text="bind:MOVE_ARR_LOC"/>
                       <Cell col="17" displaytype="expr:MEMO=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:MEMO=='1' ? 'button' : 'none'" text="expr:MEMO=='1' ? '메모 (Y)' : '메모 (N)'"/>
@@ -310,7 +310,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		this.Div_client.form.grd_list.set_selecttype("multiarea");
 	}
 	
-	if (e.col == 17)
+	if (e.col == 17 && e.subrow == 0)
 	{
 		var so_no = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
 		var sPopupId  = "memo_popup";
@@ -321,6 +321,19 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
 	}
 	
+	if (e.col == 2 && e.subrow == 0)
+	{
+		var soNo_s = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+		// 주문 열람 조회
+		var id = "SO001_P00_S01";
+		var url = "svcUrl::SO001_P00_S01";
+		var inDs = "";
+		var outDs = "ds_list_user=ds_list";
+		var args = "SO_NO="+soNo_s+"";
+		var callBackid = "fn_afterUserSearch1";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
 	
 };
 
@@ -389,6 +402,34 @@ this.fn_afterUserSearch1 = function(strSvcID, nErrorCode, strErrorMag)
 			
 		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
 	}
+}
+
+this.fn_afterUserSave1 = function(strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	//trace(this.objApp.gds_menu.saveXML());
+	var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+	var soTypeNm = this.ds_list.getColumn(this.ds_list.rowposition,"SO_TYPE_NM");
+	var rcptMeth = this.ds_list.getColumn(this.ds_list.rowposition,"RCPT_METH_NM");
+	//trace(soTypeNm);
+	
+	var arrArg = [];
+	//this.gfn_openForm(this.objApp.gds_menu, 2, arrArg, soNo);	
+	//this.gfn_openForm2(this.objApp.gds_menu, "SO001", arrArg, soNo);
+	
+	if (rcptMeth == "법인주문(P)" || rcptMeth == "법인주문(M)" || rcptMeth == "법인주문(K)")
+	{
+		this.gfn_openForm2(this.objApp.gds_menu, "SO001", arrArg, soNo);	
+	} else
+	{
+		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, soNo);
+	}
+	
 }]]></Script>
     <Objects>
       <Dataset id="ds_list">
