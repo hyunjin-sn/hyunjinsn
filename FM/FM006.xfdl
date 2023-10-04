@@ -805,6 +805,13 @@ this.FM001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	}
 	
 	this.fn_setCombo(obj);
+	
+	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	if (deptCd != "H5290" && regUser != "217006" && regUser != "210001" && regUser != "218004")
+		{
+			this.Tab00.Tabpage1.form.Div06_01.form.btn_confirm.set_enable(false)
+		}
 };
 
 // 콤보 세팅
@@ -1566,7 +1573,7 @@ this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	}
 	
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
-	if (deptCd == "H2620")
+	if (deptCd == "H9600")
 	{
 		this.alert("해당 기능 권한이 없습니다.");
 		return;
