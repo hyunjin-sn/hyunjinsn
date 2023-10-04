@@ -1638,7 +1638,7 @@ this.fn_valchk = function ()
 // 품목 copy & paste
 this.Tab00_Tabpage4_grd_list00_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
-	this.gfn_grdCopy_Paste(obj, e);
+	//this.gfn_grdCopy_Paste(obj, e);
 };
 
 // 주문팁 체인지 이벤트
