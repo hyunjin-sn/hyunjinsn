@@ -461,7 +461,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 		
-		if (deptCd != "H4130" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "223013")
+		if (deptCd != "H5290" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "223013")
 		{
 			this.alert("지연 취소 권한이 없습니다.")
 			return;
