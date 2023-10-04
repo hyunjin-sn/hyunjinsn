@@ -242,9 +242,9 @@
                           <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
                           <Cell col="2" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="선택" displaytype="buttoncontrol" edittype="button"/>
                           <Cell col="3" textAlign="left" text="bind:ITEM_NM"/>
-                          <Cell col="4" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY"/>
-                          <Cell col="5" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM"/>
-                          <Cell col="6" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER"/>
+                          <Cell col="4" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                          <Cell col="5" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                          <Cell col="6" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
                           <Cell col="7" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo" text="bind:BRANCH_GROUP" combotype="filterlike"/>
                           <Cell col="8" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" edittype="checkbox" text="bind:MANDATORY_YN"/>
                           <Cell col="9" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="checkbox" text="bind:PRM_DISP_YN"/>
@@ -1638,7 +1638,20 @@ this.fn_valchk = function ()
 // 품목 copy & paste
 this.Tab00_Tabpage4_grd_list00_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
-	//this.gfn_grdCopy_Paste(obj, e);
+	if(e.ctrlkey){
+		if(e.keycode == 67){
+			if(nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		} else if(e.keycode == 86) 
+		{
+			if(nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		}
+	}
 };
 
 // 주문팁 체인지 이벤트
