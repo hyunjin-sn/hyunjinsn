@@ -82,8 +82,11 @@ this.SO001_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	this.gfn_formOnLoad(this);	
 	
 	this.Div_client.form.div_search.form.edt_ClientPartNm.set_value(MODE);
-	
-	this.fn_search();
+	var Arg_1 = this.Div_client.form.div_search.form.edt_ClientPartNm.text
+	if(Arg_1 != '')
+	{
+		this.fn_search();
+	}
 };
 
  /************************************************************************************************
