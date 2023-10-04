@@ -197,7 +197,7 @@
                     <Static id="Static10_00_00" taborder="97" text="생산주기" left="306" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Edit id="edt_name04_01_00" taborder="98" left="424" top="176" width="185" height="20" readonly="false"/>
                     <Static id="Static10_00_00_00" taborder="99" text="CLASS등급" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Combo id="Combo00_02" taborder="100" text="Combo00" left="118" top="175" width="185" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
+                    <Combo id="Combo00_02" taborder="100" left="118" top="175" width="185" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" value="" index="-1" onitemchanged="Div_client_Div06_Combo00_02_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -547,6 +547,11 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
 	this.ds_list.setColumn(this.ds_list.rowposition,"PA_ITEM_CD",null);
 	this.ds_list.setColumn(this.ds_list.rowposition,"PA_ITEM_NM",null);
 };
+
+this.Div_client_Div06_Combo00_02_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.Div_client.form.Div06.form.Combo00_02.set_index(e);
+};
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">
@@ -642,23 +647,23 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
         <Rows>
           <Row>
             <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
+            <Col id="CODE_NAME">1</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
+            <Col id="CODE_NAME">2 </Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
+            <Col id="CODE_NAME">3 </Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
+            <Col id="CODE_NAME">4 </Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
+            <Col id="CODE_NAME">5 </Col>
           </Row>
         </Rows>
       </Dataset>
