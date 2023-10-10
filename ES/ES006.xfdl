@@ -1,37 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO032_1" width="1300" height="600" titletext="New Form" onload="SO032_1_onload">
+  <Form id="SO032_1" width="1020" height="600" titletext="New Form" onload="SO032_1_onload">
     <Layouts>
-      <Layout height="600" mobileorientation="landscape" width="1300">
-        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+      <Layout height="600" mobileorientation="landscape" width="1020">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="5" bottom="0">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
-                    <Button id="btn_excel" taborder="0" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
-                    <Static id="Static03" taborder="1" text="우편번호" left="24" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_zip" taborder="2" left="126" top="4" width="82" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
-                    <Static id="Static03_01_00" taborder="3" text="배송지" left="564" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="edt_dlvy" taborder="4" text="Combo00" left="668" top="4" width="290" height="21" innerdataset="ds_dlvy_in" codecolumn="DLVY_CD" datacolumn="DLVY_NM" onitemchanged="Div_client_div_search_Combo00_onitemchanged" type="filterlike"/>
-                    <Static id="Static03_00" taborder="5" text="주소" left="214" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_addr" taborder="6" left="316" top="4" width="212" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Button id="btn_excel" taborder="0" top="4" height="20" text="엑셀 저장" cssclass="btn_WF_main1" onclick="Div_client_div_search_btn_excel_onclick" right="6" width="76"/>
+                    <Static id="Static03" taborder="1" text="지점구분" left="24" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static03_01_00" taborder="2" text="클래스등급" left="644" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static03_00" taborder="3" text="클래스" left="444" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static03_01_00_00" taborder="4" text="지점등급" left="228" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_00" taborder="5" text="Combo00" left="113" top="4" width="104" height="21" innerdataset="ds_cd" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
+                    <Combo id="Combo00_01" taborder="6" text="Combo00" left="513" top="4" width="104" height="21" innerdataset="ds_class" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_01_onitemchanged"/>
+                    <Combo id="Combo00_02" taborder="7" text="Combo00" left="744" top="4" width="104" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
+                    <Combo id="Combo00_03" taborder="8" text="Combo00" left="314" top="4" width="104" height="21" innerdataset="ds_cb2" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_03_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
               <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="10" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" oncelldblclick="Div_client_grd_list_oncelldblclick">
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="0" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" cellsizingtype="col" summarytype="default" autofittype="col" oncelldblclick="Div_client_grd_list_oncelldblclick" showselection="true" treeinitstatus="expand,all">
                 <Formats>
                   <Format id="default">
                     <Columns>
-                      <Column size="38"/>
-                      <Column size="68"/>
-                      <Column size="200"/>
-                      <Column size="200"/>
-                      <Column size="200"/>
-                      <Column size="200"/>
-                      <Column size="400"/>
+                      <Column size="40"/>
+                      <Column size="140"/>
+                      <Column size="190"/>
+                      <Column size="190"/>
+                      <Column size="190"/>
+                      <Column size="190"/>
+                      <Column size="190"/>
                     </Columns>
                     <Rows>
                       <Row size="40" band="head"/>
@@ -39,38 +41,38 @@
                     </Rows>
                     <Band id="head">
                       <Cell text="순번"/>
-                      <Cell col="1" text="우편번호&#13;&#10;(앞4자리)"/>
-                      <Cell col="2" text="시/도"/>
-                      <Cell col="3" text="시/군/구"/>
-                      <Cell col="4" text="동/면/읍"/>
-                      <Cell col="5" text="주소"/>
-                      <Cell col="6" text="배송지"/>
+                      <Cell col="1" text="지점구분"/>
+                      <Cell col="2" text="지점등급"/>
+                      <Cell col="3" text="품목클라스"/>
+                      <Cell col="4" text="품목클라스등급"/>
+                      <Cell col="5" text="안전재고가용일수"/>
+                      <Cell col="6" text="최소배치량(Set수량반영)"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
-                      <Cell col="1" text="bind:ZIP_CODE" textAlign="center" edittype="text"/>
-                      <Cell col="2" text="bind:PROVINCE" tooltiptext="bind:PROVINCE" edittype="text"/>
-                      <Cell col="3" text="bind:CITY" tooltiptext="bind:CITY" edittype="text"/>
-                      <Cell col="4" text="bind:DONG" tooltiptext="bind:DONG" edittype="text"/>
-                      <Cell col="5" text="bind:ADDRESS" tooltiptext="bind:ADDRESS" edittype="text"/>
-                      <Cell col="6" text="bind:DLVY_CD" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" tooltiptext="bind:DLVY_CD" background="yellow" displaytype="combocontrol" combotype="filterlike" combocodecol="DLVY_CD" combodatacol="DLVY_NM" combodataset="ds_dlvy"/>
+                      <Cell col="1" text="bind:dept_type" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" displaytype="combocontrol" combodataset="ds_cd_0" combodatacol="CODE_NAME" combocodecol="CODE" combotype="filterlike" comboautoselect="false" tooltiptext="bind:dept_type"/>
+                      <Cell col="2" text="bind:dept_g" edittype="combo" textAlign="center" displaytype="combocontrol" combodataset="ds_cb2_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="3" text="bind:class_f" edittype="combo" textAlign="center" combodataset="ds_class_0" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol"/>
+                      <Cell col="4" text="bind:class_g" edittype="combo" textAlign="center" displaytype="combocontrol" combodataset="ds_cb1_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="5" text="bind:ss_ad" edittype="text" editautoselect="true"/>
+                      <Cell col="6" text="bind:ss_mba" edittype="text" background="#ffffff" editautoselect="true"/>
                     </Band>
                   </Format>
                 </Formats>
               </Grid>
-              <Button id="btn_add2_hs" taborder="4" top="52" text="삭제" cssclass="btn_WF_main1" width="70" height="21" onclick="Div_client_btn_add2_hs_onclick" right="11"/>
-              <Button id="btn_add2_hs00" taborder="5" top="52" text="추가" cssclass="btn_WF_main1" width="70" height="21" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="91"/>
+              <Button id="btn_add2_hs" taborder="4" top="47" text="삭제" cssclass="btn_WF_main1" width="70" height="28" onclick="Div_client_btn_add2_hs_onclick" right="3"/>
+              <Button id="btn_add2_hs00" taborder="5" top="47" text="추가" cssclass="btn_WF_main1" width="70" height="28" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="82"/>
             </Layout>
           </Layouts>
         </Div>
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/**
-*  우편번호별 배송지 등록
-*  @MenuPath    SO > SO032
-*  @FileName 	SO032.xfdl 
-*  @Creator 	심재문
-*  @CreateDate 	2023.08.08
+*  안전재고설정기준
+*  @MenuPath    ES > ES006
+*  @FileName 	ES006.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2023.10.04
 *  @Desction    
 *************************** 소스 수정 이력 ************************************
 *  date          		        Modifier                      Description
@@ -101,39 +103,20 @@ this.SO032_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  ************************************************************************************************/
 this.fn_setCombo = function (obj)
 {
-	// 조회
-	var id = "SO032_S02";
-	var url = "svcUrl::SO032_S02";
-	var inDs = "";
-	var outDs = "ds_dlvy=ds_list";
-	var args = "";
-	var callBackid = "fn_afterSearch2";
-		
-	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	this.Div_client.form.div_search.form.Combo00_00.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_01.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_02.set_index(0);
+	this.Div_client.form.div_search.form.Combo00_03.set_index(0);
+	this.efn_SetDatasetData(this.ds_cd_0,this.objApp.gds_code,'XN053');		// 발주지점
 };
+	
 
-this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
-	if (nErrorCode < 0) 
-	{
-		this.alert(strErrorMag)
-		return ;
-	}
-	
-	this.ds_dlvy_in.copyData(this.ds_dlvy, true);
-	
-	//검색조건
-	this.ds_dlvy_in.insertRow(0);
-	this.ds_dlvy_in.setColumn(0,"DLVY_CD","-999");
-	this.ds_dlvy_in.setColumn(0,"DLVY_NM","전체");
-	
-	this.Div_client.form.div_search.form.edt_dlvy.set_index(0);
-}
 
 this.fn_search = function ()
 {	
 	// 조회
-	var id = "SO032_S01";
-	var url = "svcUrl::SO032_S01";
+	var id = "ES006_S01";
+	var url = "svcUrl::ES006_S01";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
 	var args = "";
@@ -162,8 +145,8 @@ this.fn_save = function ()
 {	
 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	
-	var id = "SO032_M01";
-	var url = "svcUrl::SO032_M01";
+	var id = "ES006_M01";
+	var url = "svcUrl::ES006_M01";
 	var inDs = "ds_list=ds_list:U";
 	var outDs = "";
 	var args = "INSRT_USER_ID="+regUser;
@@ -185,7 +168,7 @@ this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
 
 this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
-	this.gfn_grdCopy_Paste(obj, e);
+	//this.gfn_grdCopy_Paste(obj, e);
 };
 
 this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
@@ -196,41 +179,61 @@ this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexac
 	}	
 };
 
-this.Div_client_div_search_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+this.Div_client_div_search_Combo00_00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_02_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_03_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
 {
 	this.fn_filter();
 };
 
 this.fn_filter = function ()
 {
-	var zip = this.Div_client.form.div_search.form.edt_zip.text;					
-	var addr = this.Div_client.form.div_search.form.edt_addr.text;						
-	var dlvy = this.Div_client.form.div_search.form.edt_dlvy.value;						
+	var schcmbo0 = this.Div_client.form.div_search.form.Combo00_00.value;					
+	var schcmbo1 = this.Div_client.form.div_search.form.Combo00_01.value;						
+	var schcmbo2 = this.Div_client.form.div_search.form.Combo00_02.value;	
+	var schcmbo3 = this.Div_client.form.div_search.form.Combo00_03.value;		
 		
 	var filterstr = "";
-	
-	if(!this.gfn_isNull(zip))
-	{
-		if(this.gfn_isNull(filterstr))
-			filterstr = "ZIP_CODE.indexOf('"+zip+"')!='-1'";
-			else
-			filterstr += " && ZIP_CODE.indexOf('"+zip+"')!='-1'";			
-	}
-	
-	if(!this.gfn_isNull(addr))
-	{
 		
-		if(this.gfn_isNull(filterstr))
-			filterstr = "ADDRESS.indexOf('"+addr+"')!='-1'";
-			else
-			filterstr += " && ADDRESS.indexOf('"+addr+"')!='-1'";				
-	}
-		
-	if(!this.gfn_isNull(dlvy) && dlvy != "-999")
+	if(!this.gfn_isNull(schcmbo0) && schcmbo0 != "-999")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "DLVY_CD=='"+dlvy+"'";
-		else filterstr += " && DLVY_CD=='"+dlvy+"'";				
+			filterstr = "dept_type=='"+schcmbo0+"'";
+		else filterstr += " && dept_type=='"+schcmbo0+"'";				
+	}	
+	
+	if(!this.gfn_isNull(schcmbo1) && schcmbo1 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "class_f=='"+schcmbo1+"'";
+		else filterstr += " && class_f=='"+schcmbo1+"'";				
+	}	
+	
+	if(!this.gfn_isNull(schcmbo2) && schcmbo2 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "class_g=='"+schcmbo2+"'";
+		else filterstr += " && class_g=='"+schcmbo2+"'";				
+	}	
+	
+	if(!this.gfn_isNull(schcmbo3) && schcmbo3 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "dept_g=='"+schcmbo3+"'";
+		else filterstr += " && dept_g=='"+schcmbo3+"'";				
 	}	
 	
 	this.ds_list.set_filterstr(filterstr);
@@ -261,6 +264,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"dept_type",this.ds_list.getColumn(this.ds_list.rowposition-1,"dept_type"));
 };
 
 this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
@@ -271,22 +275,291 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
-          <Column id="ZIP_CODE" type="STRING" size="50"/>
-          <Column id="DLVY_CD" type="STRING" size="50"/>
-          <Column id="PROVINCE" type="STRING" size="100"/>
-          <Column id="CITY" type="STRING" size="100"/>
-          <Column id="DONG" type="STRING" size="100"/>
-          <Column id="ADDRESS" type="STRING" size="100"/>
+          <Column id="dept_type" type="STRING" size="50"/>
+          <Column id="class_f" type="STRING" size="50"/>
+          <Column id="class_g" type="STRING" size="100"/>
+          <Column id="dept_g" type="STRING" size="100"/>
+          <Column id="ss_ad" type="BIGDECIMAL" size="100"/>
+          <Column id="ss_mba" type="INT" size="100"/>
         </ColumnInfo>
       </Dataset>
-      <Dataset id="ds_dlvy"/>
-      <Dataset id="ds_dlvy_in"/>
+      <Dataset id="ds_cd">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">F</Col>
+            <Col id="CODE_NAME">플라워</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">M</Col>
+            <Col id="CODE_NAME">의전</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">S</Col>
+            <Col id="CODE_NAME">S Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">A</Col>
+            <Col id="CODE_NAME">A Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">B</Col>
+            <Col id="CODE_NAME">B Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">C</Col>
+            <Col id="CODE_NAME">C Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">D</Col>
+            <Col id="CODE_NAME">D Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">E</Col>
+            <Col id="CODE_NAME">E Class</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">8</Col>
+            <Col id="CODE_NAME">8 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">9</Col>
+            <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb2">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">8</Col>
+            <Col id="CODE_NAME">8 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">9</Col>
+            <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cd_0"/>
+      <Dataset id="ds_class_0">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">S</Col>
+            <Col id="CODE_NAME">S Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A</Col>
+            <Col id="CODE_NAME">A Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B</Col>
+            <Col id="CODE_NAME">B Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C</Col>
+            <Col id="CODE_NAME">C Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D</Col>
+            <Col id="CODE_NAME">D Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E</Col>
+            <Col id="CODE_NAME">E Class</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb1_0">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">8</Col>
+            <Col id="CODE_NAME">8 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">9</Col>
+            <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cb2_0">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">8</Col>
+            <Col id="CODE_NAME">8 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">9</Col>
+            <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
     </Objects>
     <Bind>
-      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_zip" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
       <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
       <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
-      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_addr" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
     </Bind>
   </Form>
 </FDL>
