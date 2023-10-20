@@ -14,7 +14,7 @@
                     <Static id="Static03_01_00" taborder="2" text="클래스등급" left="644" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Static id="Static03_00" taborder="3" text="클래스" left="444" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Static id="Static03_01_00_00" taborder="4" text="지점등급" left="228" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="Combo00_00" taborder="5" text="Combo00" left="113" top="4" width="104" height="21" innerdataset="ds_cd" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
+                    <Combo id="Combo00_00" taborder="5" text="" left="113" top="4" width="104" height="21" innerdataset="ds_cd" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
                     <Combo id="Combo00_01" taborder="6" text="Combo00" left="513" top="4" width="104" height="21" innerdataset="ds_class" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_01_onitemchanged"/>
                     <Combo id="Combo00_02" taborder="7" text="Combo00" left="744" top="4" width="104" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
                     <Combo id="Combo00_03" taborder="8" text="Combo00" left="314" top="4" width="104" height="21" innerdataset="ds_cb2" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_03_onitemchanged"/>
@@ -314,27 +314,27 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
             <Col id="CODE_NAME">전체</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">S</Col>
+            <Col id="CODE_CODE">0</Col>
             <Col id="CODE_NAME">S Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">A</Col>
+            <Col id="CODE_CODE">1</Col>
             <Col id="CODE_NAME">A Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">B</Col>
+            <Col id="CODE_CODE">2</Col>
             <Col id="CODE_NAME">B Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">C</Col>
+            <Col id="CODE_CODE">3</Col>
             <Col id="CODE_NAME">C Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">D</Col>
+            <Col id="CODE_CODE">4</Col>
             <Col id="CODE_NAME">D Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">E</Col>
+            <Col id="CODE_CODE">5</Col>
             <Col id="CODE_NAME">E Class</Col>
           </Row>
         </Rows>
@@ -443,27 +443,27 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="CODE">S</Col>
+            <Col id="CODE">0</Col>
             <Col id="CODE_NAME">S Class</Col>
           </Row>
           <Row>
-            <Col id="CODE">A</Col>
+            <Col id="CODE">1</Col>
             <Col id="CODE_NAME">A Class</Col>
           </Row>
           <Row>
-            <Col id="CODE">B</Col>
+            <Col id="CODE">2</Col>
             <Col id="CODE_NAME">B Class</Col>
           </Row>
           <Row>
-            <Col id="CODE">C</Col>
+            <Col id="CODE">3</Col>
             <Col id="CODE_NAME">C Class</Col>
           </Row>
           <Row>
-            <Col id="CODE">D</Col>
+            <Col id="CODE">4</Col>
             <Col id="CODE_NAME">D Class</Col>
           </Row>
           <Row>
-            <Col id="CODE">E</Col>
+            <Col id="CODE">5</Col>
             <Col id="CODE_NAME">E Class</Col>
           </Row>
         </Rows>
