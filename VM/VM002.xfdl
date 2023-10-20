@@ -76,6 +76,8 @@
                       <Column size="80"/>
                       <Column size="150"/>
                       <Column size="150"/>
+                      <Column size="104"/>
+                      <Column size="128"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -108,6 +110,8 @@
                       <Cell col="24" text="주문자"/>
                       <Cell col="25" text="대상1"/>
                       <Cell col="26" text="대상2"/>
+                      <Cell col="27" text="접수내용"/>
+                      <Cell col="28" text="직접처리내용"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
@@ -137,6 +141,8 @@
                       <Cell col="24" tooltiptext="bind:REQ_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:REQ_NM"/>
                       <Cell col="25" text="bind:DIV_DEPT_CD1" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept3" displaytype="combotext"/>
                       <Cell col="26" text="bind:DIV_DEPT_CD2" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept4" displaytype="combotext"/>
+                      <Cell col="27" text="bind:NOTE_RCPT" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="28" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_DIR"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -263,11 +269,19 @@ this.fn_search = function ()
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
 	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+" ACT_DEPT_CD2="+Arg_3+" REQ_NM="+Arg_4+" OWN_NM="+Arg_5+" CUST_NM="+Arg_6+" RCPT_USER="+Arg_7+" SO_NO="+Arg_8+" ACT_TYPE="+Arg_9+" DIV_TYPE1="+Arg_10+" DIV_TYPE2="+Arg_11+" DIV_TYPE3="+Arg_12+" DIV_DEPT_CD1="+Arg_13+" DIV_DEPT_CD2="+Arg_14+" VOC_NO="+Arg_15+"";
-	var callBackid = "";
+	var callBackid = "fn_afterSearch";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
 };
- 
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	
+}
  /************************************************************************************************
  * 각 COMPONENT 별 EVENT 영역
  ************************************************************************************************/
@@ -656,7 +670,8 @@ this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEven
           <Column id="ACT_DEPT_CD2" type="STRING" size="256"/>
           <Column id="FINISH_CHK" type="STRING" size="256"/>
           <Column id="ACT_TYPE" type="STRING" size="256"/>
-          <Column id="NOTE_RCPT" type="STRING" size="256"/>
+          <Column id="NOTE_RCPT" type="STRING" size="1000"/>
+          <Column id="NOTE_DIR" type="STRING" size="1000"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_voc_type1"/>
