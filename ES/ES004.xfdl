@@ -230,7 +230,8 @@
                     <Static id="Static10_00_00" taborder="97" text="생산주기" left="306" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
                     <Edit id="edt_name04_01_00" taborder="101" left="424" top="176" width="185" height="20" readonly="false"/>
                     <Static id="Static10_00_00_00" taborder="98" text="CLASS등급" left="0" top="171" width="115" cssclass="sta_WF_detailLabel" height="29"/>
-                    <Edit id="edt_name04_02" taborder="99" left="119" top="176" width="185" height="20" readonly="false"/>
+                    <Edit id="edt_name04_02" taborder="99" left="355" top="352" width="185" height="20" readonly="false" visible="false"/>
+                    <Combo id="cmb_Use_YN00_01" taborder="101" text="Combo00" left="118" top="175" width="185" height="21" innerdataset="ds_cb1_0" codecolumn="CODE_CODE" datacolumn="CODE_NAME" index="-1"/>
                   </Layout>
                   <Layout name="default0">
                     <Static id="sta_04_02_01" taborder="87" left="94" top="435" height="29" cssclass="sta_WF_detailLine" right="0"/>
@@ -894,6 +895,50 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
         </Rows>
       </Dataset>
       <Dataset id="ds_item_div2"/>
+      <Dataset id="ds_cb1_0">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">8</Col>
+            <Col id="CODE_NAME">8 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">9</Col>
+            <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
     </Objects>
     <Bind>
       <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono02" propid="value" datasetid="ds_cond" columnid="ITEM_CD"/>
@@ -932,6 +977,7 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
       <BindItem id="item33" compid="Div_client.form.Div06.form.edt_name05_01" propid="value" datasetid="ds_list" columnid="LOT_SIZE"/>
       <BindItem id="item34" compid="Div_client.form.Div06.form.edt_name04_01_00" propid="value" datasetid="ds_list" columnid="P_CYCLE"/>
       <BindItem id="item35" compid="Div_client.form.Div06.form.edt_name04_02" propid="value" datasetid="ds_list" columnid="EXT1_CD"/>
+      <BindItem id="item36" compid="Div_client.form.Div06.form.cmb_Use_YN00_01" propid="value" datasetid="ds_list" columnid="EXT1_CD"/>
     </Bind>
   </Form>
 </FDL>
