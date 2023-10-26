@@ -164,8 +164,8 @@
                               </Band>
                               <Band id="body">
                                 <Cell textAlign="center" displaytype="checkboxcontrol" edittype="checkbox" text="bind:CHK"/>
-                                <Cell col="1" text="bind:CASE_NO" textAlign="left" displaytype="combotext" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME" tooltiptext="bind:CASE_NO"/>
-                                <Cell col="2" text="bind:CASE_DESC" combocodecol="CASE_NO" combodatacol="CASE_DESC2" combodataset="ds_caseCb" textAlign="left" tooltiptext="bind:CASE_DESC" displaytype="combotext"/>
+                                <Cell col="1" text="bind:CASE_NO" textAlign="left" displaytype="combotext" combodataset="ds_case" combocodecol="CODE" combodatacol="CODE_NAME" tooltiptext="bind:CASE_DESC1"/>
+                                <Cell col="2" text="bind:CASE_DESC" combocodecol="CASE_NO" combodatacol="CASE_DESC2" combodataset="ds_caseCb" textAlign="left" tooltiptext="bind:CASE_DESC2" displaytype="combotext"/>
                               </Band>
                             </Format>
                           </Formats>
@@ -673,6 +673,8 @@
         <ColumnInfo>
           <Column id="CASE_NO" type="STRING" size="20"/>
           <Column id="CASE_DESC" type="STRING" size="40"/>
+          <Column id="CASE_DESC1" type="STRING" size="256"/>
+          <Column id="CASE_DESC2" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_list_7">
