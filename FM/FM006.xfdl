@@ -170,7 +170,7 @@
                         <Combo id="cmb_age01" taborder="11" left="104" top="205" width="166" height="21" text="선택" value="" index="-1" codecolumn="HS_CODE" datacolumn="HS_NM" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd2_oneditclick" innerdataset="ds_rel" background="#fafdc8" oneditclick="Div00_cmb_hsCd_oneditclick" tabstop="false"/>
                         <Button id="btn_contSearch" taborder="12" left="478" top="7" width="69" height="23" text="계약조회" cssclass="btn_WF_main1" onclick="Tab00_Tabpage1_Div06_00_00_btn_contSearch_onclick"/>
                         <Static id="Static05" taborder="13" text="법인구분" left="0" top="33" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
-                        <Radio id="Radio_dealType" taborder="14" left="108" top="38" width="198" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div3" tabstop="false"/>
+                        <Radio id="Radio_dealType" taborder="14" left="108" top="38" width="198" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div3" tabstop="false" onitemchanged="Tab00_Tabpage1_Div06_00_00_Radio_dealType_onitemchanged" visible="true" enable="true"/>
                         <Static id="Static23_00_00_01_00_00_00" taborder="16" text="임직원 성명" left="0" top="173" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
                         <Edit id="edt_soNo00_00_00" taborder="17" left="104" top="177" width="166" height="21" background="#fafdc8"/>
                         <Static id="Static01_00_00_00" taborder="19" text="[임직원과의관계]에는 &quot;임직원&quot;을 기준으로 어느 분의 장례인지 선택해 주세요.&#13;&#10;예) 신청자에게는 시모이지만, 임직원에게는 모친일 경우, &quot;모친&quot; 선택" top="238" height="29" font="normal bold 10pt/normal &quot;Arial&quot;" left="4" verticalAlign="top" right="29" color="BLUE"/>
@@ -2062,6 +2062,8 @@ this.Div00_btn_manual_onclick = function(obj:nexacro.Button,e:nexacro.ClickEvent
 {
 	system.execBrowser("https://docs.google.com/document/d/1OuQ-xGpgqM_Cg88KnlNC4VxkWCM1mrBm0ztdlj2V4xQ/edit?usp=sharing");
 };
+
+
 ]]></Script>
   </Form>
 </FDL>
