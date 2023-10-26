@@ -77,6 +77,13 @@
                       <Column size="75"/>
                       <Column size="65"/>
                       <Column size="70"/>
+                      <Column size="48"/>
+                      <Column size="48"/>
+                      <Column size="63"/>
+                      <Column size="48"/>
+                      <Column size="60"/>
+                      <Column size="67"/>
+                      <Column size="63"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -104,6 +111,7 @@
                       <Cell col="27" rowspan="2" text="세트수량"/>
                       <Cell col="28" rowspan="2" text="출고조회"/>
                       <Cell col="29" colspan="3" text="보유현황"/>
+                      <Cell col="32" colspan="7" text="NEW"/>
                       <Cell row="1" col="11" text="출고량"/>
                       <Cell row="1" col="12" text="출고량&#13;&#10;(대표,종속 합)"/>
                       <Cell row="1" col="13" text="출고기간"/>
@@ -121,6 +129,13 @@
                       <Cell row="1" col="29" text="총 가능수량"/>
                       <Cell row="1" col="30" text="보유수량"/>
                       <Cell row="1" col="31" text="보유율(%)"/>
+                      <Cell row="1" col="32" text="지점&#13;&#10;등급"/>
+                      <Cell row="1" col="33" text="CLASS&#13;&#10;등급"/>
+                      <Cell row="1" col="34" text="안전재고&#13;&#10;가용일수"/>
+                      <Cell row="1" col="35" text="최소&#13;&#10;배치량"/>
+                      <Cell row="1" col="36" text="지점&#13;&#10;안전재고"/>
+                      <Cell row="1" col="37" text="안전재고&#13;&#10;차이"/>
+                      <Cell row="1" col="38" text="현재고&#13;&#10;차이"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
@@ -155,6 +170,13 @@
                       <Cell col="29" text="bind:SPACE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
                       <Cell col="30" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="bind:보유수량"/>
                       <Cell col="31" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0.0" textAlign="right" text="bind:보유율"/>
+                      <Cell col="32" textAlign="center" text="bind:NEW_지점등급" tooltiptext="bind:NEW_지점등급"/>
+                      <Cell col="33" textAlign="center" text="bind:NEW_클래스등급" tooltiptext="bind:NEW_클래스등급"/>
+                      <Cell col="34" textAlign="right" displaytype="mask" maskeditformat="##,##0" tooltiptext="bind:NEW_가용일수" text="bind:NEW_가용일수"/>
+                      <Cell col="35" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="bind:NEW_최소배치량" tooltiptext="bind:NEW_최소배치량"/>
+                      <Cell col="36" displaytype="mask" textAlign="right" maskeditformat="##,##0" tooltiptext="bind:NEW_안전재고" text="bind:NEW_안전재고"/>
+                      <Cell col="37" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="bind:NEW_안전재고차이" tooltiptext="bind:NEW_안전재고차이"/>
+                      <Cell col="38" displaytype="mask" textAlign="right" maskeditformat="##,##0" tooltiptext="bind:NEW_현재고차이" text="bind:NEW_현재고차이"/>
                     </Band>
                     <Band id="summary">
                       <Cell colspan="9" text="합   계" textAlign="right"/>
@@ -181,6 +203,13 @@
                       <Cell col="29" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
                       <Cell col="30" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
                       <Cell col="31" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="32"/>
+                      <Cell col="33"/>
+                      <Cell col="34"/>
+                      <Cell col="35"/>
+                      <Cell col="36" text="expr:dataset.getSum(&quot;NEW_안전재고&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="37" textAlign="right" displaytype="mask" text="expr:dataset.getSum(&quot;NEW_안전재고차이&quot;)" maskeditformat="##,##0"/>
+                      <Cell col="38" textAlign="right" displaytype="mask" text="expr:dataset.getSum(&quot;NEW_현재고차이&quot;)" maskeditformat="##,##0"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -248,8 +277,8 @@ this.fn_setCombo = function (obj)
 this.fn_search = function ()
 {
 	// 조회
-	var id = "SO027_S01";
-	var url = "svcUrl::SO027_S01";
+	var id = "SO033_S01";
+	var url = "svcUrl::SO033_S01";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
 	var args = "";
@@ -633,6 +662,13 @@ this.fn_test1 = function (currow)
           <Column id="보유율" type="BIGDECIMAL" size="40"/>
           <Column id="ABC_FLAG" type="STRING" size="256"/>
           <Column id="도착탁송량" type="BIGDECIMAL" size="40"/>
+          <Column id="NEW_지점등급" type="STRING" size="10"/>
+          <Column id="NEW_클래스등급" type="STRING" size="10"/>
+          <Column id="NEW_가용일수" type="BIGDECIMAL" size="40"/>
+          <Column id="NEW_최소배치량" type="BIGDECIMAL" size="40"/>
+          <Column id="NEW_안전재고" type="BIGDECIMAL" size="40"/>
+          <Column id="NEW_안전재고차이" type="BIGDECIMAL" size="40"/>
+          <Column id="NEW_현재고차이" type="BIGDECIMAL" size="40"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">
