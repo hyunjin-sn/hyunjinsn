@@ -28,7 +28,7 @@
                   </Layout>
                 </Layouts>
               </Div>
-              <Div id="div_search" taborder="0" left="10" top="10" height="103" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="103" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="&lt;DesignFormClipBoard version=&quot;1.0&quot;&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;818,52,923,73&quot;&gt;&#10;      &lt;Static id=&quot;Static00_02_01&quot; taborder=&quot;21&quot; text=&quot;&amp;#xC811;&amp;#xC218;&amp;#xACBD;&amp;#xB85C;&quot; left=&quot;818&quot; top=&quot;52&quot; width=&quot;105&quot; height=&quot;21&quot; leftbase=&quot;&quot; topbase=&quot;&quot; bottombase=&quot;&quot; rightbase=&quot;&quot; widthbase=&quot;&quot; heightbase=&quot;&quot; cssclass=&quot;sta_WF_searchLabel&quot; onclick=&quot;Div_client_div_search_Static00_02_01_onclick&quot;/&gt;&#10;    &lt;/Component&gt;&#10;  &lt;/Copydata&gt;&#10;&lt;/DesignFormClipBoard&gt;" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static03" taborder="0" text="주문번호" left="340" top="28" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
@@ -68,6 +68,9 @@
                     <Button id="btn_sono" taborder="34" left="562" top="4" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_sono_onclick"/>
                     <Static id="Static00_03_00_01" taborder="35" text="경조사유" left="1043" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_ownNm00" taborder="36" left="1148" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter2_onkeyup"/>
+                    <Static id="Static00_02_01_00" taborder="37" text="품목코드" left="1042" top="28" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static00_02_01_onclick"/>
+                    <Button id="btn_item" taborder="38" left="1268" top="28" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_item_onclick"/>
+                    <Edit id="edt_itemcd" taborder="39" left="1148" top="28" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -362,6 +365,8 @@ this.fn_setCombo = function (obj)
 	//this.Div_client.form.div_search.form.cmb_orderType.set_index(0);
 	this.Div_client.form.div_search.form.cmb_recoveryFlag.set_index(0);	
 	
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"ITEM_CD","");
+	
 	this.Div_client.form.div_search.set_height(30);
 	this.Div_client.form.grd_list.set_top(84);
 	this.Div_client.form.Div00.set_top(50);
@@ -389,9 +394,10 @@ this.fn_search = function ()
 	var Arg_17 = this.ds_cond.getColumn(0,"RECOVERY_FLAG");
 	var Arg_18 = this.ds_cond.getColumn(0,"PO_BP_NM");
 	var Arg_19 = this.ds_cond.getColumn(0,"DEL_YN");
+	var Arg_20 = this.ds_cond.getColumn(0,"ITEM_CD");
 	
 	var url = "svcUrl::SO002_S02_3";
-	this.gfn_transaction( "SO002_S02_3",url,"","ds_list=ds_list","START_DATE="+Arg_1+" END_DATE="+Arg_2+" START_DATE2="+Arg_3+" END_DATE2="+Arg_4+" ITEM_NM="+Arg_5+" BP_NM="+Arg_6+" REQ_NM="+Arg_7+" OWN_NM="+Arg_8+" SO_NO="+Arg_9+" STATUS="+Arg_10+" INSRT_USER_NM="+Arg_11+" SO_TYPE_NM="+Arg_12+" DLVY_NM="+Arg_13+" RCPT_METH_NM="+Arg_14+" PAY_TYPE_NM1="+Arg_15+" PAY_TYPE_NM2="+Arg_16+" RECOVERY_FLAG="+Arg_17+" PO_BP_NM="+Arg_18+" DEL_YN="+Arg_19+"","fn_afterSearch");
+	this.gfn_transaction( "SO002_S02_3",url,"","ds_list=ds_list","START_DATE="+Arg_1+" END_DATE="+Arg_2+" START_DATE2="+Arg_3+" END_DATE2="+Arg_4+" ITEM_NM="+Arg_5+" BP_NM="+Arg_6+" REQ_NM="+Arg_7+" OWN_NM="+Arg_8+" SO_NO="+Arg_9+" STATUS="+Arg_10+" INSRT_USER_NM="+Arg_11+" SO_TYPE_NM="+Arg_12+" DLVY_NM="+Arg_13+" RCPT_METH_NM="+Arg_14+" PAY_TYPE_NM1="+Arg_15+" PAY_TYPE_NM2="+Arg_16+" RECOVERY_FLAG="+Arg_17+" PO_BP_NM="+Arg_18+" DEL_YN="+Arg_19+" ITEM_CD="+Arg_20+"","fn_afterSearch");
 };
  
  /************************************************************************************************
@@ -479,6 +485,8 @@ this.fn_filter = function ()
 	var poBpNm = this.Div_client.form.div_search.form.edt_poBpNm.text;						// 발주지점
 	var dlvyNm = this.Div_client.form.div_search.form.edt_dlvyNm.text;						// 배송지
 	var hsNm = this.Div_client.form.div_search.form.edt_ownNm00.text;						// 경조사유
+	
+	var itemcd = this.Div_client.form.div_search.form.edt_itemcd.text;					// 품목코드
 		
 	var filterstr = "";
 	
@@ -1097,7 +1105,27 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
 	this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_NM",bpNm[1]);
 	
 	this.fn_search();
-}]]></Script>
+}
+
+this.Div00_btn_item_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var bpCd = this.gfn_nvl(this.Div_client.form.div_search.form.edt_itemcd.value,"");
+	var sPopupId  = "item_popup";
+	var sUrl      = "CM::CM001_P01.xfdl";
+	var oArg      = {bpCd : bpCd};
+	var sCallBack = "fn_popupCallback_item";
+	var oOption   = {title : "상품 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+// 품목 팝업 callback
+this.fn_popupCallback_item = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);	
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"ITEM_CD",objRtn.ITEM_CD);
+}
+
+]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
@@ -1178,6 +1206,7 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
           <Column id="DEL_YN" type="STRING" size="256"/>
           <Column id="BP_CD" type="STRING" size="256"/>
           <Column id="HS_NM" type="STRING" size="256"/>
+          <Column id="ITEM_CD" type="STRING" size="256"/>
         </ColumnInfo>
         <Rows>
           <Row>
@@ -1375,6 +1404,7 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
       <BindItem id="item18" compid="Div_client.form.div_search.form.edt_poBpNm" propid="value" datasetid="ds_cond" columnid="PO_BP_NM"/>
       <BindItem id="item19" compid="Div_client.form.div_search.form.Radio00_00" propid="value" datasetid="ds_cond" columnid="DEL_YN"/>
       <BindItem id="item0" compid="Div_client.form.div_search.form.edt_ownNm00" propid="value" datasetid="ds_cond" columnid="HS_NM"/>
+      <BindItem id="item14" compid="Div_client.form.div_search.form.edt_itemcd" propid="value" datasetid="ds_cond" columnid="ITEM_CD"/>
     </Bind>
   </Form>
 </FDL>
