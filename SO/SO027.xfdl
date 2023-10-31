@@ -142,7 +142,7 @@
                       <Cell col="16" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_test1(currow)"/>
                       <Cell col="17" text="bind:지점현재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="18" text="bind:지점현재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="19" text="bind:안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="19" text="bind:안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
                       <Cell col="20" text="bind:부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
                       <Cell col="21" text="bind:과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
                       <Cell col="22" text="bind:가용일수" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
