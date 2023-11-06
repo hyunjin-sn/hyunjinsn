@@ -136,7 +136,7 @@
               <Button id="btn_client" taborder="83" left="414" top="117" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_client_onclick"/>
               <Button id="btn_telInfo" taborder="84" left="363" top="89" width="71" height="21" text="Tel Info" cssclass="btn_WF_main1" onclick="Div00_btn_telInfo_onclick"/>
               <Button id="btn_sono" taborder="85" left="220" top="33" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_sono_onclick" enable="true"/>
-              <Edit id="edt_client" taborder="3" left="104" top="117" width="312" height="21" onkeyup="Div00_edt_client_onkeyup" autoselect="true" background="#fafdc8" inputmode="upper"/>
+              <Edit id="edt_client" taborder="3" left="104" top="117" width="312" height="21" onkeyup="Div00_edt_client_onkeyup" autoselect="true" background="#fafdc8" inputmode="upper" onchanged="Div00_edt_client_onchanged"/>
               <Edit id="edt_dlvyNm" taborder="18" left="570" top="119" width="313" height="21" readonly="false" autoselect="true" onkeyup="Div00_edt_dlvyNm_onkeyup" background="#fafdc8"/>
               <Combo id="cmb_regUser" taborder="2" left="331" top="61" width="103" height="21" text="선택" value="" index="-1" codecolumn="USR_ID" datacolumn="USR_NM" type="filterlike" onitemchanged="Div06_cmb_PM_onitemchanged" autoselect="true" readonly="true"/>
               <Grid id="grd_list01" taborder="5" binddataset="ds_grd2" scrolltype="both" minwidth="" top="170" left="100" autoenter="select" selecttype="cell" oncellclick="Div00_grd_list01_oncellclick" summarytype="default" autofittype="col" width="340" height="84" onkeyup="Div00_grd_list01_onkeyup" oncellposchanged="Div00_grd_list01_oncellposchanged">
@@ -3394,11 +3394,40 @@ this.Div00_btn_copySo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEvent
 		this.alert("복사할 주문을 선택해 주세요.");
 		return;
 	}
+	// 주문복사 계약번호 체크 start
+	var BpCd = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
 	
-	var SoNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_NO");
+	var id = "SO010_S07";
+	var url = "svcUrl::SO010_S07";
+	var inDs = "";
+	var outDs = "ds_contSearch=ds_list";
+	var args = "BP_CD="+BpCd+"";
+	var callBackid = "fn_aftercontSearchCallback";		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	// 주문복사 계약번호 체크 end
+};
 
-	var arrArg = [];
-	this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, SoNo, "copy");
+// 주문복사 계약번호 체크 callback
+this.fn_aftercontSearchCallback = function(strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	var ContNo = this.ds_list.getColumn(this.ds_list.rowposition,"CONT_NO");
+	var ContNo1 = this.ds_contSearch.getColumn(this.ds_contSearch.rowposition,"CONT_NO");
+	if (ContNo != ContNo1)
+	{
+		this.alert("계약번호가 최신계약번호와 상의 하여 주문복사가 불가 합니다.");
+		return;
+	}else
+	{
+		var SoNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_NO");
+
+		var arrArg = [];
+		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, SoNo, "copy");
+	}
 };
 
 // 상품정보 클릭이벤트
@@ -7219,6 +7248,8 @@ this.Div00_btn_manual00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEve
 	var oOption   = {title : "이장개장 접수등록"};
 	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
 };
+
+
 ]]></Script>
     <Objects>
       <Dataset id="ds_time">
@@ -7969,6 +8000,12 @@ this.Div00_btn_manual00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEve
       <Dataset id="ds_bp_mms"/>
       <Dataset id="ds_dnChk"/>
       <Dataset id="ds_userIn2"/>
+      <Dataset id="ds_contSearch">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="10"/>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+        </ColumnInfo>
+      </Dataset>
     </Objects>
     <Bind>
       <BindItem id="item7" compid="Div06.form.cmb_AM_dept" propid="value" datasetid="ds_list_1" columnid="AM_DEPT"/>
