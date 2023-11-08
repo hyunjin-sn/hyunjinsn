@@ -6,7 +6,7 @@
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="&lt;DesignFormClipBoard version=&quot;1.0&quot;&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;1134,4,1239,25&quot;&gt;&#10;      &lt;Static id=&quot;Static00_03_00_00_00_00&quot; taborder=&quot;8&quot; text=&quot;&amp;#xB4F1;&amp;#xB85D;&amp;#xC5EC;&amp;#xBD80;&quot; left=&quot;1134&quot; top=&quot;4&quot; width=&quot;105&quot; height=&quot;21&quot; leftbase=&quot;&quot; topbase=&quot;&quot; bottombase=&quot;&quot; rightbase=&quot;&quot; widthbase=&quot;&quot; heightbase=&quot;&quot; cssclass=&quot;sta_WF_searchLabel&quot;/&gt;&#10;    &lt;/Component&gt;&#10;  &lt;/Copydata&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;1234,4,1314,25&quot;&gt;&#10;      &lt;Combo id=&quot;cmb_Use_YN00_00_00&quot; taborder=&quot;9&quot; text=&quot;Combo00&quot; left=&quot;1234&quot; top=&quot;4&quot; width=&quot;80&quot; height=&quot;21&quot; innerdataset=&quot;ds_saveYn&quot; codecolumn=&quot;CODE&quot; datacolumn=&quot;CODE_NAME&quot; index=&quot;-1&quot; onitemchanged=&quot;Div_client_div_search_cmb_Use_YN00_onitemchanged&quot;/&gt;&#10;    &lt;/Component&gt;&#10;  &lt;/Copydata&gt;&#10;&lt;/DesignFormClipBoard&gt;" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static00_03" taborder="0" text="품목코드" left="8" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
@@ -19,6 +19,8 @@
                     <Combo id="cmb_Use_YN00_00" taborder="7" text="Combo00" left="978" top="4" width="136" height="21" innerdataset="ds_item_div" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" type="filterlike" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
                     <Static id="Static00_03_00_00_00_00" taborder="8" text="등록여부" left="1134" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="cmb_Use_YN00_00_00" taborder="9" text="Combo00" left="1234" top="4" width="80" height="21" innerdataset="ds_saveYn" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
+                    <Static id="Static00_03_00_00_00_00_00" taborder="10" text="중단여부" left="1324" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_Use_YN00_00_00_00" taborder="11" text="Combo00" left="1424" top="4" width="130" height="21" innerdataset="ds_stopYn" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" onitemchanged="Div_client_div_search_cmb_Use_YN00_onitemchanged"/>
                   </Layout>
                   <Layout name="default0">
                     <Static id="Static00_03" taborder="0" text="품목코드" left="8" top="3" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
@@ -514,6 +516,8 @@ this.fn_setCombo = function (obj)
 	this.efn_SetDatasetData2(this.ds_item_div2,this.objApp.gds_code2,'CM003');		// 품목구분
 	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_item_grp2",this.Div_client.form.div_search.form.cmb_Use_YN00,"MAJOR_CODE=='CM002'",true,true);		// 품목그룹 검색
 	this.Div_client.form.Div06.form.div_mCombo8.form.fn_setDataset(this.ds_item_div2);
+	this.Div_client.form.div_search.form.cmb_Use_YN00_00_00.set_index(0);
+	this.Div_client.form.div_search.form.cmb_Use_YN00_00_00_00.set_index(0);
 };
 
  /**
@@ -689,6 +693,7 @@ this.Div_client_div_search_cmb_Use_YN00_onitemchanged = function(obj:nexacro.Com
 	var cmb1 = this.Div_client.form.div_search.form.cmb_Use_YN00.value;
 	var cmb2 = this.Div_client.form.div_search.form.cmb_Use_YN00_00.text;
 	var cmb3 = this.Div_client.form.div_search.form.cmb_Use_YN00_00_00.value;
+	var cmb4 = this.Div_client.form.div_search.form.cmb_Use_YN00_00_00_00.value;
 	
 	//trace(itemGrp)
 	this.ds_item_div.filter("MINOR_REMARK1=='"+cmb1+"'");
@@ -721,7 +726,23 @@ this.Div_client_div_search_cmb_Use_YN00_onitemchanged = function(obj:nexacro.Com
 		else
 			filterstr += " && SAVE_YN=='"+cmb3+"'";				
 	}
-
+	
+	// 중단여부
+	if(!this.gfn_isNull(cmb4) && cmb4 != "-999")
+	{
+		if(cmb4 == "생산배치중단제외") {
+			if(this.gfn_isNull(filterstr))
+				filterstr = "STOP_PROD_YN !='1'";
+			else
+				filterstr += " && STOP_PROD_YN !='1'";
+			}
+		else if(cmb4 == "생산배치중단") {
+			if(this.gfn_isNull(filterstr))
+				filterstr = "STOP_PROD_YN =='1'";
+			else
+				filterstr += " && STOP_PROD_YN =='1'";
+			}
+	}
 	this.ds_list.set_filterstr(filterstr);
 };
 
@@ -936,6 +957,26 @@ this.Div_client_Div06_Button00_onclick = function(obj:nexacro.Button,e:nexacro.C
           <Row>
             <Col id="CODE_CODE">9</Col>
             <Col id="CODE_NAME">9 등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_stopYn">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">생산배치중단제외</Col>
+            <Col id="CODE_NAME">생산배치중단제외</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">생산배치중단</Col>
+            <Col id="CODE_NAME">생산배치중단</Col>
           </Row>
         </Rows>
       </Dataset>
