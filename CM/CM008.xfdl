@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO032_1" width="1020" height="600" titletext="New Form" onload="SO032_1_onload">
+  <Form id="CM008" width="1020" height="600" titletext="New Form" onload="SO032_1_onload">
     <Layouts>
       <Layout height="600" mobileorientation="landscape" width="1020">
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="5" bottom="0">
@@ -83,15 +83,16 @@
 /************************************************************************************************
  * FORM 변수 선언 영역
  ************************************************************************************************/
-this.objApp = nexacro.getApplication();
+
 
 /***********************************************************************************************
 * FORM EVENT 영역(onload)
 /***********************************************************************************************/
-this.SO032_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+this.CM008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);	
-		
+	this.objApp = nexacro.getApplication();	
+	
 	this.fn_setCombo(obj);
 	
 	this.fn_search();
@@ -267,7 +268,7 @@ this.Div00_btn_client_onclick = function(obj:nexacro.Button,e:nexacro.ClickEvent
 {
 	var Arg_1 = this.gfn_nvl(this.Div00.form.edt_client.value,"");
 	var sPopupId  = "client_popup";
-	var sUrl      = "CM::CM008_P01.xfdl";
+	var sUrl      = "SO::SO010_P01.xfdl";
 	var oArg      = {MODE : Arg_1};
 	var sCallBack = "fn_popupCallback_client";
 	var oOption   = {title : "고객사 정보"};
@@ -284,12 +285,14 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
-          <Column id="dept_type" type="STRING" size="50"/>
-          <Column id="class_f" type="STRING" size="50"/>
-          <Column id="class_g" type="STRING" size="100"/>
-          <Column id="dept_g" type="STRING" size="100"/>
-          <Column id="ss_ad" type="BIGDECIMAL" size="100"/>
-          <Column id="ss_mba" type="INT" size="100"/>
+          <Column id="SEQ_BP" type="STRING" size="50"/>
+          <Column id="BP_CD" type="STRING" size="50"/>
+          <Column id="BP_NM" type="STRING" size="100"/>
+          <Column id="BPSB_MEMO" type="STRING" size="500"/>
+          <Column id="BASIC_DT" type="DATE" size="20"/>
+          <Column id="UPST_DT" type="DATE" size="20"/>
+          <Column id="UPUSER_ID" type="STRING" size="10"/>
+          <Column id="UPUSER_NM" type="STRING" size="20"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cd">
@@ -298,265 +301,23 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
           <Column id="BP_NM" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
-      <Dataset id="ds_class">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">-999</Col>
-            <Col id="CODE_NAME">전체</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">0</Col>
-            <Col id="CODE_NAME">S Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">A Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">B Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">C Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">D Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">E Class</Col>
-          </Row>
-        </Rows>
-      </Dataset>
       <Dataset id="ds_cb1">
         <ColumnInfo>
           <Column id="CODE_CODE" type="STRING" size="256"/>
           <Column id="CODE_NAME" type="STRING" size="256"/>
         </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">-999</Col>
-            <Col id="CODE_NAME">전체</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
-          </Row>
-        </Rows>
       </Dataset>
       <Dataset id="ds_cb2">
         <ColumnInfo>
           <Column id="CODE_CODE" type="STRING" size="256"/>
           <Column id="CODE_NAME" type="STRING" size="256"/>
         </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">-999</Col>
-            <Col id="CODE_NAME">전체</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
-          </Row>
-        </Rows>
-      </Dataset>
-      <Dataset id="ds_cd_0"/>
-      <Dataset id="ds_class_0">
-        <ColumnInfo>
-          <Column id="CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE">0</Col>
-            <Col id="CODE_NAME">S Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">1</Col>
-            <Col id="CODE_NAME">A Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">2</Col>
-            <Col id="CODE_NAME">B Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">3</Col>
-            <Col id="CODE_NAME">C Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">4</Col>
-            <Col id="CODE_NAME">D Class</Col>
-          </Row>
-          <Row>
-            <Col id="CODE">5</Col>
-            <Col id="CODE_NAME">E Class</Col>
-          </Row>
-        </Rows>
-      </Dataset>
-      <Dataset id="ds_cb1_0">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
-          </Row>
-        </Rows>
-      </Dataset>
-      <Dataset id="ds_cb2_0">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
-          </Row>
-        </Rows>
       </Dataset>
     </Objects>
     <Bind>
       <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
       <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
       <BindItem id="item0" compid="Div_client.form.div_search.form.edt_client" propid="value" datasetid="ds_cd" columnid="BP_NM"/>
-      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_client00" propid="value" datasetid="ds_list" columnid="BP_NM"/>
     </Bind>
   </Form>
 </FDL>
