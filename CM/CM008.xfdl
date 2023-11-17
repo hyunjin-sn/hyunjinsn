@@ -1,41 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="CM008" width="1020" height="600" titletext="New Form" onload="SO032_1_onload">
+  <Form id="CM008" width="1020" height="600" titletext="New Form" onload="CM008_onload">
     <Layouts>
       <Layout height="600" mobileorientation="landscape" width="1020">
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="5" bottom="0">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="&lt;DesignFormClipBoard version=&quot;1.0&quot;&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;104,4,416,25&quot;&gt;&#10;      &lt;Edit id=&quot;edt_client&quot; taborder=&quot;3&quot; left=&quot;104&quot; top=&quot;4&quot; width=&quot;312&quot; height=&quot;21&quot; onkeyup=&quot;Div00_edt_client_onkeyup&quot; autoselect=&quot;true&quot; inputmode=&quot;upper&quot; onchanged=&quot;Div00_edt_client_onchanged&quot;/&gt;&#10;    &lt;/Component&gt;&#10;    &lt;Bind&gt;&#10;      &lt;BindItem id=&quot;item0&quot; compid=&quot;edt_client&quot; propid=&quot;value&quot; datasetid=&quot;ds_list&quot; columnid=&quot;BP_NM&quot;/&gt;&#10;    &lt;/Bind&gt;&#10;  &lt;/Copydata&gt;&#10;&lt;/DesignFormClipBoard&gt;" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="15" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="&lt;DesignFormClipBoard version=&quot;1.0&quot;&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;-2,4,103,25&quot;&gt;&#10;      &lt;Static id=&quot;Static00_01&quot; taborder=&quot;4&quot; text=&quot;&amp;#xC8FC;&amp;#xBB38;&amp;#xC77C;&amp;#xC2DC;&quot; left=&quot;-2&quot; top=&quot;4&quot; width=&quot;105&quot; height=&quot;21&quot; leftbase=&quot;&quot; topbase=&quot;&quot; bottombase=&quot;&quot; rightbase=&quot;&quot; widthbase=&quot;&quot; heightbase=&quot;&quot; cssclass=&quot;sta_WF_searchLabel&quot;/&gt;&#10;    &lt;/Component&gt;&#10;  &lt;/Copydata&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;98,4,208,25&quot;&gt;&#10;      &lt;Calendar id=&quot;cal_startDate&quot; taborder=&quot;5&quot; left=&quot;98&quot; top=&quot;4&quot; width=&quot;110&quot; height=&quot;21&quot; dateformat=&quot;yyyy-MM-dd&quot; autoselect=&quot;true&quot;/&gt;&#10;    &lt;/Component&gt;&#10;    &lt;Bind&gt;&#10;      &lt;BindItem id=&quot;item3&quot; compid=&quot;cal_startDate&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;START_DATE&quot;/&gt;&#10;      &lt;BindItem id=&quot;item7&quot; compid=&quot;Div_client.form.div_search.form.cal_startDate2&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;START_DATE2&quot;/&gt;&#10;    &lt;/Bind&gt;&#10;  &lt;/Copydata&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;223,4,333,25&quot;&gt;&#10;      &lt;Calendar id=&quot;cal_endDate&quot; taborder=&quot;6&quot; left=&quot;223&quot; top=&quot;4&quot; width=&quot;110&quot; height=&quot;21&quot; dateformat=&quot;yyyy-MM-dd&quot; autoselect=&quot;true&quot;/&gt;&#10;    &lt;/Component&gt;&#10;    &lt;Bind&gt;&#10;      &lt;BindItem id=&quot;item4&quot; compid=&quot;cal_endDate&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;END_DATE&quot;/&gt;&#10;      &lt;BindItem id=&quot;item8&quot; compid=&quot;Div_client.form.div_search.form.cal_endDate2&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;END_DATE2&quot;/&gt;&#10;    &lt;/Bind&gt;&#10;  &lt;/Copydata&gt;&#10;&lt;/DesignFormClipBoard&gt;" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Button id="btn_excel" taborder="0" top="4" height="20" text="엑셀 저장" cssclass="btn_WF_main1" onclick="Div_client_div_search_btn_excel_onclick" right="6" width="76"/>
-                    <Static id="Static03" taborder="1" text="고객사" left="16" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Static id="Static03_00" taborder="2" text="세부내용" left="444" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_client" taborder="3" left="104" top="4" width="312" height="21" onkeyup="Div00_edt_client_onkeyup" autoselect="true" inputmode="upper"/>
-                    <Button id="btn_client" taborder="4" left="416" top="4" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_client_onclick"/>
-                    <Edit id="edt_client00" taborder="5" left="534" top="4" width="312" height="21" onkeyup="Div00_edt_client_onkeyup" autoselect="true" inputmode="upper" onchanged="Div00_edt_client_onchanged"/>
+                    <Static id="Static03" taborder="1" text="고객사명" left="322" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static03_00" taborder="2" text="세부내용" left="580" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static03_00_onclick"/>
+                    <Edit id="edt_client00" taborder="3" left="668" top="4" width="312" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" autoselect="true" inputmode="upper"/>
+                    <Edit id="edt_soldToNm" taborder="4" left="410" top="4" width="140" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Button id="btn_sono" taborder="5" left="550" top="4" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_sono_onclick"/>
+                    <Static id="Static00_01" taborder="6" text="기준일" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="7" left="74" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Calendar id="cal_endDate" taborder="8" left="199" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static03_00_00" taborder="9" text="등록자" left="980" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static03_00_onclick"/>
+                    <Edit id="edt_client00_00" taborder="10" left="1058" top="4" width="80" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" autoselect="true" inputmode="upper"/>
                   </Layout>
                 </Layouts>
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
               <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="0" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" cellsizingtype="col" summarytype="default" autofittype="col" oncelldblclick="Div_client_grd_list_oncelldblclick" showselection="true" treeinitstatus="expand,all">
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" right="0" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="grd_list_oncellclick" background="" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" cellsizingtype="col" summarytype="default" autofittype="col" showselection="true" treeinitstatus="expand,all">
                 <Formats>
                   <Format id="default">
                     <Columns>
                       <Column size="40"/>
-                      <Column size="90"/>
+                      <Column size="80"/>
                       <Column size="40"/>
-                      <Column size="200"/>
-                      <Column size="400"/>
-                      <Column size="90"/>
-                      <Column size="90"/>
-                      <Column size="70"/>
+                      <Column size="180"/>
+                      <Column size="500"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="60"/>
+                      <Column size="0"/>
                     </Columns>
                     <Rows>
                       <Row size="30" band="head"/>
-                      <Row size="24"/>
+                      <Row size="47"/>
                     </Rows>
                     <Band id="head">
                       <Cell text="순번"/>
@@ -45,22 +51,24 @@
                       <Cell col="5" text="기준일"/>
                       <Cell col="6" text="등록일"/>
                       <Cell col="7" text="등록자"/>
+                      <Cell col="8"/>
                     </Band>
                     <Band id="body">
-                      <Cell text="expr:currow+1" textAlign="center"/>
-                      <Cell col="1" text="bind:dept_type" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="none" displaytype="normal" combodataset="ds_cd_0" combodatacol="CODE_NAME" combocodecol="CODE" combotype="filterlike" comboautoselect="false" tooltiptext="bind:dept_type"/>
+                      <Cell textAlign="center" text="expr:currow+1"/>
+                      <Cell col="1" text="bind:BP_CD" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="none" displaytype="normal" combodataset="ds_cd_0" combodatacol="CODE_NAME" combocodecol="CODE" combotype="filterlike" comboautoselect="false" tooltiptext="bind:BP_CD"/>
                       <Cell col="2" text="선택" edittype="button" textAlign="center" displaytype="buttoncontrol" combodataset="ds_cb2_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
-                      <Cell col="3" text="bind:class_f" edittype="normal" textAlign="center" combodataset="ds_class_0" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="normal"/>
-                      <Cell col="4" text="bind:class_g" edittype="normal" textAlign="center" displaytype="normal" combodataset="ds_cb1_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
-                      <Cell col="5" text="bind:ss_ad" edittype="date" editautoselect="true" displaytype="date" textAlign="center"/>
-                      <Cell col="6" text="bind:ss_mba" edittype="text" background="#ffffff" editautoselect="true" textAlign="center"/>
-                      <Cell col="7" textAlign="center"/>
+                      <Cell col="3" text="bind:BP_NM" edittype="none" textAlign="center" combodataset="ds_class_0" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="normal" tooltiptext="bind:BP_NM"/>
+                      <Cell col="4" text="bind:BPSB_MEMO" edittype="normal" textAlign="left" displaytype="textareacontrol" combodataset="ds_cb1_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME" textareascrolltype="none" tooltiptext="bind:BPSB_MEMO"/>
+                      <Cell col="5" text="bind:BASIC_DT" edittype="date" editautoselect="true" displaytype="date" textAlign="center" calendardisplaynulltype="default" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="6" text="bind:UPST_DT" edittype="none" background="#ffffff" editautoselect="true" textAlign="center" displaytype="date" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="7" textAlign="center" text="bind:UPUSER_NM"/>
+                      <Cell col="8" text="bind:SEQ_BP" displaytype="none"/>
                     </Band>
                   </Format>
                 </Formats>
               </Grid>
-              <Button id="btn_add2_hs" taborder="4" top="47" text="삭제" cssclass="btn_WF_main1" width="70" height="28" onclick="Div_client_btn_add2_hs_onclick" right="3"/>
-              <Button id="btn_add2_hs00" taborder="5" top="47" text="추가" cssclass="btn_WF_main1" width="70" height="28" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="82"/>
+              <Button id="btn_add2_hs" taborder="4" top="47" text="삭제" cssclass="btn_WF_main1" width="70" height="28" onclick="Div_client_btn_add2_hs_onclick" right="13"/>
+              <Button id="btn_add2_hs00" taborder="5" top="47" text="추가" cssclass="btn_WF_main1" width="70" height="28" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="92"/>
             </Layout>
           </Layouts>
         </Div>
@@ -84,14 +92,17 @@
  * FORM 변수 선언 영역
  ************************************************************************************************/
 
-
+this.objApp = nexacro.getApplication();	
 /***********************************************************************************************
 * FORM EVENT 영역(onload)
 /***********************************************************************************************/
 this.CM008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);	
-	this.objApp = nexacro.getApplication();	
+	
+	
+	//날짜 세팅
+	this.fn_setCal();
 	
 	this.fn_setCombo(obj);
 	
@@ -101,6 +112,19 @@ this.CM008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  /************************************************************************************************
  * 사용자 FUNCTION 영역
  ************************************************************************************************/
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-1);
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
 this.fn_setCombo = function (obj)
 {
 	
@@ -110,12 +134,16 @@ this.fn_setCombo = function (obj)
 
 this.fn_search = function ()
 {	
+	var Arg_1 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_2 = this.ds_cond.getColumn(0,"END_DATE");
+	if (Arg_2 == "")
+		Arg_2 = "99999999"
 	// 조회
 	var id = "CM008_S01";
 	var url = "svcUrl::CM008_S01";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
-	var args = "";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
 	var callBackid = "fn_afterSearch";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
@@ -147,6 +175,7 @@ this.fn_save = function ()
 	var outDs = "";
 	var args = "INSRT_USER_ID="+regUser;
 	var callBackid = "fn_afterSave";
+
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
 };
@@ -158,7 +187,7 @@ this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
 		return ;
 	}
 	
-	this.alert("저장 되었습니다.");
+	this.alert("저장 되었습니다.수정 및 삭제는 등록자만 가능합니다.");
 	this.fn_search();
 }
 
@@ -167,47 +196,38 @@ this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEven
 	//this.gfn_grdCopy_Paste(obj, e);
 };
 
-this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
-{
-	if (e.keycode == 13)
-	{
-		this.fn_filter();
-	}	
-};
-
-
 this.fn_filter = function ()
 {
-		
+	
+	var schtext0 = this.ds_cond.getColumn(0,"BP_NM");
+	var schtext1 = this.ds_cond.getColumn(0,"BPSB_MEMO");
+	var schtext2 = this.ds_cond.getColumn(0,"USER_NM");
+	
 	var filterstr = "";
 		
-	if(!this.gfn_isNull(schcmbo0) && schcmbo0 != "-999")
+	if(!this.gfn_isNull(schtext0) && schtext0 != "")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "dept_type=='"+schcmbo0+"'";
-		else filterstr += " && dept_type=='"+schcmbo0+"'";				
-	}	
+			filterstr = "BP_NM.indexOf('"+schtext0+"')!='-1' || BP_CD.indexOf('"+schtext0+"')!='-1'";
+		else 
+			filterstr += " && BP_NM.indexOf('"+schtext0+"')!='-1' || BP_CD.indexOf('"+schtext0+"')!='-1'";
+	}
 	
-	if(!this.gfn_isNull(schcmbo1) && schcmbo1 != "-999")
+	if(!this.gfn_isNull(schtext1) && schtext1 != "")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "class_f=='"+schcmbo1+"'";
-		else filterstr += " && class_f=='"+schcmbo1+"'";				
-	}	
+			filterstr = "BPSB_MEMO.indexOf('"+schtext1+"')!='-1'";
+		else
+			filterstr += " && BPSB_MEMO.indexOf('"+schtext1+"')!='-1'";
+	}
 	
-	if(!this.gfn_isNull(schcmbo2) && schcmbo2 != "-999")
+	if(!this.gfn_isNull(schtext2) && schtext2 != "")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "class_g=='"+schcmbo2+"'";
-		else filterstr += " && class_g=='"+schcmbo2+"'";				
-	}	
-	
-	if(!this.gfn_isNull(schcmbo3) && schcmbo3 != "-999")
-	{
-		if(this.gfn_isNull(filterstr))
-			filterstr = "dept_g=='"+schcmbo3+"'";
-		else filterstr += " && dept_g=='"+schcmbo3+"'";				
-	}	
+			filterstr = "UPUSER_NM.indexOf('"+schtext2+"')!='-1'";
+		else
+			filterstr += " && UPUSER_NM.indexOf('"+schtext2+"')!='-1'";
+	}
 	
 	this.ds_list.set_filterstr(filterstr);
 };
@@ -236,8 +256,14 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 
 this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
+	var sToday = "";
+	var objDate = new Date();
+	var sToday  = objDate.getFullYear() + "";
+	sToday += objDate.getMonth() + 1 + "";
+	sToday += objDate.getDate();
+
 	this.ds_list.addRow();
-	this.ds_list.setColumn(this.ds_list.rowposition,"dept_type",this.ds_list.getColumn(this.ds_list.rowposition-1,"dept_type"));
+	this.ds_list.setColumn(this.ds_list.rowposition,"BASIC_DT",sToday);
 };
 
 this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
@@ -245,28 +271,19 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
 	this.ds_list.deleteRow(this.ds_list.rowposition);
 };
 
-// 고객사 검색 엔터 key
-this.Div00_edt_client_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+// edit enter event
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
 {
-	if (e.keycode == 13)
+	if(e.keycode == 13)
 	{
-		var Arg_1 = this.Div00.form.edt_client.value;
-
-		var id = "SO010_P01";
-		var url = "svcUrl::SO010_P01";
-		var inDs = "";
-		var outDs = "ds_cd=ds_list";
-		var args = "BP_CD="+Arg_1+" BP_NM="+Arg_1+"";
-		var callBackid = "fn_afterbpSearchCallback";
-			
-		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+		this.fn_filter();
 	}
 };
 
-// 고객사 팝업
-this.Div00_btn_client_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+this.Div00_btn_sono_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	var Arg_1 = this.gfn_nvl(this.Div00.form.edt_client.value,"");
+	var Arg_1 = this.gfn_nvl(this.Div_client.form.div_search.form.edt_soldToNm.value,"");
+
 	var sPopupId  = "client_popup";
 	var sUrl      = "SO::SO010_P01.xfdl";
 	var oArg      = {MODE : Arg_1};
@@ -279,9 +296,38 @@ this.Div00_btn_client_onclick = function(obj:nexacro.Button,e:nexacro.ClickEvent
 this.fn_popupCallback_client = function(sPopId, sRtn)
 {
     var objRtn = JSON.parse(sRtn);
-	this.ds_cd.setColumn(this.ds_cd.rowposition,"BP_CD",objRtn.bp_cd);
-	this.ds_cd.setColumn(this.ds_cd.rowposition,"BP_NM",objRtn.BP_NM);
-}]]></Script>
+	
+	var bpNm = objRtn.BP_NM.split(" : ");
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_CD",objRtn.bp_cd);
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_NM",bpNm[1]);
+	
+	this.fn_filter();
+}
+
+// 고객사 선택 팝업
+this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 2)
+	{	
+		var sPopupId  = "client_popup";
+		var sUrl      = "SO::SO010_P01.xfdl";
+		var oArg      = {MODE : ""};
+		var sCallBack = "fn_popupCallback_client1";
+		var oOption   = {title : "고객사 정보"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+	}	
+};
+
+// 고객사 팝업 callback
+this.fn_popupCallback_client1 = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);	
+	
+	var bpNm = objRtn.BP_NM.split(" : ");
+	this.ds_list.setColumn(this.ds_list.rowposition,"BP_CD",objRtn.bp_cd);
+	this.ds_list.setColumn(this.ds_list.rowposition,"BP_NM",bpNm[1]);
+}
+]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
@@ -289,35 +335,38 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
           <Column id="BP_CD" type="STRING" size="50"/>
           <Column id="BP_NM" type="STRING" size="100"/>
           <Column id="BPSB_MEMO" type="STRING" size="500"/>
-          <Column id="BASIC_DT" type="DATE" size="20"/>
-          <Column id="UPST_DT" type="DATE" size="20"/>
+          <Column id="BASIC_DT" type="STRING" size="20"/>
+          <Column id="UPST_DT" type="STRING" size="20"/>
           <Column id="UPUSER_ID" type="STRING" size="10"/>
           <Column id="UPUSER_NM" type="STRING" size="20"/>
         </ColumnInfo>
       </Dataset>
-      <Dataset id="ds_cd">
+      <Dataset id="ds_cond">
         <ColumnInfo>
-          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BPSB_MEMO" type="STRING" size="500"/>
           <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="USER_NM" type="STRING" size="256"/>
         </ColumnInfo>
-      </Dataset>
-      <Dataset id="ds_cb1">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-      </Dataset>
-      <Dataset id="ds_cb2">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BPSB_MEMO"/>
+            <Col id="BP_NM"/>
+            <Col id="BP_CD"/>
+          </Row>
+        </Rows>
       </Dataset>
     </Objects>
     <Bind>
-      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
-      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
-      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_client" propid="value" datasetid="ds_cd" columnid="BP_NM"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_soldToNm" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item5" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.edt_client00" propid="value" datasetid="ds_cond" columnid="BPSB_MEMO"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.edt_client00_00" propid="value" datasetid="ds_cond" columnid="USER_NM"/>
     </Bind>
   </Form>
 </FDL>
