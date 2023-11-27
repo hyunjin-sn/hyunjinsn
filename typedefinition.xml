@@ -40,6 +40,7 @@
     <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
     <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
     <Component type="JavaScript" id="VirtualFile" classname="nexacro.VirtualFile"/>
+    <Component type="JavaScript" id="WebView" classname="nexacro.WebView"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
