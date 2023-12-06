@@ -38,14 +38,14 @@
                 </Formats>
               </Grid>
               <Static id="Static03_00" taborder="3" text="고객사" left="0" top="33" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-              <Edit id="edt_bpCd" taborder="4" left="102" top="33" width="388" height="21" onkeyup="Div_client_div_search_edt_bpCd_onkeyup" readonly="true"/>
+              <Edit id="edt_bpCd" taborder="4" left="102" top="33" width="388" height="21" readonly="true"/>
               <Static id="Static00_00" taborder="5" text="배송지" left="1" top="68" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-              <Edit id="edt_bpNm" taborder="6" left="101" top="68" width="389" height="21" onkeyup="Div_client_div_search_edt_bpCd_onkeyup" readonly="true"/>
+              <Edit id="edt_bpNm" taborder="6" left="101" top="68" width="389" height="21" readonly="true"/>
               <Static id="Static05_00" taborder="7" text="중복주문정보" left="20" top="1" width="97" height="24" cssclass="sta_WF_title"/>
               <Static id="Static05_00_00" taborder="8" text="주문 상세 정보" left="429" top="110" width="97" height="24" cssclass="sta_WF_title"/>
               <Static id="Static35" taborder="9" text="주문번호" left="425" top="144" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Edit id="edt_mNm" taborder="10" left="529" top="148" width="201" height="21" enable="true" readonly="false"/>
-              <Static id="sta_24_00" taborder="12" left="464" top="172" height="29" cssclass="sta_WF_detailLine" width="271"/>
+              <Static id="sta_24_00" taborder="12" left="464" top="172" height="29" cssclass="sta_WF_detailLine" width="271" text=""/>
               <Static id="Static35_00" taborder="13" text="접수자" left="425" top="172" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Edit id="edt_mNm00" taborder="14" left="529" top="176" width="201" height="21" enable="true" readonly="false"/>
               <Static id="sta_24_00_00" taborder="15" left="464" top="200" height="29" cssclass="sta_WF_detailLine" width="271"/>
@@ -96,6 +96,7 @@ var dlvyDt = this.getOwnerFrame().dlvyDt
  ************************************************************************************************/
 this.objApp = nexacro.getApplication();
 
+
 /***********************************************************************************************
 * FORM EVENT 영역(onload)
 /***********************************************************************************************/
@@ -135,27 +136,33 @@ this.SO001_P19_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  /************************************************************************************************
  * 각 COMPONENT 별 EVENT 영역
  ************************************************************************************************/
-this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
-{	
-	this.close(this.efn_jsonRtn(this.ds_list));
-};
+
 
 this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
 	this.gfn_grdCopy_Paste(obj, e);
 };
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{	
+	var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+	//this.close(this.efn_jsonRtn(this.ds_list));
+	this.close(soNo);
+};
+
+
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
-          <Column id="SO_NO" type="STRING" size="18"/>
-          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
-          <Column id="SO_DT" type="DATETIME" size="23"/>
-          <Column id="DLVY_DT" type="DATETIME" size="23"/>
-          <Column id="HS_CD" type="STRING" size="20"/>
-          <Column id="M_NAME" type="STRING" size="20"/>
-          <Column id="OWN_NM" type="STRING" size="20"/>
-          <Column id="REQ_NM" type="STRING" size="20"/>
+          <Column id="SO_NO" type="STRING" size="30"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="30"/>
+          <Column id="SO_DT" type="STRING" size="30"/>
+          <Column id="DLVY_DT" type="STRING" size="30"/>
+          <Column id="HS_CD" type="STRING" size="200"/>
+          <Column id="M_NAME" type="STRING" size="30"/>
+          <Column id="OWN_NM" type="STRING" size="30"/>
+          <Column id="REQ_NM" type="STRING" size="30"/>
         </ColumnInfo>
       </Dataset>
     </Objects>
