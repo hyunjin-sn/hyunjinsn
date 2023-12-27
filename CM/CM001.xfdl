@@ -242,8 +242,8 @@
                           <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
                           <Cell col="2" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="선택" displaytype="buttoncontrol" edittype="button"/>
                           <Cell col="3" textAlign="left" text="bind:ITEM_NM"/>
-                          <Cell col="4" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
-                          <Cell col="5" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                          <Cell col="4" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true" editautoselect="false"/>
+                          <Cell col="5" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true" accessibilitydesclevel="all"/>
                           <Cell col="6" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
                           <Cell col="7" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo" text="bind:BRANCH_GROUP" combotype="filterlike"/>
                           <Cell col="8" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" edittype="checkbox" text="bind:MANDATORY_YN"/>
@@ -477,7 +477,7 @@
           <Layouts>
             <Layout>
               <Static id="Static00_01_00" taborder="0" text="고객사" left="-2" top="7" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-              <Edit id="edt_sono00" taborder="1" left="98" top="8" width="300" height="21" onkeyup="div_search_edt_sono00_onkeyup"/>
+              <Edit id="edt_sono00" taborder="1" left="98" top="8" width="300" height="21" onkeyup="div_search_edt_sono00_onkeyup" onchanged="div_search_edt_sono00_onchanged"/>
               <Button id="btn_bpCd" taborder="2" left="398" top="8" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_bpCd_onclick"/>
               <Button id="btn_copy" taborder="3" left="1139" top="9" text="고객사 기준 복사" cssclass="btn_WF_main1" width="126" height="21" onclick="div_search_btn_copy_onclick"/>
             </Layout>
@@ -1142,6 +1142,7 @@ this.Tab00_Tabpage3_btn_add_case_onclick = function(obj:nexacro.Button,e:nexacro
 		
 	if (this.ds_list_5.rowcount > 1)
 	{
+		var var1 = this.gfn_today()
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"VALID_FR_DT",this.ds_list_5.getColumn(this.ds_list_5.rowposition-1,"VALID_FR_DT"));
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"VALID_TO_DT",this.ds_list_5.getColumn(this.ds_list_5.rowposition-1,"VALID_TO_DT"));
 	} else
@@ -1864,6 +1865,12 @@ this.Tab00_Tabpage2_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexa
 	{
 		this.ds_list_4.setColumn(this.ds_list_4.rowposition,"BILL_TO_PARTY",null)
 	}
+};
+
+
+this.div_search_edt_sono00_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+	
 };
 ]]></Script>
   </Form>

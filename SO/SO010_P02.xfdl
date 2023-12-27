@@ -15,6 +15,7 @@
                     <Button id="btn_search" taborder="3" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
                     <Static id="Static00" taborder="4" text="품목명" left="252" top="8" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_itemNm" taborder="2" left="357" top="8" width="202" height="21" onkeyup="Div_client_div_search_edt_itemNm_onkeyup"/>
+                    <Button id="btn_mall_refresh" taborder="5" text="가져오기" left="878" top="7" width="70" height="21" cssclass="btn_WF_main1" onclick="Div02_Tab00_Tabpage1_btn_mall_refresh_onclick" visible="false"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -199,7 +200,33 @@ this.Div_client_div_search_edt_itemNm_onkeyup = function(obj:nexacro.Edit,e:nexa
 	}
 };
 
-]]></Script>
+this.Div02_Tab00_Tabpage1_btn_mall_refresh_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id = "SO010_MALL_ITEM_CHOICE_SELECT";
+	var url = "svcUrl::SO010_MALL_ITEM_CHOICE_SELECT";
+	var inDs = "";
+	var outDs = "ds_tSoNo=ds_list";
+	var args = "TYPE='SELECT'&T_SO_NO="+T_SO_NO;
+	var callBackid = "";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid, false);	
+	
+	var filterstr = "";
+	
+	
+	for(var i=0; i<this.ds_tSoNo.rowcount;i++){
+		
+		if(i == 0){
+			filterstr = "ITEM_CD=='"+this.ds_tSoNo.getColumn(i,"ITEM_CD")+"'";	
+		}else{
+			filterstr = filterstr + " || ITEM_CD=='"+this.ds_tSoNo.getColumn(i,"ITEM_CD")+"'";			
+		}
+		
+		//filterstr = "ITEM_CD=='"+this.ds_tSoNo.getColumn(i,"ITEM_CD")+"'";	
+	}
+	this.ds_list.set_filterstr();
+	this.ds_list.set_filterstr(filterstr);
+};]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>

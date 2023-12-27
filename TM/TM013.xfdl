@@ -234,7 +234,7 @@ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
 		return ;
 	}
 	
-	//this.fn_filter();
+	this.fn_filter();
 }
 
  /************************************************************************************************
@@ -283,13 +283,13 @@ this.fn_filter = function ()
 	}
 	
 	// 고객사		
-// 	if(!this.gfn_isNull(bpNm))
-// 	{
-// 		if(this.gfn_isNull(filterstr))
-// 			filterstr = "SOLD_TO_NM.indexOf('"+bpNm+"')!='-1'";
-// 		else
-// 			filterstr += " && SOLD_TO_NM.indexOf('"+bpNm+"')!='-1'";				
-// 	}
+ 	if(!this.gfn_isNull(bpNm))
+ 	{
+ 		if(this.gfn_isNull(filterstr))
+ 			filterstr = "SOLD_TO_NM.indexOf('"+bpNm+"')!='-1'";
+ 		else
+ 			filterstr += " && SOLD_TO_NM.indexOf('"+bpNm+"')!='-1'";				
+ 	}
 	
 	// 발주지점		
 	if(!this.gfn_isNull(poBpNm))
@@ -310,13 +310,13 @@ this.fn_filter = function ()
 	}
 	
 	// 매입처	
-// 	if(!this.gfn_isNull(billBpNm))
-// 	{
-// 		if(this.gfn_isNull(filterstr))
-// 			filterstr = "BILL_BP_NM.indexOf('"+billBpNm+"')!='-1'";
-// 		else
-// 			filterstr += " && BILL_BP_NM.indexOf('"+billBpNm+"')!='-1'";				
-// 	}
+ 	if(!this.gfn_isNull(billBpNm))
+ 	{
+ 		if(this.gfn_isNull(filterstr))
+ 			filterstr = "BILL_BP_NM.indexOf('"+billBpNm+"')!='-1'";
+ 		else
+ 			filterstr += " && BILL_BP_NM.indexOf('"+billBpNm+"')!='-1'";				
+ 	}
 	
 	// 품목
 	if(!this.gfn_isNull(itemNm))
@@ -438,6 +438,10 @@ this.Div_client_div_search_edt_soldToNm_onkeyup = function(obj:nexacro.Edit,e:ne
           <Column id="BP_NM" type="STRING" size="200"/>
           <Column id="EMP_NM" type="STRING" size="30"/>
           <Column id="own_nm" type="STRING" size="20"/>
+          <Column id="SOLD_TO_NM" type="STRING" size="256"/>
+          <Column id="CLOSE_YN" type="STRING" size="1"/>
+          <Column id="CLOSE_DT" type="DATETIME" size="23"/>
+          <Column id="SOLD_TO_PARTY" type="STRING" size="10"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">

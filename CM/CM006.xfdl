@@ -69,8 +69,8 @@
                       <Cell col="8" text="bind:CONT_FR_DT" calendardateformat="yyyy-MM-dd" displaytype="calendarcontrol" edittype="date"/>
                       <Cell col="9" text="bind:CONT_TO_DT" calendardateformat="yyyy-MM-dd" displaytype="calendarcontrol" edittype="date"/>
                       <Cell col="10" text="연장" combocodecol="DEPT_CD" combodatacol="DEPT_NM" combodataset="ds_dept" displaytype="buttoncontrol" textAlign="center" edittype="button"/>
-                      <Cell col="11" text="bind:M_DEPT_CD" combocodecol="DEPT_CD" combodatacol="DEPT_NM" combodataset="ds_dept" displaytype="combotext" textAlign="left"/>
-                      <Cell col="12" text="bind:M_USR_ID" textAlign="center" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" displaytype="combotext"/>
+                      <Cell col="11" text="bind:M_DEPT_CD" combocodecol="DEPT_CD" combodatacol="DEPT_NM" combodataset="ds_dept" displaytype="normal" textAlign="left"/>
+                      <Cell col="12" text="bind:M_USR_ID" textAlign="center" combocodecol="USR_ID" combodatacol="USR_NM" combodataset="ds_user" displaytype="normal"/>
                       <Cell col="13" text="bind:CONT_DESC" tooltiptext="bind:CONT_DESC" edittype="text"/>
                     </Band>
                   </Format>

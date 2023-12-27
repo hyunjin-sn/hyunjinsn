@@ -102,6 +102,9 @@
                       <Column size="120"/>
                       <Column size="80"/>
                       <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -129,6 +132,9 @@
                       <Cell col="19" text="결산일자"/>
                       <Cell col="20" rowspan="2" text="작업 내역"/>
                       <Cell col="21" rowspan="2" text="주문복구"/>
+                      <Cell col="22" rowspan="2" text="소속1"/>
+                      <Cell col="23" rowspan="2" text="소속2"/>
+                      <Cell col="24" rowspan="2" text="소속3"/>
                       <Cell row="1" text="유형"/>
                       <Cell row="1" col="1" text="접수경로"/>
                       <Cell row="1" col="2" text="접수자"/>
@@ -167,6 +173,9 @@
                       <Cell col="19" text="bind:BP_GRADE_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
                       <Cell col="20" rowspan="2" text="보기" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" displaytype="buttoncontrol" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
                       <Cell col="21" rowspan="2" text="expr:DEL_YN=='삭제주문' ? '복구' : ''" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" displaytype="expr:DEL_YN=='삭제주문' ? 'buttoncontrol' : 'nomal'" edittype="expr:DEL_YN=='삭제주문' ? 'button' : 'none'" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
+                      <Cell col="22" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" text="bind:SUB_TYPE_NM1"/>
+                      <Cell col="23" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" text="bind:SUB_TYPE_NM2"/>
+                      <Cell col="24" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" text="bind:SUB_TYPE_NM3"/>
                       <Cell row="1" text="bind:SO_TYPE_NM" cssclass="expr:comp.parent.parent.parent.fn_test3(currow)" textAlign="center" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
                       <Cell row="1" col="1" text="bind:RCPT_METH_NM" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
                       <Cell row="1" col="2" text="bind:INSRT_USER_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
@@ -184,6 +193,9 @@
                       <Cell row="1" col="17" text="bind:NOT_BILL_AMT_ADD" displaytype="mask" maskeditformat="##,###" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
                       <Cell row="1" col="18" text="bind:RECOVERY_FLAG" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black" textAlign="center"/>
                       <Cell row="1" col="19" text="bind:DEC_DT" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black"/>
+                      <Cell row="1" col="22" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black" text="bind:SUB_CODE_NM1"/>
+                      <Cell row="1" col="23" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black" text="bind:SUB_CODE_NM2"/>
+                      <Cell row="1" col="24" textAlign="center" cssclass="comp.parent.parent.parent.fn_test(currow)" border="1px solid #dddddd, 1px solid #dddddd, 1px solid black" text="bind:SUB_CODE_NM3"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -227,6 +239,12 @@
                 <Column size="40"/>
                 <Column size="58"/>
                 <Column size="59"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
               </Columns>
               <Rows>
                 <Row size="24" band="head"/>
@@ -262,6 +280,12 @@
                 <Cell col="26" colspan="4" text="진행상태"/>
                 <Cell col="30" text="메모"/>
                 <Cell col="31" text="취소내역"/>
+                <Cell col="32" text="소속1항목"/>
+                <Cell col="33" text="소속1값"/>
+                <Cell col="34" text="소속2항목"/>
+                <Cell col="35" text="소속2값"/>
+                <Cell col="36" text="소속3항목"/>
+                <Cell col="37" text="소속3값"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:SO_TYPE_NM" textAlign="center"/>
@@ -293,6 +317,12 @@
                 <Cell col="26" colspan="4" text="bind:DATA_STATUS" textAlign="center"/>
                 <Cell col="30" text="expr:MEMO_VIEW=='-' ? '-' : '메모'" textAlign="center" displaytype="expr:MEMO_VIEW=='-' ? 'nomal' : 'buttoncontrol'" edittype="expr:MEMO_VIEW=='-' ? 'none' : 'button'"/>
                 <Cell col="31" text="expr:CANCEL_PO=='-' ? '-' : '내역'" textAlign="center" displaytype="expr:CANCEL_PO=='-' ? 'nomal' : 'buttoncontrol'" edittype="expr:CANCEL_PO=='-' ? 'none' : 'button'"/>
+                <Cell col="32" text="bind:SUB_TYPE_NM1"/>
+                <Cell col="33" text="bind:SUB_CODE_NM1"/>
+                <Cell col="34" text="bind:SUB_TYPE_NM2"/>
+                <Cell col="35" text="bind:SUB_CODE_NM2"/>
+                <Cell col="36" text="bind:SUB_TYPE_NM3"/>
+                <Cell col="37" text="bind:SUB_CODE_NM3"/>
               </Band>
             </Format>
           </Formats>
@@ -1181,6 +1211,12 @@ this.fn_popupCallback_item = function(sPopId, sRtn)
           <Column id="BOX_RECV_LIST" type="STRING" size="1073741823"/>
           <Column id="HS_NM" type="STRING" size="100"/>
           <Column id="DEC_DT" type="DATETIME" size="23"/>
+          <Column id="SUB_TYPE_NM1" type="STRING" size="256"/>
+          <Column id="SUB_TYPE_NM2" type="STRING" size="256"/>
+          <Column id="SUB_TYPE_NM3" type="STRING" size="256"/>
+          <Column id="SUB_CODE_NM1" type="STRING" size="256"/>
+          <Column id="SUB_CODE_NM2" type="STRING" size="256"/>
+          <Column id="SUB_CODE_NM3" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">

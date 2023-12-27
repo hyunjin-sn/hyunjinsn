@@ -1125,7 +1125,7 @@ this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag)
 	}
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	trace(deptCd)
-	if (deptCd == "H4130" || deptCd == "H4420" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5210" || deptCd == "H5220" || deptCd == "H5000" || deptCd == "H5230" || deptCd == "H4410")
+	if (deptCd == "H5290" || deptCd == "H4420" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5210" || deptCd == "H5220" || deptCd == "H5000" || deptCd == "H5230" || deptCd == "H4410")
 	{
 		this.ds_poBp.insertRow(0);
 		this.ds_poBp.setColumn(0,"BP_CD","-999");

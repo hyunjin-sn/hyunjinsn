@@ -187,9 +187,9 @@ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
 	if (mode2 == "CM004" && !this.gfn_isNull(yn) && yn != "-999")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "SAVE_YN2.indexOf('"+yn+"')!='-1'";
+			filterstr = "SAVE_YN2.indexOf('"+yn+"')!='-1'";	
 		else
-			filterstr += " && SAVE_YN2.indexOf('"+yn+"')!='-1'";		
+			filterstr += " && SAVE_YN2.indexOf('"+yn+"')!='-1'";			
 	}	
 	
 	this.ds_list.set_filterstr(filterstr);
@@ -248,7 +248,7 @@ this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.Gr
 // 		this.alert("해당 계약에 이미 저장된 데이터가 있습니다.");
 // 		return;
 // 	}
-	
+	var aa = this.ds_list.getColumn(this.ds_list.rowposition,"HS_TYPE");
 	this.close(this.efn_jsonRtn(this.ds_list));
 };
 
@@ -282,12 +282,12 @@ this.Div_client_div_search_Radio00_00_onitemchanged = function(obj:nexacro.Radio
 	if (mode2 == "CM004" && !this.gfn_isNull(yn) && yn != "-999")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "SAVE_YN2.indexOf('"+yn+"')!='-1'";
+			filterstr = "SAVE_YN2.indexOf('"+yn+"')!='-1'";	
 		else
-			filterstr += " && SAVE_YN2.indexOf('"+yn+"')!='-1'";		
+			filterstr += " && SAVE_YN2.indexOf('"+yn+"')!='-1'";			
 	}	
-	
 	this.ds_list.set_filterstr(filterstr);
+	this.fn_search();
 };
 
 this.Div_client_div_search_Radio00_00_00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
@@ -295,10 +295,6 @@ this.Div_client_div_search_Radio00_00_00_onitemchanged = function(obj:nexacro.Ra
 	this.fn_search();
 };
 
-this.Div_client_div_search_Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
-{
-	
-};
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">

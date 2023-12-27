@@ -58,7 +58,7 @@
                       <Cell col="4" text="bind:ITEM_NM"/>
                       <Cell col="5" text="bind:MOVE_DT" textAlign="center" calendardisplaynulltype="none"/>
                       <Cell col="6" text="bind:MOVE_QTY" textAlign="center"/>
-                      <Cell col="7" text="bind:조정수량" textAlign="center" edittype="expr:비고=='PD0016' || 비고=='PD0019' || 비고=='PD0042' ? 'mask' : 'none'" background="YELLOW" maskeditautoselect="true"/>
+                      <Cell col="7" text="bind:조정수량" textAlign="center" edittype="expr:비고=='PD0016' || 비고=='PD0019' || 비고=='PD0042' || 비고=='PD0043'  ? 'mask' : 'none'" background="YELLOW" maskeditautoselect="true"/>
                       <Cell col="8" textAlign="center" calendardisplaynulltype="none" background="YELLOW" text="bind:이동요청일" displaytype="date"/>
                       <Cell col="9" text="bind:비고" textAlign="center" edittype="combo" background="YELLOW" combodataset="ds_div" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
                     </Band>

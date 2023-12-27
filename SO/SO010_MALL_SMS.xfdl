@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P11" width="261" height="601" titletext="New Form" onload="SO001_P11_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="601" mobileorientation="landscape" width="261">
+        <Static id="Static05_00" taborder="0" text="발신번호" left="10" top="140" width="97" height="24" cssclass="sta_WF_title"/>
+        <Combo id="cmb_rcptMeth" taborder="1" left="10" top="167" width="230" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" innerdataset="ds_hp"/>
+        <Static id="Static05_00_00" taborder="2" text="발송내용" left="10" top="190" width="97" height="24" cssclass="sta_WF_title"/>
+        <TextArea id="TA_addr" taborder="3" left="10" top="215" width="230" height="165"/>
+        <Static id="Static05_00_00_00" taborder="4" text="수신대상" left="10" top="388" width="97" height="24" cssclass="sta_WF_title"/>
+        <Grid id="grd_list00" taborder="5" scrolltype="both" minwidth="" left="10" right="21" top="418" bottom="51" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list" oncelldblclick="Div_client_grd_list_oncelldblclick" onkeydown="Div_client_grd_list00_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="149"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="이름"/>
+                <Cell col="1" text="전화번호"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:SEND_NM" textAlign="center" displaytype="editcontrol" edittype="text"/>
+                <Cell col="1" text="bind:PHONE_NUM" displaytype="editcontrol" edittype="text"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_add1" taborder="6" text="+" top="391" width="23" height="20" right="57" visible="true" onclick="Div_client_btn_add1_onclick"/>
+        <Button id="btn_del1" taborder="7" text="-" top="391" width="23" height="20" right="27" visible="true" onclick="Div_client_btn_del1_onclick"/>
+        <Button id="btn_send" taborder="8" text="발송" top="560" width="45" height="24" right="99" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_send_onclick"/>
+        <Button id="btn_cancel" taborder="9" text="취소" top="560" width="45" height="24" right="51" visible="true" cssclass="btn_WF_main1" onclick="Div_client_btn_cancel_onclick"/>
+        <Static id="Static05_00_01" taborder="10" text="품목선정" left="10" top="10" width="97" height="24" cssclass="sta_WF_title" onclick="Static05_00_01_onclick"/>
+        <Combo id="cmb_catagory1" taborder="11" left="10" top="44" width="230" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" innerdataset="ds_itemGroup1" onitemchanged="cmb_catagory1_onitemchanged"/>
+        <Combo id="cmb_catagory2" taborder="12" left="10" top="79" width="230" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" innerdataset="ds_itemGroup2" onitemchanged="cmb_catagory2_onitemchanged"/>
+        <Button id="btn_mall" taborder="13" text="단품몰" left="40" top="560" width="70" height="24" cssclass="btn_WF_main1" onclick="Div00_btn_mall_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  SMS 팝업
+*  @MenuPath    SO > SO0001_P12
+*  @FileName 	SO0001_P12.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2020.05.11
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+var hp = this.getOwnerFrame().hp
+var user = this.getOwnerFrame().user
+var soNo = this.getOwnerFrame().soNo
+var T_SO_NO = this.getOwnerFrame().T_SO_NO
+var bpCd = this.getOwnerFrame().bpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P11_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//데이터 세팅
+	this.fn_setUser();
+			
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_setUser = function ()
+ {
+ 	this.ds_list.addRow();
+	this.ds_list.setColumn(0,"PHONE_NUM",hp);
+	this.ds_list.setColumn(0,"SEND_NM",user);
+	
+	this.ds_main.addRow();
+	this.cmb_rcptMeth.set_index(0);
+
+	this.TA_addr.setFocus();
+	this.TA_addr.set_value("https://flowerfine.co.kr/");
+	
+		
+	var id = "SO010_MALL_ITEM_GROUP_SELECT";
+	var url = "svcUrl::SO010_MALL_ITEM_GROUP_SELECT";
+	var inDs = "";
+	var outDs = "ds_itemGroup1=ds_list ds_itemGroup2=ds_list2";
+	var args = "TYPE='FINE_CT1' BP_CD="+bpCd+" TYPE2='FINE_CT2'";	 
+	var callBackid = "";	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid, false);
+	
+	
+ };
+ 
+
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.05.11
+* @수정자	   
+* @수정일자
+*/
+
+//수신대상 추가
+this.Div_client_btn_add1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.addRow();
+};
+
+//수신대상 삭제
+this.Div_client_btn_del1_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.deleteRow(this.ds_list.rowposition);
+};
+
+//발송
+this.Div_client_btn_send_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	if (this.gfn_isNull(this.ds_main.getColumn(this.ds_main.rowposition,"REQ_DT")))
+	{
+		var dte = this.gfn_getDate("time");
+		this.ds_main.setColumn(this.ds_main.rowposition,"REQ_DT",dte)
+	}
+	var reqDt = this.ds_main.getColumn(this.ds_main.rowposition,"REQ_DT");
+	var args1 = this.ds_main.getColumn(this.ds_main.rowposition,"SMS_SND_NUM");
+	//var args2 = this.ds_main.getColumn(this.ds_main.rowposition,"SND_MSG");
+	var args3 = reqDt.substring(0,14);
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	//trace(args3);
+	var id = "SO001_P12_M01";
+	var url = "svcUrl::SO001_P12_M01";
+	var inDs = "ds_list=ds_list:U ds_main=ds_main:U";
+	var outDs = "ds_list_3=ds_list_3";
+	var args = "SMS_SND_NUM="+args1+" REQ_DTM="+args3+" INSRT_USR_ID="+regUser+" SO_NO="+soNo+"";
+	var callBackid = "fn_afterSend";		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	
+};
+
+//취소
+this.Div_client_btn_cancel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+
+this.fn_afterSend = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	//this.ds_list.clearData();
+	//this.ds_main.clearData();
+	//this.close();
+	this.alert("발송 완료하였습니다.");
+}
+
+this.cmb_catagory1_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.cmb_catagory2.set_text(null);
+	this.cmb_catagory2.set_value(null);	
+	var url = "https://flowerfine.co.kr/"+this.cmb_catagory1.text;
+	this.TA_addr.set_value(url);
+};
+
+this.cmb_catagory2_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{	
+	this.cmb_catagory1.set_text(null);
+	this.cmb_catagory1.set_value(null);
+	var url = "https://flowerfine.co.kr/"+this.cmb_catagory2.text;
+	this.TA_addr.set_value(url);
+};
+
+this.Div00_btn_mall_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	system.execBrowser(this.TA_addr.text);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="PHONE_NUM" type="STRING" size="10"/>
+          <Column id="SEND_NM" type="STRING" size="200"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_hp">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_NAME">1600-0113</Col>
+            <Col id="CODE">1600-0113</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">1600-8444</Col>
+            <Col id="CODE">1600-8444</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">010-7344-8444</Col>
+            <Col id="CODE">010-7344-8444</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_main">
+        <ColumnInfo>
+          <Column id="SMS_SND_NUM" type="STRING" size="256"/>
+          <Column id="SND_MSG" type="STRING" size="256"/>
+          <Column id="REQ_DT" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_itemGroup1">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="50"/>
+          <Column id="CODE_NAME" type="STRING" size="50"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_itemGroup2">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="50"/>
+          <Column id="CODE_NAME" type="STRING" size="50"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_radio">
+        <ColumnInfo>
+          <Column id="TYPE" type="STRING" size="50"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="cmb_rcptMeth" propid="value" datasetid="ds_main" columnid="SMS_SND_NUM"/>
+      <BindItem id="item1" compid="TA_addr" propid="value" datasetid="ds_main" columnid="SND_MSG"/>
+    </Bind>
+  </Form>
+</FDL>

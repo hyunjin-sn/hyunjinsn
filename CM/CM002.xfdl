@@ -233,7 +233,7 @@
                         <Combo id="Combo00_00_00" taborder="18" left="756" top="276" width="146" height="21" type="filterlike" codecolumn="SUB_CODE" datacolumn="SUB_CODE_NM" innerdataset="ds_sosoc2" onitemchanged="Tab00_Tabpage1_Div01_Combo00_onitemchanged"/>
                         <Static id="Static00_00_00_00" taborder="19" text="유형 검색 : " left="919" top="272" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
                         <Combo id="Combo00_00_00_00" taborder="20" left="1026" top="276" width="146" height="21" type="filterlike" codecolumn="CASE_NO" datacolumn="CASE_DESC2" innerdataset="ds_caseCb" onitemchanged="Tab00_Tabpage1_Div01_Combo00_onitemchanged"/>
-                        <Grid id="grd_list00_00_01_00" taborder="21" binddataset="ds_list_2" scrolltype="both" minwidth="" left="0" top="309" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="330" width="1670" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col">
+                        <Grid id="grd_list00_00_01_00" taborder="21" binddataset="ds_list_2" scrolltype="both" minwidth="" left="0" top="309" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="330" width="1670" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" onkeydown="Tab00_Tabpage1_Div01_grd_list00_00_01_00_onkeydown">
                           <Formats>
                             <Format id="default">
                               <Columns>
@@ -293,9 +293,9 @@
                                 <Cell col="7" textAlign="left" combodataset="ds_caseCb" combocodecol="CASE_NO" combodatacol="CASE_DESC2" text="bind:CASE_NO" displaytype="combotext"/>
                                 <Cell col="8" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
                                 <Cell col="9" textAlign="left" text="bind:ITEM_NM"/>
-                                <Cell col="10" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY"/>
-                                <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM"/>
-                                <Cell col="12" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER"/>
+                                <Cell col="10" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                                <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                                <Cell col="12" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
                                 <Cell col="13" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo" text="bind:BRANCH_GROUP" combotype="filterlike"/>
                                 <Cell col="14" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" edittype="checkbox" text="bind:MANDATORY_YN"/>
                                 <Cell col="15" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="checkbox" text="bind:PRM_MANDATORY_YN"/>
@@ -450,9 +450,9 @@
                           <Cell col="7" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PA_ITEM_CD"/>
                           <Cell col="8" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
                           <Cell col="9" textAlign="left" text="bind:ITEM_NM"/>
-                          <Cell col="10" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY"/>
-                          <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM"/>
-                          <Cell col="12" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER"/>
+                          <Cell col="10" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                          <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                          <Cell col="12" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
                           <Cell col="13" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol" edittype="combo" text="bind:BRANCH_GROUP" combotype="filterlike"/>
                           <Cell col="14" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" text="bind:MANDATORY_YN"/>
                           <Cell col="15" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="checkbox" text="bind:PRM_DISP_YN"/>
@@ -473,7 +473,7 @@
             <Tabpage id="Tabpage3" text="계약 조회">
               <Layouts>
                 <Layout>
-                  <Grid id="grd_list00_00_01_00" taborder="0" binddataset="ds_list_9" scrolltype="both" minwidth="" left="0" top="59" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="803" width="1670" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col">
+                  <Grid id="grd_list00_00_01_00" taborder="0" binddataset="ds_list_9" scrolltype="both" minwidth="" left="0" top="59" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="803" width="1670" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" onkeydown="Tab00_Tabpage3_grd_list00_00_01_00_onkeydown">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -528,9 +528,9 @@
                           <Cell col="6" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
                           <Cell col="7" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PA_ITEM_CD"/>
                           <Cell col="8" textAlign="left" text="bind:ITEM_NM"/>
-                          <Cell col="9" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY"/>
-                          <Cell col="10" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM"/>
-                          <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER"/>
+                          <Cell col="9" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                          <Cell col="10" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                          <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
                           <Cell col="12" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" text="bind:BRANCH_GROUP" combotype="filterlike"/>
                           <Cell col="13" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_DISP_YN"/>
                           <Cell col="14" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_MANDATORY_YN"/>
@@ -942,7 +942,7 @@ this.fn_search = function (contNo)
 	var outDs = "ds_list_1=ds_list_1 ds_list_2=ds_list_2 ds_list_8=ds_list_8 ds_list_12=ds_list_12 ds_list_9=ds_list_9";
 	var args = "CONT_NO="+contNo+"";
 	var callBackid = "fn_afterSearch";
-		
+	
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
 };
 
@@ -1255,6 +1255,14 @@ this.fn_item_search4 = function (strSvcID, nErrorCode, strErrorMag)
 	
 	this.ds_list_2.filter("");
 	this.ds_list_9.filter("");
+	hsCd = "";
+	sosoc1 = "";
+	sosoc2 = "";
+	sosoc3 = "";
+	caseCd = "";
+	valdt1 = "";
+	valdt2 = "";
+	valdt3 = "";
 }
 
 // 완료문자 이미지 전송여부 변경 이벤트
@@ -1588,18 +1596,19 @@ this.fn_item_search = function ()
 	if(!this.gfn_isNull(cmb2) && cmb2 != "-999")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "SUB_CODE1.indexOf('"+cmb2+"')!='-1'";
+			//filterstr = "SUB_CODE1.indexOf('"+cmb2+"')!='-1'";
+			filterstr = "SUB_CODE1=='"+cmb2+"'";
 		else
-			filterstr += " && SUB_CODE1.indexOf('"+cmb2+"')!='-1'";				
+			filterstr += " && SUB_CODE1=='"+cmb2+"'";				
 	}
 	
 	// 소속2
 	if(!this.gfn_isNull(cmb3) && cmb3 != "-999")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "SUB_CODE2.indexOf('"+cmb3+"')!='-1'";
+			filterstr = "SUB_CODE2=='"+cmb3+"'";
 		else
-			filterstr += " && SUB_CODE2.indexOf('"+cmb3+"')!='-1'";				
+			filterstr += " && SUB_CODE2=='"+cmb3+"'";				
 	}
 	
 	// 유형
@@ -2099,6 +2108,42 @@ this.Tab00_Tabpage1_Div00_btn_copy00_onclick = function(obj:nexacro.Button,e:nex
 this.Tab00_Tabpage2_grd_list00_00_01_00_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
 	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Tab00_Tabpage1_Div01_grd_list00_00_01_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	if(e.ctrlkey){
+		if(e.keycode == 67){
+			if(nexacro.toNumber(obj.selectstartcol) != 11 && nexacro.toNumber(obj.selectstartcol) != 12 && nexacro.toNumber(obj.selectstartcol) != 13) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		} else if(e.keycode == 86) 
+		{
+			if(nexacro.toNumber(obj.selectstartcol) != 11 && nexacro.toNumber(obj.selectstartcol) != 12 && nexacro.toNumber(obj.selectstartcol) != 13) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		}
+	}
+};
+
+this.Tab00_Tabpage3_grd_list00_00_01_00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	if(e.ctrlkey){
+		if(e.keycode == 67){
+			if(nexacro.toNumber(obj.selectstartcol) != 10 && nexacro.toNumber(obj.selectstartcol) != 11 && nexacro.toNumber(obj.selectstartcol) != 12) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		} else if(e.keycode == 86) 
+		{
+			if(nexacro.toNumber(obj.selectstartcol) != 10 && nexacro.toNumber(obj.selectstartcol) != 11 && nexacro.toNumber(obj.selectstartcol) != 12) 
+			{
+				this.gfn_grdCopy_Paste(obj, e);
+			}
+		}
+	}
 };
 ]]></Script>
   </Form>

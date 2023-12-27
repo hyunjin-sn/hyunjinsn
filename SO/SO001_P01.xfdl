@@ -113,7 +113,6 @@ this.fn_search = function ()
 {
 	var Arg_1 = this.ds_cond.getColumn(0,"BP_CD");
  	var Arg_2 = this.ds_cond.getColumn(0,"BP_NM");
-	trace(Arg_1);
 
 	var url = "svcUrl::SO001_P01";
 	this.gfn_transaction( "SO001_P01",url,"","ds_list=ds_list","BP_CD="+Arg_1+" BP_NM="+Arg_2+"","callbackFunction");

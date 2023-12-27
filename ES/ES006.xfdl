@@ -271,6 +271,7 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
 {
 	this.ds_list.deleteRow(this.ds_list.rowposition);
 };
+
 ]]></Script>
     <Objects>
       <Dataset id="ds_list">
