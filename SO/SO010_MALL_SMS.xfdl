@@ -86,7 +86,7 @@ this.SO001_P11_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	this.cmb_rcptMeth.set_index(0);
 
 	this.TA_addr.setFocus();
-	this.TA_addr.set_value("https://flowerfine.co.kr/");
+	this.TA_addr.set_value("http://www.hyunjinflower.com/");
 	
 		
 	var id = "SO010_MALL_ITEM_GROUP_SELECT";
@@ -173,7 +173,22 @@ this.cmb_catagory1_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChan
 {
 	this.cmb_catagory2.set_text(null);
 	this.cmb_catagory2.set_value(null);	
-	var url = "https://flowerfine.co.kr/"+this.cmb_catagory1.text;
+	var url = ""
+	if (this.cmb_catagory1.text == "결혼 행사"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6rKw7Zi8L-2WieyCrA"
+	}else if (this.cmb_catagory1.text == "조문 추도"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7KGw66y4L-y2lOuPhA"
+	}else if (this.cmb_catagory1.text == "승진 취임"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7Iq57KeEL-y3qOyehA"
+	}else if (this.cmb_catagory1.text == "개업 이전"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6rCc7JeFL-ydtOyghA"
+	}else if (this.cmb_catagory1.text == "생일 기념일"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7IOd7J28L-q4sOuFkOydvA"
+	}else if (this.cmb_catagory1.text == "임신 출산 문병"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7J6E7IugL-y2nOyCsC_rrLjrs5E"
+	}else {
+		url = ""
+	}
 	this.TA_addr.set_value(url);
 };
 
@@ -181,7 +196,34 @@ this.cmb_catagory2_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChan
 {	
 	this.cmb_catagory1.set_text(null);
 	this.cmb_catagory1.set_value(null);
-	var url = "https://flowerfine.co.kr/"+this.cmb_catagory2.text;
+	var url = ""
+	if (this.cmb_catagory2.text == "축하화환"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7LaV7ZWY7ZmU7ZmY"
+	}else if (this.cmb_catagory2.text == "근조화환"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6re87KGw7ZmU7ZmY"
+	}else if (this.cmb_catagory2.text == "프리미엄화환"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7ZSE66as66-47JeEIO2ZlO2ZmA"
+	}else if (this.cmb_catagory2.text == "식물화분"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7Iud66y87ZmU67aE"
+	}else if (this.cmb_catagory2.text == "동양란"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/64-Z7JaR656A"
+	}else if (this.cmb_catagory2.text == "서양란"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7ISc7JaR656A"
+	}else if (this.cmb_catagory2.text == "분재"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/64-E7J6Q6riwL-u2hOyerA"
+	}else if (this.cmb_catagory2.text == "꽃바구니"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6r2D67CU6rWs64uI"
+	}else if (this.cmb_catagory2.text == "꽃다발"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6r2D64uk67Cc"
+	}else if (this.cmb_catagory2.text == "과일바구니"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/6rO87J2867CU6rWs64uI"
+	}else if (this.cmb_catagory2.text == "기프트상품"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7Yq567OE7ZWcIOyEoOusvA"
+	}else if (this.cmb_catagory2.text == "오피스가드닝"){
+		url = "http://www.hyunjinflower.com/goods/goods_list/cname/7Jik7ZS87IqkIOqwgOuTnOuLnQ"
+	}else {
+		url = ""
+	}
 	this.TA_addr.set_value(url);
 };
 
@@ -212,8 +254,8 @@ this.Div00_btn_mall_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventIn
             <Col id="CODE">1600-8444</Col>
           </Row>
           <Row>
-            <Col id="CODE_NAME">010-7344-8444</Col>
-            <Col id="CODE">010-7344-8444</Col>
+            <Col id="CODE_NAME">1833-7446</Col>
+            <Col id="CODE">1833-7446</Col>
           </Row>
         </Rows>
       </Dataset>

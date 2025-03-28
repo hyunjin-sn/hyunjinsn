@@ -32,7 +32,7 @@
                       <Cell col="4" text="안전재고"/>
                       <Cell col="5" text="시작일"/>
                       <Cell col="6" text="종료일"/>
-                      <Cell col="7" text="사유"/>
+                      <Cell col="7" text="사유유형"/>
                     </Band>
                     <Band id="body">
                       <Cell text="bind:BP_CD" textAlign="center"/>
@@ -42,7 +42,7 @@
                       <Cell col="4" edittype="mask" comboautoselect="true" combotype="filterlike" displaytype="maskeditcontrol" text="bind:SS_QTY"/>
                       <Cell col="5" edittype="date" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="calendarcontrol" maskeditformat="##,##0" calendardisplaynulltype="none" text="bind:VALID_FR_DT"/>
                       <Cell col="6" edittype="date" combodataset="ds_voc_dept4" combocodecol="CODE" combodatacol="CODE_NAME" comboautoselect="true" combotype="filterlike" displaytype="calendarcontrol" maskeditformat="##,##0" calendardisplaynulltype="none" text="bind:VALID_TO_DT"/>
-                      <Cell col="7" text="bind:REASON" textAlign="left" displaytype="editcontrol" edittype="text"/>
+                      <Cell col="7" text="bind:REASON" textAlign="left" displaytype="combocontrol" edittype="combo" combodataset="ds_status" combocodecol="CODE" combodatacol="CODE_NAME"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -95,7 +95,7 @@ this.SO024_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 //콤보세팅
 this.fn_setCombo = function (obj)
 {
-
+	this.efn_SetDatasetData2(this.ds_status,this.objApp.gds_code2,'PD007');			// 유형
 };
 
 this.fn_add = function ()
@@ -154,6 +154,7 @@ this.fn_close = function (strSvcID, nErrorCode, strErrorMag) {
           <Column id="REASON" type="STRING" size="1000"/>
         </ColumnInfo>
       </Dataset>
+      <Dataset id="ds_status"/>
     </Objects>
   </Form>
 </FDL>

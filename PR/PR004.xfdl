@@ -21,22 +21,24 @@
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
               <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" right="350">
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" right="280">
                 <Formats>
                   <Format id="default">
                     <Columns>
                       <Column size="48"/>
                       <Column size="75"/>
-                      <Column size="177"/>
+                      <Column size="180"/>
                       <Column size="80"/>
-                      <Column size="39"/>
-                      <Column size="76"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="75"/>
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="70"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -49,27 +51,31 @@
                       <Cell col="2" text="지점명"/>
                       <Cell col="3" text="구분"/>
                       <Cell col="4" text="등급"/>
-                      <Cell col="5" text="배송구분"/>
-                      <Cell col="6" text="총 가능수량"/>
-                      <Cell col="7" text="보유수량"/>
-                      <Cell col="8" text="보유율(%)"/>
-                      <Cell col="9" text="부족수량"/>
-                      <Cell col="10" text="과보유수량"/>
-                      <Cell col="11" text="이동중재고"/>
+                      <Cell col="5" text="배송차수"/>
+                      <Cell col="6" text="배송구분"/>
+                      <Cell col="7" text="총 가능수량"/>
+                      <Cell col="8" text="보유수량"/>
+                      <Cell col="9" text="보유율(%)"/>
+                      <Cell col="10" text="부족수량"/>
+                      <Cell col="11" text="과보유수량"/>
+                      <Cell col="12" text="이동중재고"/>
+                      <Cell col="13" text="TEST_등급"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="1" text="bind:BP_CD" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="2" text="bind:BP_NM" tooltiptext="bind:BP_NM" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="3" text="bind:구분" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="4" text="bind:GRADE" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="5" text="bind:배송구분" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="6" text="bind:SPACE" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="7" text="bind:현재고" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="8" text="bind:보유율" maskeditformat="##,##0.0" displaytype="mask" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="9" text="bind:부족수량" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="10" text="bind:과보유수량" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
-                      <Cell col="11" text="bind:이동중재고" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="4" text="bind:GRADE" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="combocontrol" edittype="combo" combodataset="ds_grade1" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="5" text="bind:GRADE1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="combocontrol" edittype="combo" combodataset="ds_grade2" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
+                      <Cell col="6" text="bind:배송구분" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="7" text="bind:SPACE" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="8" text="bind:현재고" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="9" text="bind:보유율" maskeditformat="##,##0.0" displaytype="mask" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="10" text="bind:부족수량" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="11" text="bind:과보유수량" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="12" text="bind:이동중재고" displaytype="mask" maskeditformat="##,##0" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="13" text="bind:GRADE_T" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="combocontrol" edittype="combo" combodataset="ds_grade1" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
                     </Band>
                     <Band id="summary">
                       <Cell/>
@@ -78,12 +84,14 @@
                       <Cell col="3"/>
                       <Cell col="4"/>
                       <Cell col="5"/>
-                      <Cell col="6" text="expr:dataset.getSum(&quot;SPACE&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
-                      <Cell col="7" text="expr:dataset.getSum(&quot;현재고&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
-                      <Cell col="8" text="expr:dataset.getSum(&quot;현재고&quot;) / dataset.getSum(&quot;SPACE&quot;) * 100" displaytype="mask" maskeditformat="##,##0.0" textAlign="right"/>
-                      <Cell col="9" text="expr:dataset.getSum(&quot;부족수량&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
-                      <Cell col="10" text="expr:dataset.getSum(&quot;과보유수량&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
-                      <Cell col="11" text="expr:dataset.getSum(&quot;이동중재고&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="6"/>
+                      <Cell col="7" text="expr:dataset.getSum(&quot;SPACE&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;현재고&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="9" text="expr:dataset.getSum(&quot;현재고&quot;) / dataset.getSum(&quot;SPACE&quot;) * 100" displaytype="mask" maskeditformat="##,##0.0" textAlign="right"/>
+                      <Cell col="10" text="expr:dataset.getSum(&quot;부족수량&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="11" text="expr:dataset.getSum(&quot;과보유수량&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="12" text="expr:dataset.getSum(&quot;이동중재고&quot;)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="13"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -168,6 +176,30 @@ this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.fn_search();
 };
+
+this.fn_save = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "PR004_M01";
+	var url = "svcUrl::PR004_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+}
 
 this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
@@ -260,6 +292,8 @@ this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nex
           <Column id="과보유수량" type="BIGDECIMAL" size="40"/>
           <Column id="이동중재고" type="BIGDECIMAL" size="40"/>
           <Column id="배송구분" type="STRING" size="500"/>
+          <Column id="GRADE1" type="STRING" size="20"/>
+          <Column id="GRADE_T" type="STRING" size="20"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">
@@ -337,6 +371,102 @@ this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nex
           <Row>
             <Col id="CODE">4</Col>
             <Col id="CODE_NAME">4등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="CODE_NAME">5등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="CODE_NAME">6등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">7</Col>
+            <Col id="CODE_NAME">7등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grade1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">1</Col>
+            <Col id="CODE_NAME">1 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">2</Col>
+            <Col id="CODE_NAME">2 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">3</Col>
+            <Col id="CODE_NAME">3 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">4</Col>
+            <Col id="CODE_NAME">4 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">5</Col>
+            <Col id="CODE_NAME">5 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">6</Col>
+            <Col id="CODE_NAME">6 등급</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">7</Col>
+            <Col id="CODE_NAME">7등급</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_grade2">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">01</Col>
+            <Col id="CODE_NAME">1 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">02</Col>
+            <Col id="CODE_NAME">2 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">03</Col>
+            <Col id="CODE_NAME">3 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">04</Col>
+            <Col id="CODE_NAME">4 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">05</Col>
+            <Col id="CODE_NAME">5 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">06</Col>
+            <Col id="CODE_NAME">6 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">07</Col>
+            <Col id="CODE_NAME">7 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">08</Col>
+            <Col id="CODE_NAME">8 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">09</Col>
+            <Col id="CODE_NAME">9 차</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">10</Col>
+            <Col id="CODE_NAME">10 차</Col>
           </Row>
         </Rows>
       </Dataset>

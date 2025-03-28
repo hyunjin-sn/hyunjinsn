@@ -132,7 +132,7 @@ this.fn_setCombo = function (obj)
 	this.Div_client.form.div_search.form.cmb_insrtUser00.set_index(0);
 	this.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
 	
-	this.Div_client.form.div_search.form.Radio00.set_index(1);
+	this.Div_client.form.div_search.form.Radio00.set_index(0);
 };
 
 this.fn_afterbpsearch = function ()

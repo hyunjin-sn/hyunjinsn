@@ -32,6 +32,7 @@
                     <Static id="Static03" taborder="0" text="메시지" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Edit id="edt_msg" taborder="1" left="102" top="8" width="197" height="21" onkeyup="Div_client_div_search_edt_msg_onkeyup"/>
                     <Button id="btn_search" taborder="2" text="조회" top="7" width="45" height="24" right="7" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                    <Button id="btn_search00" taborder="3" text="전체조회" top="7" width="72" height="24" right="67" visible="true" cssclass="btn_WF_main1" onclick="Div_client_div_search_btn_search00_onclick"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -45,7 +46,7 @@
 *  메뉴권한등록 팝업
 *  @MenuPath    SO > SO0001_P02
 *  @FileName 	SO0001_P02.xfdl 
-*  @Creator 	심재문
+*  @Creator 	
 *  @CreateDate 	2020.04.07
 *  @Desction    
 *************************** 소스 수정 이력 ************************************
@@ -55,6 +56,10 @@
 *******************************************************************************
 */
 var bpCd = this.getOwnerFrame().bpCd
+var hsCd = this.getOwnerFrame().hsCd
+var subCode1 = this.getOwnerFrame().subCode1
+var subCode2 = this.getOwnerFrame().subCode2
+var sysDiv = this.getOwnerFrame().sysDiv
 /************************************************************************************************
  * FORM 변수 선언 영역
  ************************************************************************************************/
@@ -82,15 +87,42 @@ this.SO001_P08_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  this.fn_search = function ()
  {
 	var args1 = bpCd;
-	var args2 = this.Div_client.form.div_search.form.edt_msg.text;
+	var args2 = hsCd;
+	var args3 = this.Div_client.form.div_search.form.edt_msg.text;
+	var args4 = subCode1;
+	var args5 = subCode2;
+	var args6 = sysDiv;
+	var args7 = "";
 	//trace(args3);
 	
 	// 상품 조회
-	var id = "SO001_P15";
-	var url = "svcUrl::SO001_P15";
+	var id = "SO001_P15_S02";
+	var url = "svcUrl::SO001_P15_S02";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
-	var args = "BP_CD="+args1+" SENDER_NM="+args2+"";
+	var args = "BP_CD="+args1+" HS_CODE="+args2+" SENDER_NM="+args3+" SUB_CODE1="+args4+" SUB_CODE2="+args5+" SYS_DIV="+args6+" ALL="+args7+"";
+	var callBackid = "";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+  this.fn_search2 = function ()
+ {
+	var args1 = bpCd;
+	var args2 = hsCd;
+	var args3 = this.Div_client.form.div_search.form.edt_msg.text;
+	var args4 = subCode1;
+	var args5 = subCode2;
+	var args6 = sysDiv;
+	var args7 = "1";
+	//trace(args3);
+	
+	// 상품 조회
+	var id = "SO001_P15_S02";
+	var url = "svcUrl::SO001_P15_S02";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "BP_CD="+args1+" HS_CODE="+args2+" SENDER_NM="+args3+" SUB_CODE1="+args4+" SUB_CODE2="+args5+" SYS_DIV="+args6+" ALL="+args7+"";
 	var callBackid = "";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
@@ -132,7 +164,13 @@ this.fn_css = function (currow)
 	{
 		return "lv1";			// 빨강
 	} 
-};]]></Script>
+};
+
+this.Div_client_div_search_btn_search00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search2();
+};
+]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>

@@ -38,7 +38,7 @@ this.Frame_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 // 화면 활성화 시킬 경우 해당 화면의 Tabpage 선택
 this.Frame_Work_onactivate = function(obj:nexacro.Form,e:nexacro.ActivateEventInfo)
 {
-    this.fn_tabActivateClose(this.fv_formId, "ACTIVATE");
+	this.fn_tabActivateClose(this.fv_formId, "ACTIVATE");
 };
 
 // 화면에서 직접 Close 시 Tabpage 제거
@@ -47,7 +47,7 @@ this.Frame_Work_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
 	var nRow = this.objApp.gds_openForm.findRow("FORM_ID", this.fv_formId);
     var formUrl = this.objApp.gds_openForm.getColumn(nRow,"FORM_URL");
 
-	if (formUrl == "SO::SO001.xfdl" || formUrl == "SO::SO010.xfdl" || formUrl == "SO::SO001_v2.xfdl")
+	if (formUrl == "SO::SO001.xfdl" || formUrl == "SO::SO010.xfdl" || formUrl == "SO::SO001_v2.xfdl" || formUrl == "SO::SO100.xfdl" || formUrl == "SO::SO010_test.xfdl")
 	{
 		var soNo = this.div_work.form.ds_list.getColumn(this.div_work.form.ds_list.rowposition,"SO_NO");
 		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
@@ -97,9 +97,9 @@ this.fn_tabActivateClose = function(sFormId, sType)
                 objFrame.form.tab_mdi.set_tabindex(i); 
             }
             else if(sType == "CLOSE"){
-                objFrame.form.tab_mdi.removeTabpage(i); 
                 var nRow = this.objApp.gds_openForm.findRow("FORM_ID", sFormId);
-                this.objApp.gds_openForm.deleteRow(nRow);
+				objFrame.form.tab_mdi.removeTabpage(i); 
+				this.objApp.gds_openForm.deleteRow(nRow);
                 if(nCnt == 1){
                     this.objApp.av_VFrameSet1.set_separatesize("30,*,0");	
                 }

@@ -22,7 +22,7 @@
           </Layouts>
         </Div>
         <Static id="Static05_00_00" taborder="3" text="기준정보 변경요청" left="12" top="61" width="138" height="24" cssclass="sta_WF_title" onclick="Static05_00_00_onclick"/>
-        <Grid id="grd_list00_00" taborder="4" scrolltype="both" minwidth="" left="10" top="96" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="734" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="both" right="11" binddataset="ds_list" autosizingtype="none">
+        <Grid id="grd_list00_00" taborder="4" scrolltype="both" minwidth="" left="10" top="96" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="734" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="both" right="11" binddataset="ds_list" autosizingtype="none" extendsizetype="none" mouseovertype="default" scrolldisplaymode="normal" selectscrollmode="default" scrollpixel="default" onvscroll="grd_list00_00_onvscroll">
           <Formats>
             <Format id="default">
               <Columns>
@@ -60,8 +60,8 @@
               <Band id="body">
                 <Cell textAlign="center" text="expr:currow+1"/>
                 <Cell col="1" text="bind:MG_NO" textAlign="center"/>
-                <Cell col="2" text="bind:REQUEST_MEMO" textAlign="left" displaytype="textareacontrol" edittype="textarea"/>
-                <Cell col="3" text="bind:COMMENT" textAlign="left" displaytype="expr:comp.parent.fn_comm(currow)" edittype="expr:comp.parent.fn_comm2(currow)"/>
+                <Cell col="2" text="bind:REQUEST_MEMO" textAlign="left" displaytype="textareacontrol" edittype="textarea" textareascrolltype="both" tooltiptext="bind:REQUEST_MEMO"/>
+                <Cell col="3" text="bind:COMMENT" textAlign="left" displaytype="expr:comp.parent.fn_comm(currow)" edittype="expr:comp.parent.fn_comm2(currow)" tooltiptext="bind:COMMENT"/>
                 <Cell col="4" text="bind:FINISH_YN" textAlign="center" combodataset="ds_chk" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike" displaytype="expr:comp.parent.fn_chk(currow)" edittype="expr:comp.parent.fn_chk2(currow)"/>
                 <Cell col="5" text="bind:INSRT_DT" textAlign="center" displaytype="date" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none"/>
                 <Cell col="6" text="bind:INSRT_USER_ID" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" combotype="filterlike" displaytype="combotext"/>
@@ -287,7 +287,7 @@ this.fn_chk = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
+	if (reguser == "224025" || reguser == "223025" || reguser == "210001" || reguser == "216022" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "combocontrol";
 	} else
@@ -301,7 +301,7 @@ this.fn_chk2 = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
+	if (reguser == "224025" || reguser == "223025" || reguser == "210001" || reguser == "216022" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "combo";
 	} else
@@ -315,7 +315,7 @@ this.fn_comm = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
+	if (reguser == "224025" || reguser == "223025" || reguser == "210001" || reguser == "216022" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "textareacontrol";
 	} else
@@ -329,7 +329,7 @@ this.fn_comm2 = function (currow)
 	var reguser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	var depcCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
-	if (reguser == "215024" || reguser == "213004" || reguser == "210001" || reguser == "223020" ||depcCd == "H5290")
+	if (reguser == "224025" || reguser == "223025" || reguser == "210001" || reguser == "216022" || reguser == "223020" ||depcCd == "H5290")
 	{
 		return "textarea";
 	} else
@@ -416,6 +416,7 @@ this.Tab00_Tabpage1_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexa
 		var oOption   = {title : "요청 이력"};
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
 	}
+	
 };
 
 // 고객사 팝업 callback
@@ -423,6 +424,7 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
 {	
 	this.fn_search();
 };
+
 ]]></Script>
   </Form>
 </FDL>

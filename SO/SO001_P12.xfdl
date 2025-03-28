@@ -368,8 +368,12 @@ this.Div_client_grd_list00_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEv
             <Col id="CODE">1600-8444</Col>
           </Row>
           <Row>
-            <Col id="CODE_NAME">010-7344-8444</Col>
-            <Col id="CODE">010-7344-8444</Col>
+            <Col id="CODE_NAME">1833-7446</Col>
+            <Col id="CODE">1833-7446</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">07051584741</Col>
+            <Col id="CODE_NAME">07051584741</Col>
           </Row>
         </Rows>
       </Dataset>

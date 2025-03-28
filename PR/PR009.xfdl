@@ -6,41 +6,60 @@
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="10" top="10" height="62" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
-                    <Button id="btn_excel" taborder="0" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
-                    <Static id="Static00_01" taborder="1" text="조회기간" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Calendar id="cal_startDate" taborder="2" left="98" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" onchanged="Div_client_div_search_cal_startDate_onchanged" readonly="false"/>
-                    <Static id="Static01" taborder="3" text="~" left="211" top="1" width="10" height="29"/>
-                    <Calendar id="cal_endDate" taborder="4" left="223" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" readonly="false"/>
+                    <Button id="btn_excel" taborder="0" top="5" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="5" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
+                    <Static id="Static00_01" taborder="1" text="조회기간" left="-2" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="2" left="88" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" onchanged="Div_client_div_search_cal_startDate_onchanged" readonly="false"/>
+                    <Static id="Static01" taborder="3" text="~" left="201" top="1" width="10" height="29"/>
+                    <Calendar id="cal_endDate" taborder="4" left="213" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" readonly="false"/>
                     <Static id="Static03" taborder="5" text="품목명" left="344" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono" taborder="6" left="446" top="4" width="122" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
-                    <Static id="Static03_00" taborder="7" text="고객사명" left="564" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono00" taborder="8" left="666" top="4" width="122" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
-                    <Static id="Static03_02" taborder="9" text="출발지점" left="794" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_sono01" taborder="10" left="896" top="4" width="122" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Edit id="edt_sono" taborder="6" left="426" top="4" width="140" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_00" taborder="7" text="고객사명" left="584" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00" taborder="8" left="686" top="4" width="122" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_02" taborder="9" text="출발지점" left="834" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono01" taborder="10" left="926" top="4" width="164" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01" taborder="11" text="탁송/직배 구분" left="344" top="34" width="115" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00" taborder="12" text="Combo00" left="472" top="34" width="94" height="21" innerdataset="ds_div" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
+                    <Static id="Static03_01_00" taborder="13" text="유형" left="834" top="34" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo02" taborder="14" text="Combo00" left="926" top="34" width="164" height="21" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged" autoselect="true" type="filterlike"/>
+                    <Static id="Static03_02_00" taborder="15" text="도착지점" left="1114" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono02" taborder="16" left="1216" top="4" width="164" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_02_00_00" taborder="17" text="주문번호" left="1114" top="34" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono03" taborder="18" left="1216" top="34" width="164" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01_01" taborder="19" text="용품/근조기 구분" left="584" top="34" width="125" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo01" taborder="20" text="Combo00" left="712" top="34" width="94" height="21" innerdataset="ds_div1" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo01_onitemchanged"/>
+                    <Static id="Static03_01_02" taborder="21" text="도착지점등급" left="1393" top="34" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo03" taborder="22" text="" left="1504" top="34" width="71" height="21" innerdataset="ds_div2" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
+                    <Static id="Static03_01_03" taborder="23" text="CLASS" left="1394" top="4" width="75" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo05" taborder="24" text="Combo00" left="1472" top="4" width="104" height="21" innerdataset="ds_class" codecolumn="CODE_NAME" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
-              <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="52" right="10" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" oncelldblclick="Div_client_grd_list_oncelldblclick">
+              <Static id="Static03" taborder="2" left="0" top="72" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="82" right="10" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" oncelldblclick="Div_client_grd_list_oncelldblclick">
                 <Formats>
                   <Format id="default">
                     <Columns>
-                      <Column size="44"/>
-                      <Column size="87"/>
-                      <Column size="101"/>
-                      <Column size="68"/>
-                      <Column size="243"/>
-                      <Column size="78"/>
-                      <Column size="235"/>
-                      <Column size="57"/>
-                      <Column size="158"/>
-                      <Column size="57"/>
-                      <Column size="154"/>
-                      <Column size="395"/>
+                      <Column size="40"/>
+                      <Column size="85"/>
+                      <Column size="100"/>
+                      <Column size="70"/>
+                      <Column size="210"/>
+                      <Column size="80"/>
+                      <Column size="75"/>
+                      <Column size="220"/>
+                      <Column size="50"/>
+                      <Column size="140"/>
+                      <Column size="50"/>
+                      <Column size="140"/>
+                      <Column size="40"/>
+                      <Column size="60"/>
+                      <Column size="150"/>
+                      <Column size="160"/>
+                      <Column size="0"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -52,25 +71,37 @@
                       <Cell col="2" text="주문번호"/>
                       <Cell col="3" text="고객사코드"/>
                       <Cell col="4" text="고객사명"/>
-                      <Cell col="5" text="품목코드"/>
-                      <Cell col="6" text="품목명"/>
-                      <Cell col="7" colspan="2" text="출발지점"/>
-                      <Cell col="9" colspan="2" text="도착지점"/>
-                      <Cell col="11" text="메모"/>
+                      <Cell col="5" text="CLASS"/>
+                      <Cell col="6" text="품목코드"/>
+                      <Cell col="7" text="품목명"/>
+                      <Cell col="8"/>
+                      <Cell col="9" text="출발지점"/>
+                      <Cell col="10"/>
+                      <Cell col="11" text="도착지점"/>
+                      <Cell col="12" text="등급"/>
+                      <Cell col="13" text="구분"/>
+                      <Cell col="14" text="유형"/>
+                      <Cell col="15" text="확인조치사항"/>
+                      <Cell col="16" text="구분"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
                       <Cell col="1" text="bind:ORDER_DT" textAlign="center" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="2" text="bind:SO_NO" textAlign="center"/>
+                      <Cell col="2" text="bind:SO_NO" textAlign="center" displaytype="buttoncontrol" edittype="button"/>
                       <Cell col="3" text="bind:SOLD_TO_PARTY" textAlign="center"/>
-                      <Cell col="4" text="bind:BP_NM"/>
-                      <Cell col="5" text="bind:ITEM_CD" textAlign="center"/>
-                      <Cell col="6" text="bind:ITEM_NM"/>
-                      <Cell col="7" text="bind:PO_BP_CD" textAlign="center"/>
-                      <Cell col="8" text="bind:출발지점" tooltiptext="bind:출발지점"/>
-                      <Cell col="9" text="bind:TS_BP_CD" textAlign="center"/>
-                      <Cell col="10" text="bind:도착지점" tooltiptext="bind:도착지점"/>
-                      <Cell col="11" text="bind:MEMO" tooltiptext="bind:MEMO"/>
+                      <Cell col="4" text="bind:BP_NM" tooltiptext="bind:BP_NM"/>
+                      <Cell col="5" text="bind:클래스" tooltiptext="bind:클래스"/>
+                      <Cell col="6" text="bind:ITEM_CD" textAlign="center"/>
+                      <Cell col="7" text="bind:ITEM_NM" tooltiptext="bind:ITEM_NM"/>
+                      <Cell col="8" text="bind:PO_BP_CD" textAlign="center"/>
+                      <Cell col="9" text="bind:출발지점" tooltiptext="bind:출발지점"/>
+                      <Cell col="10" text="bind:TS_BP_CD" textAlign="center"/>
+                      <Cell col="11" text="bind:도착지점" tooltiptext="bind:도착지점"/>
+                      <Cell col="12" textAlign="center" text="bind:EXT1_CD"/>
+                      <Cell col="13" text="bind:구분" textAlign="center"/>
+                      <Cell col="14" displaytype="combotext" edittype="combo" combodataset="ds_status1" combocodecol="CODE" combodatacol="CODE_NAME" text="bind:UH_TYPE"/>
+                      <Cell col="15" text="bind:MEMO" tooltiptext="bind:MEMO" displaytype="text" edittype="text"/>
+                      <Cell col="16" text="bind:용품구분"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -106,8 +137,15 @@ this.SO002_1_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.gfn_formOnLoad(this);	
 	
+	this.Div_client.form.div_search.form.Combo00.set_index(0);
+	this.Div_client.form.div_search.form.Combo01.set_index(0);
+	this.Div_client.form.div_search.form.Combo03.set_index(0);
+	this.Div_client.form.div_search.form.Combo05.set_index(0);
 	//날짜 세팅
 	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
 	
 	this.fn_search();
 };
@@ -121,13 +159,20 @@ this.fn_setCal = function ()
 	//현재일자
 	var sDate = this.gfn_getDate();
 	//1개월 이전
-	var fDate = this.gfn_getDate().substr(0,6) + "01";
-	//var fDate = this.gfn_addDate(sDate,6);
+	//var fDate = this.gfn_getDate().substr(0,6) + "01";
+	var fDate = this.gfn_addDate(sDate,-1);
 	
-	this.Div_client.form.div_search.form.cal_startDate.set_value(sDate);
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
 	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+
 };
 
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData2(this.ds_status1,this.objApp.gds_code2,'PD006');			// 유형
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_status",this.Div_client.form.div_search.form.Combo02,"MAJOR_CODE=='PD006'",true,true);
+};
 this.fn_search = function ()
 {	
 	var args1 = this.Div_client.form.div_search.form.cal_startDate.value
@@ -154,6 +199,30 @@ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
 	this.fn_filter();
 }
 
+this.fn_save = function ()
+{
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "PR009_M01";
+	var url = "svcUrl::PR009_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_afterSave";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+}
+
  /************************************************************************************************
  * 각 COMPONENT 별 EVENT 영역
  ************************************************************************************************/
@@ -178,7 +247,18 @@ this.fn_filter = function ()
 {
 	var itemCd = this.Div_client.form.div_search.form.edt_sono.text;							// 품목코드
 	var bpCd = this.Div_client.form.div_search.form.edt_sono00.text;							// 고객사
+	
 	var poBpCd = this.Div_client.form.div_search.form.edt_sono01.text;							// 출발지점
+	var poBpCd1 = this.Div_client.form.div_search.form.edt_sono02.text;							// 도착지점
+	
+	var sono = this.Div_client.form.div_search.form.edt_sono03.text;							// 주문번호
+	
+	var div = this.Div_client.form.div_search.form.Combo00.value;								// 탁송직배
+	var div2 = this.Div_client.form.div_search.form.Combo01.value;								// 용품근조기
+	var div1 = this.Div_client.form.div_search.form.Combo02.value;								// 유형
+	
+	var div3 = this.Div_client.form.div_search.form.Combo03.value;								// 지점등급
+	var div4 = this.Div_client.form.div_search.form.Combo05.value;								// class
 	
 	var filterstr = "";
 	
@@ -204,6 +284,62 @@ this.fn_filter = function ()
 		if(this.gfn_isNull(filterstr))	
 			filterstr = "(PO_BP_CD.indexOf('"+poBpCd+"')!='-1' || 출발지점.indexOf('"+poBpCd+"')!='-1')";
 		else filterstr += " && (PO_BP_CD.indexOf('"+poBpCd+"')!='-1' || 출발지점.indexOf('"+poBpCd+"')!='-1')"
+	}
+	
+	//도착지점	
+	if(!this.gfn_isNull(poBpCd1))
+	{
+		if(this.gfn_isNull(filterstr))	
+			filterstr = "(TS_BP_CD.indexOf('"+poBpCd1+"')!='-1' || 도착지점.indexOf('"+poBpCd1+"')!='-1')";
+		else filterstr += " && (TS_BP_CD.indexOf('"+poBpCd1+"')!='-1' || 도착지점.indexOf('"+poBpCd1+"')!='-1')"
+	}
+	
+	//주문번호	
+	if(!this.gfn_isNull(sono))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "(SO_NO.indexOf('"+sono+"')!='-1')";
+		else filterstr += " && (SO_NO.indexOf('"+sono+"')!='-1')"
+	}
+	
+	//탁송직배구분	
+	if(!this.gfn_isNull(div) && div != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "구분=='"+div+"'";
+		else filterstr += " && 구분=='"+div+"'";				
+	}
+	
+	//용품구분	
+	if(!this.gfn_isNull(div2) && div2 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "용품구분=='"+div2+"'";
+		else filterstr += " && 용품구분=='"+div2+"'";				
+	}
+	
+	//유형	
+	if(!this.gfn_isNull(div1) && div1 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "UH_TYPE=='"+div1+"'";
+		else filterstr += " && UH_TYPE=='"+div1+"'";				
+	}
+	
+	//지점등급	
+	if(!this.gfn_isNull(div3) && div3 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "EXT1_CD=='"+div3+"'";
+		else filterstr += " && EXT1_CD=='"+div3+"'";				
+	}
+	
+	//class	
+	if(!this.gfn_isNull(div4) && div4 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "클래스=='"+div4+"'";
+		else filterstr += " && 클래스=='"+div4+"'";				
 	}
 	
 	this.ds_list.set_filterstr(filterstr);
@@ -237,7 +373,120 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		this.Div_client.form.grd_list.set_selecttype("multiarea");
 	}
 	
-};]]></Script>
+	if (e.col == 2 && e.subrow == 0)
+	{
+		var soNo_s = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+		// 주문 열람 조회
+		var id = "SO001_P00_S01";
+		var url = "svcUrl::SO001_P00_S01";
+		var inDs = "";
+		var outDs = "ds_list_user=ds_list";
+		var args = "SO_NO="+soNo_s+"";
+		var callBackid = "fn_afterUserSearch1";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
+	
+};
+
+this.Div_client_div_search_Combo01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo02_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.fn_afterUserSearch1 = function(strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var userId = this.ds_list_user.getColumn(0,"INSRT_USER_ID");
+	var userNm = this.ds_list_user.getColumn(0,"USR_NM");
+	var newSoNo = this.ds_list.getColumn(this.ds_list.rowposition, "SO_NO");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	var soNo = "";
+	
+	if (this.ds_list_user.rowcount > 0)
+	{
+		if (userId != regUser)
+		{
+			if(this.confirm(userNm+" 님께서 "+newSoNo+" 주문을 열람중 입니다. 계속 진행하시겠습니까?"))
+			{
+				// 기존 열람내역 삭제 및 신규 열람내역 저장
+				var id = "SO001_P00_M01";
+				var url = "svcUrl::SO001_P00_M01";
+				var inDs = "";
+				var outDs = "";
+				var args = "SO_NO="+soNo+" NEW_SO_NO="+newSoNo+" INSRT_USER_ID="+regUser+"";
+				var callBackid = "fn_afterUserSave1";
+					
+				this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+			}
+		} else
+		{
+			// 기존 열람내역 삭제 및 신규 열람내역 저장
+			var id = "SO001_P00_M01";
+			var url = "svcUrl::SO001_P00_M01";
+			var inDs = "";
+			var outDs = "";
+			var args = "SO_NO="+soNo+" NEW_SO_NO="+newSoNo+" INSRT_USER_ID="+regUser+"";
+			var callBackid = "fn_afterUserSave1";
+				
+			this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+		}
+	} else 
+	{
+		// 기존 열람내역 삭제 및 신규 열람내역 저장
+		var id = "SO001_P00_M01";
+		var url = "svcUrl::SO001_P00_M01";
+		var inDs = "";
+		var outDs = "";
+		var args = "SO_NO="+soNo+" NEW_SO_NO="+newSoNo+" INSRT_USER_ID="+regUser+"";
+		var callBackid = "fn_afterUserSave1";
+			
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+	}
+}
+
+this.fn_afterUserSave1 = function(strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	//trace(this.objApp.gds_menu.saveXML());
+	var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+	var soTypeNm = this.ds_list.getColumn(this.ds_list.rowposition,"SO_TYPE_NM");
+	var rcptMeth = this.ds_list.getColumn(this.ds_list.rowposition,"RCPT_METH_NM");
+	//trace(soTypeNm);
+	
+	var arrArg = [];
+	//this.gfn_openForm(this.objApp.gds_menu, 2, arrArg, soNo);	
+	//this.gfn_openForm2(this.objApp.gds_menu, "SO001", arrArg, soNo);
+	
+	if (rcptMeth == "법인주문(P)" || rcptMeth == "법인주문(M)" || rcptMeth == "법인주문(K)")
+	{
+		this.gfn_openForm2(this.objApp.gds_menu, "SO001", arrArg, soNo);	
+	} else
+	{
+		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, soNo);
+	}
+	
+}]]></Script>
     <Objects>
       <Dataset id="ds_list">
         <ColumnInfo>
@@ -250,16 +499,188 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
           <Column id="MINOR_NM" type="STRING" size="200"/>
           <Column id="출발지점" type="STRING" size="200"/>
           <Column id="도착지점" type="STRING" size="200"/>
-          <Column id="MEMO" type="STRING" size="256"/>
+          <Column id="MEMO" type="STRING" size="1000"/>
+          <Column id="클래스" type="STRING" size="256"/>
+          <Column id="구분" type="STRING" size="256"/>
+          <Column id="UH_TYPE" type="STRING" size="256"/>
+          <Column id="용품구분" type="STRING" size="256"/>
+          <Column id="EXT1_CD" type="STRING" size="256"/>
         </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_div">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">탁송</Col>
+            <Col id="CODE_NAME">탁송</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">직배</Col>
+            <Col id="CODE_NAME">직배</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_status1"/>
+      <Dataset id="ds_div1">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">용품</Col>
+            <Col id="CODE_NAME">용품</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">근조기</Col>
+            <Col id="CODE_NAME">근조기</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_user"/>
+      <Dataset id="ds_div2">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">1</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">2</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="CODE_NAME">3</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="CODE_NAME">4</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="CODE_NAME">5</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="CODE_NAME">6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">S1 Class</Col>
+            <Col id="CODE_NAME">S1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">S2 Class</Col>
+            <Col id="CODE_NAME">S2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">S3 Class</Col>
+            <Col id="CODE">S3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">S4 Class</Col>
+            <Col id="CODE">S4 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">A1 Class</Col>
+            <Col id="CODE">A1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">A2 Class</Col>
+            <Col id="CODE_NAME">A2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B1 Class</Col>
+            <Col id="CODE_NAME">B1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B2 Class</Col>
+            <Col id="CODE_NAME">B2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B3 Class</Col>
+            <Col id="CODE_NAME">B3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">B4 Class</Col>
+            <Col id="CODE_NAME">B4 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C1 Class</Col>
+            <Col id="CODE_NAME">C1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C2 Class</Col>
+            <Col id="CODE_NAME">C2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">C3 Class</Col>
+            <Col id="CODE_NAME">C3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D1 Class</Col>
+            <Col id="CODE_NAME">D1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D2 Class</Col>
+            <Col id="CODE_NAME">D2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">D3 Class</Col>
+            <Col id="CODE_NAME">D3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E1 Class</Col>
+            <Col id="CODE_NAME">E1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">E2 Class</Col>
+            <Col id="CODE">E2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_NAME">E3 Class</Col>
+            <Col id="CODE">E3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E4 Class</Col>
+            <Col id="CODE_NAME">E4 Class</Col>
+          </Row>
+        </Rows>
       </Dataset>
     </Objects>
     <Bind>
       <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
       <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
-      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
-      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
-      <BindItem id="item4" compid="Div_client.form.div_search.form.edt_sono01" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
     </Bind>
   </Form>
 </FDL>

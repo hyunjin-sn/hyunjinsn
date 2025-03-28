@@ -191,9 +191,10 @@ this.fn_setCal = function ()
 {
 	//현재일자
 	var sDate = this.gfn_getDate();
+	var fDate = this.gfn_getDate();
 	//3개월 이전
 	//var fDate = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
-	var fDate = this.gfn_addDate(sDate,-31);
+	//var fDate = this.gfn_addDate(sDate,-31);
 	//var fDate = "20180101"
 	
 	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);

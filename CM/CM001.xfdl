@@ -201,7 +201,7 @@
               <Layouts>
                 <Layout>
                   <Static id="Static05_00" taborder="0" text="품목 리스트" left="0" top="11" width="97" height="24" cssclass="sta_WF_title"/>
-                  <Grid id="grd_list00_00" taborder="1" binddataset="ds_list_6" scrolltype="both" minwidth="" left="0" top="46" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="multiarea" autoenter="select" height="696" width="1279" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" onkeydown="Tab00_Tabpage4_grd_list00_00_onkeydown">
+                  <Grid id="grd_list00_00" taborder="1" binddataset="ds_list_6" scrolltype="both" minwidth="" left="0" top="46" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="multiarea" autoenter="select" height="696" width="1279" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" onkeydown="Tab00_Tabpage4_grd_list00_00_onkeydown" onkeyup="Tab00_Tabpage4_grd_list00_00_onkeyup">
                     <Formats>
                       <Format id="default">
                         <Columns>
@@ -239,7 +239,7 @@
                         </Band>
                         <Band id="body">
                           <Cell textAlign="center" text="expr:currow+1"/>
-                          <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
+                          <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD" displaytype="normal" edittype="text" maskeditautoselect="true" maskedittype="string" maskeditlimitbymask="none" editautoselect="true"/>
                           <Cell col="2" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="선택" displaytype="buttoncontrol" edittype="button"/>
                           <Cell col="3" textAlign="left" text="bind:ITEM_NM"/>
                           <Cell col="4" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true" editautoselect="false"/>
@@ -578,6 +578,9 @@
           <Column id="CASE_DESC" type="STRING" size="40"/>
           <Column id="VALID_FR_DT" type="DATETIME" size="23"/>
           <Column id="VALID_TO_DT" type="DATETIME" size="23"/>
+          <Column id="SAVE_CHK" type="STRING" size="256"/>
+          <Column id="SEQ" type="INT" size="256"/>
+          <Column id="CASE_DESC2" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_list_6">
@@ -593,6 +596,7 @@
           <Column id="PRM_MANDATORY_YN" type="STRING" size="2"/>
           <Column id="VAT_TYPE" type="STRING" size="4"/>
           <Column id="PAY_COND" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="400"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_list_7" oncolumnchanged="ds_list_7_oncolumnchanged">
@@ -679,6 +683,25 @@
           <Column id="FAX_NO" type="STRING" size="20"/>
           <Column id="TEL_NO1" type="STRING" size="20"/>
           <Column id="TEL_NO2" type="STRING" size="20"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item_nm">
+        <ColumnInfo>
+          <Column id="ITEM_CD" type="STRING" size="50"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="SPEC" type="STRING" size="100"/>
+          <Column id="BASIC_UNIT" type="STRING" size="3"/>
+          <Column id="UNIT" type="STRING" size="200"/>
+          <Column id="MINOR_NM" type="STRING" size="200"/>
+          <Column id="ITEM_GROUP_CD" type="STRING" size="10"/>
+          <Column id="ITEM_GROUP_NM" type="STRING" size="40"/>
+          <Column id="ITEM_IMAGE_FLG" type="STRING" size="1"/>
+          <Column id="FORMAL_NM" type="STRING" size="60"/>
+          <Column id="VALID_FROM_DT" type="DATETIME" size="23"/>
+          <Column id="VALID_TO_DT" type="DATETIME" size="23"/>
+          <Column id="VAT_TYPE" type="STRING" size="5"/>
+          <Column id="VAT_RATE" type="BIGDECIMAL" size="17"/>
+          <Column id="ITEM_ACCT" type="STRING" size="2"/>
         </ColumnInfo>
       </Dataset>
     </Objects>
@@ -1142,7 +1165,7 @@ this.Tab00_Tabpage3_btn_add_case_onclick = function(obj:nexacro.Button,e:nexacro
 		
 	if (this.ds_list_5.rowcount > 1)
 	{
-		var var1 = this.gfn_today()
+		//var var1 = this.gfn_today()
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"VALID_FR_DT",this.ds_list_5.getColumn(this.ds_list_5.rowposition-1,"VALID_FR_DT"));
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"VALID_TO_DT",this.ds_list_5.getColumn(this.ds_list_5.rowposition-1,"VALID_TO_DT"));
 	} else
@@ -1489,7 +1512,6 @@ this.grd_list00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEvent
 	if (e.col == 2)
 	{
 		var bpCd = this.ds_bp.getColumn(this.ds_bp.rowposition,"BP_CD");
-		
 		var sPopupId  = "item_popup";
 		var sUrl      = "CM::CM001_P01.xfdl";
 		var oArg      = {bpCd : bpCd};
@@ -1641,13 +1663,13 @@ this.Tab00_Tabpage4_grd_list00_00_onkeydown = function(obj:nexacro.Grid,e:nexacr
 {
 	if(e.ctrlkey){
 		if(e.keycode == 67){
-			if(nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
+			if(nexacro.toNumber(obj.selectstartcol) != 1 && nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
 			{
 				this.gfn_grdCopy_Paste(obj, e);
 			}
 		} else if(e.keycode == 86) 
 		{
-			if(nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
+			if(nexacro.toNumber(obj.selectstartcol) != 1 && nexacro.toNumber(obj.selectstartcol) != 4 && nexacro.toNumber(obj.selectstartcol) != 5 && nexacro.toNumber(obj.selectstartcol) != 6) 
 			{
 				this.gfn_grdCopy_Paste(obj, e);
 			}
@@ -1867,11 +1889,48 @@ this.Tab00_Tabpage2_grd_list00_00_oncellclick = function(obj:nexacro.Grid,e:nexa
 	}
 };
 
-
-this.div_search_edt_sono00_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+this.Tab00_Tabpage4_grd_list00_00_onkeyup = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
 {
-	
+	if(e.keycode == 13){
+		var item_cd = this.ds_list_6.getColumn(this.ds_list_6.rowposition,"ITEM_CD");
+		if(nexacro.toNumber(obj.selectstartcol) == 1) {
+			var id = "CM001_S04";
+			var url = "svcUrl::CM001_S04";
+			var inDs = "";
+			var outDs = "ds_item_nm = ds_list";
+			var args = "ITEM_CD="+item_cd+"";
+			var callBackid = "fn_aftersearch3";
+			this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+		}
+	}
 };
-]]></Script>
+
+this.fn_aftersearch3 = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"ITEM_CD",this.ds_item_nm.getColumn(this.ds_item_nm.rowposition,"ITEM_CD"));
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"ITEM_NM",this.ds_item_nm.getColumn(this.ds_item_nm.rowposition,"ITEM_NM"));
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"QTY",1);
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"PRICE_COM",0);
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"PRICE_PER",0);
+	this.ds_list_6.setColumn(this.ds_list_6.rowposition,"VAT_TYPE",this.ds_item_nm.getColumn(this.ds_item_nm.rowposition,"VAT_TYPE"));
+	
+
+	// 발주지점 자동 세팅
+	if (this.ds_list_6.rowcount > 0 && !this.gfn_isNull(this.ds_list_6.getColumn(0,"BRANCH_GROUP")))
+	{
+		this.ds_list_6.setColumn(this.ds_list_6.rowposition,"BRANCH_GROUP",this.ds_list_6.getColumn(0,"BRANCH_GROUP"));
+	}
+	
+	// 청구조건 자동세팅
+	if (this.ds_list_6.rowcount > 0 && !this.gfn_isNull(this.ds_list_6.getColumn(0,"PAY_COND")))
+	{
+		this.ds_list_6.setColumn(this.ds_list_6.rowposition,"PAY_COND",this.ds_list_6.getColumn(0,"PAY_COND"));
+	}
+};]]></Script>
   </Form>
 </FDL>

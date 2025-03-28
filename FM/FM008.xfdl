@@ -26,8 +26,11 @@
                     <Edit id="edt_sono00_00_00_00" taborder="14" left="563" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
                     <Static id="Static00_00" taborder="15" text="진행상황" left="688" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
                     <Combo id="cmb_insrtUser00" taborder="16" left="793" top="33" width="120" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div_client_div_search_edt_enter_onkeyup" autoselect="true"/>
-                    <Static id="Static00_00_01" taborder="17" text="인지경로" left="918" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="cmb_knowPath" taborder="18" left="1023" top="33" width="120" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div_client_div_search_edt_enter_onkeyup" autoselect="true"/>
+                    <Static id="Static00_00_01" taborder="17" text="고객사명" left="918" top="33" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_knowPath" taborder="18" left="1153" top="33" width="120" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div_client_div_search_edt_enter_onkeyup" autoselect="true" visible="false"/>
+                    <Static id="Static03_00" taborder="19" text="고객사코드" left="920" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono00" taborder="20" left="1022" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_sono00_01" taborder="21" left="1022" top="33" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -242,13 +245,15 @@ this.fn_search = function ()
 	var Arg_7 = this.ds_cond.getColumn(0,"CUST_HP");
 	var Arg_8 = this.ds_cond.getColumn(0,"STATUS");
 	var Arg_9 = this.ds_cond.getColumn(0,"KNOW_PATH");
+	var Arg_10 = this.ds_cond.getColumn(0,"BP_CD");
+	var Arg_11 = this.ds_cond.getColumn(0,"BP_NM");
 
 	
 	var id = "FM008_S01";
 	var url = "svcUrl::FM008_S01";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
-	var args = "PRE_RCPT_NO="+Arg_1+" RCPT_USER="+Arg_2+" CUST_NM="+Arg_3+" OWN_NM="+Arg_4+" START_DATE="+Arg_5+" END_DATE="+Arg_6+" CUST_HP="+Arg_7+" STATUS="+Arg_8+" KNOW_PATH="+Arg_9+"";
+	var args = "PRE_RCPT_NO="+Arg_1+" RCPT_USER="+Arg_2+" CUST_NM="+Arg_3+" OWN_NM="+Arg_4+" START_DATE="+Arg_5+" END_DATE="+Arg_6+" CUST_HP="+Arg_7+" STATUS="+Arg_8+" KNOW_PATH="+Arg_9+" BP_CD="+Arg_10+" BP_NM="+Arg_11+"";
 	var callBackid = "";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
@@ -332,9 +337,11 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
       <Dataset id="ds_list">
         <ColumnInfo>
           <Column id="PRE_RCPT_NO" type="STRING" size="18"/>
+          <Column id="CNT" type="INT" size="11"/>
+          <Column id="SO_NO" type="STRING" size="18"/>
           <Column id="RCPT_DT" type="DATETIME" size="23"/>
-          <Column id="RCPT_USER" type="STRING" size="10"/>
-          <Column id="CONSULT_TYPE" type="STRING" size="20"/>
+          <Column id="RCPT_USER" type="STRING" size="20"/>
+          <Column id="CONSULT_TYPE" type="DATETIME" size="23"/>
           <Column id="CONSULT_CHNL" type="STRING" size="20"/>
           <Column id="D_DATE" type="DATETIME" size="23"/>
           <Column id="CUST_NM" type="STRING" size="20"/>
@@ -347,7 +354,7 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
           <Column id="OWN_AGE" type="STRING" size="20"/>
           <Column id="CUR_REGION" type="STRING" size="20"/>
           <Column id="CUR_RESIDENCE" type="STRING" size="20"/>
-          <Column id="CUR_ADDR" type="STRING" size="20"/>
+          <Column id="CUR_ADDR" type="STRING" size="200"/>
           <Column id="BASIC_LIVING" type="STRING" size="20"/>
           <Column id="CUR_CONDITION" type="STRING" size="20"/>
           <Column id="SERVICE_ITEM" type="STRING" size="20"/>
@@ -356,10 +363,17 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
           <Column id="DLVY_CD" type="STRING" size="20"/>
           <Column id="FUNERAL_HALL" type="STRING" size="200"/>
           <Column id="RELIGION" type="STRING" size="20"/>
-          <Column id="FUNERAL_AREA" type="STRING" size="20"/>
-          <Column id="MSG_MEMO" type="STRING" size="2000"/>
+          <Column id="FUNERAL_AREA" type="STRING" size="200"/>
+          <Column id="MSG_MEMO" type="STRING" size="4000"/>
           <Column id="PRICE_MEMO" type="STRING" size="4000"/>
-          <Column id="AFTER_MEMO" type="STRING" size="2000"/>
+          <Column id="AFTER_MEMO" type="STRING" size="4000"/>
+          <Column id="STATUS" type="STRING" size="20"/>
+          <Column id="PO_BP_CD" type="STRING" size="20"/>
+          <Column id="KNOW_PATH" type="STRING" size="20"/>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="100"/>
+          <Column id="ORDER_DT" type="DATETIME" size="23"/>
+          <Column id="E_MAIL" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_user"/>
@@ -374,6 +388,8 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
           <Column id="CUST_HP" type="STRING" size="256"/>
           <Column id="STATUS" type="STRING" size="256"/>
           <Column id="KNOW_PATH" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
         </ColumnInfo>
         <Rows>
           <Row>
@@ -386,6 +402,8 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
             <Col id="CUST_HP"/>
             <Col id="STATUS"/>
             <Col id="KNOW_PATH"/>
+            <Col id="BP_CD"/>
+            <Col id="BP_NM"/>
           </Row>
         </Rows>
       </Dataset>
@@ -412,6 +430,8 @@ this.Div_client_div_search_edt_item_onkeyup = function(obj:nexacro.Edit,e:nexacr
       <BindItem id="item6" compid="Div_client.form.div_search.form.edt_sono00_00_00_00" propid="value" datasetid="ds_cond" columnid="CUST_HP"/>
       <BindItem id="item7" compid="Div_client.form.div_search.form.cmb_insrtUser00" propid="value" datasetid="ds_cond" columnid="STATUS"/>
       <BindItem id="item8" compid="Div_client.form.div_search.form.cmb_knowPath" propid="value" datasetid="ds_cond" columnid="KNOW_PATH"/>
+      <BindItem id="item9" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+      <BindItem id="item10" compid="Div_client.form.div_search.form.edt_sono00_01" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
     </Bind>
   </Form>
 </FDL>

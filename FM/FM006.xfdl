@@ -45,8 +45,8 @@
                         <Static id="Static23_00_00_01_00_00_00" taborder="12" text="주민등록지" left="0" top="59" width="100" cssclass="sta_WF_detailLabel" height="29"/>
                         <Static id="Static23_00_00_00_00_00_00" taborder="13" text="정부지원" left="0" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
                         <Static id="Static23_00_00_00_00_01_00" taborder="14" text="현재상황" left="275" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
-                        <Combo id="cmb_curCondition" taborder="15" left="379" top="119" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" tabstop="false"/>
-                        <Combo id="cmb_age00" taborder="16" left="379" top="63" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" tabstop="false"/>
+                        <Combo id="cmb_curCondition" taborder="15" left="379" top="119" width="166" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" tabstop="false"/>
+                        <Combo id="cmb_age00" taborder="16" left="379" top="63" width="166" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" tabstop="false"/>
                         <Combo id="cmb_age00_00" taborder="17" left="104" top="119" width="166" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" autoselect="true" onsetfocus="Div00_cmb_hsCd_oneditclick" innerdataset="" tabstop="false"/>
                         <Static id="sta_21_00_00_00_01" taborder="21" left="375" top="3" height="29" cssclass="sta_WF_detailLine" width="180" visible="false"/>
                         <Button id="btn_preno" taborder="18" left="525" top="7" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Tab00_Tabpage1_Div06_btn_preno_onclick" visible="false"/>
@@ -767,6 +767,9 @@
       <BindItem id="item62" compid="Tab00.Tabpage3.form.Div06_01.form.edt_soNo00_00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="R_BOSS"/>
       <BindItem id="item63" compid="Tab00.Tabpage1.form.Div06.form.edt_soNo00_00_01_00_01" propid="value" datasetid="ds_list_1" columnid="CONSULT_TYPE"/>
       <BindItem id="item10" compid="Tab00.Tabpage1.form.Div06_00_00.form.edt_soNo00_00_00" propid="value" datasetid="ds_list_1" columnid="E_MAIL"/>
+      <BindItem id="item11" compid="Tab00.Tabpage1.form.Div06_00.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="KNOW_PATH"/>
+      <BindItem id="item12" compid="Tab00.Tabpage1.form.Div06.form.cmb_age00_00" propid="value" datasetid="ds_list_1" columnid="BASIC_LIVING"/>
+      <BindItem id="item21" compid="Tab00.Tabpage1.form.Div06.form.cmb_age00" propid="value" datasetid="ds_list_1" columnid="CUR_RESIDENCE"/>
     </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  Left Menu
@@ -808,7 +811,7 @@ this.FM001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
-	if (deptCd != "H5290" && regUser != "217006" && regUser != "210001" && regUser != "218004")
+	if (deptCd != "H5290" && regUser != "217006" && regUser != "210001" && regUser != "223025")
 		{
 			this.Tab00.Tabpage1.form.Div06_01.form.btn_confirm.set_enable(false)
 		}
@@ -1860,14 +1863,35 @@ this.Tab00_Tabpage1_Div06_00_00_btn_contSearch_onclick = function(obj:nexacro.Bu
 	var sosoc2 = this.ds_grd2.getColumn(1,"SUB_CODE");
 	var sosoc3 = this.ds_grd2.getColumn(2,"SUB_CODE");
 	
-	sosoc1 = sosoc1.split("|");
-	sosoc1 = sosoc1[0];
+	if (this.gfn_isNull(sosoc1))
+	{
+		sosoc1 = "-999"
+	}
+	else
+	{
+		sosoc1 = sosoc1.split("|");
+		sosoc1 = sosoc1[0];
+	}
 	
-	sosoc2 = sosoc2.split("|");
-	sosoc2 = sosoc2[0];
+	if (this.gfn_isNull(sosoc2))
+	{
+		sosoc2 = "-999"
+	}
+	else
+	{
+		sosoc2 = sosoc2.split("|");
+		sosoc2 = sosoc2[0];
+	}
 	
-	sosoc3 = sosoc3.split("|");
-	sosoc3 = sosoc3[0];
+	if (this.gfn_isNull(sosoc3))
+	{
+		sosoc3 = "-999"
+	}
+	else
+	{
+		sosoc3 = sosoc3.split("|");
+		sosoc3 = sosoc3[0];
+	}
 	
 	if (this.gfn_isNull(contNo))
 	{
@@ -1995,7 +2019,7 @@ this.Tab00_Tabpage3_btn_mmsSearch_onclick = function(obj:nexacro.Button,e:nexacr
 	msgMemo = "※ 사전상담 결과 알림\n";
 	msgMemo += "■ 견적상품: "+this.gfn_nvl(this.Tab00.Tabpage3.form.Div06_01.form.cmb_age01.text,"")+"\n";
 	msgMemo += "■ 상품정보 자세히 보기\n";
-	msgMemo += " http://fsms.ehyunjin.com/tc2/"+this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO")+"/"+this.ds_list_1.getColumn(this.ds_list_1.rowposition,"R_ITEM")+"\n";
+	msgMemo += " https://fsms.ehyunjin.com:8091/tc2/"+this.ds_list_1.getColumn(this.ds_list_1.rowposition,"PRE_RCPT_NO")+"/"+this.ds_list_1.getColumn(this.ds_list_1.rowposition,"R_ITEM")+"\n";
 	if (this.gfn_isNull(dlvyNm))
 	{
 		msgMemo += "■ 예정 장례식장: \n";

@@ -80,7 +80,7 @@
                       <Cell col="11" text="bind:선택지원"/>
                       <Cell col="12" text="bind:대체지원"/>
                       <Cell col="13" text="bind:중복건수"/>
-                      <Cell col="14" text="bind:전환율"/>
+                      <Cell col="14" text="bind:전환율" maskeditformat="#0.0" displaytype="mask"/>
                     </Band>
                     <Band id="summary">
                       <Cell colspan="2"/>

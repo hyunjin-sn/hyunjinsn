@@ -28,7 +28,7 @@
           </Layouts>
         </Div>
         <Static id="Static05_00" taborder="3" text="주문내역" left="12" top="59" width="97" height="24" cssclass="sta_WF_title"/>
-        <Grid id="grd_list" taborder="4" scrolltype="both" minwidth="" bottom="10" left="10" top="93" width="640" binddataset="ds_list_1" onselectchanged="grd_list_onselectchanged" cellsizingtype="col" selecttype="cell" onkeydown="grd_list_onkeydown" griduserproperty="export" oncellclick="grd_list_oncellclick">
+        <Grid id="grd_list" taborder="4" scrolltype="both" minwidth="" bottom="11" left="12" top="92" width="640" binddataset="ds_list_1" onselectchanged="grd_list_onselectchanged" cellsizingtype="col" selecttype="cell" onkeydown="grd_list_onkeydown" griduserproperty="export" oncellclick="grd_list_oncellclick">
           <Formats>
             <Format id="default">
               <Columns>
@@ -136,7 +136,7 @@
               <Static id="sta_01_00_00_00_00_00_00_00_00_00_01" taborder="26" left="94" top="179" height="29" cssclass="sta_WF_detailLine" width="804"/>
               <Static id="sta_01_00_00_00_00_00_00_00_00" taborder="7" left="94" top="31" height="29" cssclass="sta_WF_detailLine" width="557"/>
               <Static id="Static05_00_00" taborder="0" text="관리사 리스트" left="2" top="291" width="97" height="24" cssclass="sta_WF_title"/>
-              <Grid id="grd_list00_00" taborder="1" scrolltype="both" minwidth="" left="0" top="326" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="254" autofittype="col" oncellclick="Tab00_Tabpage1_grd_list00_00_oncellclick" cellsizingtype="col" binddataset="ds_list_2" right="0">
+              <Grid id="grd_list00_00" taborder="1" scrolltype="both" minwidth="" left="0" top="326" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" height="254" autofittype="col" cellsizingtype="col" binddataset="ds_list_2" right="0">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -583,11 +583,23 @@ this.fn_aftersearch2 = function (strSvcID, nErrorCode, strErrorMag)
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"SO_NO",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO"));
 		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"REMARK",this.ds_list_1.getColumn(this.ds_list_1.rowposition,"FD_MENO"));
 	}
+	
+	// 고객사 결제금액 세팅
+		var amt = this.ds_list_2.getSum("ACT_CON_AMT");
+		var amt1 = this.ds_list_2.getSum("ACT_TRAFFIC_AMT");
+		var amt2 = this.ds_list_2.getSum("ACT_OIL_AMT");
+
+		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"G_PAY_AMT",amt+amt1+amt2);
+		
+		// 고객사 결제금액 세팅
+		var amt = this.ds_list_3.getSum("ACT_CON_AMT");
+		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"F_PAY_AMT",amt);
+	
 }
 
 this.grd_list_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
 {
-	if (e.col != 24)
+	if (e.col != 27)
 	{
 		var Arg_1 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO");
 		var Arg_2 = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"M_BOSS_DEPT");
@@ -615,7 +627,9 @@ this.btn_delfile_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	
 	// 고객사 결제금액 세팅
 	var amt = this.ds_list_2.getSum("ACT_CON_AMT");
-	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"G_PAY_AMT",amt);
+	var amt1 = this.ds_list_2.getSum("ACT_TRAFFIC_AMT");
+	var amt2 = this.ds_list_2.getSum("ACT_OIL_AMT");
+	this.ds_list_5.setColumn(this.ds_list_5.rowposition,"G_PAY_AMT",amt+amt1+amt2);
 };
 
 this.Div00_btn_addfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
@@ -634,17 +648,20 @@ this.Div00_btn_delfile00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEv
 
 this.ds_list_2_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
 {
-	if (e.columnid = "ACT_CON_AMT")
+	if (e.columnid == "ACT_CON_AMT" || e.columnid == "ACT_TRAFFIC_AMT" || e.columnid == "ACT_OIL_AMT")
 	{		
 		// 고객사 결제금액 세팅
 		var amt = this.ds_list_2.getSum("ACT_CON_AMT");
-		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"G_PAY_AMT",amt);
+		var amt1 = this.ds_list_2.getSum("ACT_TRAFFIC_AMT");
+		var amt2 = this.ds_list_2.getSum("ACT_OIL_AMT");
+
+		this.ds_list_5.setColumn(this.ds_list_5.rowposition,"G_PAY_AMT",amt+amt1+amt2);
 	}
 };
 
 this.ds_list_3_oncolumnchanged = function(obj:nexacro.NormalDataset,e:nexacro.DSColChangeEventInfo)
 {
-	if (e.columnid = "ACT_CON_AMT")
+	if (e.columnid == "ACT_CON_AMT")
 	{		
 		// 고객사 결제금액 세팅
 		var amt = this.ds_list_3.getSum("ACT_CON_AMT");
@@ -932,7 +949,7 @@ this.fn_payColor = function (currow)
 this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
 	var memoChk = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"MEMO_VIEW")
-	if (e.col == 24 && memoChk != "-")
+	if (e.col == 27 && memoChk != "-")
 	{
 		var soNo = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"SO_NO")
 

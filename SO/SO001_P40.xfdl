@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO001_P21" width="1191" height="641" titletext="New Form" onload="SO001_P21_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="641" mobileorientation="landscape" width="1191">
+        <WebBrowser id="WebBrowser00" taborder="0" left="20" top="54" width="350" height="576"/>
+        <Static id="Static24" taborder="1" text="배송전 사진" left="33" top="10" width="121" height="30" cssclass="sta_WF_title"/>
+        <Static id="Static24_00" taborder="2" text="배송후 사진" left="423" top="10" width="121" height="30" cssclass="sta_WF_title"/>
+        <WebBrowser id="WebBrowser00_00" taborder="3" left="430" top="54" width="350" height="576"/>
+        <Static id="Static24_00_00" taborder="4" text="인수증" left="813" top="10" width="121" height="30" cssclass="sta_WF_title"/>
+        <WebBrowser id="WebBrowser00_00_00" taborder="5" left="820" top="54" width="350" height="576"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  @MenuPath    SO > SO0001_P41
+*  @FileName    SO0001_P41.xfdl 
+*  @Creator     심재문
+*  @CreateDate  2025.01.02
+*  @Description 
+*************************** 소스 수정 이력 ************************************
+*  date                            Modifier                  Description
+*******************************************************************************
+*  2024.04.18                      [당신의 이름]          
+*******************************************************************************
+*/
+var odId = this.getOwnerFrame().odId					// 플라시스템 주문번호
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO001_P21_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var id = "SO010_P40";
+	var url = "svcUrl::SO010_P40";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "OD_ID="+odId+"";
+	var callBackid = "fn_afterSearch";
+
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid, false);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+
+	var before = this.ds_list.getColumn(0,"BEFORE");
+	var after = this.ds_list.getColumn(0,"AFTER");
+	var receipt = this.ds_list.getColumn(0,"RECEIPT");
+	
+	system.execShell( before );
+	system.execShell( after );
+	system.execShell( receipt );
+	
+	//this.WebBrowser00.set_url(before);
+	//this.WebBrowser00_00.set_url(after);
+	//this.WebBrowser00_00_00.set_url(receipt);
+}
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BEFORE" type="STRING" size="300"/>
+          <Column id="AFTER" type="STRING" size="300"/>
+          <Column id="RECEIPT" type="STRING" size="300"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

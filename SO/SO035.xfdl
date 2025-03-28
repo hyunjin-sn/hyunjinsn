@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO035" width="1590" height="700" titletext="New Form" onload="SO035_onload">
+    <Layouts>
+      <Layout height="700" mobileorientation="landscape" width="1590">
+        <Div id="div_search" taborder="0" left="10" top="10" height="53" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="조회일시" left="498" top="16" width="123" height="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel2" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00" taborder="1" text="조회기간(접수일자기준)" left="18" top="12" width="159" height="25" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel2" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Calendar id="cal_startDate" taborder="2" left="189" top="11" width="110" height="29" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <Calendar id="cal_endDate" taborder="3" left="314" top="11" width="110" height="29" dateformat="yyyy-MM-dd" autoselect="true"/>
+              <MaskEdit id="MaskEdit00" taborder="4" left="591" top="11" width="148" height="30" type="string" format="####-##-## ##:##:##" textAlign="left"/>
+              <Static id="Static01_00_00" taborder="5" text="~" left="302" top="11" width="10" height="29"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="1" text="Div00" left="10" top="80" height="610" right="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static24" taborder="0" text="고객센터 발주확정 건수" left="13" top="12" width="147" height="30" cssclass="sta_WF_title3" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static24_00" taborder="1" text="본사 발주확정 건수" left="13" top="102" width="137" height="30" cssclass="sta_WF_title3" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static24_00_00" taborder="2" text="고객센터 발주대기 건수" left="13" top="192" width="147" height="30" cssclass="sta_WF_title3" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static24_00_00_00" taborder="3" text="본사 발주대기 건수" left="13" top="282" width="127" height="30" cssclass="sta_WF_title3" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static24_00_00_00_00" taborder="4" text="삭제 건수" left="13" top="372" width="147" height="30" cssclass="sta_WF_title3" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Edit id="Edit00" taborder="5" left="168" top="7" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Edit id="Edit00_00" taborder="6" left="168" top="97" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Edit id="Edit00_00_00" taborder="7" left="168" top="187" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Edit id="Edit00_00_00_00" taborder="8" left="168" top="277" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Edit id="Edit00_00_00_00_00" taborder="9" left="168" top="367" height="40" textAlign="right" cssclass="edt1" readonly="true" width="106" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00" taborder="10" text="건" left="267" top="12" height="30" cssclass="sta_WF_title2" width="53" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00" taborder="11" text="건" left="267" top="102" height="30" cssclass="sta_WF_title2" width="53" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00_00" taborder="12" text="건" left="267" top="192" height="30" cssclass="sta_WF_title2" width="53" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00_00_00" taborder="13" text="건" left="267" top="282" height="30" cssclass="sta_WF_title2" width="53" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Static id="Static00_00_00_00_00" taborder="14" text="건" left="267" top="372" height="30" cssclass="sta_WF_title2" width="53" font="12px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Grid id="Grid00" taborder="15" left="380" top="5" bottom="0" binddataset="ds_result" onkeydown="Div02_Tab00_Tabpage1_grd_list01_onkeydown" oncellclick="Div00_Grid00_oncellclick" selecttype="cell" right="0" cellsizingtype="col" griduserproperty="export">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="55"/>
+                      <Column size="92"/>
+                      <Column size="95"/>
+                      <Column size="95"/>
+                      <Column size="105"/>
+                      <Column size="80"/>
+                      <Column size="117"/>
+                      <Column size="109"/>
+                      <Column size="81"/>
+                      <Column size="74"/>
+                      <Column size="52"/>
+                      <Column size="256"/>
+                      <Column size="76"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30" band="head"/>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="1" text="유형" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="2" text="접수경로" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="3" text="주문번호" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="4" text="접수자" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="5" text="주문접수일" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="6" text="배송일" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="7" text="플라워지점" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="8" text="의전지점" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="9" text="진행상태" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="10" text="대상자" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="11" text="고객사" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                      <Cell col="12" text="경조사유" font="normal 700 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="1" text="bind:SO_TYPE" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="2" text="bind:RCPT_METH" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="3" text="bind:SO_NO" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" textAlign="center"/>
+                      <Cell col="4" text="bind:INSRT_USER_ID" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="center" displaytype="normal"/>
+                      <Cell col="5" text="bind:ORDER_DT" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="center" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="6" text="bind:DLVY_DT" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="center"/>
+                      <Cell col="7" text="bind:PO_BP_CD_F" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                      <Cell col="8" text="bind:PO_BP_CD_M" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                      <Cell col="9" text="bind:PO_STATUS" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_status" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="center" displaytype="normal"/>
+                      <Cell col="10" text="bind:OWN_NM" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                      <Cell col="11" text="bind:BP_NM" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                      <Cell col="12" text="bind:HS_NM" font="normal 13px/normal &quot;Malgun Gothic&quot;,&quot;Verdana&quot;" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btn_1" taborder="16" text="조회" top="9" height="34" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1" width="42" left="322"/>
+              <Button id="btn_2" taborder="17" text="조회" top="101" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_2_onclick" width="42" left="322"/>
+              <Button id="btn_3" taborder="18" text="조회" top="193" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_3_onclick" width="42" left="322"/>
+              <Button id="btn_4" taborder="19" text="조회" top="280" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_4_onclick" width="42" left="322"/>
+              <Button id="btn_5" taborder="20" text="조회" top="372" height="34" visible="true" cssclass="btn_WF_main1" onclick="Div00_btn_5_onclick" width="42" left="322"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_startDate2" propid="value" datasetid="ds_cond" columnid="START_DATE2"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item2" compid="Div00.form.Edit00" propid="value" datasetid="ds_list_1" columnid="CNT1"/>
+      <BindItem id="item4" compid="Div00.form.Edit00_00" propid="value" datasetid="ds_list_1" columnid="CNT2"/>
+      <BindItem id="item5" compid="Div00.form.Edit00_00_00" propid="value" datasetid="ds_list_1" columnid="CNT3"/>
+      <BindItem id="item6" compid="Div00.form.Edit00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CNT4"/>
+      <BindItem id="item7" compid="Div00.form.Edit00_00_00_00_00" propid="value" datasetid="ds_list_1" columnid="CNT5"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  대시보드
+*  @MenuPath    SO > SO035
+*  @FileName 	SO035.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2024.02.15
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO035_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//3개월 이전
+	//var fDate2 = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	var fDate2 = this.gfn_addMonth(sDate,-1);
+	var fDate = this.gfn_addDate(sDate,-1);
+	
+	this.div_search.form.cal_startDate.set_value(fDate2);
+	this.div_search.form.cal_endDate.set_value(sDate);
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+ 	//is.efn_SetGrdUserData(this.ds_user,this.objApp.gds_user);
+	//is.efn_SetDatasetData(this.ds_status,this.objApp.gds_code,'XS001');		// 상태
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ this.fn_search = function ()
+ {
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	
+	//trace(args3);
+	
+	// 조회
+	var id = "SO035_S01";
+	var url = "svcUrl::SO035_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "START_DATE="+args1+" END_DATE="+args2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+ };
+ 
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var dte = this.gfn_getDate("time")
+
+	this.div_search.form.MaskEdit00.set_value(dte);
+}
+
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "1";
+	
+	// 조회
+	var id = "SO035_S02";
+	var url = "svcUrl::SO035_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_2_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "2";
+	
+	// 조회
+	var id = "SO035_S02";
+	var url = "svcUrl::SO035_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_3_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "3";
+	
+	// 조회
+	var id = "SO035_S02";
+	var url = "svcUrl::SO035_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_4_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "4";
+	
+	// 조회
+	var id = "SO035_S02";
+	var url = "svcUrl::SO035_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.Div00_btn_5_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var args1 = this.div_search.form.cal_startDate.value;
+	var args2 = this.div_search.form.cal_endDate.value;
+	var div = "5";
+	
+	// 조회
+	var id = "SO035_S02";
+	var url = "svcUrl::SO035_S02";
+	var inDs = "";
+	var outDs = "ds_result=ds_result";
+	var args = "START_DATE="+args1+" END_DATE="+args2+" DIV="+div+"";
+	var callBackid = "fn_afterSearch2";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+
+ this.fn_afterSearch2 = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}]]></Script>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="CNT1" type="INT" size="11"/>
+          <Column id="CNT2" type="INT" size="11"/>
+          <Column id="CNT3" type="INT" size="11"/>
+          <Column id="CNT4" type="INT" size="11"/>
+          <Column id="CNT5" type="INT" size="11"/>
+          <Column id="CNT6" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="SO_NO" type="STRING" size="18"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="50"/>
+          <Column id="ORDER_DT" type="DATETIME" size="23"/>
+          <Column id="DLVY_DT" type="STRING" size="72"/>
+          <Column id="PO_BP_CD_F" type="STRING" size="200"/>
+          <Column id="PO_BP_CD_M" type="STRING" size="200"/>
+          <Column id="PO_STATUS" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="HS_NM" type="STRING" size="100"/>
+          <Column id="RCPT_METH" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -122,7 +122,7 @@
                       <Cell col="1" text="bind:품목코드" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="2" text="bind:품목명" tooltiptext="bind:품목명" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="3" text="bind:선후불" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" tooltiptext="bind:선후불"/>
-                      <Cell col="4" text="bind:상태" tooltiptext="bind:상태" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'buttoncontrol' : 'nomal'" edittype="expr:상태=='대표 품목' ||  상태=='종속 품목'? 'button' : 'none'"/>
+                      <Cell col="4" text="bind:상태" tooltiptext="bind:상태" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="expr:상태=='신형품목' ||  상태=='구형품목'? 'buttoncontrol' : 'nomal'" edittype="expr:상태=='신형품목' ||  상태=='구형품목'? 'button' : 'none'"/>
                       <Cell col="5" text="bind:CLASS" tooltiptext="bind:CLASS" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="6" text="bind:LOT_SIZE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
                       <Cell col="7" text="bind:P_CYCLE" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" textAlign="right"/>
@@ -416,7 +416,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 	
 	if (e.col == 4)
 	{
-		if (this.ds_list.getColumn(e.row,"상태") == "대표 품목" || this.ds_list.getColumn(e.row,"상태") == "종속 품목")
+		if (this.ds_list.getColumn(e.row,"상태") == "신형품목" || this.ds_list.getColumn(e.row,"상태") == "구형품목")
 		{
 			var itemCd = this.ds_list.getColumn(this.ds_list.rowposition,"품목코드");
 			var status = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"상태"),"");
@@ -577,10 +577,10 @@ this.fn_color = function (currow)
             <Col id="CODE_NAME">전체</Col>
           </Row>
           <Row>
-            <Col id="CODE_NAME">종속 품목</Col>
+            <Col id="CODE_NAME">구형품목</Col>
           </Row>
           <Row>
-            <Col id="CODE_NAME">대표 품목</Col>
+            <Col id="CODE_NAME">신형품목</Col>
           </Row>
           <Row>
             <Col id="CODE_NAME">생산 중단</Col>

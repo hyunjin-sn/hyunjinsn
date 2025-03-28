@@ -82,11 +82,11 @@
               <Combo id="cmb_min" taborder="14" left="745" top="33" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
               <Static id="Static00_00_01" taborder="63" text="시" left="728" top="30" width="20" height="29"/>
               <Radio id="Radio_dlvyDtType" taborder="64" left="571" top="60" width="409" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div1"/>
-              <Static id="Static00_00_00" taborder="65" text="빈소입실시간" left="466" top="87" width="100" height="29" cssclass="sta_WF_detailLabel"/>
-              <Calendar id="cal_decDt" taborder="15" left="570" top="91" width="100" height="21" onchanged="Div00_cal_decDt_onchanged"/>
-              <Combo id="cmb_AM00_01" taborder="16" left="673" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time"/>
-              <Static id="Static00_00_01_01" taborder="66" text="시" left="728" top="88" width="20" height="29"/>
-              <Combo id="cmb_AM00_00_00" taborder="17" left="745" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
+              <Static id="Static00_00_00" taborder="65" text="발인일자" left="466" top="87" width="100" height="29" cssclass="sta_WF_detailLabel"/>
+              <Calendar id="cal_decDt" taborder="15" left="730" top="61" width="100" height="21" onchanged="Div00_cal_decDt_onchanged" visible="false"/>
+              <Combo id="cmb_AM00_01" taborder="16" left="833" top="61" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time" visible="false"/>
+              <Static id="Static00_00_01_01" taborder="66" text="시" left="888" top="58" width="20" height="29" visible="false"/>
+              <Combo id="cmb_AM00_00_00" taborder="17" left="905" top="61" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute" visible="false"/>
               <Static id="Static09_00" taborder="67" text="배송지" left="466" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="85"/>
               <Button id="btn_dlvy" taborder="68" left="883" top="119" width="21" height="21" cssclass="btn_WF_search" onclick="Div00_btn_dlvy_onclick"/>
               <TextArea id="TA_addr" taborder="19" left="570" top="147" width="410" height="49" background="#fafdc8"/>
@@ -131,7 +131,7 @@
               <Edit id="edt_mMemo" taborder="27" left="569" top="431" width="411" height="21" readonly="false" onkeyup="div_search_onkeyup"/>
               <Static id="Static10_00_00" taborder="77" text="의전 배송 메모" left="466" top="427" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="Static00_00_01_00" taborder="78" text="분" left="802" top="30" width="20" height="29"/>
-              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="802" top="85" width="20" height="29"/>
+              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="962" top="55" width="20" height="29" visible="false"/>
               <Static id="Static05_00_00" taborder="82" text="배송정보" left="469" top="1" width="97" height="24" cssclass="sta_WF_title"/>
               <Button id="btn_client" taborder="83" left="414" top="117" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_client_onclick"/>
               <Button id="btn_telInfo" taborder="84" left="363" top="89" width="71" height="21" text="Tel Info" cssclass="btn_WF_main1" onclick="Div00_btn_telInfo_onclick"/>
@@ -170,10 +170,11 @@
               <Edit id="edt_ownTel00" taborder="9" left="105" top="313" width="119" height="21" readonly="false" inputtype="number"/>
               <Edit id="edt_ownTel00_00" taborder="24" left="570" top="259" width="120" height="21" readonly="false" inputtype="number" maxlength="13"/>
               <Static id="Static04_00_00_01_00" taborder="96" text="사전상담번호" left="721" top="455" width="100" cssclass="sta_WF_detailLabel" height="29"/>
-              <Edit id="edt_soNo00" taborder="97" left="825" top="459" width="135" height="21" enable="true" readonly="true"/>
+              <Edit id="edt_soNo00" taborder="97" left="825" top="459" width="135" height="21" enable="true" readonly="false"/>
               <Button id="btn_sono00" taborder="98" left="960" top="459" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_sono00_onclick"/>
               <Button id="btn_contInfo" taborder="99" left="414" top="145" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_contInfo_onclick"/>
               <Edit id="edt_mNm00" taborder="100" left="825" top="91" width="155" height="21" enable="false" readonly="false" color="red"/>
+              <Calendar id="cal_balinDt" taborder="101" left="569" top="92" width="102" height="21"/>
             </Layout>
           </Layouts>
         </Div>
@@ -3271,10 +3272,15 @@ this.Div02_Tab00_Tabpage2_grd_list_2_oncellclick = function(obj:nexacro.Grid,e:n
 // 		}
 		
 		var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
-			
+		var hsCd = this.ds_list.getColumn(this.ds_list.rowposition,"HS_CD");
+		var subCode1 = this.ds_grd2.getColumn(0,"SUB_CODE");
+		var subCode2 = this.ds_grd2.getColumn(1,"SUB_CODE");
+		var sysDiv = "HJW";
+		
 		var sPopupId  = "msg1_popup";
 		var sUrl      = "SO::SO001_P08.xfdl";
-		var oArg      = {bpCd : bpCd};
+		//var oArg      = {bpCd : bpCd};
+		var oArg      = {bpCd : bpCd, hsCd : hsCd, subCode1 : subCode1, subCode2 : subCode2, sysDiv : sysDiv};
 		var sCallBack = "fn_popupCallback_msg1";
 		var oOption   = {title : "리본메시지"};
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
@@ -6980,6 +6986,7 @@ this.Div00_btn_contInfo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEve
           <Column id="USR_FLAG" type="STRING" size="256"/>
           <Column id="USR_FLAG2" type="STRING" size="256"/>
           <Column id="YES_ITEM" type="STRING" size="256"/>
+          <Column id="M_BALIN_DT" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_sono"/>
@@ -7483,6 +7490,7 @@ this.Div00_btn_contInfo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEve
       <BindItem id="item109" compid="Div00.form.edt_mNm00" propid="value" datasetid="ds_list" columnid="YES_ITEM"/>
       <BindItem id="item110" compid="Div01.form.TextArea00_00" propid="value" datasetid="ds_soAdd" columnid="ADD_CD11"/>
       <BindItem id="item45" compid="Div01.form.TextArea00" propid="value" datasetid="ds_list" columnid="C_MEMO"/>
+      <BindItem id="item111" compid="Div00.form.cal_balinDt" propid="value" datasetid="ds_list" columnid="M_BALIN_DT"/>
     </Bind>
   </Form>
 </FDL>

@@ -1,30 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO002_1" width="1300" height="600" titletext="New Form" onload="SO002_1_onload">
+  <Form id="SO002_1" width="1460" height="600" titletext="New Form" onload="SO002_1_onload">
     <Layouts>
-      <Layout height="600" mobileorientation="landscape" width="1300">
+      <Layout height="600" mobileorientation="landscape" width="1460">
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
           <Layouts>
             <Layout>
-              <Div id="Div00" taborder="4" text="Div00" left="9" top="121" width="1288" height="34">
+              <Div id="Div00" taborder="4" text="Div00" left="9" top="121" width="1450" height="34">
                 <Layouts>
                   <Layout>
-                    <Static id="Static00_00" taborder="0" top="4" height="20" background="#FFFFB4" right="1249" width="30"/>
-                    <Static id="Static01" taborder="1" text=": 당일배송" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="1155" width="84"/>
-                    <Static id="Static00_00_00" taborder="2" top="4" height="20" background="#f7e9fa" right="1124" width="30"/>
-                    <Static id="Static01_00" taborder="3" text=": 배송일 - 1" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="1020" width="94"/>
-                    <Static id="Static00_00_00_00" taborder="4" top="4" height="20" background="white" right="984" width="30" border="1px solid"/>
-                    <Static id="Static01_00_00" taborder="5" text=": 배송일 - 2 이전" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="860" width="114"/>
-                    <Static id="Static00_00_00_00_00" taborder="6" top="4" height="20" background="#e1f2f8" right="824" width="30"/>
-                    <Static id="Static01_00_00_00" taborder="7" text=": 배송일 + 1 이후" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="697" width="117"/>
-                    <Static id="Static00_00_00_00_00_00" taborder="8" top="4" height="20" background="#fa857f" right="644" width="30"/>
-                    <Static id="Static01_00_00_00_00" taborder="9" text=": 발주대기 발주지점" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="500" width="134"/>
-                    <Static id="Static00_00_00_00_00_00_00" taborder="10" top="4" height="20" background="#f3d794" right="454" width="30"/>
-                    <Static id="Static01_00_00_00_00_00" taborder="11" text=": 법인주문 발주지점" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="305" width="139"/>
-                    <Static id="Static00_00_00_00_00_00_00_00" taborder="12" top="4" height="20" background="#dddedc" right="282" width="30"/>
-                    <Static id="Static01_00_00_00_00_00_00" taborder="13" text=": 삭제주문" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="133" width="139"/>
-                    <Static id="Static00_00_00_00_00_00_00_00_00" taborder="14" top="4" height="20" background="red" right="142" width="30"/>
-                    <Static id="Static01_00_00_00_00_00_00_00" taborder="15" text=": 확인 필요!" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" right="13" width="119"/>
+                    <Static id="Static00_00" taborder="0" top="4" height="20" background="#FFFFB4" width="30" left="9"/>
+                    <Static id="Static01" taborder="1" text=": 당일배송" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="84" left="49"/>
+                    <Static id="Static00_00_00" taborder="2" top="4" height="20" background="#f7e9fa" width="30" left="134"/>
+                    <Static id="Static01_00" taborder="3" text=": 배송일 - 1" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="94" left="174"/>
+                    <Static id="Static00_00_00_00" taborder="4" top="4" height="20" background="white" width="30" border="1px solid" left="274"/>
+                    <Static id="Static01_00_00" taborder="5" text=": 배송일 - 2 이전" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="114" left="314"/>
+                    <Static id="Static00_00_00_00_00" taborder="6" top="4" height="20" background="#e1f2f8" width="30" left="434"/>
+                    <Static id="Static01_00_00_00" taborder="7" text=": 배송일 + 1 이후" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="117" left="474"/>
+                    <Static id="Static00_00_00_00_00_00" taborder="8" top="4" height="20" background="#fa857f" width="30" left="614"/>
+                    <Static id="Static01_00_00_00_00" taborder="9" text=": 발주대기 발주지점" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="134" left="654"/>
+                    <Static id="Static00_00_00_00_00_00_00" taborder="10" top="4" height="20" background="#f3d794" width="30" left="804"/>
+                    <Static id="Static01_00_00_00_00_00" taborder="11" text=": 법인주문 발주지점" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="139" left="844"/>
+                    <Static id="Static00_00_00_00_00_00_00_00" taborder="12" top="4" height="20" background="#dddedc" width="30" left="976"/>
+                    <Static id="Static01_00_00_00_00_00_00" taborder="13" text=": 삭제주문" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="139" left="1016"/>
+                    <Static id="Static00_00_00_00_00_00_00_00_00" taborder="14" top="4" height="20" background="red" width="30" left="1116"/>
+                    <Static id="Static01_00_00_00_00_00_00_00" taborder="15" text=": 확인 필요!" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="119" left="1156"/>
+                    <Static id="Static01_00_00_00_00_00_00_00_00" taborder="16" text=": 플라시스템 확인필요" top="2" height="25" font="normal bold 10pt/normal &quot;Arial&quot;" width="134" left="1296"/>
+                    <Static id="Static00_00_00_00_00_00_00_00_00_00" taborder="17" top="4" height="20" background="#efbc89" width="30" left="1256"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -165,7 +167,7 @@
             </Layout>
           </Layouts>
         </Div>
-        <Grid id="grd_list00" taborder="1" binddataset="ds_list" scrolltype="both" minwidth="" bottom="9" left="1330" top="123" right="-1309" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" visible="false">
+        <Grid id="grd_list00" taborder="0" binddataset="ds_list" scrolltype="both" minwidth="" bottom="9" left="1520" top="123" right="-1499" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" selecttype="cell" visible="false">
           <Formats>
             <Format id="default">
               <Columns>
@@ -242,7 +244,7 @@
                 <Cell col="1" text="bind:SO_NO" textAlign="center"/>
                 <Cell col="2" text="bind:INSRT_USER_NM" textAlign="center"/>
                 <Cell col="3" text="bind:RCPT_METH_NM" textAlign="center"/>
-                <Cell col="4" text="bind:SO_DT" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="4" text="bind:ORDER_DT" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="none" maskeditformat="####-##-## ##:##:##" displaytype="mask" maskedittype="string"/>
                 <Cell col="5" text="bind:SHIPPING_LIMIT_TIME" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
                 <Cell col="6" text="bind:SOLD_TO_PARTY_NM" textAlign="center" tooltiptext="bind:SOLD_TO_PARTY_NM"/>
                 <Cell col="7" text="bind:BP_GRADE_NM" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd"/>
@@ -844,7 +846,7 @@ this.fn_afterUserSave1 = function(strSvcID, nErrorCode, strErrorMag)
 		this.gfn_openForm2(this.objApp.gds_menu, "SO001", arrArg, soNo);	
 	} else
 	{
-		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, soNo);
+		this.gfn_openForm2(this.objApp.gds_menu, "SO100", arrArg, soNo);
 	}
 	
 }
@@ -922,6 +924,7 @@ this.fn_test = function (currow)
 	
 	var status1 = this.ds_list.getColumn(currow,"HJW_STATUS");
 	var status2 = this.ds_list.getColumn(currow,"DATA_STATUS");
+	var flaStatus = this.ds_list.getColumn(currow,"FLA_STATUS");
 	
 	if (del == "삭제주문")
 	{
@@ -929,6 +932,9 @@ this.fn_test = function (currow)
 	} else if (!this.gfn_isNull(status2) && status1 == "발주대기" && status1 != status2 || !this.gfn_isNull(status2) && status2 == "발주대기" && status1 != status2)
 	{
 		return "status11";			// 빨강 (HJW, ERP 발주 대기 상태가 서로 다를때)
+	} else if (status1 == "발주확정" && flaStatus == "Y")
+	{
+		return "status8";			// 파랑 (플라시스템 확인필요)
 	} else if (dte == sDate)
 	{
 		return "status3";			// 노랑 (배송일이 금일)
@@ -949,6 +955,7 @@ this.fn_test2 = function (currow)
 	var del = this.ds_list.getColumn(currow,"DEL_YN");
 	var status = this.ds_list.getColumn(currow,"DATA_STATUS");
 	var rcpt = this.ds_list.getColumn(currow,"RCPT_METH_NM");
+	
 	
 	var dte = this.ds_list.getColumn(currow,"DLVY_DT");
 	
@@ -1109,6 +1116,7 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
           <Column id="BOX_RECV_LIST" type="STRING" size="1073741823"/>
           <Column id="HS_NM" type="STRING" size="100"/>
           <Column id="DEC_DT" type="DATETIME" size="23"/>
+          <Column id="FLA_STATUS" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">

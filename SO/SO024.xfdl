@@ -10,13 +10,15 @@
                 <Layouts>
                   <Layout>
                     <Static id="Static03" taborder="0" text="지점" left="10" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_bpNm" taborder="1" left="112" top="4" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_bpNm" taborder="1" left="102" top="4" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
                     <Static id="Static03_00" taborder="2" text="품목" left="340" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Edit id="edt_bpNm00" taborder="3" left="442" top="4" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Edit id="edt_bpNm00" taborder="3" left="432" top="4" width="186" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
                     <Static id="Static03_01" taborder="4" text="등록일시" left="890" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
                     <Calendar id="cal_startDate" taborder="5" left="984" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" visible="false"/>
                     <Static id="Static01" taborder="6" text="~" left="1097" top="4" width="11" height="21" visible="false"/>
                     <Calendar id="cal_endDate" taborder="7" left="1109" top="4" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true" visible="false"/>
+                    <Static id="Static03_01_00" taborder="8" text="사유유형" left="664" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00" taborder="9" text="Combo00" left="768" top="4" width="164" height="21" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged" autoselect="true" type="filterlike"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -28,10 +30,10 @@
                       <Column size="63"/>
                       <Column size="97"/>
                       <Column size="36"/>
-                      <Column size="189"/>
+                      <Column size="180"/>
                       <Column size="97"/>
                       <Column size="36"/>
-                      <Column size="300"/>
+                      <Column size="250"/>
                       <Column size="59"/>
                       <Column size="59"/>
                       <Column size="47"/>
@@ -40,9 +42,10 @@
                       <Column size="59"/>
                       <Column size="59"/>
                       <Column size="74"/>
-                      <Column size="131"/>
-                      <Column size="131"/>
-                      <Column size="131"/>
+                      <Column size="120"/>
+                      <Column size="120"/>
+                      <Column size="130"/>
+                      <Column size="150"/>
                     </Columns>
                     <Rows>
                       <Row size="39" band="head"/>
@@ -64,6 +67,7 @@
                       <Cell col="15" text="시작일"/>
                       <Cell col="16" text="종료일"/>
                       <Cell col="17" text="등록일"/>
+                      <Cell col="18" text="사유유형"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -84,6 +88,7 @@
                       <Cell col="15" text="bind:VALID_FR_DT" textAlign="center" edittype="expr:CHK != '1' ? 'date' : 'none'" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" cssclass="comp.parent.parent.parent.fn_saveColor(currow)" displaytype="expr:CHK != '1' ? 'calendarcontrol' : 'date'"/>
                       <Cell col="16" text="bind:VALID_TO_DT" textAlign="center" edittype="expr:CHK != '1' ? 'date' : 'none'" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" cssclass="comp.parent.parent.parent.fn_saveColor(currow)" displaytype="expr:CHK != '1' ? 'calendarcontrol' : 'date'"/>
                       <Cell col="17" textAlign="center" calendardateformat="yyyy-MM-dd" calendardisplaynulltype="none" text="bind:UPDT_DT"/>
+                      <Cell col="18" displaytype="expr:CHK != '1' ? 'combocontrol' : 'combotext'" edittype="expr:CHK != '1' ? 'combo' : 'nomal'" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_status1" text="bind:EXT1_CD"/>
                     </Band>
                     <Band id="summary">
                       <Cell colspan="8" text="합      계" textAlign="right"/>
@@ -97,6 +102,7 @@
                       <Cell col="15"/>
                       <Cell col="16"/>
                       <Cell col="17"/>
+                      <Cell col="18"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -137,6 +143,9 @@ this.SO003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	//날짜 세팅
 	this.fn_setCal();
 	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	
 	this.fn_search();
 };
 
@@ -156,19 +165,27 @@ this.fn_setCal = function ()
 	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
 };
 
+ //콤보세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData2(this.ds_status1,this.objApp.gds_code2,'PD007');			// 유형
+	this.efn_SetComboData(obj,this.objApp.gds_code2,"ds_status",this.Div_client.form.div_search.form.Combo00,"MAJOR_CODE=='PD007'",true,true);
+};
+
 this.fn_search = function ()
 {	
 	var args1 = this.Div_client.form.div_search.form.edt_bpNm.text;
 	var args2 = this.Div_client.form.div_search.form.edt_bpNm00.text;
 	var args3 = this.Div_client.form.div_search.form.cal_startDate.value;
 	var args4 = this.Div_client.form.div_search.form.cal_endDate.value;
+	var args5 = this.Div_client.form.div_search.form.Combo00.value;
 	
 	// 조회
 	var id = "SO024_S01";
 	var url = "svcUrl::SO024_S01";
 	var inDs = "";
 	var outDs = "ds_list=ds_list";
-	var args = "BP_CD="+args1+" ITEM_CD="+args2+" START_DATE="+args3+" END_DATE="+args4+"";
+	var args = "BP_CD="+args1+" ITEM_CD="+args2+" START_DATE="+args3+" END_DATE="+args4+" EXT1_CD="+args5+"";
 	var callBackid = "fn_afterSearch";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
@@ -323,6 +340,11 @@ this.fn_test = function (currow)
 	{
 		return "status5";			// 회색 (삭제주문)
 	} 
+};
+
+this.Div_client_div_search_Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
 };]]></Script>
     <Objects>
       <Dataset id="ds_list">
@@ -340,8 +362,10 @@ this.fn_test = function (currow)
           <Column id="ONHAND_QTY" type="BIGDECIMAL" size="40"/>
           <Column id="기준판매량" type="BIGDECIMAL" size="40"/>
           <Column id="CBM_DESCRIPTION" type="STRING" size="50"/>
+          <Column id="EXT1_CD" type="STRING" size="30"/>
         </ColumnInfo>
       </Dataset>
+      <Dataset id="ds_status1"/>
     </Objects>
     <Bind>
       <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond1" columnid="START_DATE"/>

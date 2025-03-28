@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM009" width="1350" height="440" titletext="New Form" onload="CM009_onload">
+    <Layouts>
+      <Layout height="440" mobileorientation="landscape" width="1350" stepcount="0">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Grid id="grd_list01" taborder="2" binddataset="ds_list_9" scrolltype="both" minwidth="" left="10" top="14" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" bottom="10" right="10" onkeydown="grd_list_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="51"/>
+                <Column size="70"/>
+                <Column size="110"/>
+                <Column size="110"/>
+                <Column size="120"/>
+                <Column size="0"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="240"/>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="90"/>
+                <Column size="0"/>
+                <Column size="0"/>
+                <Column size="110"/>
+                <Column size="110"/>
+              </Columns>
+              <Rows>
+                <Row size="36" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="경조타입"/>
+                <Cell col="2" text="소속1"/>
+                <Cell col="3" text="소속2"/>
+                <Cell col="4" text="설명"/>
+                <Cell col="5" text="필수여부"/>
+                <Cell col="6" text="기존품목"/>
+                <Cell col="7" text="대체 품목"/>
+                <Cell col="8" text="품목명"/>
+                <Cell col="9" text="수량"/>
+                <Cell col="10" text="판매단가_법인"/>
+                <Cell col="11" text="판매단가_개인"/>
+                <Cell col="12" text="발주지점"/>
+                <Cell col="13" text="카톡주문&#13;&#10;제외"/>
+                <Cell col="14" text="카톡주문&#13;&#10;리본문구 제외"/>
+                <Cell col="15" text="VAT"/>
+                <Cell col="16" text="청구조건"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:HS_TYPE" suppress="0"/>
+                <Cell col="2" textAlign="left" combodataset="ds_sosoc1" combocodecol="SUB_CODE" combodatacol="SUB_CODE_NM" text="bind:SUB_CODE1" suppress="0"/>
+                <Cell col="3" textAlign="left" combodataset="ds_sosoc2" combocodecol="SUB_CODE" combodatacol="SUB_CODE_NM" text="bind:SUB_CODE2" suppress="0"/>
+                <Cell col="4" textAlign="left" combodataset="ds_caseCb" combocodecol="CASE_NO" combodatacol="CASE_DESC2" text="bind:CASE_NO" suppress="0" displaytype="combotext"/>
+                <Cell col="5" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" text="bind:MANDATORY_YN"/>
+                <Cell col="6" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
+                <Cell col="7" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PA_ITEM_CD" displaytype="normal" edittype="none"/>
+                <Cell col="8" textAlign="left" text="bind:ITEM_NM"/>
+                <Cell col="9" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                <Cell col="10" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
+                <Cell col="12" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" text="bind:BRANCH_GROUP" combotype="filterlike"/>
+                <Cell col="13" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_DISP_YN"/>
+                <Cell col="14" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_MANDATORY_YN"/>
+                <Cell col="15" textAlign="center" combodataset="ds_vatDiv" combocodecol="CODE" combodatacol="CODE_NAME" text="bind:VAT_TYPE" displaytype="combotext" combotype="filterlike"/>
+                <Cell col="16" textAlign="center" displaytype="combotext" combodataset="ds_payDiv" combocodecol="CODE" combodatacol="CODE_NAME" text="bind:PAY_COND" combotype="filterlike"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_9">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="SUB_CODE1" type="STRING" size="3"/>
+          <Column id="SUB_CODE2" type="STRING" size="3"/>
+          <Column id="SUB_CODE3" type="STRING" size="3"/>
+          <Column id="CASE_NO" type="STRING" size="20"/>
+          <Column id="SEQ_NO" type="BIGDECIMAL" size="5"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="PRICE_COM" type="BIGDECIMAL" size="15"/>
+          <Column id="PRICE_PER" type="BIGDECIMAL" size="15"/>
+          <Column id="BRANCH_GROUP" type="STRING" size="20"/>
+          <Column id="MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="PRM_DISP_YN" type="STRING" size="2"/>
+          <Column id="PRM_MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="VAT_TYPE" type="STRING" size="4"/>
+          <Column id="PAY_COND" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="ITEM_NM" type="STRING" size="255"/>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="SAVE_CHK" type="STRING" size="256"/>
+          <Column id="PA_ITEM_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_poDiv"/>
+      <Dataset id="ds_vatDiv"/>
+      <Dataset id="ds_payDiv"/>
+      <Dataset id="ds_caseCb"/>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div00_00_00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item2" compid="Div00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item3" compid="Div00_00_00.form.edt_mRoomNo" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item4" compid="Div00_00_00.form.edt_mRoomNo00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item5" compid="Div00_00_00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    CMS > 계약조회
+*  @FileName 	CM0009.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2025.01.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+
+var cont_no = this.getOwnerFrame().cont_no
+var hs_type = this.getOwnerFrame().hs_type
+var sub_code1 = this.getOwnerFrame().sub_code1
+var sub_code2 = this.getOwnerFrame().sub_code2
+var case_no = this.getOwnerFrame().case_no
+var item_cd = this.getOwnerFrame().item_cd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM009_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	//콤보 세팅
+	this.fn_setCombo(obj);
+	this.fn_search();
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData(this.ds_poDiv,this.objApp.gds_code,'XN053');		// 발주지점
+	this.efn_SetDatasetData(this.ds_vatDiv,this.objApp.gds_code,'B9001');		// vat
+	this.efn_SetDatasetData(this.ds_payDiv,this.objApp.gds_code,'XS024');		// 청구조건
+};
+
+this.fn_search = function ()
+{	
+		
+		// 기준정보(경조,소속,유형) 세팅
+	var id = "CM009_S03";
+	var url = "svcUrl::CM009_S03";
+	var inDs = "";
+	var outDs = "ds_list_9=ds_list_9 ds_caseCb=ds_caseCb";
+	var args = "CONT_NO="+cont_no+" HS_TYPE="+hs_type+" SUB_CODE1="+sub_code1+" SUB_CODE2="+sub_code2+" CASE_NO="+case_no+" ITEM_CD="+item_cd+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+this.grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+  </Form>
+</FDL>

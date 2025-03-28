@@ -1161,6 +1161,7 @@ this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag)
 		return ;
 	}
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 	/*
 	H4130 : PI팀
 	H4320 : (X)재무팀
@@ -1171,7 +1172,7 @@ this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag)
 	2023-08-18 홍진수 대리 작업진행
 	H4200 : 의전관리실
 	*/	
-	if (deptCd == "H4130" || deptCd == "H4320" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5000" || deptCd == "H5290" || deptCd == "H4200")
+	if (deptCd == "H4130" || deptCd == "H4320" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5000" || deptCd == "H5290" || deptCd == "H4200" || regUser == "223025" || regUser == "216012" || deptCd == "H5210" || regUser == "207002")
 	{
 		this.ds_poBp.insertRow(0);
 		this.ds_poBp.setColumn(0,"BP_CD","-999");

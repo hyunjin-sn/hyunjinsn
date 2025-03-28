@@ -42,11 +42,9 @@ this.tab_mdi_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventI
 
 this.tab_mdi_onextrabuttonclick = function(obj:nexacro.Tab,e:nexacro.TabMouseEventInfo)
 {
-	var sFormID = obj.tabpages[e.index].name;	
+	var sFormID = obj.tabpages[e.index].name;
 	obj.removeTabpage(e.index);	
-	
 	this.objApp.av_WorkFrame[sFormID].form.close();
-    
     var nRow = this.objApp.gds_openForm.findRow("FORM_ID", sFormID);
     this.objApp.gds_openForm.deleteRow(nRow);
     if(obj.getTabpageCount() < 1){

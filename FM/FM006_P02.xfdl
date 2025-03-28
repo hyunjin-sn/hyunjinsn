@@ -21,7 +21,6 @@
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
-                      <Column size="80"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -38,20 +37,18 @@
                       <Cell col="7" text="적용기간"/>
                       <Cell col="8" text="담당부서"/>
                       <Cell col="9" text="담당자"/>
-                      <Cell col="10" text="결산구분"/>
                     </Band>
                     <Band id="body">
-                      <Cell text="bind:bp_cd" textAlign="center"/>
-                      <Cell col="1" text="bind:bp_nm"/>
-                      <Cell col="2" text="bind:cont_no" textAlign="center"/>
-                      <Cell col="3" text="bind:cont_type_nm" textAlign="center"/>
-                      <Cell col="4" text="bind:cont_fr_dt" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="5" text="bind:cont_to_dt" calendardateformat="yyyy-MM-dd"/>
-                      <Cell col="6" text="bind:cont_desc"/>
-                      <Cell col="7" text="bind:s_day" textAlign="center"/>
-                      <Cell col="8" text="bind:dept_nm" textAlign="center"/>
-                      <Cell col="9" text="bind:prsn_nm" textAlign="center"/>
-                      <Cell col="10" text="bind:pay_cond_nm" textAlign="center"/>
+                      <Cell text="bind:BP_CD" textAlign="center"/>
+                      <Cell col="1" text="bind:BP_NM"/>
+                      <Cell col="2" text="bind:CONT_NO" textAlign="center"/>
+                      <Cell col="3" text="bind:CONT_TYPE" textAlign="center"/>
+                      <Cell col="4" text="bind:CONT_FR_DT" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="5" text="bind:CONT_TO_DT" calendardateformat="yyyy-MM-dd"/>
+                      <Cell col="6" text="bind:CONT_DESC"/>
+                      <Cell col="7" text="bind:S_DAY" textAlign="center"/>
+                      <Cell col="8" text="bind:M_DEPT_NM" textAlign="center"/>
+                      <Cell col="9" text="bind:M_USR_ID" textAlign="center"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -62,14 +59,13 @@
                     <Columns>
                       <Column size="80"/>
                       <Column size="80"/>
+                      <Column size="80"/>
                       <Column size="43"/>
                       <Column size="226"/>
                       <Column size="100"/>
                       <Column size="80"/>
                       <Column size="180"/>
                       <Column size="36"/>
-                      <Column size="80"/>
-                      <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="58"/>
@@ -80,51 +76,39 @@
                     <Rows>
                       <Row size="24" band="head"/>
                       <Row size="24"/>
-                      <Row size="24" band="summ"/>
                     </Rows>
                     <Band id="head">
                       <Cell text="소속타입1"/>
                       <Cell col="1" text="소속타입2"/>
-                      <Cell col="2" colspan="2" text="경조사유"/>
-                      <Cell col="4" text="품목구분"/>
-                      <Cell col="5" text="품목코드"/>
-                      <Cell col="6" text="품목명"/>
-                      <Cell col="7" text="수량"/>
-                      <Cell col="8" text="법인단가"/>
-                      <Cell col="9" text="개인단가"/>
-                      <Cell col="10" text="금액"/>
-                      <Cell col="11" text="발주금액"/>
-                      <Cell col="12" text="필수여부"/>
-                      <Cell col="13" text="지점그룹"/>
-                      <Cell col="14" text="결산타입"/>
-                      <Cell col="15" text="결산구분"/>
+                      <Cell col="2" text="소속타입3"/>
+                      <Cell col="3" colspan="2" text="경조사유"/>
+                      <Cell col="5" text="품목구분"/>
+                      <Cell col="6" text="품목코드"/>
+                      <Cell col="7" text="품목명"/>
+                      <Cell col="8" text="수량"/>
+                      <Cell col="9" text="법인단가"/>
+                      <Cell col="10" text="개인단가"/>
+                      <Cell col="11" text="필수여부"/>
+                      <Cell col="12" text="지점그룹"/>
+                      <Cell col="13" text="결산타입"/>
+                      <Cell col="14" text="결산구분"/>
                     </Band>
                     <Band id="body">
-                      <Cell text="bind:sub_type_code_nm1" subsumtext="소계" background="#fafdc8"/>
-                      <Cell col="1" text="bind:sub_type_code_nm2" subsumtext="소계"/>
-                      <Cell col="2" text="bind:hs_code" subsumtext="소계" textAlign="center"/>
-                      <Cell col="3" text="bind:hs_nm" subsumtext="소계"/>
-                      <Cell col="4" text="bind:item_group_nm" subsumtext="소계"/>
-                      <Cell col="5" text="bind:item_cd" subsumtext="소계"/>
-                      <Cell col="6" text="bind:item_nm" subsumtext="소계"/>
-                      <Cell col="7" text="bind:qty" textAlign="center"/>
-                      <Cell col="8" text="bind:price_so"/>
-                      <Cell col="9" text="bind:price_so2"/>
-                      <Cell col="10" text="bind:PRICE" cssclass="expr:comp.parent.parent.fn_sum(currow)"/>
-                      <Cell col="11" text="bind:price_po"/>
-                      <Cell col="12" text="bind:mandatory_yn" textAlign="center"/>
-                      <Cell col="13" text="bind:branch_grp_nm"/>
-                      <Cell col="14" text="bind:vat_type_nm"/>
-                      <Cell col="15" text="bind:pay_cond_nm"/>
-                    </Band>
-                    <Band id="summary">
-                      <Cell colspan="10"/>
-                      <Cell col="10" text="expr:dataset.getSum(&quot;PRICE&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="11"/>
-                      <Cell col="12"/>
-                      <Cell col="13"/>
-                      <Cell col="14"/>
-                      <Cell col="15"/>
+                      <Cell text="bind:SUB_CODE1" subsumtext="소계" background="#fafdc8"/>
+                      <Cell col="1" text="bind:SUB_CODE2" subsumtext="소계"/>
+                      <Cell col="2" text="bind:SUB_CODE3"/>
+                      <Cell col="3" text="bind:HS_TYPE" subsumtext="소계" textAlign="center"/>
+                      <Cell col="4" text="bind:HS_NM" subsumtext="소계"/>
+                      <Cell col="5" text="bind:품목구분" subsumtext="소계"/>
+                      <Cell col="6" text="bind:ITEM_CD" subsumtext="소계"/>
+                      <Cell col="7" text="bind:ITEM_NM" subsumtext="소계"/>
+                      <Cell col="8" text="bind:QTY" textAlign="center"/>
+                      <Cell col="9" text="bind:PRICE_COM"/>
+                      <Cell col="10" text="bind:PRICE_PER"/>
+                      <Cell col="11" text="bind:MANDATORY_YN" textAlign="center"/>
+                      <Cell col="12" text="bind:BRANCH_GRP_NM"/>
+                      <Cell col="13" text="bind:VAT_TYPE_NM"/>
+                      <Cell col="14" text="bind:PAY_COND_NM"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -135,6 +119,8 @@
               <Combo id="Combo00_00" taborder="6" left="406" top="176" width="146" height="21" type="filterlike" codecolumn="SUB_CODE1" datacolumn="SUB_CODE1_NM" innerdataset="ds_sosoc1" onitemchanged="Div_client_Combo00_onitemchanged"/>
               <Static id="Static00_00_00_00" taborder="7" text="소속2 검색 : " left="569" top="172" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
               <Combo id="Combo00_00_00" taborder="8" left="676" top="176" width="146" height="21" type="filterlike" codecolumn="SUB_CODE2" datacolumn="SUB_CODE2_NM" innerdataset="ds_sosoc2" onitemchanged="Div_client_Combo00_onitemchanged"/>
+              <Static id="Static00_00_00_00_00" taborder="9" text="소속3 검색 : " left="839" top="172" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+              <Combo id="Combo00_00_01" taborder="10" left="946" top="176" width="146" height="21" type="filterlike" codecolumn="SUB_CODE3" datacolumn="SUB_CODE3_NM" innerdataset="ds_sosoc3" onitemchanged="Div_client_Combo00_onitemchanged"/>
             </Layout>
           </Layouts>
         </Div>
@@ -217,6 +203,7 @@ this.FM006_P02_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	this.Div_client.form.Combo00.set_value(hsCd);
 	this.Div_client.form.Combo00_00.set_value(sosoc1);
 	this.Div_client.form.Combo00_00_00.set_value(sosoc2);
+	this.Div_client.form.Combo00_00_01.set_value(sosoc3);
 	
 	this.filter();
 }
@@ -237,32 +224,41 @@ this.filter = function ()
 	var search1 = this.Div_client.form.Combo00.text;
 	var search2 = this.Div_client.form.Combo00_00.text;
 	var search3 = this.Div_client.form.Combo00_00_00.text;
+	var search4 = this.Div_client.form.Combo00_00_01.text;
 		
 	var filterstr = "";
 	if(!this.gfn_isNull(search1) && search1 != "전체")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "hs_nm.indexOf('"+search1+"')!='-1'";
+			filterstr = "HS_NM.indexOf('"+search1+"')!='-1'";
 		else
-			filterstr += " && hs_nm.indexOf('"+search1+"')!='-1'";				
+			filterstr += " && HS_NM.indexOf('"+search1+"')!='-1'";				
 	}
 	
-	// 접수자
+	
 	if(!this.gfn_isNull(search2) && search2 != "전체")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "sub_type_code_nm1.indexOf('"+search2+"')!='-1'";
+			filterstr = "SUB_CODE1.indexOf('"+search2+"')!='-1'";
 		else
-			filterstr += " && sub_type_code_nm1.indexOf('"+search2+"')!='-1'";				
+			filterstr += " && SUB_CODE1.indexOf('"+search2+"')!='-1'";				
 	}
 	
-	// 주문처
+	
 	if(!this.gfn_isNull(search3) && search3 != "전체")
 	{
 		if(this.gfn_isNull(filterstr))
-			filterstr = "sub_type_code_nm2.indexOf('"+search3+"')!='-1'";
+			filterstr = "SUB_CODE2.indexOf('"+search3+"')!='-1'";
 		else
-			filterstr += " && sub_type_code_nm2.indexOf('"+search3+"')!='-1'";				
+			filterstr += " && SUB_CODE2.indexOf('"+search3+"')!='-1'";				
+	}
+	
+	if(!this.gfn_isNull(search4) && search4 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "SUB_CODE3.indexOf('"+search3+"')!='-1'";
+		else
+			filterstr += " && SUB_CODE3.indexOf('"+search3+"')!='-1'";				
 	}
 	
 	this.ds_list_2.set_filterstr(filterstr);	
@@ -273,7 +269,7 @@ this.filter = function ()
 		}
 	}
 };
-
+/*
 // 소계 색상변경
 this.fn_sum = function (currow)
 {
@@ -283,44 +279,45 @@ this.fn_sum = function (currow)
 	{
 		return "status11";
 	}
-};]]></Script>
+};
+ */]]></Script>
     <Objects>
       <Dataset id="ds_list_1">
         <ColumnInfo>
-          <Column id="bp_cd" type="STRING" size="20"/>
-          <Column id="bp_nm" type="STRING" size="200"/>
-          <Column id="cont_no" type="STRING" size="20"/>
-          <Column id="cont_type_nm" type="STRING" size="200"/>
-          <Column id="cont_fr_dt" type="DATETIME" size="23"/>
-          <Column id="cont_to_dt" type="DATETIME" size="23"/>
-          <Column id="valid_yn" type="STRING" size="1"/>
-          <Column id="cont_desc" type="STRING" size="200"/>
-          <Column id="s_day" type="INT" size="11"/>
-          <Column id="dept_nm" type="STRING" size="20"/>
-          <Column id="prsn_nm" type="STRING" size="20"/>
-          <Column id="pay_cond_nm" type="STRING" size="200"/>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="CONT_NO" type="STRING" size="20"/>
+          <Column id="CONT_TYPE" type="STRING" size="200"/>
+          <Column id="CONT_FR_DT" type="DATETIME" size="23"/>
+          <Column id="CONT_TO_DT" type="DATETIME" size="23"/>
+          <Column id="VALID_YN" type="STRING" size="1"/>
+          <Column id="CONT_DESC" type="STRING" size="200"/>
+          <Column id="S_DAY" type="INT" size="11"/>
+          <Column id="M_DEPT_NM" type="STRING" size="20"/>
+          <Column id="M_USR_ID" type="STRING" size="20"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_list_2" keystring="G:-mandatory_yn">
         <ColumnInfo>
-          <Column id="sub_type_code_nm1" type="STRING" size="402"/>
-          <Column id="sub_type_code_nm2" type="STRING" size="402"/>
-          <Column id="hs_code" type="STRING" size="20"/>
-          <Column id="hs_nm" type="STRING" size="1000"/>
-          <Column id="item_group_nm" type="STRING" size="40"/>
-          <Column id="item_cd" type="STRING" size="20"/>
-          <Column id="item_nm" type="STRING" size="100"/>
-          <Column id="qty" type="BIGDECIMAL" size="20"/>
-          <Column id="price_so" type="BIGDECIMAL" size="20"/>
-          <Column id="price_so2" type="BIGDECIMAL" size="20"/>
-          <Column id="price_po" type="BIGDECIMAL" size="20"/>
-          <Column id="mandatory_yn" type="STRING" size="1"/>
-          <Column id="branch_grp_nm" type="STRING" size="200"/>
-          <Column id="prm_disp_yn" type="STRING" size="1"/>
-          <Column id="prm_mandatory_yn" type="STRING" size="1"/>
-          <Column id="vat_type" type="STRING" size="20"/>
-          <Column id="vat_type_nm" type="STRING" size="200"/>
-          <Column id="pay_cond_nm" type="STRING" size="200"/>
+          <Column id="SUB_CODE1" type="STRING" size="402"/>
+          <Column id="SUB_CODE2" type="STRING" size="402"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="1000"/>
+          <Column id="품목구분" type="STRING" size="40"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="ITEM_NM" type="STRING" size="100"/>
+          <Column id="QTY" type="BIGDECIMAL" size="20"/>
+          <Column id="PRICE_COM" type="BIGDECIMAL" size="20"/>
+          <Column id="PRICE_PER" type="BIGDECIMAL" size="20"/>
+          <Column id="MANDATORY_YN" type="STRING" size="1"/>
+          <Column id="BRANCH_GROUP" type="STRING" size="200"/>
+          <Column id="PRM_DISP_YN" type="STRING" size="1"/>
+          <Column id="PRM_MANDATORY_YN" type="STRING" size="1"/>
+          <Column id="VAT_TYPE" type="STRING" size="20"/>
+          <Column id="VAT_TYPE_NM" type="STRING" size="200"/>
+          <Column id="PAY_COND_NM" type="STRING" size="200"/>
+          <Column id="SUB_CODE3" type="STRING" size="256"/>
+          <Column id="BRANCH_GRP_NM" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_sosoc1"/>

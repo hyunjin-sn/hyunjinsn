@@ -6,18 +6,16 @@
         <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="5" bottom="0">
           <Layouts>
             <Layout>
-              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+              <Div id="div_search" taborder="0" left="8" top="10" height="32" right="2" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Button id="btn_excel" taborder="0" top="4" height="20" text="엑셀 저장" cssclass="btn_WF_main1" onclick="Div_client_div_search_btn_excel_onclick" right="6" width="76"/>
                     <Static id="Static03" taborder="1" text="지점구분" left="24" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Static id="Static03_01_00" taborder="2" text="클래스등급" left="644" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Static id="Static03_00" taborder="3" text="클래스" left="444" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Static id="Static03_01_00_00" taborder="4" text="지점등급" left="228" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
-                    <Combo id="Combo00_00" taborder="5" text="" left="113" top="4" width="104" height="21" innerdataset="ds_cd" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
-                    <Combo id="Combo00_01" taborder="6" text="Combo00" left="513" top="4" width="104" height="21" innerdataset="ds_class" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_01_onitemchanged"/>
-                    <Combo id="Combo00_02" taborder="7" text="Combo00" left="744" top="4" width="104" height="21" innerdataset="ds_cb1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_02_onitemchanged"/>
-                    <Combo id="Combo00_03" taborder="8" text="Combo00" left="314" top="4" width="104" height="21" innerdataset="ds_cb2" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_03_onitemchanged"/>
+                    <Static id="Static03_00" taborder="2" text="클래스등급" left="444" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Static id="Static03_01_00_00" taborder="3" text="지점등급" left="228" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo00_00" taborder="4" text="" left="113" top="4" width="104" height="21" innerdataset="ds_cd" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_00_onitemchanged"/>
+                    <Combo id="Combo00_01" taborder="5" text="Combo00" left="543" top="4" width="104" height="21" innerdataset="ds_class" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_01_onitemchanged"/>
+                    <Combo id="Combo00_03" taborder="6" text="Combo00" left="314" top="4" width="104" height="21" innerdataset="ds_cb2" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_03_onitemchanged"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -33,7 +31,6 @@
                       <Column size="190"/>
                       <Column size="190"/>
                       <Column size="190"/>
-                      <Column size="190"/>
                     </Columns>
                     <Rows>
                       <Row size="40" band="head"/>
@@ -44,18 +41,16 @@
                       <Cell col="1" text="지점구분"/>
                       <Cell col="2" text="지점등급"/>
                       <Cell col="3" text="품목클라스"/>
-                      <Cell col="4" text="품목클라스등급"/>
-                      <Cell col="5" text="안전재고가용일수"/>
-                      <Cell col="6" text="최소배치량(Set수량반영)"/>
+                      <Cell col="4" text="안전재고가용일수"/>
+                      <Cell col="5" text="최소배치량(Set수량반영)"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
                       <Cell col="1" text="bind:dept_type" textAlign="center" calendardisplaynulltype="none" calendardateformat="yyyy-MM-dd" edittype="combo" displaytype="combocontrol" combodataset="ds_cd_0" combodatacol="CODE_NAME" combocodecol="CODE" combotype="filterlike" comboautoselect="false" tooltiptext="bind:dept_type"/>
                       <Cell col="2" text="bind:dept_g" edittype="combo" textAlign="center" displaytype="combocontrol" combodataset="ds_cb2_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
                       <Cell col="3" text="bind:class_f" edittype="combo" textAlign="center" combodataset="ds_class_0" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combocontrol"/>
-                      <Cell col="4" text="bind:class_g" edittype="combo" textAlign="center" displaytype="combocontrol" combodataset="ds_cb1_0" combocodecol="CODE_CODE" combodatacol="CODE_NAME"/>
-                      <Cell col="5" text="bind:ss_ad" edittype="text" editautoselect="true"/>
-                      <Cell col="6" text="bind:ss_mba" edittype="text" background="#ffffff" editautoselect="true"/>
+                      <Cell col="4" text="bind:ss_ad" edittype="text" editautoselect="true"/>
+                      <Cell col="5" text="bind:ss_msqty" edittype="text" background="#ffffff" editautoselect="true"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -105,7 +100,6 @@ this.fn_setCombo = function (obj)
 {
 	this.Div_client.form.div_search.form.Combo00_00.set_index(0);
 	this.Div_client.form.div_search.form.Combo00_01.set_index(0);
-	this.Div_client.form.div_search.form.Combo00_02.set_index(0);
 	this.Div_client.form.div_search.form.Combo00_03.set_index(0);
 	this.efn_SetDatasetData(this.ds_cd_0,this.objApp.gds_code,'XN053');		// 발주지점
 };
@@ -203,7 +197,6 @@ this.fn_filter = function ()
 {
 	var schcmbo0 = this.Div_client.form.div_search.form.Combo00_00.value;					
 	var schcmbo1 = this.Div_client.form.div_search.form.Combo00_01.value;						
-	var schcmbo2 = this.Div_client.form.div_search.form.Combo00_02.value;	
 	var schcmbo3 = this.Div_client.form.div_search.form.Combo00_03.value;		
 		
 	var filterstr = "";
@@ -222,12 +215,6 @@ this.fn_filter = function ()
 		else filterstr += " && class_f=='"+schcmbo1+"'";				
 	}	
 	
-	if(!this.gfn_isNull(schcmbo2) && schcmbo2 != "-999")
-	{
-		if(this.gfn_isNull(filterstr))
-			filterstr = "class_g=='"+schcmbo2+"'";
-		else filterstr += " && class_g=='"+schcmbo2+"'";				
-	}	
 	
 	if(!this.gfn_isNull(schcmbo3) && schcmbo3 != "-999")
 	{
@@ -278,10 +265,9 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
         <ColumnInfo>
           <Column id="dept_type" type="STRING" size="50"/>
           <Column id="class_f" type="STRING" size="50"/>
-          <Column id="class_g" type="STRING" size="100"/>
           <Column id="dept_g" type="STRING" size="100"/>
           <Column id="ss_ad" type="BIGDECIMAL" size="100"/>
-          <Column id="ss_mba" type="INT" size="100"/>
+          <Column id="ss_msqty" type="INT" size="100"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cd">
@@ -316,75 +302,83 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
           </Row>
           <Row>
             <Col id="CODE_CODE">0</Col>
-            <Col id="CODE_NAME">S Class</Col>
+            <Col id="CODE_NAME">S1 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">A Class</Col>
+            <Col id="CODE_NAME">S2 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">B Class</Col>
+            <Col id="CODE_NAME">S3 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">C Class</Col>
+            <Col id="CODE_NAME">S4 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">D Class</Col>
+            <Col id="CODE_NAME">A1 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">E Class</Col>
-          </Row>
-        </Rows>
-      </Dataset>
-      <Dataset id="ds_cb1">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">-999</Col>
-            <Col id="CODE_NAME">전체</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
-          </Row>
-          <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
+            <Col id="CODE_NAME">A2 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
+            <Col id="CODE_NAME">B1 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
+            <Col id="CODE_NAME">B2 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
+            <Col id="CODE_NAME">B3 Class</Col>
           </Row>
           <Row>
             <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
+            <Col id="CODE_NAME">B4 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">A</Col>
+            <Col id="CODE_NAME">C1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">B</Col>
+            <Col id="CODE_NAME">C2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">C</Col>
+            <Col id="CODE_NAME">C3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">D</Col>
+            <Col id="CODE_NAME">D1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">E</Col>
+            <Col id="CODE_NAME">D2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">F</Col>
+            <Col id="CODE_NAME">D3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">G</Col>
+            <Col id="CODE_NAME">E1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">H</Col>
+            <Col id="CODE_NAME">E2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">I</Col>
+            <Col id="CODE_NAME">E3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">J</Col>
+            <Col id="CODE_NAME">E4 Class</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -436,7 +430,6 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
           </Row>
         </Rows>
       </Dataset>
-      <Dataset id="ds_cd_0"/>
       <Dataset id="ds_class_0">
         <ColumnInfo>
           <Column id="CODE" type="STRING" size="256"/>
@@ -445,71 +438,83 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
         <Rows>
           <Row>
             <Col id="CODE">0</Col>
-            <Col id="CODE_NAME">S Class</Col>
+            <Col id="CODE_NAME">S1 Class</Col>
           </Row>
           <Row>
             <Col id="CODE">1</Col>
-            <Col id="CODE_NAME">A Class</Col>
+            <Col id="CODE_NAME">S2 Class</Col>
           </Row>
           <Row>
             <Col id="CODE">2</Col>
-            <Col id="CODE_NAME">B Class</Col>
+            <Col id="CODE_NAME">S3 Class</Col>
           </Row>
           <Row>
             <Col id="CODE">3</Col>
-            <Col id="CODE_NAME">C Class</Col>
+            <Col id="CODE_NAME">S4 Class</Col>
           </Row>
           <Row>
             <Col id="CODE">4</Col>
-            <Col id="CODE_NAME">D Class</Col>
+            <Col id="CODE_NAME">A1 Class</Col>
           </Row>
           <Row>
             <Col id="CODE">5</Col>
-            <Col id="CODE_NAME">E Class</Col>
-          </Row>
-        </Rows>
-      </Dataset>
-      <Dataset id="ds_cb1_0">
-        <ColumnInfo>
-          <Column id="CODE_CODE" type="STRING" size="256"/>
-          <Column id="CODE_NAME" type="STRING" size="256"/>
-        </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="CODE_CODE">1</Col>
-            <Col id="CODE_NAME">1 등급</Col>
+            <Col id="CODE_NAME">A2 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">2</Col>
-            <Col id="CODE_NAME">2 등급</Col>
+            <Col id="CODE">6</Col>
+            <Col id="CODE_NAME">B1 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">3</Col>
-            <Col id="CODE_NAME">3 등급</Col>
+            <Col id="CODE">7</Col>
+            <Col id="CODE_NAME">B2 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">4</Col>
-            <Col id="CODE_NAME">4 등급</Col>
+            <Col id="CODE">8</Col>
+            <Col id="CODE_NAME">B3 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">5</Col>
-            <Col id="CODE_NAME">5 등급</Col>
+            <Col id="CODE">9</Col>
+            <Col id="CODE_NAME">B4 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">6</Col>
-            <Col id="CODE_NAME">6 등급</Col>
+            <Col id="CODE">A</Col>
+            <Col id="CODE_NAME">C1 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">7</Col>
-            <Col id="CODE_NAME">7 등급</Col>
+            <Col id="CODE">B</Col>
+            <Col id="CODE_NAME">C2 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">8</Col>
-            <Col id="CODE_NAME">8 등급</Col>
+            <Col id="CODE">C</Col>
+            <Col id="CODE_NAME">C3 Class</Col>
           </Row>
           <Row>
-            <Col id="CODE_CODE">9</Col>
-            <Col id="CODE_NAME">9 등급</Col>
+            <Col id="CODE">D</Col>
+            <Col id="CODE_NAME">D1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">E</Col>
+            <Col id="CODE_NAME">D2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">F</Col>
+            <Col id="CODE_NAME">D3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">G</Col>
+            <Col id="CODE_NAME">E1 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">H</Col>
+            <Col id="CODE_NAME">E2 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">I</Col>
+            <Col id="CODE_NAME">E3 Class</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">J</Col>
+            <Col id="CODE_NAME">E4 Class</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -556,6 +561,12 @@ this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.Clic
             <Col id="CODE_NAME">9 등급</Col>
           </Row>
         </Rows>
+      </Dataset>
+      <Dataset id="ds_cd_0">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
       </Dataset>
     </Objects>
     <Bind>

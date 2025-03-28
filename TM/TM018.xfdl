@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO008" width="820" height="620" titletext="New Form" onload="SO008_onload">
+    <Layouts>
+      <Layout height="620" mobileorientation="landscape" width="820">
+        <Div id="Div_client" taborder="1" text="Div00" left="2" top="0" right="9" bottom="10">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Div id="div_search" taborder="0" left="10" top="10" height="34" right="9" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Button id="btn_del" taborder="1" text="엑셀 다운로드" top="4" width="118" height="24" cssclass="btn_WF_main1" right="10" onclick="Div_client_btn_del_onclick"/>
+                    <Calendar id="cal_startDate" taborder="2" left="91" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="3" text="~" left="210" top="5" width="7" height="18"/>
+                    <Calendar id="cal_endDate" taborder="4" left="222" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static03_00" taborder="5" text="의전본부" left="359" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="cmb_dept01" taborder="6" text="Combo00" left="468" top="5" width="184" height="21" codecolumn="BP_CD" datacolumn="BP_NM" index="-1" type="filterlike" innerdataset="ds_bp" onitemchanged="Div_client_div_search_cmb_dept01_onitemchanged"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static05_00" taborder="2" text="본부 목표 달성현황" left="23" top="51" width="127" height="24" cssclass="sta_WF_title"/>
+              <Edit id="edt_usr0" taborder="3" left="20" width="100" height="20" readonly="true" textAlign="right" top="96"/>
+              <Static id="Static31" taborder="4" text="목표" left="20" top="77" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center"/>
+              <Static id="Static31_00" taborder="5" text="실적" left="119" top="77" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center"/>
+              <Edit id="edt_usr1" taborder="6" left="119" width="100" height="20" readonly="true" textAlign="right" top="96"/>
+              <Edit id="edt_usr2" taborder="7" left="218" width="100" height="20" readonly="true" textAlign="right" top="96"/>
+              <Static id="Static31_01" taborder="8" text="목표대비" left="218" top="77" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center"/>
+              <Grid id="grd_list1" taborder="9" binddataset="ds_list2" scrolltype="both" minwidth="" bottom="0" left="20" top="220" selecttype="cell" autofittype="col" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="top" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" onsummaryclick="Div_client_grd_list_onsummaryclick" width="660">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="0"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                      <Column size="90"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="20" band="head"/>
+                      <Row size="20"/>
+                      <Row size="20" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="사번"/>
+                      <Cell col="1" text="성명"/>
+                      <Cell col="2" text="패키지"/>
+                      <Cell col="3" text="인력지원"/>
+                      <Cell col="4" text="선택지원"/>
+                      <Cell col="5" text="배송"/>
+                      <Cell col="6" text="입관"/>
+                      <Cell col="7" text="환산근무일"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:사번" textAlign="center"/>
+                      <Cell col="1" text="bind:성명" textAlign="center"/>
+                      <Cell col="2" text="bind:패키지"/>
+                      <Cell col="3" text="bind:인력지원"/>
+                      <Cell col="4" text="bind:선택지원"/>
+                      <Cell col="5" text="bind:배송"/>
+                      <Cell col="6" text="bind:입관"/>
+                      <Cell col="7" text="bind:근무일수" textAlign="right" displaytype="mask" maskeditformat="#0.0"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="2"/>
+                      <Cell col="2" text="expr:dataset.getSum(&quot;패키지&quot;)" textAlign="right"/>
+                      <Cell col="3" text="expr:dataset.getSum(&quot;인력지원&quot;)" textAlign="right"/>
+                      <Cell col="4" text="expr:dataset.getSum(&quot;선택지원&quot;)" textAlign="right"/>
+                      <Cell col="5" text="expr:dataset.getSum(&quot;배송&quot;)" textAlign="right"/>
+                      <Cell col="6" text="expr:dataset.getSum(&quot;입관&quot;)" textAlign="right"/>
+                      <Cell col="7" text="expr:dataset.getAvg(&quot;근무일수&quot;)" textAlign="right" maskeditformat="#0.0" displaytype="mask"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="grd_list" taborder="10" scrolltype="both" minwidth="" left="479" oncellclick="grd_list_oncellclick" autosizingtype="none" autosizebandtype="allband" top="51" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="row" autoenter="select" width="199" autofittype="col" onselectchanged="grd_list_onselectchanged" readonly="true" height="162" binddataset="ds_list1">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="120"/>
+                      <Column size="90"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="20"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:BP_NM" treelevel="bind:LEV" textAlign="center"/>
+                      <Cell col="1" text="bind:패키지전환율" treelevel="bind:LEV" textAlign="right" displaytype="normal"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static05_00_00" taborder="11" text="패키지전환율" left="383" top="51" width="97" height="24" cssclass="sta_WF_title"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  신우리데이터 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+
+	//var year = this.gfn_addMonth(sDate,-1).substr(0,4)
+	//var month = this.gfn_addMonth(sDate,-1).substr(4,2)
+	//var lastdate = new Date(year, month, 0).getDate();
+	//var Arg_1 = this.gfn_addMonth(sDate,-1).substr(0,6) + "01";
+	//var Arg_2 = this.gfn_addMonth(sDate,-1).substr(0,6) + lastdate;
+	var Arg_2 = this.gfn_addDate(this.gfn_getDate(),-1);
+	var Arg_1 = this.gfn_addMonth(Arg_2,0).substr(0,6) + "01";
+	var id = "TM018_S02";
+	var url = "svcUrl::TM018_S02";
+	var inDs = "";
+	var outDs = "ds_bp=ds_list";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
+	var callBackid = "fn_aftersearchComm";
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);	
+};
+
+this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	this.Div_client.form.div_search.form.cmb_dept01.set_index(0);
+	
+	this.fn_search();
+}
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	//var sDate = this.gfn_getDate();
+	var sDate = this.gfn_addDate(this.gfn_getDate(),-1);
+	//
+	var fDate = this.gfn_addMonth(sDate,0).substr(0,6) + "01";
+	//var fDate = this.gfn_getDate();
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{	
+	//var args1 = this.Div_client.form.div_search.form.cal_startDate.value;
+	//var args2 = this.Div_client.form.div_search.form.cal_endDate.value;
+	//var args3 = this.gfn_nvl(this.ds_bp.getColumn(0,"BP_CD"),"");
+	
+	var Arg_1 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_2 = this.ds_cond.getColumn(0,"END_DATE");
+	var Arg_3 = this.ds_cond.getColumn(0,"BP_CD");
+	
+	// 조회
+	var id = "TM018_S01";
+	var url = "svcUrl::TM018_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list ds_list1=ds_list1 ds_list2=ds_list2";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+" BP_CD="+Arg_3+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_btn_del_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list1, "*?*?*?*?*?*?*?","");
+};
+
+
+this.Div_client_div_search_cmb_dept01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="목표" type="INT" size="200"/>
+          <Column id="실적" type="INT" size="40"/>
+          <Column id="잔여" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_bp">
+        <ColumnInfo>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="sumcnt" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+          <Column id="BP_CD" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+            <Col id="BP_CD"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list1">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="패키지전환율" type="STRING" size="11"/>
+          <Column id="합계" type="INT" size="11"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_list2">
+        <ColumnInfo>
+          <Column id="사번" type="STRING" size="20"/>
+          <Column id="성명" type="STRING" size="200"/>
+          <Column id="배송" type="INT" size="11"/>
+          <Column id="인력지원" type="INT" size="11"/>
+          <Column id="선택지원" type="INT" size="11"/>
+          <Column id="입관" type="INT" size="11"/>
+          <Column id="패키지" type="INT" size="11"/>
+          <Column id="근무일수" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div00.form.cal_startDate00" propid="value" datasetid="ds_list_1" columnid="CONT_DT"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item4" compid="Div_client.form.edt_usr0" propid="value" datasetid="ds_list" columnid="목표"/>
+      <BindItem id="item5" compid="Div00.form.edt_usr1_00" propid="value" datasetid="ds_list_1" columnid="dlvy_nm"/>
+      <BindItem id="item6" compid="Div00.form.edt_usr1_00_00" propid="value" datasetid="ds_list_1" columnid="m_room_no"/>
+      <BindItem id="item7" compid="Div00.form.edt_usr1_01" propid="value" datasetid="ds_list_1" columnid="hs_nm"/>
+      <BindItem id="item8" compid="Div00.form.edt_usr1_00_01" propid="value" datasetid="ds_list_1" columnid="EMP_NM"/>
+      <BindItem id="item9" compid="Div00.form.edt_usr1_00_00_00" propid="value" datasetid="ds_list_1" columnid="HAND_TEL_NO"/>
+      <BindItem id="item10" compid="Div00.form.edt_usr1_00_01_00" propid="value" datasetid="ds_list_1" columnid="BP_NM"/>
+      <BindItem id="item11" compid="Div00.form.edt_usr1_01_00" propid="value" datasetid="ds_list_1" columnid="BP_FULL_NM"/>
+      <BindItem id="item12" compid="Div00.form.edt_usr1_01_00_00" propid="value" datasetid="ds_list_1" columnid="AD_NM"/>
+      <BindItem id="item13" compid="Div00.form.edt_usr1_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="ITEM_NM"/>
+      <BindItem id="item14" compid="Div_client.form.edt_usr1" propid="value" datasetid="ds_list" columnid="실적"/>
+      <BindItem id="item15" compid="Div_client.form.edt_usr2" propid="value" datasetid="ds_list" columnid="잔여"/>
+      <BindItem id="item23" compid="Div_client.form.div_search.form.cmb_dept01" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

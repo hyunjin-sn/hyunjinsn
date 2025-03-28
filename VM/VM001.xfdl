@@ -501,7 +501,7 @@ this.VM001_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 		this.fn_search(this.objApp.gds_so_no.getColumn(0,"SO_NO"));
 		// 20230814_김상훈 추가
 		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
-		if (deptCd == "H4400" || deptCd == "H4410" || deptCd == "H5290")
+		if (deptCd == "H4400" || deptCd == "H4410" || deptCd == "H5290" || deptCd == "H5210" || deptCd == "H9600" )
 		{
 			this.btn_telInfo.set_visible(true);
 		} else
@@ -810,7 +810,7 @@ this.fn_delete = function ()
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	
 	//if (deptCd == "H2610" || deptCd == "H1430")    20230814_김상훈
-	if (deptCd == "H4400" || deptCd == "H4410" || deptCd == "H5290")
+	if (deptCd == "H4400" || deptCd == "H4410" || deptCd == "H5290" || deptCd == "H4210")
 	{
 		if (this.confirm("삭제 하시겠습니까?"))
 		{
@@ -846,7 +846,6 @@ this.Div06_btn_sono_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventIn
 this.fn_popupCallback_so = function(sPopId, sRtn)
 {
 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
-	
     var objRtn = JSON.parse(sRtn);
 	
 	this.ds_list_1.setColumn(this.ds_list_1.rowposition,"SO_NO",objRtn.SO_NO);

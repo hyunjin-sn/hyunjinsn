@@ -1168,7 +1168,7 @@ this.fn_aftersearchComm = function (strSvcID, nErrorCode, strErrorMag)
 	2023-08-18 홍진수 대리 작업진행
 	H4200 : 의전관리실
 	*/	
-	if (deptCd == "H4130" || deptCd == "H4410" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5000" || deptCd == "H4400" || deptCd == "H4420" || deptCd == "H4200")
+	if (deptCd == "H5290" || deptCd == "H4410" || deptCd == "H4000" || deptCd == "H4210" || deptCd == "H5000" || deptCd == "H4400" || deptCd == "H4420" || deptCd == "H4200" || deptCd == "H4360" || deptCd == "H5210")
 	{
 		this.ds_poBp.insertRow(0);
 		this.ds_poBp.setColumn(0,"BP_CD","-999");

@@ -41,6 +41,7 @@
                       <Column size="68"/>
                       <Column size="197"/>
                       <Column size="54"/>
+                      <Column size="54"/>
                       <Column size="80"/>
                       <Column size="74"/>
                       <Column size="80"/>
@@ -101,54 +102,55 @@
                       <Cell col="2" text="고객사코드"/>
                       <Cell col="3" text="고객사명"/>
                       <Cell col="4" text="대상자"/>
-                      <Cell col="5" text="경조사유"/>
-                      <Cell col="6" text="배송지코드"/>
-                      <Cell col="7" text="장례식장"/>
-                      <Cell col="8" text="구분"/>
-                      <Cell col="9" text="상품명"/>
-                      <Cell col="10" text="지원내역"/>
-                      <Cell col="11" text="본부코드"/>
-                      <Cell col="12" text="의전본부"/>
-                      <Cell col="13" text="본부비율"/>
-                      <Cell col="14" text="의전팀장"/>
-                      <Cell col="15" text="실비청구여부"/>
-                      <Cell col="16" text="본부구분"/>
-                      <Cell col="17" text="패키지금액"/>
-                      <Cell col="18" text="회사지원금액"/>
-                      <Cell col="19" text="행사차감액"/>
-                      <Cell col="20" text="공제금액"/>
-                      <Cell col="21" text="정산기준금액"/>
-                      <Cell col="22" text="기본패키지금액"/>
-                      <Cell col="23" text="기본매입금액"/>
-                      <Cell col="24" text="기본본부이익"/>
-                      <Cell col="25" text="기본본사이익"/>
-                      <Cell col="26" text="추가매출금액"/>
-                      <Cell col="27" text="추가매입금액"/>
-                      <Cell col="28" text="추가이익본부"/>
-                      <Cell col="29" text="추가이익본사"/>
-                      <Cell col="30" text="대체매출금액"/>
-                      <Cell col="31" text="대체매입금액"/>
-                      <Cell col="32" text="대체이익본부"/>
-                      <Cell col="33" text="대체이익본사"/>
-                      <Cell col="34" text="매출합계"/>
-                      <Cell col="35" text="매입합계"/>
-                      <Cell col="36" text="본부이익합계"/>
-                      <Cell col="37" text="본사이익합계"/>
-                      <Cell col="38" text="본부수령액"/>
-                      <Cell col="39" text="본부정산액"/>
-                      <Cell col="40" text="현금결제액"/>
-                      <Cell col="41" text="카드결제액"/>
-                      <Cell col="42" text="고객결제금액"/>
-                      <Cell col="43" text="관리사위탁비"/>
-                      <Cell col="44" text="지도사근무비"/>
-                      <Cell col="45" text="배송료"/>
-                      <Cell col="46" text="RT"/>
-                      <Cell col="47" text="본사이익조정"/>
-                      <Cell col="48" text="기타원가"/>
-                      <Cell col="49" text="기타매출"/>
-                      <Cell col="50" text="비고_본부"/>
-                      <Cell col="51" text="비고_본사"/>
-                      <Cell col="52" text="주문품목명"/>
+                      <Cell col="5" text="주문자"/>
+                      <Cell col="6" text="경조사유"/>
+                      <Cell col="7" text="배송지코드"/>
+                      <Cell col="8" text="장례식장"/>
+                      <Cell col="9" text="구분"/>
+                      <Cell col="10" text="상품명"/>
+                      <Cell col="11" text="지원내역"/>
+                      <Cell col="12" text="본부코드"/>
+                      <Cell col="13" text="의전본부"/>
+                      <Cell col="14" text="본부비율"/>
+                      <Cell col="15" text="의전팀장"/>
+                      <Cell col="16" text="실비청구여부"/>
+                      <Cell col="17" text="본부구분"/>
+                      <Cell col="18" text="패키지금액"/>
+                      <Cell col="19" text="회사지원금액"/>
+                      <Cell col="20" text="행사차감액"/>
+                      <Cell col="21" text="공제금액"/>
+                      <Cell col="22" text="정산기준금액"/>
+                      <Cell col="23" text="기본패키지금액"/>
+                      <Cell col="24" text="기본매입금액"/>
+                      <Cell col="25" text="기본본부이익"/>
+                      <Cell col="26" text="기본본사이익"/>
+                      <Cell col="27" text="추가매출금액"/>
+                      <Cell col="28" text="추가매입금액"/>
+                      <Cell col="29" text="추가이익본부"/>
+                      <Cell col="30" text="추가이익본사"/>
+                      <Cell col="31" text="대체매출금액"/>
+                      <Cell col="32" text="대체매입금액"/>
+                      <Cell col="33" text="대체이익본부"/>
+                      <Cell col="34" text="대체이익본사"/>
+                      <Cell col="35" text="매출합계"/>
+                      <Cell col="36" text="매입합계"/>
+                      <Cell col="37" text="본부이익합계"/>
+                      <Cell col="38" text="본사이익합계"/>
+                      <Cell col="39" text="본부수령액"/>
+                      <Cell col="40" text="본부정산액"/>
+                      <Cell col="41" text="현금결제액"/>
+                      <Cell col="42" text="카드결제액"/>
+                      <Cell col="43" text="고객결제금액"/>
+                      <Cell col="44" text="관리사위탁비"/>
+                      <Cell col="45" text="지도사근무비"/>
+                      <Cell col="46" text="배송료"/>
+                      <Cell col="47" text="RT"/>
+                      <Cell col="48" text="본사이익조정"/>
+                      <Cell col="49" text="기타원가"/>
+                      <Cell col="50" text="기타매출"/>
+                      <Cell col="51" text="비고_본부"/>
+                      <Cell col="52" text="비고_본사"/>
+                      <Cell col="53" text="주문품목명"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -156,54 +158,55 @@
                       <Cell col="2" text="bind:고객사코드" tooltiptext="bind:고객사코드" textAlign="center"/>
                       <Cell col="3" text="bind:고객사명" tooltiptext="bind:고객사명"/>
                       <Cell col="4" text="bind:대상자" textAlign="center"/>
-                      <Cell col="5" text="bind:경조사유" tooltiptext="bind:경조사유"/>
-                      <Cell col="6" text="bind:배송지코드" tooltiptext="bind:배송지코드" textAlign="center"/>
-                      <Cell col="7" text="bind:장례식장" tooltiptext="bind:장례식장"/>
-                      <Cell col="8" text="bind:구분" tooltiptext="bind:구분"/>
-                      <Cell col="9" text="bind:패키지명" tooltiptext="bind:패키지명"/>
-                      <Cell col="10" text="bind:지원내역" tooltiptext="bind:지원내역"/>
-                      <Cell col="11" text="bind:본부코드" textAlign="center"/>
-                      <Cell col="12" text="bind:의전본부" textAlign="center"/>
-                      <Cell col="13" text="bind:본부비율" textAlign="center" displaytype="mask" maskeditformat="##.0"/>
-                      <Cell col="14" text="bind:의전팀장" textAlign="center"/>
-                      <Cell col="15" text="bind:실비청구업체 여부" textAlign="center"/>
-                      <Cell col="16" text="bind:본부구분" textAlign="center"/>
-                      <Cell col="17" text="bind:패키지금액" displaytype="number"/>
-                      <Cell col="18" text="bind:회사지원금액"/>
-                      <Cell col="19" text="bind:행사차감액"/>
-                      <Cell col="20" text="bind:공제금액"/>
-                      <Cell col="21" text="bind:정산기준금액"/>
-                      <Cell col="22" text="bind:기본패키지금액"/>
-                      <Cell col="23" text="bind:기본매입금액"/>
-                      <Cell col="24" text="bind:기본본부이익"/>
-                      <Cell col="25" text="bind:기본본사이익"/>
-                      <Cell col="26" text="bind:추가매출금액"/>
-                      <Cell col="27" text="bind:추가매입금액"/>
-                      <Cell col="28" text="bind:추가이익본부"/>
-                      <Cell col="29" text="bind:추가이익본사"/>
-                      <Cell col="30" text="bind:대체매출금액"/>
-                      <Cell col="31" text="bind:대체매입금액"/>
-                      <Cell col="32" text="bind:대체이익본부"/>
-                      <Cell col="33" text="bind:대체이익본사"/>
-                      <Cell col="34" text="bind:매출합계"/>
-                      <Cell col="35" text="bind:총매입액"/>
-                      <Cell col="36" text="bind:본부이익합계"/>
-                      <Cell col="37" text="bind:본사이익합계"/>
-                      <Cell col="38" text="bind:본부수령액"/>
-                      <Cell col="39" text="bind:본부정산액"/>
-                      <Cell col="40" text="bind:현금결제액"/>
-                      <Cell col="41" text="bind:카드결제액"/>
-                      <Cell col="42" text="bind:고객결제금액"/>
-                      <Cell col="43" text="bind:관리사위탁비"/>
-                      <Cell col="44" text="bind:지도사근무비"/>
-                      <Cell col="45" text="bind:배송료"/>
-                      <Cell col="46" text="bind:RT"/>
-                      <Cell col="47" text="bind:본사이익조정"/>
-                      <Cell col="48" text="bind:기타원가"/>
-                      <Cell col="49" text="bind:기타매출"/>
-                      <Cell col="50" text="bind:비고_본부"/>
-                      <Cell col="51" text="bind:비고_본사"/>
-                      <Cell col="52" text="bind:주문품목명"/>
+                      <Cell col="5" text="bind:주문자" textAlign="center"/>
+                      <Cell col="6" text="bind:경조사유" tooltiptext="bind:경조사유"/>
+                      <Cell col="7" text="bind:배송지코드" tooltiptext="bind:배송지코드" textAlign="center"/>
+                      <Cell col="8" text="bind:장례식장" tooltiptext="bind:장례식장"/>
+                      <Cell col="9" text="bind:구분" tooltiptext="bind:구분"/>
+                      <Cell col="10" text="bind:패키지명" tooltiptext="bind:패키지명"/>
+                      <Cell col="11" text="bind:지원내역" tooltiptext="bind:지원내역"/>
+                      <Cell col="12" text="bind:본부코드" textAlign="center"/>
+                      <Cell col="13" text="bind:의전본부" textAlign="center"/>
+                      <Cell col="14" text="bind:본부비율" textAlign="center" displaytype="mask" maskeditformat="##.0"/>
+                      <Cell col="15" text="bind:의전팀장" textAlign="center"/>
+                      <Cell col="16" text="bind:실비청구업체 여부" textAlign="center"/>
+                      <Cell col="17" text="bind:본부구분" textAlign="center"/>
+                      <Cell col="18" text="bind:패키지금액" displaytype="number"/>
+                      <Cell col="19" text="bind:회사지원금액"/>
+                      <Cell col="20" text="bind:행사차감액"/>
+                      <Cell col="21" text="bind:공제금액"/>
+                      <Cell col="22" text="bind:정산기준금액"/>
+                      <Cell col="23" text="bind:기본패키지금액"/>
+                      <Cell col="24" text="bind:기본매입금액"/>
+                      <Cell col="25" text="bind:기본본부이익"/>
+                      <Cell col="26" text="bind:기본본사이익"/>
+                      <Cell col="27" text="bind:추가매출금액"/>
+                      <Cell col="28" text="bind:추가매입금액"/>
+                      <Cell col="29" text="bind:추가이익본부"/>
+                      <Cell col="30" text="bind:추가이익본사"/>
+                      <Cell col="31" text="bind:대체매출금액"/>
+                      <Cell col="32" text="bind:대체매입금액"/>
+                      <Cell col="33" text="bind:대체이익본부"/>
+                      <Cell col="34" text="bind:대체이익본사"/>
+                      <Cell col="35" text="bind:매출합계"/>
+                      <Cell col="36" text="bind:총매입액"/>
+                      <Cell col="37" text="bind:본부이익합계"/>
+                      <Cell col="38" text="bind:본사이익합계"/>
+                      <Cell col="39" text="bind:본부수령액"/>
+                      <Cell col="40" text="bind:본부정산액"/>
+                      <Cell col="41" text="bind:현금결제액"/>
+                      <Cell col="42" text="bind:카드결제액"/>
+                      <Cell col="43" text="bind:고객결제금액"/>
+                      <Cell col="44" text="bind:관리사위탁비"/>
+                      <Cell col="45" text="bind:지도사근무비"/>
+                      <Cell col="46" text="bind:배송료"/>
+                      <Cell col="47" text="bind:RT"/>
+                      <Cell col="48" text="bind:본사이익조정"/>
+                      <Cell col="49" text="bind:기타원가"/>
+                      <Cell col="50" text="bind:기타매출"/>
+                      <Cell col="51" text="bind:비고_본부"/>
+                      <Cell col="52" text="bind:비고_본사"/>
+                      <Cell col="53" text="bind:주문품목명"/>
                     </Band>
                     <Band id="summary">
                       <Cell/>
@@ -223,42 +226,43 @@
                       <Cell col="14"/>
                       <Cell col="15"/>
                       <Cell col="16"/>
-                      <Cell col="17" text="expr:dataset.getSum(&quot;패키지금액&quot;)" maskeditformat="##,##0" displaytype="mask" textAlign="right"/>
-                      <Cell col="18" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;회사지원금액&quot;)"/>
-                      <Cell col="19" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;행사차감액&quot;)"/>
-                      <Cell col="20" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;공제금액&quot;)"/>
-                      <Cell col="21" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;정산기준금액&quot;)"/>
-                      <Cell col="22" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본패키지금액&quot;)"/>
-                      <Cell col="23" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본매입금액&quot;)"/>
-                      <Cell col="24" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본부이익&quot;)"/>
-                      <Cell col="25" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본사이익&quot;)"/>
-                      <Cell col="26" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매출금액&quot;)"/>
-                      <Cell col="27" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매입금액&quot;)"/>
-                      <Cell col="28" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본부&quot;)"/>
-                      <Cell col="29" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본사&quot;)"/>
-                      <Cell col="30" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매출금액&quot;)"/>
-                      <Cell col="31" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매입금액&quot;)"/>
-                      <Cell col="32" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본부&quot;)"/>
-                      <Cell col="33" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본사&quot;)"/>
-                      <Cell col="34" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;매출합계&quot;)"/>
-                      <Cell col="35" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;총매입액&quot;)"/>
-                      <Cell col="36" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부이익합계&quot;)"/>
-                      <Cell col="37" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익합계&quot;)"/>
-                      <Cell col="38" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부수령액&quot;)"/>
-                      <Cell col="39" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부정산액&quot;)"/>
-                      <Cell col="40" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;현금결제액&quot;)"/>
-                      <Cell col="41" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;카드결제액&quot;)"/>
-                      <Cell col="42" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;고객결제금액&quot;)"/>
-                      <Cell col="43" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;관리사위탁비&quot;)"/>
-                      <Cell col="44" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;지도사근무비&quot;)"/>
-                      <Cell col="45" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;배송료&quot;)"/>
-                      <Cell col="46" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;RT&quot;)"/>
-                      <Cell col="47" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익조정&quot;)"/>
-                      <Cell col="48" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타원가&quot;)"/>
-                      <Cell col="49" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타매출&quot;)"/>
-                      <Cell col="50"/>
+                      <Cell col="17"/>
+                      <Cell col="18" text="expr:dataset.getSum(&quot;패키지금액&quot;)" maskeditformat="##,##0" displaytype="mask" textAlign="right"/>
+                      <Cell col="19" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;회사지원금액&quot;)"/>
+                      <Cell col="20" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;행사차감액&quot;)"/>
+                      <Cell col="21" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;공제금액&quot;)"/>
+                      <Cell col="22" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;정산기준금액&quot;)"/>
+                      <Cell col="23" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본패키지금액&quot;)"/>
+                      <Cell col="24" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본매입금액&quot;)"/>
+                      <Cell col="25" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본부이익&quot;)"/>
+                      <Cell col="26" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기본본사이익&quot;)"/>
+                      <Cell col="27" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매출금액&quot;)"/>
+                      <Cell col="28" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가매입금액&quot;)"/>
+                      <Cell col="29" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본부&quot;)"/>
+                      <Cell col="30" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;추가이익본사&quot;)"/>
+                      <Cell col="31" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매출금액&quot;)"/>
+                      <Cell col="32" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체매입금액&quot;)"/>
+                      <Cell col="33" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본부&quot;)"/>
+                      <Cell col="34" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;대체이익본사&quot;)"/>
+                      <Cell col="35" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;매출합계&quot;)"/>
+                      <Cell col="36" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;총매입액&quot;)"/>
+                      <Cell col="37" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부이익합계&quot;)"/>
+                      <Cell col="38" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익합계&quot;)"/>
+                      <Cell col="39" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부수령액&quot;)"/>
+                      <Cell col="40" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본부정산액&quot;)"/>
+                      <Cell col="41" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;현금결제액&quot;)"/>
+                      <Cell col="42" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;카드결제액&quot;)"/>
+                      <Cell col="43" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;고객결제금액&quot;)"/>
+                      <Cell col="44" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;관리사위탁비&quot;)"/>
+                      <Cell col="45" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;지도사근무비&quot;)"/>
+                      <Cell col="46" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;배송료&quot;)"/>
+                      <Cell col="47" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;RT&quot;)"/>
+                      <Cell col="48" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;본사이익조정&quot;)"/>
+                      <Cell col="49" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타원가&quot;)"/>
+                      <Cell col="50" displaytype="mask" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기타매출&quot;)"/>
                       <Cell col="51"/>
                       <Cell col="52"/>
+                      <Cell col="53"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -504,6 +508,7 @@ this.Div_client_div_search_cmb_insrtUser_onitemchanged = function(obj:nexacro.Co
           <Column id="주문품목명" type="STRING" size="1073741823"/>
           <Column id="고객사코드" type="STRING" size="256"/>
           <Column id="배송지코드" type="STRING" size="256"/>
+          <Column id="주문자" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">

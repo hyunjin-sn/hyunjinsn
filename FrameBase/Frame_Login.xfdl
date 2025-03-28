@@ -166,12 +166,33 @@ this.fn_afterLogin = function(){
 		this.fn_gdsSet();
 		this.fn_setFrame();	
 		return;	
-	} else	//실패
+	} else if (result == "CHG")
+	{
+		this.alert(result_txt);	
+		
+		var usrId = this.div_login.form.edt_id.value;
+		var usrNm = "";
+		
+		var bpCd = "";
+				
+		var sPopupId  = "chgPw_popup";
+		var sUrl      = "Comm::Comm_LoginPasswordChg.xfdl";
+		var oArg      = {usrId : usrId, usrNm : usrNm};
+		var sCallBack = "fn_popupCallback_chgPw";
+		var oOption   = {title : "암호 변경"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+	} else //실패
 	{
 		this.ds_result.clearData();
 		this.div_login.form.edt_pw.set_value("");
 		this.alert(result_txt);		
 	}
+}
+
+// 비밀번호변경 팝업 callback
+this.fn_popupCallback_chgPw = function(sPopId, sRtn)
+{
+    //var objRtn = JSON.parse(sRtn);
 }
 
 /**

@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO021" width="1315" height="630" titletext="New Form" onload="SO021_onload">
+    <Layouts>
+      <Layout height="630" mobileorientation="landscape" width="1315">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="40" right="0" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03_00" taborder="0" text="데이터 생성일시" left="10" top="4" width="138" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <MaskEdit id="MaskEdit00" taborder="1" left="138" top="4" width="127" height="21" type="string" format="####-##-## ##:##:##" textAlign="left" readonly="true"/>
+                    <Button id="btn_excel" taborder="2" top="6" height="20" text="엑셀 저장" cssclass="btn_WF_main1" right="6" onclick="Div_client_div_search_btn_excel_onclick" width="70"/>
+                    <Static id="Static03_01" taborder="3" text="지점명" left="269" top="4" width="78" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" onclick="Div_client_div_search_Static03_01_onclick"/>
+                    <Edit id="edt_sono00" taborder="4" left="351" top="4" width="174" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup" inputmode="upper"/>
+                    <Static id="Static03_01_00" taborder="5" text="지점구분" left="529" top="4" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo01" taborder="6" text="Combo00" left="623" top="4" width="104" height="21" innerdataset="ds_cond1" codecolumn="CODE_CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo01_onitemchanged"/>
+                    <Static id="Static03_01_00_01" taborder="7" text="지점등급" left="730" top="5" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Combo id="Combo02" taborder="8" text="Combo00" left="824" top="5" width="104" height="21" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo02_onitemchanged" innerdataset="ds_class"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="-5"/>
+              <Static id="Static03" taborder="2" left="0" top="49" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="0"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="60" right="0" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="col" summarytype="top" oncelldblclick="Div_client_grd_list_oncelldblclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                      <Column size="200"/>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="30" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="순번"/>
+                      <Cell col="1" rowspan="2" text="지점코드"/>
+                      <Cell col="2" rowspan="2" text="지점명"/>
+                      <Cell col="3" rowspan="2" text="등급"/>
+                      <Cell col="4" colspan="2" text="기준출고량"/>
+                      <Cell col="6" rowspan="2" text="발생&#13;&#10;탁송량&#13;&#10;(30일)"/>
+                      <Cell col="7" rowspan="2" text="공급&#13;&#10;탁송량&#13;&#10;(30일)"/>
+                      <Cell col="8" colspan="6" text="본부지점"/>
+                      <Cell col="14" text="파주"/>
+                      <Cell col="15" colspan="3" text="보유현황"/>
+                      <Cell row="1" col="4" text="출고량"/>
+                      <Cell row="1" col="5" text="월평균&#13;&#10;출고량"/>
+                      <Cell row="1" col="8" text="현재고"/>
+                      <Cell row="1" col="9" text="NEW&#13;&#10;안전재고"/>
+                      <Cell row="1" col="10" text="기존&#13;&#10;안전재고"/>
+                      <Cell row="1" col="11" text="안전재고&#13;&#10;차이"/>
+                      <Cell row="1" col="12" text="부족수량"/>
+                      <Cell row="1" col="13" text="과보유&#13;&#10;수량"/>
+                      <Cell row="1" col="14" text="이동중&#13;&#10;재고"/>
+                      <Cell row="1" col="15" text="총 가능수량"/>
+                      <Cell row="1" col="16" text="보유수량"/>
+                      <Cell row="1" col="17" text="보유율(%)"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="1" text="bind:지점코드" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="2" text="bind:지점명" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" tooltiptext="bind:지점명"/>
+                      <Cell col="3" text="bind:등급" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="4" text="bind:표준출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="5" text="bind:기준출고량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0.00"/>
+                      <Cell col="6" text="bind:도착탁송량" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="7" text="bind:탁송량" cssclass="expr:comp.parent.parent.parent.fn_test1(currow)"/>
+                      <Cell col="8" text="bind:지점현재고_ORIGIN" cssclass="expr:comp.parent.parent.parent.fn_color(currow)"/>
+                      <Cell col="9" text="bind:안전재고ERP" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="10" text="bind:기존안전재고" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="11" text="bind:안전재고차이" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="12" text="bind:부족수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="13" text="bind:과보유수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="14" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" text="bind:이동중재고"/>
+                      <Cell col="15" text="bind:보유가능수량" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0" textAlign="right"/>
+                      <Cell col="16" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0" textAlign="right" text="bind:지점현재고_ORIGIN"/>
+                      <Cell col="17" cssclass="expr:comp.parent.parent.parent.fn_color(currow)" displaytype="mask" maskeditformat="##,##0.0" textAlign="right" text="bind:보유율"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="3" text="합   계" textAlign="right"/>
+                      <Cell col="3"/>
+                      <Cell col="4" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;표준출고량&quot;)" displaytype="mask"/>
+                      <Cell col="5" textAlign="right" maskeditformat="##,###" text="expr:dataset.getSum(&quot;기준출고량&quot;)" displaytype="mask"/>
+                      <Cell col="6" text="expr:dataset.getSum(&quot;도착탁송량&quot;)" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="7" text="expr:dataset.getSum(&quot;탁송량&quot;)" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;지점현재고_ORIGIN&quot;)" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
+                      <Cell col="9" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;안전재고ERP&quot;)" displaytype="mask"/>
+                      <Cell col="10" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;기존안전재고&quot;)" displaytype="mask"/>
+                      <Cell col="11" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;안전재고차이&quot;)" displaytype="mask"/>
+                      <Cell col="12" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;부족수량&quot;)" displaytype="mask"/>
+                      <Cell col="13" textAlign="right" maskeditformat="##,##0" text="expr:dataset.getSum(&quot;과보유수량&quot;)" displaytype="mask"/>
+                      <Cell col="14" textAlign="right" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;이동중재고&quot;)"/>
+                      <Cell col="15" textAlign="right" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;보유가능수량&quot;)"/>
+                      <Cell col="16" textAlign="right" displaytype="mask" maskeditformat="##,###" text="expr:dataset.getSum(&quot;지점현재고_ORIGIN&quot;)"/>
+                      <Cell col="17" textAlign="right" displaytype="mask" maskeditformat="##,###"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  지점별 용품만매/재고현황 조회
+*  @MenuPath    SO > SO021
+*  @FileName 	SO021.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2022.04.20
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO021_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.Div_client.form.div_search.form.Combo01.set_index(0);
+	this.Div_client.form.div_search.form.Combo02.set_index(0);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+//콤보세팅
+this.fn_setCombo = function (obj)
+{
+	
+};
+
+this.fn_search = function ()
+{
+	// 조회
+	var id = "SO027_T_S02";
+	var url = "svcUrl::SO027_T_S02";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+
+	trace(this.ds_list.getColumn(0,"INSRT_DT"))
+	this.Div_client.form.div_search.form.MaskEdit00.set_value(this.ds_list.getColumn(0,"INSRT_DT"));
+	
+	this.fn_filter();
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   		2019.06.25
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_filter();
+	}	
+};
+
+this.Div_client_div_search_cmb_insrtUser_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfn_excelExport(this.Div_client.form.grd_list, "*?*?*?*?*?*?*?","");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var slCd = this.ds_list.getColumn(this.ds_list.rowposition,"지점코드");
+	
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+};
+
+this.fn_filter = function ()
+{
+	
+	var slNm = this.Div_client.form.div_search.form.edt_sono00.text;							// 지점
+	var slcode = this.Div_client.form.div_search.form.Combo01.value;							// 지점구분코드
+	var cls = this.Div_client.form.div_search.form.Combo02.value;								// 클래스
+		
+	var filterstr = "";
+	
+	
+	//지점명
+	if(!this.gfn_isNull(slNm))
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "지점명.indexOf('"+slNm+"')!='-1'";
+		else
+			filterstr += " && 지점명.indexOf('"+slNm+"')!='-1'";				
+	}
+	
+	//지점구분
+	if(!this.gfn_isNull(slcode) && slcode != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "지점코드.indexOf('"+slcode+"')!='-1'";
+		else 
+			filterstr += " && 지점코드.indexOf('"+slcode+"')!='-1'";			
+	}
+	
+	
+	//등급
+	if(!this.gfn_isNull(cls) && cls != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "등급=='"+cls+"'";
+		else filterstr += " && 등급=='"+cls+"'";				
+	}
+	
+	this.ds_list.set_filterstr(filterstr);
+};
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+
+this.Div_client_div_search_Combo01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+this.Div_client_div_search_Combo02_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_filter();
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="지점코드" type="STRING" size="20"/>
+          <Column id="지점명" type="STRING" size="200"/>
+          <Column id="지점현재고_ORIGIN" type="BIGDECIMAL" size="20"/>
+          <Column id="표준출고량" type="BIGDECIMAL" size="40"/>
+          <Column id="기준출고량" type="BIGDECIMAL" size="40"/>
+          <Column id="탁송량" type="BIGDECIMAL" size="40"/>
+          <Column id="부족수량" type="BIGDECIMAL" size="40"/>
+          <Column id="과보유수량" type="BIGDECIMAL" size="40"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="보유가능수량" type="BIGDECIMAL" size="20"/>
+          <Column id="등급" type="STRING" size="5"/>
+          <Column id="안전재고ERP" type="BIGDECIMAL" size="20"/>
+          <Column id="보유율" type="BIGDECIMAL" size="40"/>
+          <Column id="도착탁송량" type="BIGDECIMAL" size="40"/>
+          <Column id="기존안전재고" type="BIGDECIMAL" size="40"/>
+          <Column id="안전재고차이" type="BIGDECIMAL" size="40"/>
+          <Column id="이동중재고" type="BIGDECIMAL" size="40"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond1">
+        <ColumnInfo>
+          <Column id="CODE_CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE_CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">B</Col>
+            <Col id="CODE_NAME">플라워</Col>
+          </Row>
+          <Row>
+            <Col id="CODE_CODE">C</Col>
+            <Col id="CODE_NAME">의전</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">1</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">2</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="CODE_NAME">3</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="CODE_NAME">4</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="CODE_NAME">5</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="CODE_NAME">6</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">7</Col>
+            <Col id="CODE_NAME">7</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">8</Col>
+            <Col id="CODE_NAME">8</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_class1">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">1</Col>
+            <Col id="CODE_NAME">1</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">2</Col>
+            <Col id="CODE_NAME">2</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">3</Col>
+            <Col id="CODE_NAME">3</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">4</Col>
+            <Col id="CODE_NAME">4</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">5</Col>
+            <Col id="CODE_NAME">5</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">6</Col>
+            <Col id="CODE_NAME">6</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">7</Col>
+            <Col id="CODE_NAME">7</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">8</Col>
+            <Col id="CODE_NAME">8</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

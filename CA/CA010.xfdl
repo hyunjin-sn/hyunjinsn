@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM008" width="1020" height="600" titletext="New Form" onload="CM008_onload">
+    <Layouts>
+      <Layout height="600" mobileorientation="landscape" width="1020">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="-5" bottom="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="32" right="15" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="&lt;DesignFormClipBoard version=&quot;1.0&quot;&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;-2,4,103,25&quot;&gt;&#10;      &lt;Static id=&quot;Static00_01&quot; taborder=&quot;4&quot; text=&quot;&amp;#xC8FC;&amp;#xBB38;&amp;#xC77C;&amp;#xC2DC;&quot; left=&quot;-2&quot; top=&quot;4&quot; width=&quot;105&quot; height=&quot;21&quot; leftbase=&quot;&quot; topbase=&quot;&quot; bottombase=&quot;&quot; rightbase=&quot;&quot; widthbase=&quot;&quot; heightbase=&quot;&quot; cssclass=&quot;sta_WF_searchLabel&quot;/&gt;&#10;    &lt;/Component&gt;&#10;  &lt;/Copydata&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;98,4,208,25&quot;&gt;&#10;      &lt;Calendar id=&quot;cal_startDate&quot; taborder=&quot;5&quot; left=&quot;98&quot; top=&quot;4&quot; width=&quot;110&quot; height=&quot;21&quot; dateformat=&quot;yyyy-MM-dd&quot; autoselect=&quot;true&quot;/&gt;&#10;    &lt;/Component&gt;&#10;    &lt;Bind&gt;&#10;      &lt;BindItem id=&quot;item3&quot; compid=&quot;cal_startDate&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;START_DATE&quot;/&gt;&#10;      &lt;BindItem id=&quot;item7&quot; compid=&quot;Div_client.form.div_search.form.cal_startDate2&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;START_DATE2&quot;/&gt;&#10;    &lt;/Bind&gt;&#10;  &lt;/Copydata&gt;&#10;  &lt;Copydata&gt;&#10;    &lt;Component copyrect=&quot;223,4,333,25&quot;&gt;&#10;      &lt;Calendar id=&quot;cal_endDate&quot; taborder=&quot;6&quot; left=&quot;223&quot; top=&quot;4&quot; width=&quot;110&quot; height=&quot;21&quot; dateformat=&quot;yyyy-MM-dd&quot; autoselect=&quot;true&quot;/&gt;&#10;    &lt;/Component&gt;&#10;    &lt;Bind&gt;&#10;      &lt;BindItem id=&quot;item4&quot; compid=&quot;cal_endDate&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;END_DATE&quot;/&gt;&#10;      &lt;BindItem id=&quot;item8&quot; compid=&quot;Div_client.form.div_search.form.cal_endDate2&quot; propid=&quot;value&quot; datasetid=&quot;ds_cond&quot; columnid=&quot;END_DATE2&quot;/&gt;&#10;    &lt;/Bind&gt;&#10;  &lt;/Copydata&gt;&#10;&lt;/DesignFormClipBoard&gt;" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00_01" taborder="0" text="고객사" left="-2" top="4" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_soldToNm" taborder="1" left="72" top="4" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="5"/>
+              <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Button id="btn_add2_hs" taborder="3" top="47" text="삭제" cssclass="btn_WF_main1" width="70" height="28" onclick="Div_client_btn_add2_hs_onclick" right="23"/>
+              <Button id="btn_add2_hs00" taborder="4" top="47" text="추가" cssclass="btn_WF_main1" width="70" height="28" onclick="Tab00_Tabpage1_btn_add2_hs_onclick" right="102"/>
+              <Grid id="grd_list00_00" taborder="5" binddataset="ds_list_6" scrolltype="both" minwidth="" left="10" top="82" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="multiarea" autoenter="select" height="496" width="999" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" onkeydown="Tab00_Tabpage4_grd_list00_00_onkeydown" onkeyup="Tab00_Tabpage4_grd_list00_00_onkeyup">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="50"/>
+                      <Column size="100"/>
+                      <Column size="35"/>
+                      <Column size="250"/>
+                      <Column size="120"/>
+                      <Column size="100"/>
+                      <Column size="35"/>
+                      <Column size="250"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="32" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="순번"/>
+                      <Cell col="1" colspan="2" text="고객사"/>
+                      <Cell col="3" text="고객사명"/>
+                      <Cell col="4" text="청구액(VAT포함가)"/>
+                      <Cell col="5" colspan="2" text="Z코드"/>
+                      <Cell col="7" text="Z코드명"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell textAlign="center" text="expr:currow+1"/>
+                      <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD" displaytype="normal" edittype="text" maskeditautoselect="true" maskedittype="string" maskeditlimitbymask="none" editautoselect="true"/>
+                      <Cell col="2" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="선택" displaytype="buttoncontrol" edittype="button"/>
+                      <Cell col="3" textAlign="left" text="bind:ITEM_NM"/>
+                      <Cell col="4" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true" accessibilitydesclevel="all"/>
+                      <Cell col="5" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD" displaytype="normal" edittype="text" maskeditautoselect="true" maskedittype="string" maskeditlimitbymask="none" editautoselect="true"/>
+                      <Cell col="6" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="선택" displaytype="buttoncontrol" edittype="button"/>
+                      <Cell col="7" textAlign="left" text="bind:ITEM_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  고객사이력대장
+*  @MenuPath    CM > CM008
+*  @FileName 	CM008.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2023.11.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+this.objApp = nexacro.getApplication();	
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_setCombo(obj);
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ // 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	var sDate = this.gfn_getDate();
+	//1년 
+	var sDate1 = this.gfn_addMonth(sDate,-1).substr(0,4) + "1231";
+	var fDate = this.gfn_addMonth(sDate,-1).substr(0,4) + "0101";
+	//var fDate = this.gfn_addDate(sDate,-1);
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate1);
+};
+
+this.fn_setCombo = function (obj)
+{
+	
+	
+};
+	
+
+this.fn_search = function ()
+{	
+	var Arg_1 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_2 = this.ds_cond.getColumn(0,"END_DATE");
+	if (Arg_2 == "")
+		Arg_2 = "99999999"
+	// 조회
+	var id = "SO040_S01";
+	var url = "svcUrl::SO040_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+ 
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+this.fn_save = function ()
+{	
+	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+	
+	var id = "SO040_M01";
+	var url = "svcUrl::SO040_M01";
+	var inDs = "ds_list=ds_list:U";
+	var outDs = "";
+	var args = "INSRT_USER_ID="+regUser;
+	var callBackid = "fn_afterSave";
+
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSave = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.alert("저장 되었습니다.");
+	this.fn_search();
+}
+
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.Div_client.form.grd_list.set_selecttype("row");
+};
+
+this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 0)
+	{
+		this.Div_client.form.grd_list.set_selecttype("row");
+	} else
+	{
+		this.Div_client.form.grd_list.set_selecttype("multiarea");
+	}
+};
+
+this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sDate = this.gfn_getDate();
+	this.ds_list.addRow();
+	this.ds_list.setColumn(this.ds_list.rowposition,"HUIL_DT",sDate);
+};
+
+this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_list.deleteRow(this.ds_list.rowposition);
+};
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="HUIL_DT" type="STRING" size="10"/>
+          <Column id="MEMO" type="STRING" size="100"/>
+          <Column id="SEQ" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_soldToNm" propid="value" datasetid="ds_cond" columnid="BP_CD"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -21,12 +21,15 @@
               </Div>
               <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
               <Static id="Static03" taborder="2" left="0" top="42" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
-              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="80" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" right="10">
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="10" top="60" onheadclick="Div_menu_grd_list_onheadclick" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" autoenter="select" oncellclick="Div_client_grd_list_oncellclick" background="" griduserproperty="export" cellsizingtype="both" summarytype="top" autofittype="col" right="10">
                 <Formats>
                   <Format id="default">
                     <Columns>
                       <Column size="51"/>
                       <Column size="100"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
                       <Column size="80"/>
@@ -55,29 +58,32 @@
                     <Band id="head">
                       <Cell rowspan="3" text="순번"/>
                       <Cell col="1" rowspan="3" text="일자"/>
-                      <Cell col="2" colspan="7" text="주문현황"/>
-                      <Cell col="9" colspan="7" text="버스탁송 분석"/>
-                      <Cell col="16" colspan="3" text="용품판매현황"/>
+                      <Cell col="2" colspan="8" text="주문현황"/>
+                      <Cell col="10" colspan="8" text="버스탁송/직배 분석"/>
+                      <Cell col="18" colspan="4" text="용품판매현황"/>
                       <Cell row="1" col="2" rowspan="2" text="전체주문"/>
                       <Cell row="1" col="3" rowspan="2" text="정상주문"/>
-                      <Cell row="1" col="4" colspan="5" text="탁송"/>
-                      <Cell row="1" col="9" colspan="3" text="클래스"/>
-                      <Cell row="1" col="12" colspan="4" text="용품 그룹"/>
-                      <Cell row="1" col="16" rowspan="2" text="용품수량"/>
-                      <Cell row="1" col="17" rowspan="2" text="무지수량"/>
-                      <Cell row="1" col="18" rowspan="2" text="편의용품수량"/>
+                      <Cell row="1" col="4" colspan="3" text="용품"/>
+                      <Cell row="1" col="7" colspan="3" text="근조기"/>
+                      <Cell row="1" col="10" colspan="6" text="용품클래스"/>
+                      <Cell row="1" col="16" rowspan="2" text="근조기"/>
+                      <Cell row="1" col="17" rowspan="2" text="소계"/>
+                      <Cell row="1" col="18" rowspan="2" text="용품수량"/>
+                      <Cell row="1" col="19" rowspan="2" text="무지수량"/>
+                      <Cell row="1" col="20" rowspan="2" text="편의용품&#13;&#10;수량"/>
+                      <Cell row="1" col="21" rowspan="2" text="소계"/>
                       <Cell row="2" col="4" text="버스탁송"/>
-                      <Cell row="2" col="5" text="재고이동"/>
-                      <Cell row="2" col="6" text="근조기"/>
-                      <Cell row="2" col="7" text="음료"/>
-                      <Cell row="2" col="8" text="소계"/>
-                      <Cell row="2" col="9" text="S,A,B"/>
-                      <Cell row="2" col="10" text="C,D,E"/>
-                      <Cell row="2" col="11" text="소계"/>
-                      <Cell row="2" col="12" text="1"/>
-                      <Cell row="2" col="13" text="2"/>
-                      <Cell row="2" col="14" text="3"/>
-                      <Cell row="2" col="15" text="소계"/>
+                      <Cell row="2" col="5" text="직배"/>
+                      <Cell row="2" col="6" text="소계"/>
+                      <Cell row="2" col="7" text="버스탁송"/>
+                      <Cell row="2" col="8" text="직배"/>
+                      <Cell row="2" col="9" text="소계"/>
+                      <Cell row="2" col="10" text="S"/>
+                      <Cell row="2" col="11" text="A"/>
+                      <Cell row="2" col="12" text="B"/>
+                      <Cell row="2" col="13" text="C"/>
+                      <Cell row="2" col="14" text="D"/>
+                      <Cell row="2" col="15" text="E"/>
                     </Band>
                     <Band id="body">
                       <Cell text="expr:currow+1" textAlign="center"/>
@@ -85,45 +91,50 @@
                       <Cell col="2" text="bind:전체주문" displaytype="mask" maskeditformat="##,##0"/>
                       <Cell col="3" text="bind:정상주문" displaytype="mask" maskeditformat="##,##0"/>
                       <Cell col="4" text="bind:용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="5" text="bind:재고이동" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="6" text="bind:근조기탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="7" text="bind:음료탁송주문" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="8" text="bind:탁송전체주문" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="9" text="bind:SAB_용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="10" text="bind:CDE_용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="11" text="bind:용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="12" text="bind:1그룹_용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="13" text="bind:2그룹_용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="14" text="bind:3그룹_용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="15" text="bind:용품탁송" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="16" text="bind:용품" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="17" text="bind:무지" displaytype="mask" maskeditformat="##,##0"/>
-                      <Cell col="18" text="bind:편의용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="5" text="bind:용품직배" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="6" text="bind:전체용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="7" text="bind:근조기탁송" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="8" text="bind:근조기직배" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="9" text="bind:전체근조기" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="10" text="bind:S_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="11" text="bind:A_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="12" text="bind:B_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="13" text="bind:C_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="14" text="bind:D_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="15" text="bind:E_용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="16" text="bind:전체근조기" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="17" text="bind:탁송직배전체주문" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="18" text="bind:용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="19" text="bind:무지" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="20" text="bind:편의용품" displaytype="mask" maskeditformat="##,##0"/>
+                      <Cell col="21" text="bind:용품소계" displaytype="mask" maskeditformat="##,##0"/>
                     </Band>
                     <Band id="summary">
                       <Cell colspan="2" text="합  계  " textAlign="right"/>
                       <Cell col="2" text="expr:dataset.getSum(&quot;전체주문&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
                       <Cell col="3" text="expr:dataset.getSum(&quot;정상주문&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
                       <Cell col="4" text="expr:dataset.getSum(&quot;용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="5" text="expr:dataset.getSum(&quot;재고이동&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="6" text="expr:dataset.getSum(&quot;근조기탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="7" text="expr:dataset.getSum(&quot;음료탁송주문&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="8" text="expr:dataset.getSum(&quot;탁송전체주문&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="9" text="expr:dataset.getSum(&quot;SAB_용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="10" text="expr:dataset.getSum(&quot;CDE_용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="11" text="expr:dataset.getSum(&quot;용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="12" text="expr:dataset.getSum(&quot;1그룹_용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="13" text="expr:dataset.getSum(&quot;2그룹_용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="14" text="expr:dataset.getSum(&quot;3그룹_용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="15" text="expr:dataset.getSum(&quot;용품탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="16" text="expr:dataset.getSum(&quot;용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="17" text="expr:dataset.getSum(&quot;무지&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
-                      <Cell col="18" text="expr:dataset.getSum(&quot;편의용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="5" text="expr:dataset.getSum(&quot;용품직배&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="6" text="expr:dataset.getSum(&quot;전체용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="7" text="expr:dataset.getSum(&quot;근조기탁송&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="8" text="expr:dataset.getSum(&quot;근조기직배&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="9" text="expr:dataset.getSum(&quot;전체근조기&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="10" text="expr:dataset.getSum(&quot;S_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="11" text="expr:dataset.getSum(&quot;A_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="12" text="expr:dataset.getSum(&quot;B_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="13" text="expr:dataset.getSum(&quot;C_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="14" text="expr:dataset.getSum(&quot;D_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="15" text="expr:dataset.getSum(&quot;E_용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="16" text="expr:dataset.getSum(&quot;전체근조기&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="17" text="expr:dataset.getSum(&quot;탁송직배전체주문&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="18" text="expr:dataset.getSum(&quot;용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="19" text="expr:dataset.getSum(&quot;무지&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="20" text="expr:dataset.getSum(&quot;편의용품&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
+                      <Cell col="21" text="expr:dataset.getSum(&quot;용품소계&quot;)" displaytype="mask" textAlign="right" maskeditformat="##,##0"/>
                     </Band>
                   </Format>
                 </Formats>
               </Grid>
-              <Static id="Static01" taborder="4" text="※재고이동 : 동일지역내 지점과 본부간 용품이동" top="51" height="26" font="normal bold 10pt/normal &quot;Arial&quot;" right="35" width="307" textAlign="right"/>
             </Layout>
           </Layouts>
         </Div>
@@ -267,23 +278,22 @@ this.Div_client_div_search_btn_excel_onclick = function(obj:nexacro.Button,e:nex
           <Column id="전체주문" type="INT" size="11"/>
           <Column id="정상주문" type="INT" size="11"/>
           <Column id="용품탁송" type="INT" size="11"/>
+          <Column id="용품직배" type="INT" size="11"/>
+          <Column id="전체용품" type="INT" size="11"/>
           <Column id="근조기탁송" type="INT" size="11"/>
-          <Column id="용품재고이동" type="INT" size="11"/>
-          <Column id="근조기재고이동" type="INT" size="11"/>
+          <Column id="근조기직배" type="INT" size="11"/>
+          <Column id="전체근조기" type="INT" size="11"/>
+          <Column id="S_용품" type="INT" size="11"/>
+          <Column id="A_용품" type="INT" size="11"/>
+          <Column id="B_용품" type="INT" size="11"/>
+          <Column id="C_용품" type="INT" size="11"/>
+          <Column id="D_용품" type="INT" size="11"/>
+          <Column id="E_용품" type="INT" size="11"/>
+          <Column id="탁송직배전체주문" type="INT" size="11"/>
           <Column id="용품" type="INT" size="11"/>
           <Column id="무지" type="INT" size="11"/>
           <Column id="편의용품" type="INT" size="11"/>
-          <Column id="탁송전체주문" type="INT" size="11"/>
-          <Column id="SAB_용품탁송" type="INT" size="11"/>
-          <Column id="CDE_용품탁송" type="INT" size="11"/>
-          <Column id="SAB_근조기탁송" type="INT" size="11"/>
-          <Column id="CDE_근조기탁송" type="INT" size="11"/>
-          <Column id="1그룹_용품탁송" type="INT" size="11"/>
-          <Column id="2그룹_용품탁송" type="INT" size="11"/>
-          <Column id="3그룹_용품탁송" type="INT" size="11"/>
-          <Column id="그룹_근조기탁송" type="INT" size="11"/>
-          <Column id="재고이동" type="INT" size="11"/>
-          <Column id="음료탁송주문" type="INT" size="256"/>
+          <Column id="용품소계" type="INT" size="11"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">

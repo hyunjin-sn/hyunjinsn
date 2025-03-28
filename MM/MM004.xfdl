@@ -80,7 +80,7 @@
               <Edit id="edt_name02" taborder="8" left="118" top="120" width="184" height="20"/>
               <Static id="Static16" taborder="30" left="306" top="143" width="1" cssclass="sta_WF_detailLabel" height="29"/>
               <Edit id="edt_menuId00" taborder="3" left="424" top="36" width="185" height="20" onchanged="Div06_edt_menuId_onchanged"/>
-              <Calendar id="Calendar01_00" taborder="31" left="424" top="148" width="185" height="20" readonly="true" innerdataset="ds_list" datecolumn="update_date" enable="false"/>
+              <Calendar id="Calendar01_00" taborder="31" left="424" top="148" width="185" height="20" readonly="false" innerdataset="ds_list" datecolumn="update_date" enable="true"/>
               <Calendar id="Calendar01_00_00" taborder="32" left="118" top="148" width="185" height="20" readonly="true" innerdataset="ds_list" datecolumn="update_date" enable="false"/>
               <Static id="Static05_00" taborder="33" text="권한" left="0" top="87" width="115" cssclass="sta_WF_detailLabel_ess" height="29"/>
               <Combo id="cmb_dept" taborder="6" text="Combo00" left="118" top="91" width="184" height="21" codecolumn="CODE" datacolumn="CODE_NAME" index="-1" type="filterlike" innerdataset="ds_rollCd"/>
@@ -93,6 +93,8 @@
               <Static id="Static04_00_00_02" taborder="40" text="고객사" left="0" top="255" width="115" cssclass="sta_WF_detailLabel_ess" height="29"/>
               <Edit id="edt_mRoomNo00_00_00" taborder="41" left="118" top="259" width="469" height="21" enable="true" readonly="false" onkeyup="div_search_edt_sono00_onkeyup"/>
               <Button id="btn_sono00_00_00" taborder="42" left="587" top="259" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_bpCd_onclick"/>
+              <Static id="Static11_00" taborder="44" text="재시도 횟수" left="306" top="227" width="115" cssclass="sta_WF_detailLabel" height="29"/>
+              <Edit id="edt_name02_00" taborder="45" left="424" top="232" width="184" height="20"/>
             </Layout>
           </Layouts>
         </Div>
@@ -196,6 +198,7 @@
       <BindItem id="item3" compid="Div06.form.cmb_dept01" propid="value" datasetid="ds_list" columnid="DEPT_CD"/>
       <BindItem id="item13" compid="div_search.form.cmb_Use_YN01_00" propid="value" datasetid="ds_cond" columnid="USR_GRP"/>
       <BindItem id="item17" compid="Div06.form.edt_mRoomNo00_00_00" propid="value" datasetid="ds_list" columnid="BP_NM"/>
+      <BindItem id="item18" compid="Div06.form.edt_name02_00" propid="value" datasetid="ds_list" columnid="RETRY_CNT"/>
     </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  Left Menu

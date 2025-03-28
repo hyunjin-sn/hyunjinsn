@@ -140,7 +140,7 @@ this.fn_addBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 this.fn_delBtnClick_2 = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
-	if (regUser == "210001" || regUser == "220023" || regUser == "219017")
+	if (regUser == "210001" || regUser == "223025" || regUser == "223028")
 	{
 		this.ds_list.deleteRow(this.ds_list.rowposition);
 	} else

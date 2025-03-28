@@ -74,7 +74,7 @@
                       <Column size="111"/>
                       <Column size="424"/>
                       <Column size="249"/>
-                      <Column size="145"/>
+                      <Column size="80"/>
                       <Column size="402"/>
                       <Column size="100"/>
                       <Column size="100"/>
@@ -115,7 +115,7 @@
                       <Cell col="23" text="연락처"/>
                       <Cell col="24" text="고객사"/>
                       <Cell col="25" text="서비스장소"/>
-                      <Cell col="26" text="대상자"/>
+                      <Cell col="26" text="주문자"/>
                       <Cell col="27" text="조사내용"/>
                       <Cell col="28" text="조사내용"/>
                       <Cell col="29" text="고객대응"/>
@@ -148,11 +148,11 @@
                       <Cell col="19" text="bind:SO_NO" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
                       <Cell col="20" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:CUST_TYPE1" combodataset="ds_custType1" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
                       <Cell col="21" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:CUST_TYPE2" combodataset="ds_custType2" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext"/>
-                      <Cell col="22" tooltiptext="bind:REQ_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:REQ_NM"/>
+                      <Cell col="22" tooltiptext="bind:OWN_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:OWN_NM"/>
                       <Cell col="23" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:CUST_TEL"/>
                       <Cell col="24" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" textAlign="left" text="bind:CUST_NM" tooltiptext="bind:CUST_NM"/>
                       <Cell col="25" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test2(currow)" text="bind:DLVY_NM" tooltiptext="bind:DLVY_NM"/>
-                      <Cell col="26" text="bind:OWN_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="26" text="bind:REQ_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
                       <Cell col="27" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_RCPT" tooltiptext="bind:NOTE_RCPT" verticalAlign="top"/>
                       <Cell col="28" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_RSCH_CHK"/>
                       <Cell col="29" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_ACT_CHK"/>
@@ -348,8 +348,8 @@ this.VM003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	//this._gfnGridcellFix(this.Div_client.form.grd_list, 2);
 	var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 	var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
-
-	if (regUser != "220023" && regUser != "219017" && regUser != "221010" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "223013")
+/*
+	if (regUser != "223025" && regUser != "217006" && regUser != "222001" && regUser != "210001")
 	{
 		this.Div_client.form.grd_list.setFormatColProperty(26,"size",0);
 		this.Div_client.form.grd_list.setFormatColProperty(33,"size",0);
@@ -357,6 +357,7 @@ this.VM003_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 		
 		this.btn_excel00.set_visible(false);
 	}	
+*/
 };
 
  /************************************************************************************************

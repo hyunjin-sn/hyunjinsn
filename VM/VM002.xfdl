@@ -141,8 +141,8 @@
                       <Cell col="24" tooltiptext="bind:REQ_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:REQ_NM"/>
                       <Cell col="25" text="bind:DIV_DEPT_CD1" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept3" displaytype="combotext"/>
                       <Cell col="26" text="bind:DIV_DEPT_CD2" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept4" displaytype="combotext"/>
-                      <Cell col="27" text="bind:NOTE_RCPT" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
-                      <Cell col="28" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_DIR"/>
+                      <Cell col="27" text="bind:NOTE_RCPT" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" tooltiptext="bind:NOTE_RCPT"/>
+                      <Cell col="28" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:NOTE_DIR" tooltiptext="bind:NOTE_DIR"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -475,7 +475,7 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 		
-		if (deptCd != "H5290" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "223013")
+		if (deptCd != "H5290" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "224011" && regUser != "222036" && regUser != "224025")
 		{
 			this.alert("지연 취소 권한이 없습니다.")
 			return;
@@ -542,7 +542,8 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
 		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 		
-		if (deptCd != "H5290" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "223013" && regUser != "218004")
+		if (deptCd != "H5290" && regUser != "217006" && regUser != "222001" && regUser != "210001" && regUser != "222036" && regUser != "224011" && regUser != "222058" && regUser != "212001"
+			&& regUser != "220061" && regUser != "222054" && regUser != "224005" && regUser != "221013" && regUser != "220084" && regUser != "222016" && regUser != "223025" && regUser != "224025")
 		{
 			this.alert("완료처리 권한이 없습니다.")
 			return;

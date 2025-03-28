@@ -257,14 +257,14 @@ this.Div_client_grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridC
 
 this.Tab00_Tabpage1_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	var sToday = "";
-	var objDate = new Date();
-	var sToday  = objDate.getFullYear() + "";
-	sToday += objDate.getMonth() + 1 + "";
-	sToday += objDate.getDate();
-
+	//var sToday = "";
+	//var objDate = new Date();
+	//var sToday  = objDate.getFullYear() + "";
+	//sToday += objDate.getMonth() + 1 + "";
+	//sToday += objDate.getDate();
+	var sDate = this.gfn_getDate();
 	this.ds_list.addRow();
-	this.ds_list.setColumn(this.ds_list.rowposition,"BASIC_DT",sToday);
+	this.ds_list.setColumn(this.ds_list.rowposition,"BASIC_DT",sDate);
 };
 
 this.Div_client_btn_add2_hs_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)

@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="SO008" width="970" height="640" titletext="New Form" onload="SO008_onload">
+    <Layouts>
+      <Layout height="640" mobileorientation="landscape" width="970">
+        <Div id="Div_client" taborder="1" text="Div00" left="6" top="0" bottom="10" right="0">
+          <Layouts>
+            <Layout>
+              <Grid id="grd_list1" taborder="9" binddataset="ds_list" scrolltype="both" minwidth="" bottom="0" left="1" top="50" selecttype="row" autofittype="col" oncellclick="Div_client_grd_list_oncellclick" autoenter="select" summarytype="default" griduserproperty="export" onkeydown="Div_client_grd_list_onkeydown" onsummaryclick="Div_client_grd_list_onsummaryclick" width="955">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="본부"/>
+                      <Cell col="1" rowspan="2" text="구분"/>
+                      <Cell col="2" rowspan="2" text="인입실적"/>
+                      <Cell col="3" colspan="2" text="목표"/>
+                      <Cell col="5" colspan="2" text="실적"/>
+                      <Cell col="7" colspan="2" text="목표대비"/>
+                      <Cell col="9" rowspan="2" text="목표건수"/>
+                      <Cell col="10" rowspan="2" text="실적건수"/>
+                      <Cell col="11" rowspan="2" text="목표대비"/>
+                      <Cell col="12" rowspan="2" text="달성율"/>
+                      <Cell row="1" col="3" text="전환율"/>
+                      <Cell row="1" col="4" text="건수"/>
+                      <Cell row="1" col="5" text="전환율"/>
+                      <Cell row="1" col="6" text="건수"/>
+                      <Cell row="1" col="7" text="전환율"/>
+                      <Cell row="1" col="8" text="건수"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:BP_NM" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="1" text="bind:구분" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="2" text="bind:인입건수" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="3" text="bind:목표전환율" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="4" text="bind:목표건수" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="5" text="bind:실적전환율" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="6" text="bind:실적건수" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="7" text="bind:대비전환율" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="8" text="bind:대비건수" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="9" text="bind:목표" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="10" text="bind:실적" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="11" text="bind:대비" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                      <Cell col="12" text="bind:달성율" textAlign="right" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="5"/>
+              <Div id="div_search" taborder="0" left="0" top="10" height="34" right="9" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="년월" left="-1" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Calendar id="cal_startDate" taborder="1" left="91" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static01" taborder="2" text="~" left="210" top="5" width="7" height="18"/>
+                    <Calendar id="cal_endDate" taborder="3" left="222" top="5" width="110" height="21" dateformat="yyyy-MM-dd" autoselect="true"/>
+                    <Static id="Static03_00" taborder="4" text="의전본부" left="359" top="6" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel" visible="false"/>
+                    <Combo id="cmb_dept01" taborder="5" text="Combo00" left="468" top="5" width="184" height="21" codecolumn="BP_CD" datacolumn="BP_NM" index="-1" type="filterlike" innerdataset="ds_bp" onitemchanged="Div_client_div_search_cmb_dept01_onitemchanged" visible="false"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static05_00" taborder="2" text="본부 목표 달성현황" left="681" top="16" width="127" height="24" cssclass="sta_WF_title" visible="false"/>
+              <Edit id="edt_usr0" taborder="3" left="34" width="100" height="20" readonly="true" textAlign="right" top="489" visible="false"/>
+              <Static id="Static31" taborder="4" text="목표" left="34" top="470" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static31_00" taborder="5" text="실적" left="133" top="470" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr1" taborder="6" left="133" width="100" height="20" readonly="true" textAlign="right" top="489" visible="false"/>
+              <Edit id="edt_usr2" taborder="7" left="232" width="100" height="20" readonly="true" textAlign="right" top="489" visible="false"/>
+              <Static id="Static31_01" taborder="8" text="목표대비" left="232" top="470" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32" taborder="10" left="32" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32_00" taborder="11" text="인입실적" left="131" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32_01" taborder="12" text="목표전환율" left="230" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr4_02" taborder="13" left="329" width="100" height="20" readonly="true" textAlign="right" top="541" visible="false"/>
+              <Edit id="edt_usr4_01" taborder="14" left="230" width="100" height="20" readonly="true" textAlign="right" top="541" visible="false"/>
+              <Edit id="edt_usr4_00" taborder="15" left="131" width="100" height="20" readonly="true" textAlign="right" top="541" visible="false"/>
+              <Static id="Static32_05" taborder="16" text="배송" left="32" top="541" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr5_00" taborder="25" left="131" width="100" height="20" readonly="true" textAlign="right" top="560" visible="false"/>
+              <Static id="Static32_06" taborder="18" text="인력" left="32" top="560" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr5_01" taborder="26" left="230" width="100" height="20" readonly="true" textAlign="right" top="560" visible="false"/>
+              <Edit id="edt_usr6_01" taborder="31" left="230" width="100" height="20" readonly="true" textAlign="right" top="579" visible="false"/>
+              <Edit id="edt_usr7_01" taborder="36" left="230" width="100" height="20" readonly="true" textAlign="right" top="598" visible="false"/>
+              <Edit id="edt_usr7_02" taborder="37" left="329" width="100" height="20" readonly="true" textAlign="right" top="598" visible="false"/>
+              <Edit id="edt_usr5_02" taborder="27" left="329" width="100" height="20" readonly="true" textAlign="right" top="560" visible="false"/>
+              <Static id="Static32_08" taborder="17" text="합계" left="32" top="598" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32_07" taborder="19" text="행사" left="32" top="579" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr7_03" taborder="38" left="428" width="100" height="20" readonly="true" textAlign="right" top="598" visible="false"/>
+              <Edit id="edt_usr6_03" taborder="33" left="428" width="100" height="20" readonly="true" textAlign="right" top="579" visible="false"/>
+              <Edit id="edt_usr5_03" taborder="28" left="428" width="100" height="20" readonly="true" textAlign="right" top="560" visible="false"/>
+              <Edit id="edt_usr4_03" taborder="23" left="428" width="100" height="20" readonly="true" textAlign="right" top="541" visible="false"/>
+              <Edit id="edt_usr7_04" taborder="39" left="527" width="100" height="20" readonly="true" textAlign="right" top="598" visible="false"/>
+              <Edit id="edt_usr6_04" taborder="34" left="527" width="100" height="20" readonly="true" textAlign="right" top="579" visible="false"/>
+              <Edit id="edt_usr5_04" taborder="29" left="527" width="100" height="20" readonly="true" textAlign="right" top="560" visible="false"/>
+              <Edit id="edt_usr4_04" taborder="24" left="527" width="100" height="20" readonly="true" textAlign="right" top="541" visible="false"/>
+              <Static id="Static32_04" taborder="21" text="목표대비" left="527" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32_03" taborder="22" text="실제건수" left="428" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Static id="Static32_02" taborder="20" text="목표건수" left="329" top="522" width="100" cssclass="sta_WF_detailLabel" height="20" padding="2px" textAlign="center" visible="false"/>
+              <Edit id="edt_usr6_00" taborder="30" left="131" width="100" height="20" readonly="true" textAlign="right" top="579" visible="false"/>
+              <Edit id="edt_usr7_00" taborder="35" left="131" width="100" height="20" readonly="true" textAlign="right" top="598" visible="false"/>
+              <Edit id="edt_usr6_02" taborder="32" left="329" width="100" height="20" readonly="true" textAlign="right" top="579" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  신우리데이터 조회
+*  @MenuPath    SA > SA001
+*  @FileName 	SA001.xfdl 
+*  @Creator 	심재문
+*  @CreateDate 	2021.02.08
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.SO008_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	//날짜 세팅
+	this.fn_setCal();
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+// 달력 세팅
+this.fn_setCal = function ()
+{
+	//현재일자
+	//var sDate = this.gfn_getDate();
+	var sDate = this.gfn_addDate(this.gfn_getDate(),-1);
+	var fDate = this.gfn_addMonth(sDate,0).substr(0,6) + "01";
+	
+	this.Div_client.form.div_search.form.cal_startDate.set_value(fDate);
+	this.Div_client.form.div_search.form.cal_endDate.set_value(sDate);
+};
+
+this.fn_search = function ()
+{	
+	var Arg_1 = this.ds_cond.getColumn(0,"START_DATE");
+	var Arg_2 = this.ds_cond.getColumn(0,"END_DATE");
+	
+	// 조회
+	var id = "TM020_S01";
+	var url = "svcUrl::TM020_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "START_DATE="+Arg_1+" END_DATE="+Arg_2+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+ this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	var objGrid = this.Div_client.form.grd_list1;	
+	objGrid.setCellProperty("Body", 0, "suppress", 1);
+	objGrid.setCellProperty("Body", 9, "suppress", 2);
+	objGrid.setCellProperty("Body", 10, "suppress", 2);
+	objGrid.setCellProperty("Body", 11, "suppress", 2);
+	objGrid.setCellProperty("Body", 12, "suppress", 2);
+
+	
+}
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.Div_client_div_search_cmb_dept01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_search();
+};
+
+
+this.fn_test = function (currow)
+{
+	var gubun = this.ds_list.getColumn(currow,"구분");
+	var BP_NM = this.ds_list.getColumn(currow,"BP_NM");
+	
+	if (gubun == "계" && BP_NM != "합계")
+	{
+		return "status10";			// 회색
+	}  else if (BP_NM == "합계")
+	{
+		return "status5";			// 하늘색
+	}	
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="20"/>
+          <Column id="BP_NM" type="STRING" size="200"/>
+          <Column id="구분" type="STRING" size="40"/>
+          <Column id="인입건수" type="BIGDECIMAL" size="11"/>
+          <Column id="목표전환율" type="STRING" size="256"/>
+          <Column id="목표건수" type="BIGDECIMAL" size="256"/>
+          <Column id="실적전환율" type="STRING" size="256"/>
+          <Column id="실적건수" type="BIGDECIMAL" size="256"/>
+          <Column id="대비전환율" type="STRING" size="256"/>
+          <Column id="대비건수" type="BIGDECIMAL" size="256"/>
+          <Column id="목표" type="BIGDECIMAL" size="256"/>
+          <Column id="실적" type="BIGDECIMAL" size="256"/>
+          <Column id="대비" type="BIGDECIMAL" size="256"/>
+          <Column id="달성율" type="STRING" size="256"/>
+          <Column id="정렬순서" type="STRING" size="256"/>
+          <Column id="실적정렬" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="START_DATE" type="STRING" size="256"/>
+          <Column id="END_DATE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="START_DATE"/>
+            <Col id="END_DATE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.Tabpage1.form.Div00.form.cal_startDate00" propid="value" datasetid="ds_list_1" columnid="CONT_DT"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_startDate" propid="value" datasetid="ds_cond" columnid="START_DATE"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item5" compid="Div00.form.edt_usr1_00" propid="value" datasetid="ds_list_1" columnid="dlvy_nm"/>
+      <BindItem id="item6" compid="Div00.form.edt_usr1_00_00" propid="value" datasetid="ds_list_1" columnid="m_room_no"/>
+      <BindItem id="item7" compid="Div00.form.edt_usr1_01" propid="value" datasetid="ds_list_1" columnid="hs_nm"/>
+      <BindItem id="item8" compid="Div00.form.edt_usr1_00_01" propid="value" datasetid="ds_list_1" columnid="EMP_NM"/>
+      <BindItem id="item9" compid="Div00.form.edt_usr1_00_00_00" propid="value" datasetid="ds_list_1" columnid="HAND_TEL_NO"/>
+      <BindItem id="item10" compid="Div00.form.edt_usr1_00_01_00" propid="value" datasetid="ds_list_1" columnid="BP_NM"/>
+      <BindItem id="item11" compid="Div00.form.edt_usr1_01_00" propid="value" datasetid="ds_list_1" columnid="BP_FULL_NM"/>
+      <BindItem id="item12" compid="Div00.form.edt_usr1_01_00_00" propid="value" datasetid="ds_list_1" columnid="AD_NM"/>
+      <BindItem id="item13" compid="Div00.form.edt_usr1_01_00_00_00" propid="value" datasetid="ds_list_1" columnid="ITEM_NM"/>
+      <BindItem id="item3" compid="Div_client.form.edt_usr4_02" propid="value" datasetid="ds_list1" columnid="배송목표건수"/>
+      <BindItem id="item16" compid="Div_client.form.edt_usr4_01" propid="value" datasetid="ds_list1" columnid="배송목표전환율"/>
+      <BindItem id="item17" compid="Div_client.form.edt_usr4_00" propid="value" datasetid="ds_list1" columnid="배송인입실적"/>
+      <BindItem id="item18" compid="Div_client.form.edt_usr4_03" propid="value" datasetid="ds_list1" columnid="배송실실적"/>
+      <BindItem id="item19" compid="Div_client.form.edt_usr4_04" propid="value" datasetid="ds_list1" columnid="배송차이"/>
+      <BindItem id="item20" compid="Div_client.form.edt_usr5_00" propid="value" datasetid="ds_list1" columnid="인력인입실적"/>
+      <BindItem id="item21" compid="Div_client.form.edt_usr5_01" propid="value" datasetid="ds_list1" columnid="인력목표전환율"/>
+      <BindItem id="item22" compid="Div_client.form.edt_usr5_02" propid="value" datasetid="ds_list1" columnid="인력목표건수"/>
+      <BindItem id="item24" compid="Div_client.form.edt_usr5_03" propid="value" datasetid="ds_list1" columnid="인력실실적"/>
+      <BindItem id="item25" compid="Div_client.form.edt_usr5_04" propid="value" datasetid="ds_list1" columnid="인력차이"/>
+      <BindItem id="item26" compid="Div_client.form.edt_usr6_00" propid="value" datasetid="ds_list1" columnid="행사인입실적"/>
+      <BindItem id="item27" compid="Div_client.form.edt_usr6_01" propid="value" datasetid="ds_list1" columnid="행사목표전환율"/>
+      <BindItem id="item28" compid="Div_client.form.edt_usr6_02" propid="value" datasetid="ds_list1" columnid="행사목표건수"/>
+      <BindItem id="item29" compid="Div_client.form.edt_usr6_03" propid="value" datasetid="ds_list1" columnid="행사실실적"/>
+      <BindItem id="item30" compid="Div_client.form.edt_usr6_04" propid="value" datasetid="ds_list1" columnid="행사차이"/>
+      <BindItem id="item31" compid="Div_client.form.edt_usr7_00" propid="value" datasetid="ds_list1" columnid="합계인입실적"/>
+      <BindItem id="item32" compid="Div_client.form.edt_usr7_01" propid="value" datasetid="ds_list1" columnid="합계목표전환율"/>
+      <BindItem id="item33" compid="Div_client.form.edt_usr7_02" propid="value" datasetid="ds_list1" columnid="합계목표건수"/>
+      <BindItem id="item34" compid="Div_client.form.edt_usr7_03" propid="value" datasetid="ds_list1" columnid="합계실실적"/>
+      <BindItem id="item35" compid="Div_client.form.edt_usr7_04" propid="value" datasetid="ds_list1" columnid="합계차이"/>
+    </Bind>
+  </Form>
+</FDL>

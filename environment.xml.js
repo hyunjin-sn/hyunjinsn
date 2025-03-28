@@ -36,7 +36,16 @@ if (nexacro.Environment)
         nexacro._addService("crypto", "form", "./nexacro17lib/component/CryptoJS/", "session", null, "", "0", "0");
         nexacro._addService("svc_api", "none", "./API/ExtCommonAPI/Output/", "session", null, "", "0", "0");
         nexacro._addService("JSP", "file", "localhost:/8080/HJW/jsp/", "none", null, "", "0", "0");
-
+		nexacro._addService("VM", "form", "./VM/", "session", null, "", "0", "0");
+        nexacro._addService("FM", "form", "./FM/", "session", null, "", "0", "0");
+        nexacro._addService("RD", "form", "./RD/", "session", null, "", "0", "0");
+        nexacro._addService("ES", "form", "./ES/", "session", null, "", "0", "0");
+        nexacro._addService("CM", "form", "./CM/", "session", null, "", "0", "0");
+        nexacro._addService("SA", "form", "./SA/", "session", null, "", "0", "0");
+        nexacro._addService("TM", "form", "./TM/", "session", null, "", "0", "0");
+        nexacro._addService("PR", "form", "./PR/", "session", null, "", "0", "0");
+        nexacro._addService("DJ", "form", "./DJ/", "session", null, "", "0", "0");
+        nexacro._addService("CA", "form", "./CA/", "session", null, "", "0", "0");
     	nexacro._component_uri = (nexacro._arg_compurl ? nexacro._arg_compurl : "./nexacro17lib/component/");
     	nexacro._theme_uri = "./_resource_/_theme_/";
 

@@ -9,7 +9,7 @@
             <Layout>
               <Static id="sta_01_01" taborder="95" left="559" top="455" height="29" cssclass="sta_WF_detailLine" width="426"/>
               <Static id="sta_24_00" taborder="81" left="557" top="115" height="29" cssclass="sta_WF_detailLine" width="428" onclick="Div00_sta_24_00_onclick"/>
-              <Static id="sta_13_00" taborder="79" left="515" top="87" height="29" cssclass="sta_WF_detailLine" width="470"/>
+              <Static id="sta_13_00" taborder="79" left="515" top="87" height="29" cssclass="sta_WF_detailLine" width="470" text=""/>
               <Static id="sta_01_00" taborder="37" left="94" top="85" height="29" cssclass="sta_WF_detailLine" width="346"/>
               <Static id="sta_01_00_00" taborder="47" left="94" top="113" height="29" cssclass="sta_WF_detailLine" width="346"/>
               <Static id="sta_01_00_00_00" taborder="48" left="94" top="141" height="29" cssclass="sta_WF_detailLine" width="346"/>
@@ -82,11 +82,11 @@
               <Combo id="cmb_min" taborder="14" left="745" top="33" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
               <Static id="Static00_00_01" taborder="63" text="시" left="728" top="30" width="20" height="29"/>
               <Radio id="Radio_dlvyDtType" taborder="64" left="571" top="60" width="409" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div1"/>
-              <Static id="Static00_00_00" taborder="65" text="빈소입실시간" left="466" top="87" width="100" height="29" cssclass="sta_WF_detailLabel"/>
-              <Calendar id="cal_decDt" taborder="15" left="570" top="91" width="100" height="21" onchanged="Div00_cal_decDt_onchanged"/>
-              <Combo id="cmb_AM00_01" taborder="16" left="673" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time"/>
-              <Static id="Static00_00_01_01" taborder="66" text="시" left="728" top="88" width="20" height="29"/>
-              <Combo id="cmb_AM00_00_00" taborder="17" left="745" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
+              <Static id="Static00_00_00" taborder="65" text="발인일자" left="466" top="87" width="100" height="29" cssclass="sta_WF_detailLabel"/>
+              <Calendar id="cal_decDt" taborder="15" left="737" top="60" width="100" height="21" onchanged="Div00_cal_decDt_onchanged" visible="false"/>
+              <Combo id="cmb_AM00_01" taborder="16" left="841" top="60" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time" visible="false"/>
+              <Static id="Static00_00_01_01" taborder="66" text="시" left="894" top="59" width="20" height="29" visible="false"/>
+              <Combo id="cmb_AM00_00_00" taborder="17" left="911" top="62" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute" visible="false"/>
               <Static id="Static09_00" taborder="67" text="배송지" left="466" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="85"/>
               <Button id="btn_dlvy" taborder="68" left="883" top="119" width="21" height="21" cssclass="btn_WF_search" onclick="Div00_btn_dlvy_onclick"/>
               <TextArea id="TA_addr" taborder="19" left="570" top="147" width="410" height="49" background="#fafdc8"/>
@@ -131,7 +131,7 @@
               <Edit id="edt_mMemo" taborder="27" left="569" top="431" width="411" height="21" readonly="false" onkeyup="div_search_onkeyup"/>
               <Static id="Static10_00_00" taborder="77" text="의전 배송 메모" left="466" top="427" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="Static00_00_01_00" taborder="78" text="분" left="802" top="30" width="20" height="29"/>
-              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="802" top="85" width="20" height="29"/>
+              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="967" top="59" width="20" height="29" visible="false"/>
               <Static id="Static05_00_00" taborder="82" text="배송정보" left="469" top="1" width="97" height="24" cssclass="sta_WF_title"/>
               <Button id="btn_client" taborder="83" left="414" top="117" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_client_onclick"/>
               <Button id="btn_telInfo" taborder="84" left="363" top="89" width="71" height="21" text="Tel Info" cssclass="btn_WF_main1" onclick="Div00_btn_telInfo_onclick"/>
@@ -176,6 +176,7 @@
               <Button id="btn_manual" taborder="100" top="5" height="21" text="꽃잠 대응 매뉴얼" cssclass="btn_WF_main1" right="13" width="114" visible="false" onclick="Div00_btn_manual_onclick"/>
               <Button id="btn_reqSms00_00" taborder="101" left="835" top="259" width="109" height="21" text="편의용품 알림" cssclass="btn_WF_main1" onclick="Div00_btn_reqSms00_00_onclick" visible="false"/>
               <Edit id="edt_mNm00" taborder="102" left="825" top="91" width="155" height="21" enable="false" readonly="false" color="red"/>
+              <Calendar id="cal_balinDt" taborder="103" left="569" top="92" width="102" height="21"/>
             </Layout>
           </Layouts>
         </Div>
@@ -2868,12 +2869,29 @@ this.fn_afterOrderChk = function(strSvcID, nErrorCode, strErrorMag)
 // 중복확인 callback
 this.fn_orderChk = function(sPopId, sRtn)
 {
-    var objRtn = JSON.parse(sRtn);
+//     var objRtn = JSON.parse(sRtn);
+// 	var soNo = objRtn.SO_NO
+// 	var arrArg = [];
+// 	this.gfn_openForm(this.objApp.gds_menu, 2, arrArg, soNo);
 	
-	var soNo = objRtn.SO_NO
-	//trace(soNo);
-	var arrArg = [];
-	this.gfn_openForm(this.objApp.gds_menu, 2, arrArg, soNo);
+	var objRtn = JSON.parse(sRtn);
+	if (new String(sRtn).valueOf() == "undefined" )
+	{
+	}
+	if (sRtn == null)
+	{
+	}
+	if (("x" + sRtn == "xNaN") && (new String(sRtn).valueOf() == "undefined" ))
+	{
+	}
+	if (sRtn.length == 0)
+	{
+	}
+	else
+	{
+		var arrArg = [];
+		this.gfn_openForm(this.objApp.gds_menu, 2, arrArg, sRtn);
+	}
 }
 
 // 중복확인 버튼
@@ -3353,11 +3371,18 @@ this.Div02_Tab00_Tabpage2_grd_list_2_oncellclick = function(obj:nexacro.Grid,e:n
 // 			return;
 // 		}
 		
+		
+		
 		var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
-			
+		var hsCd = this.ds_list.getColumn(this.ds_list.rowposition,"HS_CD");
+		var subCode1 = this.ds_grd2.getColumn(0,"SUB_CODE");
+		var subCode2 = this.ds_grd2.getColumn(1,"SUB_CODE");
+		var sysDiv = "HJW";
+	
 		var sPopupId  = "msg1_popup";
 		var sUrl      = "SO::SO001_P08.xfdl";
-		var oArg      = {bpCd : bpCd};
+		//var oArg      = {bpCd : bpCd};
+		var oArg      = {bpCd : bpCd, hsCd : hsCd, subCode1 : subCode1, subCode2 : subCode2, sysDiv : sysDiv};
 		var sCallBack = "fn_popupCallback_msg1";
 		var oOption   = {title : "리본메시지"};
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
@@ -7155,6 +7180,7 @@ this.Div02_Tab00_Tabpage7_Div00_btn_sinwooriSms_onclick = function(obj:nexacro.B
           <Column id="USR_FLAG" type="STRING" size="256"/>
           <Column id="USR_FLAG2" type="STRING" size="256"/>
           <Column id="YES_ITEM" type="STRING" size="256"/>
+          <Column id="M_BALIN_DT" type="STRING" size="256"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_sono"/>
@@ -7663,6 +7689,7 @@ this.Div02_Tab00_Tabpage7_Div00_btn_sinwooriSms_onclick = function(obj:nexacro.B
       <BindItem id="item107" compid="Div00.form.edt_cMemo00" propid="value" datasetid="ds_item_tip2" columnid="TIP_DESC"/>
       <BindItem id="item108" compid="edt_cMemo00" propid="value" datasetid="ds_item_tip2" columnid="TIP_DESC"/>
       <BindItem id="item109" compid="Div00.form.edt_mNm00" propid="value" datasetid="ds_list" columnid="YES_ITEM"/>
+      <BindItem id="item110" compid="Div00.form.cal_balinDt" propid="value" datasetid="ds_list" columnid="M_BALIN_DT"/>
     </Bind>
   </Form>
 </FDL>

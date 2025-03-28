@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CM009" width="1700" height="850" titletext="New Form" onload="CM009_onload">
+    <Layouts>
+      <Layout height="850" mobileorientation="landscape" width="1700" stepcount="0">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="3"/>
+        <Static id="Static08" taborder="1" left="0" top="0" width="10" cssclass="sta_WF_guideRed" visible="false" bottom="-250" text="w&#13;&#10;10"/>
+        <Static id="Static00_00" taborder="2" text="경조TYPE 검색 : " left="19" top="400" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+        <Combo id="Combo00" taborder="3" left="126" top="404" width="146" height="21" type="filterlike" codecolumn="HS_TYPE" datacolumn="HS_NM" innerdataset="ds_hs" onitemchanged="Combo00_onitemchanged"/>
+        <Static id="Static00_00_00" taborder="4" text="소속1 검색 : " left="299" top="400" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+        <Combo id="Combo00_00" taborder="5" left="406" top="404" width="146" height="21" type="filterlike" codecolumn="SUB_CODE" datacolumn="SUB_CODE_NM" innerdataset="ds_sosoc1" onitemchanged="Combo00_onitemchanged"/>
+        <Static id="Static00_00_00_00" taborder="6" text="소속2 검색 : " left="569" top="400" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+        <Combo id="Combo00_00_00" taborder="7" left="676" top="404" width="146" height="21" type="filterlike" codecolumn="SUB_CODE" datacolumn="SUB_CODE_NM" innerdataset="ds_sosoc2" onitemchanged="Combo00_onitemchanged"/>
+        <Static id="Static00_00_00_00_00" taborder="8" text="유형 검색 : " left="839" top="400" width="91" height="25" textAlign="right" font="bold 12px &quot;Malgun Gothic&quot;,&quot;Verdana&quot;"/>
+        <Combo id="Combo00_00_00_00" taborder="9" left="946" top="404" width="146" height="21" type="filterlike" codecolumn="CASE_NO" datacolumn="CASE_DESC2" innerdataset="ds_caseCb" onitemchanged="Combo00_onitemchanged"/>
+        <Grid id="grd_list01" taborder="10" binddataset="ds_list_9" scrolltype="both" minwidth="" left="10" top="434" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="cell" autoenter="select" autofittype="col" oncellclick="grd_list00_oncellclick" cellsizingtype="col" bottom="10" right="20" onkeydown="grd_list_onkeydown">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="51"/>
+                <Column size="70"/>
+                <Column size="113"/>
+                <Column size="122"/>
+                <Column size="122"/>
+                <Column size="0"/>
+                <Column size="89"/>
+                <Column size="80"/>
+                <Column size="243"/>
+                <Column size="56"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="89"/>
+                <Column size="0"/>
+                <Column size="0"/>
+                <Column size="126"/>
+                <Column size="126"/>
+              </Columns>
+              <Rows>
+                <Row size="36" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="경조타입"/>
+                <Cell col="2" text="소속1"/>
+                <Cell col="3" text="소속2"/>
+                <Cell col="4" text="설명"/>
+                <Cell col="5" text="필수여부"/>
+                <Cell col="6" text="품목코드"/>
+                <Cell col="7" text="대체 품목"/>
+                <Cell col="8" text="품목명"/>
+                <Cell col="9" text="수량"/>
+                <Cell col="10" text="판매단가_법인"/>
+                <Cell col="11" text="판매단가_개인"/>
+                <Cell col="12" text="발주지점"/>
+                <Cell col="13" text="카톡주문&#13;&#10;제외"/>
+                <Cell col="14" text="카톡주문&#13;&#10;리본문구 제외"/>
+                <Cell col="15" text="VAT"/>
+                <Cell col="16" text="청구조건"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:HS_TYPE" suppress="0"/>
+                <Cell col="2" textAlign="left" combodataset="ds_sosoc1" combocodecol="SUB_CODE" combodatacol="SUB_CODE_NM" text="bind:SUB_CODE1" suppress="0"/>
+                <Cell col="3" textAlign="left" combodataset="ds_sosoc2" combocodecol="SUB_CODE" combodatacol="SUB_CODE_NM" text="bind:SUB_CODE2" suppress="0"/>
+                <Cell col="4" textAlign="left" combodataset="ds_caseCb" combocodecol="CASE_NO" combodatacol="CASE_DESC2" text="bind:CASE_NO" suppress="0" displaytype="combotext"/>
+                <Cell col="5" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" displaytype="checkboxcontrol" text="bind:MANDATORY_YN"/>
+                <Cell col="6" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:ITEM_CD"/>
+                <Cell col="7" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="expr:PA_ITEM_CD=='1' ? '대체품목' : ''" displaytype="expr:PA_ITEM_CD=='1' ? 'buttoncontrol' : 'nomal'" edittype="expr:PA_ITEM_CD=='1' ? 'button' : 'none'"/>
+                <Cell col="8" textAlign="left" text="bind:ITEM_NM"/>
+                <Cell col="9" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:QTY" maskeditautoselect="true"/>
+                <Cell col="10" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_COM" maskeditautoselect="true"/>
+                <Cell col="11" textAlign="right" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" edittype="mask" text="bind:PRICE_PER" maskeditautoselect="true"/>
+                <Cell col="12" textAlign="center" combodataset="ds_poDiv" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="combotext" text="bind:BRANCH_GROUP" combotype="filterlike"/>
+                <Cell col="13" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_DISP_YN"/>
+                <Cell col="14" textAlign="center" displaytype="checkboxcontrol" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" text="bind:PRM_MANDATORY_YN"/>
+                <Cell col="15" textAlign="center" combodataset="ds_vatDiv" combocodecol="CODE" combodatacol="CODE_NAME" text="bind:VAT_TYPE" displaytype="combotext" combotype="filterlike"/>
+                <Cell col="16" textAlign="center" displaytype="combotext" combodataset="ds_payDiv" combocodecol="CODE" combodatacol="CODE_NAME" text="bind:PAY_COND" combotype="filterlike"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static05_00" taborder="11" text="계약  정보" left="18" top="82" width="80" height="24" cssclass="sta_WF_title"/>
+        <Static id="Static05_00_00" taborder="12" text="계약 품목 정보" left="20" top="376" width="97" height="24" cssclass="sta_WF_title"/>
+        <Grid id="grd_list" binddataset="ds_list_1" minwidth="" left="10" top="108" right="330" onkeydown="grd_list_onkeydown" oncellclick="grd_list_oncellclick" background="" cellsizingtype="col" taborder="13" height="263" autoenter="select" autofittype="col" showselection="true">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="52"/>
+                <Column size="100"/>
+                <Column size="230"/>
+                <Column size="100"/>
+                <Column size="230"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="46" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="순번"/>
+                <Cell col="1" text="계약번호"/>
+                <Cell col="2" text="계약명"/>
+                <Cell col="3" text="고객사코드"/>
+                <Cell col="4" text="고객사명"/>
+                <Cell col="5" text="계약기간시작"/>
+                <Cell col="6" text="계약기간종료"/>
+                <Cell col="7" text="계약종류"/>
+                <Cell col="8" text="담당자"/>
+                <Cell col="9" text="이미지 전송여부&#13;&#10;(전,후,인수증)"/>
+                <Cell col="10" text="본부장&#13;&#10;전송여부"/>
+                <Cell col="11" text="상품정보&#13;&#10;전송여부"/>
+                <Cell col="12" text="확정여부"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                <Cell col="1" text="bind:CONT_NO" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)"/>
+                <Cell col="2" text="bind:CONT_NM" textAlign="left" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combodataset="ds_voc_type1" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="normal"/>
+                <Cell col="3" text="bind:BP_CD" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combodataset="ds_voc_type2" combocodecol="CODE" combodatacol="CODE_NAME" displaytype="normal"/>
+                <Cell col="4" text="bind:BP_NM" displaytype="normal" maskeditformat="##,###" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combodataset="ds_voc_type3" combocodecol="CODE" combodatacol="CODE_NAME" textAlign="left"/>
+                <Cell col="5" text="bind:CONT_FR_DT" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_paydiv4" displaytype="normal"/>
+                <Cell col="6" text="bind:CONT_TO_DT" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept4" displaytype="normal"/>
+                <Cell col="7" text="bind:CONT_TYPE" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_type4" displaytype="normal"/>
+                <Cell col="8" text="bind:M_USR_ID" textAlign="center" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_voc_dept5"/>
+                <Cell col="9" textAlign="center" text="bind:SMS_YN" displaytype="normal" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM"/>
+                <Cell col="10" textAlign="center" text="bind:SEND_BM_YN" displaytype="normal" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM"/>
+                <Cell col="11" textAlign="center" calendardisplaynulltype="none" displaytype="normal" maskeditformat="####-##-## ##:##" maskedittype="string" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:SEND_ITEM_YN"/>
+                <Cell col="12" textAlign="center" calendardisplaynulltype="none" displaytype="normal" maskeditformat="####-##-## ##:##" maskedittype="string" cssclass="expr:comp.parent.parent.parent.fn_test(currow)" text="bind:VALID_YN"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="div_search" taborder="14" left="10" top="10" height="70" right="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_00" taborder="0" text="계약번호" left="0" top="39" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static00_01_00" taborder="1" text="고객사" left="0" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Static id="Static00_03" taborder="2" text="품목코드(품목명)" left="378" top="9" width="125" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_sono02" taborder="3" left="523" top="9" width="140" height="21" onkeyup="div_search_edt_mRoomNo00_00_00_onkeyup"/>
+              <Edit id="edt_soNo" taborder="4" left="104" top="39" width="224" height="21" enable="true" readonly="false" onkeyup="div_search_edt_mRoomNo00_00_00_onkeyup"/>
+              <Button id="btn_contNo" taborder="5" left="328" top="39" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_contNo_onclick"/>
+              <Edit id="edt_mRoomNo00_00_00" taborder="6" left="103" top="9" width="226" height="21" enable="true" readonly="false" onkeyup="div_search_edt_mRoomNo00_00_00_onkeyup"/>
+              <Button id="btn_sono00_00_00" taborder="7" left="329" top="9" width="21" height="21" cssclass="btn_WF_search" text="" onclick="div_search_btn_bpCd_onclick"/>
+              <Static id="Static00_03_00" taborder="8" text="담당자" left="689" top="9" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+              <Edit id="edt_sono02_00" taborder="9" left="793" top="9" width="120" height="21" onkeyup="div_search_edt_mRoomNo00_00_00_onkeyup"/>
+              <Combo id="Combo00" taborder="10" text="Combo00" left="523" top="39" width="140" height="21" innerdataset="ds_YN" codecolumn="CODE" datacolumn="CODE_NAME" onitemchanged="Div_client_div_search_Combo00_onitemchanged"/>
+              <Static id="Static00_03_00_00" taborder="11" text="확정여부" left="379" top="39" width="105" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grd_list00_00" taborder="15" binddataset="ds_list_3" scrolltype="both" minwidth="" left="grd_list:10" top="108" treeinitstatus="expand,all" griduserproperty="colfix,rowfix,filter,initial,replace,colhide,export,import,personal" showselection="true" selecttype="row" autoenter="select" height="263" autofittype="col" oncellclick="Tab00_Tabpage1_Div01_grd_list00_00_oncellclick" right="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="70"/>
+                <Column size="300"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="경조코드"/>
+                <Cell col="1" text="경조명"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:HS_TYPE" textAlign="center" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM"/>
+                <Cell col="1" text="bind:HS_NM" textAlign="left" combodataset="ds_user" combocodecol="USR_ID" combodatacol="USR_NM" tooltiptext="bind:HS_NM"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static05_00_01" taborder="16" text="경조 타입" left="grd_list:10" top="82" width="80" height="24" cssclass="sta_WF_title"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list_1">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="CONT_NM" type="STRING" size="100"/>
+          <Column id="BP_CD" type="STRING" size="18"/>
+          <Column id="CONT_DT" type="STRING" size="23"/>
+          <Column id="CONT_FR_DT" type="STRING" size="23"/>
+          <Column id="CONT_TO_DT" type="STRING" size="23"/>
+          <Column id="CONT_TYPE" type="STRING" size="20"/>
+          <Column id="VALID_YN" type="STRING" size="2"/>
+          <Column id="CONT_DESC" type="STRING" size="400"/>
+          <Column id="SMS_YN" type="STRING" size="2"/>
+          <Column id="DLVY_BEFORE_YN" type="STRING" size="2"/>
+          <Column id="DLVY_AFTER_YN" type="STRING" size="2"/>
+          <Column id="ACC_YN" type="STRING" size="2"/>
+          <Column id="SEND_BM_YN" type="STRING" size="2"/>
+          <Column id="SEND_ITEM_YN" type="STRING" size="2"/>
+          <Column id="PAY_COND" type="STRING" size="20"/>
+          <Column id="DEL_YN" type="STRING" size="5"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="STRING" size="23"/>
+          <Column id="BP_NM" type="STRING" size="255"/>
+          <Column id="M_DEPT_CD" type="STRING" size="256"/>
+          <Column id="M_USR_ID" type="STRING" size="256"/>
+          <Column id="CASE_CHK" type="STRING" size="256"/>
+          <Column id="FINAL_CHK" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sosoc1"/>
+      <Dataset id="ds_sosoc2"/>
+      <Dataset id="ds_hs"/>
+      <Dataset id="ds_caseCb"/>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="BP_CD" type="STRING" size="256"/>
+          <Column id="BP_NM" type="STRING" size="256"/>
+          <Column id="CONT_CD" type="STRING" size="256"/>
+          <Column id="ITEM_CD" type="STRING" size="256"/>
+          <Column id="ITEM_NM" type="STRING" size="256"/>
+          <Column id="USR_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="BP_CD"/>
+            <Col id="BP_NM"/>
+            <Col id="CONT_CD"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_9">
+        <ColumnInfo>
+          <Column id="CONT_NO" type="STRING" size="40"/>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="SUB_CODE1" type="STRING" size="3"/>
+          <Column id="SUB_CODE2" type="STRING" size="3"/>
+          <Column id="SUB_CODE3" type="STRING" size="3"/>
+          <Column id="CASE_NO" type="STRING" size="20"/>
+          <Column id="SEQ_NO" type="BIGDECIMAL" size="5"/>
+          <Column id="ITEM_CD" type="STRING" size="20"/>
+          <Column id="QTY" type="BIGDECIMAL" size="15"/>
+          <Column id="PRICE_COM" type="BIGDECIMAL" size="15"/>
+          <Column id="PRICE_PER" type="BIGDECIMAL" size="15"/>
+          <Column id="BRANCH_GROUP" type="STRING" size="20"/>
+          <Column id="MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="PRM_DISP_YN" type="STRING" size="2"/>
+          <Column id="PRM_MANDATORY_YN" type="STRING" size="2"/>
+          <Column id="VAT_TYPE" type="STRING" size="4"/>
+          <Column id="PAY_COND" type="STRING" size="20"/>
+          <Column id="INSRT_USER_ID" type="STRING" size="13"/>
+          <Column id="INSRT_DT" type="DATETIME" size="23"/>
+          <Column id="UPDT_USER_ID" type="STRING" size="13"/>
+          <Column id="UPDT_DT" type="DATETIME" size="23"/>
+          <Column id="ITEM_NM" type="STRING" size="255"/>
+          <Column id="CHK" type="STRING" size="256"/>
+          <Column id="SAVE_CHK" type="STRING" size="256"/>
+          <Column id="SUB_CODE1_1" type="STRING" size="256"/>
+          <Column id="SUB_CODE2_1" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_poDiv"/>
+      <Dataset id="ds_vatDiv"/>
+      <Dataset id="ds_payDiv"/>
+      <Dataset id="ds_YN">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">-999</Col>
+            <Col id="CODE_NAME">전체</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">Y</Col>
+            <Col id="CODE_NAME">확정</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">N</Col>
+            <Col id="CODE_NAME">미확정</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list_3">
+        <ColumnInfo>
+          <Column id="HS_TYPE" type="STRING" size="20"/>
+          <Column id="HS_NM" type="STRING" size="400"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Div00_00_00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item2" compid="Div00_00_00.form.Radio_dealType" propid="value" datasetid="ds_list" columnid="DEAL_TYPE"/>
+      <BindItem id="item3" compid="Div00_00_00.form.edt_mRoomNo" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item4" compid="Div00_00_00.form.edt_mRoomNo00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item5" compid="Div00_00_00.form.edt_mRoomNo00_00" propid="value" datasetid="ds_list" columnid="M_ROOM_NO"/>
+      <BindItem id="item9" compid="div_search.form.edt_sono02" propid="value" datasetid="ds_cond" columnid="ITEM_CD"/>
+      <BindItem id="item0" compid="div_search.form.edt_mRoomNo00_00_00" propid="value" datasetid="ds_cond" columnid="BP_NM"/>
+      <BindItem id="item6" compid="div_search.form.edt_soNo" propid="value" datasetid="ds_cond" columnid="CONT_CD"/>
+      <BindItem id="item7" compid="div_search.form.edt_sono02_00" propid="value" datasetid="ds_cond" columnid="USR_NM"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  Left Menu
+*  @MenuPath    CMS > 계약조회
+*  @FileName 	CM0009.xfdl 
+*  @Creator 	김상훈
+*  @CreateDate 	2025.01.07
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.CM009_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.div_search.form.Combo00.set_index(0);
+	//콤보 세팅
+	this.fn_setCombo(obj);
+};
+
+// 콤보 세팅
+this.fn_setCombo = function (obj)
+{
+	this.efn_SetDatasetData(this.ds_poDiv,this.objApp.gds_code,'XN053');		// 발주지점
+	this.efn_SetDatasetData(this.ds_vatDiv,this.objApp.gds_code,'B9001');		// vat
+	this.efn_SetDatasetData(this.ds_payDiv,this.objApp.gds_code,'XS024');		// 청구조건
+};
+
+this.fn_search = function ()
+{	
+	var Arg_1 = this.gfn_nvl(this.ds_cond.getColumn(0,"CONT_CD"),"");
+	var Arg_2 = this.gfn_nvl(this.ds_cond.getColumn(0,"BP_CD"),"");
+	var Arg_3 = this.gfn_nvl(this.ds_cond.getColumn(0,"BP_NM"),"");
+	var Arg_4 = this.gfn_nvl(this.ds_cond.getColumn(0,"ITEM_CD"),"");
+	var Arg_5 = this.gfn_nvl(this.ds_cond.getColumn(0,"USR_NM"),"");
+	var Arg_6 = this.div_search.form.Combo00.value;
+	
+	var id = "CM009_S01";
+	var url = "svcUrl::CM009_S01";
+	var inDs = "";
+	var outDs = "ds_list_1=ds_list_1";
+	var args = "CONT_NO="+Arg_1+" BP_CD="+Arg_2+" BP_NM="+Arg_3+" ITEM_CD="+Arg_4+" USR_NM="+Arg_5+" VALID_YN="+Arg_6+"";
+	var callBackid = "fn_afterSearch";
+	
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	var cont_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var bp_cd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BP_CD");
+	var contFrDt = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"UPDT_DT");
+	
+	// 기준정보(경조,소속,유형) 세팅
+	var id = "CM009_S02";
+	var url = "svcUrl::CM009_S02";
+	var inDs = "";
+	var outDs = "ds_list_9=ds_list_9 ds_list_3=ds_list_3 ds_sosoc1=ds_sosoc1 ds_sosoc2=ds_sosoc2 ds_hs=ds_hs ds_caseCb=ds_caseCb";
+	var args = "BP_CD="+bp_cd+" CONT_FR_DT="+contFrDt+" CONT_NO="+cont_no+"";
+	var callBackid = "fn_sosoc_search";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+}
+
+// 계약 선택 팝업
+this.div_search_btn_contNo_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sPopupId  = "cont_popup";
+	var sUrl      = "CM::CM002_P01.xfdl";
+	var oArg      = {};
+	var sCallBack = "fn_popupCallback_cont";
+	var oOption   = {title : "계약 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+this.fn_popupCallback_cont = function(sPopId, sRtn)
+{
+	// json textarea 엔터값 변환
+ 	sRtn = sRtn.replace(/\n/gi,"\\r\\n");
+    var objRtn = JSON.parse(sRtn);	
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"CONT_CD",objRtn.CONT_NO);
+	
+	this.fn_search();
+}
+
+// 고객사 선택
+this.div_search_btn_bpCd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var Arg_1 = this.gfn_nvl(this.div_search.form.edt_mRoomNo00_00_00.value,"");
+
+	var sPopupId  = "client_popup";
+	var sUrl      = "SO::SO001_P01.xfdl";
+	var oArg      = {MODE : Arg_1};
+	var sCallBack = "fn_popupCallback_client";
+	var oOption   = {title : "고객사 정보"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);	
+};
+
+// 고객사 팝업 callback
+this.fn_popupCallback_client = function(sPopId, sRtn)
+{
+    var objRtn = JSON.parse(sRtn);
+	var bpNm = objRtn.BP_NM.split(" : ");
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_CD",objRtn.bp_cd);
+	this.ds_cond.setColumn(this.ds_cond.rowposition,"BP_NM",objRtn.bp_cd + bpNm[1]);
+	
+	this.fn_search();
+}
+
+// 계약품목 검색
+this.Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.fn_item_search();
+};
+
+// 계약 조회 검색
+this.fn_item_search = function ()
+{
+	this.ds_list_9.set_filterstr("");
+	var cmb1 = this.Combo00.value;
+	var cmb2 = this.Combo00_00.text;
+	var cmb3 = this.Combo00_00_00.text;
+	var cmb4 = this.Combo00_00_00_00.text;
+	
+	var filterstr = "";
+	
+	// 경조타입
+	if(!this.gfn_isNull(cmb1) && cmb1 != "-999")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "HS_TYPE.indexOf('"+cmb1+"')!='-1'";
+		else
+			filterstr += " && HS_TYPE.indexOf('"+cmb1+"')!='-1'";				
+	}
+	
+	// 소속1
+	if(!this.gfn_isNull(cmb2) && cmb2 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			//filterstr = "SUB_CODE1.indexOf('"+cmb2+"')!='-1'";
+			filterstr = "SUB_CODE1=='"+cmb2+"'";
+		else
+			//filterstr += " && SUB_CODE1.indexOf('"+cmb2+"')!='-1'";			
+			filterstr += " && SUB_CODE1=='"+cmb2+"'";
+	}
+	
+	// 소속2
+	if(!this.gfn_isNull(cmb3) && cmb3 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			//filterstr = "SUB_CODE2.indexOf('"+cmb3+"')!='-1'";
+			filterstr = "SUB_CODE2=='"+cmb3+"'";
+		else
+			//filterstr += " && SUB_CODE2.indexOf('"+cmb3+"')!='-1'";		
+			filterstr += " && SUB_CODE2=='"+cmb3+"'";
+	}
+	
+	// 유형
+	if(!this.gfn_isNull(cmb4) && cmb4 != "전체")
+	{
+		if(this.gfn_isNull(filterstr))
+			filterstr = "CASE_NM=='"+cmb4+"'";
+		else
+			filterstr += " && CASE_NM=='"+cmb4+"'";
+	}
+
+	this.ds_list_9.set_filterstr(filterstr);
+};
+
+
+this.fn_sosoc_search = function (strSvcID, nErrorCode, strErrorMag)
+{
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+	
+	this.Combo00.set_index(0);
+	this.Combo00_00.set_index(0);
+	this.Combo00_00_00.set_index(0);
+	this.Combo00_00_00_00.set_index(0);
+	
+	this.ds_list_9.filter("");
+}
+
+
+
+this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var cont_no = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"CONT_NO");
+	var bp_cd = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"BP_CD");
+	var contFrDt = this.ds_list_1.getColumn(this.ds_list_1.rowposition,"UPDT_DT");
+	
+	// 기준정보(경조,소속,유형) 세팅
+	var id = "CM009_S02";
+	var url = "svcUrl::CM009_S02";
+	var inDs = "";
+	var outDs = "ds_list_9=ds_list_9 ds_list_3=ds_list_3 ds_sosoc1=ds_sosoc1 ds_sosoc2=ds_sosoc2 ds_hs=ds_hs ds_caseCb=ds_caseCb";
+	var args = "BP_CD="+bp_cd+" CONT_FR_DT="+contFrDt+" CONT_NO="+cont_no+"";
+	var callBackid = "fn_sosoc_search";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+
+this.grd_list00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 7 && e.subrow == 0)
+	{
+		var PA_item_cnt = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"PA_ITEM_CD");
+		if (PA_item_cnt == '1')
+		{
+		var cont_no = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"CONT_NO");
+		var hs_type = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"HS_TYPE");
+		var sub_code1 = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"SUB_CODE1_1");
+		var sub_code2 = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"SUB_CODE2_1");
+		var case_no = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"CASE_NO");
+		var item_cd = this.ds_list_9.getColumn(this.ds_list_9.rowposition,"ITEM_CD");
+		
+		var sPopupId  = "cont_sub_item_popup";
+		var sUrl      = "CM::CM009_P01.xfdl";
+		var oArg      = {cont_no : cont_no, hs_type : hs_type, sub_code1 : sub_code1, sub_code2 : sub_code2, case_no : case_no, item_cd : item_cd, };
+		var sCallBack = "fn_popupCallback";
+		var oOption   = {title : "대체품목"};
+		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+		}
+	}	
+};
+
+this.fn_popupCallback_memo = function(sPopId, sRtn)
+{
+  
+};
+this.div_search_edt_mRoomNo00_00_00_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};]]></Script>
+  </Form>
+</FDL>

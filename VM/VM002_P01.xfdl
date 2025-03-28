@@ -461,7 +461,7 @@ this.fn_set_div = function ()
 		var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
 		var chkUser = this.ds_list.getColumn(this.ds_list.rowposition,"INSRT_USER_ID");
 		var deptCd = this.objApp.gds_login_info.getColumn(0,"DEPT_CD");
-		if (deptCd != "H4400" && deptCd != "H4410" && deptCd != "H5290" && regUser != chkUser)
+		if (deptCd != "H4400" && deptCd != "H4410" && deptCd != "H5290" && regUser != chkUser && regUser != '223025' && regUser != '220061')
 		{
 			this.Div00.form.btn_del.set_visible(false);
 		} else

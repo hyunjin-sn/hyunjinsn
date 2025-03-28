@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FM003_P01" width="1030" height="720" titletext="New Form" onload="FM003_P01_onload" border="1px solid black">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1030">
+        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" height="720" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_search" taborder="0" left="10" top="10" height="40" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static03" taborder="0" text="문의유형" left="0" top="8" width="95" height="21" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" cssclass="sta_WF_searchLabel"/>
+                    <Edit id="edt_sono" taborder="1" left="102" top="8" width="120" height="21" onkeyup="Div_client_div_search_edt_enter_onkeyup"/>
+                    <Button id="btn_search" taborder="2" text="조회" top="7" width="55" height="24" right="10" visible="true" onclick="fn_btn_search" cssclass="btn_WF_main1"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="Static00" taborder="1" left="0" top="0" cssclass="sta_WF_guideRed" visible="false" text="h10" height="10" right="15"/>
+              <Static id="Static03" taborder="2" left="0" top="50" cssclass="sta_WF_guideBlue" visible="false" text="h10" height="10" right="10"/>
+              <Grid id="grd_list" taborder="3" binddataset="ds_list" scrolltype="both" minwidth="" bottom="10" left="10" top="60" right="10" onheadclick="Div_menu_grd_list_onheadclick" oncelldblclick="Div_client_grd_list_oncelldblclick" autofittype="col" selecttype="multiarea" onkeydown="Div_client_grd_list_onkeydown" cellsizingtype="col">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="150"/>
+                      <Column size="900"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="문의유형"/>
+                      <Cell col="1" text="URL"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:IN_TP" textAlign="center"/>
+                      <Cell col="1" text="bind:IN_URL" textAlign="center" calendardateformat="yyyy-MM-dd"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  문의내용 URL 팝업
+*  @Desction    
+*************************** 소스 수정 이력 ************************************
+*  date          		        Modifier                      Description
+*******************************************************************************
+*  
+*******************************************************************************
+*/
+//var soNo = this.getOwnerFrame().soNo
+//var mode = this.getOwnerFrame().mode
+//var preNo = this.getOwnerFrame().preNo
+//var bpCd = this.getOwnerFrame().bpCd
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.objApp = nexacro.getApplication();
+
+/***********************************************************************************************
+* FORM EVENT 영역(onload)
+/***********************************************************************************************/
+this.FM003_P01_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);	
+	
+	this.fn_search();
+};
+
+ /************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+this.fn_search = function ()
+{
+	var Arg_1 = this.ds_cond.getColumn(0,"IN_TP");
+	// 조회
+	var id = "FM012_S01";
+	var url = "svcUrl::FM012_S01";
+	var inDs = "";
+	var outDs = "ds_list=ds_list";
+	var args = "IN_TP="+Arg_1+"";
+	var callBackid = "fn_afterSearch";
+		
+	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
+};
+
+this.fn_afterSearch = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}
+}
+ 
+ /************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ /**
+* @description 		조회버튼
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_btn_search = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search();
+};
+
+/**
+* @description 		OK 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.btn_ok_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close(this.efn_jsonRtn(this.ds_list));
+}
+
+ /**
+* @description 		닫기 버튼 클릭
+* @작성자	   		심재문
+* @작성일자	   	2020.08.13
+* @수정자	   
+* @수정일자
+*/
+this.fn_cancel = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close("");
+};
+
+// 더블클릭 이벤트
+this.Div_client_grd_list_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+
+	this.close(this.efn_jsonRtn(this.ds_list));
+
+};
+
+
+this.Div_client_div_search_edt_enter_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		this.fn_search();
+	}
+};
+
+
+this.Div_client_grd_list_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	this.gfn_grdCopy_Paste(obj, e);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="IN_TP" type="STRING" size="50"/>
+          <Column id="IN_URL" type="STRING" size="300"/>
+          <Column id="SEQ" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="IN_TP" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="IN_TP"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="IN_TP"/>
+    </Bind>
+  </Form>
+</FDL>

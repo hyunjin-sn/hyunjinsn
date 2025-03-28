@@ -3,7 +3,7 @@
   <Form id="SO002_1" width="1300" height="600" titletext="New Form" onload="SO002_1_onload">
     <Layouts>
       <Layout height="600" mobileorientation="landscape" width="1300">
-        <Div id="Div_client" taborder="1" text="Div00" left="1" top="0" right="0" bottom="10">
+        <Div id="Div_client" taborder="0" text="Div00" left="1" top="0" right="0" bottom="10">
           <Layouts>
             <Layout>
               <Div id="div_search" taborder="0" left="10" top="10" height="32" right="10" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" text="" cssclass="div_WF_search" formscrollbartype="none" formscrolltype="none">
@@ -501,10 +501,10 @@ this.fn_afterUserSave1 = function(strSvcID, nErrorCode, strErrorMag)
       <Dataset id="ds_list_user"/>
     </Objects>
     <Bind>
-      <BindItem id="item2" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
-      <BindItem id="item3" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
-      <BindItem id="item0" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
-      <BindItem id="item1" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item0" compid="Div_client.form.div_search.form.cal_endDate00" propid="value" datasetid="ds_cond" columnid="END_DATE"/>
+      <BindItem id="item1" compid="Div_client.form.div_search.form.cal_endDate2" propid="value" datasetid="ds_cond" columnid="END_DATE2"/>
+      <BindItem id="item2" compid="Div_client.form.div_search.form.edt_sono" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
+      <BindItem id="item3" compid="Div_client.form.div_search.form.edt_sono00" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
       <BindItem id="item4" compid="Div_client.form.div_search.form.edt_sono01" propid="value" datasetid="ds_cond" columnid="SO_NO"/>
     </Bind>
   </Form>

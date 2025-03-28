@@ -11,14 +11,15 @@
                 <Formats>
                   <Format id="default">
                     <Columns>
-                      <Column size="151"/>
+                      <Column size="150"/>
+                      <Column size="70"/>
                       <Column size="70"/>
                       <Column size="110"/>
                       <Column size="110"/>
                       <Column size="110"/>
-                      <Column size="166"/>
-                      <Column size="152"/>
-                      <Column size="391"/>
+                      <Column size="140"/>
+                      <Column size="150"/>
+                      <Column size="390"/>
                     </Columns>
                     <Rows>
                       <Row size="24" band="head"/>
@@ -27,22 +28,24 @@
                     <Band id="head">
                       <Cell text="유형"/>
                       <Cell col="1" text="성명"/>
-                      <Cell col="2" text="연락처1"/>
-                      <Cell col="3" text="연락처2"/>
-                      <Cell col="4" text="FAX"/>
-                      <Cell col="5" text="부서명"/>
-                      <Cell col="6" text="이메일"/>
-                      <Cell col="7" text="비고"/>
+                      <Cell col="2" text="직급"/>
+                      <Cell col="3" text="연락처1"/>
+                      <Cell col="4" text="연락처2"/>
+                      <Cell col="5" text="FAX"/>
+                      <Cell col="6" text="부서명"/>
+                      <Cell col="7" text="이메일"/>
+                      <Cell col="8" text="비고"/>
                     </Band>
                     <Band id="body">
                       <Cell text="bind:PRSN_TYPE_NM" textAlign="center"/>
                       <Cell col="1" text="bind:REPRE_NM" textAlign="center"/>
-                      <Cell col="2" text="bind:TEL_NO1" textAlign="center"/>
-                      <Cell col="3" text="bind:TEL_NO2" textAlign="center"/>
-                      <Cell col="4" text="bind:FAX_NO" textAlign="center"/>
-                      <Cell col="5" text="bind:DEPT_NM" textAlign="left" tooltiptext="bind:DEPT_NM"/>
-                      <Cell col="6" text="bind:E_MAIL" textAlign="left" tooltiptext="bind:E_MAIL"/>
-                      <Cell col="7" text="bind:REMARK" textAlign="left" tooltiptext="bind:REMARK"/>
+                      <Cell col="2" text="bind:RANK_NM" textAlign="center"/>
+                      <Cell col="3" text="bind:TEL_NO1" textAlign="center"/>
+                      <Cell col="4" text="bind:TEL_NO2" textAlign="center"/>
+                      <Cell col="5" text="bind:FAX_NO" textAlign="center"/>
+                      <Cell col="6" text="bind:DEPT_NM" textAlign="left" tooltiptext="bind:DEPT_NM"/>
+                      <Cell col="7" text="bind:E_MAIL" textAlign="left" tooltiptext="bind:E_MAIL"/>
+                      <Cell col="8" text="bind:REMARK" textAlign="left" tooltiptext="bind:REMARK"/>
                     </Band>
                   </Format>
                 </Formats>
@@ -153,6 +156,10 @@ this.Div_client_div_search_edt_ClientPartNm_onkeyup = function(obj:nexacro.Edit,
           <Column id="TEL_NO1" type="STRING" size="20"/>
           <Column id="TEL_NO2" type="STRING" size="20"/>
           <Column id="FAX_NO" type="STRING" size="20"/>
+          <Column id="DEPT_NM" type="STRING" size="20"/>
+          <Column id="E_MAIL" type="STRING" size="100"/>
+          <Column id="REMARK" type="STRING" size="200"/>
+          <Column id="RANK_NM" type="STRING" size="50"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_cond">
@@ -167,9 +174,9 @@ this.Div_client_div_search_edt_ClientPartNm_onkeyup = function(obj:nexacro.Edit,
           <Row>
             <Col id="BP_CD"/>
             <Col id="BP_NM"/>
-            <Col id="REPRE_NM"></Col>
-            <Col id="DEPT_NM"></Col>
-            <Col id="REMARK"></Col>
+            <Col id="REPRE_NM"/>
+            <Col id="DEPT_NM"/>
+            <Col id="REMARK"/>
           </Row>
         </Rows>
       </Dataset>
