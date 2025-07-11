@@ -1504,30 +1504,30 @@ this.fn_save = function ()
 		}
 	}
 	
- 	for (var i=0; i<this.ds_list_2.rowcount; i++)
-	{
-		var chk = this.ds_list_2.getColumn(i,"CHK");
-		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
-		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
-		if (chk == "1")
-		{			
-			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
-			{
-				var chk2 = this.ds_list_2.getColumn(j,"CHK");
-				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
-				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
-				
-				if (chk2 == "1")
-				{
-					if (bg == bg2 && bpCd != bpCd2)
-					{
-						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
-						return;
-					}
-				}				
-			}
-		}		
-	}
+//  	for (var i=0; i<this.ds_list_2.rowcount; i++)
+// 	{
+// 		var chk = this.ds_list_2.getColumn(i,"CHK");
+// 		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
+// 		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
+// 		if (chk == "1")
+// 		{			
+// 			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
+// 			{
+// 				var chk2 = this.ds_list_2.getColumn(j,"CHK");
+// 				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
+// 				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
+// 				
+// 				if (chk2 == "1")
+// 				{
+// 					if (bg == bg2 && bpCd != bpCd2)
+// 					{
+// 						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
+// 						return;
+// 					}
+// 				}				
+// 			}
+// 		}		
+// 	}
 	
 	// 신규 저장시 디테일 insert 타입으로 변경
 	if (this.gfn_isNull(this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO")))
@@ -6010,30 +6010,30 @@ this.fn_valChk = function ()
 		}
 	}
 	
-	for (var i=0; i<this.ds_list_2.rowcount; i++)
-	{
-		var chk = this.ds_list_2.getColumn(i,"CHK");
-		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
-		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
-		if (chk == "1")
-		{			
-			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
-			{
-				var chk2 = this.ds_list_2.getColumn(j,"CHK");
-				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
-				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
-				
-				if (chk2 == "1")
-				{
-					if (bg == bg2 && bpCd != bpCd2)
-					{
-						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
-						return false;
-					}
-				}				
-			}
-		}		
-	}
+// 	for (var i=0; i<this.ds_list_2.rowcount; i++)
+// 	{
+// 		var chk = this.ds_list_2.getColumn(i,"CHK");
+// 		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
+// 		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
+// 		if (chk == "1")
+// 		{			
+// 			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
+// 			{
+// 				var chk2 = this.ds_list_2.getColumn(j,"CHK");
+// 				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
+// 				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
+// 				
+// 				if (chk2 == "1")
+// 				{
+// 					if (bg == bg2 && bpCd != bpCd2)
+// 					{
+// 						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
+// 						return false;
+// 					}
+// 				}				
+// 			}
+// 		}		
+// 	}
 	
 	this.ds_grd3.filter("MANDATORY_YN=='Y'");
 	if (this.ds_grd3.rowcount > 0)

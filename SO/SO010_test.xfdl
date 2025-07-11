@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="SO001" width="1300" height="1000" titletext="New Form" onload="Form_onload" onclose="SO001_onclose">
+  <Form id="SO100" width="1300" height="1000" titletext="New Form" onload="Form_onload" onclose="SO100_onclose">
     <Layouts>
       <Layout height="1000" mobileorientation="landscape" width="1300">
         <Static id="sta_05_00_00_01" taborder="14" top="501" height="29" cssclass="sta_WF_detailLine" left="110" right="11"/>
@@ -9,7 +9,7 @@
             <Layout>
               <Static id="sta_01_01" taborder="95" left="559" top="455" height="29" cssclass="sta_WF_detailLine" width="426"/>
               <Static id="sta_24_00" taborder="81" left="557" top="115" height="29" cssclass="sta_WF_detailLine" width="428" onclick="Div00_sta_24_00_onclick"/>
-              <Static id="sta_13_00" taborder="79" left="515" top="87" height="29" cssclass="sta_WF_detailLine" width="470"/>
+              <Static id="sta_13_00" taborder="79" left="515" top="87" height="29" cssclass="sta_WF_detailLine" width="470" text=""/>
               <Static id="sta_01_00" taborder="37" left="94" top="85" height="29" cssclass="sta_WF_detailLine" width="346"/>
               <Static id="sta_01_00_00" taborder="47" left="94" top="113" height="29" cssclass="sta_WF_detailLine" width="346"/>
               <Static id="sta_01_00_00_00" taborder="48" left="94" top="141" height="29" cssclass="sta_WF_detailLine" width="346"/>
@@ -26,7 +26,7 @@
               <Static id="Static22" taborder="30" text="접수구분" left="247" top="29" width="80" cssclass="sta_WF_detailLabel_ess" height="29"/>
               <Static id="Static04_00_00_00" taborder="31" text="접수자" left="247" top="57" width="80" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="Static05" taborder="35" text="법인구분" left="0" top="85" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
-              <Radio id="Radio_dealType" taborder="36" left="108" top="90" width="138" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div3" canitemchange="Div00_Radio_dealType_canitemchange" onitemchanged="Div00_Radio_dealType_onitemchanged"/>
+              <Radio id="Radio_dealType" taborder="36" left="108" top="90" width="138" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div3"/>
               <Static id="Static09" taborder="38" text="고객사" left="0" top="113" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
               <Static id="Static11" taborder="39" text="계약번호" left="227" top="141" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="Static18" taborder="40" text="소속" left="0" top="169" width="100" height="85" cssclass="sta_WF_detailLabel" onclick="Div00_Static18_onclick"/>
@@ -40,7 +40,7 @@
               <Edit id="edt_titleNm" taborder="8" left="330" top="285" width="106" height="21" readonly="false"/>
               <Edit id="edt_ownTel" taborder="10" left="330" top="313" width="106" height="21" readonly="false"/>
               <Combo id="cmb_soType" taborder="4" left="104" top="145" width="120" height="21" text="선택" value="" index="-1" codecolumn="CODE" datacolumn="CODE_NAME" type="filterlike" onitemchanged="Div06_cmb_PM_onitemchanged" autoselect="true" innerdataset="ds_suju_div" readonly="true" enable="false" background="#fafdc8"/>
-              <Combo id="cmb_hsCd" taborder="6" left="104" top="257" width="331" height="21" text="" value="" index="-1" codecolumn="HS_CODE" datacolumn="HS_NM" type="filterlike" autoselect="true" innerdataset="ds_hs" onsetfocus="Div00_cmb_hsCd_oneditclick" background="#fafdc8" onitemchanged="Div00_cmb_hsCd_onitemchanged"/>
+              <Combo id="cmb_hsCd" taborder="6" left="104" top="257" width="331" height="21" text="" value="" index="-1" codecolumn="HS_CODE" datacolumn="HS_NM" type="filterlike" autoselect="true" innerdataset="ds_hs" onsetfocus="Div00_cmb_hsCd_oneditclick" background="#fafdc8"/>
               <Static id="Static31_00_00" taborder="52" text="인적사항" left="0" top="337" width="100" cssclass="sta_WF_detailLabel" height="148" padding="2px"/>
               <Grid id="grd_list02" taborder="11" binddataset="ds_grd3" scrolltype="both" minwidth="" top="339" left="100" autoenter="select" selecttype="cell" summarytype="default" autofittype="col" width="340" height="146" oncellclick="Div00_grd_list02_oncellclick" oncellposchanged="Div00_grd_list02_oncellposchanged">
                 <Formats>
@@ -73,28 +73,28 @@
               <Static id="sta_05" taborder="56" left="560" top="227" height="29" cssclass="sta_WF_detailLine" width="425"/>
               <Static id="Static10" taborder="57" text="성명(주문자)" left="466" top="227" width="100" cssclass="sta_WF_detailLabel_ess" height="29"/>
               <Static id="sta_08" taborder="58" left="565" top="143" height="57" cssclass="sta_WF_detailLine" width="420"/>
-              <Static id="Static19" taborder="59" text="호실" left="466" top="199" width="60" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static19" taborder="59" text="호실" left="466" top="199" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="sta_13" taborder="60" left="515" top="29" height="59" cssclass="sta_WF_detailLine" width="470"/>
               <Static id="Static00_00" taborder="61" text="배송일자" left="466" top="29" width="100" cssclass="sta_WF_detailLabel_ess" height="59"/>
-              <Static id="Static35" taborder="62" text="고인/신랑" left="811" top="199" width="70" cssclass="sta_WF_detailLabel" height="29"/>
+              <Static id="Static35" taborder="62" text="고인/신랑" left="721" top="199" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Calendar id="cal_dlvyDt" taborder="12" left="570" top="33" width="100" height="21" onchanged="Div00_cal_dlvyDt_onchanged"/>
               <Combo id="cmb_time" taborder="13" left="673" top="33" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time"/>
               <Combo id="cmb_min" taborder="14" left="745" top="33" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
               <Static id="Static00_00_01" taborder="63" text="시" left="728" top="30" width="20" height="29"/>
               <Radio id="Radio_dlvyDtType" taborder="64" left="571" top="60" width="409" height="21" codecolumn="CODE" datacolumn="CODE_NAME" direction="vertical" innerdataset="ds_div1"/>
-              <Static id="Static00_00_00" taborder="65" text="빈소입실시간" left="466" top="87" width="100" height="29" cssclass="sta_WF_detailLabel"/>
-              <Calendar id="cal_decDt" taborder="15" left="570" top="91" width="100" height="21" onchanged="Div00_cal_decDt_onchanged"/>
-              <Combo id="cmb_AM00_01" taborder="16" left="673" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time"/>
-              <Static id="Static00_00_01_01" taborder="66" text="시" left="728" top="88" width="20" height="29"/>
-              <Combo id="cmb_AM00_00_00" taborder="17" left="745" top="91" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute"/>
+              <Static id="Static00_00_00" taborder="65" text="빈소입실시간" left="873" top="33" width="100" height="29" cssclass="sta_WF_detailLabel" visible="false"/>
+              <Calendar id="cal_decDt" taborder="15" left="720" top="61" width="100" height="21" onchanged="Div00_cal_decDt_onchanged" visible="false"/>
+              <Combo id="cmb_AM00_01" taborder="16" left="833" top="61" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_time" visible="false"/>
+              <Static id="Static00_00_01_01" taborder="66" text="시" left="888" top="58" width="20" height="29" visible="false"/>
+              <Combo id="cmb_AM00_00_00" taborder="17" left="905" top="61" width="51" height="21" text="" value="" index="-1" codecolumn="CODE" datacolumn="NAME" type="filterlike" canitemchange="Div06_cmb_AM_canitemchange" innerdataset="ds_minute" visible="false"/>
               <Static id="Static09_00" taborder="67" text="배송지" left="466" top="115" width="100" cssclass="sta_WF_detailLabel_ess" height="85"/>
               <Button id="btn_dlvy" taborder="68" left="883" top="119" width="21" height="21" cssclass="btn_WF_search" onclick="Div00_btn_dlvy_onclick"/>
               <TextArea id="TA_addr" taborder="19" left="570" top="147" width="410" height="49" background="#fafdc8"/>
               <Button id="btn_chk" taborder="69" left="909" top="119" width="71" height="21" text="중복확인" cssclass="btn_WF_main1" onclick="Div00_btn_chk_onclick"/>
               <Edit id="edt_usr2" taborder="22" left="570" top="231" width="125" height="21" enable="true" readonly="false" background="#fafdc8"/>
               <Button id="btn_usr2" taborder="70" left="695" top="231" width="21" height="21" cssclass="btn_WF_search" visible="false" onclick="Div00_btn_usr2_onclick"/>
-              <Edit id="edt_mRoomNo" taborder="20" left="530" top="203" width="96" height="21" enable="true" readonly="false"/>
-              <Edit id="edt_mNm" taborder="21" left="885" top="203" width="95" height="21" enable="true" readonly="false"/>
+              <Edit id="edt_mRoomNo" taborder="20" left="570" top="203" width="147" height="21" enable="true" readonly="false"/>
+              <Edit id="edt_mNm" taborder="21" left="825" top="203" width="155" height="21" enable="true" readonly="false"/>
               <Static id="Static31_00_01" taborder="71" text="HP" left="466" top="255" width="100" cssclass="sta_WF_detailLabel" height="29" font="normal 8pt/normal &quot;Arial&quot;" padding="2px"/>
               <Button id="btn_reqSms" taborder="72" left="695" top="259" width="45" height="21" text="SMS" cssclass="btn_WF_main1" onclick="Div00_btn_reqSms_onclick"/>
               <Static id="Static21_00_00" taborder="73" text="Tel" left="721" top="227" width="100" cssclass="sta_WF_detailLabel" height="29"/>
@@ -131,7 +131,7 @@
               <Edit id="edt_mMemo" taborder="27" left="569" top="431" width="411" height="21" readonly="false" onkeyup="div_search_onkeyup"/>
               <Static id="Static10_00_00" taborder="77" text="의전 배송 메모" left="466" top="427" width="100" cssclass="sta_WF_detailLabel" height="29"/>
               <Static id="Static00_00_01_00" taborder="78" text="분" left="802" top="30" width="20" height="29"/>
-              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="802" top="85" width="20" height="29"/>
+              <Static id="Static00_00_01_00_00" taborder="80" text="분" left="962" top="55" width="20" height="29" visible="false"/>
               <Static id="Static05_00_00" taborder="82" text="배송정보" left="469" top="1" width="97" height="24" cssclass="sta_WF_title"/>
               <Button id="btn_client" taborder="83" left="414" top="117" width="21" height="21" cssclass="btn_WF_search" text="" onclick="Div00_btn_client_onclick"/>
               <Button id="btn_telInfo" taborder="84" left="363" top="89" width="71" height="21" text="Tel Info" cssclass="btn_WF_main1" onclick="Div00_btn_telInfo_onclick"/>
@@ -177,10 +177,11 @@
               <Button id="btn_reqSms00_00" taborder="101" left="835" top="259" width="109" height="21" text="편의용품 알림" cssclass="btn_WF_main1" onclick="Div00_btn_reqSms00_00_onclick" visible="false"/>
               <Edit id="edt_mNm00" taborder="102" left="825" top="91" width="155" height="21" enable="false" readonly="false" color="red"/>
               <Button id="btn_manual00" taborder="103" top="5" height="21" text="이장/개장 접수등록" cssclass="btn_WF_main1" right="13" width="124" visible="true" onclick="Div00_btn_manual00_onclick"/>
-              <Button id="btn_mall_sms" taborder="104" text="단품몰" left="558" top="5" width="62" height="21" cssclass="btn_WF_main1" onclick="Div02_Tab00_Tabpage1_btn_mall_refresh_onclick"/>
-              <Static id="Static19_00" taborder="105" text="발인일자" left="630" top="199" width="70" cssclass="sta_WF_detailLabel" height="29"/>
-              <Calendar id="cal_balinDt" taborder="106" left="704" top="203" width="102" height="21" onchanged="Div00_cal_dlvyDt_onchanged"/>
+              <Button id="btn_mall_sms" taborder="104" text="단품몰" left="568" top="5" width="62" height="21" cssclass="btn_WF_main1" onclick="Div02_Tab00_Tabpage1_btn_mall_refresh_onclick"/>
+              <Static id="Static19_00" taborder="105" text="발인일자" left="466" top="87" width="100" cssclass="sta_WF_detailLabel" height="29"/>
+              <Calendar id="cal_balinDt" taborder="106" left="569" top="92" width="102" height="21"/>
               <Edit id="edt_BUGO" taborder="107" left="84" top="4" width="170" height="21" readonly="false" visible="false" textAlign="center" border="0px none" font="bold 10pt/normal &quot;Arial&quot;,&quot;나눔고딕&quot;" color="red"/>
+              <Button id="btn_pkg_sms" taborder="108" text="PKG안내" left="638" top="5" width="82" height="21" cssclass="btn_WF_main1" onclick="Div02_Tab00_Tabpage1_btn_PKG_refresh_onclick" background="firebrick"/>
             </Layout>
           </Layouts>
         </Div>
@@ -928,6 +929,71 @@
                       </Layout>
                     </Layouts>
                   </Tabpage>
+                  <Tabpage id="Tabpage8" text="플라시스템 정보">
+                    <Layouts>
+                      <Layout>
+                        <Static id="Static24" taborder="0" text="플라시스템 정보" left="3" top="0" width="121" height="30" cssclass="sta_WF_title"/>
+                        <Grid id="grd_list03" taborder="1" scrolltype="both" minwidth="" left="0" right="0" top="34" bottom="0" autoenter="select" selecttype="cell" autofittype="col" binddataset="ds_list_2" oncellclick="Div02_Tab00_Tabpage8_grd_list03_oncellclick">
+                          <Formats>
+                            <Format id="default">
+                              <Columns>
+                                <Column size="69"/>
+                                <Column size="97"/>
+                                <Column size="226"/>
+                                <Column size="50"/>
+                                <Column size="79"/>
+                                <Column size="148"/>
+                                <Column size="99"/>
+                                <Column size="119"/>
+                                <Column size="119"/>
+                                <Column size="97"/>
+                                <Column size="168"/>
+                                <Column size="76"/>
+                                <Column size="76"/>
+                                <Column size="76"/>
+                              </Columns>
+                              <Rows>
+                                <Row size="24" band="head"/>
+                                <Row size="24"/>
+                              </Rows>
+                              <Band id="head">
+                                <Cell text="구분"/>
+                                <Cell col="1" text="품목코드"/>
+                                <Cell col="2" text="품목명"/>
+                                <Cell col="3" text="수량"/>
+                                <Cell col="4" text="지점코드"/>
+                                <Cell col="5" text="지점명"/>
+                                <Cell col="6" text="연락처"/>
+                                <Cell col="7" text="FLA 주문번호"/>
+                                <Cell col="8" text="FLA 주문상태"/>
+                                <Cell col="9" text="결과코드"/>
+                                <Cell col="10" text="결과내용"/>
+                                <Cell col="11" text="발주"/>
+                                <Cell col="12" text="발주취소"/>
+                                <Cell col="13" text="사진"/>
+                              </Band>
+                              <Band id="body">
+                                <Cell text="bind:DEAL_TYPE" displaytype="combotext" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_div3" combotype="filterlike" tooltiptext="bind:DEAL_TYPE" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="1" text="bind:ITEM_CD" combodataset="ds_position" combocodecol="CODE" combodatacol="CODE_NAME" combotype="filterlike" textAlign="center" tooltiptext="bind:ITEM_CD" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="2" text="bind:ITEM_NM" combodataset="ds_user" combocodecol="USER_ID" combodatacol="USER_NAME" combotype="filterlike" tooltiptext="bind:ITEM_NM" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="3" text="bind:SO_QTY" calendardisplaynulltype="nulltext" textAlign="center" displaytype="expr:UPDT_DIV=='2' &amp;&amp; PO_STATUS=='0' ? 'maskeditcontrol' : 'nomal'" edittype="expr:UPDT_DIV=='2' &amp;&amp; PO_STATUS=='0' ? 'mask' : 'none'" maskeditformat="##,###" tooltiptext="bind:SO_QTY" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="4" text="bind:PO_BP_CD" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="bind:PO_BP_CD" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="5" text="bind:REGION_NM" calendardisplaynulltype="nulltext" tooltiptext="bind:REGION_NM" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="6" text="bind:TEL_NO2" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="bind:TEL_NO2" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="7" text="bind:ADD_CD2" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="bind:ADD_CD2" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="8" text="bind:ADD_CD3" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="bind:ADD_CD3" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'" displaytype="combotext" edittype="combo" combocodecol="CODE" combodatacol="CODE_NAME" combodataset="ds_fla_status"/>
+                                <Cell col="9" text="bind:ADD_CD5" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="bind:ADD_CD5" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="10" text="bind:ADD_CD6" calendardisplaynulltype="nulltext" textAlign="left" tooltiptext="bind:ADD_CD6" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'"/>
+                                <Cell col="11" text="발주" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="발주" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'" displaytype="buttoncontrol" edittype="button"/>
+                                <Cell col="12" text="발주취소" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="발주취소" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'" displaytype="buttoncontrol" edittype="button"/>
+                                <Cell col="13" text="보기" calendardisplaynulltype="nulltext" textAlign="center" tooltiptext="보기" cssclass="expr:PO_STATUS==&quot;1&quot; ? 'status' : 'status2'" displaytype="buttoncontrol" edittype="button"/>
+                              </Band>
+                            </Format>
+                          </Formats>
+                        </Grid>
+                      </Layout>
+                    </Layouts>
+                  </Tabpage>
                 </Tabpages>
               </Tab>
               <Static id="Static00" taborder="1" top="11" height="20" background="#ededed" right="84" width="30"/>
@@ -957,10 +1023,12 @@
             </Format>
           </Formats>
         </Grid>
+        <WebBrowser id="WebBrowser00_00" taborder="16" left="1036" top="94" right="147" onusernotify="WebBrowser00_00_onusernotify" height="115" visible="false"/>
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[// 전역변수 설정
 var T_SO_NO = null;
+var flaFlag = "N";
 // /**
 // *  주문등록
 // *  @MenuPath    SO > SO001
@@ -1602,30 +1670,30 @@ this.fn_save = function ()
 		}
 	}
 	
- 	for (var i=0; i<this.ds_list_2.rowcount; i++)
-	{
-		var chk = this.ds_list_2.getColumn(i,"CHK");
-		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
-		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
-		if (chk == "1")
-		{			
-			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
-			{
-				var chk2 = this.ds_list_2.getColumn(j,"CHK");
-				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
-				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
-				
-				if (chk2 == "1")
-				{
-					if (bg == bg2 && bpCd != bpCd2)
-					{
-						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
-						return;
-					}
-				}				
-			}
-		}		
-	}
+//  	for (var i=0; i<this.ds_list_2.rowcount; i++)
+// 	{
+// 		var chk = this.ds_list_2.getColumn(i,"CHK");
+// 		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
+// 		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
+// 		if (chk == "1")
+// 		{			
+// 			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
+// 			{
+// 				var chk2 = this.ds_list_2.getColumn(j,"CHK");
+// 				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
+// 				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
+// 				
+// 				if (chk2 == "1")
+// 				{
+// 					if (bg == bg2 && bpCd != bpCd2)
+// 					{
+// 						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
+// 						return;
+// 					}
+// 				}				
+// 			}
+// 		}		
+// 	}
 	
 	// 신규 저장시 디테일 insert 타입으로 변경
 	if (this.gfn_isNull(this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO")))
@@ -2117,6 +2185,15 @@ this.fn_popupCallback_client = function(sPopId, sRtn)
 		this.Div00.form.edt_usr2.set_enable(true);
 	}
 	
+	//PKG 팝업 버튼 체크
+	if (objRtn.BP_FLAG > 0)
+	{
+		this.Div00.form.btn_pkg_sms.set_visible(true);
+	} else 
+	{
+		this.Div00.form.btn_pkg_sms.set_visible(false);
+	}
+	
 	// 기존데이터 삭제	
 	if (this.ds_grd2.rowcount > 0 || this.ds_grd3.rowcount > 0 || this.ds_grd4.rowcount > 0)
 	{
@@ -2458,7 +2535,7 @@ this.fn_afterCallback7 = function (strSvcID, nErrorCode, strErrorMag)
 	{
 		var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY")
 	
-		var sPopupId  = "bpEtc_popup";
+		var sPopupId  = "bppopup";
 		var sUrl      = "SO::SO001_P22.xfdl";
 		var oArg      = {bpCd : bpCd};
 		var sCallBack = "";
@@ -3176,7 +3253,7 @@ this.fn_orderChk = function(sPopId, sRtn)
 	else
 	{
 		var arrArg = [];
-		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, sRtn);	
+		this.gfn_openForm2(this.objApp.gds_menu, "SO100", arrArg, sRtn);	
 	}
 }
 
@@ -3446,6 +3523,10 @@ this.Div06_Tab00_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEv
 		
 		this.ds_list_2.filter("CHK == '1' && INV_CHK=='Y'")
 	}
+	else if (e.postindex == 7)
+	{
+		this.ds_list_2.filter("CHK == '1' && PO_BP_CD=='B2039'")
+	}
 	else
 	{
 		this.ds_list_2.filter("")
@@ -3565,7 +3646,7 @@ this.fn_aftercontSearchCallback = function(strSvcID, nErrorCode, strErrorMag)
 		var SoNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_NO");
 
 		var arrArg = [];
-		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, SoNo, "copy");
+		this.gfn_openForm2(this.objApp.gds_menu, "SO100", arrArg, SoNo, "copy");
 	}
 };
 
@@ -3735,6 +3816,7 @@ this.fn_popupCallback_item = function(sPopId, sRtn)
 		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"INV_QTY",this.gfn_isNullRtn(objRtn.INV_QTY,""));
 		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_PRICE",this.gfn_isNullRtn(objRtn.SO_PRICE,""));
 		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_QTY",this.gfn_isNullRtn(objRtn.SO_QTY,""));
+		this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ETC_REMARK",this.gfn_isNullRtn(objRtn.ETC_REMARK,""));
 			
 		if (dealType == "A")
 		{
@@ -3757,6 +3839,7 @@ this.fn_popupCallback_item = function(sPopId, sRtn)
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"BASIC_UNIT",this.gfn_isNullRtn(objRtn.BASIC_UNIT,""));
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"RIBBON_CHK",this.gfn_isNullRtn(objRtn.RIBBON_CHK,""));
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"MANDATORY_YN",this.gfn_nvl(objRtn.MANDATORY_YN,"N"));
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ETC_REMARK",this.gfn_isNullRtn(objRtn.ETC_REMARK,""));
 			
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"INV_CHK",this.gfn_isNullRtn(objRtn.INV_CHK,""));
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"INV_QTY",this.gfn_isNullRtn(objRtn.INV_QTY,""));
@@ -3785,6 +3868,7 @@ this.fn_popupCallback_item = function(sPopId, sRtn)
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_PRICE",this.gfn_isNullRtn(objRtn.SO_PRICE,""));
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_QTY",this.gfn_isNullRtn(objRtn.SO_QTY,""));
 			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"SO_PRICE",this.gfn_isNullRtn(objRtn.SO_PRICE,""));
+			this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ETC_REMARK",this.gfn_isNullRtn(objRtn.ETC_REMARK,""));
 		}
 		
 	}	
@@ -3809,8 +3893,8 @@ this.Div02_Tab00_Tabpage2_grd_list_2_oncellclick = function(obj:nexacro.Grid,e:n
 	
 		var sPopupId  = "msg1_popup";
 		var sUrl      = "SO::SO001_P08.xfdl";
-		var oArg      = {bpCd : bpCd};
-		//var oArg      = {bpCd : bpCd, hsCd : hsCd, subCode1 : subCode1, subCode2 : subCode2, sysDiv : sysDiv};
+		//var oArg      = {bpCd : bpCd};
+		var oArg      = {bpCd : bpCd, hsCd : hsCd, subCode1 : subCode1, subCode2 : subCode2, sysDiv : sysDiv};
 		var sCallBack = "fn_popupCallback_msg1";
 		var oOption   = {title : "리본메시지"};
 		this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
@@ -4020,6 +4104,7 @@ this.fn_popupCallback_fromBp = function(sPopId, sRtn)
 	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"PO_PRICE",objRtn.PO_PRC);
 	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"PO_AMT",objRtn.PO_PRICE);
 	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"FAX_NO",objRtn.FAX_NO);
+	this.ds_list_2.setColumn(this.ds_list_2.rowposition,"ETC_REMARK",objRtn.ETC_REMARK);
 	
 	var qty = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_QTY");
 	var dcPrc = (objRtn.PO_PRC*qty)-objRtn.PO_PRICE;
@@ -4199,7 +4284,7 @@ this.Div02_Tab00_Tabpage4_grd_list03_oncellclick = function(obj:nexacro.Grid,e:n
 		var stoSoNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_NO_ORI");
 
 		var arrArg = [];
-		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, stoSoNo);
+		this.gfn_openForm2(this.objApp.gds_menu, "SO100", arrArg, stoSoNo);
 		
 // 		this.fn_search(soNo);
 // 		this.Div02.form.Tab00.set_tabindex(6);
@@ -4455,7 +4540,7 @@ this.Div02_Tab00_Tabpage7_Div00_00_grd_list03_oncellclick = function(obj:nexacro
 		var stoSoNo = this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_NO_ORI");
 		//trace(soNo);
 		var arrArg = [];
-		this.gfn_openForm2(this.objApp.gds_menu, "SO010", arrArg, stoSoNo);
+		this.gfn_openForm2(this.objApp.gds_menu, "SO100", arrArg, stoSoNo);
 	}
 };
 
@@ -5015,24 +5100,52 @@ this.fn_confirmDo = function (objRtn, workNm)
 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA_TYPE","send_fax_flag");
 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA1","y");
 		
-		this.ds_list_2.filter("BRANCH_GROUP=='F'")
-		var faxNo = this.ds_list_2.getColumn(0,"FAX_NO");
-		var poBpCd = this.ds_list_2.getColumn(0,"PO_BP_CD");
+		this.ds_list_2.filter("BRANCH_GROUP=='F'");
+		var faxNo = "";
+		var poBpCd = "";
+		var poBpCd_temp = "";
+		
+ 		for (var i=0; i < this.ds_list_2.rowcount; i++)
+ 		{
+ 			faxNo = this.ds_list_2.getColumn(i,"FAX_NO");
+			poBpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
+			if (poBpCd != "" &&  poBpCd != poBpCd_temp)
+			{
+				sleep(100);
+				this.ds_param.addRow();
+				this.ds_param.setColumn(this.ds_param.rowposition,"SO_NO",soNo);
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA_TYPE","fax_data");
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA1","02-504-2144");
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA2",faxNo);
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA3",faxMgNo + "_" + i);
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA4","f");
+				this.ds_param.setColumn(this.ds_param.rowposition,"DATA5",poBpCd);
+				
+				this.ds_faxChk.addRow();
+				this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"CHK","Y");
+				this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"FAX_SO_NO",faxMgNo + "_" + i);
+				this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"PO_BP_CD",poBpCd);
+				this.fn_faxDo(faxMgNo + "_" + i, soNo, poBpCd);
+			}
+		
+			poBpCd_temp = poBpCd;
+ 		}
+		
 		this.ds_list_2.filter("");
 		
-		this.ds_param.addRow();
-		this.ds_param.setColumn(this.ds_param.rowposition,"SO_NO",soNo);
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA_TYPE","fax_data");
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA1","02-504-2144");		
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA2",faxNo);
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA3",faxMgNo);
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA4","f");
-		this.ds_param.setColumn(this.ds_param.rowposition,"DATA5",poBpCd);
-
-		this.ds_faxChk.addRow();
-		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"CHK","Y");
-		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"FAX_SO_NO",faxMgNo);
-		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"PO_BP_CD",poBpCd);
+// 		this.ds_param.addRow();
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"SO_NO",soNo);
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA_TYPE","fax_data");
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA1","02-504-2144");		
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA2",faxNo);
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA3",faxMgNo);
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA4","f");
+// 		this.ds_param.setColumn(this.ds_param.rowposition,"DATA5",poBpCd);
+// 
+// 		this.ds_faxChk.addRow();
+// 		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"CHK","Y");
+// 		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"FAX_SO_NO",faxMgNo);
+// 		this.ds_faxChk.setColumn(this.ds_faxChk.rowposition,"PO_BP_CD",poBpCd);
 	}
 	
 	if (callFlag == "1")
@@ -5059,10 +5172,11 @@ this.fn_confirmDo = function (objRtn, workNm)
 			this.ds_param.setColumn(this.ds_param.rowposition,"DATA_TYPE","so_list");
 			this.ds_param.setColumn(this.ds_param.rowposition,"DATA1",soNo);
 			this.ds_param.setColumn(this.ds_param.rowposition,"DATA2",this.ds_list_2.getColumn(i,"SO_SEQ"));
+			this.ds_param.setColumn(this.ds_param.rowposition,"DATA3",this.ds_list_2.getColumn(i,"PO_BP_CD"));
 		}
 	}
 	
-	this.fn_faxDo(faxMgNo, soNo, poBpCd);
+	
 	
 	this.fn_doChk(workNm);
 	
@@ -5175,32 +5289,34 @@ this.fn_afterConfirmDo3 = function (strSvcID, nErrorCode, strErrorMag) {
 	var soNo = this.ds_bugoflag.getColumn(this.ds_bugoflag.rowposition,"SO_NO");
 	var bugoFlag = this.ds_bugoflag.getColumn(this.ds_bugoflag.rowposition,"BUGO_FLAG");
 	
-	var args1 = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
-	var backid = ""
+//	var args1 = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
+//	var backid = ""
 	
-	// 현대자동차_조사 고객사 장례지원 일자별 문자서비스로 이동
-	if (args1 == "A6426" || args1 == "A6427" || args1 == "A6428" || args1 == "A6429" || args1 == "A6430" || args1 == "A6431" || args1 == "A6432")
-	{
-		// 현대자동차 장례지원 일자별 문자 서비스
-		backid = "fn_afterConfirmDo_hyundai"
-	} else
-	{
-		// mrp 저장 처리
-		backid = "fn_afterConfirmDo4"
-	}
-	
+// 	// 현대자동차_조사 고객사 장례지원 일자별 문자서비스로 이동
+// 	if (args1 == "A6426" || args1 == "A6427" || args1 == "A6428" || args1 == "A6429" || args1 == "A6430" || args1 == "A6431" || args1 == "A6432" || args1 == "A6433")
+// 	{
+// 		// 현대자동차 장례지원 일자별 문자 서비스
+// 		backid = "fn_afterConfirmDo_hyundai"
+// 	} else
+// 	{
+// 		// mrp 저장 처리
+// 		backid = "fn_afterConfirmDo4"
+// 	}
+// 	
+
+	// 장례지원 일자별 문자서비스로 이동
 	var id = "SO001_M11";
 	var url = "svcUrl::SO001_M11";
 	var inDs = "";
 	var outDs = "";
 	var args = "SO_NO="+soNo+" BUGO_FLAG ="+bugoFlag+"";
-	var callBackid = backid;
+	var callBackid = "fn_afterConfirmDo_hyundai";
 		
 	this.gfn_transaction( id, url, inDs, outDs, args, callBackid);
 	
 }
 
-// 현대자동차 장례지원 일자별 문자 서비스 주문 확정시
+// 장례지원 일자별 문자 서비스 주문 확정시
 this.fn_afterConfirmDo_hyundai = function (strSvcID, nErrorCode, strErrorMag) {
 	if (nErrorCode < 0) 
 	{
@@ -5306,6 +5422,8 @@ this.fn_afterBpMmsSnd = function (strSvcID, nErrorCode, strErrorMag) {
 			this.fn_search(this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO"));
 		
 			this.alert("주문 확정 되었습니다.");
+			
+			this.flaOrder();
 		} else
 		{
 			var args1 = this.ds_soAdd.getColumn(this.ds_soAdd.rowposition,"ADD_CD19");
@@ -5341,6 +5459,8 @@ this.fn_afterbpmms = function (strSvcID, nErrorCode, strErrorMag) {
 		this.fn_search(this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO"));
 	
 		this.alert("주문 확정 되었습니다.");
+		
+		this.flaOrder();
 	} else
 	{
 		var args1 = this.ds_soAdd.getColumn(this.ds_soAdd.rowposition,"ADD_CD19");
@@ -5367,6 +5487,8 @@ this.fn_aftermmsImgsnd = function (strSvcID, nErrorCode, strErrorMag) {
 	this.fn_search(this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO"));
 	
 	this.alert("주문 확정 되었습니다.");
+	
+	this.flaOrder();
 }
 
 // 발주취소
@@ -6608,30 +6730,30 @@ this.fn_valChk = function ()
 		}
 	}
 	
-	for (var i=0; i<this.ds_list_2.rowcount; i++)
-	{
-		var chk = this.ds_list_2.getColumn(i,"CHK");
-		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
-		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
-		if (chk == "1")
-		{			
-			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
-			{
-				var chk2 = this.ds_list_2.getColumn(j,"CHK");
-				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
-				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
-				
-				if (chk2 == "1")
-				{
-					if (bg == bg2 && bpCd != bpCd2)
-					{
-						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
-						return false;
-					}
-				}				
-			}
-		}		
-	}
+// 	for (var i=0; i<this.ds_list_2.rowcount; i++)
+// 	{
+// 		var chk = this.ds_list_2.getColumn(i,"CHK");
+// 		var bpCd = this.ds_list_2.getColumn(i,"PO_BP_CD");
+// 		var bg = this.ds_list_2.getColumn(i,"BRANCH_GROUP");
+// 		if (chk == "1")
+// 		{			
+// 			for (var j=this.ds_list_2.rowcount-1; i<j; j--)
+// 			{
+// 				var chk2 = this.ds_list_2.getColumn(j,"CHK");
+// 				var bpCd2 = this.ds_list_2.getColumn(j,"PO_BP_CD");
+// 				var bg2 = this.ds_list_2.getColumn(j,"BRANCH_GROUP");
+// 				
+// 				if (chk2 == "1")
+// 				{
+// 					if (bg == bg2 && bpCd != bpCd2)
+// 					{
+// 						this.alert("지점은 플라워지점, 의전지점 각각 한군데 지점만 등록 가능합니다. 확인 바랍니다.")
+// 						return false;
+// 					}
+// 				}				
+// 			}
+// 		}		
+//	}
 	
 	this.ds_grd3.filter("MANDATORY_YN=='Y'");
 	if (this.ds_grd3.rowcount > 0)
@@ -6772,9 +6894,7 @@ this.Div02_Tab00_Tabpage7_Button00_onclick = function(obj:nexacro.Button,e:nexac
 this.fn_faxDo = function (faxSono, soNo, poBpCd)
 {
 
-	
 	var fileNm = faxSono+".pdf"
-	
 	if(system.navigatorname == "nexacro"){ //runtime
 		
 		var str;
@@ -6804,7 +6924,6 @@ this.fn_faxDo = function (faxSono, soNo, poBpCd)
 		str +='</body>';
 		str +='</html>';
 
-	
 		this.WebBrowser00.getProperty("document").callMethod("Write", str);
 		this.WebBrowser00.getProperty("document").callMethod("Close");	
 	}
@@ -7522,7 +7641,365 @@ this.Div00_Radio_dealType_onitemchanged = function(obj:nexacro.Radio,e:nexacro.I
 {
 	this.fn_bugochk();
 };
-]]></Script>
+
+this.flaOrder = function ()
+{
+	this.ds_list_2.filter("PO_BP_CD == 'B2039'")
+	if (this.ds_list_2.rowcount > 0)
+	{
+		for (i=0; i < this.ds_list_2.rowcount; i++)
+		{
+			var orderDate = this.ds_list.getColumn(this.ds_list.rowposition,"ORDER_DT");
+			orderDate = String(orderDate);
+			var formattedDate = orderDate.substring(0, 4) + "-" +       // 연
+								orderDate.substring(4, 6) + "-" +       // 월
+								orderDate.substring(6, 8) + " " +       // 일
+								orderDate.substring(8, 10) + ":" +      // 시
+								orderDate.substring(10, 12) + ":" +     // 분
+								orderDate.substring(12, 14);            // 초
+			var dlvyDate = this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_DT");
+			dlvyDate = String(dlvyDate);
+			var formattedDate2 = dlvyDate.substring(0, 4) + "-" +       // 연
+								 dlvyDate.substring(4, 6) + "-" +       // 월
+								 dlvyDate.substring(6, 8);       		// 일
+			var ribbon = this.gfn_nvl(this.ds_list_2.getColumn(i, "RIBBON_MESSAGE"), "");
+    
+			// " / " 기준으로 split
+			var ribbonParts = ribbon.split(" / ");
+			var ribbonLeft = ribbonParts[0] || "";   // " / " 앞부분, 없으면 빈 문자열
+			var ribbonRight = ribbonParts[1] || "";  // " / " 뒷부분, 없으면 빈 문자열	
+						
+			var soNo = this.ds_list_2.getColumn(i,"SO_NO");                  										// !! SO 번호
+			var soSeq = this.ds_list_2.getColumn(i,"SO_SEQ");                                                   	// !! SO 시퀀스
+			var order_number = soNo+"_"+soSeq;                              										// !! 주문번호
+			var order_time = formattedDate;                       													// !! 주문시간
+			var orderer_name = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_NM"),"");          // !! 주문자명
+			var orderer_phone = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_TEL_NO1"),"");    // !! 주문자 핸드폰
+			var orderer_email = "";                       															// 주문자 이메일
+			var orderer_tel = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_TEL_NO2"),"");                             // 주문자 전화번호
+			var receiver_name = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_NM"),"");         // !! 받는사람 이름
+			var receiver_phone = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_TEL_NO1"),"");   // !! 받는사람 핸드폰
+			var receiver_tel = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_TEL_NO2"),"");                            // 받는사람 전화번호
+			var payment_date = "";                        															// 결제시간
+			var total_amount = 0;                                        											// 상품금액(할인 전 판매가)
+			var pay_amount = 0;                              														// 소비자가(최종판매가)
+			var supply_amount = this.gfn_nvl(this.ds_list_2.getColumn(i,"PO_AMT"),0);                               // !!공급금액(플라시스템 공급가)
+			var point_amount = 0;                                         											// 포인트 금액
+			var delivery_post = "";                                    												// 우편번호
+			var delivery_address = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_ADDR"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_NM_ERP"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"M_ROOM_NO"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"M_NAME"),""); // !! 배송주소
+			var delivery_date = formattedDate2;                         // !! 배송날짜
+			var delivery_time = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_TIME"),"00")+":"+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_MIN"),"00")+":00";                                  // !! 배송시간
+			var delivery_card = this.gfn_nvl(this.ds_list_2.getColumn(i,"CARD_MESSAGE"),"");                        // 카드메시지
+			var delivery_ribbon_right = ribbonLeft;              													// 리본문구(오른쪽)
+			var delivery_ribbon_left = ribbonRight;                     												// 리본문구(왼쪽)
+			var order_memo = "현진시닝:"+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"F_MEMO"),"");                                 													// 관리자메모
+			var goods_name = this.ds_list_2.getColumn(i,"ITEM_NM_ENG")+" / "+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"F_MEMO"),"")+" / "+this.gfn_nvl(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_QTY"),"")+"개";                           						// !! 상품명
+			var goods_url = "";                																		// !! 상품이미지
+			var insrt_user_id = this.ds_list.getColumn(this.ds_list.rowposition,"INSRT_USER_ID");               	// !! 접수자
+			var goods_code = this.gfn_nvl(this.ds_list_2.getColumn(i,"FLA_ITEM_CD"),"");                            // !! 플라시스템 코드
+
+			if(system.navigatorname == "nexacro"){ //runtime
+				
+				var str;
+				
+				str ='<html>'; 
+				str +='<title>flaSystem';
+				str +='</title>';
+				str +='<head>';
+				str +='<meta charset=UTF-8">';
+				str +='</head>';
+				str +='<body>';
+				str +='<form id="postform" name="postform" action="https://crm.ehyunjin.com:8081/API_FLA_ORDR" method="post" accept-charset="utf-8">';
+				
+				str += '	<input type="hidden" id="soNo" name="soNo" value="' + soNo + '">';
+				str += '	<input type="hidden" id="soSeq" name="soSeq" value="' + soSeq + '">';
+				str += '	<input type="hidden" id="order_number" name="order_number" value="' + order_number + '">';
+				str += '	<input type="hidden" id="order_time" name="order_time" value="' + order_time + '">';
+				str += '	<input type="hidden" id="orderer_name" name="orderer_name" value="' + orderer_name + '">';
+				str += '	<input type="hidden" id="orderer_phone" name="orderer_phone" value="' + orderer_phone + '">';
+				str += '	<input type="hidden" id="orderer_email" name="orderer_email" value="' + orderer_email + '">';
+				str += '	<input type="hidden" id="orderer_tel" name="orderer_tel" value="' + orderer_tel + '">';
+				str += '	<input type="hidden" id="receiver_name" name="receiver_name" value="' + receiver_name + '">';
+				str += '	<input type="hidden" id="receiver_phone" name="receiver_phone" value="' + receiver_phone + '">';
+				str += '	<input type="hidden" id="receiver_tel" name="receiver_tel" value="' + receiver_tel + '">';
+				str += '	<input type="hidden" id="payment_date" name="payment_date" value="' + payment_date + '">';
+				str += '	<input type="hidden" id="total_amount" name="total_amount" value="' + total_amount + '">';
+				str += '	<input type="hidden" id="pay_amount" name="pay_amount" value="' + pay_amount + '">';
+				str += '	<input type="hidden" id="supply_amount" name="supply_amount" value="' + supply_amount + '">';
+				str += '	<input type="hidden" id="point_amount" name="point_amount" value="' + point_amount + '">';
+				str += '	<input type="hidden" id="delivery_post" name="delivery_post" value="' + delivery_post + '">';
+				str += '	<input type="hidden" id="delivery_address" name="delivery_address" value="' + delivery_address + '">';
+				str += '	<input type="hidden" id="delivery_date" name="delivery_date" value="' + delivery_date + '">';
+				str += '	<input type="hidden" id="delivery_time" name="delivery_time" value="' + delivery_time + '">';
+				str += '	<input type="hidden" id="delivery_card" name="delivery_card" value="' + delivery_card + '">';
+				str += '	<input type="hidden" id="delivery_ribbon_right" name="delivery_ribbon_right" value="' + delivery_ribbon_right + '">';
+				str += '	<input type="hidden" id="delivery_ribbon_left" name="delivery_ribbon_left" value="' + delivery_ribbon_left + '">';
+				str += '	<input type="hidden" id="order_memo" name="order_memo" value="' + order_memo + '">';
+				str += '	<input type="hidden" id="goods_name" name="goods_name" value="' + goods_name + '">';
+				str += '	<input type="hidden" id="goods_url" name="goods_url" value="' + goods_url + '">';
+				str += '	<input type="hidden" id="insrt_user_id" name="insrt_user_id" value="' + insrt_user_id + '">';
+				str += '	<input type="hidden" id="goods_code" name="goods_code" value="' + goods_code + '">';
+				//str += '	<input type="hidden" id="goods_options" name="goods_options" value=\'' + goods_options + '\'>'; // JSON 문자열로 전송
+				 
+				str +='</form>';
+				str +='<script type="text/javascript">';
+				str +='	document.postform.submit();';
+				str +='</script>';
+				str +='</body>';
+				str +='</html>';	
+			
+				this.WebBrowser00_00.getProperty("document").callMethod("Write", str);
+				this.WebBrowser00_00.getProperty("document").callMethod("Close");	
+				
+				this.alert(soNo+"_"+soSeq+" 주문이 플라시스템으로 발주요청 되었습니다. 조회버튼을 클릭하여 플라시스템 주문번호가 생성되었는지 확인 바랍니다.");
+			}
+		}
+	}
+	this.ds_list_2.filter("")	
+};
+
+// 성공 처리 이벤트 핸들러
+this.WebBrowser00_00_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{
+	trace(e.userdata); // 서버 응답 로그 출력
+
+//     try {
+//         // 응답 데이터를 JSON으로 파싱 시도
+//         var responseData = JSON.parse(e.userdata);
+//         // 응답 데이터에 따라 특정 작업 수행
+//         // 예시로 'status' 필드를 기준으로 성공/실패 처리
+// 		
+//         if(responseData.code === "200") {
+//             trace("API 호출이 성공적으로 완료되었습니다.\n주문 ID: " + responseData.od_id);
+//             // 추가적인 성공 처리 로직
+//         } else {
+//             trace("API 호출 실패: " + responseData.code);
+//             // 추가적인 실패 처리 로직
+//         }
+//     } catch (error) {
+//         // JSON 파싱 실패 시, 원본 응답을 문자열로 처리
+//         if(e.userdata.startsWith("error:")) {
+//             trace("JSON 데이터 전송 실패: " + e.userdata);
+//         } else if(e.userdata.startsWith("exception:")) {
+//             trace("JSON 데이터 전송 중 예외 발생: " + e.userdata);
+//         } else {
+//             trace("알 수 없는 응답: " + e.userdata);
+//         }
+// 	}
+};
+
+this.Div02_Tab00_Tabpage8_grd_list03_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var odId = this.ds_list_2.getColumn(e.row,"ADD_CD2");
+	var soSeq = this.ds_list_2.getColumn(e.row,"SO_SEQ");
+	var orderDate = this.ds_list.getColumn(this.ds_list.rowposition,"ORDER_DT");
+	orderDate = String(orderDate);
+	var formattedDate = orderDate.substring(0, 4) + "-" +       // 연
+						orderDate.substring(4, 6) + "-" +       // 월
+						orderDate.substring(6, 8) + " " +       // 일
+						orderDate.substring(8, 10) + ":" +      // 시
+						orderDate.substring(10, 12) + ":" +     // 분
+						orderDate.substring(12, 14);            // 초
+	var dlvyDate = this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_DT");
+	dlvyDate = String(dlvyDate);
+	var formattedDate2 = dlvyDate.substring(0, 4) + "-" +       // 연
+						 dlvyDate.substring(4, 6) + "-" +       // 월
+						 dlvyDate.substring(6, 8);       		// 일
+	var ribbon = this.gfn_nvl(this.ds_list_2.getColumn(e.row, "RIBBON_MESSAGE"), "");
+    
+    // " / " 기준으로 split
+    var ribbonParts = ribbon.split(" / ");
+    var ribbonLeft = ribbonParts[0] || "";   // " / " 앞부분, 없으면 빈 문자열
+    var ribbonRight = ribbonParts[1] || "";  // " / " 뒷부분, 없으면 빈 문자열				 
+	
+	
+
+	if (e.col == 11)
+	{		
+		if (this.gfn_isNull(soSeq))
+		{
+			this.alert("저장 먼저 진행해주시기 바랍니다.");
+			return;
+		}
+		
+		if (this.gfn_isNull(odId))
+		{
+			var soNo = this.ds_list_2.getColumn(e.row,"SO_NO");                  									// !! SO 번호
+			//var soSeq = this.ds_list_2.getColumn(e.row,"SO_SEQ");                                                 // !! SO 시퀀스
+			var order_number = soNo+"_"+soSeq;                              										// !! 주문번호
+			var order_time = formattedDate;                       													// !! 주문시간
+			var orderer_name = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_NM"),"");          // !! 주문자명
+			var orderer_phone = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_TEL_NO1"),"");    // !! 주문자 핸드폰
+			var orderer_email = "";                       															// 주문자 이메일
+			var orderer_tel = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"REQ_TEL_NO2"),"");                         // 주문자 전화번호
+			var receiver_name = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_NM"),"");         // !! 받는사람 이름
+			var receiver_phone = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_TEL_NO1"),"");   // !! 받는사람 핸드폰
+			var receiver_tel = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"OWN_TEL_NO2"),"");                        // 받는사람 전화번호
+			var payment_date = "";                        															// 결제시간
+			var total_amount = 0;                                        											// 상품금액(할인 전 판매가)
+			var pay_amount = 0;                              														// 소비자가(최종판매가)
+			var supply_amount = this.gfn_nvl(this.ds_list_2.getColumn(e.row,"PO_AMT"),0);                           // !!공급금액(플라시스템 공급가)
+			var point_amount = 0;                                         											// 포인트 금액
+			var delivery_post = "";                                    												// 우편번호
+			var delivery_address = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_ADDR"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_NM_ERP"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"M_ROOM_NO"),"")+' '+ this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"M_NAME"),""); // !! 배송주소
+			var delivery_date = formattedDate2;                         // !! 배송날짜
+			var delivery_time = this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_TIME"),"00")+":"+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"DLVY_MIN"),"00")+":00";                                  // !! 배송시간
+			var delivery_card = this.gfn_nvl(this.ds_list_2.getColumn(e.row,"CARD_MESSAGE"),"");                    // 카드메시지
+			var delivery_ribbon_right = ribbonLeft;          														// 리본문구(오른쪽)
+			var delivery_ribbon_left = ribbonRight;                     												// 리본문구(왼쪽)
+			var order_memo = "현진시닝:"+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"F_MEMO"),"");                                 													// 관리자메모
+			var goods_name = this.ds_list_2.getColumn(e.row,"ITEM_NM_ENG")+" / "+this.gfn_nvl(this.ds_list.getColumn(this.ds_list.rowposition,"F_MEMO"),"")+" / "+this.gfn_nvl(this.ds_list_2.getColumn(this.ds_list_2.rowposition,"SO_QTY"),"")+"개";                           					// !! 상품명
+			var goods_url = "";                																		// !! 상품이미지
+			var insrt_user_id = this.ds_list.getColumn(this.ds_list.rowposition,"INSRT_USER_ID");               	// !! 접수자
+			var goods_code = this.gfn_nvl(this.ds_list_2.getColumn(e.row,"FLA_ITEM_CD"),"");                        // !! 플라시스템 코드
+
+			if(system.navigatorname == "nexacro"){ //runtime
+				
+				var str;
+				
+				str ='<html>'; 
+				str +='<title>flaSystem';
+				str +='</title>';
+				str +='<head>';
+				str +='<meta charset=UTF-8">';
+				str +='</head>';
+				str +='<body>';
+				str +='<form id="postform" name="postform" action="https://crm.ehyunjin.com:8081/API_FLA_ORDR" method="post" accept-charset="utf-8">';
+				//str +='<form id="postform" name="postform" action="http://10.36.170.229:8060/API_FLA_ORDR" method="post" accept-charset="utf-8">';
+				
+				str += '	<input type="hidden" id="soNo" name="soNo" value="' + soNo + '">';
+				str += '	<input type="hidden" id="soSeq" name="soSeq" value="' + soSeq + '">';
+				str += '	<input type="hidden" id="order_number" name="order_number" value="' + order_number + '">';
+				str += '	<input type="hidden" id="order_time" name="order_time" value="' + order_time + '">';
+				str += '	<input type="hidden" id="orderer_name" name="orderer_name" value="' + orderer_name + '">';
+				str += '	<input type="hidden" id="orderer_phone" name="orderer_phone" value="' + orderer_phone + '">';
+				str += '	<input type="hidden" id="orderer_email" name="orderer_email" value="' + orderer_email + '">';
+				str += '	<input type="hidden" id="orderer_tel" name="orderer_tel" value="' + orderer_tel + '">';
+				str += '	<input type="hidden" id="receiver_name" name="receiver_name" value="' + receiver_name + '">';
+				str += '	<input type="hidden" id="receiver_phone" name="receiver_phone" value="' + receiver_phone + '">';
+				str += '	<input type="hidden" id="receiver_tel" name="receiver_tel" value="' + receiver_tel + '">';
+				str += '	<input type="hidden" id="payment_date" name="payment_date" value="' + payment_date + '">';
+				str += '	<input type="hidden" id="total_amount" name="total_amount" value="' + total_amount + '">';
+				str += '	<input type="hidden" id="pay_amount" name="pay_amount" value="' + pay_amount + '">';
+				str += '	<input type="hidden" id="supply_amount" name="supply_amount" value="' + supply_amount + '">';
+				str += '	<input type="hidden" id="point_amount" name="point_amount" value="' + point_amount + '">';
+				str += '	<input type="hidden" id="delivery_post" name="delivery_post" value="' + delivery_post + '">';
+				str += '	<input type="hidden" id="delivery_address" name="delivery_address" value="' + delivery_address + '">';
+				str += '	<input type="hidden" id="delivery_date" name="delivery_date" value="' + delivery_date + '">';
+				str += '	<input type="hidden" id="delivery_time" name="delivery_time" value="' + delivery_time + '">';
+				str += '	<input type="hidden" id="delivery_card" name="delivery_card" value="' + delivery_card + '">';
+				str += '	<input type="hidden" id="delivery_ribbon_right" name="delivery_ribbon_right" value="' + delivery_ribbon_right + '">';
+				str += '	<input type="hidden" id="delivery_ribbon_left" name="delivery_ribbon_left" value="' + delivery_ribbon_left + '">';
+				str += '	<input type="hidden" id="order_memo" name="order_memo" value="' + order_memo + '">';
+				str += '	<input type="hidden" id="goods_name" name="goods_name" value="' + goods_name + '">';
+				str += '	<input type="hidden" id="goods_url" name="goods_url" value="' + goods_url + '">';
+				str += '	<input type="hidden" id="insrt_user_id" name="insrt_user_id" value="' + insrt_user_id + '">';
+				str += '	<input type="hidden" id="goods_code" name="goods_code" value="' + goods_code + '">';
+				//str += '	<input type="hidden" id="goods_options" name="goods_options" value=\'' + goods_options + '\'>'; // JSON 문자열로 전송
+				 
+				str +='</form>';
+				str +='<script type="text/javascript">';
+				str +='	document.postform.submit();';
+				str +='</script>';
+				str +='</body>';
+				str +='</html>';	
+			
+				this.WebBrowser00_00.getProperty("document").callMethod("Write", str);
+				this.WebBrowser00_00.getProperty("document").callMethod("Close");	
+				
+				this.alert(soNo+"_"+soSeq+" 주문이 플라시스템으로 발주요청 되었습니다. 조회버튼을 클릭하여 플라시스템 주문번호가 생성되었는지 확인 바랍니다.");
+				
+				this.fn_search(soNo);
+			}
+		} else
+		{
+			this.alert("이미 발주 되었습니다.");
+			return;
+		}		
+	} else if (e.col == 12)
+	{
+		if (this.gfn_isNull(odId))
+		{
+			this.alert("발주를 먼저 진행하세요.");
+			return;
+		} else
+		{
+			if (this.confirm("플라시스템 발주를 취소하시겠습니까?"))
+			{
+				var soNo = this.ds_list_2.getColumn(e.row,"SO_NO"); 
+				var soSeq = this.ds_list_2.getColumn(e.row,"SO_SEQ");
+				var addCd2 = this.ds_list_2.getColumn(e.row,"ADD_CD2");
+				var regUser = this.objApp.gds_login_info.getColumn(0,"USR_ID");
+				
+				var id = "SO010_FLA_CANCEL";
+				var url = "svcUrl::SO010_FLA_CANCEL";
+				var inDs = "";
+				var outDs = "";
+				var args = "SO_NO="+soNo+" SO_SEQ="+soSeq+" INSRT_USER_ID="+regUser+" ADD_CD2="+addCd2+"";
+				var callBackid = "fn_fla_cancel";
+				
+				this.gfn_transaction( id, url, inDs, outDs, args, callBackid, false);	
+			}			
+		}		
+	} else if (e.col == 13)	
+	{
+		var odId = this.ds_list_2.getColumn(e.row,"ADD_CD2");
+	
+		var id = "SO010_P40";
+		var url = "svcUrl::SO010_P40";
+		var inDs = "";
+		var outDs = "ds_fla_img=ds_list";
+		var args = "OD_ID="+odId+"";
+		var callBackid = "fn_fla_image";
+
+		this.gfn_transaction( id, url, inDs, outDs, args, callBackid, false);
+	}
+};
+
+this.fn_fla_image = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}		
+	var before = this.ds_fla_img.getColumn(0,"BEFORE");
+	var after = this.ds_fla_img.getColumn(0,"AFTER");
+	var receipt = this.ds_fla_img.getColumn(0,"RECEIPT");
+	
+	system.execShell( before );
+	system.execShell( after );
+	system.execShell( receipt );	
+}
+
+this.fn_fla_cancel = function (strSvcID, nErrorCode, strErrorMag) {
+	if (nErrorCode < 0) 
+	{
+		this.alert(strErrorMag)
+		return ;
+	}	
+	var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO"); 
+	this.fn_search(soNo);
+}
+this.Div02_Tab00_Tabpage1_btn_PKG_refresh_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var bpCd = this.ds_list.getColumn(this.ds_list.rowposition,"SOLD_TO_PARTY");
+	var hp = this.ds_list.getColumn(this.ds_list.rowposition,"OWN_TEL_NO1");
+	var user = this.ds_list.getColumn(this.ds_list.rowposition,"OWN_NM");
+	var soNo = this.ds_list.getColumn(this.ds_list.rowposition,"SO_NO");
+	
+	var sPopupId  = "sms_popup";
+	var sUrl      = "SO::SO010_PKG_SMS.xfdl";
+	var oArg      = {user : user, hp : hp, soNo : soNo, T_SO_NO : T_SO_NO, bpCd : bpCd};
+	var sCallBack = "";
+	var oOption   = {title : "PKG 대상자 SMS"};
+	this.gfn_openPopup(sPopupId, sUrl, oArg, sCallBack, oOption);
+};
+
+
+function sleep(ms) {
+  const wakeUpTime = Date.now() + ms;
+  while (Date.now() < wakeUpTime) {}
+}]]></Script>
     <Objects>
       <Dataset id="ds_time">
         <ColumnInfo>
@@ -7797,6 +8274,13 @@ this.Div00_Radio_dealType_onitemchanged = function(obj:nexacro.Radio,e:nexacro.I
           <Column id="SO_PRICE" type="BIGDECIMAL" size="256"/>
           <Column id="GOOD_QTY_INFO" type="STRING" size="256"/>
           <Column id="SAVE_YN" type="STRING" size="256"/>
+          <Column id="FLA_ITEM_CD" type="STRING" size="256"/>
+          <Column id="ADD_CD2" type="STRING" size="256"/>
+          <Column id="ADD_CD3" type="STRING" size="256"/>
+          <Column id="ADD_CD5" type="STRING" size="256"/>
+          <Column id="ADD_CD6" type="STRING" size="256"/>
+          <Column id="ITEM_NM_ENG" type="STRING" size="256"/>
+          <Column id="ETC_REMARK" type="STRING" size="1000"/>
         </ColumnInfo>
       </Dataset>
       <Dataset id="ds_tab_div2">
@@ -8450,6 +8934,23 @@ this.Div00_Radio_dealType_onitemchanged = function(obj:nexacro.Radio,e:nexacro.I
           </Row>
         </Rows>
       </Dataset>
+      <Dataset id="ds_fla_status">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="CODE_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">DLSP</Col>
+            <Col id="CODE_NAME">배송중</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">DLDN</Col>
+            <Col id="CODE_NAME">배송완료</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_fla_img"/>
     </Objects>
     <Bind>
       <BindItem id="item7" compid="Div06.form.cmb_AM_dept" propid="value" datasetid="ds_list_1" columnid="AM_DEPT"/>
